@@ -1,0 +1,16 @@
+node_modules/
+.env
+.env.*
+!.env.example
+
+content-model/snapshots/*.json
+!content-model/snapshots/.gitkeep
+
+content-model/reports/*.json
+content-model/reports/*.log
+
+.DS_Store
+dist/
+build/
+.next/
+coverage/

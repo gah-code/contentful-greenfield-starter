@@ -1,0 +1,22 @@
+{
+  "name": "personal-website-contentful-foundation",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Greenfield Contentful model governance and bootstrap starter.",
+  "scripts": {
+    "cms:help": "contentful --help",
+    "cms:login": "contentful login",
+    "cms:env:check": "node --env-file=.env.local scripts/contentful/check-env.mjs",
+    "cms:env:list": "node --env-file=.env.local scripts/contentful/list-environments.mjs",
+    "cms:model:bootstrap": "node --env-file=.env.local scripts/contentful/run-bootstrap-migration.mjs",
+    "cms:model:export": "node --env-file=.env.local scripts/contentful/export-model.mjs",
+    "cms:model:import:verify": "node --env-file=.env.local scripts/contentful/import-model.mjs",
+    "cms:model:verify:snapshot": "node scripts/contentful/verify-snapshot.mjs"
+  },
+  "devDependencies": {
+    "contentful-cli": "4.0.4"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
