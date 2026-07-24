@@ -1,17 +1,32 @@
 # Tasks
 
-Last reviewed: YYYY-MM-DD  
+Last reviewed: 2026-07-24
 Current phase: Phase 00 — Baseline + New Environment Setup  
-Current batch: 00.1 — Repository and CMS safety baseline
+Current batch: 00.1-00.2 — Repository and Runtime Tooling Repair
 
 ## Now
 
-### Phase 00 / Batch 00.1 — Repository and CMS Safety Baseline
+### Phase 00 / Batch 00.1-00.2 — Repository and Runtime Tooling Repair
 
-- [ ] Confirm repository name and local path
-- [ ] Confirm package manager
-- [ ] Confirm and pin Node version
-- [ ] Install `contentful-cli`
+- [x] Confirm repository name and local path
+- [x] Change package name to `contentful-greenfield-starter`
+- [x] Declare `packageManager` as `npm@10.8.3`
+- [x] Pin supported Node major in `.nvmrc`
+- [x] Preserve `engines.node` compatibility with Node 22
+- [x] Record runtime and Contentful package versions in the Phase 00 runtime table
+- [x] Rename the active Phase 00 document to the canonical setup filename
+- [x] Create canonical system documentation surfaces
+- [x] Create canonical content-model ledger surfaces
+- [x] Convert older model docs to concise canonical pointers
+- [x] Update local Contentful CLI wrappers to use `npx --no-install`
+- [x] Stop passing management tokens as command-line arguments
+- [x] Record the accepted Git history deviation
+- [x] Update project truth surfaces for Batch 00.1-00.2 repair
+
+## Next
+
+### Remaining Phase 00 — Contentful Environment Verification
+
 - [ ] Create `.env.local` from `.env.example`
 - [ ] Confirm `.env.local` is ignored
 - [ ] Confirm Contentful organization and space
@@ -21,11 +36,8 @@ Current batch: 00.1 — Repository and CMS safety baseline
 - [ ] Create `verification` environment from blank `master`
 - [ ] Run `npm run cms:env:check`
 - [ ] Run `npm run cms:env:list`
-- [ ] Update `docs/PROJECT-STATE.md`
-- [ ] Add Phase 00 closeout evidence
-- [ ] Record completion in `CHANGELOG.md`
-
-## Next
+- [ ] Add final Phase 00 closeout evidence
+- [ ] Record final Phase 00 completion in `CHANGELOG.md`
 
 ### Phase 01 — Content Strategy + Route Contract
 
@@ -65,3 +77,4 @@ Current batch: 00.1 — Repository and CMS safety baseline
 - [x] Migrations selected as the ongoing history of model changes
 - [x] Generic page builder deferred
 - [x] Raw Contentful shapes prohibited from UI components
+- [x] Batch 00.1-00.2 repository and runtime tooling repair recorded

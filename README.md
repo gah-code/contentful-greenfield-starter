@@ -50,7 +50,7 @@ npm run cms:help
 npm run cms:env:check
 ```
 
-5. Complete `docs/phases/PHASE-00-BASELINE-AND-ENVIRONMENT.md`.
+5. Complete `docs/phases/PHASE-00-BASELINE-AND-ENVIRONMENT-SETUP.md`.
 6. Create the `dev` and `verification` Contentful environments.
 7. Run the bootstrap migration only after Phase 00 is closed.
 
@@ -73,5 +73,7 @@ See:
 - `docs/PROJECT-STATE.md` — compact truth for handoff and context recovery
 - `docs/IMPLEMENTATION-ROADMAP.md` — canonical phase sequence
 - `docs/DECISIONS.md` — decisions and tradeoffs
-- `docs/phases/` — phase requirements and closeout notes
+- `docs/phases/PHASE-00-BASELINE-AND-ENVIRONMENT-SETUP.md` — active Phase 00 requirements and closeout notes
+- `docs/system/` — environment, content strategy, route contract, and security strategy
+- `docs/content-model/` — content type, field ID, and reference ledgers
 - `CHANGELOG.md` — meaningful completed changes

@@ -84,3 +84,27 @@ Start with 10 semantic content types:
 8. Experience Item
 9. Skill
 10. Skill Group
+
+---
+
+## ADR-007 — Accepted Initial Commit Scope Deviation
+
+Status: accepted
+
+Git history shows `46125d2 Initial commit` included repository baseline files together with CMS/model artifacts, including the initial bootstrap migration and Contentful scripts.
+
+### Decision
+
+Do not rewrite Git history during Phase 00 repair. Record the deviation and keep future batches focused by separating repository baseline, tooling, documentation, model, and Contentful environment changes.
+
+### Why
+
+- avoids destructive history edits
+- preserves the current remote branch shape
+- makes the deviation explicit for future audits
+- sets the expectation that later work should use smaller scoped commits
+
+### Revisit when
+
+- a repository owner explicitly approves history rewriting before wider collaboration
+- release or compliance requirements require a recreated baseline repository

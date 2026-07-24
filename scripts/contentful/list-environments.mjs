@@ -1,12 +1,10 @@
 import "./check-env.mjs";
-import { runContentful, withManagementToken } from "./run-cli.mjs";
+import { runContentful } from "./run-cli.mjs";
 
-runContentful(
-  withManagementToken([
-    "space",
-    "environment",
-    "list",
-    "--space-id",
-    process.env.CONTENTFUL_SPACE_ID,
-  ])
-);
+runContentful([
+  "space",
+  "environment",
+  "list",
+  "--space-id",
+  process.env.CONTENTFUL_SPACE_ID,
+]);

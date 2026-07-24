@@ -1,64 +1,10 @@
 # Content Model v1
 
-Status: proposed  
-Target count: 10 content types
+Status: pointer
+Canonical owner: `docs/content-model/`
 
-## Model Principle
+The content model truth has moved to these canonical Batch 00.1 surfaces:
 
-Model content meaning, not visual component names.
-
-## Core Types
-
-| ID | Name | Purpose |
-|---|---|---|
-| `seoMetadata` | SEO Metadata | Reusable route metadata |
-| `socialLink` | Social Link | Profile and footer social destinations |
-| `navigationItem` | Navigation Item | Header/footer navigation |
-| `siteSettings` | Site Settings | Global website configuration |
-| `personProfile` | Person Profile | Primary personal identity and bio |
-| `project` | Project | Project and case-study content |
-| `article` | Article | Writing content |
-| `experienceItem` | Experience Item | Employment and role history |
-| `skill` | Skill | Individual capability or technology |
-| `skillGroup` | Skill Group | Grouped skills |
-
-## Deliberately Deferred Types
-
-- `page`
-- `pageSection`
-- visual component types
-- stat cards
-- generic cards
-- CTA blocks
-- tags as entries
-- categories as entries
-- testimonials
-- learning items
-
-## Why They Are Deferred
-
-The first website routes already have known composition. Adding a page builder now would increase editorial and adapter complexity before a real need is proven.
-
-Tags and categories begin as short-text arrays or controlled short text. Promote them into referenced entries only when reuse, governance, or editorial filtering requires it.
-
-## Reference Map
-
-```text
-siteSettings
-├── defaultSeo → seoMetadata
-├── navigationItems[] → navigationItem
-└── socialLinks[] → socialLink
-
-personProfile
-└── socialLinks[] → socialLink
-
-project
-└── seo → seoMetadata
-
-article
-├── seo → seoMetadata
-└── relatedProjects[] → project
-
-skillGroup
-└── skills[] → skill
-```
+- `docs/content-model/CONTENT-TYPE-LEDGER.md`
+- `docs/content-model/FIELD-ID-LEDGER.md`
+- `docs/content-model/REFERENCE-MAP.md`
