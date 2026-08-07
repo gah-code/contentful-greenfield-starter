@@ -1,18 +1,18 @@
 # Implementation Roadmap
 
-Status: proposed and active  
+Status: proposed and active
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
 
 | Phase | Name | Primary outcome | Runtime impact |
 |---|---|---|---|
-| 00 | Baseline + New Environment Setup | Safe repository and blank CMS environments | None |
+| 00 | Baseline + Two-Environment Setup | Safe repository, secure tooling boundary, and governed `master` + `dev` operating model | None |
 | 01 | Content Strategy + Route Contract | Approved content inventory and ownership | None |
 | 02 | Content Model Contract + Bootstrap Migration | Core model created in `dev` | CMS only |
-| 03 | Model Export + Clean Import Verification | Portable, verified model snapshot | CMS only |
+| 03 | Model Export + Serial Clean-Room Verification | Approved model-only snapshot rebuilt into fresh `dev` from protected `master` | CMS only |
 | 04 | Editorial QA + Model Freeze | Editor-friendly baseline v1 | CMS only |
-| 05 | Representative Seed Content | Realistic draft entries | CMS only |
+| 05 | Representative Seed Content | Realistic draft entries after clean-room verification | CMS only |
 | 06 | Frontend Contracts + Adapter Boundary | Stable CMS-agnostic data contracts | Code only |
 | 07 | Delivery Integration | Published content loaded route by route | Runtime |
 | 08 | Preview + Editorial Workflow | Safe draft preview | Runtime |
@@ -21,12 +21,12 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 ## Recommended Dependency Order
 
 ```text
-00 → 01 → 02 → 03 → 04 → 05 → 06 → 07 → 08 → 09
+00 -> 01 -> 02 -> 03 -> 04 -> 05 -> 06 -> 07 -> 08 -> 09
 ```
 
-Do not skip Phase 03. A clean import into a second environment proves that the model is portable and that the export is usable.
+Do not skip Phase 03. A serial clean-room rebuild of `dev` proves that the approved model snapshot is portable before seed content begins.
 
-## Phase 00 — Baseline + New Environment Setup
+## Phase 00 — Baseline + Two-Environment Setup
 
 ### Goal
 
@@ -37,18 +37,18 @@ Create a safe operating surface before any content type is created.
 - repository tracking files
 - local CLI installation
 - environment variable template
-- blank `dev` and `verification` environments
-- confirmed default locale
-- `master` remains untouched
-- completed Phase 00 closeout
+- documented two-environment strategy: protected `master` + rotating `dev`
+- pending evidence list for Contentful account, space, locale, `master`, and `dev`
+- explicit Phase 00 batch model
+- completed Phase 00 closeout after all gates pass
 
 ### Exit criteria
 
-- all Phase 00 tasks are checked
-- environment IDs are documented
-- safety scripts pass
+- Batch 00.3 alignment and secret-safety evidence passes
+- Batch 00.4 Contentful account, space, locale, and environment evidence passes
+- Batch 00.5 records final risks and closeout verdict
 - `docs/PROJECT-STATE.md` is current
-- changelog entry is added
+- changelog entry is added without claiming premature phase completion
 
 ## Phase 01 — Content Strategy + Route Contract
 
@@ -94,28 +94,45 @@ Create the lean core model in `dev`.
 - editor interface is usable
 - every field has a clear frontend purpose
 
-## Phase 03 — Model Export + Clean Import Verification
+## Phase 03 — Model Export + Serial Clean-Room Verification
 
 ### Goal
 
-Prove that the approved model is portable.
+Prove that the approved model-only snapshot is portable by rebuilding `dev` from protected `master` and importing the snapshot into fresh `dev`.
+
+### Destructive gates before deleting `dev`
+
+- verified model-only snapshot exists
+- snapshot checksum is recorded
+- CLI/runtime metadata is recorded
+- pre-deletion model evidence is recorded
+- committed migration history is confirmed
+- `dev` contains no irreplaceable content
+- recovery procedure is documented
+- explicit human approval is given in the active session
 
 ### Tasks
 
-- export model from `dev`
-- inspect the JSON
-- import with `--content-model-only` into `verification`
-- compare content types and editor interfaces
-- record limitations and mismatches
-- rerun export after any approved corrections
+- develop and review the model in `dev`
+- export the approved model-only snapshot
+- verify the snapshot structure
+- record checksum and CLI/runtime metadata
+- record pre-deletion model evidence
+- complete the destructive gates
+- delete `dev` only after explicit approval
+- recreate `dev` from protected `master`
+- confirm fresh `dev` state
+- import the model-only snapshot into `dev`
+- compare rebuilt `dev` to pre-deletion evidence
+- declare `dev` verified and continue using it
 
 ### Exit criteria
 
-- clean import passes
+- clean-room import into fresh `dev` passes
 - snapshot is stored and reviewed
-- model count and field count match
+- model count and field count match pre-deletion evidence
 - default locale is compatible
-- no content, roles, or webhooks are required for the model bootstrap
+- no seed content starts before verified `dev` is declared
 
 ## Phase 04 — Editorial QA + Model Freeze
 
@@ -144,18 +161,18 @@ Freeze model version `1.0.0`.
 
 ### Goal
 
-Create enough realistic content to validate the website.
+Create enough realistic content to validate the website after Phase 03 clean-room verification succeeds.
 
 ### Minimum seed
 
 - 1 site settings entry
 - 1 person profile
-- 5–7 navigation items
+- 5-7 navigation items
 - 3 projects
 - 3 articles
 - 4 experience items
-- 12–20 skills
-- 4–6 skill groups
+- 12-20 skills
+- 4-6 skill groups
 
 ### Exit criteria
 

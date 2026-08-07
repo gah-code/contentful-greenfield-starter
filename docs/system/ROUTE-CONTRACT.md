@@ -9,7 +9,7 @@ This is the canonical surface for route inventory, route ownership, and frontend
 
 ## Current Phase 00 Boundary
 
-Batch 00.1-00.2 does not approve route contracts or frontend integration. Static fixtures remain the expected bridge until UI-facing contracts are reviewed in a later phase.
+Phase 00 — Baseline + Two-Environment Setup does not approve route contracts or frontend integration. Static fixtures remain the expected bridge until UI-facing contracts are reviewed in a later phase.
 
 ## Candidate Route Surfaces
 

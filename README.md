@@ -1,79 +1,88 @@
 # Personal Website CMS — Greenfield Contentful Starter
 
-Status: active  
-Current phase: Phase 00 — Baseline + New Environment Setup  
-Architecture direction: static UI contracts first, Contentful adapters later  
-CMS bootstrap direction: migration-created model → model-only export → clean verification import
+Repository: `contentful-greenfield-starter`
+Current phase: Phase 00 — Baseline + Two-Environment Setup
+Model target: 10 semantic content types
+CMS bootstrap direction: migration-created model -> model-only export -> serial clean-room verification in fresh `dev`
 
-## Purpose
-
-This repository scaffold establishes a controlled, repeatable starting point for a new Contentful environment supporting a personal portfolio website.
-
-The first model is intentionally lean. It supports:
-
-- site settings and navigation
-- personal profile content
-- projects and case studies
-- writing and articles
-- experience history
-- skills and skill groups
-- reusable SEO metadata
-
-It does **not** begin with a generic page builder, visual component content types, or raw CMS data inside UI components.
+This repository is the planning, governance, and migration surface for a greenfield Contentful-backed personal website CMS.
 
 ## Current Operating Rule
 
-```text
-Plan the model
-→ create it in a development environment through a migration
-→ export a model-only snapshot
-→ import that snapshot into a second clean environment
-→ verify editorial behavior
-→ seed representative content
-→ integrate through adapters
-```
+Content strategy before content models.
+Routes before templates.
+UI contracts before CMS data.
+Static fixtures before Contentful.
+Validation before closeout.
+Documentation is part of the build.
+
+## Environment Strategy
+
+The approved physical Contentful topology uses exactly two environments:
+
+| Environment | Role | Phase 00 state |
+|---|---|---|
+| `master` | Permanent protected baseline and future release target | Blank-state verification pending Batch 00.4 |
+| `dev` | Single rotating sandbox for migrations, model review, and editorial QA | Operational state verification pending Batch 00.4 |
+
+Verification is a workflow state, not a persistent environment ID. During Phase 03, the approved model is exported from `dev`, recoverability evidence is recorded, explicit human approval is required, and `dev` is deleted and recreated from protected `master` before importing the model-only snapshot back into fresh `dev`.
+
+Do not create a separate verification environment for this project.
 
 ## Start Here
 
-1. Copy `.env.example` to `.env.local`.
-2. Add your Contentful space ID and management token.
-3. Install dependencies:
-
-```bash
-npm install
-```
-
-4. Authenticate or verify the CLI:
-
-```bash
-npm run cms:help
-npm run cms:env:check
-```
-
-5. Complete `docs/phases/PHASE-00-BASELINE-AND-ENVIRONMENT-SETUP.md`.
-6. Create the `dev` and `verification` Contentful environments.
-7. Run the bootstrap migration only after Phase 00 is closed.
+1. Review the project state:
+   - `docs/PROJECT-STATE.md`
+   - `TASKS.md`
+   - `CHANGELOG.md`
+2. Copy `.env.example` to `.env.local` locally and fill only local secret values.
+3. Verify local runtime and tooling:
+   ```bash
+   node -v
+   npm -v
+   npx --no-install contentful --help
+   npm run cms:help
+   ```
+4. Review the environment contract:
+   - `docs/system/ENVIRONMENT-STRATEGY.md`
+   - `docs/system/SECURITY-AND-SECRETS.md`
+5. Do not run migrations, exports, imports, or environment commands until the relevant phase gate explicitly approves them.
 
 ## Safety Rules
 
-- Never commit `.env.local` or a management token.
-- Never target `master` during bootstrap work.
-- Always name the environment explicitly.
-- Export after every approved model change.
-- Treat exports as portable snapshots, not the sole history of change.
-- Use migration scripts for changes after the first baseline.
-- Keep UI components independent from raw Contentful response shapes.
-- Keep route composition in the frontend until a page-composition model is proven necessary.
+- Never target `master` during bootstrap, migration, model import, or experimental schema work.
+- Use `CONTENTFUL_ENVIRONMENT_ID=dev` for approved CMS development operations.
+- Never pass management tokens as command-line arguments.
+- Never expose management, delivery, or preview tokens through browser-prefixed environment variables.
+- Do not delete `dev` until Phase 03 recoverability evidence is complete and explicit human approval is given in the active session.
+- Do not treat planned architecture as verified Contentful evidence. Batch 00.4 owns account, space, locale, and environment verification.
 
-## Project State
+## Repository Structure
 
-See:
+```text
+content-model/
+  migrations/
+  snapshots/
+  reports/
 
-- `TASKS.md` — current work queue
-- `docs/PROJECT-STATE.md` — compact truth for handoff and context recovery
-- `docs/IMPLEMENTATION-ROADMAP.md` — canonical phase sequence
-- `docs/DECISIONS.md` — decisions and tradeoffs
-- `docs/phases/PHASE-00-BASELINE-AND-ENVIRONMENT-SETUP.md` — active Phase 00 requirements and closeout notes
-- `docs/system/` — environment, content strategy, route contract, and security strategy
-- `docs/content-model/` — content type, field ID, and reference ledgers
-- `CHANGELOG.md` — meaningful completed changes
+docs/
+  content-model/
+  phases/
+  system/
+
+scripts/
+  contentful/
+```
+
+## Canonical Documents
+
+- `docs/PROJECT-STATE.md` — current truth surface
+- `TASKS.md` — phase and batch tracker
+- `docs/DECISIONS.md` — architectural decisions
+- `docs/IMPLEMENTATION-ROADMAP.md` — phase plan
+- `docs/phases/PHASE-00-BASELINE-AND-ENVIRONMENT-SETUP.md` — active Phase 00 requirements
+- `docs/system/ENVIRONMENT-STRATEGY.md` — two-environment operating model
+- `docs/system/SECURITY-AND-SECRETS.md` — secret and CLI boundaries
+- `docs/content-model/CONTENT-TYPE-LEDGER.md` — semantic content-type ledger
+- `docs/content-model/FIELD-ID-LEDGER.md` — field ID contract ledger
+- `docs/content-model/REFERENCE-MAP.md` — reference topology

@@ -1,107 +1,100 @@
 # Project State
 
-Last updated: 2026-07-24
-Status: active  
-Current phase: Phase 00 — Baseline + New Environment Setup  
-Current batch: 00.1-00.2 — Repository and Runtime Tooling Repair
-Next recommended batch: Remaining Phase 00 Contentful environment verification
+Project: `contentful-greenfield-starter`
+Current phase: Phase 00 — Baseline + Two-Environment Setup
+Current work item: Pre-Batch 00.3 alignment maintenance
+Next implementation batch: Batch 00.3 — Two-Environment Strategy Alignment + Secret Safety
 
-## Direction
+## Phase 00 Batch State
 
-Build a new Contentful foundation from a blank environment.
+| Batch | Name | Status | Evidence |
+|---|---|---|---|
+| 00.1 | Repository and Project Truth | Approved | Repository identity, canonical docs, and initial deviation recorded |
+| 00.2 | Runtime and Contentful Tooling | Approved | Runtime/package declarations and local CLI wrapper documented |
+| 00.3 | Two-Environment Strategy Alignment + Secret Safety | Next | Not complete; this repair prepares the audit surface |
+| 00.4 | Contentful Space and Environment Verification | Later | Account, space, locale, and environment evidence pending |
+| 00.5 | Phase 00 Closeout | Later | Requires all Phase 00 evidence and risk review |
+
+Phase 01 remains deferred. Bootstrap migration remains blocked and not run. Seed content has not started.
+
+## Confirmed Architecture
+
+| Area | Current truth |
+|---|---|
+| Physical environments | `master` + `dev` only |
+| `master` role | Permanent protected baseline and future release target |
+| `dev` role | Single rotating sandbox for schema development, model review, and editorial QA |
+| Verification | Workflow state, not a persistent environment ID |
+| Phase 03 target | Freshly recreated `dev` after protected `master` clone/recreation process |
+| Model target | 10 semantic content types |
+| Bootstrap target | Never `master`; later approved migration work targets `dev` |
+
+## Still Requiring Operational Verification
+
+These items are architecture expectations or pending facts until Batch 00.4 records direct evidence:
+
+| Item | Status |
+|---|---|
+| Contentful account/space evidence | Pending |
+| Two-environment capacity evidence | Pending |
+| Default locale | Pending |
+| `master` blank state | Pending |
+| `dev` state | Pending |
+| `dev` source | Pending |
+| Environment inventory | Pending |
+| Permissions/token readiness | Pending |
+
+## Runtime and Tooling Evidence
+
+| Tool | Detected version | Evidence source |
+|---|---:|---|
+| Node.js | `v22.2.0` | `node -v` during Phase 00 audit |
+| npm | `10.8.3` | `npm -v` during Phase 00 audit |
+| contentful-cli | `4.0.4` | installed package version |
+| contentful-migration | `5.1.0` | installed package version |
+| contentful-export | `8.1.1` | installed package version |
+| contentful-import | `10.0.18` | installed package version |
+
+The Contentful CLI binary may report `0.0.0-determined-by-semantic-release`; the installed package version remains the authoritative package evidence.
+
+## Serial Clean-Room Verification Strategy
+
+Phase 03 uses a serial workflow with the same `dev` environment ID:
 
 ```text
-Bootstrap migration in dev
-→ model-only export
-→ clean import into verification
-→ editorial QA
-→ baseline freeze
-→ incremental migrations
-→ adapters
-→ runtime integration
+develop model in dev
+-> technical + editorial model review
+-> export approved model-only snapshot
+-> verify snapshot structure
+-> record checksum
+-> record CLI/runtime metadata
+-> record pre-deletion model evidence
+-> confirm committed migration history
+-> confirm dev contains no irreplaceable content
+-> confirm recovery procedure
+-> obtain explicit human approval
+-> delete dev
+-> recreate dev from protected master
+-> confirm fresh dev state
+-> import model-only snapshot into dev
+-> compare rebuilt dev to pre-deletion evidence
+-> declare dev verified
+-> continue using dev
 ```
 
-## Completed
+No deletion automation is part of this repair.
 
-- Greenfield implementation direction approved
-- Contentful CLI selected
-- Export/import selected for quick environment replication
-- Migration scripts selected for ongoing schema history
-- Initial core model proposed
-- Page builder and component-mirroring model deferred
-- Tracking documents scaffolded
-- Package identity aligned to `contentful-greenfield-starter`
-- npm package manager declared as `npm@10.8.3`
-- Node major pinned in `.nvmrc`
-- Canonical system and content-model documentation surfaces created
-- Local Contentful CLI wrappers updated to use `npx --no-install`
-- Management tokens removed from CLI argument construction
-- Historical baseline commit deviation accepted and recorded
+## Current Risks
 
-## In Progress
-
-- Contentful credentials and environment configuration
-- Blank `dev` and `verification` environment setup
-- Phase 00 evidence collection
-
-## Next Up
-
-- Verify Contentful organization, space, default locale, and blank `master`
-- Create `dev` and `verification` environments from blank `master`
-- Run environment validation commands after `.env.local` is configured
-- Close Phase 00
-- Confirm route and content inventory
-- Review field IDs and model ownership
-- Run the initial model migration in `dev`
-
-## Deferred
-
-- Page and page-section content types
-- Generic component content types
-- Contentful delivery client
-- Preview client and preview route
-- Frontend adapters and view models
-- Seed content import
-- Dynamic route integration
-- Production cutover
-
-## Active Risks
-
-| Risk | Status | Mitigation |
+| Risk | Status | Control |
 |---|---|---|
-| Accidentally targeting `master` | Open | Scripts reject `master` by default |
-| Field IDs drifting after use | Open | Approve `docs/content-model/FIELD-ID-LEDGER.md` before migration |
-| Model mirrors UI component tree | Controlled | Semantic types only |
-| Export treated as full history | Controlled | Keep migrations and changelog |
-| Raw CMS data reaches UI | Controlled | Adapter boundary required later |
-| Initial commit mixed baseline and CMS/model artifacts | Accepted deviation | Do not rewrite history; use focused commits in future batches |
+| Accidental `master` mutation | Open | Migration/import scripts reject `master` |
+| `dev` deletion before recoverability | Open | Require committed migrations, snapshot, checksum, pre-deletion evidence, recovery procedure, and explicit human approval |
+| Stale three-environment documentation | Open | Search for obsolete topology terms during closeout and Phase 03 readiness |
+| Token exposure | Open | Ignore local env files, avoid CLI token args, avoid browser prefixes, and print presence only |
+| Locale mismatch | Open | Record default locale in Phase 00 and check before Phase 03 clean-room import |
+| Historical baseline commit mixed CMS/model artifacts | Accepted deviation | Do not rewrite history; use focused commits in future batches |
 
-## Verification
+## Current Phase Boundary
 
-| Check | Result | Date |
-|---|---|---|
-| Repository identity aligned | Verified | 2026-07-24 |
-| Package manager declared | Verified | 2026-07-24 |
-| Node version pinned | Verified | 2026-07-24 |
-| Runtime/tool versions recorded | Verified | 2026-07-24 |
-| CLI installed | Verified | 2026-07-24 |
-| CLI help surface inspected | Verified | 2026-07-24 |
-| CLI token argument removed | Verified | 2026-07-24 |
-| Canonical documentation surfaces created | Verified | 2026-07-24 |
-| Historical baseline commit deviation recorded | Verified | 2026-07-24 |
-| Environment variables validated | Pending | |
-| `dev` environment ready | Pending | |
-| `verification` environment ready | Pending | |
-| `master` untouched | Pending | |
-
-## Handoff Summary
-
-A new contributor or agent should read, in order:
-
-1. `README.md`
-2. `docs/PROJECT-STATE.md`
-3. `TASKS.md`
-4. `docs/IMPLEMENTATION-ROADMAP.md`
-5. the active phase document
-6. `docs/DECISIONS.md`
-7. the latest `CHANGELOG.md` entry
+Phase 00 remains active. Batch 00.3 is next after this repair receives audit approval. Phase 01, bootstrap migration, seed content, environment deletion, and Contentful model mutation remain out of scope.

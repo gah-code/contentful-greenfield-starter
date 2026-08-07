@@ -1,25 +1,43 @@
 # Security and Secrets
 
-Status: Phase 00 active  
-Owner: Phase 00 - Baseline + New Environment Setup
+Status: Phase 00 active
+Owner: Phase 00 — Baseline + Two-Environment Setup
 
-## Secret Handling
+## Secret Boundaries
 
-- Never commit `.env.local`, `.env`, or real Contentful tokens.
-- Keep committed examples limited to variable names and empty values.
-- Do not print, paste, summarize, or log token values.
-- Do not pass management tokens as command-line arguments.
-- Use environment variables or local CLI authentication state for Contentful authentication.
+- Keep real Contentful values in ignored local files such as `.env.local`.
+- Keep `.env.example` limited to variable names and safe placeholders.
+- Do not commit management, delivery, preview, personal access, or OAuth tokens.
+- Do not expose Contentful secret values through browser-prefixed environment variables.
+- Do not print secret values in helper scripts, logs, docs, screenshots, or paste-back summaries.
 
-## Contentful Command Safety
+## CLI Boundaries
 
-- Use the locally installed Contentful CLI through `npx --no-install contentful` or the shared wrapper.
-- Run only read-only help/version/dependency checks during Batch 00.1-00.2 repair.
-- Do not run migrations, exports, imports, environment creation, or authentication in Batch 00.1-00.2 repair.
-- Do not target `master` with bootstrap, export, import, or verification wrapper scripts.
+- Use locally installed Contentful tooling only.
+- Prefer `npx --no-install contentful` or direct local binary execution.
+- Do not pass the Contentful management token as a command-line argument.
+- Pass credentials through environment state only, with values hidden from output.
+- Do not run authentication, environment mutation, migration, export, or import commands unless the current batch explicitly authorizes them.
 
-## Repository Safety
+## Environment Safety
 
-- `.gitignore` keeps `.env` and `.env.*` ignored while allowing `.env.example`.
-- Model snapshots and reports are ignored unless explicitly approved for tracking.
-- Future batches should use focused commits and avoid combining baseline, tooling, and model work in one change.
+Approved physical environments are `master` and `dev`.
+
+- `master` is the permanent protected baseline and must not receive bootstrap migrations, experimental schema work, or model imports during current phases.
+- `dev` is the single rotating sandbox for approved migration and model work.
+- Verification is a workflow state, not a persistent environment ID.
+- All migration and import scripts must reject `master`.
+
+## Current Risk Controls
+
+| Risk | Control |
+|---|---|
+| Accidental `master` mutation | Local wrappers reject `master` for mutation-oriented operations |
+| `dev` deletion before recoverability | Deletion requires committed migrations, verified snapshot, checksum, pre-deletion evidence, recovery procedure, and explicit human approval |
+| Stale three-environment documentation | Closeout and Phase 03 readiness include topology searches |
+| Token exposure | Local env files are ignored, CLI args omit tokens, browser prefixes are prohibited, and scripts print presence only |
+| Locale mismatch | Default locale is recorded in Phase 00 and checked before Phase 03 clean-room import |
+
+## Current Phase Boundary
+
+Batch 00.3 owns secret-safety and two-environment alignment verification. Batch 00.4 owns direct account, space, environment inventory, default locale, `master`, and `dev` evidence. Phase 01 remains deferred.

@@ -17,9 +17,11 @@ Start from a new space or a blank Contentful environment rather than adapting an
 
 ## ADR-002 — Migration First, Export Second
 
-Status: accepted
+Status: accepted; environment-target portion superseded by ADR-008
 
-Create the first model in `dev` through a migration, then export the approved model and import it into `verification`.
+Create the first model in `dev` through a migration, then export the approved model.
+
+Historical note: this ADR originally imported the approved model into a separate verification target. That environment topology is superseded by ADR-008. The migration-first and export-second sequencing remains accepted.
 
 ### Why
 
@@ -108,3 +110,51 @@ Do not rewrite Git history during Phase 00 repair. Record the deviation and keep
 
 - a repository owner explicitly approves history rewriting before wider collaboration
 - release or compliance requirements require a recreated baseline repository
+
+---
+
+## ADR-008 — Two-Environment Constraint and Serial Clean-Room Verification
+
+Status: accepted
+
+### Context
+
+Contentful Starter permits two total environments for this project.
+
+### Decision
+
+Use `master` + `dev` only.
+
+`master` is the permanent protected baseline and future release target. Bootstrap migration and experimental schema work never target `master`.
+
+`dev` is the single rotating sandbox for schema development, model review, editorial QA, and serial clean-room verification.
+
+Verification is a workflow state, not a persistent environment ID.
+
+### Phase 03
+
+Phase 03 will:
+
+- export the approved `dev` model as a model-only snapshot
+- prove recoverability through snapshot verification, checksum, runtime metadata, pre-deletion evidence, committed migrations, and recovery procedure
+- confirm `dev` contains no irreplaceable content
+- require explicit human approval in the active session before deletion
+- delete `dev`
+- recreate `dev` from protected `master`
+- import the model-only snapshot into fresh `dev`
+- compare rebuilt `dev` to pre-deletion evidence
+- continue using verified `dev`
+
+Seed content waits until serial clean-room verification succeeds.
+
+### Supersedes
+
+The prior `master`/`dev`/`verification` architecture.
+
+### Why
+
+- fits the two-environment project constraint
+- preserves `master` as the protected baseline
+- keeps the operating model simple
+- still proves snapshot portability before seed content
+- makes destructive `dev` deletion depend on recoverability evidence and explicit approval

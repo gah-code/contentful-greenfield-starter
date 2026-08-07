@@ -9,7 +9,7 @@ This is the canonical surface for content inventory, ownership, editorial intent
 
 ## Current Phase 00 Boundary
 
-Batch 00.1-00.2 only creates the tracking surface. It does not approve final content strategy, seed content, route content requirements, or a page-composition model.
+Phase 00 — Baseline + Two-Environment Setup only creates the repository, tooling, environment strategy, and evidence surface. Batch 00.3 is next and does not approve final content strategy, seed content, route content requirements, or a page-composition model.
 
 ## Initial Content Domains
 

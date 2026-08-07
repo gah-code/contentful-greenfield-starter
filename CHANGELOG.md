@@ -32,3 +32,11 @@ All meaningful project changes should be recorded here.
 - Renamed the active Phase 00 document to `docs/phases/PHASE-00-BASELINE-AND-ENVIRONMENT-SETUP.md`.
 - Updated Contentful CLI wrappers to use the local `npx --no-install contentful` command surface.
 - Removed management-token command-line argument construction from Contentful wrappers.
+- Aligned Phase 00 documentation and helper scripts to the approved two-environment architecture.
+- Removed the active separate target-environment contract from `.env.example`, environment checks, and model import.
+- Made serial clean-room `dev` reconstruction the Phase 03 verification model.
+- Recorded that no Contentful environments were changed and bootstrap migration remains blocked during this repository repair.
+
+### Security
+
+- Documented risk controls for accidental `master` mutation, premature `dev` deletion, stale topology instructions, token exposure, and locale mismatch.
