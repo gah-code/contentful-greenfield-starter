@@ -11,17 +11,28 @@ This tracker records current project truth. Do not mark future batches complete 
 - [x] Batch 00.1 — Repository and Project Truth
 - [x] Batch 00.2 — Runtime and Contentful Tooling
 
-#### Next
+#### Active
 
 ##### Batch 00.3 — Two-Environment Strategy Alignment + Secret Safety
 
-- [ ] Verify environment-variable contract
-- [ ] Verify ignored local secret handling
-- [ ] Verify management, delivery, and preview token separation
-- [ ] Verify no browser-exposed secret prefixes
-- [ ] Verify scripts report secret presence only
-- [ ] Verify two-environment documentation and script boundaries
-- [ ] Record security evidence
+Status: PARTIAL — local `.env.local` file is missing; do not submit for review until it exists.
+
+- [x] Verify two-environment strategy remains aligned
+- [x] Check `.env.local` presence without reading contents
+- [ ] Provide local `.env.local` without committing values
+- [x] Verify `.env.local` ignore rule
+- [x] Verify `.env.local` is untracked
+- [x] Verify `.env.local` has no Git history
+- [x] Verify tracked env-file inventory
+- [x] Verify `.env.example` placeholders
+- [x] Verify management, delivery, and preview credential variable separation
+- [x] Verify no browser-exposed secret prefixes
+- [x] Verify Contentful wrappers do not pass token values through CLI arguments
+- [x] Verify scripts report secret presence only and do not dump the full environment
+- [x] Review tracked credential references
+- [x] Verify project skill secret rules
+- [x] Align security documentation
+- [ ] Submit Batch 00.3 for external validation after the local `.env.local` gap is resolved
 
 #### Later
 
@@ -87,7 +98,7 @@ This tracker records current project truth. Do not mark future batches complete 
 ## Current Boundaries
 
 - Phase 00 remains active.
-- Batch 00.3 remains next, not complete.
+- Batch 00.3 is active but partial; it is not approved and not ready for Batch 00.4.
 - Phase 01 remains deferred.
 - Bootstrap migration remains blocked and not run in this repair.
 - No Contentful environment mutation is authorized in Phase 00 documentation alignment repair.

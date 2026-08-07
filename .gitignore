@@ -1,14 +1,20 @@
+# Dependencies
 node_modules/
+
+# Local environment files / secrets
 .env
 .env.*
+.env.local
 !.env.example
 
+# Contentful generated artifacts
 content-model/snapshots/*.json
 !content-model/snapshots/.gitkeep
 
 content-model/reports/*.json
 content-model/reports/*.log
 
+# OS / build output
 .DS_Store
 dist/
 build/

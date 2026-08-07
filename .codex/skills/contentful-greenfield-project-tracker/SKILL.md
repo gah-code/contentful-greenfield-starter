@@ -29,7 +29,7 @@ Documentation is part of the build.
 - Phase 00 active.
 - Batch 00.1 approved.
 - Batch 00.2 approved.
-- Batch 00.3 next.
+- Batch 00.3 active for secret safety; partial until local `.env.local` exists and external validation approves it.
 - Phase 01 deferred.
 - Bootstrap blocked.
 
@@ -46,6 +46,19 @@ Do not leave active instructions for:
 - persistent verification environment
 - create verification
 - delete verification
+
+## Secret Safety Rules
+
+- Never print token values.
+- Never commit `.env.local`.
+- Never read `.env.local` unless the user explicitly authorizes that in a separate request.
+- Never pass management, delivery, or preview tokens through CLI arguments.
+- Never use browser-public prefixes for sensitive values.
+- Use locally installed CLI tooling only.
+- Verify secret presence without exposing values.
+- Stop if credential exposure is suspected.
+- Recommend rotation or revocation after suspected exposure.
+- Do not rewrite Git history unless the repository owner explicitly approves it.
 
 ## Serial Verification
 

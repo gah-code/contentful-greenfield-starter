@@ -15,11 +15,11 @@ Phase 00 does not create content types, seed content, frontend integrations, or 
 |---|---|---|---|
 | 00.1 | Repository and Project Truth | Approved | Repository identity, canonical docs, git history deviation |
 | 00.2 | Runtime and Contentful Tooling | Approved | Node/npm declarations, local Contentful packages, CLI wrapper safety |
-| 00.3 | Two-Environment Strategy Alignment + Secret Safety | Next | Environment-variable contract, secret boundaries, stale topology search |
+| 00.3 | Two-Environment Strategy Alignment + Secret Safety | Partial | Repository secret-safety checks complete; local `.env.local` file missing |
 | 00.4 | Contentful Space and Environment Verification | Later | Account, space, locale, `master`, `dev`, inventory, permissions |
 | 00.5 | Phase 00 Closeout | Later | Final risk review, evidence table, Phase 01 readiness decision |
 
-Do not mark Batch 00.3 complete until a follow-up audit records direct evidence.
+Do not mark Batch 00.3 approved until external validation records direct evidence. Do not submit it for review until the local `.env.local` presence gap is resolved.
 
 ## Repository and Runtime Evidence
 
@@ -67,6 +67,65 @@ Do not claim these checks have passed until direct evidence is recorded.
 - Secret values are not printed.
 - Migration and import scripts reject `master`.
 - Import targets the configured active environment, which must be `dev` for current development and future Phase 03 fresh-dev verification.
+
+## Batch 00.3 Secret-Safety Evidence
+
+### Objective
+
+Verify local secret-handling controls without reading credential values or touching Contentful.
+
+### Checks Performed
+
+- checked whether `.env.local` exists without reading it
+- verified `.env.local` is ignored
+- verified `.env.local` is untracked
+- verified `.env.local` has no Git history
+- verified tracked env-file inventory
+- verified `.env.example` placeholder contract
+- verified management, delivery, and preview credential variable names are separate
+- verified no browser-public sensitive credential prefix appears in tracked files
+- verified Contentful helper scripts do not pass token values through CLI arguments
+- verified helper scripts do not print secret values or dump the full environment
+- reviewed tracked credential references
+- verified two-environment regression search remains clean except prohibitive skill wording
+
+### Safe Evidence Collected
+
+Batch 00.3 validates repository controls and variable contracts only. It does not inspect or validate actual token values.
+
+### Files Changed
+
+- `TASKS.md`
+- `docs/PROJECT-STATE.md`
+- `docs/phases/PHASE-00-BASELINE-AND-ENVIRONMENT-SETUP.md`
+- `docs/system/SECURITY-AND-SECRETS.md`
+- `CHANGELOG.md`
+- `.codex/skills/contentful-greenfield-project-tracker/SKILL.md`
+
+### Security Boundaries
+
+- `.env.local` contents were not opened, grepped, sourced, hashed, parsed, or printed.
+- No broad environment dump was run.
+- No Contentful authentication or live API call was run.
+- No migration, export, import, environment operation, or seed operation was run.
+
+### Known Limitations
+
+- `.env.local` is missing locally.
+- Actual token values, equality/difference, validity, scopes, and live Contentful access are not verified.
+- Contentful account, space, environment inventory, `master`, `dev`, and default locale evidence remain pending Batch 00.4.
+
+### Warnings
+
+Batch 00.3 is not ready for external review until `.env.local` exists locally. Values must remain untracked and must not be inspected by this batch.
+
+### Blockers
+
+No suspected credential exposure was found. The missing `.env.local` file is a readiness gap, not a credential exposure.
+
+### Review Status
+
+PARTIAL — not ready for external validation.
 
 ## Phase 03 Dependency
 

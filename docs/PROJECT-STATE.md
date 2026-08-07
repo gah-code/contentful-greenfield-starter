@@ -2,8 +2,8 @@
 
 Project: `contentful-greenfield-starter`
 Current phase: Phase 00 — Baseline + Two-Environment Setup
-Current work item: Pre-Batch 00.3 alignment maintenance
-Next implementation batch: Batch 00.3 — Two-Environment Strategy Alignment + Secret Safety
+Current work item: Batch 00.3 — Two-Environment Strategy Alignment + Secret Safety
+Next implementation gate: resolve local `.env.local` presence gap before external Batch 00.3 validation
 
 ## Phase 00 Batch State
 
@@ -11,7 +11,7 @@ Next implementation batch: Batch 00.3 — Two-Environment Strategy Alignment + S
 |---|---|---|---|
 | 00.1 | Repository and Project Truth | Approved | Repository identity, canonical docs, and initial deviation recorded |
 | 00.2 | Runtime and Contentful Tooling | Approved | Runtime/package declarations and local CLI wrapper documented |
-| 00.3 | Two-Environment Strategy Alignment + Secret Safety | Next | Not complete; this repair prepares the audit surface |
+| 00.3 | Two-Environment Strategy Alignment + Secret Safety | Partial | Repository secret-safety controls verified; local `.env.local` file is missing |
 | 00.4 | Contentful Space and Environment Verification | Later | Account, space, locale, and environment evidence pending |
 | 00.5 | Phase 00 Closeout | Later | Requires all Phase 00 evidence and risk review |
 
@@ -43,6 +43,37 @@ These items are architecture expectations or pending facts until Batch 00.4 reco
 | `dev` source | Pending |
 | Environment inventory | Pending |
 | Permissions/token readiness | Pending |
+
+## Batch 00.3 Secret-Safety Evidence
+
+Verified repository controls:
+
+- `.env.local` was checked for presence without reading contents.
+- `.env.local` is ignored by Git.
+- `.env.local` is untracked.
+- `.env.local` has no Git history.
+- tracked environment-file inventory is limited to `.env.example`.
+- `.env.example` uses placeholder variable names only.
+- management, delivery, and preview credentials use separate variable names.
+- no browser-public sensitive credential prefix was found in tracked files.
+- Contentful helper scripts do not pass token values through CLI arguments.
+- Contentful helper scripts do not print token values or dump the full environment.
+- tracked credential references were reviewed without exposing values.
+
+Current Batch 00.3 gap:
+
+- `.env.local` is missing locally. Repository policy expects contributors to create it from `.env.example`, but this batch did not create credentials or inspect actual values.
+
+Not verified in Batch 00.3:
+
+- actual credential values
+- token equality or difference
+- token validity
+- token scopes
+- Contentful authentication
+- Contentful space access
+- live `master` or `dev` state
+- default locale
 
 ## Runtime and Tooling Evidence
 
@@ -91,10 +122,10 @@ No deletion automation is part of this repair.
 | Accidental `master` mutation | Open | Migration/import scripts reject `master` |
 | `dev` deletion before recoverability | Open | Require committed migrations, snapshot, checksum, pre-deletion evidence, recovery procedure, and explicit human approval |
 | Stale three-environment documentation | Open | Search for obsolete topology terms during closeout and Phase 03 readiness |
-| Token exposure | Open | Ignore local env files, avoid CLI token args, avoid browser prefixes, and print presence only |
+| Token exposure | Controlled in repository; local file missing | Ignore local env files, avoid CLI token args, avoid browser prefixes, and print presence only |
 | Locale mismatch | Open | Record default locale in Phase 00 and check before Phase 03 clean-room import |
 | Historical baseline commit mixed CMS/model artifacts | Accepted deviation | Do not rewrite history; use focused commits in future batches |
 
 ## Current Phase Boundary
 
-Phase 00 remains active. Batch 00.3 is next after this repair receives audit approval. Phase 01, bootstrap migration, seed content, environment deletion, and Contentful model mutation remain out of scope.
+Phase 00 remains active. Batch 00.3 is partial until the local `.env.local` presence gap is resolved and external validation approves it. Phase 01, Batch 00.4, bootstrap migration, seed content, environment deletion, and Contentful model mutation remain out of scope.
