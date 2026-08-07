@@ -15,11 +15,10 @@ This tracker records current project truth. Do not mark future batches complete 
 
 ##### Batch 00.3 — Two-Environment Strategy Alignment + Secret Safety
 
-Status: PARTIAL — local `.env.local` file is missing; do not submit for review until it exists.
+Status: IN REVIEW — implementation complete and awaiting external validation.
 
 - [x] Verify two-environment strategy remains aligned
-- [x] Check `.env.local` presence without reading contents
-- [ ] Provide local `.env.local` without committing values
+- [x] Verify local `.env.local` exists without reading contents
 - [x] Verify `.env.local` ignore rule
 - [x] Verify `.env.local` is untracked
 - [x] Verify `.env.local` has no Git history
@@ -32,7 +31,7 @@ Status: PARTIAL — local `.env.local` file is missing; do not submit for review
 - [x] Review tracked credential references
 - [x] Verify project skill secret rules
 - [x] Align security documentation
-- [ ] Submit Batch 00.3 for external validation after the local `.env.local` gap is resolved
+- [x] Mark Batch 00.3 in review for external validation
 
 #### Later
 
@@ -98,7 +97,7 @@ Status: PARTIAL — local `.env.local` file is missing; do not submit for review
 ## Current Boundaries
 
 - Phase 00 remains active.
-- Batch 00.3 is active but partial; it is not approved and not ready for Batch 00.4.
+- Batch 00.3 is in review; it is not approved and Batch 00.4 remains later.
 - Phase 01 remains deferred.
 - Bootstrap migration remains blocked and not run in this repair.
 - No Contentful environment mutation is authorized in Phase 00 documentation alignment repair.

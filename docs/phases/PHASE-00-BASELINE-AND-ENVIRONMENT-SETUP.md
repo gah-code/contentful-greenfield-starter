@@ -15,11 +15,11 @@ Phase 00 does not create content types, seed content, frontend integrations, or 
 |---|---|---|---|
 | 00.1 | Repository and Project Truth | Approved | Repository identity, canonical docs, git history deviation |
 | 00.2 | Runtime and Contentful Tooling | Approved | Node/npm declarations, local Contentful packages, CLI wrapper safety |
-| 00.3 | Two-Environment Strategy Alignment + Secret Safety | Partial | Repository secret-safety checks complete; local `.env.local` file missing |
+| 00.3 | Two-Environment Strategy Alignment + Secret Safety | In Review | Repository secret-safety checks complete; local `.env.local` presence verified without reading contents |
 | 00.4 | Contentful Space and Environment Verification | Later | Account, space, locale, `master`, `dev`, inventory, permissions |
 | 00.5 | Phase 00 Closeout | Later | Final risk review, evidence table, Phase 01 readiness decision |
 
-Do not mark Batch 00.3 approved until external validation records direct evidence. Do not submit it for review until the local `.env.local` presence gap is resolved.
+Do not mark Batch 00.3 approved until external validation records direct evidence.
 
 ## Repository and Runtime Evidence
 
@@ -77,6 +77,7 @@ Verify local secret-handling controls without reading credential values or touch
 ### Checks Performed
 
 - checked whether `.env.local` exists without reading it
+- verified `.env.local` is present locally
 - verified `.env.local` is ignored
 - verified `.env.local` is untracked
 - verified `.env.local` has no Git history
@@ -111,21 +112,20 @@ Batch 00.3 validates repository controls and variable contracts only. It does no
 
 ### Known Limitations
 
-- `.env.local` is missing locally.
 - Actual token values, equality/difference, validity, scopes, and live Contentful access are not verified.
 - Contentful account, space, environment inventory, `master`, `dev`, and default locale evidence remain pending Batch 00.4.
 
 ### Warnings
 
-Batch 00.3 is not ready for external review until `.env.local` exists locally. Values must remain untracked and must not be inspected by this batch.
+Batch 00.3 is ready for external review. `.env.local` values must remain untracked and must not be inspected by this batch.
 
 ### Blockers
 
-No suspected credential exposure was found. The missing `.env.local` file is a readiness gap, not a credential exposure.
+No suspected credential exposure was found.
 
 ### Review Status
 
-PARTIAL — not ready for external validation.
+IN REVIEW — awaiting external validation.
 
 ## Phase 03 Dependency
 

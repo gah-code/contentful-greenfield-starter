@@ -41,4 +41,4 @@ All meaningful project changes should be recorded here.
 
 - Documented risk controls for accidental `master` mutation, premature `dev` deletion, stale topology instructions, token exposure, and locale mismatch.
 - Documented Batch 00.3 secret-safety checks, credential-variable separation, CLI/logging boundaries, and the evidence limitation that actual token values/scopes are not verified.
-- Recorded the local `.env.local` presence gap without reading or creating credential values.
+- Verified local `.env.local` presence without reading credential values, while confirming the file remains ignored, untracked, and absent from filename history.

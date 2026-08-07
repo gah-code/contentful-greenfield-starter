@@ -29,7 +29,7 @@ Documentation is part of the build.
 - Phase 00 active.
 - Batch 00.1 approved.
 - Batch 00.2 approved.
-- Batch 00.3 active for secret safety; partial until local `.env.local` exists and external validation approves it.
+- Batch 00.3 in review for secret safety; awaiting external validation.
 - Phase 01 deferred.
 - Bootstrap blocked.
 
