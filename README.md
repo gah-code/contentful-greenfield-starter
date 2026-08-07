@@ -1,88 +1,245 @@
-# Personal Website CMS — Greenfield Contentful Starter
+# Contentful Greenfield Starter
 
-Repository: `contentful-greenfield-starter`
-Current phase: Phase 00 — Baseline + Two-Environment Setup
-Model target: 10 semantic content types
-CMS bootstrap direction: migration-created model -> model-only export -> serial clean-room verification in fresh `dev`
+A production-minded Contentful project showcasing how I design scalable CMS architecture for a personal website using semantic content models, safe environment workflows, migration-driven schema management, and CMS-agnostic frontend contracts.
 
-This repository is the planning, governance, and migration surface for a greenfield Contentful-backed personal website CMS.
+The repository demonstrates how I approach content systems with the same structure, documentation, and validation practices used in professional web and CMS environments.
 
-## Current Operating Rule
+![Status](https://img.shields.io/badge/status-active-success)
+![Phase](https://img.shields.io/badge/phase-00%20active-blue)
+![CMS](https://img.shields.io/badge/CMS-Contentful-2478CC)
+![Node](https://img.shields.io/badge/node-%3E%3D22-339933)
+![Model](https://img.shields.io/badge/content%20types-10%20semantic-555555)
 
-Content strategy before content models.
-Routes before templates.
-UI contracts before CMS data.
-Static fixtures before Contentful.
-Validation before closeout.
-Documentation is part of the build.
+> **Architecture North Star**
+>
+> Content strategy before content models.<br>
+> Routes before templates.<br>
+> UI contracts before CMS data.<br>
+> Static fixtures before Contentful.<br>
+> Validation before closeout.<br>
+> Documentation is part of the build.
+
+## Why This Project
+
+Contentful can model a personal website as a durable content system instead of a set of component-shaped database tables. This starter keeps editorial meaning separate from frontend implementation by modeling concepts such as projects, articles, experience, skills, navigation, and SEO metadata.
+
+The project also shows how enterprise CMS practices scale down cleanly: field IDs are governed as API contracts, model changes begin as migrations, snapshots support portability, secrets stay server-side, environments are explicit, and phase gates require evidence before closeout.
+
+## Project Status
+
+| Area | Current state |
+| --- | --- |
+| Phase | Phase 00 - Baseline + Two-Environment Setup |
+| Current batch | Batch 00.3 - Two-Environment Strategy Alignment + Secret Safety; in review pending external validation |
+| Content model | 10 semantic content types planned |
+| Environments | `master` + `dev` |
+| Bootstrap migration | Blocked until Phase 00 closes and Phase 02 authorizes it |
+| Phase 01 | Deferred until Phase 00 closes |
+
+> For canonical current state, see [docs/PROJECT-STATE.md](docs/PROJECT-STATE.md) and [TASKS.md](TASKS.md).
+
+## What This Repository Demonstrates
+
+- **Migration-first schema governance** - Content model evolution is represented through version-controlled migration intent.
+- **Semantic Contentful modeling** - Editorial concepts remain independent of React component implementation.
+- **Field-ID contract discipline** - Contentful field IDs are treated as long-lived API surfaces.
+- **Two-environment CMS safety** - `master` remains protected while `dev` acts as the single rotating sandbox.
+- **Model portability** - model-only snapshots support reproducible verification without replacing migration history.
+- **CMS-agnostic frontend boundaries** - raw Contentful response shapes stay outside presentational UI.
+- **Secret handling discipline** - management, delivery, and preview credentials remain separated and server-side.
+- **Evidence-based delivery** - phase progress depends on recorded repository, command, or CMS evidence.
+
+## Architecture Overview
+
+```mermaid
+flowchart LR
+    A[Content Strategy] --> B[Route Contract]
+    B --> C[Content Model Contract]
+    C --> D[Migration]
+    D --> E[Model Verification]
+    E --> F[Editorial QA]
+    F --> G[Frontend Contracts]
+    G --> H[Delivery + Preview]
+    H --> I[Release]
+```
+
+The implementation sequence keeps CMS decisions upstream of templates and keeps UI-facing contracts ahead of live Contentful integration. The full phase sequence, gates, and dependencies live in [docs/IMPLEMENTATION-ROADMAP.md](docs/IMPLEMENTATION-ROADMAP.md).
 
 ## Environment Strategy
 
-The approved physical Contentful topology uses exactly two environments:
+| Environment | Responsibility | Current Phase 00 posture |
+| --- | --- | --- |
+| `master` | Permanent protected baseline and future release target | Operational baseline evidence governed by Phase 00 |
+| `dev` | Single rotating sandbox for migration development, model review, and editorial QA | Current development environment; state verification pending Batch 00.4 |
 
-| Environment | Role | Phase 00 state |
-|---|---|---|
-| `master` | Permanent protected baseline and future release target | Blank-state verification pending Batch 00.4 |
-| `dev` | Single rotating sandbox for migrations, model review, and editorial QA | Operational state verification pending Batch 00.4 |
+Verification is a workflow state, not a third Contentful environment.
 
-Verification is a workflow state, not a persistent environment ID. During Phase 03, the approved model is exported from `dev`, recoverability evidence is recorded, explicit human approval is required, and `dev` is deleted and recreated from protected `master` before importing the model-only snapshot back into fresh `dev`.
+In Phase 03, the approved `dev` model will be exported as a model-only snapshot, recoverability evidence will be recorded, explicit human approval will be required, and `dev` will be recreated from protected `master` before the snapshot is imported back into fresh `dev`. See [docs/system/ENVIRONMENT-STRATEGY.md](docs/system/ENVIRONMENT-STRATEGY.md) for the complete procedure and destructive gate.
 
-Do not create a separate verification environment for this project.
+## Repository Operating System
 
-## Start Here
+```mermaid
+flowchart TD
+    README["README.md<br/>front door + setup"]
+    STATE["PROJECT-STATE.md<br/>current truth + handoff"]
+    TASKS["TASKS.md<br/>Now / Next / Later / Done"]
+    ROADMAP["IMPLEMENTATION-ROADMAP.md<br/>canonical phase order"]
+    DECISIONS["DECISIONS.md<br/>ADRs + tradeoffs"]
+    PHASE["Active phase document<br/>scope + evidence + closeout"]
+    VERIFY["Paste-back summary<br/>verification + warnings + next step"]
+    CHANGELOG["CHANGELOG.md<br/>meaningful completed changes"]
 
-1. Review the project state:
-   - `docs/PROJECT-STATE.md`
-   - `TASKS.md`
-   - `CHANGELOG.md`
-2. Copy `.env.example` to `.env.local` locally and fill only local secret values.
-3. Verify local runtime and tooling:
-   ```bash
-   node -v
-   npm -v
-   npx --no-install contentful --help
-   npm run cms:help
-   ```
-4. Review the environment contract:
-   - `docs/system/ENVIRONMENT-STRATEGY.md`
-   - `docs/system/SECURITY-AND-SECRETS.md`
-5. Do not run migrations, exports, imports, or environment commands until the relevant phase gate explicitly approves them.
+    README --> STATE
+    STATE --> TASKS
+    TASKS --> ROADMAP
+    DECISIONS --> TASKS
+    DECISIONS --> ROADMAP
+    DECISIONS --> PHASE
+    ROADMAP --> PHASE
+    PHASE --> VERIFY
+    VERIFY --> CHANGELOG
+    CHANGELOG --> STATE
+```
 
-## Safety Rules
+Each document owns a different part of project truth. The loop prevents implementation, planning, decisions, and closeout evidence from silently drifting apart.
 
-- Never target `master` during bootstrap, migration, model import, or experimental schema work.
-- Use `CONTENTFUL_ENVIRONMENT_ID=dev` for approved CMS development operations.
-- Never pass management tokens as command-line arguments.
-- Never expose management, delivery, or preview tokens through browser-prefixed environment variables.
-- Do not delete `dev` until Phase 03 recoverability evidence is complete and explicit human approval is given in the active session.
-- Do not treat planned architecture as verified Contentful evidence. Batch 00.4 owns account, space, locale, and environment verification.
+## Quick Start
+
+```bash
+git clone https://github.com/gah-code/contentful-greenfield-starter.git
+cd contentful-greenfield-starter
+
+nvm use
+npm install
+
+cp .env.example .env.local
+
+node -v
+npm -v
+npm run cms:help
+```
+
+> `.env.local` is intentionally ignored. Never commit Contentful credentials.
+
+## Project Commands
+
+| Command | Type | Purpose |
+| --- | --- | --- |
+| `npm run cms:help` | read-only | Inspect the locally installed Contentful CLI surface |
+| `npm run cms:login` | manual authentication | Authenticate with Contentful only when a phase explicitly allows it |
+| `npm run cms:env:check` | local safety check | Verify required env names are configured, target is `dev`, and secret values remain hidden |
+| `npm run cms:env:list` | gated live read | List Contentful environments when Batch 00.4 authorizes direct environment evidence |
+| `npm run cms:model:bootstrap` | mutating, blocked | Run the bootstrap migration only after Phase 00 closes and Phase 02 authorizes it |
+| `npm run cms:model:export` | gated live read | Export a model-only snapshot during the approved model verification phase |
+| `npm run cms:model:import:verify` | mutating, gated | Import a model-only snapshot into fresh `dev` during Phase 03 verification |
+| `npm run cms:model:verify:snapshot` | local read-only | Validate snapshot structure from a local model export file |
+
+Do not run authentication, migration, export, import, or environment commands unless the current phase gate authorizes them.
 
 ## Repository Structure
 
 ```text
-content-model/
-  migrations/
-  snapshots/
-  reports/
-
-docs/
-  content-model/
-  phases/
-  system/
-
-scripts/
-  contentful/
+.
+├── .codex/
+│   └── skills/
+├── content-model/
+│   ├── migrations/
+│   ├── snapshots/
+│   └── reports/
+├── docs/
+│   ├── content-model/
+│   ├── phases/
+│   └── system/
+├── scripts/
+│   └── contentful/
+├── README.md
+├── TASKS.md
+├── CHANGELOG.md
+└── package.json
 ```
 
-## Canonical Documents
+`.codex/` contains project-specific operating instructions, `content-model/` holds migrations and portable model artifacts, `docs/` owns canonical planning and architecture truth, and `scripts/` wraps Contentful CLI operations behind local safety checks.
 
-- `docs/PROJECT-STATE.md` — current truth surface
-- `TASKS.md` — phase and batch tracker
-- `docs/DECISIONS.md` — architectural decisions
-- `docs/IMPLEMENTATION-ROADMAP.md` — phase plan
-- `docs/phases/PHASE-00-BASELINE-AND-ENVIRONMENT-SETUP.md` — active Phase 00 requirements
-- `docs/system/ENVIRONMENT-STRATEGY.md` — two-environment operating model
-- `docs/system/SECURITY-AND-SECRETS.md` — secret and CLI boundaries
-- `docs/content-model/CONTENT-TYPE-LEDGER.md` — semantic content-type ledger
-- `docs/content-model/FIELD-ID-LEDGER.md` — field ID contract ledger
-- `docs/content-model/REFERENCE-MAP.md` — reference topology
+## Roadmap
+
+| Phase | Focus |
+| --- | --- |
+| 00 | Baseline + Two-Environment Setup ← current |
+| 01 | Content Strategy + Route Contract |
+| 02 | Content Model Contract + Bootstrap Migration |
+| 03 | Model Export + Serial Clean-Room Verification |
+| 04 | Editorial QA + Model Freeze |
+| 05 | Representative Seed Content |
+| 06 | Frontend Contracts + Adapter Boundary |
+| 07 | Delivery Integration |
+| 08 | Preview + Editorial Workflow |
+| 09 | Quality Gates + Release |
+
+See [docs/IMPLEMENTATION-ROADMAP.md](docs/IMPLEMENTATION-ROADMAP.md) for full gates and dependencies.
+
+## Content Model Direction
+
+The v1 target is 10 semantic content types:
+
+`seoMetadata`, `socialLink`, `navigationItem`, `siteSettings`, `personProfile`, `project`, `article`, `experienceItem`, `skill`, and `skillGroup`.
+
+The model represents editorial concepts rather than React components. Content type ownership lives in [docs/content-model/CONTENT-TYPE-LEDGER.md](docs/content-model/CONTENT-TYPE-LEDGER.md), field contracts live in [docs/content-model/FIELD-ID-LEDGER.md](docs/content-model/FIELD-ID-LEDGER.md), and references live in [docs/content-model/REFERENCE-MAP.md](docs/content-model/REFERENCE-MAP.md).
+
+## Documentation
+
+### Current State
+
+- [docs/PROJECT-STATE.md](docs/PROJECT-STATE.md) - current truth and handoff state
+- [TASKS.md](TASKS.md) - Now / Next / Later / Done tracker
+- [CHANGELOG.md](CHANGELOG.md) - meaningful completed changes
+
+### Architecture
+
+- [docs/DECISIONS.md](docs/DECISIONS.md) - ADRs and tradeoffs
+- [docs/IMPLEMENTATION-ROADMAP.md](docs/IMPLEMENTATION-ROADMAP.md) - canonical phase sequence
+- [docs/system/ENVIRONMENT-STRATEGY.md](docs/system/ENVIRONMENT-STRATEGY.md) - approved two-environment model
+- [docs/system/SECURITY-AND-SECRETS.md](docs/system/SECURITY-AND-SECRETS.md) - secret and CLI boundaries
+- [docs/system/CONTENT-STRATEGY.md](docs/system/CONTENT-STRATEGY.md) - pending content inventory surface
+- [docs/system/ROUTE-CONTRACT.md](docs/system/ROUTE-CONTRACT.md) - pending route and adapter contract surface
+
+### Content Model
+
+- [docs/content-model/CONTENT-TYPE-LEDGER.md](docs/content-model/CONTENT-TYPE-LEDGER.md) - semantic content-type ledger
+- [docs/content-model/FIELD-ID-LEDGER.md](docs/content-model/FIELD-ID-LEDGER.md) - field ID contract ledger
+- [docs/content-model/REFERENCE-MAP.md](docs/content-model/REFERENCE-MAP.md) - proposed reference topology
+
+### Active Phase
+
+- [docs/phases/PHASE-00-BASELINE-AND-ENVIRONMENT-SETUP.md](docs/phases/PHASE-00-BASELINE-AND-ENVIRONMENT-SETUP.md) - Phase 00 scope, evidence, boundaries, and closeout requirements
+
+## Safety and Governance
+
+- Never bootstrap, import, or experiment against `master`.
+- Keep `.env.local` ignored, local, and untracked.
+- Never expose management, delivery, or preview credentials to browser code.
+- Never pass secrets in command-line arguments.
+- Treat migrations as canonical model history.
+- Treat snapshots as portability evidence, not schema ownership.
+- Require recoverability evidence and explicit human approval before destructive `dev` rotation.
+- Mark phase work complete only when evidence exists, not when intent is documented.
+
+See [docs/system/SECURITY-AND-SECRETS.md](docs/system/SECURITY-AND-SECRETS.md), [docs/system/ENVIRONMENT-STRATEGY.md](docs/system/ENVIRONMENT-STRATEGY.md), and [docs/DECISIONS.md](docs/DECISIONS.md) for the governing rules.
+
+## Working on This Repository
+
+1. Read [docs/PROJECT-STATE.md](docs/PROJECT-STATE.md).
+2. Read [TASKS.md](TASKS.md).
+3. Read the active phase document.
+4. Inspect relevant ADRs and system docs.
+5. Make the smallest approved change.
+6. Run the allowed verification.
+7. Record evidence.
+8. Update truth surfaces only when the gate is actually satisfied.
+
+## Engineering Themes
+
+This project highlights Contentful architecture, content modeling, migration governance, WebOps discipline, frontend/CMS separation, secret safety, technical documentation, SEO-ready content architecture, and editorial workflow design.
+
+## License
+
+The license file declares this repository under the [MIT License](LICENSE).
