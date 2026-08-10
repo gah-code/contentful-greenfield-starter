@@ -29,7 +29,9 @@ Documentation is part of the build.
 - Phase 00 active.
 - Batch 00.1 approved.
 - Batch 00.2 approved.
-- Batch 00.3 in review for secret safety; awaiting external validation.
+- Batch 00.3 approved.
+- Batch 00.4 next.
+- Batch 00.5 later.
 - Phase 01 deferred.
 - Bootstrap blocked.
 

@@ -2,8 +2,8 @@
 
 Project: `contentful-greenfield-starter`
 Current phase: Phase 00 — Baseline + Two-Environment Setup
-Current work item: Batch 00.3 — Two-Environment Strategy Alignment + Secret Safety
-Next implementation gate: external Batch 00.3 validation
+Current work item: Batch 00.4 — Contentful Space and Environment Verification
+Next implementation gate: Batch 00.4 live Contentful verification
 
 ## Phase 00 Batch State
 
@@ -11,8 +11,8 @@ Next implementation gate: external Batch 00.3 validation
 |---|---|---|---|
 | 00.1 | Repository and Project Truth | Approved | Repository identity, canonical docs, and initial deviation recorded |
 | 00.2 | Runtime and Contentful Tooling | Approved | Runtime/package declarations and local CLI wrapper documented |
-| 00.3 | Two-Environment Strategy Alignment + Secret Safety | In Review | Repository secret-safety controls verified; local `.env.local` presence verified without reading contents |
-| 00.4 | Contentful Space and Environment Verification | Later | Account, space, locale, and environment evidence pending |
+| 00.3 | Two-Environment Strategy Alignment + Secret Safety | Approved | External validation passed; repository secret-safety controls verified without reading `.env.local` contents |
+| 00.4 | Contentful Space and Environment Verification | Next | Account, space, locale, and environment evidence pending |
 | 00.5 | Phase 00 Closeout | Later | Requires all Phase 00 evidence and risk review |
 
 Phase 01 remains deferred. Bootstrap migration remains blocked and not run. Seed content has not started.
@@ -45,6 +45,8 @@ These items are architecture expectations or pending facts until Batch 00.4 reco
 | Permissions/token readiness | Pending |
 
 ## Batch 00.3 Secret-Safety Evidence
+
+External validation: PASS. Batch 00.3 is approved. No secret exposure was detected. Live Contentful verification remains deferred to Batch 00.4.
 
 Verified repository controls:
 
@@ -125,4 +127,4 @@ No deletion automation is part of this repair.
 
 ## Current Phase Boundary
 
-Phase 00 remains active. Batch 00.3 is in review until external validation approves it. Phase 01, Batch 00.4, bootstrap migration, seed content, environment deletion, and Contentful model mutation remain out of scope.
+Phase 00 remains active. Batch 00.3 is approved, Batch 00.4 is next, and Batch 00.5 remains later. Phase 01, bootstrap migration, seed content, environment deletion, and Contentful model mutation remain out of scope.

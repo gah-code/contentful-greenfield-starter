@@ -11,11 +11,9 @@ This tracker records current project truth. Do not mark future batches complete 
 - [x] Batch 00.1 — Repository and Project Truth
 - [x] Batch 00.2 — Runtime and Contentful Tooling
 
-#### Active
-
 ##### Batch 00.3 — Two-Environment Strategy Alignment + Secret Safety
 
-Status: IN REVIEW — implementation complete and awaiting external validation.
+Status: APPROVED — external validation passed; live Contentful verification remains deferred to Batch 00.4.
 
 - [x] Verify two-environment strategy remains aligned
 - [x] Verify local `.env.local` exists without reading contents
@@ -32,8 +30,9 @@ Status: IN REVIEW — implementation complete and awaiting external validation.
 - [x] Verify project skill secret rules
 - [x] Align security documentation
 - [x] Mark Batch 00.3 in review for external validation
+- [x] Record external validation approval
 
-#### Later
+#### Next
 
 ##### Batch 00.4 — Contentful Space and Environment Verification
 
@@ -97,7 +96,8 @@ Status: IN REVIEW — implementation complete and awaiting external validation.
 ## Current Boundaries
 
 - Phase 00 remains active.
-- Batch 00.3 is in review; it is not approved and Batch 00.4 remains later.
+- Batch 00.3 is approved and Batch 00.4 is next.
+- Batch 00.5 remains later.
 - Phase 01 remains deferred.
 - Bootstrap migration remains blocked and not run in this repair.
 - No Contentful environment mutation is authorized in Phase 00 documentation alignment repair.

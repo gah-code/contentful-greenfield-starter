@@ -15,11 +15,11 @@ Phase 00 does not create content types, seed content, frontend integrations, or 
 |---|---|---|---|
 | 00.1 | Repository and Project Truth | Approved | Repository identity, canonical docs, git history deviation |
 | 00.2 | Runtime and Contentful Tooling | Approved | Node/npm declarations, local Contentful packages, CLI wrapper safety |
-| 00.3 | Two-Environment Strategy Alignment + Secret Safety | In Review | Repository secret-safety checks complete; local `.env.local` presence verified without reading contents |
-| 00.4 | Contentful Space and Environment Verification | Later | Account, space, locale, `master`, `dev`, inventory, permissions |
+| 00.3 | Two-Environment Strategy Alignment + Secret Safety | Approved | External validation passed; repository secret-safety checks complete without reading `.env.local` contents |
+| 00.4 | Contentful Space and Environment Verification | Next | Account, space, locale, `master`, `dev`, inventory, permissions |
 | 00.5 | Phase 00 Closeout | Later | Final risk review, evidence table, Phase 01 readiness decision |
 
-Do not mark Batch 00.3 approved until external validation records direct evidence.
+Batch 00.3 approval is limited to repository secret-safety controls and two-environment documentation alignment.
 
 ## Repository and Runtime Evidence
 
@@ -94,6 +94,8 @@ Verify local secret-handling controls without reading credential values or touch
 
 Batch 00.3 validates repository controls and variable contracts only. It does not inspect or validate actual token values.
 
+External validation: PASS. Batch 00.3 approved. No secret exposure detected. Live Contentful verification remains deferred to Batch 00.4.
+
 ### Files Changed
 
 - `TASKS.md`
@@ -117,7 +119,7 @@ Batch 00.3 validates repository controls and variable contracts only. It does no
 
 ### Warnings
 
-Batch 00.3 is ready for external review. `.env.local` values must remain untracked and must not be inspected by this batch.
+`.env.local` values must remain untracked and must not be inspected by this batch. Live Contentful access, token validity, token scopes, environment state, and default locale remain pending Batch 00.4.
 
 ### Blockers
 
@@ -125,7 +127,7 @@ No suspected credential exposure was found.
 
 ### Review Status
 
-IN REVIEW — awaiting external validation.
+APPROVED — external validation passed.
 
 ## Phase 03 Dependency
 

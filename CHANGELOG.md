@@ -36,9 +36,11 @@ All meaningful project changes should be recorded here.
 - Removed the active separate target-environment contract from `.env.example`, environment checks, and model import.
 - Made serial clean-room `dev` reconstruction the Phase 03 verification model.
 - Recorded that no Contentful environments were changed and bootstrap migration remains blocked during this repository repair.
+- Recorded Batch 00.3 external approval and moved Batch 00.4 to Next.
 
 ### Security
 
 - Documented risk controls for accidental `master` mutation, premature `dev` deletion, stale topology instructions, token exposure, and locale mismatch.
 - Documented Batch 00.3 secret-safety checks, credential-variable separation, CLI/logging boundaries, and the evidence limitation that actual token values/scopes are not verified.
 - Verified local `.env.local` presence without reading credential values, while confirming the file remains ignored, untracked, and absent from filename history.
+- Recorded that Batch 00.3 secret-safety work was externally validated and approved.

@@ -30,7 +30,8 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Area | Current state |
 | --- | --- |
 | Phase | Phase 00 - Baseline + Two-Environment Setup |
-| Current batch | Batch 00.3 - Two-Environment Strategy Alignment + Secret Safety; in review pending external validation |
+| Current batch | Batch 00.4 - Contentful Space and Environment Verification; next |
+| Recently approved | Batch 00.3 - Two-Environment Strategy Alignment + Secret Safety |
 | Content model | 10 semantic content types planned |
 | Environments | `master` + `dev` |
 | Bootstrap migration | Blocked until Phase 00 closes and Phase 02 authorizes it |
