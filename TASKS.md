@@ -58,11 +58,11 @@ Status: APPROVED — project space, two-environment capacity, clean baseline sta
 - [x] Temporary export evidence removed from repository
 - [x] Evidence limitations recorded
 
-#### In Review
+#### Approved
 
 ##### Batch 00.5 — Phase 00 Closeout
 
-Status: IN REVIEW — Phase 00 closeout evidence is prepared for external validation.
+Status: APPROVED — external validation passed; Phase 00 is complete.
 
 - [x] Batch 00.1 approved
 - [x] Batch 00.2 approved
@@ -84,9 +84,9 @@ Status: IN REVIEW — Phase 00 closeout evidence is prepared for external valida
 - [x] architecture regression search passed
 - [x] script syntax verification passed
 - [x] canonical truth surfaces aligned
-- [ ] external Phase 00 / Batch 00.5 validation
+- [x] external Phase 00 / Batch 00.5 validation
 
-## Next After External Phase 00 Approval
+## Next
 
 ### Phase 01 — Content Strategy + Route Contract
 
@@ -94,6 +94,7 @@ Status: IN REVIEW — Phase 00 closeout evidence is prepared for external valida
 - [ ] Confirm route ownership
 - [ ] Confirm frontend/CMS boundaries
 - [ ] Keep static fixtures until parity work is explicitly approved
+- [ ] Do not begin Phase 02 bootstrap migration until Phase 01 approval is recorded
 
 ## Deferred
 
@@ -132,9 +133,9 @@ Status: IN REVIEW — Phase 00 closeout evidence is prepared for external valida
 
 ## Current Boundaries
 
-- Phase 00 is closeout in review.
-- Batch 00.1, Batch 00.2, Batch 00.3, and Batch 00.4 are approved; Batch 00.5 is in review.
-- Phase 01 is next after external Phase 00 approval.
+- Phase 00 is complete.
+- Batch 00.1, Batch 00.2, Batch 00.3, Batch 00.4, and Batch 00.5 are approved.
+- Phase 01 is next.
 - Bootstrap migration remains blocked and not run.
 - Seed content remains not started.
-- No Contentful environment mutation is authorized in Phase 00 closeout.
+- No Contentful environment mutation is authorized by Phase 00 final approval.

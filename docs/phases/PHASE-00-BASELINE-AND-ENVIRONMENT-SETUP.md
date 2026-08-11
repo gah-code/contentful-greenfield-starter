@@ -1,6 +1,6 @@
 # Phase 00 — Baseline + Two-Environment Setup
 
-Status: closeout in review
+Status: complete
 Owner: repository maintainer
 
 ## Outcome
@@ -17,7 +17,7 @@ Phase 00 does not create content types, seed content, frontend integrations, or 
 | 00.2 | Runtime and Contentful Tooling | Approved | Node/npm declarations, local Contentful packages, CLI wrapper safety |
 | 00.3 | Two-Environment Strategy Alignment + Secret Safety | Approved | External validation passed; repository secret-safety checks complete without reading `.env.local` contents |
 | 00.4 | Contentful Space and Environment Verification | Approved | Project space, Starter capacity, `master` + `dev`, clean state, and locale compatibility |
-| 00.5 | Phase 00 Closeout | In Review | Final risk review, evidence table, Phase 01 readiness decision |
+| 00.5 | Phase 00 Closeout | Approved | External validation passed; final risk review, evidence table, and Phase 01 readiness decision approved |
 
 Batch 00.3 approval is limited to repository secret-safety controls and two-environment documentation alignment.
 
@@ -147,7 +147,7 @@ No destructive `dev` deletion or recreation is implemented in Phase 00.
 
 ## Batch 00.5 — Phase 00 Closeout
 
-Status: IN REVIEW
+Status: APPROVED
 
 Approved prior batches:
 
@@ -181,9 +181,9 @@ Deferred scope:
 
 Evidence limitations:
 
-- Batch 00.5 does not re-run Contentful live reads or mutate Contentful state.
+- Batch 00.5 did not re-run Contentful live reads or mutate Contentful state.
 - Actual token values, token validity, and token scopes remain outside closeout evidence.
-- External validation remains pending and owns final Phase 00 approval.
+- External validation passed and approved final Phase 00 closeout.
 
 Candidate closeout statement:
 
@@ -191,7 +191,7 @@ Phase 00 established a safe, evidence-backed foundation for `contentful-greenfie
 
 The repository now has verified runtime/tooling, secret handling, a protected blank `master` environment, a clean `dev` sandbox, and matching `en-US` locale configuration.
 
-The project is ready for Phase 01 only after external Phase 00 closeout approval.
+The project is ready for Phase 01.
 
 ## Historical Baseline Deviation
 
@@ -208,4 +208,4 @@ Phase 00 closes only after:
 3. Batch 00.5 records final risks and confirms Phase 01 readiness.
 4. `docs/PROJECT-STATE.md`, `TASKS.md`, `CHANGELOG.md`, and this document agree.
 
-Phase 00 is closeout in review pending external validation.
+Phase 00 is complete.
