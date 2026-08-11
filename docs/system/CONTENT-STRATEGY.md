@@ -9,7 +9,7 @@ This is the canonical surface for content inventory, ownership, editorial intent
 
 ## Current Phase 00 Boundary
 
-Phase 00 — Baseline + Two-Environment Setup only creates the repository, tooling, environment strategy, and evidence surface. Batch 00.5 closeout is in review and does not approve final content strategy, seed content, route content requirements, or a page-composition model.
+Phase 00 — Baseline + Two-Environment Setup created the repository, tooling, environment strategy, and evidence surface. Batch 00.5 is approved and does not approve final content strategy, seed content, route content requirements, or a page-composition model.
 
 ## Initial Content Domains
 

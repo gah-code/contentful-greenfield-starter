@@ -1,6 +1,6 @@
 # Security and Secrets
 
-Status: Phase 00 closeout in review
+Status: Phase 00 complete
 Owner: Phase 00 — Baseline + Two-Environment Setup
 
 ## Secret Boundaries
@@ -77,4 +77,4 @@ Approved physical environments are `master` and `dev`.
 
 Batch 00.3 verifies credential handling and variable separation without reading credential values. Actual token validity, scopes, equality/difference, and live Contentful access are not verified in Batch 00.3.
 
-Batch 00.4 recorded direct account, space, environment inventory, default locale, `master`, and `dev` evidence. Phase 01 is next after external Phase 00 approval.
+Batch 00.4 recorded direct account, space, environment inventory, default locale, `master`, and `dev` evidence. Batch 00.5 external validation approved Phase 00. Phase 01 is next.
