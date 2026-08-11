@@ -30,10 +30,11 @@ Documentation is part of the build.
 - Batch 00.1 approved.
 - Batch 00.2 approved.
 - Batch 00.3 approved.
-- Batch 00.4 next.
-- Batch 00.5 later.
+- Batch 00.4 approved.
+- Batch 00.5 next.
 - Phase 01 deferred.
 - Bootstrap blocked.
+- Seed content not started.
 
 ## Environment Model
 

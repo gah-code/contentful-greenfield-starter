@@ -13,7 +13,7 @@ This tracker records current project truth. Do not mark future batches complete 
 
 ##### Batch 00.3 — Two-Environment Strategy Alignment + Secret Safety
 
-Status: APPROVED — external validation passed; live Contentful verification remains deferred to Batch 00.4.
+Status: APPROVED — external validation passed; live Contentful verification was deferred to Batch 00.4.
 
 - [x] Verify two-environment strategy remains aligned
 - [x] Verify local `.env.local` exists without reading contents
@@ -32,17 +32,33 @@ Status: APPROVED — external validation passed; live Contentful verification re
 - [x] Mark Batch 00.3 in review for external validation
 - [x] Record external validation approval
 
-#### Next
-
 ##### Batch 00.4 — Contentful Space and Environment Verification
 
-- [ ] Record Contentful account and space evidence
-- [ ] Confirm two-environment capacity
-- [ ] Confirm default locale
-- [ ] Verify `master` state
-- [ ] Verify `dev` state
-- [ ] Confirm environment inventory
-- [ ] Retain redacted evidence
+Status: APPROVED — project space, two-environment capacity, clean baseline state, and locale compatibility verified.
+
+- [x] Correct project space verified
+- [x] Organization verified
+- [x] Starter plan verified
+- [x] 2-of-2 environment capacity verified
+- [x] `master` + `dev` live inventory verified
+- [x] Persistent `verification` environment absent
+- [x] `testing` environment absent from intended project space
+- [x] `master` ready state verified
+- [x] `master` zero-state verified
+- [x] `master` default locale verified
+- [x] `dev` ready state verified
+- [x] `dev` zero-state verified
+- [x] `dev` default locale verified
+- [x] `master`/`dev` locale compatibility verified
+- [x] `master` baseline suitability verified
+- [x] `dev` future bootstrap suitability assessed
+- [x] Read-only access verified
+- [x] Secret-safety regression passed
+- [x] No Contentful mutation performed
+- [x] Temporary export evidence removed from repository
+- [x] Evidence limitations recorded
+
+#### Next
 
 ##### Batch 00.5 — Phase 00 Closeout
 
@@ -96,8 +112,7 @@ Status: APPROVED — external validation passed; live Contentful verification re
 ## Current Boundaries
 
 - Phase 00 remains active.
-- Batch 00.3 is approved and Batch 00.4 is next.
-- Batch 00.5 remains later.
+- Batch 00.3 and Batch 00.4 are approved; Batch 00.5 is next.
 - Phase 01 remains deferred.
 - Bootstrap migration remains blocked and not run in this repair.
-- No Contentful environment mutation is authorized in Phase 00 documentation alignment repair.
+- No Contentful environment mutation is authorized in Phase 00 approval reconciliation.

@@ -2,8 +2,8 @@
 
 Project: `contentful-greenfield-starter`
 Current phase: Phase 00 — Baseline + Two-Environment Setup
-Current work item: Batch 00.4 — Contentful Space and Environment Verification
-Next implementation gate: Batch 00.4 live Contentful verification
+Current work item: Batch 00.5 — Phase 00 Closeout
+Next implementation gate: Phase 00 closeout validation
 
 ## Phase 00 Batch State
 
@@ -12,8 +12,8 @@ Next implementation gate: Batch 00.4 live Contentful verification
 | 00.1 | Repository and Project Truth | Approved | Repository identity, canonical docs, and initial deviation recorded |
 | 00.2 | Runtime and Contentful Tooling | Approved | Runtime/package declarations and local CLI wrapper documented |
 | 00.3 | Two-Environment Strategy Alignment + Secret Safety | Approved | External validation passed; repository secret-safety controls verified without reading `.env.local` contents |
-| 00.4 | Contentful Space and Environment Verification | Next | Account, space, locale, and environment evidence pending |
-| 00.5 | Phase 00 Closeout | Later | Requires all Phase 00 evidence and risk review |
+| 00.4 | Contentful Space and Environment Verification | Approved | Project space, Starter capacity, `master` + `dev` inventory, clean environment state, and `en-US` locale compatibility verified |
+| 00.5 | Phase 00 Closeout | Next | Requires final Phase 00 risk review and truth-surface alignment |
 
 Phase 01 remains deferred. Bootstrap migration remains blocked and not run. Seed content has not started.
 
@@ -29,24 +29,29 @@ Phase 01 remains deferred. Bootstrap migration remains blocked and not run. Seed
 | Model target | 10 semantic content types |
 | Bootstrap target | Never `master`; later approved migration work targets `dev` |
 
-## Still Requiring Operational Verification
+## Batch 00.4 Contentful Verification Evidence
 
-These items are architecture expectations or pending facts until Batch 00.4 records direct evidence:
+Verified Contentful evidence:
 
-| Item | Status |
-|---|---|
-| Contentful account/space evidence | Pending |
-| Two-environment capacity evidence | Pending |
-| Default locale | Pending |
-| `master` blank state | Pending |
-| `dev` state | Pending |
-| `dev` source | Pending |
-| Environment inventory | Pending |
-| Permissions/token readiness | Pending |
+- project space: `Personal Website CMS — Greenfield Starter`
+- organization: `Gilberto A Haro Web Technology`
+- plan: Starter
+- environment usage: 2 of 2
+- live topology: `master` + `dev`
+- `master`: ready, 0 content types, 0 entries, 0 assets, 1 locale, default locale `en-US`
+- `dev`: ready, 0 content types, 0 entries, 0 assets, 1 locale, default locale `en-US`
+- `testing`: absent from the intended project space
+- `verification`: absent as a persistent environment
+- locale compatibility: PASS
+- `master` baseline suitability: safe protected baseline
+- `dev` suitability: ready for future Phase 02 bootstrap work
+- no Contentful schema, content, locale, or environment mutation occurred
+
+Temporary investigation exports were removed from the repository and were not promoted to canonical Phase 03 snapshots.
 
 ## Batch 00.3 Secret-Safety Evidence
 
-External validation: PASS. Batch 00.3 is approved. No secret exposure was detected. Live Contentful verification remains deferred to Batch 00.4.
+External validation: PASS. Batch 00.3 is approved. No secret exposure was detected. Live Contentful verification was deferred to Batch 00.4.
 
 Verified repository controls:
 
@@ -127,4 +132,4 @@ No deletion automation is part of this repair.
 
 ## Current Phase Boundary
 
-Phase 00 remains active. Batch 00.3 is approved, Batch 00.4 is next, and Batch 00.5 remains later. Phase 01, bootstrap migration, seed content, environment deletion, and Contentful model mutation remain out of scope.
+Phase 00 remains active. Batch 00.4 is approved and Batch 00.5 is next. Phase 01, bootstrap migration, seed content, environment deletion, and Contentful model mutation remain out of scope.

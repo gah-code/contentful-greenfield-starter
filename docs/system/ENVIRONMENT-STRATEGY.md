@@ -8,8 +8,8 @@ Canonical environment topology: `master` + `dev`
 
 | Environment | Role | Rules | Verification state |
 |---|---|---|---|
-| `master` | Permanent protected baseline and future production/release target | No bootstrap migration, no experimental schema work, no imports during development | Blank-state verification pending Batch 00.4 |
-| `dev` | Only non-master sandbox | Migration development target, model/editorial QA target, later clean-room verification target after controlled deletion and recreation | State, source, and locale verification pending Batch 00.4 |
+| `master` | Permanent protected baseline and future production/release target | No bootstrap migration, no experimental schema work, no imports during development | Verified clean protected baseline in Batch 00.4 |
+| `dev` | Only non-master sandbox | Migration development target, model/editorial QA target, later clean-room verification target after controlled deletion and recreation | Verified clean sandbox in Batch 00.4 |
 
 Verification is a workflow state, not an environment ID. This project does not maintain a separate physical environment for verification.
 
@@ -22,7 +22,7 @@ Current limits:
 - never run the bootstrap migration against `master`
 - never run experimental schema work against `master`
 - never import model snapshots into `master` during Phase 00 through Phase 03
-- do not claim `master` has been verified blank until Batch 00.4 records direct evidence
+- preserve the Batch 00.4 verified clean protected baseline unless a later approved phase changes it
 
 ## `dev`
 
@@ -38,7 +38,8 @@ Approved uses:
 
 Current limits:
 
-- do not claim `dev` is blank, cloned from `master`, or parity-checked until Batch 00.4 records direct evidence
+- preserve the Batch 00.4 verified clean sandbox state unless a later approved phase changes it
+- do not treat Batch 00.4 clean-state evidence as authorization to run the bootstrap migration
 - do not delete or recreate `dev` during Phase 00 documentation alignment
 - do not store irreplaceable content in `dev` before the Phase 03 recoverability gate
 

@@ -30,8 +30,8 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Area | Current state |
 | --- | --- |
 | Phase | Phase 00 - Baseline + Two-Environment Setup |
-| Current batch | Batch 00.4 - Contentful Space and Environment Verification; next |
-| Recently approved | Batch 00.3 - Two-Environment Strategy Alignment + Secret Safety |
+| Current batch | Batch 00.5 - Phase 00 Closeout; next |
+| Recently approved | Batch 00.4 - Contentful Space and Environment Verification |
 | Content model | 10 semantic content types planned |
 | Environments | `master` + `dev` |
 | Bootstrap migration | Blocked until Phase 00 closes and Phase 02 authorizes it |
@@ -70,8 +70,8 @@ The implementation sequence keeps CMS decisions upstream of templates and keeps 
 
 | Environment | Responsibility | Current Phase 00 posture |
 | --- | --- | --- |
-| `master` | Permanent protected baseline and future release target | Operational baseline evidence governed by Phase 00 |
-| `dev` | Single rotating sandbox for migration development, model review, and editorial QA | Current development environment; state verification pending Batch 00.4 |
+| `master` | Permanent protected baseline and future release target | Verified clean protected baseline |
+| `dev` | Single rotating sandbox for migration development, model review, and editorial QA | Verified clean sandbox for future approved bootstrap work |
 
 Verification is a workflow state, not a third Contentful environment.
 

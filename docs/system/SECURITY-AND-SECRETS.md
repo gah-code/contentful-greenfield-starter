@@ -77,4 +77,4 @@ Approved physical environments are `master` and `dev`.
 
 Batch 00.3 verifies credential handling and variable separation without reading credential values. Actual token validity, scopes, equality/difference, and live Contentful access are not verified in Batch 00.3.
 
-Batch 00.4 owns direct account, space, environment inventory, default locale, `master`, and `dev` evidence. Phase 01 remains deferred.
+Batch 00.4 recorded direct account, space, environment inventory, default locale, `master`, and `dev` evidence. Phase 01 remains deferred.

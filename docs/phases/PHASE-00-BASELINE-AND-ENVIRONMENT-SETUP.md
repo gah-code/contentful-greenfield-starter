@@ -16,8 +16,8 @@ Phase 00 does not create content types, seed content, frontend integrations, or 
 | 00.1 | Repository and Project Truth | Approved | Repository identity, canonical docs, git history deviation |
 | 00.2 | Runtime and Contentful Tooling | Approved | Node/npm declarations, local Contentful packages, CLI wrapper safety |
 | 00.3 | Two-Environment Strategy Alignment + Secret Safety | Approved | External validation passed; repository secret-safety checks complete without reading `.env.local` contents |
-| 00.4 | Contentful Space and Environment Verification | Next | Account, space, locale, `master`, `dev`, inventory, permissions |
-| 00.5 | Phase 00 Closeout | Later | Final risk review, evidence table, Phase 01 readiness decision |
+| 00.4 | Contentful Space and Environment Verification | Approved | Project space, Starter capacity, `master` + `dev`, clean state, and locale compatibility |
+| 00.5 | Phase 00 Closeout | Next | Final risk review, evidence table, Phase 01 readiness decision |
 
 Batch 00.3 approval is limited to repository secret-safety controls and two-environment documentation alignment.
 
@@ -42,23 +42,33 @@ The Contentful CLI binary may report `0.0.0-determined-by-semantic-release`; do 
 
 | Environment | Role | Current evidence state |
 |---|---|---|
-| `master` | Permanent protected baseline and future release target | Blank-state verification pending Batch 00.4 |
-| `dev` | Single rotating sandbox for migration development, model review, editorial QA, and later serial clean-room verification | State, source, locale, and inventory verification pending Batch 00.4 |
+| `master` | Permanent protected baseline and future release target | Verified ready, clean, and locale-compatible in Batch 00.4 |
+| `dev` | Single rotating sandbox for migration development, model review, editorial QA, and later serial clean-room verification | Verified ready, clean, and suitable for future Phase 02 bootstrap work |
 
 Verification is a workflow state, not a persistent Contentful environment ID.
 
-## Pending Batch 00.4 Evidence
+## Batch 00.4 Contentful Evidence
 
-- Contentful account/space evidence
-- two-environment capacity evidence
-- default locale
-- `master` blank state
-- `dev` state
-- `dev` source
-- environment inventory
-- permissions/token readiness
+Batch 00.4 verified the intended Contentful project space, Starter two-environment constraint, `master`/`dev` topology, clean environment state, and locale compatibility.
 
-Do not claim these checks have passed until direct evidence is recorded.
+| Item | Verified evidence |
+|---|---|
+| Space | `Personal Website CMS — Greenfield Starter` |
+| Organization | `Gilberto A Haro Web Technology` |
+| Plan | Starter |
+| Environment capacity | 2 of 2 |
+| Topology | `master` + `dev` |
+| `testing` | absent from intended project space |
+| `verification` | workflow state only; no persistent environment |
+| `master` | ready; 0 content types; 0 entries; 0 assets; 1 locale; `en-US` default; no fallback |
+| `dev` | ready; 0 content types; 0 entries; 0 assets; 1 locale; `en-US` default; no fallback |
+| Locale compatibility | PASS |
+| `master` suitability | SAFE PROTECTED BASELINE |
+| `dev` suitability | READY FOR FUTURE PHASE 02 BOOTSTRAP |
+
+The earlier `testing` observation was resolved as stale/wrong CLI context and did not represent the intended live topology.
+
+Temporary investigation exports were removed and were never promoted to canonical Phase 03 snapshots.
 
 ## Script Safety Requirements
 
@@ -94,7 +104,7 @@ Verify local secret-handling controls without reading credential values or touch
 
 Batch 00.3 validates repository controls and variable contracts only. It does not inspect or validate actual token values.
 
-External validation: PASS. Batch 00.3 approved. No secret exposure detected. Live Contentful verification remains deferred to Batch 00.4.
+External validation: PASS. Batch 00.3 approved. No secret exposure detected. Live Contentful verification was deferred to Batch 00.4.
 
 ### Files Changed
 
@@ -114,12 +124,12 @@ External validation: PASS. Batch 00.3 approved. No secret exposure detected. Liv
 
 ### Known Limitations
 
-- Actual token values, equality/difference, validity, scopes, and live Contentful access are not verified.
-- Contentful account, space, environment inventory, `master`, `dev`, and default locale evidence remain pending Batch 00.4.
+- Actual token values, equality/difference, validity, and scopes are not verified.
+- Contentful account, space, environment inventory, `master`, `dev`, and default locale evidence were deferred to Batch 00.4 and are recorded in the Batch 00.4 Contentful Evidence section.
 
 ### Warnings
 
-`.env.local` values must remain untracked and must not be inspected by this batch. Live Contentful access, token validity, token scopes, environment state, and default locale remain pending Batch 00.4.
+`.env.local` values must remain untracked and must not be inspected by this batch. Token validity and token scopes remain outside Batch 00.3 evidence.
 
 ### Blockers
 

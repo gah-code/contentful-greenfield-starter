@@ -36,7 +36,10 @@ All meaningful project changes should be recorded here.
 - Removed the active separate target-environment contract from `.env.example`, environment checks, and model import.
 - Made serial clean-room `dev` reconstruction the Phase 03 verification model.
 - Recorded that no Contentful environments were changed and bootstrap migration remains blocked during this repository repair.
-- Recorded Batch 00.3 external approval and moved Batch 00.4 to Next.
+- Recorded Batch 00.3 external approval and queued Batch 00.4 verification.
+- Approved Phase 00 / Batch 00.4 Contentful space and environment verification.
+- Verified Starter two-environment capacity, `master`/`dev` clean baseline state, and `en-US` locale compatibility.
+- Advanced Phase 00 to Batch 00.5 closeout.
 
 ### Security
 
