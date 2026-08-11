@@ -95,4 +95,4 @@ Do not configure a separate target environment for normal development or verific
 
 ## Closeout Searches
 
-Before Phase 00 closeout and before Phase 03 deletion readiness, search active documentation and scripts for stale three-environment instructions and classify any remaining historical references explicitly.
+Before Phase 03 deletion readiness, search active documentation and scripts for stale three-environment instructions and classify any remaining historical references explicitly.

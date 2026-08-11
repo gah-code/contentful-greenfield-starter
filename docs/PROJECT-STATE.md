@@ -140,7 +140,7 @@ No deletion automation is part of this repair.
 | `dev` deletion before recoverability | Open | Require committed migrations, snapshot, checksum, pre-deletion evidence, recovery procedure, and explicit human approval |
 | Stale three-environment documentation | Open | Search for obsolete topology terms during closeout and Phase 03 readiness |
 | Token exposure | Controlled in repository | Ignore local env files, avoid CLI token args, avoid browser prefixes, and print presence only |
-| Locale mismatch | Open | Record default locale in Phase 00 and check before Phase 03 clean-room import |
+| Locale compatibility | Resolved | `master` and `dev` both use `en-US` as the default locale with no fallback; revalidate compatibility before the Phase 03 clean-room import |
 | Historical baseline commit mixed CMS/model artifacts | Accepted deviation | Do not rewrite history; use focused commits in future batches |
 
 ## Current Phase Boundary
