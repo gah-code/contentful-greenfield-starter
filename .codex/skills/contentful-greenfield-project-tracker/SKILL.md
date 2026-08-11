@@ -26,13 +26,13 @@ Documentation is part of the build.
 
 ## Current State
 
-- Phase 00 active.
+- Phase 00 closeout in review.
 - Batch 00.1 approved.
 - Batch 00.2 approved.
 - Batch 00.3 approved.
 - Batch 00.4 approved.
-- Batch 00.5 next.
-- Phase 01 deferred.
+- Batch 00.5 in review.
+- Phase 01 next after Phase 00 approval.
 - Bootstrap blocked.
 - Seed content not started.
 

@@ -1,14 +1,14 @@
 # Implementation Roadmap
 
-Status: proposed and active
+Status: Phase 00 closeout in review
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
 
 | Phase | Name | Primary outcome | Runtime impact |
 |---|---|---|---|
-| 00 | Baseline + Two-Environment Setup | Safe repository, secure tooling boundary, and governed `master` + `dev` operating model | None |
-| 01 | Content Strategy + Route Contract | Approved content inventory and ownership | None |
+| 00 | Baseline + Two-Environment Setup | Safe repository, secure tooling boundary, and governed `master` + `dev` operating model; closeout in review | None |
+| 01 | Content Strategy + Route Contract | Next after external Phase 00 approval; approved content inventory and ownership | None |
 | 02 | Content Model Contract + Bootstrap Migration | Core model created in `dev` | CMS only |
 | 03 | Model Export + Serial Clean-Room Verification | Approved model-only snapshot rebuilt into fresh `dev` from protected `master` | CMS only |
 | 04 | Editorial QA + Model Freeze | Editor-friendly baseline v1 | CMS only |
@@ -27,6 +27,8 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 Do not skip Phase 03. A serial clean-room rebuild of `dev` proves that the approved model snapshot is portable before seed content begins.
 
 ## Phase 00 — Baseline + Two-Environment Setup
+
+Current state: CLOSEOUT IN REVIEW. Phase 01 is next after external Phase 00 approval.
 
 ### Goal
 

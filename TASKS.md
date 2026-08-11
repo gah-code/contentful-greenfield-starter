@@ -58,16 +58,35 @@ Status: APPROVED — project space, two-environment capacity, clean baseline sta
 - [x] Temporary export evidence removed from repository
 - [x] Evidence limitations recorded
 
-#### Next
+#### In Review
 
 ##### Batch 00.5 — Phase 00 Closeout
 
-- [ ] Align all truth surfaces
-- [ ] Record remaining risks
-- [ ] Record closeout verdict
-- [ ] Move Phase 01 to Next only after all Phase 00 gates pass
+Status: IN REVIEW — Phase 00 closeout evidence is prepared for external validation.
 
-## Deferred
+- [x] Batch 00.1 approved
+- [x] Batch 00.2 approved
+- [x] Batch 00.3 approved
+- [x] Batch 00.4 approved
+- [x] repository preflight passed
+- [x] runtime verified
+- [x] Contentful tooling verified
+- [x] secret-safety regression passed
+- [x] temporary investigation exports absent
+- [x] `master` + `dev` architecture remains canonical
+- [x] `master` protected baseline remains verified
+- [x] `dev` rotating sandbox remains verified
+- [x] `master`/`dev` `en-US` compatibility verified
+- [x] destructive Phase 03 safety gate preserved
+- [x] bootstrap migration remains blocked/not run
+- [x] seed content remains not started
+- [x] Phase 01 implementation remains not started
+- [x] architecture regression search passed
+- [x] script syntax verification passed
+- [x] canonical truth surfaces aligned
+- [ ] external Phase 00 / Batch 00.5 validation
+
+## Next After External Phase 00 Approval
 
 ### Phase 01 — Content Strategy + Route Contract
 
@@ -75,6 +94,8 @@ Status: APPROVED — project space, two-environment capacity, clean baseline sta
 - [ ] Confirm route ownership
 - [ ] Confirm frontend/CMS boundaries
 - [ ] Keep static fixtures until parity work is explicitly approved
+
+## Deferred
 
 ### Phase 02 — Content Model Contract + Bootstrap Migration
 
@@ -111,8 +132,9 @@ Status: APPROVED — project space, two-environment capacity, clean baseline sta
 
 ## Current Boundaries
 
-- Phase 00 remains active.
-- Batch 00.3 and Batch 00.4 are approved; Batch 00.5 is next.
-- Phase 01 remains deferred.
-- Bootstrap migration remains blocked and not run in this repair.
-- No Contentful environment mutation is authorized in Phase 00 approval reconciliation.
+- Phase 00 is closeout in review.
+- Batch 00.1, Batch 00.2, Batch 00.3, and Batch 00.4 are approved; Batch 00.5 is in review.
+- Phase 01 is next after external Phase 00 approval.
+- Bootstrap migration remains blocked and not run.
+- Seed content remains not started.
+- No Contentful environment mutation is authorized in Phase 00 closeout.

@@ -1,6 +1,6 @@
 # Phase 00 — Baseline + Two-Environment Setup
 
-Status: active
+Status: closeout in review
 Owner: repository maintainer
 
 ## Outcome
@@ -17,7 +17,7 @@ Phase 00 does not create content types, seed content, frontend integrations, or 
 | 00.2 | Runtime and Contentful Tooling | Approved | Node/npm declarations, local Contentful packages, CLI wrapper safety |
 | 00.3 | Two-Environment Strategy Alignment + Secret Safety | Approved | External validation passed; repository secret-safety checks complete without reading `.env.local` contents |
 | 00.4 | Contentful Space and Environment Verification | Approved | Project space, Starter capacity, `master` + `dev`, clean state, and locale compatibility |
-| 00.5 | Phase 00 Closeout | Next | Final risk review, evidence table, Phase 01 readiness decision |
+| 00.5 | Phase 00 Closeout | In Review | Final risk review, evidence table, Phase 01 readiness decision |
 
 Batch 00.3 approval is limited to repository secret-safety controls and two-environment documentation alignment.
 
@@ -145,6 +145,54 @@ Phase 03 will export the approved model from `dev`, verify the snapshot, prove r
 
 No destructive `dev` deletion or recreation is implemented in Phase 00.
 
+## Batch 00.5 — Phase 00 Closeout
+
+Status: IN REVIEW
+
+Approved prior batches:
+
+- Batch 00.1 — Repository and Project Truth
+- Batch 00.2 — Runtime and Contentful Tooling
+- Batch 00.3 — Two-Environment Strategy Alignment + Secret Safety
+- Batch 00.4 — Contentful Space and Environment Verification
+
+Closeout evidence:
+
+- repository preflight passed on `master` with a clean working tree and `origin/master` synchronized
+- runtime/tooling evidence matches Node `v22.2.0`, npm `10.8.3`, `contentful-cli` `4.0.4`, `contentful-migration` `5.1.0`, `contentful-export` `8.1.1`, and `contentful-import` `10.0.18`
+- `.env.local` exists locally, is ignored, and is untracked without reading its contents
+- temporary `contentful-export-*.json` investigation files are absent
+- `master` + `dev` remains the canonical physical topology; verification remains a workflow state
+- `master` remains the protected blank baseline with `en-US` default locale and no fallback
+- `dev` remains the clean rotating sandbox with `en-US` default locale and no fallback
+- Phase 03 destructive rotation still requires recoverability evidence and explicit human approval
+- bootstrap migration remains blocked/not run
+- seed content remains not started
+- Phase 01 implementation remains not started
+- script syntax verification passed for Contentful helper scripts
+- architecture regression search found no active stale topology instruction
+
+Deferred scope:
+
+- Phase 01 content strategy and route contract approval
+- Phase 02 content model contract and bootstrap migration
+- Phase 03 model-only snapshot generation and serial clean-room verification
+- seed content, frontend CMS integration, delivery adapters, and preview workflow
+
+Evidence limitations:
+
+- Batch 00.5 does not re-run Contentful live reads or mutate Contentful state.
+- Actual token values, token validity, and token scopes remain outside closeout evidence.
+- External validation remains pending and owns final Phase 00 approval.
+
+Candidate closeout statement:
+
+Phase 00 established a safe, evidence-backed foundation for `contentful-greenfield-starter` without executing the Contentful bootstrap migration.
+
+The repository now has verified runtime/tooling, secret handling, a protected blank `master` environment, a clean `dev` sandbox, and matching `en-US` locale configuration.
+
+The project is ready for Phase 01 only after external Phase 00 closeout approval.
+
 ## Historical Baseline Deviation
 
 Git history shows `46125d2 Initial commit` included repository baseline files together with CMS/model artifacts, including the initial bootstrap migration and Contentful scripts.
@@ -160,4 +208,4 @@ Phase 00 closes only after:
 3. Batch 00.5 records final risks and confirms Phase 01 readiness.
 4. `docs/PROJECT-STATE.md`, `TASKS.md`, `CHANGELOG.md`, and this document agree.
 
-Phase 00 remains active.
+Phase 00 is closeout in review pending external validation.

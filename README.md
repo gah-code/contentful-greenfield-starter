@@ -4,8 +4,8 @@ A production-minded Contentful project showcasing how I design scalable CMS arch
 
 The repository demonstrates how I approach content systems with the same structure, documentation, and validation practices used in professional web and CMS environments.
 
-![Status](https://img.shields.io/badge/status-active-success)
-![Phase](https://img.shields.io/badge/phase-00%20active-blue)
+![Status](https://img.shields.io/badge/status-closeout%20in%20review-success)
+![Phase](https://img.shields.io/badge/phase-00%20closeout-blue)
 ![CMS](https://img.shields.io/badge/CMS-Contentful-2478CC)
 ![Node](https://img.shields.io/badge/node-%3E%3D22-339933)
 ![Model](https://img.shields.io/badge/content%20types-10%20semantic-555555)
@@ -29,13 +29,13 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 
 | Area | Current state |
 | --- | --- |
-| Phase | Phase 00 - Baseline + Two-Environment Setup |
-| Current batch | Batch 00.5 - Phase 00 Closeout; next |
+| Phase | Phase 00 - Closeout in Review |
+| Current batch | Batch 00.5 - Phase 00 Closeout; in review |
 | Recently approved | Batch 00.4 - Contentful Space and Environment Verification |
 | Content model | 10 semantic content types planned |
 | Environments | `master` + `dev` |
-| Bootstrap migration | Blocked until Phase 00 closes and Phase 02 authorizes it |
-| Phase 01 | Deferred until Phase 00 closes |
+| Bootstrap migration | Blocked until Phase 02 authorizes it |
+| Next after approval | Phase 01 - Content Strategy + Route Contract |
 
 > For canonical current state, see [docs/PROJECT-STATE.md](docs/PROJECT-STATE.md) and [TASKS.md](TASKS.md).
 

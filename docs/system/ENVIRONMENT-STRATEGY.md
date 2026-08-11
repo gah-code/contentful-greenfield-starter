@@ -1,6 +1,6 @@
 # Environment Strategy
 
-Status: Phase 00 active
+Status: Phase 00 closeout in review
 Owner: Phase 00 — Baseline + Two-Environment Setup
 Canonical environment topology: `master` + `dev`
 
