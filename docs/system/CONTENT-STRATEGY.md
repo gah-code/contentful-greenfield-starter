@@ -2,7 +2,7 @@
 
 Status: Phase 01 / Batch 01.1 — APPROVED
 Owner: Phase 01 — Content Strategy + Route Contract
-Next consumer: Batch 01.2 — Route Contract
+Next downstream consumer: Batch 01.3 — SEO + Metadata Contract
 
 ## Purpose
 
@@ -219,7 +219,9 @@ Do not change the 10-type model ledger merely because content domains are broade
 
 ## Preliminary Route Input
 
-Batch 01.1 records route strategy input only. Batch 01.2 owns the formal route contract.
+Batch 01.1 records route strategy input only. Batch 01.2 approved the formal route contract in `docs/system/ROUTE-CONTRACT.md`.
+
+The statuses below are historical Batch 01.1 planning inputs, not the current approved Batch 01.2 route-contract status.
 
 | Route | Current status |
 |---|---|
@@ -774,7 +776,7 @@ Do not reopen these without a documented reason.
 | A-06 | Page layout is code-owned. | Revisit only through a documented page-composition decision. |
 | A-07 | The project remains under the 10-type model cap. | Revisit during Phase 02 model contract review. |
 | A-08 | Projects and writing are the strongest proof engines. | Revisit after fixture validation. |
-| A-09 | Current route inventory is sufficient for v1. | Revisit during Batch 01.2 route contract review. |
+| A-09 | Current route inventory is sufficient for v1. | Validated by Batch 01.2 route contract external approval; revisit only if v1 scope changes. |
 
 Do not mark these assumptions validated until their gates produce direct evidence.
 
@@ -788,8 +790,7 @@ Do not mark these assumptions validated until their gates produce direct evidenc
 | OD-04 | Final status of AI-Assisted Workflows & Automation pillar | Fixture/content validation |
 | OD-05 | Final status of SEO, Accessibility & Content Quality pillar | Fixture/content validation |
 | OD-06 | Final skill-group taxonomy | Content requirements matrix |
-| OD-07 | Final formal v1 route contract | Batch 01.2 |
-| OD-08 | Exact content boundary between `/tools` and skills | Batch 01.2 / content requirements |
+| OD-08 | Exact content boundary between `/tools` and skills | Content requirements matrix / content validation |
 | OD-09 | Which three projects become homepage features | Fixture/content decision |
 | OD-10 | Which enterprise projects are safely publishable | Confidentiality review |
 | OD-11 | Certification representation | Content model contract |
@@ -799,6 +800,12 @@ Do not mark these assumptions validated until their gates produce direct evidenc
 | OD-15 | SEO overrides vs generated defaults | Batch 01.3 |
 
 These are not Batch 01.1 failures unless they materially prevent the content-strategy foundation from being documented.
+
+## Resolved Decisions
+
+| ID | Decision | Resolution |
+|---|---|---|
+| OD-07 | Final formal v1 route contract | RESOLVED / APPROVED by Phase 01 / Batch 01.2 — Route Contract external validation. Approved v1 routes: `/`, `/about`, `/work`, `/projects`, `/projects/[slug]`, `/writing`, `/writing/[slug]`, `/tools`, `/contact`. |
 
 ## Downstream Consumers
 

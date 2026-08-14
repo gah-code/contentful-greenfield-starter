@@ -29,8 +29,8 @@ Documentation is part of the build.
 - Phase 00 — COMPLETE.
 - Phase 01 — ACTIVE.
 - 01.1 — APPROVED.
-- 01.2 — NEXT.
-- 01.3 — LATER.
+- 01.2 — APPROVED.
+- 01.3 — NEXT.
 - 01.4 — LATER.
 - 01.5 — LATER.
 - Phase 02 — DEFERRED.

@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 active; Batch 01.1 approved; Batch 01.2 next
+Status: Phase 00 complete; Phase 01 active; Batch 01.2 approved; Batch 01.3 next
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -8,7 +8,7 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 | Phase | Name | Primary outcome | Runtime impact |
 |---|---|---|---|
 | 00 | Baseline + Two-Environment Setup | Complete; safe repository, secure tooling boundary, and governed `master` + `dev` operating model | None |
-| 01 | Content Strategy + Route Contract | Active; Batch 01.1 approved; Batch 01.2 next | None |
+| 01 | Content Strategy + Route Contract | Active; Batch 01.2 route contract approved; Batch 01.3 next | None |
 | 02 | Content Model Contract + Bootstrap Migration | Deferred; core model created in `dev` only after Phase 01 approval and Phase 02 authorization | CMS only |
 | 03 | Model Export + Serial Clean-Room Verification | Approved model-only snapshot rebuilt into fresh `dev` from protected `master` | CMS only |
 | 04 | Editorial QA + Model Freeze | Editor-friendly baseline v1 | CMS only |
@@ -33,8 +33,8 @@ Phase 00 — COMPLETE
 
 Phase 01 — ACTIVE
 Batch 01.1 — APPROVED
-Batch 01.2 — NEXT
-Batch 01.3 — LATER
+Batch 01.2 — APPROVED
+Batch 01.3 — NEXT
 Batch 01.4 — LATER
 Batch 01.5 — LATER
 
@@ -69,7 +69,7 @@ Create a safe operating surface before any content type is created.
 
 ## Phase 01 — Content Strategy + Route Contract
 
-Current state: ACTIVE. Latest approved batch: 01.1 — Content Strategy Foundation — APPROVED. Current / next batch: 01.2 — Route Contract — NEXT.
+Current state: ACTIVE. Latest approved batch: 01.2 — Route Contract — APPROVED. Next batch: 01.3 — SEO + Metadata Contract.
 
 ### Goal
 
@@ -80,8 +80,8 @@ Define what the website needs to communicate before finalizing CMS fields.
 | Batch | Name | Status |
 |---|---|---|
 | 01.1 | Content Strategy Foundation | APPROVED |
-| 01.2 | Route Contract | NEXT |
-| 01.3 | SEO + Metadata Contract | LATER |
+| 01.2 | Route Contract | APPROVED |
+| 01.3 | SEO + Metadata Contract | NEXT |
 | 01.4 | Content Requirements Matrix | LATER |
 | 01.5 | Phase 01 Validation + Freeze | LATER |
 
@@ -99,9 +99,19 @@ Define what the website needs to communicate before finalizing CMS fields.
 
 - `docs/system/CONTENT-STRATEGY.md` contains the reconciled strategy foundation.
 - `docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md` records Phase 01 scope and Batch 01.1 approval state.
-- `docs/system/ROUTE-CONTRACT.md` records preliminary route inventory while preserving formal route-contract approval for Batch 01.2.
+- `docs/system/ROUTE-CONTRACT.md` originally recorded preliminary route inventory that Batch 01.2 later formalized and approved.
 - Bootstrap migration remains blocked and not run.
 - Seed content remains not started.
+
+### Approved Batch 01.2 Evidence
+
+- External Batch 01.2 validation passed.
+- `docs/system/ROUTE-CONTRACT.md` formalizes and approves all nine v1 route contracts.
+- Route responsibility boundaries, route states, content readiness, internal linking, responsive intent, accessibility intent, directional SEO intent, and future CMS implication boundaries are documented.
+- OD-07 — final formal v1 route contract — is resolved and approved.
+- OD-08 — `/tools` vs skills boundary — remains PROPOSED / OPEN.
+- Detailed SEO metadata behavior remains deferred to Batch 01.3.
+- Contentful schema and bootstrap migration work remain deferred.
 
 ### Exit criteria
 

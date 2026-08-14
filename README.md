@@ -30,8 +30,9 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Area | Current state |
 | --- | --- |
 | Current phase | Phase 01 - Content Strategy + Route Contract |
-| Latest approved batch | Batch 01.1 - Content Strategy Foundation |
-| Current / next batch | Batch 01.2 - Route Contract |
+| Latest approved batch | Batch 01.2 - Route Contract |
+| Current work item | Batch 01.3 - SEO + Metadata Contract - Next |
+| Later Phase 01 batches | Batch 01.4 - Content Requirements Matrix; Batch 01.5 - Phase 01 Validation + Freeze |
 | Previous phase | Phase 00 - Complete |
 | Content model | 10 semantic content types planned |
 | Environments | `master` + `dev` |
@@ -202,7 +203,7 @@ The model represents editorial concepts rather than React components. Content ty
 - [docs/system/ENVIRONMENT-STRATEGY.md](docs/system/ENVIRONMENT-STRATEGY.md) - approved two-environment model
 - [docs/system/SECURITY-AND-SECRETS.md](docs/system/SECURITY-AND-SECRETS.md) - secret and CLI boundaries
 - [docs/system/CONTENT-STRATEGY.md](docs/system/CONTENT-STRATEGY.md) - approved Batch 01.1 content-strategy foundation
-- [docs/system/ROUTE-CONTRACT.md](docs/system/ROUTE-CONTRACT.md) - Batch 01.2 route-contract surface
+- [docs/system/ROUTE-CONTRACT.md](docs/system/ROUTE-CONTRACT.md) - approved Batch 01.2 route-contract surface
 
 ### Content Model
 
@@ -212,7 +213,7 @@ The model represents editorial concepts rather than React components. Content ty
 
 ### Active Phase
 
-- [docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md](docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md) - Phase 01 scope, Batch 01.1 approval evidence, boundaries, and next gate
+- [docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md](docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md) - Phase 01 scope, Batch 01.2 approval evidence, boundaries, and Batch 01.3 next state
 
 ## Safety and Governance
 

@@ -52,8 +52,8 @@ Phase 01 turns content strategy into controlled project truth, then converts tha
 | Batch | Name | Status |
 |---|---|---|
 | 01.1 | Content Strategy Foundation | APPROVED |
-| 01.2 | Route Contract | NEXT |
-| 01.3 | SEO + Metadata Contract | LATER |
+| 01.2 | Route Contract | APPROVED |
+| 01.3 | SEO + Metadata Contract | NEXT |
 | 01.4 | Content Requirements Matrix | LATER |
 | 01.5 | Phase 01 Validation + Freeze | LATER |
 
@@ -170,7 +170,9 @@ Conditional: reusable calls-to-action, only if later reuse justifies editorial c
 
 ### Preliminary Route Inventory
 
-Batch 01.1 records preliminary route input. Batch 01.2 owns the formal route contract.
+Batch 01.1 records preliminary route input. Batch 01.2 approved the formal route contract in `docs/system/ROUTE-CONTRACT.md`.
+
+The statuses below are historical Batch 01.1 planning inputs, not the current approved Batch 01.2 route-contract status.
 
 | Route | Status |
 |---|---|
@@ -399,7 +401,6 @@ Assumptions are not validated until their validation gates produce evidence.
 | OD-04 | Final status of AI-Assisted Workflows & Automation pillar |
 | OD-05 | Final status of SEO, Accessibility & Content Quality pillar |
 | OD-06 | Final skill-group taxonomy |
-| OD-07 | Final formal v1 route contract |
 | OD-08 | Exact content boundary between `/tools` and skills |
 | OD-09 | Which three projects become homepage features |
 | OD-10 | Which enterprise projects are safely publishable |
@@ -410,6 +411,12 @@ Assumptions are not validated until their validation gates produce evidence.
 | OD-15 | SEO overrides vs generated defaults |
 
 Most open decisions belong naturally to later Phase 01 batches and are not Batch 01.1 failures.
+
+### Resolved Decisions
+
+| ID | Resolved decision |
+|---|---|
+| OD-07 | Final formal v1 route contract was RESOLVED / APPROVED by Phase 01 / Batch 01.2 external validation. Approved v1 routes: `/`, `/about`, `/work`, `/projects`, `/projects/[slug]`, `/writing`, `/writing/[slug]`, `/tools`, `/contact`. |
 
 ### Batch 01.1 Evidence Limitations
 
@@ -453,15 +460,15 @@ Approved foundation:
 - assumptions register
 - open-decision register
 
-Open decisions remain intentionally unresolved and do not block Batch 01.2.
+Open decisions other than OD-07 remain intentionally unresolved and did not block Batch 01.2 approval.
 
-Next: Batch 01.2 — Route Contract
+Next at Batch 01.1 closeout: Batch 01.2 — Route Contract
 
-Closeout state:
+Batch 01.1 closeout state:
 
 - Phase 01 is ACTIVE.
 - Batch 01.1 is APPROVED.
-- Batch 01.2 is NEXT.
+- At Batch 01.1 closeout, Batch 01.2 advanced to NEXT. This is historical, not the current Batch 01.2 state.
 - Phase 02 is DEFERRED.
 - `docs/system/CONTENT-STRATEGY.md` contains the reconciled strategy foundation.
 - `docs/system/ROUTE-CONTRACT.md` records preliminary route inventory without approving the formal route contract.
@@ -470,3 +477,168 @@ Closeout state:
 - bootstrap migration remains BLOCKED / NOT RUN.
 - seed content remains NOT STARTED.
 - no Contentful mutation, frontend implementation, fixture creation, staging, commit, or push occurred.
+
+## Batch 01.2 — Route Contract
+
+Status: APPROVED
+
+### Goal
+
+Convert the approved Batch 01.1 content-strategy foundation into a formal, route-by-route contract for the v1 website without defining Contentful fields, React component APIs, frontend implementation, fixtures, or detailed SEO metadata behavior.
+
+### Route Inventory
+
+| Route | Type | Contract status |
+|---|---|---|
+| `/` | Landing | APPROVED V1 |
+| `/about` | Narrative | APPROVED V1 |
+| `/work` | Narrative / Collection hybrid | APPROVED V1 |
+| `/projects` | Collection | APPROVED V1 |
+| `/projects/[slug]` | Detail | APPROVED V1 |
+| `/writing` | Collection | APPROVED V1 |
+| `/writing/[slug]` | Detail | APPROVED V1 |
+| `/tools` | Collection / Reference | APPROVED V1 |
+| `/contact` | Utility / Conversion | APPROVED V1 |
+
+### Contract Areas
+
+- route purpose
+- primary and secondary audiences
+- primary visitor question
+- primary and secondary CTA direction
+- required and optional content
+- content domains consumed
+- CMS/code/derived ownership
+- reuse rules
+- route composition intent
+- route states
+- internal linking
+- responsive intent
+- accessibility intent
+- directional SEO intent
+- future CMS implications
+- deferred behavior
+- open decisions
+
+### Route Responsibility Boundaries
+
+- Home provides curated summaries; deeper routes own fuller canonical content.
+- About owns professional narrative, philosophy, evolution, values, and approach.
+- Work owns employment context, responsibilities, outcomes, and career progression.
+- Projects own problem/approach/solution/outcome evidence.
+- Project and writing indexes own discovery and previews; detail routes own full narratives.
+- `/tools` owns the professional tools/platform inventory, while skills remain capability concepts.
+- Contact owns the low-friction professional conversion path.
+
+### Route State Model
+
+The Batch 01.2 contract defines READY, EMPTY, MISSING, DRAFT / PREVIEW, and ERROR states.
+
+Collection routes define empty behavior where relevant. Detail routes define missing behavior. Draft/preview delivery is documented as outside normal public delivery, with preview security deferred.
+
+### Content Readiness
+
+A route is content-ready when required content exists, intended relationships resolve, public-safety requirements pass, meaningful media has accessibility metadata where applicable, the route can answer its primary visitor question, public/draft state is unambiguous, and intended internal links are valid.
+
+API success alone is not route readiness.
+
+### Ownership Rules
+
+Preserve:
+
+```text
+CMS owns editorial meaning.
+Code owns behavior.
+Derived data owns what can be reliably calculated.
+```
+
+Page composition remains code-owned. Raw Contentful shapes are not introduced.
+
+### Internal Linking
+
+Batch 01.2 documents strategic route relationships between Home, About, Work, Projects, Writing, Tools, Contact, detail routes, résumé PDF, LinkedIn, and GitHub.
+
+Related-content behavior may remain editorial/manual until a later decision resolves manual vs derived relationships.
+
+### Responsive Intent
+
+Small layouts stack and simplify while preserving primary content and CTAs. Medium layouts may group related content and use two columns where useful. Large layouts may provide fuller editorial presentation and richer supporting context.
+
+Meaningful content required to understand a route must remain available.
+
+### Accessibility Intent
+
+Route-level requirements include one clear primary heading, logical heading hierarchy, descriptive links, meaningful CTA labels, meaningful-image alt text, decorative media handling, semantic content order, and no critical meaning conveyed only by color, icon, or position.
+
+### SEO Boundary
+
+Batch 01.2 records directional SEO intent only.
+
+Batch 01.3 owns title patterns, description rules, canonical behavior, Open Graph behavior, structured-data decisions, and metadata fallback/override logic.
+
+### Future CMS Implications
+
+Future CMS implications are documented only directionally as route-to-domain, reusable-content, editorial-selection, derived-value, and code-owned composition inputs.
+
+No Contentful field IDs, schema changes, migrations, or content-model ledger changes are made in Batch 01.2.
+
+### Decision Reconciliation
+
+Resolved route decision:
+
+- OD-07 — final formal v1 route contract: RESOLVED / APPROVED by `docs/system/ROUTE-CONTRACT.md` and external Batch 01.2 validation.
+
+Route-related decision narrowed but still open:
+
+- OD-08 — `/tools` vs skills responsibility boundary: narrowed to a PROPOSED WORKING BOUNDARY where skill = capability and tool = product/platform/framework/technology.
+
+Open route-adjacent decisions remain unresolved:
+
+- OD-09 — homepage featured-project selection
+- OD-10 — public-safe enterprise-project selection
+- OD-12 — taxonomy depth
+- OD-13 — manual vs derived related content
+- OD-14 — public-safe homepage proof metrics
+- OD-15 — SEO override strategy
+
+Unrelated open decisions remain unresolved.
+
+### Approval Evidence
+
+- External Batch 01.2 validation: PASS.
+- The formal route contract is approved for all nine v1 routes: `/`, `/about`, `/work`, `/projects`, `/projects/[slug]`, `/writing`, `/writing/[slug]`, `/tools`, and `/contact`.
+- Route responsibility boundaries, route states, content readiness, ownership rules, internal linking, responsive intent, accessibility intent, directional SEO intent, and future CMS implication boundaries are documented.
+- OD-07 is resolved and approved.
+- OD-08 remains PROPOSED / OPEN.
+- No frontend implementation was created.
+- No static fixtures were created.
+- No Contentful command was run.
+- No Contentful schema, locale, environment, export, import, migration, or seed mutation occurred.
+- Detailed SEO metadata behavior remains deferred to Batch 01.3.
+- Future CMS implications remain directional and are not model approval.
+
+### Batch 01.2 Closeout
+
+Status: APPROVED
+
+External validation: PASS
+
+Batch 01.2 closeout state:
+
+- Phase 01 is ACTIVE.
+- Batch 01.1 is APPROVED.
+- Batch 01.2 is APPROVED.
+- Batch 01.3 is NEXT.
+- Batch 01.4 and Batch 01.5 are LATER.
+- Phase 02 is DEFERRED.
+- `docs/system/ROUTE-CONTRACT.md` contains formal contracts for all nine v1 routes.
+- route responsibility boundaries are explicit.
+- route states, readiness, ownership, internal linking, responsive intent, accessibility intent, directional SEO intent, and future CMS implication boundaries are documented.
+- OD-07 is RESOLVED / APPROVED.
+- OD-08 remains PROPOSED / OPEN.
+- detailed SEO metadata remains deferred to Batch 01.3.
+- no Contentful schema, migration, seed, fixture, or frontend implementation occurred.
+- bootstrap migration remains BLOCKED / NOT RUN.
+- seed content remains NOT STARTED.
+- no files are staged.
+- no commit or push occurs in this implementation pass.

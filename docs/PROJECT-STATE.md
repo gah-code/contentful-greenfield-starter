@@ -2,30 +2,36 @@
 
 Project: `contentful-greenfield-starter`
 Current phase: Phase 01 — ACTIVE
-Current / next work item: Batch 01.2 — Route Contract — NEXT
+Current work item: Batch 01.3 — SEO + Metadata Contract — NEXT
 Latest completed phase: Phase 00 — COMPLETE
-Latest approved batch: Batch 01.1 — Content Strategy Foundation — APPROVED
+Latest approved batch: Batch 01.2 — Route Contract — APPROVED
+Next work item: Batch 01.3 — SEO + Metadata Contract
 Phase 02: DEFERRED
 Bootstrap migration: BLOCKED / NOT RUN
 Seed content: NOT STARTED
 
 Batch 01.1 external validation passed.
+Batch 01.2 external validation passed.
 
 The content-strategy foundation is approved with open decisions intentionally carried forward to later Phase 01 batches.
 
-Formal route-contract work now moves to Batch 01.2.
+Batch 01.2 approved the formal v1 route system.
+
+Batch 01.2 defines route purposes, audiences, visitor questions, CTA direction, required and optional content, content domains consumed, CMS/code/derived ownership, reuse, route composition intent, route states, content readiness, internal linking, responsive intent, accessibility intent, directional SEO intent, future CMS implications, deferred behavior, and decision reconciliation.
+
+OD-07 is resolved and approved by the formal v1 route contract. OD-08 remains PROPOSED / OPEN as the working boundary between `/tools` and skills. Detailed SEO metadata behavior remains owned by Batch 01.3.
 
 ## Phase 01 Batch State
 
 | Batch | Name | Status | Evidence |
 |---|---|---|---|
 | 01.1 | Content Strategy Foundation | Approved | External validation passed; Batch 01.1 strategy workbook reconciled into `docs/system/CONTENT-STRATEGY.md`, this phase state, `TASKS.md`, the roadmap, README, route-contract status, and the Phase 01 document |
-| 01.2 | Route Contract | Next | Formal route contract intentionally deferred until Batch 01.2 starts |
-| 01.3 | SEO + Metadata Contract | Later | Formal metadata behavior intentionally deferred |
+| 01.2 | Route Contract | Approved | External validation passed; formal v1 route contract documented in `docs/system/ROUTE-CONTRACT.md`; OD-07 resolved; OD-08 preserved as PROPOSED / OPEN |
+| 01.3 | SEO + Metadata Contract | Next | Formal metadata behavior intentionally deferred |
 | 01.4 | Content Requirements Matrix | Later | Content requirements matrix intentionally deferred |
 | 01.5 | Phase 01 Validation + Freeze | Later | Phase freeze not started |
 
-Batch 01.1 approved strategy only. It did not start Batch 01.2 implementation, authorize Phase 02, create static fixtures, run migrations, run Contentful commands, or mutate Contentful state.
+Batch 01.2 approval documents route contracts only. It does not start Batch 01.3 implementation, authorize Phase 02, create static fixtures, run migrations, run Contentful commands, or mutate Contentful state.
 
 ## Batch 01.1 Strategy Summary
 
@@ -50,9 +56,9 @@ Recorded strategy foundation:
 - privacy/confidentiality rules
 - deferred/out-of-scope v1 features
 - assumptions A-01 through A-09
-- open decisions OD-01 through OD-15
+- open decisions OD-01 through OD-06 and OD-08 through OD-15, with OD-07 now resolved by Batch 01.2
 
-Non-blocking Batch 01.1 open decisions include canonical positioning sentence, secondary professional title, desired work type, proposed pillar validation, skill grouping, formal route contract, `/tools` vs skills boundary, featured projects, public-safe enterprise projects, certification representation, taxonomy depth, related-content approach, homepage proof metrics, and SEO override strategy.
+Non-blocking Phase 01 open decisions include canonical positioning sentence, secondary professional title, desired work type, proposed pillar validation, skill grouping, `/tools` vs skills boundary, featured projects, public-safe enterprise projects, certification representation, taxonomy depth, related-content approach, homepage proof metrics, and SEO override strategy.
 
 ## Phase 00 Batch State
 
@@ -196,6 +202,6 @@ No deletion automation is part of this repair.
 
 Phase 00 is complete. Batch 00.1, Batch 00.2, Batch 00.3, Batch 00.4, and Batch 00.5 are approved.
 
-Phase 01 is active. Batch 01.1 is approved. Batch 01.2 is next. Batch 01.3, Batch 01.4, and Batch 01.5 are later. Phase 02 is deferred.
+Phase 01 is active. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is next. Batch 01.4 and Batch 01.5 are later. Phase 02 is deferred.
 
-Bootstrap migration, seed content, environment deletion, Contentful model mutation, Contentful export/import, static fixtures, frontend implementation, route-contract approval, and SEO metadata-contract approval remain out of scope.
+Bootstrap migration, seed content, environment deletion, Contentful model mutation, Contentful export/import, static fixtures, frontend implementation, Batch 01.3 implementation, and SEO metadata-contract approval remain out of scope.

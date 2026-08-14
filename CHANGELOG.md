@@ -55,6 +55,16 @@ All meaningful project changes should be recorded here.
 - Established the project content-strategy foundation while preserving proposed pillars, assumptions, and open decisions.
 - Advanced Phase 01 to Batch 01.2 — Route Contract.
 - Bootstrap migration remains blocked and seed content remains not started.
+- Started Phase 01 / Batch 01.2 — Route Contract.
+- Formalized route purpose, content responsibility, ownership, route states, internal linking, responsive intent, and accessibility intent for the v1 route system.
+- Kept detailed SEO metadata behavior deferred to Batch 01.3.
+- Kept Contentful schema and bootstrap migration work deferred.
+- Approved Phase 01 / Batch 01.2 — Route Contract after external validation.
+- Approved the nine-route v1 route contract and route responsibility/state model.
+- Resolved OD-07 — Final formal v1 route contract.
+- Preserved OD-08 — `/tools` vs skills boundary as PROPOSED / OPEN.
+- Advanced Phase 01 to Batch 01.3 — SEO + Metadata Contract.
+- Bootstrap migration remains blocked and seed content remains not started.
 
 ### Security
 

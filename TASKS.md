@@ -11,47 +11,44 @@ Status: ACTIVE
 #### Approved
 
 - [x] Batch 01.1 — Content Strategy Foundation
+- [x] Batch 01.2 — Route Contract
 
 Batch 01.1 external validation: PASS.
+Batch 01.2 external validation: PASS.
 
-Approved Batch 01.1 evidence:
+Approved Batch 01.2 evidence:
 
-- [x] Capture website mission
-- [x] Capture professional positioning direction
-- [x] Capture audience hierarchy
-- [x] Capture brand voice rules
-- [x] Define approved/proposed content pillars
-- [x] Define v1 content domains
-- [x] Record preliminary route inventory
-- [x] Define homepage content priorities
-- [x] Define profile strategy
-- [x] Define experience strategy
-- [x] Define project/case-study strategy
-- [x] Define writing strategy
-- [x] Define skills/tools direction
-- [x] Define navigation/contact direction
-- [x] Define CMS vs code ownership
-- [x] Define content reuse rules
-- [x] Define editorial lifecycle
-- [x] Define fixture requirements
-- [x] Define accessibility content rules
-- [x] Define responsive content intent
-- [x] Define localization intent
-- [x] Define confidentiality rules
-- [x] Define deferred v1 scope
-- [x] Record assumptions
-- [x] Record open decisions
-- [x] External Batch 01.1 validation
+- [x] Confirm formal v1 route inventory
+- [x] Classify route types
+- [x] Define route purpose
+- [x] Define primary audience intent
+- [x] Define primary visitor question
+- [x] Define CTA direction
+- [x] Define required content
+- [x] Define optional content
+- [x] Define content domains consumed
+- [x] Define CMS/code/derived ownership
+- [x] Define reuse rules
+- [x] Define route composition intent
+- [x] Define route states
+- [x] Define content-readiness rules
+- [x] Define internal linking
+- [x] Define responsive intent
+- [x] Define accessibility intent
+- [x] Record SEO intent boundary
+- [x] Record future CMS implications
+- [x] Record deferred behavior
+- [x] Preserve unresolved decisions
+- [x] External Batch 01.2 validation
+- [x] Resolve OD-07 — Final formal v1 route contract
+- [x] Preserve OD-08 — `/tools` vs skills as PROPOSED / OPEN
 
 #### Next
 
-- [ ] Batch 01.2 — Route Contract
-
-Do not start Batch 01.2 implementation until the approval reconciliation is reviewed, committed, and pushed.
+- [ ] Batch 01.3 — SEO + Metadata Contract
 
 #### Later
 
-- [ ] Batch 01.3 — SEO + Metadata Contract
 - [ ] Batch 01.4 — Content Requirements Matrix
 - [ ] Batch 01.5 — Phase 01 Validation + Freeze
 
@@ -125,9 +122,10 @@ Recorded Phase 00 evidence:
 - Batch 00.1, Batch 00.2, Batch 00.3, Batch 00.4, and Batch 00.5 are approved.
 - Phase 01 is active.
 - Batch 01.1 is approved.
-- Batch 01.2 is next.
-- Batch 01.3, Batch 01.4, and Batch 01.5 are later.
+- Batch 01.2 is approved after external validation.
+- Batch 01.3 is next.
+- Batch 01.4 and Batch 01.5 are later.
 - Phase 02 is deferred.
 - Bootstrap migration remains blocked and not run.
 - Seed content remains not started.
-- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by Batch 01.1 approval.
+- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by Batch 01.2 approval.
