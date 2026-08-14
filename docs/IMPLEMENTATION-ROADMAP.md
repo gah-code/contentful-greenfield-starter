@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 active; Batch 01.2 approved; Batch 01.3 next
+Status: Phase 00 complete; Phase 01 active; Batch 01.3 approved; Batch 01.4 next
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -8,7 +8,7 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 | Phase | Name | Primary outcome | Runtime impact |
 |---|---|---|---|
 | 00 | Baseline + Two-Environment Setup | Complete; safe repository, secure tooling boundary, and governed `master` + `dev` operating model | None |
-| 01 | Content Strategy + Route Contract | Active; Batch 01.2 route contract approved; Batch 01.3 next | None |
+| 01 | Content Strategy + Route Contract | Active; Batch 01.3 SEO + metadata contract approved; Batch 01.4 next | None |
 | 02 | Content Model Contract + Bootstrap Migration | Deferred; core model created in `dev` only after Phase 01 approval and Phase 02 authorization | CMS only |
 | 03 | Model Export + Serial Clean-Room Verification | Approved model-only snapshot rebuilt into fresh `dev` from protected `master` | CMS only |
 | 04 | Editorial QA + Model Freeze | Editor-friendly baseline v1 | CMS only |
@@ -34,8 +34,8 @@ Phase 00 — COMPLETE
 Phase 01 — ACTIVE
 Batch 01.1 — APPROVED
 Batch 01.2 — APPROVED
-Batch 01.3 — NEXT
-Batch 01.4 — LATER
+Batch 01.3 — APPROVED
+Batch 01.4 — NEXT
 Batch 01.5 — LATER
 
 Phase 02 — DEFERRED
@@ -69,7 +69,7 @@ Create a safe operating surface before any content type is created.
 
 ## Phase 01 — Content Strategy + Route Contract
 
-Current state: ACTIVE. Latest approved batch: 01.2 — Route Contract — APPROVED. Next batch: 01.3 — SEO + Metadata Contract.
+Current state: ACTIVE. Latest approved batch: 01.3 — SEO + Metadata Contract — APPROVED. Next batch: 01.4 — Content Requirements Matrix — NEXT.
 
 ### Goal
 
@@ -81,8 +81,8 @@ Define what the website needs to communicate before finalizing CMS fields.
 |---|---|---|
 | 01.1 | Content Strategy Foundation | APPROVED |
 | 01.2 | Route Contract | APPROVED |
-| 01.3 | SEO + Metadata Contract | NEXT |
-| 01.4 | Content Requirements Matrix | LATER |
+| 01.3 | SEO + Metadata Contract | APPROVED |
+| 01.4 | Content Requirements Matrix | NEXT |
 | 01.5 | Phase 01 Validation + Freeze | LATER |
 
 ### Confirm
@@ -112,6 +112,17 @@ Define what the website needs to communicate before finalizing CMS fields.
 - OD-08 — `/tools` vs skills boundary — remains PROPOSED / OPEN.
 - Detailed SEO metadata behavior remains deferred to Batch 01.3.
 - Contentful schema and bootstrap migration work remain deferred.
+
+### Approved Batch 01.3 Evidence
+
+- External Batch 01.3 validation passed.
+- `docs/system/SEO-AND-METADATA-CONTRACT.md` documents the formal SEO + metadata contract.
+- Option 2 hybrid SEO ownership is approved.
+- Future editorial SEO overrides are limited conceptually to SEO title, SEO description, and social image.
+- Canonical URLs, robots/indexability, sitemap eligibility, structured data, breadcrumbs, preview exclusion, and fallback resolution remain code/state-derived.
+- The broad legacy `seoMetadata` proposal is classified as PROPOSED / REQUIRES PHASE 02 RECONCILIATION.
+- OD-15 — SEO override/default strategy — is resolved by the Batch 01.3 contract.
+- Exact Contentful field representation, frontend metadata implementation, and bootstrap migration work remain deferred.
 
 ### Exit criteria
 

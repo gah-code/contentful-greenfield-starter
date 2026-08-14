@@ -30,10 +30,12 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Area | Current state |
 | --- | --- |
 | Current phase | Phase 01 - Content Strategy + Route Contract |
-| Latest approved batch | Batch 01.2 - Route Contract |
-| Current work item | Batch 01.3 - SEO + Metadata Contract - Next |
-| Later Phase 01 batches | Batch 01.4 - Content Requirements Matrix; Batch 01.5 - Phase 01 Validation + Freeze |
+| Latest approved batch | Batch 01.3 - SEO + Metadata Contract |
+| Previous approved batch | Batch 01.2 - Route Contract |
+| Next | Batch 01.4 - Content Requirements Matrix |
+| Later Phase 01 batch | Batch 01.5 - Phase 01 Validation + Freeze |
 | Previous phase | Phase 00 - Complete |
+| Phase 02 | Deferred |
 | Content model | 10 semantic content types planned |
 | Environments | `master` + `dev` |
 | Bootstrap migration | Blocked / not run |
@@ -186,7 +188,7 @@ The v1 target is 10 semantic content types:
 
 `seoMetadata`, `socialLink`, `navigationItem`, `siteSettings`, `personProfile`, `project`, `article`, `experienceItem`, `skill`, and `skillGroup`.
 
-The model represents editorial concepts rather than React components. Content type ownership lives in [docs/content-model/CONTENT-TYPE-LEDGER.md](docs/content-model/CONTENT-TYPE-LEDGER.md), field contracts live in [docs/content-model/FIELD-ID-LEDGER.md](docs/content-model/FIELD-ID-LEDGER.md), and references live in [docs/content-model/REFERENCE-MAP.md](docs/content-model/REFERENCE-MAP.md).
+The model represents editorial concepts rather than React components. Batch 01.3 approved Option 2 hybrid SEO ownership and classifies the broad legacy `seoMetadata` proposal as proposed Phase 02 reconciliation input; the current SEO contract prefers optional Project/Article editorial overrides for SEO title, SEO description, and social image unless later evidence justifies a reduced reusable SEO reference. Content type ownership lives in [docs/content-model/CONTENT-TYPE-LEDGER.md](docs/content-model/CONTENT-TYPE-LEDGER.md), field contracts live in [docs/content-model/FIELD-ID-LEDGER.md](docs/content-model/FIELD-ID-LEDGER.md), and references live in [docs/content-model/REFERENCE-MAP.md](docs/content-model/REFERENCE-MAP.md).
 
 ## Documentation
 
@@ -204,6 +206,7 @@ The model represents editorial concepts rather than React components. Content ty
 - [docs/system/SECURITY-AND-SECRETS.md](docs/system/SECURITY-AND-SECRETS.md) - secret and CLI boundaries
 - [docs/system/CONTENT-STRATEGY.md](docs/system/CONTENT-STRATEGY.md) - approved Batch 01.1 content-strategy foundation
 - [docs/system/ROUTE-CONTRACT.md](docs/system/ROUTE-CONTRACT.md) - approved Batch 01.2 route-contract surface
+- [docs/system/SEO-AND-METADATA-CONTRACT.md](docs/system/SEO-AND-METADATA-CONTRACT.md) - approved Batch 01.3 SEO + metadata contract
 
 ### Content Model
 
@@ -213,7 +216,7 @@ The model represents editorial concepts rather than React components. Content ty
 
 ### Active Phase
 
-- [docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md](docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md) - Phase 01 scope, Batch 01.2 approval evidence, boundaries, and Batch 01.3 next state
+- [docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md](docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md) - Phase 01 scope, Batch 01.3 approval evidence, boundaries, and Batch 01.4 next state
 
 ## Safety and Governance
 

@@ -12,9 +12,11 @@ Status: ACTIVE
 
 - [x] Batch 01.1 — Content Strategy Foundation
 - [x] Batch 01.2 — Route Contract
+- [x] Batch 01.3 — SEO + Metadata Contract
 
 Batch 01.1 external validation: PASS.
 Batch 01.2 external validation: PASS.
+Batch 01.3 external validation: PASS.
 
 Approved Batch 01.2 evidence:
 
@@ -43,13 +45,41 @@ Approved Batch 01.2 evidence:
 - [x] Resolve OD-07 — Final formal v1 route contract
 - [x] Preserve OD-08 — `/tools` vs skills as PROPOSED / OPEN
 
+#### Batch 01.3 — SEO + Metadata Contract
+
+Status: APPROVED
+
+- [x] Audit existing SEO/model assumptions
+- [x] Classify broad `seoMetadata` proposal
+- [x] Confirm Option 2 hybrid ownership
+- [x] Confirm approved route SEO intent
+- [x] Define metadata ownership
+- [x] Define editorial override contract
+- [x] Define technical SEO ownership
+- [x] Define fallback hierarchy
+- [x] Define title patterns
+- [x] Define description intent
+- [x] Define canonical behavior
+- [x] Define route-state indexability
+- [x] Define robots behavior
+- [x] Remove editorial page-level `noFollow` from v1 contract
+- [x] Define Open Graph requirements
+- [x] Define social-image fallback
+- [x] Define structured-data candidates
+- [x] Distinguish search-feature candidates from semantic schema candidates
+- [x] Define sitemap eligibility
+- [x] Define internal-link SEO expectations
+- [x] Record Phase 02 model reconciliation inputs
+- [x] Resolve OD-15 — SEO override/default strategy
+- [x] Preserve unrelated open decisions
+- [x] External Batch 01.3 validation
+
 #### Next
 
-- [ ] Batch 01.3 — SEO + Metadata Contract
+- [ ] Batch 01.4 — Content Requirements Matrix
 
 #### Later
 
-- [ ] Batch 01.4 — Content Requirements Matrix
 - [ ] Batch 01.5 — Phase 01 Validation + Freeze
 
 ## Deferred
@@ -123,9 +153,10 @@ Recorded Phase 00 evidence:
 - Phase 01 is active.
 - Batch 01.1 is approved.
 - Batch 01.2 is approved after external validation.
-- Batch 01.3 is next.
-- Batch 01.4 and Batch 01.5 are later.
+- Batch 01.3 is approved after external validation.
+- Batch 01.4 is next.
+- Batch 01.5 is later.
 - Phase 02 is deferred.
 - Bootstrap migration remains blocked and not run.
 - Seed content remains not started.
-- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by Batch 01.2 approval.
+- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by Batch 01.3 approval.

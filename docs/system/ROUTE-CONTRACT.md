@@ -75,7 +75,7 @@ The contract establishes:
 - directional SEO intent
 - directional future CMS implications
 
-Detailed SEO and metadata behavior remains owned by Batch 01.3.
+Detailed SEO and metadata behavior is approved in `docs/system/SEO-AND-METADATA-CONTRACT.md`.
 
 No Contentful model or migration work was authorized by this approval.
 
@@ -200,6 +200,8 @@ Batch 01.3 owns:
 - Open Graph behavior
 - structured-data decisions
 - metadata fallback/override logic
+
+Batch 01.3 approved this behavior in `docs/system/SEO-AND-METADATA-CONTRACT.md`. OD-15 is RESOLVED / APPROVED by that contract.
 
 ## Future CMS Implication Boundary
 
@@ -360,7 +362,7 @@ Use a clear primary heading, meaningful CTA labels, descriptive links to deeper 
 
 ### SEO Intent
 
-Professional identity and broad portfolio discovery. Detailed metadata rules remain Batch 01.3 work.
+Professional identity and broad portfolio discovery. Detailed metadata rules are approved in `docs/system/SEO-AND-METADATA-CONTRACT.md`.
 
 ### Future CMS Implications
 
@@ -375,7 +377,6 @@ Final CTA labels, exact proof metrics, automated freshness logic, dynamic person
 - OD-01 — canonical positioning sentence
 - OD-09 — homepage featured projects
 - OD-14 — public-safe homepage proof metrics
-- OD-15 — SEO override strategy
 
 ## Route: `/about`
 
@@ -509,7 +510,7 @@ Use clear headings for story, philosophy, and supporting context. Avoid generic 
 
 ### SEO Intent
 
-Professional background and expertise discovery. Detailed metadata rules remain Batch 01.3 work.
+Professional background and expertise discovery. Detailed metadata rules are approved in `docs/system/SEO-AND-METADATA-CONTRACT.md`.
 
 ### Future CMS Implications
 
@@ -665,7 +666,7 @@ Use a logical heading hierarchy for roles and companies. Dates and outcomes must
 
 ### SEO Intent
 
-Professional experience and CMS/content operations career evidence. Detailed metadata rules remain Batch 01.3 work.
+Professional experience and CMS/content operations career evidence. Detailed metadata rules are approved in `docs/system/SEO-AND-METADATA-CONTRACT.md`.
 
 ### Future CMS Implications
 
@@ -815,7 +816,7 @@ Project preview links must be descriptive. Meaningful project images require alt
 
 ### SEO Intent
 
-Portfolio and case-study discovery. Detailed metadata rules remain Batch 01.3 work.
+Portfolio and case-study discovery. Detailed metadata rules are approved in `docs/system/SEO-AND-METADATA-CONTRACT.md`.
 
 ### Future CMS Implications
 
@@ -984,7 +985,7 @@ Use clear section headings, descriptive links, accessible media alt text, and co
 
 ### SEO Intent
 
-Public-safe case-study discovery and proof of CMS/content systems capability. Detailed metadata rules remain Batch 01.3 work.
+Public-safe case-study discovery and proof of CMS/content systems capability. Detailed metadata rules are approved in `docs/system/SEO-AND-METADATA-CONTRACT.md`.
 
 ### Future CMS Implications
 
@@ -999,7 +1000,6 @@ Preview authentication, screenshot/gallery implementation, structured data, fina
 - OD-10 — public-safe enterprise projects
 - OD-12 — taxonomy depth
 - OD-13 — manual vs derived related content
-- OD-15 — SEO override strategy
 
 ## Route: `/writing`
 
@@ -1131,7 +1131,7 @@ Article links must be descriptive. Dates and tags must be text-readable. Meaning
 
 ### SEO Intent
 
-Professional knowledge discovery. Detailed metadata rules remain Batch 01.3 work.
+Professional knowledge discovery. Detailed metadata rules are approved in `docs/system/SEO-AND-METADATA-CONTRACT.md`.
 
 ### Future CMS Implications
 
@@ -1146,7 +1146,6 @@ Search, complex taxonomy, filtering, automated related-content engine, final fea
 - OD-05 — SEO, Accessibility & Content Quality pillar validation
 - OD-12 — taxonomy depth
 - OD-13 — manual vs derived related content
-- OD-15 — SEO override strategy
 
 ## Route: `/writing/[slug]`
 
@@ -1287,7 +1286,7 @@ Use a clear article heading, logical content headings, descriptive links, access
 
 ### SEO Intent
 
-Topic-level authority and professional knowledge discovery. Detailed metadata rules remain Batch 01.3 work.
+Topic-level authority and professional knowledge discovery. Detailed metadata rules are approved in `docs/system/SEO-AND-METADATA-CONTRACT.md`.
 
 ### Future CMS Implications
 
@@ -1301,7 +1300,6 @@ Preview authentication, structured data, canonical implementation, Open Graph ru
 
 - OD-12 — taxonomy depth
 - OD-13 — manual vs derived related content
-- OD-15 — SEO override strategy
 
 ## Route: `/tools`
 
@@ -1436,7 +1434,7 @@ Tool names must be text-readable. Icons/logos are decorative unless they convey 
 
 ### SEO Intent
 
-Professional stack and platform capability discovery. Detailed metadata rules remain Batch 01.3 work.
+Professional stack and platform capability discovery. Detailed metadata rules are approved in `docs/system/SEO-AND-METADATA-CONTRACT.md`.
 
 ### Future CMS Implications
 
@@ -1582,7 +1580,7 @@ Use descriptive link labels for email, LinkedIn, GitHub, and résumé. Avoid rel
 
 ### SEO Intent
 
-Professional contact and hiring/collaboration discovery. Contact is currently intended to be indexable. Detailed metadata rules remain Batch 01.3 work.
+Professional contact and hiring/collaboration discovery. Contact is currently intended to be indexable. Detailed metadata rules are approved in `docs/system/SEO-AND-METADATA-CONTRACT.md`.
 
 ### Future CMS Implications
 
@@ -1595,7 +1593,6 @@ Contact form, phone number, residential address, private contact information, un
 ### Open Decisions
 
 - OD-03 — desired work type
-- OD-15 — SEO override strategy
 
 ## Route-Level SEO Intent Summary
 
@@ -1671,7 +1668,6 @@ Route-adjacent decisions still unresolved:
 - OD-12 — taxonomy depth
 - OD-13 — manual vs derived related content
 - OD-14 — public-safe homepage proof metrics
-- OD-15 — SEO overrides vs generated defaults
 
 Unrelated open decisions intentionally not resolved:
 
@@ -1682,3 +1678,7 @@ Unrelated open decisions intentionally not resolved:
 - OD-05 — final status of SEO, Accessibility & Content Quality pillar
 - OD-06 — final skill-group taxonomy
 - OD-11 — certification representation
+
+Resolved downstream decision:
+
+- OD-15 — SEO overrides vs generated defaults: RESOLVED / APPROVED by `docs/system/SEO-AND-METADATA-CONTRACT.md`.

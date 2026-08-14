@@ -30,12 +30,14 @@ Documentation is part of the build.
 - Phase 01 — ACTIVE.
 - 01.1 — APPROVED.
 - 01.2 — APPROVED.
-- 01.3 — NEXT.
-- 01.4 — LATER.
+- 01.3 — APPROVED.
+- 01.4 — NEXT.
 - 01.5 — LATER.
 - Phase 02 — DEFERRED.
 - Bootstrap migration — BLOCKED / NOT RUN.
 - Seed content — NOT STARTED.
+
+Batch 01.3 approved hybrid SEO ownership: editorial SEO overrides are limited conceptually to title, description, and social image; technical SEO remains code/state-derived. Exact Contentful representation and schema implementation remain deferred to Phase 02.
 
 ## Environment Model
 

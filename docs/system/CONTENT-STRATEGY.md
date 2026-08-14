@@ -2,7 +2,7 @@
 
 Status: Phase 01 / Batch 01.1 — APPROVED
 Owner: Phase 01 — Content Strategy + Route Contract
-Next downstream consumer: Batch 01.3 — SEO + Metadata Contract
+Current downstream consumer: Batch 01.4 — Content Requirements Matrix
 
 ## Purpose
 
@@ -540,6 +540,8 @@ Contact form: DEFERRED.
 
 Batch 01.1 records route-level discovery intent only. Batch 01.3 owns title patterns, description rules, canonical behavior, Open Graph behavior, structured-data decisions, and override strategy.
 
+Batch 01.3 approved SEO behavior in `docs/system/SEO-AND-METADATA-CONTRACT.md`.
+
 Current principles:
 
 - Projects: index only when public-safe, complete, useful, and sufficiently distinct.
@@ -547,7 +549,7 @@ Current principles:
 - Draft or experimental content: not public or indexable.
 - Contact: currently intended to be indexable.
 
-Open SEO decision: which content requires dedicated editorial SEO overrides versus generated defaults.
+Resolved SEO decision: metadata uses hybrid ownership. Editorial overrides are limited conceptually to SEO title, SEO description, and social image; canonical URLs, robots/indexability, sitemap eligibility, structured data, breadcrumbs, preview exclusion, and fallback behavior are code/state-derived.
 
 ## Media Strategy
 
@@ -797,7 +799,6 @@ Do not mark these assumptions validated until their gates produce direct evidenc
 | OD-12 | Taxonomy depth | Content requirements matrix / Phase 02 |
 | OD-13 | Manual vs derived related content | Content requirements / adapter contract |
 | OD-14 | Public-safe homepage proof metrics | Content validation |
-| OD-15 | SEO overrides vs generated defaults | Batch 01.3 |
 
 These are not Batch 01.1 failures unless they materially prevent the content-strategy foundation from being documented.
 
@@ -806,6 +807,7 @@ These are not Batch 01.1 failures unless they materially prevent the content-str
 | ID | Decision | Resolution |
 |---|---|---|
 | OD-07 | Final formal v1 route contract | RESOLVED / APPROVED by Phase 01 / Batch 01.2 — Route Contract external validation. Approved v1 routes: `/`, `/about`, `/work`, `/projects`, `/projects/[slug]`, `/writing`, `/writing/[slug]`, `/tools`, `/contact`. |
+| OD-15 | SEO overrides vs generated defaults | RESOLVED / APPROVED by Phase 01 / Batch 01.3 — SEO + Metadata Contract. SEO uses hybrid ownership: optional future editorial overrides for SEO title, SEO description, and social image; technical SEO is code/state-derived. Exact Contentful representation remains deferred to Phase 02. |
 
 ## Downstream Consumers
 

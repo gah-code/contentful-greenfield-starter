@@ -65,6 +65,20 @@ All meaningful project changes should be recorded here.
 - Preserved OD-08 — `/tools` vs skills boundary as PROPOSED / OPEN.
 - Advanced Phase 01 to Batch 01.3 — SEO + Metadata Contract.
 - Bootstrap migration remains blocked and seed content remains not started.
+- Started Phase 01 / Batch 01.3 — SEO + Metadata Contract.
+- Adopted Option 2 hybrid SEO ownership as the Batch 01.3 contract direction.
+- Limited future editorial SEO overrides conceptually to title, description, and social image.
+- Assigned canonical URLs, robots/indexability, sitemap eligibility, structured data, breadcrumbs, and preview exclusion to code/state.
+- Marked the broad legacy `seoMetadata` proposal for Phase 02 reconciliation.
+- Resolved OD-15 — SEO override/default strategy.
+- Kept Contentful schema work and frontend SEO implementation deferred.
+- Approved Phase 01 / Batch 01.3 — SEO + Metadata Contract after external validation.
+- Approved Option 2 hybrid SEO ownership.
+- Resolved OD-15 — SEO override/default strategy.
+- Preserved ADR-009 as the architectural rationale for hybrid ownership.
+- Deferred exact Contentful SEO field representation to Phase 02.
+- Advanced Phase 01 to Batch 01.4 — Content Requirements Matrix.
+- Bootstrap migration remains blocked and seed content remains not started.
 
 ### Security
 

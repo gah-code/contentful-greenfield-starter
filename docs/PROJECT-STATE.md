@@ -2,16 +2,17 @@
 
 Project: `contentful-greenfield-starter`
 Current phase: Phase 01 — ACTIVE
-Current work item: Batch 01.3 — SEO + Metadata Contract — NEXT
+Current work item: Batch 01.4 — Content Requirements Matrix — NEXT
 Latest completed phase: Phase 00 — COMPLETE
-Latest approved batch: Batch 01.2 — Route Contract — APPROVED
-Next work item: Batch 01.3 — SEO + Metadata Contract
+Latest approved batch: Batch 01.3 — SEO + Metadata Contract — APPROVED
+Next work item: Batch 01.4 — Content Requirements Matrix — NEXT
 Phase 02: DEFERRED
 Bootstrap migration: BLOCKED / NOT RUN
 Seed content: NOT STARTED
 
 Batch 01.1 external validation passed.
 Batch 01.2 external validation passed.
+Batch 01.3 external validation passed.
 
 The content-strategy foundation is approved with open decisions intentionally carried forward to later Phase 01 batches.
 
@@ -19,7 +20,9 @@ Batch 01.2 approved the formal v1 route system.
 
 Batch 01.2 defines route purposes, audiences, visitor questions, CTA direction, required and optional content, content domains consumed, CMS/code/derived ownership, reuse, route composition intent, route states, content readiness, internal linking, responsive intent, accessibility intent, directional SEO intent, future CMS implications, deferred behavior, and decision reconciliation.
 
-OD-07 is resolved and approved by the formal v1 route contract. OD-08 remains PROPOSED / OPEN as the working boundary between `/tools` and skills. Detailed SEO metadata behavior remains owned by Batch 01.3.
+OD-07 is resolved and approved by the formal v1 route contract. OD-08 remains PROPOSED / OPEN as the working boundary between `/tools` and skills.
+
+Batch 01.3 approved Option 2 hybrid SEO ownership. Editorial SEO override scope is limited conceptually to SEO title, SEO description, and social image for dynamic editorial content. Canonical URLs, robots/indexability, sitemap eligibility, preview exclusion, breadcrumbs, structured data, and metadata fallback behavior remain code/state-derived. Exact Contentful field representation remains Phase 02 work.
 
 ## Phase 01 Batch State
 
@@ -27,11 +30,11 @@ OD-07 is resolved and approved by the formal v1 route contract. OD-08 remains PR
 |---|---|---|---|
 | 01.1 | Content Strategy Foundation | Approved | External validation passed; Batch 01.1 strategy workbook reconciled into `docs/system/CONTENT-STRATEGY.md`, this phase state, `TASKS.md`, the roadmap, README, route-contract status, and the Phase 01 document |
 | 01.2 | Route Contract | Approved | External validation passed; formal v1 route contract documented in `docs/system/ROUTE-CONTRACT.md`; OD-07 resolved; OD-08 preserved as PROPOSED / OPEN |
-| 01.3 | SEO + Metadata Contract | Next | Formal metadata behavior intentionally deferred |
-| 01.4 | Content Requirements Matrix | Later | Content requirements matrix intentionally deferred |
+| 01.3 | SEO + Metadata Contract | Approved | External validation passed; `docs/system/SEO-AND-METADATA-CONTRACT.md` documents approved Option 2 hybrid SEO ownership, route metadata behavior, route-state SEO behavior, OD-15 resolution, and Phase 02 model reconciliation inputs |
+| 01.4 | Content Requirements Matrix | Next | Content requirements matrix intentionally not started during Batch 01.3 approval reconciliation |
 | 01.5 | Phase 01 Validation + Freeze | Later | Phase freeze not started |
 
-Batch 01.2 approval documents route contracts only. It does not start Batch 01.3 implementation, authorize Phase 02, create static fixtures, run migrations, run Contentful commands, or mutate Contentful state.
+Batch 01.3 approved SEO and metadata contracts only. It does not start Batch 01.4, authorize Phase 02, create static fixtures, implement frontend metadata, run migrations, run Contentful commands, or mutate Contentful state.
 
 ## Batch 01.1 Strategy Summary
 
@@ -56,9 +59,9 @@ Recorded strategy foundation:
 - privacy/confidentiality rules
 - deferred/out-of-scope v1 features
 - assumptions A-01 through A-09
-- open decisions OD-01 through OD-06 and OD-08 through OD-15, with OD-07 now resolved by Batch 01.2
+- open decisions OD-01 through OD-06 and OD-08 through OD-14, with OD-07 resolved by Batch 01.2 and OD-15 resolved by Batch 01.3
 
-Non-blocking Phase 01 open decisions include canonical positioning sentence, secondary professional title, desired work type, proposed pillar validation, skill grouping, `/tools` vs skills boundary, featured projects, public-safe enterprise projects, certification representation, taxonomy depth, related-content approach, homepage proof metrics, and SEO override strategy.
+Non-blocking Phase 01 open decisions include canonical positioning sentence, secondary professional title, desired work type, proposed pillar validation, skill grouping, `/tools` vs skills boundary, featured projects, public-safe enterprise projects, certification representation, taxonomy depth, related-content approach, and homepage proof metrics. OD-15 is resolved by Batch 01.3.
 
 ## Phase 00 Batch State
 
@@ -202,6 +205,6 @@ No deletion automation is part of this repair.
 
 Phase 00 is complete. Batch 00.1, Batch 00.2, Batch 00.3, Batch 00.4, and Batch 00.5 are approved.
 
-Phase 01 is active. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is next. Batch 01.4 and Batch 01.5 are later. Phase 02 is deferred.
+Phase 01 is active. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is approved after external validation. Batch 01.4 is next. Batch 01.5 is later. Phase 02 is deferred.
 
-Bootstrap migration, seed content, environment deletion, Contentful model mutation, Contentful export/import, static fixtures, frontend implementation, Batch 01.3 implementation, and SEO metadata-contract approval remain out of scope.
+Bootstrap migration, seed content, environment deletion, Contentful model mutation, Contentful export/import, static fixtures, frontend implementation, Batch 01.4 implementation, and Phase 02 remain out of scope.

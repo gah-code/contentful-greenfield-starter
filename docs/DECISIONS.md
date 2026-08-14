@@ -72,7 +72,7 @@ Contentful response
 
 ## ADR-006 — Initial Model Cap
 
-Status: accepted
+Status: accepted; SEO metadata ownership refined by ADR-009
 
 Start with 10 semantic content types:
 
@@ -86,6 +86,8 @@ Start with 10 semantic content types:
 8. Experience Item
 9. Skill
 10. Skill Group
+
+Historical note: the broad SEO Metadata model remains proposed Phase 02 input. Batch 01.3 refines SEO ownership through ADR-009 and does not freeze the reusable `seoMetadata` type or its fields as approved schema truth.
 
 ---
 
@@ -158,3 +160,60 @@ The prior `master`/`dev`/`verification` architecture.
 - keeps the operating model simple
 - still proves snapshot portability before seed content
 - makes destructive `dev` deletion depend on recoverability evidence and explicit approval
+
+---
+
+## ADR-009 — Hybrid SEO Ownership
+
+Status: accepted
+
+### Context
+
+Phase 01 / Batch 01.3 resolves OD-15 — SEO override/default strategy.
+
+ADR-009 provides the durable architectural rationale for OD-15. OD-15 remains the decision/status tracker for the approved SEO override/default strategy.
+
+The existing proposed model documentation and bootstrap migration include a broad reusable `seoMetadata` type with title, description, canonical URL, Open Graph image, noindex, and nofollow controls. Those surfaces are proposed Phase 02 inputs, not approved schema truth.
+
+### Decision
+
+Use hybrid SEO ownership.
+
+Editorial SEO scope is limited conceptually to optional overrides:
+
+- SEO title override
+- SEO description override
+- social image override
+
+Technical SEO remains code/state-derived:
+
+- canonical URLs
+- robots/indexability
+- sitemap eligibility
+- structured data
+- breadcrumbs
+- preview exclusion
+- metadata fallback behavior
+
+Exact Contentful field representation is deferred to Phase 02. The preferred Phase 02 direction is direct optional Project/Article SEO override fields unless a real reuse or lifecycle requirement justifies a reduced reusable SEO metadata reference.
+
+### Exclusions
+
+The v1 editorial SEO contract excludes:
+
+- arbitrary canonical URL fields
+- page-level editorial robots/noindex controls
+- page-level editorial nofollow controls
+- sitemap checkboxes
+- arbitrary structured-data JSON
+- meta keywords
+
+### Why
+
+- keeps editorial meaning in the CMS
+- keeps deterministic technical SEO in application code
+- avoids dangerous technical controls for editors
+- reduces Contentful model complexity
+- lowers reference and adapter overhead
+- keeps canonical/indexing behavior predictable
+- preserves future flexibility without over-modeling v1

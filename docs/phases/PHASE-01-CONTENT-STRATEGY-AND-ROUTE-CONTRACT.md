@@ -53,8 +53,8 @@ Phase 01 turns content strategy into controlled project truth, then converts tha
 |---|---|---|
 | 01.1 | Content Strategy Foundation | APPROVED |
 | 01.2 | Route Contract | APPROVED |
-| 01.3 | SEO + Metadata Contract | NEXT |
-| 01.4 | Content Requirements Matrix | LATER |
+| 01.3 | SEO + Metadata Contract | APPROVED |
+| 01.4 | Content Requirements Matrix | NEXT |
 | 01.5 | Phase 01 Validation + Freeze | LATER |
 
 ## Batch 01.1 — Content Strategy Foundation
@@ -272,7 +272,7 @@ Contact form: DEFERRED.
 
 Batch 01.1 records planning input only. Batch 01.3 owns the formal SEO + Metadata Contract.
 
-Open SEO decision: which content requires dedicated editorial SEO overrides versus generated defaults.
+Resolved downstream SEO decision: Batch 01.3 uses hybrid SEO ownership. Editorial overrides are limited conceptually to SEO title, SEO description, and social image; technical SEO is code/state-derived.
 
 ### Media Rules
 
@@ -408,7 +408,6 @@ Assumptions are not validated until their validation gates produce evidence.
 | OD-12 | Taxonomy depth |
 | OD-13 | Manual vs derived related content |
 | OD-14 | Public-safe homepage proof metrics |
-| OD-15 | SEO overrides vs generated defaults |
 
 Most open decisions belong naturally to later Phase 01 batches and are not Batch 01.1 failures.
 
@@ -417,6 +416,7 @@ Most open decisions belong naturally to later Phase 01 batches and are not Batch
 | ID | Resolved decision |
 |---|---|
 | OD-07 | Final formal v1 route contract was RESOLVED / APPROVED by Phase 01 / Batch 01.2 external validation. Approved v1 routes: `/`, `/about`, `/work`, `/projects`, `/projects/[slug]`, `/writing`, `/writing/[slug]`, `/tools`, `/contact`. |
+| OD-15 | SEO override/default strategy is RESOLVED / APPROVED by Phase 01 / Batch 01.3. SEO uses hybrid ownership: editorial overrides are limited conceptually to title, description, and social image; technical SEO is code/state-derived. Exact Contentful representation remains deferred to Phase 02. |
 
 ### Batch 01.1 Evidence Limitations
 
@@ -599,7 +599,6 @@ Open route-adjacent decisions remain unresolved:
 - OD-12 — taxonomy depth
 - OD-13 — manual vs derived related content
 - OD-14 — public-safe homepage proof metrics
-- OD-15 — SEO override strategy
 
 Unrelated open decisions remain unresolved.
 
@@ -628,8 +627,8 @@ Batch 01.2 closeout state:
 - Phase 01 is ACTIVE.
 - Batch 01.1 is APPROVED.
 - Batch 01.2 is APPROVED.
-- Batch 01.3 is NEXT.
-- Batch 01.4 and Batch 01.5 are LATER.
+- At Batch 01.2 closeout, Batch 01.3 advanced to NEXT. This is historical, not the current Batch 01.3 state.
+- At Batch 01.2 closeout, Batch 01.4 and Batch 01.5 remained LATER. This is historical, not the current Batch 01.4 state.
 - Phase 02 is DEFERRED.
 - `docs/system/ROUTE-CONTRACT.md` contains formal contracts for all nine v1 routes.
 - route responsibility boundaries are explicit.
@@ -640,5 +639,291 @@ Batch 01.2 closeout state:
 - no Contentful schema, migration, seed, fixture, or frontend implementation occurred.
 - bootstrap migration remains BLOCKED / NOT RUN.
 - seed content remains NOT STARTED.
+- no files are staged.
+- no commit or push occurs in this implementation pass.
+
+## Batch 01.3 — SEO + Metadata Contract
+
+Status: APPROVED
+
+Canonical detailed contract:
+
+- `docs/system/SEO-AND-METADATA-CONTRACT.md`
+
+### Goal
+
+Convert the approved Batch 01.2 route-level SEO intent into a formal SEO and metadata contract without defining Contentful fields, migrations, frontend metadata APIs, static fixtures, adapters, or live CMS integration.
+
+### Option 2 Architecture Decision
+
+Batch 01.3 uses Option 2 — Hybrid / Lean SEO Ownership.
+
+Editorial SEO may later own only optional SEO title, SEO description, and social image overrides, primarily for Projects and Articles.
+
+Technical SEO remains deterministic and code/state-owned: canonical URLs, robots/indexability, sitemap eligibility, preview exclusion, structured data, breadcrumbs, canonical Open Graph URL, and fallback resolution.
+
+This direction reduces Contentful model complexity, avoids dangerous editor controls, keeps canonical and indexing behavior predictable, and preserves future flexibility without over-modeling v1.
+
+### Approved Route Inputs
+
+The approved v1 route inventory remains unchanged:
+
+- `/`
+- `/about`
+- `/work`
+- `/projects`
+- `/projects/[slug]`
+- `/writing`
+- `/writing/[slug]`
+- `/tools`
+- `/contact`
+
+OD-07 remains RESOLVED / APPROVED. No routes are added or removed in Batch 01.3.
+
+### SEO Principles
+
+Preserve these Batch 01.3 principles:
+
+- route intent precedes metadata
+- metadata must represent visible content
+- public canonical routes receive stable metadata
+- draft and preview state must not become public canonical targets
+- canonicals are derived from approved route identity
+- technical SEO controls remain deterministic
+- editorial SEO remains simple enough for one editor
+- metadata should be derived when reliable
+- structured data must describe visible content
+- sitemap inclusion follows public/indexable route readiness
+- `meta keywords` are excluded
+
+### Metadata Ownership
+
+Code/application configuration owns site origin, canonical base URL, site name, default locale, title template, safe defaults, default social image, canonical derivation, route-to-canonical mapping, robots behavior, sitemap eligibility, route-state SEO behavior, structured-data generation, breadcrumb generation, fallback resolution, sanitization, and technical Open Graph defaults.
+
+Static routes do not require CMS SEO entries in v1. Their metadata should derive from the approved route contract, approved visible page content, and global defaults.
+
+### Editorial Override Contract
+
+Future editorial override scope is limited conceptually to:
+
+```text
+seoTitle?
+seoDescription?
+socialImage?
+```
+
+These overrides are optional and primarily intended for dynamic editorial content such as Projects and Articles.
+
+### Technical SEO Ownership
+
+Editors do not receive v1 freeform control over canonical URL, robots/noindex, nofollow, sitemap inclusion, structured-data JSON, breadcrumb JSON, preview indexing behavior, or meta keywords.
+
+Page-level editorial `noFollow` is excluded from v1. Future individual-link treatment belongs to a link, security, UGC, sponsorship, or implementation policy.
+
+### Fallback Contract
+
+Global fallback hierarchy:
+
+```text
+Editorial override
+-> canonical semantic content
+-> global safe fallback
+```
+
+Projects and Articles use override -> semantic title/summary/excerpt -> safe fallback. Static routes use route contract -> global defaults.
+
+### Title Contract
+
+Title patterns are documented in `docs/system/SEO-AND-METADATA-CONTRACT.md` for all nine routes.
+
+Titles should be accurate, descriptive, concise, aligned with visible content, unique where practical, free from keyword stuffing, and free from excessive boilerplate.
+
+Hard title character-count publication gates are not approved by Batch 01.3. Exact CMS validation thresholds, if any, belong to Phase 02.
+
+### Description Contract
+
+Description intent is documented for all nine routes.
+
+Descriptions must summarize page value, reflect visible content, differentiate the route, avoid generic filler, avoid unsupported claims, and avoid keyword lists.
+
+Final production descriptions are not written in Batch 01.3 unless approved copy already exists.
+
+### Canonical Contract
+
+Canonical URLs are derived from approved public route identity, normalized pathname, and absolute `[SITE_ORIGIN]` URL.
+
+Dynamic detail canonicals derive from published slugs on approved detail routes.
+
+Preview URLs, draft URLs, Contentful URLs, editor URLs, environment URLs, deployment-preview URLs, query-string variations, missing details, and stale slugs are never canonical targets.
+
+### Indexability Contract
+
+Indexability is route-state and publication-state driven:
+
+- READY public static routes: `index, follow`
+- READY published dynamic details: `index, follow`
+- EMPTY collections: default `noindex, follow`
+- MISSING: not indexable
+- DRAFT / PREVIEW: not publicly indexable; addressable preview surfaces prefer `noindex, nofollow`
+- ERROR: not indexable
+
+### Route-State SEO Behavior
+
+Route-state SEO behavior follows the approved Batch 01.2 route states: READY, EMPTY, MISSING, DRAFT / PREVIEW, and ERROR.
+
+State exceptions override the route SEO matrix.
+
+### Open Graph / Social Metadata
+
+READY public routes require resolved social title, resolved social description, canonical social URL, representative social image, social image descriptive context where supported, and site identity.
+
+Social image fallback is:
+
+```text
+editorial social image override
+-> representative content image
+-> site default social image
+```
+
+Separate CMS fields for `ogTitle`, `ogDescription`, `twitterTitle`, or `twitterDescription` are not introduced without future evidence.
+
+### Image Metadata
+
+Future social/SEO images require stable public URL, representative subject, adequate quality, intentional crop/composition, editorial context, and appropriate accessible alternative treatment.
+
+Pixel dimensions are not frozen in Batch 01.3.
+
+### Structured Data Candidates
+
+Structured-data candidates are documented route by route. They are candidates only and do not promise rich-result eligibility.
+
+Primary candidates include WebSite/Person for `/`, ProfilePage/Person for `/about`, WebPage/CreativeWork for project details, Article or BlogPosting for writing details, and BreadcrumbList for project and writing detail routes where visible breadcrumb UI exists.
+
+Arbitrary structured-data JSON CMS fields are excluded from v1.
+
+### Sitemap Contract
+
+Sitemap eligibility is deterministic:
+
+```text
+isPublic
+AND isPublished where applicable
+AND isReady
+AND isIndexable
+AND hasCanonicalRoute
+```
+
+READY canonical static routes, READY published Project details, and READY published Article details are eligible. Drafts, previews, missing routes, errors, temporary URLs, query variants, intentionally noindexed routes, and EMPTY/noindex routes are excluded.
+
+No CMS sitemap checkbox is introduced.
+
+### Robots Contract
+
+`robots.txt` is not page indexability and is not a preview security mechanism.
+
+Preview/security requires application access control plus noindex where applicable.
+
+Arbitrary editor-entered robots values are excluded from v1.
+
+### Internal-Link SEO Contract
+
+The approved Batch 01.2 internal-link relationship map remains authoritative.
+
+Important routes must not be orphaned, link labels must be meaningful, related links must be contextually justified, and links must not be added solely for search manipulation.
+
+OD-13 remains OPEN.
+
+### Phase 02 CMS Handoff
+
+Approved conceptual editorial contract:
+
+```text
+seoTitle?
+seoDescription?
+socialImage?
+```
+
+Excluded from editorial SEO v1:
+
+```text
+canonicalUrl
+noIndex
+noFollow
+robots
+sitemap inclusion
+structured-data JSON
+meta keywords
+```
+
+Preferred Phase 02 representation is direct optional SEO override fields on Project and Article unless Batch 01.4 or Phase 02 finds a real reuse requirement for a reduced reusable SEO metadata reference.
+
+The legacy broad `seoMetadata` type and current proposed migration fields are PROPOSED / REQUIRES PHASE 02 RECONCILIATION. They are not silently preserved as approved schema truth.
+
+### Decision Reconciliation
+
+- OD-07 — Final formal v1 route contract: RESOLVED / APPROVED; unchanged.
+- OD-08 — Exact content boundary between `/tools` and skills: PROPOSED / OPEN; unchanged.
+- OD-15 — SEO override/default strategy: RESOLVED / APPROVED by Batch 01.3.
+
+Unrelated open decisions remain unresolved.
+
+### Evidence Limitations
+
+- External Batch 01.3 validation passed.
+- No frontend metadata implementation was created.
+- No sitemap, robots, Open Graph, or structured-data code was created.
+- No static fixtures were created.
+- No Contentful command was run.
+- No Contentful schema, locale, environment, export, import, migration, field ID, reference, or seed mutation occurred.
+- Exact Contentful SEO field representation remains deferred to Phase 02.
+- Content Requirements Matrix work remains next and is not started by Batch 01.3 approval.
+
+### Batch 01.3 Closeout
+
+Status: APPROVED
+
+External validation: PASS
+
+Approved:
+
+- Option 2 hybrid SEO ownership;
+- metadata ownership contract;
+- title contract;
+- description contract;
+- fallback hierarchy;
+- canonical behavior;
+- route-state indexability;
+- robots behavior;
+- Open Graph/social metadata contract;
+- social-image fallback;
+- structured-data candidates;
+- sitemap eligibility;
+- internal-link SEO intent;
+- Phase 02 SEO-model handoff.
+
+Resolved:
+
+- OD-15 — SEO override/default strategy.
+
+Preserved:
+
+- OD-08 remains PROPOSED / OPEN.
+- Legacy broad `seoMetadata` requires Phase 02 reconciliation.
+
+Next:
+
+- Batch 01.4 — Content Requirements Matrix.
+
+Current state remains:
+
+- Phase 01 — ACTIVE.
+- Batch 01.1 — APPROVED.
+- Batch 01.2 — APPROVED.
+- Batch 01.3 — APPROVED.
+- Batch 01.4 — NEXT.
+- Batch 01.5 — LATER.
+- Phase 02 — DEFERRED.
+- Bootstrap migration — BLOCKED / NOT RUN.
+- Seed content — NOT STARTED.
 - no files are staged.
 - no commit or push occurs in this implementation pass.
