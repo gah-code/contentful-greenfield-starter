@@ -4,8 +4,8 @@ A production-minded Contentful project showcasing how I design scalable CMS arch
 
 The repository demonstrates how I approach content systems with the same structure, documentation, and validation practices used in professional web and CMS environments.
 
-![Status](https://img.shields.io/badge/status-complete-success)
-![Phase](https://img.shields.io/badge/phase-00%20complete-blue)
+![Status](https://img.shields.io/badge/status-active-blue)
+![Phase](https://img.shields.io/badge/phase-01%20active-blue)
 ![CMS](https://img.shields.io/badge/CMS-Contentful-2478CC)
 ![Node](https://img.shields.io/badge/node-%3E%3D22-339933)
 ![Model](https://img.shields.io/badge/content%20types-10%20semantic-555555)
@@ -29,14 +29,14 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 
 | Area | Current state |
 | --- | --- |
-| Phase | Phase 00 - Complete |
-| Current batch | Batch 00.5 - Phase 00 Closeout; approved |
-| Recently approved | Batch 00.5 - Phase 00 Closeout |
+| Current phase | Phase 01 - Content Strategy + Route Contract |
+| Latest approved batch | Batch 01.1 - Content Strategy Foundation |
+| Current / next batch | Batch 01.2 - Route Contract |
+| Previous phase | Phase 00 - Complete |
 | Content model | 10 semantic content types planned |
 | Environments | `master` + `dev` |
-| Bootstrap migration | Blocked / not run until Phase 02 authorizes it |
+| Bootstrap migration | Blocked / not run |
 | Seed content | Not started |
-| Next | Phase 01 - Content Strategy + Route Contract |
 
 > For canonical current state, see [docs/PROJECT-STATE.md](docs/PROJECT-STATE.md) and [TASKS.md](TASKS.md).
 
@@ -69,7 +69,7 @@ The implementation sequence keeps CMS decisions upstream of templates and keeps 
 
 ## Environment Strategy
 
-| Environment | Responsibility | Current Phase 00 posture |
+| Environment | Responsibility | Current posture |
 | --- | --- | --- |
 | `master` | Permanent protected baseline and future release target | Verified clean protected baseline |
 | `dev` | Single rotating sandbox for migration development, model review, and editorial QA | Verified clean sandbox for future approved bootstrap work |
@@ -131,7 +131,7 @@ npm run cms:help
 | `npm run cms:login` | manual authentication | Authenticate with Contentful only when a phase explicitly allows it |
 | `npm run cms:env:check` | local safety check | Verify required env names are configured, target is `dev`, and secret values remain hidden |
 | `npm run cms:env:list` | gated live read | List Contentful environments when Batch 00.4 authorizes direct environment evidence |
-| `npm run cms:model:bootstrap` | mutating, blocked | Run the bootstrap migration only after Phase 00 closes and Phase 02 authorizes it |
+| `npm run cms:model:bootstrap` | mutating, blocked | Run the bootstrap migration only after Phase 02 authorizes it |
 | `npm run cms:model:export` | gated live read | Export a model-only snapshot during the approved model verification phase |
 | `npm run cms:model:import:verify` | mutating, gated | Import a model-only snapshot into fresh `dev` during Phase 03 verification |
 | `npm run cms:model:verify:snapshot` | local read-only | Validate snapshot structure from a local model export file |
@@ -166,9 +166,9 @@ Do not run authentication, migration, export, import, or environment commands un
 
 | Phase | Focus |
 | --- | --- |
-| 00 | Baseline + Two-Environment Setup ← current |
-| 01 | Content Strategy + Route Contract |
-| 02 | Content Model Contract + Bootstrap Migration |
+| 00 | Baseline + Two-Environment Setup - complete |
+| 01 | Content Strategy + Route Contract - active |
+| 02 | Content Model Contract + Bootstrap Migration - deferred |
 | 03 | Model Export + Serial Clean-Room Verification |
 | 04 | Editorial QA + Model Freeze |
 | 05 | Representative Seed Content |
@@ -201,8 +201,8 @@ The model represents editorial concepts rather than React components. Content ty
 - [docs/IMPLEMENTATION-ROADMAP.md](docs/IMPLEMENTATION-ROADMAP.md) - canonical phase sequence
 - [docs/system/ENVIRONMENT-STRATEGY.md](docs/system/ENVIRONMENT-STRATEGY.md) - approved two-environment model
 - [docs/system/SECURITY-AND-SECRETS.md](docs/system/SECURITY-AND-SECRETS.md) - secret and CLI boundaries
-- [docs/system/CONTENT-STRATEGY.md](docs/system/CONTENT-STRATEGY.md) - pending content inventory surface
-- [docs/system/ROUTE-CONTRACT.md](docs/system/ROUTE-CONTRACT.md) - pending route and adapter contract surface
+- [docs/system/CONTENT-STRATEGY.md](docs/system/CONTENT-STRATEGY.md) - approved Batch 01.1 content-strategy foundation
+- [docs/system/ROUTE-CONTRACT.md](docs/system/ROUTE-CONTRACT.md) - Batch 01.2 route-contract surface
 
 ### Content Model
 
@@ -212,7 +212,7 @@ The model represents editorial concepts rather than React components. Content ty
 
 ### Active Phase
 
-- [docs/phases/PHASE-00-BASELINE-AND-ENVIRONMENT-SETUP.md](docs/phases/PHASE-00-BASELINE-AND-ENVIRONMENT-SETUP.md) - Phase 00 scope, evidence, boundaries, and closeout requirements
+- [docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md](docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md) - Phase 01 scope, Batch 01.1 approval evidence, boundaries, and next gate
 
 ## Safety and Governance
 

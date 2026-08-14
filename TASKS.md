@@ -4,106 +4,67 @@ This tracker records current project truth. Do not mark future batches complete 
 
 ## Now
 
-### Phase 00 — Baseline + Two-Environment Setup
-
-#### Approved
-
-- [x] Batch 00.1 — Repository and Project Truth
-- [x] Batch 00.2 — Runtime and Contentful Tooling
-
-##### Batch 00.3 — Two-Environment Strategy Alignment + Secret Safety
-
-Status: APPROVED — external validation passed; live Contentful verification was deferred to Batch 00.4.
-
-- [x] Verify two-environment strategy remains aligned
-- [x] Verify local `.env.local` exists without reading contents
-- [x] Verify `.env.local` ignore rule
-- [x] Verify `.env.local` is untracked
-- [x] Verify `.env.local` has no Git history
-- [x] Verify tracked env-file inventory
-- [x] Verify `.env.example` placeholders
-- [x] Verify management, delivery, and preview credential variable separation
-- [x] Verify no browser-exposed secret prefixes
-- [x] Verify Contentful wrappers do not pass token values through CLI arguments
-- [x] Verify scripts report secret presence only and do not dump the full environment
-- [x] Review tracked credential references
-- [x] Verify project skill secret rules
-- [x] Align security documentation
-- [x] Mark Batch 00.3 in review for external validation
-- [x] Record external validation approval
-
-##### Batch 00.4 — Contentful Space and Environment Verification
-
-Status: APPROVED — project space, two-environment capacity, clean baseline state, and locale compatibility verified.
-
-- [x] Correct project space verified
-- [x] Organization verified
-- [x] Starter plan verified
-- [x] 2-of-2 environment capacity verified
-- [x] `master` + `dev` live inventory verified
-- [x] Persistent `verification` environment absent
-- [x] `testing` environment absent from intended project space
-- [x] `master` ready state verified
-- [x] `master` zero-state verified
-- [x] `master` default locale verified
-- [x] `dev` ready state verified
-- [x] `dev` zero-state verified
-- [x] `dev` default locale verified
-- [x] `master`/`dev` locale compatibility verified
-- [x] `master` baseline suitability verified
-- [x] `dev` future bootstrap suitability assessed
-- [x] Read-only access verified
-- [x] Secret-safety regression passed
-- [x] No Contentful mutation performed
-- [x] Temporary export evidence removed from repository
-- [x] Evidence limitations recorded
-
-#### Approved
-
-##### Batch 00.5 — Phase 00 Closeout
-
-Status: APPROVED — external validation passed; Phase 00 is complete.
-
-- [x] Batch 00.1 approved
-- [x] Batch 00.2 approved
-- [x] Batch 00.3 approved
-- [x] Batch 00.4 approved
-- [x] repository preflight passed
-- [x] runtime verified
-- [x] Contentful tooling verified
-- [x] secret-safety regression passed
-- [x] temporary investigation exports absent
-- [x] `master` + `dev` architecture remains canonical
-- [x] `master` protected baseline remains verified
-- [x] `dev` rotating sandbox remains verified
-- [x] `master`/`dev` `en-US` compatibility verified
-- [x] destructive Phase 03 safety gate preserved
-- [x] bootstrap migration remains blocked/not run
-- [x] seed content remains not started
-- [x] Phase 01 implementation remains not started
-- [x] architecture regression search passed
-- [x] script syntax verification passed
-- [x] canonical truth surfaces aligned
-- [x] external Phase 00 / Batch 00.5 validation
-
-## Next
-
 ### Phase 01 — Content Strategy + Route Contract
 
-- [ ] Confirm content inventory
-- [ ] Confirm route ownership
-- [ ] Confirm frontend/CMS boundaries
-- [ ] Keep static fixtures until parity work is explicitly approved
-- [ ] Do not begin Phase 02 bootstrap migration until Phase 01 approval is recorded
+Status: ACTIVE
+
+#### Approved
+
+- [x] Batch 01.1 — Content Strategy Foundation
+
+Batch 01.1 external validation: PASS.
+
+Approved Batch 01.1 evidence:
+
+- [x] Capture website mission
+- [x] Capture professional positioning direction
+- [x] Capture audience hierarchy
+- [x] Capture brand voice rules
+- [x] Define approved/proposed content pillars
+- [x] Define v1 content domains
+- [x] Record preliminary route inventory
+- [x] Define homepage content priorities
+- [x] Define profile strategy
+- [x] Define experience strategy
+- [x] Define project/case-study strategy
+- [x] Define writing strategy
+- [x] Define skills/tools direction
+- [x] Define navigation/contact direction
+- [x] Define CMS vs code ownership
+- [x] Define content reuse rules
+- [x] Define editorial lifecycle
+- [x] Define fixture requirements
+- [x] Define accessibility content rules
+- [x] Define responsive content intent
+- [x] Define localization intent
+- [x] Define confidentiality rules
+- [x] Define deferred v1 scope
+- [x] Record assumptions
+- [x] Record open decisions
+- [x] External Batch 01.1 validation
+
+#### Next
+
+- [ ] Batch 01.2 — Route Contract
+
+Do not start Batch 01.2 implementation until the approval reconciliation is reviewed, committed, and pushed.
+
+#### Later
+
+- [ ] Batch 01.3 — SEO + Metadata Contract
+- [ ] Batch 01.4 — Content Requirements Matrix
+- [ ] Batch 01.5 — Phase 01 Validation + Freeze
 
 ## Deferred
 
 ### Phase 02 — Content Model Contract + Bootstrap Migration
 
+Status: DEFERRED
+
 - [ ] Review `content-model/migrations/0001-bootstrap-portfolio-model.js`
 - [ ] Approve 10 semantic content types
 - [ ] Approve field IDs and reference map
-- [ ] Run bootstrap migration only after Phase 00 is closed and Phase 02 authorizes it
+- [ ] Run bootstrap migration only after Phase 01 is approved and Phase 02 authorizes it
 
 ### Phase 03 — Model Export + Serial Clean-Room Verification
 
@@ -123,6 +84,20 @@ Status: APPROVED — external validation passed; Phase 00 is complete.
 
 ## Completed Evidence
 
+### Phase 00 — Baseline + Two-Environment Setup
+
+Status: COMPLETE
+
+Approved batches:
+
+- [x] Batch 00.1 — Repository and Project Truth
+- [x] Batch 00.2 — Runtime and Contentful Tooling
+- [x] Batch 00.3 — Two-Environment Strategy Alignment + Secret Safety
+- [x] Batch 00.4 — Contentful Space and Environment Verification
+- [x] Batch 00.5 — Phase 00 Closeout
+
+Recorded Phase 00 evidence:
+
 - [x] Repository identity recorded as `contentful-greenfield-starter`
 - [x] Node major pinned through `.nvmrc`
 - [x] npm package manager recorded as `npm@10.8.3`
@@ -130,12 +105,29 @@ Status: APPROVED — external validation passed; Phase 00 is complete.
 - [x] Phase 00 document uses `docs/phases/PHASE-00-BASELINE-AND-ENVIRONMENT-SETUP.md`
 - [x] Canonical documentation surfaces exist
 - [x] Historical baseline commit deviation accepted and recorded
+- [x] Repository preflight passed
+- [x] Runtime verified
+- [x] Contentful tooling verified
+- [x] Secret-safety regression passed
+- [x] Temporary investigation exports absent
+- [x] `master` + `dev` architecture remains canonical
+- [x] `master` protected baseline remains verified
+- [x] `dev` rotating sandbox remains verified
+- [x] `master`/`dev` `en-US` compatibility verified
+- [x] Destructive Phase 03 safety gate preserved
+- [x] Bootstrap migration remains blocked/not run
+- [x] Seed content remains not started
+- [x] Phase 00 external closeout validation passed
 
 ## Current Boundaries
 
 - Phase 00 is complete.
 - Batch 00.1, Batch 00.2, Batch 00.3, Batch 00.4, and Batch 00.5 are approved.
-- Phase 01 is next.
+- Phase 01 is active.
+- Batch 01.1 is approved.
+- Batch 01.2 is next.
+- Batch 01.3, Batch 01.4, and Batch 01.5 are later.
+- Phase 02 is deferred.
 - Bootstrap migration remains blocked and not run.
 - Seed content remains not started.
-- No Contentful environment mutation is authorized by Phase 00 final approval.
+- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by Batch 01.1 approval.

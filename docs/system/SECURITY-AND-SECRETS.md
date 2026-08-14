@@ -77,4 +77,6 @@ Approved physical environments are `master` and `dev`.
 
 Batch 00.3 verifies credential handling and variable separation without reading credential values. Actual token validity, scopes, equality/difference, and live Contentful access are not verified in Batch 00.3.
 
-Batch 00.4 recorded direct account, space, environment inventory, default locale, `master`, and `dev` evidence. Batch 00.5 external validation approved Phase 00. Phase 01 is next.
+Batch 00.4 recorded direct account, space, environment inventory, default locale, `master`, and `dev` evidence. Batch 00.5 external validation approved Phase 00.
+
+Phase 01 is active. Batch 01.1 is a content-strategy documentation batch and does not authorize authentication, environment mutation, migration, export, import, seed content, locale changes, or schema mutation.

@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 next
+Status: Phase 00 complete; Phase 01 active; Batch 01.1 approved; Batch 01.2 next
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -8,8 +8,8 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 | Phase | Name | Primary outcome | Runtime impact |
 |---|---|---|---|
 | 00 | Baseline + Two-Environment Setup | Complete; safe repository, secure tooling boundary, and governed `master` + `dev` operating model | None |
-| 01 | Content Strategy + Route Contract | Next; approved content inventory and ownership | None |
-| 02 | Content Model Contract + Bootstrap Migration | Core model created in `dev` | CMS only |
+| 01 | Content Strategy + Route Contract | Active; Batch 01.1 approved; Batch 01.2 next | None |
+| 02 | Content Model Contract + Bootstrap Migration | Deferred; core model created in `dev` only after Phase 01 approval and Phase 02 authorization | CMS only |
 | 03 | Model Export + Serial Clean-Room Verification | Approved model-only snapshot rebuilt into fresh `dev` from protected `master` | CMS only |
 | 04 | Editorial QA + Model Freeze | Editor-friendly baseline v1 | CMS only |
 | 05 | Representative Seed Content | Realistic draft entries after clean-room verification | CMS only |
@@ -26,9 +26,24 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 
 Do not skip Phase 03. A serial clean-room rebuild of `dev` proves that the approved model snapshot is portable before seed content begins.
 
+## Current Progression
+
+```text
+Phase 00 — COMPLETE
+
+Phase 01 — ACTIVE
+Batch 01.1 — APPROVED
+Batch 01.2 — NEXT
+Batch 01.3 — LATER
+Batch 01.4 — LATER
+Batch 01.5 — LATER
+
+Phase 02 — DEFERRED
+```
+
 ## Phase 00 — Baseline + Two-Environment Setup
 
-Current state: COMPLETE. Phase 01 is next.
+Current state: COMPLETE.
 
 ### Goal
 
@@ -54,9 +69,21 @@ Create a safe operating surface before any content type is created.
 
 ## Phase 01 — Content Strategy + Route Contract
 
+Current state: ACTIVE. Latest approved batch: 01.1 — Content Strategy Foundation — APPROVED. Current / next batch: 01.2 — Route Contract — NEXT.
+
 ### Goal
 
 Define what the website needs to communicate before finalizing CMS fields.
+
+### Batch Decomposition
+
+| Batch | Name | Status |
+|---|---|---|
+| 01.1 | Content Strategy Foundation | APPROVED |
+| 01.2 | Route Contract | NEXT |
+| 01.3 | SEO + Metadata Contract | LATER |
+| 01.4 | Content Requirements Matrix | LATER |
+| 01.5 | Phase 01 Validation + Freeze | LATER |
 
 ### Confirm
 
@@ -68,6 +95,14 @@ Define what the website needs to communicate before finalizing CMS fields.
 - media requirements
 - content that remains code-owned
 
+### Approved Batch 01.1 Evidence
+
+- `docs/system/CONTENT-STRATEGY.md` contains the reconciled strategy foundation.
+- `docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md` records Phase 01 scope and Batch 01.1 approval state.
+- `docs/system/ROUTE-CONTRACT.md` records preliminary route inventory while preserving formal route-contract approval for Batch 01.2.
+- Bootstrap migration remains blocked and not run.
+- Seed content remains not started.
+
 ### Exit criteria
 
 - content inventory approved
@@ -76,6 +111,8 @@ Define what the website needs to communicate before finalizing CMS fields.
 - page builder remains deferred or is explicitly justified
 
 ## Phase 02 — Content Model Contract + Bootstrap Migration
+
+Current state: DEFERRED.
 
 ### Goal
 

@@ -1,9 +1,58 @@
 # Project State
 
 Project: `contentful-greenfield-starter`
-Current phase: Phase 00 — COMPLETE
-Current work item: Phase 01 — Content Strategy + Route Contract — NEXT
-Latest approved batch: Batch 00.5 — Phase 00 Closeout — APPROVED
+Current phase: Phase 01 — ACTIVE
+Current / next work item: Batch 01.2 — Route Contract — NEXT
+Latest completed phase: Phase 00 — COMPLETE
+Latest approved batch: Batch 01.1 — Content Strategy Foundation — APPROVED
+Phase 02: DEFERRED
+Bootstrap migration: BLOCKED / NOT RUN
+Seed content: NOT STARTED
+
+Batch 01.1 external validation passed.
+
+The content-strategy foundation is approved with open decisions intentionally carried forward to later Phase 01 batches.
+
+Formal route-contract work now moves to Batch 01.2.
+
+## Phase 01 Batch State
+
+| Batch | Name | Status | Evidence |
+|---|---|---|---|
+| 01.1 | Content Strategy Foundation | Approved | External validation passed; Batch 01.1 strategy workbook reconciled into `docs/system/CONTENT-STRATEGY.md`, this phase state, `TASKS.md`, the roadmap, README, route-contract status, and the Phase 01 document |
+| 01.2 | Route Contract | Next | Formal route contract intentionally deferred until Batch 01.2 starts |
+| 01.3 | SEO + Metadata Contract | Later | Formal metadata behavior intentionally deferred |
+| 01.4 | Content Requirements Matrix | Later | Content requirements matrix intentionally deferred |
+| 01.5 | Phase 01 Validation + Freeze | Later | Phase freeze not started |
+
+Batch 01.1 approved strategy only. It did not start Batch 01.2 implementation, authorize Phase 02, create static fixtures, run migrations, run Contentful commands, or mutate Contentful state.
+
+## Batch 01.1 Strategy Summary
+
+Recorded strategy foundation:
+
+- website mission and non-goals
+- primary professional title and positioning direction
+- primary audience: CMS / content leaders
+- secondary audiences: hiring managers and engineering leaders
+- brand voice and language rules
+- approved and proposed content pillars
+- v1 content domains
+- preliminary route inventory for Batch 01.2
+- homepage, profile, experience, project, writing, skills, tools, navigation, and contact strategy
+- CMS-owned vs code-owned vs derived ownership boundary
+- content reuse rules
+- editorial lifecycle
+- static fixture requirements
+- content quality and accessibility rules
+- responsive content intent
+- localization: en-US only for v1
+- privacy/confidentiality rules
+- deferred/out-of-scope v1 features
+- assumptions A-01 through A-09
+- open decisions OD-01 through OD-15
+
+Non-blocking Batch 01.1 open decisions include canonical positioning sentence, secondary professional title, desired work type, proposed pillar validation, skill grouping, formal route contract, `/tools` vs skills boundary, featured projects, public-safe enterprise projects, certification representation, taxonomy depth, related-content approach, homepage proof metrics, and SEO override strategy.
 
 ## Phase 00 Batch State
 
@@ -15,7 +64,7 @@ Latest approved batch: Batch 00.5 — Phase 00 Closeout — APPROVED
 | 00.4 | Contentful Space and Environment Verification | Approved | Project space, Starter capacity, `master` + `dev` inventory, clean environment state, and `en-US` locale compatibility verified |
 | 00.5 | Phase 00 Closeout | Approved | External validation passed; Phase 00 final state approved |
 
-Phase 01 is next. Bootstrap migration remains blocked and not run. Seed content has not started.
+Phase 00 is complete. Bootstrap migration remains blocked and not run. Seed content has not started.
 
 ## Phase 00 Achievement Summary
 
@@ -145,4 +194,8 @@ No deletion automation is part of this repair.
 
 ## Current Phase Boundary
 
-Phase 00 is complete. Batch 00.1, Batch 00.2, Batch 00.3, Batch 00.4, and Batch 00.5 are approved. Phase 01 is next. Bootstrap migration, seed content, environment deletion, and Contentful model mutation remain out of scope.
+Phase 00 is complete. Batch 00.1, Batch 00.2, Batch 00.3, Batch 00.4, and Batch 00.5 are approved.
+
+Phase 01 is active. Batch 01.1 is approved. Batch 01.2 is next. Batch 01.3, Batch 01.4, and Batch 01.5 are later. Phase 02 is deferred.
+
+Bootstrap migration, seed content, environment deletion, Contentful model mutation, Contentful export/import, static fixtures, frontend implementation, route-contract approval, and SEO metadata-contract approval remain out of scope.

@@ -46,6 +46,15 @@ All meaningful project changes should be recorded here.
 - Prepared Phase 00 / Batch 00.5 for external closeout validation.
 - Approved Phase 00 / Batch 00.5 after external validation.
 - Marked Phase 00 complete and advanced Phase 01 to next while keeping bootstrap migration blocked and seed content not started.
+- Started Phase 01 — Content Strategy + Route Contract.
+- Reconciled the Batch 01.1 content-strategy intake into project documentation.
+- Established mission, audience, content pillars, editorial ownership, reuse, accessibility, localization, confidentiality, fixture, and deferred-scope rules.
+- Kept formal route-contract work deferred to Batch 01.2.
+- Kept bootstrap migration blocked and not run.
+- Approved Phase 01 / Batch 01.1 — Content Strategy Foundation after external validation.
+- Established the project content-strategy foundation while preserving proposed pillars, assumptions, and open decisions.
+- Advanced Phase 01 to Batch 01.2 — Route Contract.
+- Bootstrap migration remains blocked and seed content remains not started.
 
 ### Security
 

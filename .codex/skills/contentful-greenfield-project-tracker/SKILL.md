@@ -26,15 +26,16 @@ Documentation is part of the build.
 
 ## Current State
 
-- Phase 00 complete.
-- Batch 00.1 approved.
-- Batch 00.2 approved.
-- Batch 00.3 approved.
-- Batch 00.4 approved.
-- Batch 00.5 approved.
-- Phase 01 next.
-- Bootstrap blocked.
-- Seed content not started.
+- Phase 00 — COMPLETE.
+- Phase 01 — ACTIVE.
+- 01.1 — APPROVED.
+- 01.2 — NEXT.
+- 01.3 — LATER.
+- 01.4 — LATER.
+- 01.5 — LATER.
+- Phase 02 — DEFERRED.
+- Bootstrap migration — BLOCKED / NOT RUN.
+- Seed content — NOT STARTED.
 
 ## Environment Model
 

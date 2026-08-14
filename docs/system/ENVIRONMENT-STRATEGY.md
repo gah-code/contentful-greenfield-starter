@@ -40,7 +40,7 @@ Current limits:
 
 - preserve the Batch 00.4 verified clean sandbox state unless a later approved phase changes it
 - do not treat Batch 00.4 clean-state evidence as authorization to run the bootstrap migration
-- do not delete or recreate `dev` during Phase 00 documentation alignment
+- do not delete or recreate `dev` outside the approved Phase 03 recoverability gate
 - do not store irreplaceable content in `dev` before the Phase 03 recoverability gate
 
 ## Serial Clean-Room Workflow
