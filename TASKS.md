@@ -4,9 +4,20 @@ This tracker records current project truth. Do not mark future batches complete 
 
 ## Now
 
-### Phase 01 — Content Strategy + Route Contract
+### Phase 02 — Content Model Contract + Bootstrap Migration
 
-Status: ACTIVE
+Status: NEXT
+
+Phase 02 implementation: NOT STARTED
+
+- [ ] Review `content-model/migrations/0001-bootstrap-portfolio-model.js`
+- [ ] Approve 10 semantic content types
+- [ ] Approve field IDs and reference map
+- [ ] Run bootstrap migration only after Phase 02 authorizes it
+
+### Completed Phase 01 — Content Strategy + Route Contract
+
+Status: COMPLETE / FROZEN
 
 #### Approved
 
@@ -14,11 +25,13 @@ Status: ACTIVE
 - [x] Batch 01.2 — Route Contract
 - [x] Batch 01.3 — SEO + Metadata Contract
 - [x] Batch 01.4 — Content Requirements Matrix
+- [x] Batch 01.5 — Phase 01 Validation + Freeze
 
 Batch 01.1 external validation: PASS.
 Batch 01.2 external validation: PASS.
 Batch 01.3 external validation: PASS.
 Batch 01.4 external validation: PASS.
+Batch 01.5 external validation: PASS WITH NOTES.
 
 Approved Batch 01.2 evidence:
 
@@ -103,20 +116,26 @@ Status: APPROVED
 - [x] Preserve unrelated open decisions
 - [x] External Batch 01.4 validation
 
-#### Next
+#### Batch 01.5 — Phase 01 Validation + Freeze
 
-- [ ] Batch 01.5 — Phase 01 Validation + Freeze
+Status: APPROVED
+
+- [x] Inspect repository state and current Phase 01 truth surfaces
+- [x] Verify approved Content Strategy, Route Contract, SEO Contract, and Content Requirements Matrix inputs
+- [x] Validate cross-contract alignment
+- [x] Validate nine-route v1 inventory coverage
+- [x] Validate ownership, reuse, route-readiness, media, accessibility, public-safety, fixture, and SEO alignment
+- [x] Classify remaining open decisions by downstream owner
+- [x] Confirm OD-07, OD-08, and OD-15 remain RESOLVED / APPROVED
+- [x] Confirm unresolved decisions remain visible and non-blocking
+- [x] Validate Phase 02 handoff classifications as directional only
+- [x] Review legacy model artifacts as proposed Phase 02 inputs
+- [x] Confirm content-type pressure remains below the 25-type constraint
+- [x] Confirm no Contentful model, migration, fixture, frontend, seed, or SEO implementation work occurred
+- [x] Record Phase 01 as complete / frozen
+- [x] External Batch 01.5 / Phase 01 freeze validation
 
 ## Deferred
-
-### Phase 02 — Content Model Contract + Bootstrap Migration
-
-Status: DEFERRED
-
-- [ ] Review `content-model/migrations/0001-bootstrap-portfolio-model.js`
-- [ ] Approve 10 semantic content types
-- [ ] Approve field IDs and reference map
-- [ ] Run bootstrap migration only after Phase 01 is approved and Phase 02 authorizes it
 
 ### Phase 03 — Model Export + Serial Clean-Room Verification
 
@@ -175,13 +194,14 @@ Recorded Phase 00 evidence:
 
 - Phase 00 is complete.
 - Batch 00.1, Batch 00.2, Batch 00.3, Batch 00.4, and Batch 00.5 are approved.
-- Phase 01 is active.
+- Phase 01 is complete / frozen.
 - Batch 01.1 is approved.
 - Batch 01.2 is approved after external validation.
 - Batch 01.3 is approved after external validation.
 - Batch 01.4 is approved after external validation.
-- Batch 01.5 is next.
-- Phase 02 is deferred.
+- Batch 01.5 is approved after external validation.
+- Phase 02 is next.
+- Phase 02 implementation is not started.
 - Bootstrap migration remains blocked and not run.
 - Seed content remains not started.
-- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by Batch 01.4 approval reconciliation.
+- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by Phase 01 closeout.

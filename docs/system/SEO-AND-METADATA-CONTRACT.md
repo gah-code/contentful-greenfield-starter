@@ -1,6 +1,6 @@
 # SEO and Metadata Contract
 
-Status: Phase 01 / Batch 01.3 — APPROVED
+Status: Phase 01 / Batch 01.3 — APPROVED / FROZEN FOR PHASE 02 INPUT
 Owner: Phase 01 — Content Strategy + Route Contract
 Source strategy: `docs/system/CONTENT-STRATEGY.md`
 Source route contract: `docs/system/ROUTE-CONTRACT.md`
@@ -685,7 +685,7 @@ Remaining open decisions:
 - No Contentful schema, locale, environment, export, import, migration, field ID, reference, or seed mutation occurred.
 - Exact Contentful SEO field representation remains deferred to Phase 02.
 - Content Requirements Matrix work is approved in `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`.
-- Batch 01.5 — Phase 01 Validation + Freeze — is next.
+- Batch 01.5 — Phase 01 Validation + Freeze — is approved, and Phase 01 is complete / frozen.
 
 ## Closeout State
 
@@ -697,7 +697,7 @@ Batch 01.3 is approved after external validation:
 - Batch 01.3 is APPROVED.
 - At Batch 01.3 closeout, Batch 01.4 advanced to NEXT. This is historical, not the current Batch 01.4 state.
 - At Batch 01.3 closeout, Batch 01.5 was LATER. This is historical, not the current Batch 01.5 state.
-- Phase 02 is DEFERRED.
+- At Batch 01.3 closeout, Phase 02 was DEFERRED. Phase 02 is now NEXT after Phase 01 closeout.
 - Option 2 hybrid SEO ownership is documented.
 - OD-15 is RESOLVED / APPROVED.
 - OD-07 remains RESOLVED / APPROVED.

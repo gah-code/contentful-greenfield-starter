@@ -29,12 +29,12 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 
 | Area | Current state |
 | --- | --- |
-| Current phase | Phase 01 - Content Strategy + Route Contract |
-| Latest approved batch | Batch 01.4 - Content Requirements Matrix |
+| Current phase | Phase 01 - Complete / Frozen |
+| Latest approved batch | Batch 01.5 - Validation + Freeze |
 | Previous approved batch | Batch 01.3 - SEO + Metadata Contract |
-| Next batch | Batch 01.5 - Phase 01 Validation + Freeze |
+| Next phase | Phase 02 - Content Model Contract + Bootstrap Migration - NEXT |
 | Previous phase | Phase 00 - Complete |
-| Phase 02 | Deferred |
+| Phase 02 implementation | Not started |
 | Content model | 10 semantic content types planned |
 | Environments | `master` + `dev` |
 | Bootstrap migration | Blocked / not run |
@@ -203,10 +203,10 @@ The model represents editorial concepts rather than React components. Batch 01.3
 - [docs/IMPLEMENTATION-ROADMAP.md](docs/IMPLEMENTATION-ROADMAP.md) - canonical phase sequence
 - [docs/system/ENVIRONMENT-STRATEGY.md](docs/system/ENVIRONMENT-STRATEGY.md) - approved two-environment model
 - [docs/system/SECURITY-AND-SECRETS.md](docs/system/SECURITY-AND-SECRETS.md) - secret and CLI boundaries
-- [docs/system/CONTENT-STRATEGY.md](docs/system/CONTENT-STRATEGY.md) - approved Batch 01.1 content-strategy foundation
-- [docs/system/ROUTE-CONTRACT.md](docs/system/ROUTE-CONTRACT.md) - approved Batch 01.2 route-contract surface
-- [docs/system/SEO-AND-METADATA-CONTRACT.md](docs/system/SEO-AND-METADATA-CONTRACT.md) - approved Batch 01.3 SEO + metadata contract
-- [docs/system/CONTENT-REQUIREMENTS-MATRIX.md](docs/system/CONTENT-REQUIREMENTS-MATRIX.md) - approved Batch 01.4 content requirements matrix
+- [docs/system/CONTENT-STRATEGY.md](docs/system/CONTENT-STRATEGY.md) - frozen Phase 01 content-strategy input
+- [docs/system/ROUTE-CONTRACT.md](docs/system/ROUTE-CONTRACT.md) - frozen Phase 01 route-contract input
+- [docs/system/SEO-AND-METADATA-CONTRACT.md](docs/system/SEO-AND-METADATA-CONTRACT.md) - frozen Phase 01 SEO + metadata input
+- [docs/system/CONTENT-REQUIREMENTS-MATRIX.md](docs/system/CONTENT-REQUIREMENTS-MATRIX.md) - frozen Phase 01 content requirements input
 
 ### Content Model
 
@@ -216,7 +216,7 @@ The model represents editorial concepts rather than React components. Batch 01.3
 
 ### Active Phase
 
-- [docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md](docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md) - Phase 01 scope, Batch 01.4 approval evidence, boundaries, and Batch 01.5 next state
+- [docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md](docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md) - Phase 01 closeout, frozen requirements evidence, and Phase 02 handoff boundary
 
 ## Safety and Governance
 

@@ -1,6 +1,6 @@
 # Phase 01 — Content Strategy + Route Contract
 
-Status: ACTIVE
+Status: COMPLETE / FROZEN
 Owner: repository maintainer
 
 ## Goal
@@ -55,7 +55,7 @@ Phase 01 turns content strategy into controlled project truth, then converts tha
 | 01.2 | Route Contract | APPROVED |
 | 01.3 | SEO + Metadata Contract | APPROVED |
 | 01.4 | Content Requirements Matrix | APPROVED |
-| 01.5 | Phase 01 Validation + Freeze | NEXT |
+| 01.5 | Phase 01 Validation + Freeze | APPROVED |
 
 ## Batch 01.1 — Content Strategy Foundation
 
@@ -1095,7 +1095,7 @@ Remaining open decisions:
 - No frontend implementation was created.
 - No SEO implementation was created.
 - Exact Contentful representation remains deferred to Phase 02.
-- Batch 01.5 is next but not started.
+- Batch 01.5 is now approved, and Phase 01 is complete / frozen.
 
 ### Batch 01.4 Closeout
 
@@ -1139,8 +1139,8 @@ Batch 01.4 is approved after external validation:
 - Batch 01.2 is APPROVED.
 - Batch 01.3 is APPROVED.
 - Batch 01.4 is APPROVED.
-- Batch 01.5 is NEXT.
-- Phase 02 is DEFERRED.
+- At Batch 01.4 closeout, Batch 01.5 advanced to NEXT. Batch 01.5 is now APPROVED.
+- At Batch 01.4 closeout, Phase 02 was DEFERRED. Phase 02 is now NEXT after Phase 01 closeout.
 - all nine approved routes have content requirements.
 - requirement level, ownership, reuse, readiness, fixture, media, accessibility, SEO-input, public-safety, Phase 02 handoff, and model-pressure coverage is documented.
 - OD-07, OD-08, and OD-15 are RESOLVED / APPROVED.
@@ -1150,3 +1150,370 @@ Batch 01.4 is approved after external validation:
 - seed content remains NOT STARTED.
 - no files are staged.
 - no commit or push occurs in this implementation pass.
+
+## Batch 01.5 — Validation + Freeze
+
+Status: APPROVED
+
+### Goal
+
+Validate the approved Phase 01 contracts as a coherent freeze candidate before any Phase 02 content-model, migration, fixture, or frontend implementation work begins.
+
+### Freeze Definition
+
+Phase 01 freeze means the content strategy, route contract, SEO + metadata contract, and Content Requirements Matrix are internally consistent enough to hand off to Phase 02.
+
+During validation, freeze-candidate status did not mean Phase 01 was complete or Batch 01.5 was approved. After external closeout approval, Phase 01 is complete / frozen, but Phase 02 is not active, content types are not frozen, field IDs are not approved, fixtures are not created, and Contentful work is not authorized.
+
+### Approved Inputs
+
+| Input | Status | Validation finding |
+|---|---|---|
+| `docs/system/CONTENT-STRATEGY.md` | APPROVED / FROZEN | Strategy, audience, ownership, reuse, quality, accessibility, confidentiality, assumptions, and open-decision surfaces are present. |
+| `docs/system/ROUTE-CONTRACT.md` | APPROVED / FROZEN | The nine-route v1 contract, route states, ownership, readiness, internal linking, accessibility, and route implications are present. |
+| `docs/system/SEO-AND-METADATA-CONTRACT.md` | APPROVED / FROZEN | Hybrid SEO ownership, fallback behavior, route-state indexability, structured-data candidates, sitemap eligibility, and Phase 02 SEO handoff are present. |
+| `docs/system/CONTENT-REQUIREMENTS-MATRIX.md` | APPROVED / FROZEN | Route/content requirements, ownership, reuse, route readiness, fixture, media, accessibility, SEO, public-safety, and Phase 02 handoff classifications are present. |
+| `docs/DECISIONS.md` | CURRENT | ADR-009 is the architectural rationale for OD-15; OD-08 is recorded as resolved without freezing Tool representation. |
+| `docs/content-model/*`, `content-model/migrations/*` | PROPOSED INPUTS | Existing model artifacts remain read-only proposed Phase 02 inputs, not approved Phase 01 schema truth. |
+
+### Cross-Contract Validation Matrix
+
+| Contract | Validated against | Result | Note |
+|---|---|---|---|
+| Content Strategy | Route Contract | PASS | Route purpose, audience intent, ownership, non-goals, and reuse align. |
+| Content Strategy | SEO Contract | PASS | SEO inputs derive from semantic content and do not override strategy ownership boundaries. |
+| Content Strategy | Content Requirements Matrix | PASS | Requirements preserve content domains instead of collapsing to Contentful fields. |
+| Route Contract | SEO Contract | PASS | Canonicals, robots/indexability, sitemap eligibility, and preview exclusion follow route state. |
+| Route Contract | Content Requirements Matrix | PASS | All nine approved routes have corresponding requirements and readiness rules. |
+| SEO Contract | Content Requirements Matrix | PASS | Editorial SEO remains limited to title, description, and social image concepts; technical SEO remains code/state-derived. |
+| Approved contracts | Proposed model artifacts | PASS WITH NOTES | Phase 02 must reconcile legacy `seoMetadata`, Tool representation, taxonomy, related content, and SEO override representation before migration. |
+
+### Route Inventory Validation
+
+| Route | Status | Matrix coverage | SEO coverage | Result |
+|---|---|---|---|---|
+| `/` | APPROVED V1 | Yes | Yes | PASS |
+| `/about` | APPROVED V1 | Yes | Yes | PASS |
+| `/work` | APPROVED V1 | Yes | Yes | PASS |
+| `/projects` | APPROVED V1 | Yes | Yes | PASS |
+| `/projects/[slug]` | APPROVED V1 | Yes | Yes | PASS |
+| `/writing` | APPROVED V1 | Yes | Yes | PASS |
+| `/writing/[slug]` | APPROVED V1 | Yes | Yes | PASS |
+| `/tools` | APPROVED V1 | Yes | Yes | PASS |
+| `/contact` | APPROVED V1 | Yes | Yes | PASS |
+
+Rejected or deferred route ideas remain rejected or deferred:
+
+- `/uses` is not a v1 route.
+- `/resume` is not a standalone v1 route; résumé access remains a PDF/download/link pattern.
+- `/blog` and `/articles` are not v1 routes; writing uses `/writing` and `/writing/[slug]`.
+- `/skills` is not a standalone v1 route.
+
+### Ownership Validation
+
+| Ownership area | Current truth | Result |
+|---|---|---|
+| Editorial meaning | CMS/editorial owned later, expressed as semantic content requirements now. | PASS |
+| Route composition | Code-owned in v1. | PASS |
+| Page-builder behavior | Out of scope for v1. | PASS |
+| Technical SEO | Code/state-derived. | PASS |
+| Content readiness | Mixed: editorial sufficiency plus route-state logic. | PASS |
+| Publication/indexability | Route state plus publication state. | PASS |
+| Preview exclusion | Code/security-owned. | PASS |
+
+### Reuse Validation
+
+Approved reuse remains semantic and source-oriented:
+
+- Profile content can support homepage, about, contact, metadata fallbacks, and author context.
+- Project content can support homepage features, project collections, project detail routes, related content, media, SEO fallbacks, and public-safe proof.
+- Article content can support writing collection, writing detail routes, related content, topic authority, metadata fallbacks, and structured-data candidates.
+- Experience content can support `/work`, homepage proof, project context, and public-safe career evidence.
+- Skill content represents professional capability.
+- Tool content represents product, platform, framework, technology, or software used to exercise capability.
+
+Reuse does not justify duplicated fields, generic page sections, or route-specific copies of the same semantic content.
+
+### Route Readiness Validation
+
+Route readiness remains based on whether content can answer the route's visitor question, not merely whether data exists.
+
+The approved route states remain:
+
+- READY
+- EMPTY
+- MISSING
+- DRAFT / PREVIEW
+- ERROR
+
+Collection empty states are valid when content is intentionally absent. Detail routes require approved route identity, publication state, and sufficient public-safe content.
+
+### SEO / Content Alignment
+
+SEO alignment passes with the approved hybrid ownership model:
+
+- editorial overrides are limited conceptually to SEO title, SEO description, and social image;
+- title fallback uses editorial override, semantic title, then safe global fallback;
+- description fallback uses editorial override, summary/excerpt, then safe global fallback;
+- social image fallback uses editorial override, representative image, then site default image;
+- canonical URLs are code-derived from approved route identity;
+- robots/indexability is derived from route state and publication state;
+- sitemap eligibility is code/state-derived;
+- structured data and breadcrumbs are code-generated from normalized content;
+- preview exclusion remains code/security-owned;
+- meta keywords, freeform editorial canonical URLs, arbitrary robots directives, page-level editorial noFollow, sitemap checkboxes, and arbitrary structured-data JSON remain excluded from v1 editorial SEO.
+
+### Media Validation
+
+Media requirements are sufficient for Phase 01:
+
+- project detail media is required when needed to tell the case study and must remain public-safe;
+- project preview media is optional unless needed for the presentation pattern;
+- writing hero or inline media is optional and requires alt text when used;
+- tool logos are optional and cannot be the only meaningful label;
+- inaccessible, confidential, internal, or unsupported media is not content-ready.
+
+No asset schema, image transform implementation, fixture, or frontend rendering decision is approved by this batch.
+
+### Accessibility Validation
+
+Accessibility content requirements remain active:
+
+- meaningful images need editorial alt text or a clear decorative treatment;
+- link labels must be descriptive;
+- headings and labels must preserve semantic meaning;
+- metrics, categories, tools, and skills must be readable as text;
+- content cannot rely on color, logos, screenshots, or icon-only meaning.
+
+Implementation-level accessibility QA remains later frontend work.
+
+### Public-Safety Validation
+
+Public-safety requirements are sufficient for Phase 01 requirements freeze status:
+
+- confidential client, employer, customer, environment, URL, analytics, architecture, credential, or private personal details must not be published;
+- public claims need evidence or must be generalized;
+- projects and experience can remain content-ready with redaction, anonymization, aggregation, or omission when the route question is still answered;
+- unsupported metrics must not be invented for proof.
+
+OD-10 and OD-14 remain open content decisions, not Phase 01 blockers.
+
+### Fixture Requirement Validation
+
+Fixture requirements are defined but not created:
+
+- representative Project, Article, Experience, Skill, Tool, Profile, Contact, and media states are identified;
+- READY, EMPTY, MISSING, DRAFT/PREVIEW, and ERROR behavior needs later fixture coverage where relevant;
+- public-safe and redacted variants are required for meaningful validation later;
+- fixture creation remains outside Phase 01 / Batch 01.5.
+
+### Open Decision Triage
+
+| Decision | Current status | Freeze classification | Blocks Phase 01 freeze? | Handoff |
+|---|---|---|---|---|
+| OD-01 — Canonical positioning sentence | PROPOSED / OPEN | CONTENT AUTHORING DECISION | No | Copy/content selection before final published content. |
+| OD-02 — Secondary professional title / specialty | PROPOSED / OPEN | CONTENT AUTHORING DECISION | No | Profile/about/contact copy decision. |
+| OD-03 — Desired work type | PROPOSED / OPEN | CONTENT AUTHORING DECISION | No | Contact/profile positioning decision. |
+| OD-04 — AI-assisted workflow pillar validation | PROPOSED / OPEN | CONTENT AUTHORING DECISION | No | Validate against real project/article inventory. |
+| OD-05 — SEO/accessibility/content-quality pillar validation | PROPOSED / OPEN | CONTENT AUTHORING DECISION | No | Validate as pillar or supporting theme against real content. |
+| OD-06 — Skill-group taxonomy | PROPOSED / OPEN | PHASE 02 MODEL DECISION | No | Decide taxonomy representation and grouping depth. |
+| OD-09 — Exact homepage featured projects | PROPOSED / OPEN | CONTENT AUTHORING DECISION | No | Choose public-safe featured Project entries later. |
+| OD-10 — Exact public-safe enterprise projects | PROPOSED / OPEN | CONTENT AUTHORING DECISION | No | Confidentiality review before publication. |
+| OD-11 — Certification representation | PROPOSED / OPEN | PHASE 02 MODEL DECISION | No | Decide lightweight profile content vs modeled structure. |
+| OD-12 — Taxonomy depth | PROPOSED / OPEN | PHASE 02 MODEL DECISION | No | Decide text, arrays, references, or controlled taxonomy. |
+| OD-13 — Manual vs derived related content | PROPOSED / OPEN | PHASE 02 MODEL DECISION | No | Decide references, derived relationships, or mixed approach. |
+| OD-14 — Homepage proof metrics | PROPOSED / OPEN | CONTENT AUTHORING DECISION | No | Choose credible public-safe metrics only if available. |
+
+Resolved decisions remain unchanged:
+
+- OD-07 — RESOLVED / APPROVED.
+- OD-08 — RESOLVED / APPROVED.
+- OD-15 — RESOLVED / APPROVED.
+
+### Phase 01 Blocker Review
+
+| Potential blocker | Finding | Status |
+|---|---|---|
+| Missing approved route contract | All nine v1 routes are approved. | Not blocking |
+| Missing SEO ownership contract | Option 2 hybrid SEO ownership is approved. | Not blocking |
+| Missing requirements matrix | Content Requirements Matrix is approved. | Not blocking |
+| Open content copy decisions | Open decisions are authoring or Phase 02 handoff items. | Not blocking |
+| Contentful model mismatch | Existing artifacts are proposed inputs and explicitly require Phase 02 reconciliation. | Not blocking |
+| Migration readiness | Bootstrap migration remains blocked and not run. | Not blocking |
+| Fixture absence | Fixtures are required later but intentionally not created in Phase 01. | Not blocking |
+| Phase 02 authorization | At validation time, Phase 02 remained deferred. After closeout, Phase 02 is NEXT but not active. | Not blocking |
+
+### Phase 02 Handoff Validation
+
+Phase 02 receives directional requirements only:
+
+| Phase 02 input | Current handoff | Resolution required before migration? |
+|---|---|---|
+| Tool representation | Semantic boundary approved; exact representation not frozen. | Yes |
+| Learning / Certification representation | Optional evidence approved; exact representation not frozen. | Yes |
+| Skill / Skill Group taxonomy | Skill capability model approved; taxonomy depth unresolved. | Yes |
+| Related content | Relationship need identified; manual vs derived unresolved. | Yes |
+| SEO override representation | Hybrid ownership approved; direct optional Project/Article fields preferred unless reuse evidence justifies reduced reference. | Yes |
+| Legacy `seoMetadata` model | Broad proposal requires reconciliation with approved lean SEO contract. | Yes |
+| Field IDs and validations | No final field IDs, cardinalities, validations, or editor interfaces approved by Phase 01. | Yes |
+
+Approved Phase 02 handoff classifications remain directional only:
+
+- LIKELY FIELD
+- LIKELY REFERENCE
+- DERIVED — DO NOT MODEL
+- CODE CONFIG — DO NOT MODEL
+- NEEDS PHASE 02 DECISION
+- DEFERRED
+
+### Legacy Model Reconciliation Notes
+
+Read-only review of proposed model artifacts found no Phase 01 blocker:
+
+| Proposed model concept | Freeze classification | Note |
+|---|---|---|
+| `siteSettings` | NEEDS PHASE 02 RECONCILIATION | Global settings are directionally useful; SEO defaults must reconcile with code-owned technical SEO. |
+| `personProfile` | ALIGNED WITH PHASE 01 | Supports profile/about/contact/author context. |
+| `socialLink` | ALIGNED WITH PHASE 01 | Supports public contact and profile links. |
+| `navigationItem` | ALIGNED WITH PHASE 01 | Navigation labels and route links are useful; route composition remains code-owned. |
+| `project` | ALIGNED WITH PHASE 01 | Core Project domain is approved; fields, validations, relationships, and SEO overrides remain Phase 02 work. |
+| `article` | ALIGNED WITH PHASE 01 | Core Article domain is approved; fields, validations, relationships, and SEO overrides remain Phase 02 work. |
+| `experienceItem` | ALIGNED WITH PHASE 01 | Supports `/work`, homepage proof, and project context. |
+| `skill` | ALIGNED WITH PHASE 01 | Skill means professional capability. |
+| `skillGroup` | NEEDS PHASE 02 RECONCILIATION | Grouping depth remains OD-06 / OD-12 work. |
+| `seoMetadata` | NEEDS PHASE 02 RECONCILIATION | Broad reusable SEO proposal conflicts with approved lean/hybrid v1 direction unless reduced and justified. |
+| Tool concept | NEEDS PHASE 02 RECONCILIATION | Tool is semantically approved but exact representation is not frozen. |
+| Learning / Certification concept | NEEDS PHASE 02 RECONCILIATION | Optional evidence is approved; model shape remains open. |
+
+No content-model ledger, migration, snapshot, report, or Contentful script was modified.
+
+### Content-Type Pressure Review
+
+The current proposed model target remains 10 semantic content types, below the 25-type constraint.
+
+Batch 01.5 does not approve additional content types. Phase 02 must prevent uncontrolled growth by justifying any new Tool, Learning, Certification, taxonomy, related-content, media, page, or SEO-support type against reuse, editorial lifecycle, and route-readiness value.
+
+Generic page builders and CMS-driven component composition remain deferred/out of scope for v1.
+
+### Stale Reference Review
+
+| Area | Current classification | Finding |
+|---|---|---|
+| Phase state references | CURRENT / HISTORICAL | Current state is Phase 01 COMPLETE / FROZEN, Batch 01.5 APPROVED, and Phase 02 NEXT. Earlier freeze-candidate and next-batch states are historical. |
+| Route references | CURRENT / PROHIBITIVE | Approved v1 route inventory remains the nine-route set. `/uses`, `/resume`, `/blog`, `/articles`, and `/skills` are not active v1 routes. |
+| Decision references | CURRENT / HISTORICAL | OD-07, OD-08, and OD-15 are resolved/approved. OD-01 through OD-06 and OD-09 through OD-14 remain open. Earlier OD-08 open references are historical. |
+| SEO/model references | CURRENT / PROPOSED | Hybrid SEO is approved. Broad legacy `seoMetadata` remains proposed and requires Phase 02 reconciliation. |
+| Page-builder references | CURRENT / PROHIBITIVE | Generic page builders and CMS-driven page composition remain excluded from v1. |
+| Model artifacts | PROPOSED | Proposed model ledgers and bootstrap migration are Phase 02 inputs only. |
+
+No stale reference was found that blocks Phase 01 requirements freeze status.
+
+### Freeze Verdict
+
+APPROVED — External Batch 01.5 validation returned PASS WITH NOTES. Phase 01 is internally consistent and frozen, with non-blocking open decisions explicitly classified and handed off.
+
+Phase 01 is complete / frozen after external closeout validation approved Batch 01.5.
+
+### Evidence Limitations
+
+- This validation is repository-only.
+- No live Contentful command was run.
+- No `.env.local` contents were read.
+- No Contentful schema, field ID, reference validation, migration, locale, environment, export, import, or seed mutation occurred.
+- No fixtures were created.
+- No frontend implementation was created.
+- No SEO implementation was created.
+- No files were staged.
+- No commit or push occurred.
+
+### External Closeout Gate
+
+External validation returned PASS WITH NOTES. The Batch 01.5 approval gate is satisfied, and the Phase 01 requirements freeze is approved.
+
+Phase 02 advances to NEXT, but Phase 02 implementation has not started. Bootstrap migration remains BLOCKED / NOT RUN, and seed content remains NOT STARTED.
+
+## Batch 01.5 Closeout
+
+Status: APPROVED
+
+External validation: PASS WITH NOTES
+
+Freeze verdict: APPROVED
+
+Validated:
+
+- Content Strategy
+- Route Contract
+- SEO + Metadata Contract
+- Content Requirements Matrix
+- route inventory
+- ownership boundaries
+- canonical reuse
+- route readiness
+- route states
+- SEO/content alignment
+- media requirements
+- accessibility requirements
+- public-safety requirements
+- future fixture requirements
+- open-decision triage
+- Phase 02 handoff
+- content-type pressure
+- stale-reference review
+
+No Phase 01 blockers remain.
+
+External validation notes are non-blocking and remain represented as downstream carry-forward decisions and Phase 02 reconciliation questions.
+
+# Phase 01 Closeout
+
+Status: COMPLETE / FROZEN
+
+External validation: PASS WITH NOTES
+
+Completed batches:
+
+- 01.1 — APPROVED
+- 01.2 — APPROVED
+- 01.3 — APPROVED
+- 01.4 — APPROVED
+- 01.5 — APPROVED
+
+Frozen outputs:
+
+- Content Strategy
+- Route Contract
+- SEO + Metadata Contract
+- Content Requirements Matrix
+- Phase 01 Validation + Freeze evidence
+
+Resolved decisions:
+
+- OD-07
+- OD-08
+- OD-15
+
+Remaining open decisions:
+
+- OD-01
+- OD-02
+- OD-03
+- OD-04
+- OD-05
+- OD-06
+- OD-09
+- OD-10
+- OD-11
+- OD-12
+- OD-13
+- OD-14
+
+Remaining open decisions are classified downstream and do not block the Phase 01 requirements freeze.
+
+Next:
+
+- Phase 02 — Content Model Contract + Bootstrap Migration
+
+Status: NEXT
+
+Phase 02 implementation has not started.

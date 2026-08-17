@@ -224,7 +224,11 @@ The v1 editorial SEO contract excludes:
 
 Status: RESOLVED / APPROVED
 
-Recorded during Phase 01 / Batch 01.4 final approval reconciliation. Phase 01 remains active, Batch 01.5 — Phase 01 Validation + Freeze — is next, and Phase 02 remains deferred.
+Recorded during Phase 01 / Batch 01.4 final approval reconciliation. Phase 01 is complete / frozen, Batch 01.5 — Phase 01 Validation + Freeze — is approved, and Phase 02 is next.
+
+Batch 01.5 open-decision triage is recorded in `docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md`. No unrelated open decision is resolved by that validation pass.
+
+Phase 01 freeze does not require all downstream content-authoring or model decisions to be resolved. OD-01 through OD-06 and OD-09 through OD-14 remain open and carried forward to their documented downstream owners.
 
 ### Decision
 

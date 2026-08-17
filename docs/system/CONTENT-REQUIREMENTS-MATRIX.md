@@ -1,6 +1,6 @@
 # Content Requirements Matrix
 
-Status: Phase 01 / Batch 01.4 — APPROVED
+Status: Phase 01 / Batch 01.4 — APPROVED / FROZEN FOR PHASE 02 INPUT
 Owner: Phase 01 — Content Strategy + Route Contract
 Source strategy: `docs/system/CONTENT-STRATEGY.md`
 Source route contract: `docs/system/ROUTE-CONTRACT.md`
@@ -19,13 +19,13 @@ This document does not define Contentful field IDs, content types, migrations, f
 Approved current state:
 
 ```text
-Phase 01 — ACTIVE
+Phase 01 — COMPLETE / FROZEN
 Batch 01.1 — APPROVED
 Batch 01.2 — APPROVED
 Batch 01.3 — APPROVED
 Batch 01.4 — APPROVED
-Batch 01.5 — NEXT
-Phase 02 — DEFERRED
+Batch 01.5 — APPROVED
+Phase 02 — NEXT
 Bootstrap migration — BLOCKED / NOT RUN
 Seed content — NOT STARTED
 ```
@@ -630,7 +630,7 @@ Requirement-related narrowing:
 - No frontend implementation was created.
 - No SEO implementation was created.
 - Exact Contentful representation remains deferred to Phase 02.
-- Batch 01.5 is next but not started.
+- Batch 01.5 is approved, Phase 01 is complete / frozen, and this matrix is frozen for Phase 02 input.
 
 ## Closeout State
 
@@ -641,8 +641,8 @@ Batch 01.4 is approved after external validation:
 - Batch 01.2 is APPROVED.
 - Batch 01.3 is APPROVED.
 - Batch 01.4 is APPROVED.
-- Batch 01.5 is NEXT.
-- Phase 02 is DEFERRED.
+- At Batch 01.4 closeout, Batch 01.5 advanced to NEXT. Batch 01.5 is now APPROVED, and Phase 01 is complete / frozen.
+- At Batch 01.4 closeout, Phase 02 was DEFERRED. Phase 02 is now NEXT after Phase 01 closeout.
 - all nine approved routes have content requirements.
 - required, optional, conditional, deferred, and not-applicable requirements are classified.
 - editorial/code/derived/mixed ownership is classified.

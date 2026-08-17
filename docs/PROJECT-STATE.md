@@ -1,12 +1,11 @@
 # Project State
 
 Project: `contentful-greenfield-starter`
-Current phase: Phase 01 — ACTIVE
-Current work item: Batch 01.5 — Phase 01 Validation + Freeze — NEXT
-Latest completed phase: Phase 00 — COMPLETE
-Latest approved batch: Batch 01.4 — Content Requirements Matrix — APPROVED
-Next work item: Batch 01.5 — Phase 01 Validation + Freeze — NEXT
-Phase 02: DEFERRED
+Current phase: Phase 01 — COMPLETE / FROZEN
+Latest completed phase: Phase 01 — COMPLETE / FROZEN
+Latest approved batch: Batch 01.5 — Validation + Freeze — APPROVED
+Next phase: Phase 02 — Content Model Contract + Bootstrap Migration — NEXT
+Phase 02 implementation: NOT STARTED
 Bootstrap migration: BLOCKED / NOT RUN
 Seed content: NOT STARTED
 
@@ -14,6 +13,7 @@ Batch 01.1 external validation passed.
 Batch 01.2 external validation passed.
 Batch 01.3 external validation passed.
 Batch 01.4 external validation passed.
+Batch 01.5 external validation passed with notes.
 
 The content-strategy foundation is approved with open decisions intentionally carried forward to later Phase 01 batches.
 
@@ -29,6 +29,8 @@ Batch 01.4 approved the implementation-facing Content Requirements Matrix in `do
 
 OD-08 is resolved and approved: Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise a capability. Exact Tool Contentful representation remains deferred to Phase 02.
 
+Batch 01.5 approved the Phase 01 requirements freeze after external validation. Nine v1 routes, content strategy, route responsibilities, SEO architecture, content requirements, editorial/code/derived ownership, fixture requirements, and the Phase 02 handoff are frozen as Phase 02 inputs. Open decisions are classified by downstream owner; none blocks the Phase 01 requirements freeze. Content-model artifacts remain proposed Phase 02 inputs pending reconciliation. No Phase 02 implementation has started.
+
 ## Phase 01 Batch State
 
 | Batch | Name | Status | Evidence |
@@ -37,9 +39,9 @@ OD-08 is resolved and approved: Skill = professional capability. Tool = product,
 | 01.2 | Route Contract | Approved | External validation passed; formal v1 route contract documented in `docs/system/ROUTE-CONTRACT.md`; OD-07 resolved; OD-08 preserved as open at Batch 01.2 closeout |
 | 01.3 | SEO + Metadata Contract | Approved | External validation passed; `docs/system/SEO-AND-METADATA-CONTRACT.md` documents approved Option 2 hybrid SEO ownership, route metadata behavior, route-state SEO behavior, OD-15 resolution, and Phase 02 model reconciliation inputs |
 | 01.4 | Content Requirements Matrix | Approved | External validation passed; `docs/system/CONTENT-REQUIREMENTS-MATRIX.md` maps approved strategy, route, and SEO contracts into route/domain requirements, readiness, reuse, fixture, media, accessibility, public-safety, and Phase 02 handoff inputs; OD-08 resolved |
-| 01.5 | Phase 01 Validation + Freeze | Next | Phase freeze not started |
+| 01.5 | Phase 01 Validation + Freeze | Approved | External validation passed with notes; Phase 01 requirements freeze approved in `docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md` |
 
-Batch 01.4 approval does not start Batch 01.5 implementation, authorize Phase 02, create static fixtures, implement frontend metadata, run migrations, run Contentful commands, or mutate Contentful state.
+Phase 01 closeout advances Phase 02 to NEXT but does not mark Phase 02 active, create static fixtures, implement frontend metadata, run migrations, run Contentful commands, or mutate Contentful state.
 
 ## Batch 01.1 Strategy Summary
 
@@ -210,6 +212,6 @@ No deletion automation is part of this repair.
 
 Phase 00 is complete. Batch 00.1, Batch 00.2, Batch 00.3, Batch 00.4, and Batch 00.5 are approved.
 
-Phase 01 is active. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is approved after external validation. Batch 01.4 is approved after external validation. Batch 01.5 is next. Phase 02 is deferred.
+Phase 01 is complete / frozen. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is approved after external validation. Batch 01.4 is approved after external validation. Batch 01.5 is approved after external validation. Phase 02 is next, and Phase 02 implementation has not started.
 
-Bootstrap migration, seed content, environment deletion, Contentful model mutation, Contentful export/import, static fixtures, frontend implementation, Batch 01.5 implementation, and Phase 02 remain out of scope.
+Bootstrap migration, seed content, environment deletion, Contentful model mutation, Contentful export/import, static fixtures, frontend implementation, and Phase 02 implementation remain out of scope.

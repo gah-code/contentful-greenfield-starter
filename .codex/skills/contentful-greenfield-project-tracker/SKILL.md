@@ -27,25 +27,42 @@ Documentation is part of the build.
 ## Current State
 
 - Phase 00 — COMPLETE.
-- Phase 01 — ACTIVE.
+- Phase 01 — COMPLETE / FROZEN.
 - 01.1 — APPROVED.
 - 01.2 — APPROVED.
 - 01.3 — APPROVED.
 - 01.4 — APPROVED.
-- 01.5 — NEXT.
-- Phase 02 — DEFERRED.
+- 01.5 — APPROVED.
+- Phase 02 — NEXT.
 - Bootstrap migration — BLOCKED / NOT RUN.
 - Seed content — NOT STARTED.
 
 Batch 01.3 approved hybrid SEO ownership: editorial SEO overrides are limited conceptually to title, description, and social image; technical SEO remains code/state-derived. Exact Contentful representation and schema implementation remain deferred to Phase 02.
 
-Batch 01.4 approved the Content Requirements Matrix and does not authorize Contentful schema, fixture, frontend, migration, bootstrap, seed, Batch 01.5 implementation, or Phase 02 implementation.
+Batch 01.4 approved the Content Requirements Matrix and does not authorize Contentful schema, fixture, frontend, migration, bootstrap, seed, or Phase 02 implementation.
+
+Batch 01.5 approved the Phase 01 requirements freeze after external validation returned PASS WITH NOTES. Phase 02 is next, but Phase 02 implementation has not started. Phase 01 closeout does not authorize Contentful schema, fixture, frontend, migration, bootstrap, or seed work.
 
 Decision summary:
 
 - OD-07 — RESOLVED / APPROVED.
 - OD-08 — RESOLVED / APPROVED. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise a capability. Exact Tool representation remains Phase 02 work.
 - OD-15 — RESOLVED / APPROVED.
+
+Remaining open decisions preserved for downstream work:
+
+- OD-01
+- OD-02
+- OD-03
+- OD-04
+- OD-05
+- OD-06
+- OD-09
+- OD-10
+- OD-11
+- OD-12
+- OD-13
+- OD-14
 
 ## Environment Model
 

@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 active; Batch 01.4 approved; Batch 01.5 next
+Status: Phase 00 complete; Phase 01 complete / frozen; Batch 01.5 approved; Phase 02 next
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -8,8 +8,8 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 | Phase | Name | Primary outcome | Runtime impact |
 |---|---|---|---|
 | 00 | Baseline + Two-Environment Setup | Complete; safe repository, secure tooling boundary, and governed `master` + `dev` operating model | None |
-| 01 | Content Strategy + Route Contract | Active; Batch 01.4 content requirements matrix approved; Batch 01.5 next | None |
-| 02 | Content Model Contract + Bootstrap Migration | Deferred; core model created in `dev` only after Phase 01 approval and Phase 02 authorization | CMS only |
+| 01 | Content Strategy + Route Contract | Complete / frozen; requirements system approved for Phase 02 input | None |
+| 02 | Content Model Contract + Bootstrap Migration | Next; implementation not started; core model created in `dev` only after Phase 02 authorization | CMS only |
 | 03 | Model Export + Serial Clean-Room Verification | Approved model-only snapshot rebuilt into fresh `dev` from protected `master` | CMS only |
 | 04 | Editorial QA + Model Freeze | Editor-friendly baseline v1 | CMS only |
 | 05 | Representative Seed Content | Realistic draft entries after clean-room verification | CMS only |
@@ -31,14 +31,14 @@ Do not skip Phase 03. A serial clean-room rebuild of `dev` proves that the appro
 ```text
 Phase 00 — COMPLETE
 
-Phase 01 — ACTIVE
+Phase 01 — COMPLETE / FROZEN
 Batch 01.1 — APPROVED
 Batch 01.2 — APPROVED
 Batch 01.3 — APPROVED
 Batch 01.4 — APPROVED
-Batch 01.5 — NEXT
+Batch 01.5 — APPROVED
 
-Phase 02 — DEFERRED
+Phase 02 — NEXT
 ```
 
 ## Phase 00 — Baseline + Two-Environment Setup
@@ -69,7 +69,7 @@ Create a safe operating surface before any content type is created.
 
 ## Phase 01 — Content Strategy + Route Contract
 
-Current state: ACTIVE. Latest approved batch: 01.4 — Content Requirements Matrix — APPROVED. Next batch: 01.5 — Phase 01 Validation + Freeze — NEXT.
+Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Next phase: 02 — Content Model Contract + Bootstrap Migration — NEXT.
 
 ### Goal
 
@@ -83,7 +83,7 @@ Define what the website needs to communicate before finalizing CMS fields.
 | 01.2 | Route Contract | APPROVED |
 | 01.3 | SEO + Metadata Contract | APPROVED |
 | 01.4 | Content Requirements Matrix | APPROVED |
-| 01.5 | Phase 01 Validation + Freeze | NEXT |
+| 01.5 | Phase 01 Validation + Freeze | APPROVED |
 
 ### Confirm
 
@@ -135,7 +135,16 @@ Define what the website needs to communicate before finalizing CMS fields.
 - Content-type pressure remains controlled and below the 25-type cap.
 - OD-08 — Skills vs Tools semantic boundary — is resolved.
 - Contentful schema work, frontend implementation, fixtures, seed content, and bootstrap migration work remain deferred.
-- Batch 01.5 — Phase 01 Validation + Freeze — is next.
+- Batch 01.5 — Phase 01 Validation + Freeze — is approved.
+
+### Batch 01.5 Validation Evidence
+
+- `docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md` records the Phase 01 freeze validation and closeout.
+- External Batch 01.5 validation returned PASS WITH NOTES and approved the Phase 01 requirements freeze.
+- Content Strategy, Route Contract, SEO + Metadata Contract, and Content Requirements Matrix inputs are cross-validated.
+- Remaining open decisions are classified as content authoring or Phase 02 model decisions and do not block the Phase 01 requirements freeze.
+- Proposed Contentful model artifacts remain Phase 02 reconciliation inputs only.
+- No Contentful schema work, migration, fixtures, frontend implementation, seed content, or Phase 02 implementation is authorized by Phase 01 closeout.
 
 ### Exit criteria
 
@@ -146,7 +155,7 @@ Define what the website needs to communicate before finalizing CMS fields.
 
 ## Phase 02 — Content Model Contract + Bootstrap Migration
 
-Current state: DEFERRED.
+Current state: NEXT. Phase 02 implementation is NOT STARTED.
 
 ### Goal
 

@@ -91,6 +91,22 @@ All meaningful project changes should be recorded here.
 - Preserved exact Tool Contentful representation as Phase 02 work.
 - Advanced Phase 01 to Batch 01.5 — Validation + Freeze.
 - Bootstrap migration remains blocked and seed content remains not started.
+- Started Phase 01 / Batch 01.5 — Validation + Freeze.
+- Cross-validated Content Strategy, Route Contract, SEO Contract, and Content Requirements Matrix.
+- Classified remaining open decisions by downstream ownership.
+- Validated Phase 02 handoff without schema work.
+- Confirmed Contentful model artifacts remain proposed pending Phase 02 reconciliation.
+- Recorded Phase 01 as a freeze candidate pending external validation.
+- Approved Phase 01 / Batch 01.5 — Validation + Freeze.
+- Completed and froze Phase 01 after external validation.
+- Cross-validated the four canonical Phase 01 contracts.
+- Confirmed all nine v1 routes and ownership/readiness/SEO requirements.
+- Preserved OD-07, OD-08, and OD-15 as resolved.
+- Carried remaining open decisions forward to their downstream owners.
+- Validated the Phase 02 handoff without performing model implementation.
+- Advanced Phase 02 to NEXT.
+- Bootstrap migration remains BLOCKED / NOT RUN.
+- Seed content remains NOT STARTED.
 
 ### Security
 
