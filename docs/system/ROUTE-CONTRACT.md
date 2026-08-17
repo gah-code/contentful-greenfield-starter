@@ -1623,7 +1623,7 @@ Contact form, phone number, residential address, private contact information, un
 | `/tools` | Needs tool inventory, category/context rules, relationships to skills/projects/work, and route SEO inputs. |
 | `/contact` | Needs contact copy/channels, social links, résumé access, profile context, and route SEO inputs. |
 
-These route-contract implications are now carried into the approved `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`. Batch 01.5 — Phase 01 Validation + Freeze — is approved, and Phase 02 is next. They remain directional Phase 02 inputs and do not change content-model ledgers.
+These route-contract implications are now carried into the approved `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`. Batch 01.5 — Phase 01 Validation + Freeze — is approved, Batch 02.1 is approved, and Batch 02.2 is next. They remain directional Phase 02 inputs and do not change content-model ledgers.
 
 ## Deferred Behavior
 

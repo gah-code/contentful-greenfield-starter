@@ -107,6 +107,18 @@ All meaningful project changes should be recorded here.
 - Advanced Phase 02 to NEXT.
 - Bootstrap migration remains BLOCKED / NOT RUN.
 - Seed content remains NOT STARTED.
+- Entered Phase 02 — Content Model Contract + Bootstrap Migration.
+- Started Batch 02.1 — Entry + Existing Model Reconciliation.
+- Began reconciling proposed model artifacts against frozen Phase 01 requirements.
+- Identified Phase 02 decision pressure around SEO overrides, Tool representation, Learning/Certification, taxonomy, related content, field/reference contracts, validations, display fields, and migration alignment.
+- Added the Phase 02 batch plan, model decision queue, content-type pressure review, and bootstrap execution gates.
+- No Contentful schema or migration changes were made.
+- Bootstrap migration remains blocked/not run.
+- Approved Phase 02 / Batch 02.1 — Entry + Existing Model Reconciliation after external validation.
+- Reconciled the existing proposed model direction against frozen Phase 01 requirements.
+- Preserved unresolved SEO, Tool, Learning/Certification, SkillGroup, taxonomy, and related-content decisions for later Phase 02 batches.
+- Confirmed the migration remains unchanged and blocked.
+- Advanced Batch 02.2 — Content Type Contract to NEXT.
 
 ### Security
 

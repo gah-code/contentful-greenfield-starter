@@ -2,7 +2,7 @@
 
 Status: Phase 01 / Batch 01.1 — APPROVED / FROZEN FOR PHASE 02 INPUT
 Owner: Phase 01 — Content Strategy + Route Contract
-Current downstream consumer: Phase 02 — Content Model Contract + Bootstrap Migration — NEXT
+Current downstream consumer: Phase 02 — Content Model Contract + Bootstrap Migration — ACTIVE / Batch 02.2 NEXT
 
 ## Purpose
 

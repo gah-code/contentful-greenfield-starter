@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 complete / frozen; Batch 01.5 approved; Phase 02 next
+Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 active; Batch 02.1 approved; Batch 02.2 next
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -9,7 +9,7 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 |---|---|---|---|
 | 00 | Baseline + Two-Environment Setup | Complete; safe repository, secure tooling boundary, and governed `master` + `dev` operating model | None |
 | 01 | Content Strategy + Route Contract | Complete / frozen; requirements system approved for Phase 02 input | None |
-| 02 | Content Model Contract + Bootstrap Migration | Next; implementation not started; core model created in `dev` only after Phase 02 authorization | CMS only |
+| 02 | Content Model Contract + Bootstrap Migration | Active; Batch 02.1 approved; Batch 02.2 owns semantic content type decisions before schema approval | CMS only |
 | 03 | Model Export + Serial Clean-Room Verification | Approved model-only snapshot rebuilt into fresh `dev` from protected `master` | CMS only |
 | 04 | Editorial QA + Model Freeze | Editor-friendly baseline v1 | CMS only |
 | 05 | Representative Seed Content | Realistic draft entries after clean-room verification | CMS only |
@@ -38,7 +38,14 @@ Batch 01.3 — APPROVED
 Batch 01.4 — APPROVED
 Batch 01.5 — APPROVED
 
-Phase 02 — NEXT
+Phase 02 — ACTIVE
+Batch 02.1 — APPROVED
+Batch 02.2 — NEXT
+Batch 02.3 — LATER
+Batch 02.4 — LATER
+Batch 02.5 — LATER
+Batch 02.6 — LATER
+Batch 02.7 — LATER
 ```
 
 ## Phase 00 — Baseline + Two-Environment Setup
@@ -69,7 +76,7 @@ Create a safe operating surface before any content type is created.
 
 ## Phase 01 — Content Strategy + Route Contract
 
-Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Next phase: 02 — Content Model Contract + Bootstrap Migration — NEXT.
+Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Current phase: 02 — Content Model Contract + Bootstrap Migration — ACTIVE.
 
 ### Goal
 
@@ -155,19 +162,49 @@ Define what the website needs to communicate before finalizing CMS fields.
 
 ## Phase 02 — Content Model Contract + Bootstrap Migration
 
-Current state: NEXT. Phase 02 implementation is NOT STARTED.
+Current state: ACTIVE. Latest approved batch: 02.1 — Entry + Existing Model Reconciliation — APPROVED. Next batch: 02.2 — Content Type Contract — NEXT.
 
 ### Goal
 
-Create the lean core model in `dev`.
+Translate frozen Phase 01 requirements into a lean, stable, migration-governed Contentful model, then create the approved core model in `dev` only after the execution gate passes.
 
-### Tasks
+### Batch Decomposition
 
-- review `0001-bootstrap-portfolio-model.js`
-- approve content type IDs and field IDs
-- run migration only against `dev`
-- inspect entry titles, reference pickers, slugs, labels, and validations
-- record adjustments as a new migration, not silent UI edits
+| Batch | Name | Status |
+|---|---|---|
+| 02.1 | Entry + Existing Model Reconciliation | APPROVED |
+| 02.2 | Content Type Contract | NEXT |
+| 02.3 | Field + Field-ID Contract | LATER |
+| 02.4 | References + Validations + Editorial Contract | LATER |
+| 02.5 | Bootstrap Migration Reconciliation + Preflight | LATER |
+| 02.6 | Bootstrap Migration Execution | LATER |
+| 02.7 | Phase 02 Validation + Closeout | LATER |
+
+### Approved Batch 02.1 Evidence
+
+- Frozen Phase 01 contracts are authoritative inputs.
+- Existing content-model ledgers remain proposed.
+- The bootstrap migration remains proposed and read-only until later approval.
+- Legacy broad `seoMetadata`, Tool representation, Learning/Certification representation, Skill/SkillGroup scope, taxonomy, related content, field IDs, references, validations, and migration diff are queued for Phase 02 decisions.
+- Public-safety requirements do not automatically imply a CMS field.
+- Media alt/context requirements do not automatically approve a media wrapper or exact asset-metadata strategy.
+- Bootstrap migration remains BLOCKED / NOT RUN.
+- Seed content remains NOT STARTED.
+
+### Execution Gate
+
+Bootstrap migration execution remains blocked until Phase 02 approves:
+
+- content type inventory
+- type IDs
+- field ledger
+- reference map
+- validations
+- migration diff
+- explicit target environment = `dev`
+- master protection
+- expected blank `dev` baseline
+- external approval before execution
 
 ### Exit criteria
 

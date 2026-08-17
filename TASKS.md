@@ -6,14 +6,50 @@ This tracker records current project truth. Do not mark future batches complete 
 
 ### Phase 02 — Content Model Contract + Bootstrap Migration
 
+Status: ACTIVE
+
+#### Batch 02.1 — Entry + Existing Model Reconciliation
+
+Status: APPROVED
+
+- [x] Confirm Phase 01 frozen
+- [x] Confirm exact Phase 02 scope
+- [x] Establish Phase 02 batch plan
+- [x] Inspect frozen Phase 01 model implications
+- [x] Audit proposed content type ledger read-only
+- [x] Audit field-ID ledger read-only
+- [x] Audit reference map read-only
+- [x] Audit bootstrap migration read-only
+- [x] Reconcile legacy `seoMetadata` direction
+- [x] Review Tool model pressure
+- [x] Review Learning/Certification model pressure
+- [x] Review Skill/SkillGroup model pressure
+- [x] Review taxonomy pressure
+- [x] Review related-content pressure
+- [x] Review Project model pressure
+- [x] Review Article model pressure
+- [x] Review Experience model pressure
+- [x] Record model decision queue
+- [x] Record migration execution gates
+- [x] Preserve <=25 type cap
+- [x] Confirm no schema/migration mutation
+- [x] External Batch 02.1 validation
+
+#### Batch 02.2 — Content Type Contract
+
 Status: NEXT
 
-Phase 02 implementation: NOT STARTED
+#### Later Phase 02 Batches
 
-- [ ] Review `content-model/migrations/0001-bootstrap-portfolio-model.js`
-- [ ] Approve 10 semantic content types
-- [ ] Approve field IDs and reference map
-- [ ] Run bootstrap migration only after Phase 02 authorizes it
+- Batch 02.3 — Field + Field-ID Contract — LATER
+- Batch 02.4 — References + Validations + Editorial Contract — LATER
+- Batch 02.5 — Bootstrap Migration Reconciliation + Preflight — LATER
+- Batch 02.6 — Bootstrap Migration Execution — LATER
+- Batch 02.7 — Phase 02 Validation + Closeout — LATER
+
+Bootstrap migration: BLOCKED / NOT RUN
+
+Seed content: NOT STARTED
 
 ### Completed Phase 01 — Content Strategy + Route Contract
 
@@ -200,8 +236,9 @@ Recorded Phase 00 evidence:
 - Batch 01.3 is approved after external validation.
 - Batch 01.4 is approved after external validation.
 - Batch 01.5 is approved after external validation.
-- Phase 02 is next.
-- Phase 02 implementation is not started.
+- Phase 02 is active.
+- Batch 02.1 is approved after external validation.
+- Batch 02.2 is next.
 - Bootstrap migration remains blocked and not run.
 - Seed content remains not started.
-- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by Phase 01 closeout.
+- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by Batch 02.1.

@@ -13,7 +13,7 @@ Inspect the current repository before editing in every mode. Use current reposit
 
 Personal Website CMS — Greenfield Contentful Starter
 Repository: `contentful-greenfield-starter`
-Model target: 10 semantic content types
+Model target: proposed ~10 semantic content type direction; final count not frozen until Phase 02 approval
 
 ## Project Mantra
 
@@ -33,7 +33,14 @@ Documentation is part of the build.
 - 01.3 — APPROVED.
 - 01.4 — APPROVED.
 - 01.5 — APPROVED.
-- Phase 02 — NEXT.
+- Phase 02 — ACTIVE.
+- 02.1 — APPROVED.
+- 02.2 — NEXT.
+- 02.3 — LATER.
+- 02.4 — LATER.
+- 02.5 — LATER.
+- 02.6 — LATER.
+- 02.7 — LATER.
 - Bootstrap migration — BLOCKED / NOT RUN.
 - Seed content — NOT STARTED.
 
@@ -41,7 +48,9 @@ Batch 01.3 approved hybrid SEO ownership: editorial SEO overrides are limited co
 
 Batch 01.4 approved the Content Requirements Matrix and does not authorize Contentful schema, fixture, frontend, migration, bootstrap, seed, or Phase 02 implementation.
 
-Batch 01.5 approved the Phase 01 requirements freeze after external validation returned PASS WITH NOTES. Phase 02 is next, but Phase 02 implementation has not started. Phase 01 closeout does not authorize Contentful schema, fixture, frontend, migration, bootstrap, or seed work.
+Batch 01.5 approved the Phase 01 requirements freeze after external validation returned PASS WITH NOTES.
+
+Batch 02.1 is approved after external validation returned PASS WITH NOTES. It reconciled proposed model artifacts against frozen Phase 01 requirements and does not approve content types, fields, field IDs, references, validations, migration changes, bootstrap execution, fixtures, frontend implementation, or seed content. Batch 02.2 owns the next content type contract work.
 
 Decision summary:
 

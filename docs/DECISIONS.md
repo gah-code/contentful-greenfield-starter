@@ -224,7 +224,7 @@ The v1 editorial SEO contract excludes:
 
 Status: RESOLVED / APPROVED
 
-Recorded during Phase 01 / Batch 01.4 final approval reconciliation. Phase 01 is complete / frozen, Batch 01.5 — Phase 01 Validation + Freeze — is approved, and Phase 02 is next.
+Recorded during Phase 01 / Batch 01.4 final approval reconciliation. Phase 01 is complete / frozen, Batch 01.5 — Phase 01 Validation + Freeze — is approved, Batch 02.1 is approved, and Batch 02.2 is next.
 
 Batch 01.5 open-decision triage is recorded in `docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md`. No unrelated open decision is resolved by that validation pass.
 
@@ -245,3 +245,15 @@ This decision resolves semantic responsibility only.
 ### Not Decided
 
 Exact Contentful representation remains deferred to Phase 02. Resolving OD-08 does not decide whether Tool becomes a standalone Contentful content type.
+
+---
+
+## Phase 02 Model Decision Queue
+
+Status: reference only; no new decision recorded
+
+Phase 02 / Batch 02.1 approved the current model decision queue in `docs/phases/PHASE-02-CONTENT-MODEL-CONTRACT-AND-BOOTSTRAP-MIGRATION.md` as reconciliation findings and carry-forward questions.
+
+The queue covers legacy `seoMetadata` representation, Tool representation, Learning/Certification representation, Skill/SkillGroup scope, taxonomy depth, related-content representation, field IDs, references, validations, display fields, final migration diff, and bootstrap execution gates.
+
+Do not treat this queue as approval of content types, field IDs, references, validations, or migration execution. Formal decision records should be added only when a later Phase 02 batch makes an actual architectural decision.

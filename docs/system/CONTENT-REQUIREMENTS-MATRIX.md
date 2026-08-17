@@ -25,7 +25,9 @@ Batch 01.2 — APPROVED
 Batch 01.3 — APPROVED
 Batch 01.4 — APPROVED
 Batch 01.5 — APPROVED
-Phase 02 — NEXT
+Phase 02 — ACTIVE
+Batch 02.1 — APPROVED
+Batch 02.2 — NEXT
 Bootstrap migration — BLOCKED / NOT RUN
 Seed content — NOT STARTED
 ```
@@ -636,13 +638,13 @@ Requirement-related narrowing:
 
 Batch 01.4 is approved after external validation:
 
-- Phase 01 is ACTIVE.
+- At Batch 01.4 closeout, Phase 01 was ACTIVE. Phase 01 is now COMPLETE / FROZEN.
 - Batch 01.1 is APPROVED.
 - Batch 01.2 is APPROVED.
 - Batch 01.3 is APPROVED.
 - Batch 01.4 is APPROVED.
 - At Batch 01.4 closeout, Batch 01.5 advanced to NEXT. Batch 01.5 is now APPROVED, and Phase 01 is complete / frozen.
-- At Batch 01.4 closeout, Phase 02 was DEFERRED. Phase 02 is now NEXT after Phase 01 closeout.
+- At Batch 01.4 closeout, Phase 02 was DEFERRED. Phase 02 is now ACTIVE; Batch 02.1 is approved, and Batch 02.2 is NEXT.
 - all nine approved routes have content requirements.
 - required, optional, conditional, deferred, and not-applicable requirements are classified.
 - editorial/code/derived/mixed ownership is classified.

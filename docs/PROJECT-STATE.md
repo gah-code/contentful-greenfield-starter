@@ -1,11 +1,10 @@
 # Project State
 
 Project: `contentful-greenfield-starter`
-Current phase: Phase 01 — COMPLETE / FROZEN
+Current phase: Phase 02 — ACTIVE
 Latest completed phase: Phase 01 — COMPLETE / FROZEN
-Latest approved batch: Batch 01.5 — Validation + Freeze — APPROVED
-Next phase: Phase 02 — Content Model Contract + Bootstrap Migration — NEXT
-Phase 02 implementation: NOT STARTED
+Latest approved batch: Batch 02.1 — Entry + Existing Model Reconciliation — APPROVED
+Next work item: Batch 02.2 — Content Type Contract — NEXT
 Bootstrap migration: BLOCKED / NOT RUN
 Seed content: NOT STARTED
 
@@ -14,6 +13,7 @@ Batch 01.2 external validation passed.
 Batch 01.3 external validation passed.
 Batch 01.4 external validation passed.
 Batch 01.5 external validation passed with notes.
+Batch 02.1 external validation passed with notes.
 
 The content-strategy foundation is approved with open decisions intentionally carried forward to later Phase 01 batches.
 
@@ -29,7 +29,25 @@ Batch 01.4 approved the implementation-facing Content Requirements Matrix in `do
 
 OD-08 is resolved and approved: Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise a capability. Exact Tool Contentful representation remains deferred to Phase 02.
 
-Batch 01.5 approved the Phase 01 requirements freeze after external validation. Nine v1 routes, content strategy, route responsibilities, SEO architecture, content requirements, editorial/code/derived ownership, fixture requirements, and the Phase 02 handoff are frozen as Phase 02 inputs. Open decisions are classified by downstream owner; none blocks the Phase 01 requirements freeze. Content-model artifacts remain proposed Phase 02 inputs pending reconciliation. No Phase 02 implementation has started.
+Batch 01.5 approved the Phase 01 requirements freeze after external validation. Nine v1 routes, content strategy, route responsibilities, SEO architecture, content requirements, editorial/code/derived ownership, fixture requirements, and the Phase 02 handoff are frozen as Phase 02 inputs. Open decisions are classified by downstream owner; none blocks the Phase 01 requirements freeze. Content-model artifacts remain proposed Phase 02 inputs pending reconciliation. No Contentful schema, migration, fixture, frontend, or seed implementation has started.
+
+Batch 02.1 approved the entry and existing model reconciliation against frozen Phase 01 contracts. The proposed content type ledger, field-ID ledger, reference map, bootstrap migration, snapshots, reports, and Contentful scripts remain reconciliation inputs only. No final content-type inventory exists yet, no field/reference/schema contract is final, and migration execution remains gated.
+
+Phase 02 model questions currently include legacy `seoMetadata` representation, Tool representation, Learning/Certification representation, Skill/SkillGroup scope, taxonomy depth, related content, asset/reference strategy, required-state policy, validation strength, display fields, final type IDs, final field IDs, and the final migration diff.
+
+Batch 02.1 carry-forward notes: public safety remains a governance/readiness requirement unless later evidence proves explicit CMS state is needed. Media alt/context requirements remain representation questions and do not automatically approve a dedicated media wrapper or exact asset-metadata strategy.
+
+## Phase 02 Batch State
+
+| Batch | Name | Status | Evidence |
+|---|---|---|---|
+| 02.1 | Entry + Existing Model Reconciliation | Approved | External validation passed with notes; Phase 01 frozen inputs confirmed; proposed ledgers, reference map, bootstrap migration, and Contentful scripts inspected read-only in `docs/phases/PHASE-02-CONTENT-MODEL-CONTRACT-AND-BOOTSTRAP-MIGRATION.md` |
+| 02.2 | Content Type Contract | Next | Must approve semantic content type inventory and type IDs before field or migration work |
+| 02.3 | Field + Field-ID Contract | Later | Must approve fields, field IDs, types, required states, and semantic purpose |
+| 02.4 | References + Validations + Editorial Contract | Later | Must approve reference direction/cardinality, validations, display fields, and editor-facing contract |
+| 02.5 | Bootstrap Migration Reconciliation + Preflight | Later | Must align migration to approved model contract and perform non-mutating preflight |
+| 02.6 | Bootstrap Migration Execution | Later | May execute approved bootstrap against `dev` only after explicit approval |
+| 02.7 | Phase 02 Validation + Closeout | Later | Verifies model state, master protection, migration evidence, and Phase 03 readiness |
 
 ## Phase 01 Batch State
 
@@ -41,7 +59,7 @@ Batch 01.5 approved the Phase 01 requirements freeze after external validation. 
 | 01.4 | Content Requirements Matrix | Approved | External validation passed; `docs/system/CONTENT-REQUIREMENTS-MATRIX.md` maps approved strategy, route, and SEO contracts into route/domain requirements, readiness, reuse, fixture, media, accessibility, public-safety, and Phase 02 handoff inputs; OD-08 resolved |
 | 01.5 | Phase 01 Validation + Freeze | Approved | External validation passed with notes; Phase 01 requirements freeze approved in `docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md` |
 
-Phase 01 closeout advances Phase 02 to NEXT but does not mark Phase 02 active, create static fixtures, implement frontend metadata, run migrations, run Contentful commands, or mutate Contentful state.
+At Phase 01 closeout, Phase 02 advanced to NEXT without creating static fixtures, implementing frontend metadata, running migrations, running Contentful commands, or mutating Contentful state. Phase 02 is now active; Batch 02.1 is approved, and Batch 02.2 is next.
 
 ## Batch 01.1 Strategy Summary
 
@@ -104,7 +122,7 @@ Phase 00 is complete. Bootstrap migration remains blocked and not run. Seed cont
 | `dev` role | Single rotating sandbox for schema development, model review, and editorial QA |
 | Verification | Workflow state, not a persistent environment ID |
 | Phase 03 target | Freshly recreated `dev` after protected `master` clone/recreation process |
-| Model target | 10 semantic content types |
+| Model target | Proposed ~10 semantic type direction; final count not frozen |
 | Bootstrap target | Never `master`; later approved migration work targets `dev` |
 
 ## Batch 00.4 Contentful Verification Evidence
@@ -212,6 +230,6 @@ No deletion automation is part of this repair.
 
 Phase 00 is complete. Batch 00.1, Batch 00.2, Batch 00.3, Batch 00.4, and Batch 00.5 are approved.
 
-Phase 01 is complete / frozen. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is approved after external validation. Batch 01.4 is approved after external validation. Batch 01.5 is approved after external validation. Phase 02 is next, and Phase 02 implementation has not started.
+Phase 01 is complete / frozen. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is approved after external validation. Batch 01.4 is approved after external validation. Batch 01.5 is approved after external validation. Phase 02 is active, Batch 02.1 is approved, and Batch 02.2 is next.
 
-Bootstrap migration, seed content, environment deletion, Contentful model mutation, Contentful export/import, static fixtures, frontend implementation, and Phase 02 implementation remain out of scope.
+Bootstrap migration, seed content, environment deletion, Contentful model mutation, Contentful export/import, static fixtures, frontend implementation, and Batch 02.2 implementation remain out of scope.

@@ -691,13 +691,13 @@ Remaining open decisions:
 
 Batch 01.3 is approved after external validation:
 
-- Phase 01 is ACTIVE.
+- At Batch 01.3 closeout, Phase 01 was ACTIVE. Phase 01 is now COMPLETE / FROZEN.
 - Batch 01.1 is APPROVED.
 - Batch 01.2 is APPROVED.
 - Batch 01.3 is APPROVED.
 - At Batch 01.3 closeout, Batch 01.4 advanced to NEXT. This is historical, not the current Batch 01.4 state.
 - At Batch 01.3 closeout, Batch 01.5 was LATER. This is historical, not the current Batch 01.5 state.
-- At Batch 01.3 closeout, Phase 02 was DEFERRED. Phase 02 is now NEXT after Phase 01 closeout.
+- At Batch 01.3 closeout, Phase 02 was DEFERRED. Phase 02 is now ACTIVE; Batch 02.1 is approved, and Batch 02.2 is NEXT.
 - Option 2 hybrid SEO ownership is documented.
 - OD-15 is RESOLVED / APPROVED.
 - OD-07 remains RESOLVED / APPROVED.

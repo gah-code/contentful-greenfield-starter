@@ -5,10 +5,10 @@ A production-minded Contentful project showcasing how I design scalable CMS arch
 The repository demonstrates how I approach content systems with the same structure, documentation, and validation practices used in professional web and CMS environments.
 
 ![Status](https://img.shields.io/badge/status-active-blue)
-![Phase](https://img.shields.io/badge/phase-01%20active-blue)
+![Phase](https://img.shields.io/badge/phase-02%20active-blue)
 ![CMS](https://img.shields.io/badge/CMS-Contentful-2478CC)
 ![Node](https://img.shields.io/badge/node-%3E%3D22-339933)
-![Model](https://img.shields.io/badge/content%20types-10%20semantic-555555)
+![Model](https://img.shields.io/badge/model-under%20reconciliation-555555)
 
 > **Architecture North Star**
 >
@@ -29,13 +29,12 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 
 | Area | Current state |
 | --- | --- |
-| Current phase | Phase 01 - Complete / Frozen |
-| Latest approved batch | Batch 01.5 - Validation + Freeze |
-| Previous approved batch | Batch 01.3 - SEO + Metadata Contract |
-| Next phase | Phase 02 - Content Model Contract + Bootstrap Migration - NEXT |
+| Current phase | Phase 02 - Content Model Contract + Bootstrap Migration |
+| Latest completed phase | Phase 01 - Complete / Frozen |
+| Latest approved batch | Batch 02.1 - Entry + Existing Model Reconciliation |
+| Next batch | Batch 02.2 - Content Type Contract - NEXT |
 | Previous phase | Phase 00 - Complete |
-| Phase 02 implementation | Not started |
-| Content model | 10 semantic content types planned |
+| Content model | Proposed artifacts under reconciliation |
 | Environments | `master` + `dev` |
 | Bootstrap migration | Blocked / not run |
 | Seed content | Not started |
@@ -169,8 +168,8 @@ Do not run authentication, migration, export, import, or environment commands un
 | Phase | Focus |
 | --- | --- |
 | 00 | Baseline + Two-Environment Setup - complete |
-| 01 | Content Strategy + Route Contract - active |
-| 02 | Content Model Contract + Bootstrap Migration - deferred |
+| 01 | Content Strategy + Route Contract - complete / frozen |
+| 02 | Content Model Contract + Bootstrap Migration - active |
 | 03 | Model Export + Serial Clean-Room Verification |
 | 04 | Editorial QA + Model Freeze |
 | 05 | Representative Seed Content |
@@ -183,11 +182,11 @@ See [docs/IMPLEMENTATION-ROADMAP.md](docs/IMPLEMENTATION-ROADMAP.md) for full ga
 
 ## Content Model Direction
 
-The v1 target is 10 semantic content types:
+The existing proposed v1 direction starts from 10 semantic content types:
 
 `seoMetadata`, `socialLink`, `navigationItem`, `siteSettings`, `personProfile`, `project`, `article`, `experienceItem`, `skill`, and `skillGroup`.
 
-The model represents editorial concepts rather than React components. Batch 01.3 approved Option 2 hybrid SEO ownership and classifies the broad legacy `seoMetadata` proposal as proposed Phase 02 reconciliation input; the current SEO contract prefers optional Project/Article editorial overrides for SEO title, SEO description, and social image unless later evidence justifies a reduced reusable SEO reference. Content type ownership lives in [docs/content-model/CONTENT-TYPE-LEDGER.md](docs/content-model/CONTENT-TYPE-LEDGER.md), field contracts live in [docs/content-model/FIELD-ID-LEDGER.md](docs/content-model/FIELD-ID-LEDGER.md), and references live in [docs/content-model/REFERENCE-MAP.md](docs/content-model/REFERENCE-MAP.md).
+Phase 02 / Batch 02.1 reconciled that proposal against frozen Phase 01 requirements before any final content type, field ID, reference, validation, or migration execution is approved. The model represents editorial concepts rather than React components. Batch 01.3 approved Option 2 hybrid SEO ownership and classifies the broad legacy `seoMetadata` proposal as Phase 02 reconciliation input; the SEO contract prefers optional Project/Article editorial overrides for SEO title, SEO description, and social image unless later evidence justifies a reduced reusable SEO reference. Content type ownership lives in [docs/content-model/CONTENT-TYPE-LEDGER.md](docs/content-model/CONTENT-TYPE-LEDGER.md), field contracts live in [docs/content-model/FIELD-ID-LEDGER.md](docs/content-model/FIELD-ID-LEDGER.md), and references live in [docs/content-model/REFERENCE-MAP.md](docs/content-model/REFERENCE-MAP.md).
 
 ## Documentation
 
@@ -216,7 +215,8 @@ The model represents editorial concepts rather than React components. Batch 01.3
 
 ### Active Phase
 
-- [docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md](docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md) - Phase 01 closeout, frozen requirements evidence, and Phase 02 handoff boundary
+- [docs/phases/PHASE-02-CONTENT-MODEL-CONTRACT-AND-BOOTSTRAP-MIGRATION.md](docs/phases/PHASE-02-CONTENT-MODEL-CONTRACT-AND-BOOTSTRAP-MIGRATION.md) - Phase 02 batch plan, existing model reconciliation, decision queue, and migration execution gates
+- [docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md](docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md) - completed Phase 01 closeout, frozen requirements evidence, and Phase 02 handoff boundary
 
 ## Safety and Governance
 
