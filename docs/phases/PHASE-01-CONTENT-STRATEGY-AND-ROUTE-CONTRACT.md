@@ -54,8 +54,8 @@ Phase 01 turns content strategy into controlled project truth, then converts tha
 | 01.1 | Content Strategy Foundation | APPROVED |
 | 01.2 | Route Contract | APPROVED |
 | 01.3 | SEO + Metadata Contract | APPROVED |
-| 01.4 | Content Requirements Matrix | NEXT |
-| 01.5 | Phase 01 Validation + Freeze | LATER |
+| 01.4 | Content Requirements Matrix | APPROVED |
+| 01.5 | Phase 01 Validation + Freeze | NEXT |
 
 ## Batch 01.1 — Content Strategy Foundation
 
@@ -401,7 +401,6 @@ Assumptions are not validated until their validation gates produce evidence.
 | OD-04 | Final status of AI-Assisted Workflows & Automation pillar |
 | OD-05 | Final status of SEO, Accessibility & Content Quality pillar |
 | OD-06 | Final skill-group taxonomy |
-| OD-08 | Exact content boundary between `/tools` and skills |
 | OD-09 | Which three projects become homepage features |
 | OD-10 | Which enterprise projects are safely publishable |
 | OD-11 | Certification representation |
@@ -416,6 +415,7 @@ Most open decisions belong naturally to later Phase 01 batches and are not Batch
 | ID | Resolved decision |
 |---|---|
 | OD-07 | Final formal v1 route contract was RESOLVED / APPROVED by Phase 01 / Batch 01.2 external validation. Approved v1 routes: `/`, `/about`, `/work`, `/projects`, `/projects/[slug]`, `/writing`, `/writing/[slug]`, `/tools`, `/contact`. |
+| OD-08 | Skills vs Tools semantic boundary is RESOLVED / APPROVED by Phase 01 / Batch 01.4 external validation. Skill = professional capability; Tool = product, platform, framework, technology, or software used to exercise a capability. Exact Tool Contentful representation remains deferred to Phase 02. |
 | OD-15 | SEO override/default strategy is RESOLVED / APPROVED by Phase 01 / Batch 01.3. SEO uses hybrid ownership: editorial overrides are limited conceptually to title, description, and social image; technical SEO is code/state-derived. Exact Contentful representation remains deferred to Phase 02. |
 
 ### Batch 01.1 Evidence Limitations
@@ -460,7 +460,7 @@ Approved foundation:
 - assumptions register
 - open-decision register
 
-Open decisions other than OD-07 remain intentionally unresolved and did not block Batch 01.2 approval.
+At Batch 01.1 closeout, open decisions intentionally carried forward did not block Batch 01.2 approval.
 
 Next at Batch 01.1 closeout: Batch 01.2 — Route Contract
 
@@ -588,7 +588,7 @@ Resolved route decision:
 
 - OD-07 — final formal v1 route contract: RESOLVED / APPROVED by `docs/system/ROUTE-CONTRACT.md` and external Batch 01.2 validation.
 
-Route-related decision narrowed but still open:
+At Batch 01.2 closeout, this route-related decision was narrowed but still open:
 
 - OD-08 — `/tools` vs skills responsibility boundary: narrowed to a PROPOSED WORKING BOUNDARY where skill = capability and tool = product/platform/framework/technology.
 
@@ -608,7 +608,7 @@ Unrelated open decisions remain unresolved.
 - The formal route contract is approved for all nine v1 routes: `/`, `/about`, `/work`, `/projects`, `/projects/[slug]`, `/writing`, `/writing/[slug]`, `/tools`, and `/contact`.
 - Route responsibility boundaries, route states, content readiness, ownership rules, internal linking, responsive intent, accessibility intent, directional SEO intent, and future CMS implication boundaries are documented.
 - OD-07 is resolved and approved.
-- OD-08 remains PROPOSED / OPEN.
+- At Batch 01.2 approval, OD-08 remained PROPOSED / OPEN.
 - No frontend implementation was created.
 - No static fixtures were created.
 - No Contentful command was run.
@@ -634,7 +634,7 @@ Batch 01.2 closeout state:
 - route responsibility boundaries are explicit.
 - route states, readiness, ownership, internal linking, responsive intent, accessibility intent, directional SEO intent, and future CMS implication boundaries are documented.
 - OD-07 is RESOLVED / APPROVED.
-- OD-08 remains PROPOSED / OPEN.
+- At Batch 01.2 closeout, OD-08 remained PROPOSED / OPEN.
 - detailed SEO metadata remains deferred to Batch 01.3.
 - no Contentful schema, migration, seed, fixture, or frontend implementation occurred.
 - bootstrap migration remains BLOCKED / NOT RUN.
@@ -855,14 +855,14 @@ structured-data JSON
 meta keywords
 ```
 
-Preferred Phase 02 representation is direct optional SEO override fields on Project and Article unless Batch 01.4 or Phase 02 finds a real reuse requirement for a reduced reusable SEO metadata reference.
+Preferred Phase 02 representation remains direct optional SEO override fields on Project and Article unless Phase 02 finds a real reuse requirement for a reduced reusable SEO metadata reference.
 
 The legacy broad `seoMetadata` type and current proposed migration fields are PROPOSED / REQUIRES PHASE 02 RECONCILIATION. They are not silently preserved as approved schema truth.
 
 ### Decision Reconciliation
 
 - OD-07 — Final formal v1 route contract: RESOLVED / APPROVED; unchanged.
-- OD-08 — Exact content boundary between `/tools` and skills: PROPOSED / OPEN; unchanged.
+- OD-08 — Exact content boundary between `/tools` and skills: PROPOSED / OPEN at Batch 01.3 closeout; now resolved by Batch 01.4.
 - OD-15 — SEO override/default strategy: RESOLVED / APPROVED by Batch 01.3.
 
 Unrelated open decisions remain unresolved.
@@ -876,7 +876,7 @@ Unrelated open decisions remain unresolved.
 - No Contentful command was run.
 - No Contentful schema, locale, environment, export, import, migration, field ID, reference, or seed mutation occurred.
 - Exact Contentful SEO field representation remains deferred to Phase 02.
-- Content Requirements Matrix work remains next and is not started by Batch 01.3 approval.
+- At Batch 01.3 approval, Content Requirements Matrix work remained next and was not started. This is historical; current Batch 01.4 work is recorded below.
 
 ### Batch 01.3 Closeout
 
@@ -907,23 +907,246 @@ Resolved:
 
 Preserved:
 
-- OD-08 remains PROPOSED / OPEN.
+- At Batch 01.3 closeout, OD-08 remained PROPOSED / OPEN; it is now resolved by Batch 01.4.
 - Legacy broad `seoMetadata` requires Phase 02 reconciliation.
 
 Next:
 
 - Batch 01.4 — Content Requirements Matrix.
 
-Current state remains:
+Batch 01.3 closeout state was:
 
 - Phase 01 — ACTIVE.
 - Batch 01.1 — APPROVED.
 - Batch 01.2 — APPROVED.
 - Batch 01.3 — APPROVED.
-- Batch 01.4 — NEXT.
-- Batch 01.5 — LATER.
+- At Batch 01.3 closeout, Batch 01.4 was NEXT. This is historical, not the current Batch 01.4 state.
+- At Batch 01.3 closeout, Batch 01.5 was LATER. This is historical, not the current Batch 01.5 state.
 - Phase 02 — DEFERRED.
 - Bootstrap migration — BLOCKED / NOT RUN.
 - Seed content — NOT STARTED.
+- no files are staged.
+- no commit or push occurs in this implementation pass.
+
+## Batch 01.4 — Content Requirements Matrix
+
+Status: APPROVED
+
+Canonical detailed contract:
+
+- `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`
+
+### Goal
+
+Translate the approved content strategy, route contract, and SEO + metadata contract into implementation-facing route and content-domain requirements without defining Contentful fields, migrations, frontend implementation, static fixtures, adapters, seed content, or live CMS integration.
+
+### Approved Inputs
+
+- Phase 01 is ACTIVE.
+- Batch 01.1 is APPROVED.
+- Batch 01.2 is APPROVED.
+- Batch 01.3 is APPROVED.
+- Approved v1 routes remain `/`, `/about`, `/work`, `/projects`, `/projects/[slug]`, `/writing`, `/writing/[slug]`, `/tools`, and `/contact`.
+- OD-07 remains RESOLVED / APPROVED.
+- OD-08 is RESOLVED / APPROVED.
+- OD-15 remains RESOLVED / APPROVED.
+- Option 2 hybrid SEO ownership remains approved.
+- Phase 02 remains DEFERRED.
+
+### Requirement Taxonomy
+
+The matrix classifies requirements as REQUIRED, OPTIONAL, CONDITIONAL, DEFERRED, or NOT APPLICABLE.
+
+### Route Requirements
+
+All nine approved v1 routes are represented in `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`.
+
+The matrix records required, optional, conditional, deferred, and excluded content for:
+
+- `/`
+- `/about`
+- `/work`
+- `/projects`
+- `/projects/[slug]`
+- `/writing`
+- `/writing/[slug]`
+- `/tools`
+- `/contact`
+
+### Content Domain Requirements
+
+Content domains remain semantic planning sources, not Contentful types.
+
+The matrix covers Profile, Navigation, Social Links, Experience, Project, Article, Skill, Skill Group, Tool, Learning / Certification, Contact, SEO Editorial Override, Global Site Configuration, and Media.
+
+### Ownership
+
+The approved rule is preserved:
+
+```text
+CMS owns editorial meaning.
+Code owns behavior.
+Derived data owns what can be reliably calculated.
+```
+
+Page composition remains code-owned.
+
+### Reuse Matrix
+
+The matrix records canonical reuse for Profile, Experience, Project, Article, Skills, Tools, Social Links, Contact, and SEO editorial overrides.
+
+Same meaning uses the same canonical source. Different presentation remains presentation-layer variation.
+
+### Route Readiness
+
+The matrix defines minimum readiness for every approved route and preserves READY, EMPTY, MISSING, DRAFT/PREVIEW, and ERROR implications from the route contract.
+
+API success alone is not route readiness.
+
+### Fixture Requirements
+
+Future representative fixture needs are recorded for Profile, Experience, Project, Article, Skill Group, Skills, Tools, Navigation, Social Links, Contact, SEO override/fallback, collection EMPTY, detail MISSING, detail DRAFT/PREVIEW, and media present/optional states.
+
+No fixtures are created in Batch 01.4.
+
+### Media Requirements
+
+The matrix records required, optional, and deferred media by domain.
+
+Profile photo, Project hero/representative image, and downloadable resume PDF remain required for the intended v1 system. Project screenshots/gallery, Article media, Experience logos, and Tool logos/icons remain optional. Video remains deferred.
+
+### Accessibility Requirements
+
+Accessibility content requirements are part of content readiness.
+
+The matrix covers meaningful alt text, decorative empty alt, descriptive links, clear page headings, heading hierarchy, semantic reading order, non-color-only meaning, captions/transcripts where relevant, and public-safe descriptive media.
+
+### SEO Inputs
+
+The approved SEO contract is consumed without redesign.
+
+Static-route metadata remains code-owned. Project and Article detail content may later use optional `seoTitle?`, `seoDescription?`, and `socialImage?` concepts with semantic fallbacks.
+
+Canonicals, robots/indexability, sitemap eligibility, structured data, breadcrumbs, preview exclusion, and metadata resolution remain code/state-derived.
+
+### Public-Safety Requirements
+
+The matrix records cross-cutting public-safety rules for credentials, tokens, private environment data, internal URLs, confidential screenshots, customer data, employee data, unreleased work, proprietary architecture, confidential analytics, and unsupported/confidential metrics.
+
+Allowed transformations include anonymizing, generalizing, recreating, redacting, aggregating, describing the problem class, describing role/contribution, and describing public-safe outcomes.
+
+### Phase 02 Handoff
+
+Directional classifications are recorded:
+
+- LIKELY FIELD
+- LIKELY REFERENCE
+- DERIVED — DO NOT MODEL
+- CODE CONFIG — DO NOT MODEL
+- NEEDS PHASE 02 DECISION
+- DEFERRED
+
+These are not field IDs, content types, or approved reference contracts.
+
+### Model Pressure Review
+
+The current requirements fit the existing semantic direction and remain comfortably below the 25 content-type cap.
+
+New or still-open Phase 02 model questions include Tool representation, lightweight Learning / Certification representation, taxonomy depth, related-content strategy, and SEO override representation.
+
+### Decision Reconciliation
+
+Resolved decisions preserved:
+
+- OD-07 — Final formal v1 route contract.
+- OD-08 — Skills vs Tools semantic boundary.
+- OD-15 — SEO override/default strategy.
+
+External validation approved the OD-08 boundary:
+
+```text
+Skill = professional capability.
+Tool = product, platform, framework, technology, or software used to exercise capability.
+```
+
+Resolving OD-08 does not decide whether Tool becomes a standalone Contentful content type. Exact Tool representation remains Phase 02 model work.
+
+Remaining open decisions:
+
+- OD-01
+- OD-02
+- OD-03
+- OD-04
+- OD-05
+- OD-06
+- OD-09
+- OD-10
+- OD-11
+- OD-12
+- OD-13
+- OD-14
+
+### Evidence Limitations
+
+- External Batch 01.4 validation passed.
+- No Contentful command was run.
+- No Contentful schema, field ID, reference, migration, locale, environment, export, import, or seed mutation occurred.
+- No fixtures were created.
+- No frontend implementation was created.
+- No SEO implementation was created.
+- Exact Contentful representation remains deferred to Phase 02.
+- Batch 01.5 is next but not started.
+
+### Batch 01.4 Closeout
+
+Status: APPROVED
+
+External validation: PASS
+
+Approved:
+
+- canonical Content Requirements Matrix;
+- all nine route requirement sets;
+- requirement and ownership taxonomies;
+- reuse model;
+- route-readiness contract;
+- representative fixture requirements;
+- media requirements;
+- accessibility requirements;
+- SEO semantic inputs;
+- public-safety requirements;
+- directional Phase 02 model handoff;
+- model-pressure review.
+
+Resolved:
+
+- OD-08 — Skills vs Tools semantic boundary.
+
+Preserved:
+
+- Phase 02 model representation decisions remain deferred.
+- OD-01 through OD-06 and OD-09 through OD-14 remain unresolved as applicable.
+- no model artifacts were changed.
+
+Next:
+
+- Batch 01.5 — Phase 01 Validation + Freeze.
+
+Batch 01.4 is approved after external validation:
+
+- Phase 01 is ACTIVE.
+- Batch 01.1 is APPROVED.
+- Batch 01.2 is APPROVED.
+- Batch 01.3 is APPROVED.
+- Batch 01.4 is APPROVED.
+- Batch 01.5 is NEXT.
+- Phase 02 is DEFERRED.
+- all nine approved routes have content requirements.
+- requirement level, ownership, reuse, readiness, fixture, media, accessibility, SEO-input, public-safety, Phase 02 handoff, and model-pressure coverage is documented.
+- OD-07, OD-08, and OD-15 are RESOLVED / APPROVED.
+- unrelated open decisions remain visible.
+- no Contentful schema, migration, seed, fixture, or frontend implementation occurred.
+- bootstrap migration remains BLOCKED / NOT RUN.
+- seed content remains NOT STARTED.
 - no files are staged.
 - no commit or push occurs in this implementation pass.

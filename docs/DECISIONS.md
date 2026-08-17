@@ -217,3 +217,27 @@ The v1 editorial SEO contract excludes:
 - lowers reference and adapter overhead
 - keeps canonical/indexing behavior predictable
 - preserves future flexibility without over-modeling v1
+
+---
+
+## OD-08 — Skills vs Tools Semantic Boundary
+
+Status: RESOLVED / APPROVED
+
+Recorded during Phase 01 / Batch 01.4 final approval reconciliation. Phase 01 remains active, Batch 01.5 — Phase 01 Validation + Freeze — is next, and Phase 02 remains deferred.
+
+### Decision
+
+Skills and Tools are semantically distinct.
+
+Skill represents professional capability.
+
+Tool represents a product, platform, framework, technology, or software used to exercise that capability.
+
+### Scope
+
+This decision resolves semantic responsibility only.
+
+### Not Decided
+
+Exact Contentful representation remains deferred to Phase 02. Resolving OD-08 does not decide whether Tool becomes a standalone Contentful content type.

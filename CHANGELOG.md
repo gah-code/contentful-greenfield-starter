@@ -79,6 +79,18 @@ All meaningful project changes should be recorded here.
 - Deferred exact Contentful SEO field representation to Phase 02.
 - Advanced Phase 01 to Batch 01.4 — Content Requirements Matrix.
 - Bootstrap migration remains blocked and seed content remains not started.
+- Started Batch 01.4 — Content Requirements Matrix.
+- Mapped approved route requirements to semantic content domains.
+- Defined required, optional, conditional, and deferred content.
+- Defined content reuse, route readiness, fixture, media, accessibility, SEO-input, and public-safety requirements.
+- Added directional Phase 02 model handoff classifications.
+- Did not create or modify Contentful schema.
+- Approved Phase 01 / Batch 01.4 — Content Requirements Matrix after external validation.
+- Approved route/content requirement traceability across all nine v1 routes.
+- Resolved OD-08 — Skills vs Tools semantic boundary.
+- Preserved exact Tool Contentful representation as Phase 02 work.
+- Advanced Phase 01 to Batch 01.5 — Validation + Freeze.
+- Bootstrap migration remains blocked and seed content remains not started.
 
 ### Security
 

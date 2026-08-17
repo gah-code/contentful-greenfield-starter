@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 active; Batch 01.3 approved; Batch 01.4 next
+Status: Phase 00 complete; Phase 01 active; Batch 01.4 approved; Batch 01.5 next
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -8,7 +8,7 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 | Phase | Name | Primary outcome | Runtime impact |
 |---|---|---|---|
 | 00 | Baseline + Two-Environment Setup | Complete; safe repository, secure tooling boundary, and governed `master` + `dev` operating model | None |
-| 01 | Content Strategy + Route Contract | Active; Batch 01.3 SEO + metadata contract approved; Batch 01.4 next | None |
+| 01 | Content Strategy + Route Contract | Active; Batch 01.4 content requirements matrix approved; Batch 01.5 next | None |
 | 02 | Content Model Contract + Bootstrap Migration | Deferred; core model created in `dev` only after Phase 01 approval and Phase 02 authorization | CMS only |
 | 03 | Model Export + Serial Clean-Room Verification | Approved model-only snapshot rebuilt into fresh `dev` from protected `master` | CMS only |
 | 04 | Editorial QA + Model Freeze | Editor-friendly baseline v1 | CMS only |
@@ -35,8 +35,8 @@ Phase 01 — ACTIVE
 Batch 01.1 — APPROVED
 Batch 01.2 — APPROVED
 Batch 01.3 — APPROVED
-Batch 01.4 — NEXT
-Batch 01.5 — LATER
+Batch 01.4 — APPROVED
+Batch 01.5 — NEXT
 
 Phase 02 — DEFERRED
 ```
@@ -69,7 +69,7 @@ Create a safe operating surface before any content type is created.
 
 ## Phase 01 — Content Strategy + Route Contract
 
-Current state: ACTIVE. Latest approved batch: 01.3 — SEO + Metadata Contract — APPROVED. Next batch: 01.4 — Content Requirements Matrix — NEXT.
+Current state: ACTIVE. Latest approved batch: 01.4 — Content Requirements Matrix — APPROVED. Next batch: 01.5 — Phase 01 Validation + Freeze — NEXT.
 
 ### Goal
 
@@ -82,8 +82,8 @@ Define what the website needs to communicate before finalizing CMS fields.
 | 01.1 | Content Strategy Foundation | APPROVED |
 | 01.2 | Route Contract | APPROVED |
 | 01.3 | SEO + Metadata Contract | APPROVED |
-| 01.4 | Content Requirements Matrix | NEXT |
-| 01.5 | Phase 01 Validation + Freeze | LATER |
+| 01.4 | Content Requirements Matrix | APPROVED |
+| 01.5 | Phase 01 Validation + Freeze | NEXT |
 
 ### Confirm
 
@@ -109,7 +109,7 @@ Define what the website needs to communicate before finalizing CMS fields.
 - `docs/system/ROUTE-CONTRACT.md` formalizes and approves all nine v1 route contracts.
 - Route responsibility boundaries, route states, content readiness, internal linking, responsive intent, accessibility intent, directional SEO intent, and future CMS implication boundaries are documented.
 - OD-07 — final formal v1 route contract — is resolved and approved.
-- OD-08 — `/tools` vs skills boundary — remains PROPOSED / OPEN.
+- OD-08 — Skills vs Tools semantic boundary — is resolved and approved by Batch 01.4; exact Tool Contentful representation remains deferred to Phase 02.
 - Detailed SEO metadata behavior remains deferred to Batch 01.3.
 - Contentful schema and bootstrap migration work remain deferred.
 
@@ -123,6 +123,19 @@ Define what the website needs to communicate before finalizing CMS fields.
 - The broad legacy `seoMetadata` proposal is classified as PROPOSED / REQUIRES PHASE 02 RECONCILIATION.
 - OD-15 — SEO override/default strategy — is resolved by the Batch 01.3 contract.
 - Exact Contentful field representation, frontend metadata implementation, and bootstrap migration work remain deferred.
+
+### Approved Batch 01.4 Evidence
+
+- External Batch 01.4 validation passed.
+- `docs/system/CONTENT-REQUIREMENTS-MATRIX.md` documents the canonical Content Requirements Matrix.
+- All nine approved v1 routes are represented.
+- Required, optional, conditional, deferred, and not-applicable requirements are classified.
+- Editorial, code, derived, and mixed ownership is classified.
+- Canonical reuse, route readiness, fixture, media, accessibility, SEO-input, public-safety, and Phase 02 handoff requirements are documented.
+- Content-type pressure remains controlled and below the 25-type cap.
+- OD-08 — Skills vs Tools semantic boundary — is resolved.
+- Contentful schema work, frontend implementation, fixtures, seed content, and bootstrap migration work remain deferred.
+- Batch 01.5 — Phase 01 Validation + Freeze — is next.
 
 ### Exit criteria
 

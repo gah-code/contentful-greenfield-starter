@@ -2,7 +2,7 @@
 
 Status: Phase 01 / Batch 01.1 — APPROVED
 Owner: Phase 01 — Content Strategy + Route Contract
-Current downstream consumer: Batch 01.4 — Content Requirements Matrix
+Current downstream consumer: Batch 01.5 — Phase 01 Validation + Freeze — NEXT
 
 ## Purpose
 
@@ -792,7 +792,6 @@ Do not mark these assumptions validated until their gates produce direct evidenc
 | OD-04 | Final status of AI-Assisted Workflows & Automation pillar | Fixture/content validation |
 | OD-05 | Final status of SEO, Accessibility & Content Quality pillar | Fixture/content validation |
 | OD-06 | Final skill-group taxonomy | Content requirements matrix |
-| OD-08 | Exact content boundary between `/tools` and skills | Content requirements matrix / content validation |
 | OD-09 | Which three projects become homepage features | Fixture/content decision |
 | OD-10 | Which enterprise projects are safely publishable | Confidentiality review |
 | OD-11 | Certification representation | Content model contract |
@@ -807,6 +806,7 @@ These are not Batch 01.1 failures unless they materially prevent the content-str
 | ID | Decision | Resolution |
 |---|---|---|
 | OD-07 | Final formal v1 route contract | RESOLVED / APPROVED by Phase 01 / Batch 01.2 — Route Contract external validation. Approved v1 routes: `/`, `/about`, `/work`, `/projects`, `/projects/[slug]`, `/writing`, `/writing/[slug]`, `/tools`, `/contact`. |
+| OD-08 | Skills vs Tools semantic boundary | RESOLVED / APPROVED by Phase 01 / Batch 01.4 — Content Requirements Matrix external validation. Skill = professional capability; Tool = product, platform, framework, technology, or software used to exercise a capability. Exact Tool Contentful representation remains deferred to Phase 02. |
 | OD-15 | SEO overrides vs generated defaults | RESOLVED / APPROVED by Phase 01 / Batch 01.3 — SEO + Metadata Contract. SEO uses hybrid ownership: optional future editorial overrides for SEO title, SEO description, and social image; technical SEO is code/state-derived. Exact Contentful representation remains deferred to Phase 02. |
 
 ## Downstream Consumers
@@ -815,6 +815,6 @@ Batch 01.1 prepares controlled strategy input for:
 
 - Batch 01.2 — Route Contract
 - Batch 01.3 — SEO + Metadata Contract
-- Batch 01.4 — Content Requirements Matrix
-- Batch 01.5 — Phase 01 Validation + Freeze
+- Batch 01.4 — Content Requirements Matrix, approved in `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`
+- Batch 01.5 — Phase 01 Validation + Freeze, next
 - Phase 02 — Content Model Contract + Bootstrap Migration, after Phase 01 approval

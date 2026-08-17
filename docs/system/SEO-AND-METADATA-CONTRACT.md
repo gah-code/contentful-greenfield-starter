@@ -29,7 +29,7 @@ Approved v1 routes:
 
 OD-07 remains RESOLVED / APPROVED by the Batch 01.2 route contract.
 
-OD-08 remains PROPOSED / OPEN. The current working boundary is: skill = capability; tool = product, platform, framework, or technology.
+OD-08 is RESOLVED / APPROVED by Batch 01.4. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise that capability. Exact Tool Contentful representation remains deferred to Phase 02.
 
 ## Batch 01.3 Approval
 
@@ -587,7 +587,7 @@ structured-data JSON
 meta keywords
 ```
 
-Preferred Phase 02 representation, unless Batch 01.4 finds a real reuse requirement:
+Preferred Phase 02 representation remains direct Project/Article overrides unless Phase 02 finds a real reuse requirement:
 
 ```text
 Project
@@ -633,10 +633,10 @@ Do not modify content-model ledgers or migrations in Batch 01.3.
 
 ## Decision Reconciliation
 
-| Decision | Batch 01.3 status |
+| Decision | Status |
 |---|---|
 | OD-07 — Final formal v1 route contract | RESOLVED / APPROVED; unchanged. |
-| OD-08 — Exact content boundary between `/tools` and skills | PROPOSED / OPEN; unchanged. |
+| OD-08 — Skills vs Tools semantic boundary | RESOLVED / APPROVED by Batch 01.4 external validation. Exact Tool Contentful representation remains deferred to Phase 02. |
 | OD-15 — SEO overrides vs generated defaults | RESOLVED / APPROVED by this contract. |
 
 OD-15 resolution:
@@ -668,7 +668,6 @@ Remaining open decisions:
 - OD-04 — final status of AI-Assisted Workflows & Automation pillar
 - OD-05 — final status of SEO, Accessibility & Content Quality pillar
 - OD-06 — final skill-group taxonomy
-- OD-08 — exact content boundary between `/tools` and skills
 - OD-09 — which three projects become homepage features
 - OD-10 — which enterprise projects are safely publishable
 - OD-11 — certification representation
@@ -685,7 +684,8 @@ Remaining open decisions:
 - No Contentful command was run.
 - No Contentful schema, locale, environment, export, import, migration, field ID, reference, or seed mutation occurred.
 - Exact Contentful SEO field representation remains deferred to Phase 02.
-- Content Requirements Matrix work remains deferred to Batch 01.4.
+- Content Requirements Matrix work is approved in `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`.
+- Batch 01.5 — Phase 01 Validation + Freeze — is next.
 
 ## Closeout State
 
@@ -695,13 +695,13 @@ Batch 01.3 is approved after external validation:
 - Batch 01.1 is APPROVED.
 - Batch 01.2 is APPROVED.
 - Batch 01.3 is APPROVED.
-- Batch 01.4 is NEXT.
-- Batch 01.5 is LATER.
+- At Batch 01.3 closeout, Batch 01.4 advanced to NEXT. This is historical, not the current Batch 01.4 state.
+- At Batch 01.3 closeout, Batch 01.5 was LATER. This is historical, not the current Batch 01.5 state.
 - Phase 02 is DEFERRED.
 - Option 2 hybrid SEO ownership is documented.
 - OD-15 is RESOLVED / APPROVED.
 - OD-07 remains RESOLVED / APPROVED.
-- OD-08 remains PROPOSED / OPEN.
+- OD-08 is RESOLVED / APPROVED by Batch 01.4 external validation.
 - all nine approved v1 routes have SEO contract coverage.
 - route-state SEO behavior is documented.
 - technical SEO remains code/state-owned.

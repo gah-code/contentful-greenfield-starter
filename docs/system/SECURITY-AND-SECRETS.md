@@ -79,4 +79,4 @@ Batch 00.3 verifies credential handling and variable separation without reading 
 
 Batch 00.4 recorded direct account, space, environment inventory, default locale, `master`, and `dev` evidence. Batch 00.5 external validation approved Phase 00.
 
-Phase 01 is active. Batch 01.3 is an approved SEO + metadata documentation batch. Batch 01.4 is next. Batch 01.3 approval does not authorize authentication, environment mutation, migration, export, import, seed content, locale changes, schema mutation, field-ID changes, frontend SEO implementation, sitemap implementation, robots implementation, Open Graph implementation, or structured-data implementation.
+Phase 01 is active. Batch 01.4 is an approved Content Requirements Matrix documentation batch. Batch 01.5 is next. Batch 01.4 approval does not authorize authentication, environment mutation, migration, export, import, seed content, locale changes, schema mutation, field-ID changes, frontend implementation, frontend SEO implementation, sitemap implementation, robots implementation, Open Graph implementation, structured-data implementation, or Phase 02 work.

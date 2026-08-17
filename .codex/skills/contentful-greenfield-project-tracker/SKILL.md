@@ -31,13 +31,21 @@ Documentation is part of the build.
 - 01.1 — APPROVED.
 - 01.2 — APPROVED.
 - 01.3 — APPROVED.
-- 01.4 — NEXT.
-- 01.5 — LATER.
+- 01.4 — APPROVED.
+- 01.5 — NEXT.
 - Phase 02 — DEFERRED.
 - Bootstrap migration — BLOCKED / NOT RUN.
 - Seed content — NOT STARTED.
 
 Batch 01.3 approved hybrid SEO ownership: editorial SEO overrides are limited conceptually to title, description, and social image; technical SEO remains code/state-derived. Exact Contentful representation and schema implementation remain deferred to Phase 02.
+
+Batch 01.4 approved the Content Requirements Matrix and does not authorize Contentful schema, fixture, frontend, migration, bootstrap, seed, Batch 01.5 implementation, or Phase 02 implementation.
+
+Decision summary:
+
+- OD-07 — RESOLVED / APPROVED.
+- OD-08 — RESOLVED / APPROVED. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise a capability. Exact Tool representation remains Phase 02 work.
+- OD-15 — RESOLVED / APPROVED.
 
 ## Environment Model
 

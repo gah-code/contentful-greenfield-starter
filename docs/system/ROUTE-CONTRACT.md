@@ -79,6 +79,8 @@ Detailed SEO and metadata behavior is approved in `docs/system/SEO-AND-METADATA-
 
 No Contentful model or migration work was authorized by this approval.
 
+Implementation-facing content requirements are now tracked in `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`.
+
 Approved supporting decisions:
 
 - `/tools` is preferred over `/uses`.
@@ -96,7 +98,7 @@ Approved supporting decisions:
 | Work vs Projects | Work answers where and when contribution happened. Projects answer how specific problems were approached, solved, and evidenced. |
 | Projects index vs detail | `/projects` owns discovery and summary. `/projects/[slug]` owns the full public-safe case study. |
 | Writing index vs detail | `/writing` owns article discovery and previews. `/writing/[slug]` owns one complete public article. |
-| Skills vs Tools | Skill = capability. Tool = product, platform, framework, or technology used to exercise that capability. This is a PROPOSED WORKING BOUNDARY and remains subject to content validation. |
+| Skills vs Tools | RESOLVED / APPROVED by Batch 01.4. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise that capability. Exact Tool Contentful representation remains deferred to Phase 02. |
 | Contact vs social links | `/contact` owns the conversion context. Social links are reused contact/profile data. |
 
 ## Route State Vocabulary
@@ -1380,7 +1382,7 @@ Route path, canonical URL, breadcrumbs if used, relationship labels where safely
 
 ### Reuse Rules
 
-Tools and skills are related but distinct. Skill = capability. Tool = product, platform, framework, or technology used to exercise that capability. This distinction is a PROPOSED WORKING BOUNDARY and remains open for validation.
+Tools and skills are related but distinct. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise that capability. This distinction is RESOLVED / APPROVED by Batch 01.4. Exact Tool Contentful representation remains deferred to Phase 02.
 
 Do not use proficiency percentages, proficiency bars, or a logo grid with no explanatory value.
 
@@ -1447,7 +1449,6 @@ Final skills/tools taxonomy, standalone Contentful representation, filtering, ra
 ### Open Decisions
 
 - OD-06 — final skill-group taxonomy
-- OD-08 — exact content boundary between `/tools` and skills
 - OD-12 — taxonomy depth
 
 ## Route: `/contact`
@@ -1622,7 +1623,7 @@ Contact form, phone number, residential address, private contact information, un
 | `/tools` | Needs tool inventory, category/context rules, relationships to skills/projects/work, and route SEO inputs. |
 | `/contact` | Needs contact copy/channels, social links, résumé access, profile context, and route SEO inputs. |
 
-These are future Content Requirements Matrix and Phase 02 inputs. They do not change content-model ledgers in Batch 01.2.
+These route-contract implications are now carried into the approved `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`. Batch 01.5 — Phase 01 Validation + Freeze — is next. They remain directional Phase 02 inputs and do not change content-model ledgers.
 
 ## Deferred Behavior
 
@@ -1651,15 +1652,15 @@ Existing open decisions remain visible in `docs/system/CONTENT-STRATEGY.md`.
 
 Resolved route decision:
 
-| ID | Batch 01.2 status |
+| ID | Status |
 |---|---|
 | OD-07 — Final formal v1 route contract | RESOLVED / APPROVED by this route contract and external Batch 01.2 validation. |
 
-Route-related decision narrowed but still open:
+Resolved downstream route-related decision:
 
-| ID | Batch 01.2 status |
+| ID | Status |
 |---|---|
-| OD-08 — Exact content boundary between `/tools` and skills | PROPOSED / OPEN. Narrowed to a PROPOSED WORKING BOUNDARY: Skill = capability; Tool = product/platform/framework/technology. Final validation remains open. |
+| OD-08 — Skills vs Tools semantic boundary | RESOLVED / APPROVED by Batch 01.4 external validation. Skill = professional capability; Tool = product, platform, framework, technology, or software used to exercise a capability. Exact Tool Contentful representation remains deferred to Phase 02. |
 
 Route-adjacent decisions still unresolved:
 
