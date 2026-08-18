@@ -10,6 +10,8 @@ This report records non-canonical implementation evidence for Batch 02.5. The ap
 - `docs/content-model/REFERENCE-MAP.md`
 - `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md`
 
+Current-state note: all partial-state and blocked-execution language below is historical Batch 02.5 evidence. Batch 02.6 later completed approved destructive `dev` recovery and successfully executed the current RE2-corrected migration on Attempt #3. See `content-model/reports/PHASE-02-BATCH-02.6-BOOTSTRAP-EXECUTION.md`.
+
 ## Approval Status
 
 Phase:
@@ -561,4 +563,4 @@ APPROVED RE2-CORRECTED / NOT EXECUTED / RETRY NOT AUTHORIZED.
 
 ## Batch 02.6 Handoff
 
-Batch 02.6 remains blocked until a clean Git checkpoint exists, destructive `dev` recovery is explicitly authorized and completed, blank `dev` is verified, fresh Gate A passes, and fresh explicit Gate B authorization is granted.
+Historical handoff: Batch 02.6 remained blocked until a clean Git checkpoint existed, destructive `dev` recovery was explicitly authorized and completed, blank `dev` was verified, Fresh Gate A passed, and explicit Gate B authorization was granted. Those gates later completed; Attempt #3 succeeded and the single-use authorizations are consumed.

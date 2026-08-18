@@ -31,17 +31,20 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | --- | --- |
 | Current phase | Phase 02 - Content Model Contract + Bootstrap Migration |
 | Latest completed phase | Phase 01 - Complete / Frozen |
-| Current batch | Batch 02.5 - RE2 compatibility correction re-approved |
-| Next gate | Separate dev recovery approval after Git checkpoint |
+| Latest approved batch | Batch 02.6 - Bootstrap Migration Execution |
+| Next batch | Batch 02.7 - Phase 02 Validation + Closeout |
 | Previous phase | Phase 00 - Complete |
 | Content model | Approved V1 model contract |
-| Migration implementation | Approved RE2-corrected / not executed |
+| Migration implementation | Approved RE2-corrected V1 |
+| Migration execution | Successful in `dev` |
 | Approved checksum | `4a2319e069245d94a62e253acc9d4d67ad57f5e3450a143c71607f8c10360e24` |
-| Live `dev` | Partial - 2 types / 0 entries / 0 assets / en-US |
-| Migration retry | Not authorized |
-| Dev reset | Not authorized |
+| Live `dev` | 10 types / 0 entries / 0 assets / en-US |
+| `master` | Protected blank baseline |
+| Gate B authorization | Consumed |
+| Additional bootstrap | Not authorized |
+| Destructive recovery | Complete / externally approved; additional reset not authorized |
 | Environments | `master` + `dev` |
-| Bootstrap migration | Blocked |
+| Bootstrap migration | Executed successfully in `dev` |
 | Seed content | Not started |
 
 > For canonical current state, see [docs/PROJECT-STATE.md](docs/PROJECT-STATE.md) and [TASKS.md](TASKS.md).
@@ -77,8 +80,8 @@ The implementation sequence keeps CMS decisions upstream of templates and keeps 
 
 | Environment | Responsibility | Current posture |
 | --- | --- | --- |
-| `master` | Permanent protected baseline and future release target | Verified clean protected baseline |
-| `dev` | Single rotating sandbox for migration development, model review, and editorial QA | Partial schema after failed Gate B retry; destructive recovery not authorized |
+| `master` | Permanent protected baseline and future release target | Protected blank baseline; 0 types / 0 entries / 0 assets / en-US |
+| `dev` | Single rotating sandbox for migration development, model review, and editorial QA | Approved v1 schema; 10 types / 0 entries / 0 assets / en-US |
 
 Verification is a workflow state, not a third Contentful environment.
 
@@ -137,7 +140,7 @@ npm run cms:help
 | `npm run cms:login` | manual authentication | Authenticate with Contentful only when a phase explicitly allows it |
 | `npm run cms:env:check` | local safety check | Verify required env names are configured, target is `dev`, and secret values remain hidden |
 | `npm run cms:env:list` | gated live read | List Contentful environments when Batch 00.4 authorizes direct environment evidence |
-| `npm run cms:model:bootstrap` | mutating, blocked | Run the bootstrap migration only after Phase 02 authorizes it |
+| `npm run cms:model:bootstrap` | mutating, not authorized | Run only when a later workflow grants fresh explicit authorization |
 | `npm run cms:model:export` | gated live read | Export a model-only snapshot during the approved model verification phase |
 | `npm run cms:model:import:verify` | mutating, gated | Import a model-only snapshot into fresh `dev` during Phase 03 verification |
 | `npm run cms:model:verify:snapshot` | local read-only | Validate snapshot structure from a local model export file |
@@ -191,7 +194,7 @@ The historical proposed v1 direction started from 10 semantic content types:
 
 `seoMetadata`, `socialLink`, `navigationItem`, `siteSettings`, `personProfile`, `project`, `article`, `experienceItem`, `skill`, and `skillGroup`.
 
-Phase 02 / Batch 02.2 approves the current v1 standalone type inventory: `siteSettings`, `personProfile`, `socialLink`, `navigationItem`, `project`, `article`, `experienceItem`, `skill`, `skillGroup`, and `tool`. Phase 02 / Batch 02.3 approves the field and field-ID contract. Phase 02 / Batch 02.4 approves the reference, validation, and editorial contract without approving migration execution. The approved inventory keeps semantic content separate from React components, absorbs the broad legacy `seoMetadata` type into owning editorial types, and adds `tool` as a standalone semantic type. Content type ownership lives in [docs/content-model/CONTENT-TYPE-LEDGER.md](docs/content-model/CONTENT-TYPE-LEDGER.md), field contracts live in [docs/content-model/FIELD-ID-LEDGER.md](docs/content-model/FIELD-ID-LEDGER.md), references live in [docs/content-model/REFERENCE-MAP.md](docs/content-model/REFERENCE-MAP.md), and validation/editorial rules live in [docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md](docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md).
+Phase 02 / Batch 02.2 approves the current v1 standalone type inventory: `siteSettings`, `personProfile`, `socialLink`, `navigationItem`, `project`, `article`, `experienceItem`, `skill`, `skillGroup`, and `tool`. Phase 02 / Batch 02.3 approves the field and field-ID contract. Phase 02 / Batch 02.4 approves the reference, validation, and editorial contract. Batch 02.6 approved the successful RE2-corrected bootstrap execution in `dev`; full live contract comparison remains Batch 02.7. The approved inventory keeps semantic content separate from React components, absorbs the broad legacy `seoMetadata` type into owning editorial types, and adds `tool` as a standalone semantic type. Content type ownership lives in [docs/content-model/CONTENT-TYPE-LEDGER.md](docs/content-model/CONTENT-TYPE-LEDGER.md), field contracts live in [docs/content-model/FIELD-ID-LEDGER.md](docs/content-model/FIELD-ID-LEDGER.md), references live in [docs/content-model/REFERENCE-MAP.md](docs/content-model/REFERENCE-MAP.md), and validation/editorial rules live in [docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md](docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md).
 
 ## Documentation
 
@@ -216,8 +219,8 @@ Phase 02 / Batch 02.2 approves the current v1 standalone type inventory: `siteSe
 
 - [docs/content-model/CONTENT-TYPE-LEDGER.md](docs/content-model/CONTENT-TYPE-LEDGER.md) - semantic content-type ledger
 - [docs/content-model/FIELD-ID-LEDGER.md](docs/content-model/FIELD-ID-LEDGER.md) - field ID contract ledger
-- [docs/content-model/REFERENCE-MAP.md](docs/content-model/REFERENCE-MAP.md) - proposed reference contract
-- [docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md](docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md) - proposed validation and editorial contract
+- [docs/content-model/REFERENCE-MAP.md](docs/content-model/REFERENCE-MAP.md) - approved reference contract
+- [docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md](docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md) - approved validation and editorial contract
 
 ### Active Phase
 

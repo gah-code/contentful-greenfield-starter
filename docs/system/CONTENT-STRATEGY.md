@@ -2,7 +2,7 @@
 
 Status: Phase 01 / Batch 01.1 — APPROVED / FROZEN FOR PHASE 02 INPUT
 Owner: Phase 01 — Content Strategy + Route Contract
-Current downstream consumer: Phase 02 — Content Model Contract + Bootstrap Migration — ACTIVE / Batch 02.5 RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION
+Current downstream consumer: Phase 02 — Content Model Contract + Bootstrap Migration — ACTIVE / Batch 02.6 APPROVED / Batch 02.7 NEXT
 
 ## Purpose
 
@@ -817,4 +817,4 @@ Batch 01.1 prepares controlled strategy input for:
 - Batch 01.3 — SEO + Metadata Contract
 - Batch 01.4 — Content Requirements Matrix, approved in `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`
 - Batch 01.5 — Phase 01 Validation + Freeze, approved
-- Phase 02 — Content Model Contract + Bootstrap Migration, active; Batch 02.5 re-approved after RE2 compatibility correction and Batch 02.6 blocked by partial live `dev` schema
+- Phase 02 — Content Model Contract + Bootstrap Migration, active; Batch 02.6 approved after successful bootstrap execution in `dev`, with Batch 02.7 validation + closeout next

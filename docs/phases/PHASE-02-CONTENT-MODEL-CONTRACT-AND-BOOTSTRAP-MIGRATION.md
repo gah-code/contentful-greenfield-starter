@@ -7,15 +7,19 @@ Owner: repository maintainer
 
 Translate frozen Phase 01 requirements into a lean, stable, migration-governed Contentful model.
 
-Phase 02 starts from approved content requirements, reconciles the existing proposed model artifacts, then approves content types, fields, references, validations, and migration changes before any bootstrap execution occurs.
+Phase 02 starts from approved content requirements, reconciles the existing proposed model artifacts, then approves content types, fields, references, validations, and migration changes before bootstrap execution and closeout validation.
 
 ## Current Gate
 
-Batch 02.5 — RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION
+Batch 02.6 — APPROVED — BOOTSTRAP EXECUTED SUCCESSFULLY IN DEV
 
 Bootstrap migration:
 
-APPROVED RE2-CORRECTED / NOT EXECUTED / RETRY NOT AUTHORIZED
+APPROVED RE2-CORRECTED V1 / EXECUTED SUCCESSFULLY IN DEV / ADDITIONAL EXECUTION NOT AUTHORIZED
+
+Next:
+
+Batch 02.7 — Phase 02 Validation + Closeout — NEXT
 
 Seed content:
 
@@ -41,7 +45,7 @@ Existing proposed model inputs, inspected read-only in Batch 02.1:
 - `content-model/reports/`
 - `scripts/contentful/`
 
-The migration is not the source of requirements. It is proposed implementation input that must be reconciled against frozen Phase 01 truth.
+The migration is not the source of requirements. It began as proposed implementation input, was reconciled against frozen Phase 01 truth, and was executed successfully in `dev` under the approved Batch 02.6 Gate B.
 
 ## Batch Plan
 
@@ -52,8 +56,8 @@ The migration is not the source of requirements. It is proposed implementation i
 | 02.3 | Field + Field-ID Contract | Approve fields, field IDs, types, required states, localization behavior, relationship semantic intents, and semantic purpose. | APPROVED |
 | 02.4 | References + Validations + Editorial Contract | Approve references, cardinality, validations, display fields, editor-facing help, and editorial usability constraints. | APPROVED |
 | 02.5 | Bootstrap Migration Reconciliation + Preflight | Align the existing bootstrap migration to the approved model contract and perform non-mutating safety review. | RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION |
-| 02.6 | Bootstrap Migration Execution | Execute the approved bootstrap migration against `dev` only and record evidence. | BLOCKED BY PARTIAL DEV STATE |
-| 02.7 | Phase 02 Validation + Closeout | Verify expected model state, master protection, migration evidence, truth-surface alignment, and readiness for Phase 03. | LATER |
+| 02.6 | Bootstrap Migration Execution | Execute the approved bootstrap migration against `dev` only and record evidence. | APPROVED — EXECUTED SUCCESSFULLY IN DEV |
+| 02.7 | Phase 02 Validation + Closeout | Verify expected model state, master protection, migration evidence, truth-surface alignment, and readiness for Phase 03. | NEXT |
 
 ## Modeling Boundaries
 
@@ -396,7 +400,7 @@ Migration changed: no.
 
 Migration executed: no.
 
-## Bootstrap Execution Gate
+## Batch 02.1 Bootstrap Execution Gate (Historical)
 
 Future bootstrap execution requires all of:
 
@@ -413,7 +417,7 @@ Future bootstrap execution requires all of:
 
 Batch 02.1 does not satisfy the execution gate.
 
-Current migration status:
+Batch 02.1 migration status:
 
 BLOCKED / NOT RUN
 
@@ -1626,7 +1630,7 @@ Carry forward to Batch 02.6:
 
 actual bootstrap execution.
 
-Batch 02.5 was APPROVED after external validation returned PASS WITH NOTES, then reopened after first Gate B execution evidence. Corrected Batch 02.5 artifacts were RE-APPROVED after external revalidation. A later corrected Gate B retry executed once and failed on `socialLink.url` regex validation after partially mutating `dev`. Batch 02.5 is now RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION. Bootstrap migration retry is NOT AUTHORIZED. Seed content remains NOT STARTED.
+Batch 02.5 was APPROVED after external validation returned PASS WITH NOTES, then reopened after first Gate B execution evidence. Corrected Batch 02.5 artifacts were RE-APPROVED after external revalidation. A later corrected Gate B retry executed once and failed on `socialLink.url` regex validation after partially mutating `dev`. Batch 02.5 was re-approved after RE2 compatibility correction. Separately authorized destructive recovery and fresh gates later enabled successful Batch 02.6 Attempt #3. Seed content remains NOT STARTED.
 
 ## Batch 02.5 — Bootstrap Migration Reconciliation + Preflight
 
@@ -1651,7 +1655,7 @@ The approved ledgers remain the canonical model truth. The migration is implemen
 The bootstrap migration now implements the approved v1 type, field, reference, validation, asset, Rich Text, localization, and display-field contract. It is intended for a verified blank `dev` environment only.
 
 Migration execution:
-SECOND GATE B ATTEMPT EXIT 1 / PARTIAL DEV SCHEMA
+SUCCESSFUL IN DEV ON ATTEMPT #3 OVERALL / EXIT 0
 
 Contentful mutation commands during reopened correction:
 NONE
@@ -1772,7 +1776,7 @@ Wrapper review confirmed:
 - token values are not printed by the helper;
 - no retry, cleanup, seed, export, import, or environment mutation behavior was added.
 
-## Batch 02.6 Gate B Incident + Remediation
+## Historical Batch 02.6 Gate B Attempt #1 + Remediation
 
 - Gate A passed before the first execution attempt.
 - First Gate B execution was attempted once.
@@ -1782,9 +1786,9 @@ Wrapper review confirmed:
 - Migration remediation removed unsupported Rich Text node values while preserving the 10 / 99 / 18 contract.
 - Wrapper remediation added explicit noninteractive confirmation handling with `--yes`.
 - No retry was performed.
-- Corrected migration is externally reapproved and awaits fresh Gate A after a clean Git checkpoint.
+- The corrected migration was externally reapproved; a later fresh Gate A preceded historical Attempt #2.
 
-## Batch 02.6 Corrected Retry Incident + RE2 Reopen
+## Historical Batch 02.6 Attempt #2 + RE2 Reopen
 
 - Fresh Gate A passed external validation.
 - Corrected Gate B retry executed exactly once after explicit human authorization.
@@ -1797,9 +1801,11 @@ Wrapper review confirmed:
 - No `dev` reset/recreation occurred.
 - `master` was not targeted or mutated.
 - Batch 02.5 was reopened for complete regex audit and RE2-compatible URL validation correction.
-- Future `dev` reset remains separately gated and unauthorized.
+- At this incident closeout, future `dev` reset remained separately gated and unauthorized. That single-use recovery was later approved, completed, and externally validated before Attempt #3.
 
-## Batch 02.5 RE2 Compatibility Closeout
+## Batch 02.5 RE2 Compatibility Closeout (Historical Execution State)
+
+This section records the pre-recovery Batch 02.5 closeout. Batch 02.6 Attempt #3 supersedes its execution-readiness state without replacing its correction evidence.
 
 Status:
 RE-APPROVED
@@ -1914,7 +1920,7 @@ Batch 02.6 requires:
 
 ### Batch 02.6 Handoff
 
-Batch 02.6 owns actual bootstrap execution against `dev` only after execution-time gates and explicit human approval. It also owns live mutation evidence.
+This historical handoff assigned actual bootstrap execution and live mutation evidence to Batch 02.6. Batch 02.6 has now completed that responsibility.
 
 ## Historical Batch 02.5 Closeout Before RE2 Reopen
 
@@ -1961,3 +1967,73 @@ Carry forward to 02.6 gates:
 - secret-safe credential loading;
 - reviewed bootstrap command;
 - explicit human approval in the active session.
+
+## Batch 02.6 Closeout
+
+Status:
+APPROVED
+
+External validation:
+PASS WITH NOTES
+
+Successful execution:
+GATE B ATTEMPT #3 OVERALL / RE2-CORRECTED ATTEMPT #1
+
+Fresh Gate A after destructive recovery:
+PASS
+
+Target:
+`dev`
+
+Exit:
+0
+
+Approved migration checksum:
+`4a2319e069245d94a62e253acc9d4d67ad57f5e3450a143c71607f8c10360e24`
+
+Post-execution `dev`:
+
+- 10 content types;
+- 0 entries;
+- 0 assets;
+- `en-US` default locale.
+
+Exact type IDs:
+
+- `siteSettings`;
+- `personProfile`;
+- `socialLink`;
+- `navigationItem`;
+- `project`;
+- `article`;
+- `experienceItem`;
+- `skill`;
+- `skillGroup`;
+- `tool`.
+
+Missing type IDs: none.
+
+Unexpected type IDs: none.
+
+`master`:
+UNTOUCHED / BLANK — 0 content types / 0 entries / 0 assets / en-US
+
+Destructive `dev` recovery:
+COMPLETE / EXTERNALLY APPROVED / AUTHORIZATION CONSUMED
+
+Gate B authorization:
+CONSUMED
+
+Additional bootstrap execution:
+NOT AUTHORIZED
+
+Additional environment reset:
+NOT AUTHORIZED
+
+Seed content:
+NOT STARTED
+
+Next:
+Batch 02.7 — Phase 02 Validation + Closeout — NEXT
+
+Batch 02.7 owns full live field, primitive, requiredness, validation, reference, cardinality, target, display-field, and editor-interface comparison plus Phase 02 closeout. Batch 02.6 does not claim those checks complete.

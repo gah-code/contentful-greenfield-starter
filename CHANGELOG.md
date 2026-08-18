@@ -230,6 +230,15 @@ All meaningful project changes should be recorded here.
 - Retry remains unauthorized.
 - Dev reset remains unauthorized.
 - Seed remains not started.
+- Approved Phase 02 / Batch 02.6 bootstrap execution after external Gate B validation returned PASS WITH NOTES.
+- Successfully executed the RE2-corrected migration against `dev` on overall Attempt #3 with exit code 0.
+- Created and published all 10 approved v1 content types with no missing or unexpected type IDs.
+- Recorded `dev` at 10 content types / 0 entries / 0 assets / en-US and `master` as untouched and blank.
+- Recorded completed externally approved destructive `dev` recovery while preserving Attempts #1 and #2 as historical failures.
+- Consumed Gate B authorization; no additional bootstrap execution or environment reset is authorized.
+- Added sanitized Batch 02.6 bootstrap execution evidence without raw logs or secrets.
+- Advanced Batch 02.7 — Phase 02 Validation + Closeout — to NEXT.
+- Seed content remains not started.
 
 ### Security
 

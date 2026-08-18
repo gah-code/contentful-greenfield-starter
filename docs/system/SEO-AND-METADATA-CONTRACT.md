@@ -64,9 +64,9 @@ Batch 01.3 adopts Option 2 — Hybrid / Lean SEO Ownership.
 | `docs/system/ROUTE-CONTRACT.md` SEO intent | CURRENT | Route SEO intent is approved, while detailed metadata behavior was deferred to Batch 01.3. | Use as route input. |
 | `docs/system/CONTENT-STRATEGY.md` OD-15 | CURRENT | SEO overrides vs generated defaults was open for Batch 01.3. | Resolve in this contract. |
 | `docs/content-model/CONTENT-TYPE-LEDGER.md` `seoMetadata` type | NOT APPROVED AS V1 STANDALONE TYPE | Existing model proposal included reusable SEO Metadata. | Batch 02.2 absorbs SEO override concepts into owning content. |
-| `docs/content-model/FIELD-ID-LEDGER.md` legacy `seoMetadata.title` and `description` | RECONCILED BY BATCH 02.3 | Legacy proposal is replaced by optional owning-type `seoTitle` and `seoDescription` field IDs. | Validation guidance is approved by Batch 02.4; migration reconciliation remains Batch 02.5. |
-| `docs/content-model/REFERENCE-MAP.md` SEO references | PROPOSED / REQUIRES REFERENCE RECONCILIATION | Existing proposal references `seoMetadata` from site settings, projects, and articles. | Remove or replace during downstream reference/migration reconciliation. |
-| `content-model/migrations/0001-bootstrap-portfolio-model.js` broad SEO fields | PROPOSED / REQUIRES MIGRATION RECONCILIATION | Migration currently proposes `canonicalUrl`, `openGraphImage`, `noIndex`, and `noFollow`. | Do not run or mutate; reconcile before migration approval. |
+| `docs/content-model/FIELD-ID-LEDGER.md` legacy `seoMetadata.title` and `description` | RECONCILED BY BATCH 02.3 | Legacy proposal is replaced by optional owning-type `seoTitle` and `seoDescription` field IDs. | Validation guidance was approved by Batch 02.4 and migration reconciliation completed in Batch 02.5. |
+| `docs/content-model/REFERENCE-MAP.md` SEO references | RECONCILED BY BATCH 02.4 | Legacy `seoMetadata` references were removed in favor of owning content. | Approved reference direction is recorded in the current reference map. |
+| `content-model/migrations/0001-bootstrap-portfolio-model.js` broad SEO fields | RECONCILED BY BATCH 02.5 | `canonicalUrl`, `openGraphImage`, `noIndex`, and `noFollow` are absent from the approved migration. | Batch 02.6 executed the RE2-corrected migration successfully in `dev`. |
 | hard title/description lengths in migration | PROPOSED / REQUIRES PHASE 02 RECONCILIATION | Proposed title max 70 and description max 170 appear in migration validations. | Treat as proposed guidance only, not a Batch 01.3 publication gate. |
 | `meta keywords` | CURRENT EXCLUSION | No current strategy requires meta keywords. | Exclude from v1 SEO contract. |
 
@@ -702,7 +702,7 @@ Batch 01.3 is approved after external validation:
 - Batch 01.3 is APPROVED.
 - At Batch 01.3 closeout, Batch 01.4 advanced to NEXT. This is historical, not the current Batch 01.4 state.
 - At Batch 01.3 closeout, Batch 01.5 was LATER. This is historical, not the current Batch 01.5 state.
-- At Batch 01.3 closeout, Phase 02 was DEFERRED. Phase 02 is now ACTIVE; Batch 02.1 is APPROVED, Batch 02.2 is APPROVED, Batch 02.3 is APPROVED, Batch 02.4 is APPROVED, Batch 02.5 is RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION, and Batch 02.6 is BLOCKED by partial live `dev` schema.
+- At Batch 01.3 closeout, Phase 02 was DEFERRED. Phase 02 is now ACTIVE; Batch 02.1 through Batch 02.4 are APPROVED, Batch 02.5 is RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION, Batch 02.6 is APPROVED after successful bootstrap execution in `dev`, and Batch 02.7 is NEXT.
 - Option 2 hybrid SEO ownership is documented.
 - OD-15 is RESOLVED / APPROVED.
 - OD-07 remains RESOLVED / APPROVED.
@@ -711,9 +711,9 @@ Batch 01.3 is approved after external validation:
 - route-state SEO behavior is documented.
 - technical SEO remains code/state-owned.
 - future editorial SEO overrides are limited to title, description, and social image.
-- legacy broad `seoMetadata` assumptions are absorbed into owning content at the Batch 02.2 type level; exact Project/Article override field IDs are approved by Batch 02.3, and migration reconciliation remains downstream.
+- legacy broad `seoMetadata` assumptions are absorbed into owning content at the Batch 02.2 type level; exact Project/Article override field IDs are approved by Batch 02.3, and migration reconciliation completed in Batch 02.5.
 - no Contentful schema, migration, seed, fixture, or frontend implementation occurred.
-- bootstrap migration remains BLOCKED / NOT RUN.
+- at Batch 01.3 closeout, the bootstrap migration remained BLOCKED / NOT RUN; Batch 02.6 later executed the approved migration successfully in `dev`.
 - seed content remains NOT STARTED.
 - no files are staged.
 - no commit or push occurs in this implementation pass.

@@ -3,10 +3,10 @@
 Project: `contentful-greenfield-starter`
 Current phase: Phase 02 — ACTIVE
 Latest completed phase: Phase 01 — COMPLETE / FROZEN
-Latest approved batch: Batch 02.5 — RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION
-Current operational blocker: Batch 02.6 — PARTIAL DEV SCHEMA
-Next operational gate after Git checkpoint: SEPARATE DEV RECOVERY APPROVAL GATE
-Bootstrap migration: ATTEMPTED TWICE / SECOND ATTEMPT PARTIAL / RETRY BLOCKED
+Latest approved batch: Batch 02.6 — BOOTSTRAP MIGRATION EXECUTION — APPROVED
+Current / next work item: Batch 02.7 — PHASE 02 VALIDATION + CLOSEOUT — NEXT
+Bootstrap migration: APPROVED RE2-CORRECTED V1 / EXECUTED SUCCESSFULLY IN DEV
+Additional bootstrap execution: NOT AUTHORIZED
 Seed content: NOT STARTED
 
 Batch 01.1 external validation passed.
@@ -19,6 +19,8 @@ Batch 02.2 external validation passed with notes.
 Batch 02.3 external validation passed with notes.
 Batch 02.4 external validation passed with notes.
 Batch 02.5 external validation passed with notes, then Batch 02.6 Gate B execution evidence forced a narrow Rich Text compatibility reopen. Corrected Batch 02.5 artifacts passed external revalidation. A later corrected Gate B retry executed once and failed on `socialLink.url` regex validation after partially mutating `dev`; Batch 02.5 was reopened for RE2 URL-validation compatibility correction and complete regex audit, then re-approved after external validation returned PASS WITH NOTES.
+
+Batch 02.6 destructive `dev` recovery completed under separate authorization and passed external validation. A fresh Gate A then passed, and the current RE2-corrected migration executed once against `dev` on overall Attempt #3 with exit code 0. External Gate B validation returned PASS WITH NOTES and approved the result. All 10 approved v1 content type IDs are present; `dev` remains at 0 entries, 0 assets, and `en-US`. `master` remained untouched and blank. The Gate B and destructive recovery authorizations are consumed; additional bootstrap execution or environment reset is not authorized.
 
 The content-strategy foundation is approved with open decisions intentionally carried forward to later Phase 01 batches.
 
@@ -36,15 +38,15 @@ OD-08 is resolved and approved: Skill = professional capability. Tool = product,
 
 Batch 01.5 approved the Phase 01 requirements freeze after external validation. Nine v1 routes, content strategy, route responsibilities, SEO architecture, content requirements, editorial/code/derived ownership, fixture requirements, and the Phase 02 handoff are frozen as Phase 02 inputs. Open decisions are classified by downstream owner; none blocks the Phase 01 requirements freeze. At Phase 01 closeout, content-model artifacts remained proposed Phase 02 inputs pending reconciliation. No Contentful schema, migration, fixture, frontend, or seed implementation started.
 
-Batch 02.1 approved the entry and existing model reconciliation against frozen Phase 01 contracts. At Batch 02.1 closeout, the proposed field-ID ledger, reference map, bootstrap migration, snapshots, reports, and Contentful scripts remained reconciliation inputs only. Migration execution remains gated.
+Batch 02.1 approved the entry and existing model reconciliation against frozen Phase 01 contracts. At Batch 02.1 closeout, the proposed field-ID ledger, reference map, bootstrap migration, snapshots, reports, and Contentful scripts remained reconciliation inputs only, and migration execution remained gated.
 
-Batch 02.2 approved the v1 semantic content type inventory in `docs/content-model/CONTENT-TYPE-LEDGER.md`. The approved standalone v1 content types are `siteSettings`, `personProfile`, `socialLink`, `navigationItem`, `project`, `article`, `experienceItem`, `skill`, `skillGroup`, and `tool`. Approved standalone type count: 10. Content type IDs are approved; Batch 02.3 later approves fields and field IDs. References, cardinality, validations, editor interfaces, and migration implementation remain unfrozen.
+Batch 02.2 approved the v1 semantic content type inventory in `docs/content-model/CONTENT-TYPE-LEDGER.md`. The approved standalone v1 content types are `siteSettings`, `personProfile`, `socialLink`, `navigationItem`, `project`, `article`, `experienceItem`, `skill`, `skillGroup`, and `tool`. Approved standalone type count: 10. At that closeout, fields, references, validations, editor interfaces, and migration implementation remained unfrozen; later Batch 02.3 through Batch 02.5 approvals resolved those layers.
 
 Batch 02.2 approved type-level outcomes: broad `seoMetadata` is absorbed into owning Project/Article SEO override fields, Tool is a standalone v1 type, SkillGroup is a standalone v1 type, Learning/Certification is lightweight profile-owned content, Contact is composed from owning sources, Media uses Contentful Assets without a wrapper type, dedicated taxonomy is deferred, and generic Page/PageSection/component-shaped modeling remains code-owned.
 
 OD-11 is resolved and approved: Certification / learning evidence is lightweight profile-owned content in v1. No standalone Certification or Learning content type is required. Batch 02.3 approves exact profile-owned field representation as `personProfile.learningHighlights`.
 
-Batch 02.5 originally approved the reconciled v1 bootstrap migration implementation and static/non-mutating preflight. The first Batch 02.6 Gate B execution attempt was invoked once, the child process exited nonzero, and live read-only checks found `dev` still blank with 0 content types, 0 entries, 0 assets, and `en-US` locale. Investigation identified a local migration-validator incompatibility with Rich Text `enabledNodeTypes` plus a secondary missing noninteractive confirmation flag. Corrected Batch 02.5 artifacts were re-approved after external validation. The corrected retry executed exactly once, exited nonzero, created/published `siteSettings` and `personProfile`, then failed on `socialLink.url` validation. The RE2 compatibility correction is now re-approved; retry and destructive dev recovery are unauthorized.
+Batch 02.5 originally approved the reconciled v1 bootstrap migration implementation and static/non-mutating preflight. Historical Attempt #1 exited nonzero before creating schema because of Rich Text migration-validator incompatibility; historical Attempt #2 exited nonzero after creating/publishing `siteSettings` and `personProfile` because of `socialLink.url` RE2 validation. The migration and wrapper were corrected through controlled Batch 02.5 reopens. After approved destructive recovery and fresh gates, Attempt #3 executed the current RE2-corrected migration successfully. See `content-model/reports/PHASE-02-BATCH-02.6-BOOTSTRAP-EXECUTION.md`.
 
 Batch 02.1 carry-forward notes: public safety remains a governance/readiness requirement unless later evidence proves explicit CMS state is needed. Media alt/context requirements remain representation questions and do not automatically approve a dedicated media wrapper or exact asset-metadata strategy.
 
@@ -64,9 +66,9 @@ Validation contract: APPROVED V1.
 
 Editorial contract: APPROVED V1.
 
-Migration implementation: APPROVED RE2-CORRECTED V1 / NOT EXECUTED.
+Migration implementation: APPROVED RE2-CORRECTED V1.
 
-Migration execution: TWO ATTEMPTS / SECOND ATTEMPT EXIT 1 / PARTIAL DEV SCHEMA.
+Migration execution: SUCCESSFUL IN DEV / ATTEMPT #3 OVERALL / RE2-CORRECTED EXECUTION #1 / EXIT 0.
 
 Static preflight: APPROVED.
 
@@ -74,13 +76,15 @@ Pre-RE2 correction checksum: `46d5702fe8685d1b995eaf37dfb3097fda717e2a02dc291346
 
 Approved RE2-corrected checksum: `4a2319e069245d94a62e253acc9d4d67ad57f5e3450a143c71607f8c10360e24`.
 
-Contentful mutation commands during reopened RE2 correction: NONE.
+Gate B authorization: CONSUMED.
 
-Latest known live `dev` evidence: 2 content types (`siteSettings`, `personProfile`) / 0 entries / 0 assets / en-US after corrected Gate B retry failure. This is partial live state and is not Gate A readiness evidence.
+Additional bootstrap execution: NOT AUTHORIZED.
 
-`master` mutation: NONE.
+Latest approved live `dev` evidence: 10 approved content types / 0 entries / 0 assets / en-US.
 
-Bootstrap: ATTEMPTED TWICE / PARTIAL DEV SCHEMA / RETRY BLOCKED.
+Latest approved `master` evidence: 0 content types / 0 entries / 0 assets / en-US; untouched / blank baseline.
+
+Destructive dev recovery: COMPLETE / EXTERNALLY APPROVED; previous authorization CONSUMED; additional dev reset NOT AUTHORIZED.
 
 Corrected wrapper: APPROVED FOR NONINTERACTIVE EXECUTION / UNCHANGED.
 
@@ -92,9 +96,9 @@ Corrected wrapper: APPROVED FOR NONINTERACTIVE EXECUTION / UNCHANGED.
 | 02.2 | Content Type Contract | Approved | External validation passed with notes; 10 standalone v1 content types and stable type IDs approved in `docs/content-model/CONTENT-TYPE-LEDGER.md`; field/reference/migration work remains deferred |
 | 02.3 | Field + Field-ID Contract | Approved | External validation passed with notes; approved field and field-ID contract recorded in `docs/content-model/FIELD-ID-LEDGER.md`; reference shape and validations remain deferred |
 | 02.4 | References + Validations + Editorial Contract | Approved | External validation passed with notes; reference, validation, and editorial contract approved in `docs/content-model/REFERENCE-MAP.md` and `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md` |
-| 02.5 | Bootstrap Migration Reconciliation + Preflight | Re-approved after RE2 compatibility correction | Approved RE2-corrected migration checksum recorded; not executed |
-| 02.6 | Bootstrap Migration Execution | Blocked by partial dev state | Blocked until Git checkpoint, explicit dev recovery authorization, clean dev verification, fresh Gate A, and fresh explicit Gate B authorization |
-| 02.7 | Phase 02 Validation + Closeout | Later | Verifies model state, master protection, migration evidence, and Phase 03 readiness |
+| 02.5 | Bootstrap Migration Reconciliation + Preflight | Re-approved after RE2 compatibility correction | Approved RE2-corrected migration checksum recorded |
+| 02.6 | Bootstrap Migration Execution | Approved / executed successfully in dev | External Gate B validation passed with notes; Attempt #3 exited 0 and created all 10 approved type IDs in `dev` |
+| 02.7 | Phase 02 Validation + Closeout | Next | Full live model comparison, master protection review, migration evidence, and Phase 03 readiness remain pending |
 
 ## Phase 01 Batch State
 
@@ -106,7 +110,7 @@ Corrected wrapper: APPROVED FOR NONINTERACTIVE EXECUTION / UNCHANGED.
 | 01.4 | Content Requirements Matrix | Approved | External validation passed; `docs/system/CONTENT-REQUIREMENTS-MATRIX.md` maps approved strategy, route, and SEO contracts into route/domain requirements, readiness, reuse, fixture, media, accessibility, public-safety, and Phase 02 handoff inputs; OD-08 resolved |
 | 01.5 | Phase 01 Validation + Freeze | Approved | External validation passed with notes; Phase 01 requirements freeze approved in `docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md` |
 
-At Phase 01 closeout, Phase 02 advanced to NEXT without creating static fixtures, implementing frontend metadata, running migrations, running Contentful commands, or mutating Contentful state. Phase 02 is now active; Batch 02.1 is approved, Batch 02.2 is approved, Batch 02.3 is approved, Batch 02.4 is approved, Batch 02.5 is re-approved after RE2 compatibility correction, and Batch 02.6 is blocked by partial live `dev` schema.
+At Phase 01 closeout, Phase 02 advanced to NEXT without creating static fixtures, implementing frontend metadata, running migrations, running Contentful commands, or mutating Contentful state. Phase 02 is now active; Batch 02.1 through Batch 02.4 are approved, Batch 02.5 is re-approved after RE2 compatibility correction, Batch 02.6 is approved after successful bootstrap execution in `dev`, and Batch 02.7 is next.
 
 ## Batch 01.1 Strategy Summary
 
@@ -145,7 +149,7 @@ Non-blocking open decisions include canonical positioning sentence, secondary pr
 | 00.4 | Contentful Space and Environment Verification | Approved | Project space, Starter capacity, `master` + `dev` inventory, clean environment state, and `en-US` locale compatibility verified |
 | 00.5 | Phase 00 Closeout | Approved | External validation passed; Phase 00 final state approved |
 
-Phase 00 is complete. Bootstrap migration remains blocked and not run. Seed content has not started.
+At Phase 00 closeout, the bootstrap migration was blocked and not run. Seed content has still not started.
 
 ## Phase 00 Achievement Summary
 
@@ -169,8 +173,8 @@ Phase 00 is complete. Bootstrap migration remains blocked and not run. Seed cont
 | `dev` role | Single rotating sandbox for schema development, model review, and editorial QA |
 | Verification | Workflow state, not a persistent environment ID |
 | Phase 03 target | Freshly recreated `dev` after protected `master` clone/recreation process |
-| Model target | Approved 10 standalone v1 semantic content types with approved fields, references, validations, and editorial contract; migration reconciled / in review / not run |
-| Bootstrap target | Never `master`; later approved migration work targets `dev` |
+| Model target | Approved 10 standalone v1 semantic content types with approved fields, references, validations, and editorial contract; RE2-corrected migration executed successfully in `dev`; full live comparison remains Batch 02.7 |
+| Bootstrap target | `dev` only; successful Gate B authorization consumed; additional execution not authorized; never `master` |
 
 ## Batch 00.4 Contentful Verification Evidence
 
@@ -277,6 +281,6 @@ No deletion automation is part of this repair.
 
 Phase 00 is complete. Batch 00.1, Batch 00.2, Batch 00.3, Batch 00.4, and Batch 00.5 are approved.
 
-Phase 01 is complete / frozen. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is approved after external validation. Batch 01.4 is approved after external validation. Batch 01.5 is approved after external validation. Phase 02 is active, Batch 02.1 is approved, Batch 02.2 is approved, Batch 02.3 is approved, Batch 02.4 is approved, Batch 02.5 is re-approved after RE2 compatibility correction, and Batch 02.6 is blocked by partial live `dev` schema.
+Phase 01 is complete / frozen. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is approved after external validation. Batch 01.4 is approved after external validation. Batch 01.5 is approved after external validation. Phase 02 is active, Batch 02.1 through Batch 02.4 are approved, Batch 02.5 is re-approved after RE2 compatibility correction, Batch 02.6 is approved after successful bootstrap execution in `dev`, and Batch 02.7 is next.
 
-Bootstrap retry, destructive dev recovery, seed content, environment deletion, Contentful model mutation, Contentful export/import, static fixtures, frontend implementation, and Batch 02.6 execution remain out of scope until clean Git checkpoint, explicit dev recovery authorization, recreated/verified clean `dev`, fresh Gate A, and fresh explicit retry authorization.
+Batch 02.7 implementation has not started. Full live field/reference/validation/editor-interface comparison, Phase 02 closeout, additional bootstrap execution, additional environment reset, seed content, Contentful export/import, static fixtures, and frontend implementation remain out of scope until separately authorized.

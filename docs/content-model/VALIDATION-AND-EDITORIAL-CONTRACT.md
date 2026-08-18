@@ -36,7 +36,7 @@ Approved scope:
 - derived/code/system exclusions.
 
 Migration syntax:
-APPROVED RE2-CORRECTED / NOT EXECUTED after Batch 02.5
+APPROVED RE2-CORRECTED / EXECUTED SUCCESSFULLY IN DEV by Batch 02.6
 
 Owner: Phase 02 - Content Model Contract + Bootstrap Migration
 
@@ -432,9 +432,9 @@ OD-01, OD-02, OD-03, OD-04, OD-05, OD-09, OD-10, and OD-14 remain open content-a
 
 ## Evidence Limitations
 
-- No Contentful command was run.
-- No live CMS state was read.
-- RE2-corrected migration syntax is approved after Batch 02.5 and remains unexecuted.
+- No Contentful command was run and no live CMS state was read while approving this Batch 02.4 contract.
+- The RE2-corrected migration was approved after Batch 02.5 and executed successfully in `dev` during Batch 02.6.
+- Successful type creation does not yet prove every validation or editor interface; full live comparison remains Batch 02.7.
 - No fixtures, frontend adapters, or route implementations were created.
 - Cross-field validations may require application/editorial enforcement if Contentful schema validation cannot express them directly.
 
@@ -452,4 +452,4 @@ Batch 02.5 records approved RE2-corrected migration syntax, migration diff, and 
 | Editor guidance/interface | Added concise field help and widgets where supported. |
 | SEO legacy | Replaced `seo` references with owning-type SEO fields. |
 | Derived values | Did not implement reading time, canonical URL, route path, robots, sitemap, breadcrumbs, or structured data fields. |
-| Safety | Bootstrap remains blocked pending fresh Batch 02.6 execution gates. |
+| Safety | Batch 02.6 execution succeeded in `dev`; its authorization is consumed and additional bootstrap execution is not authorized. |

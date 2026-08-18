@@ -27,7 +27,7 @@ Approved scope:
 - orphan/reuse guidance.
 
 Migration implementation:
-APPROVED RE2-CORRECTED / NOT EXECUTED after Batch 02.5
+APPROVED RE2-CORRECTED / EXECUTED SUCCESSFULLY IN DEV by Batch 02.6
 
 Owner: Phase 02 - Content Model Contract + Bootstrap Migration
 
@@ -182,4 +182,4 @@ Batch 02.5 records the approved RE2-corrected bootstrap migration against this a
 
 Migration implementation changed in Batch 02.5: yes, re-approved after RE2 compatibility correction following corrected Gate B retry evidence.
 
-Contentful command run: no.
+Contentful command run during Batch 02.4 contract approval: no. Batch 02.6 later executed the approved migration successfully; full live reference comparison remains Batch 02.7.
