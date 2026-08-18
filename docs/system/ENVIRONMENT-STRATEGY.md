@@ -9,7 +9,7 @@ Canonical environment topology: `master` + `dev`
 | Environment | Role | Rules | Verification state |
 |---|---|---|---|
 | `master` | Permanent protected baseline and future production/release target | No bootstrap migration, no experimental schema work, no imports during development | Verified clean protected baseline in Batch 00.4 |
-| `dev` | Only non-master sandbox | Migration development target, model/editorial QA target, later clean-room verification target after controlled deletion and recreation | Verified clean sandbox in Batch 00.4 |
+| `dev` | Only non-master sandbox | Migration development target, model/editorial QA target, later clean-room verification target after controlled deletion and recreation | Partial schema after corrected Gate B retry: `siteSettings` and `personProfile`; recovery not authorized |
 
 Verification is a workflow state, not an environment ID. This project does not maintain a separate physical environment for verification.
 
