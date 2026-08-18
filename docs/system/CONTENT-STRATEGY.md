@@ -2,7 +2,7 @@
 
 Status: Phase 01 / Batch 01.1 — APPROVED / FROZEN FOR PHASE 02 INPUT
 Owner: Phase 01 — Content Strategy + Route Contract
-Current downstream consumer: Phase 02 — Content Model Contract + Bootstrap Migration — ACTIVE / Batch 02.3 NEXT
+Current downstream consumer: Phase 02 — Content Model Contract + Bootstrap Migration — ACTIVE / Batch 02.3 APPROVED / Batch 02.4 NEXT
 
 ## Purpose
 
@@ -211,7 +211,7 @@ Conditional domain:
 Current domain decisions:
 
 - Learning / certifications: lightweight v1.
-- Tools: v1. Batch 02.2 later approves Tool as a standalone v1 type; fields and references remain downstream Phase 02 work.
+- Tools: v1. Batch 02.2 later approves Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; references and validations remain downstream Phase 02 work.
 - Reusable CTA: do not automatically create a standalone model.
 - Other: no speculative catch-all domain.
 
@@ -805,9 +805,9 @@ These are not Batch 01.1 failures unless they materially prevent the content-str
 | ID | Decision | Resolution |
 |---|---|---|
 | OD-07 | Final formal v1 route contract | RESOLVED / APPROVED by Phase 01 / Batch 01.2 — Route Contract external validation. Approved v1 routes: `/`, `/about`, `/work`, `/projects`, `/projects/[slug]`, `/writing`, `/writing/[slug]`, `/tools`, `/contact`. |
-| OD-08 | Skills vs Tools semantic boundary | RESOLVED / APPROVED by Phase 01 / Batch 01.4 — Content Requirements Matrix external validation. Skill = professional capability; Tool = product, platform, framework, technology, or software used to exercise a capability. Batch 02.2 later approved Tool as a standalone v1 type; fields and references remain downstream Phase 02 work. |
-| OD-11 | Certification representation | RESOLVED / APPROVED by Phase 02 / Batch 02.2 — Content Type Contract. Certification / learning evidence is lightweight profile-owned content in v1; exact fields remain Batch 02.3 work. |
-| OD-15 | SEO overrides vs generated defaults | RESOLVED / APPROVED by Phase 01 / Batch 01.3 — SEO + Metadata Contract. SEO uses hybrid ownership: optional future editorial overrides for SEO title, SEO description, and social image; technical SEO is code/state-derived. Exact Contentful representation remains deferred to Phase 02. |
+| OD-08 | Skills vs Tools semantic boundary | RESOLVED / APPROVED by Phase 01 / Batch 01.4 — Content Requirements Matrix external validation. Skill = professional capability; Tool = product, platform, framework, technology, or software used to exercise a capability. Batch 02.2 later approved Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; references remain downstream Phase 02 work. |
+| OD-11 | Certification representation | RESOLVED / APPROVED by Phase 02 / Batch 02.2 — Content Type Contract. Certification / learning evidence is lightweight profile-owned content in v1; Batch 02.3 approves `personProfile.learningHighlights`. |
+| OD-15 | SEO overrides vs generated defaults | RESOLVED / APPROVED by Phase 01 / Batch 01.3 — SEO + Metadata Contract. SEO uses hybrid ownership: optional editorial overrides for SEO title, SEO description, and social image; technical SEO is code/state-derived. Batch 02.3 approves the Project/Article SEO override field IDs. |
 
 ## Downstream Consumers
 
@@ -817,4 +817,4 @@ Batch 01.1 prepares controlled strategy input for:
 - Batch 01.3 — SEO + Metadata Contract
 - Batch 01.4 — Content Requirements Matrix, approved in `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`
 - Batch 01.5 — Phase 01 Validation + Freeze, approved
-- Phase 02 — Content Model Contract + Bootstrap Migration, active; Batch 02.2 approved and Batch 02.3 next
+- Phase 02 — Content Model Contract + Bootstrap Migration, active; Batch 02.3 approved and Batch 02.4 next

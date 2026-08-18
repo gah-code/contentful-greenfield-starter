@@ -5,7 +5,7 @@ Owner: Phase 02 - Content Model Contract + Bootstrap Migration
 
 This is the approved v1 semantic content type contract after external Batch 02.2 validation. It approves standalone Contentful content types and stable type IDs only.
 
-Approval of this ledger does not approve fields, field IDs, required states, references, validations, editor interfaces, display fields, or migration implementation. Those remain later Phase 02 contracts.
+Approval of this Batch 02.2 ledger did not approve fields, field IDs, required states, references, validations, editor interfaces, display fields, or migration implementation. Batch 02.3 later approves the field and field-ID contract; references, validations, editor interfaces, display fields, and migration implementation remain later Phase 02 contracts.
 
 ## Batch 02.2 Approval
 
@@ -32,7 +32,7 @@ Type count status: PASS.
 | Skill Group | `skillGroup` | APPROVED V1 TYPE |
 | Tool | `tool` | APPROVED V1 TYPE |
 
-Exact fields, field IDs, references, cardinality, validations, editor interfaces, and migration implementation remain downstream Phase 02 work.
+Exact fields and field IDs are approved by `docs/content-model/FIELD-ID-LEDGER.md`. References, cardinality, validations, editor interfaces, and migration implementation remain downstream Phase 02 work.
 
 ## Model Principle
 
@@ -148,7 +148,7 @@ Preview only. This does not approve reference direction, cardinality, requiredne
 | `tool` | projects / experience / skills / articles | NEEDS 02.4 DECISION | Tool route must connect tools to actual work. |
 | SEO override values | owning Project / Article | NO REFERENCE NEEDED | Direct fields remain the preferred downstream candidate. |
 | Contact content | profile/site/social sources | NO REFERENCE NEEDED / CODE COMPOSITION | Route composition remains code-owned. |
-| Media assets | owning entries | NO REFERENCE NEEDED beyond Asset fields | Exact field strategy deferred. |
+| Media assets | owning entries | NO REFERENCE NEEDED beyond Asset fields | Asset fields approved by Batch 02.3; accessibility/editorial rules remain 02.4 work. |
 
 ## Type-to-Route Coverage
 
@@ -213,27 +213,25 @@ Planning evidence only. Do not edit or run the migration in Batch 02.2.
 | Existing Migration Concept | Future Direction | Status |
 |---|---|---|
 | `seoMetadata` | REMOVE TYPE IN FUTURE RECONCILIATION | Broad standalone SEO type conflicts with approved absorbed SEO ownership. |
-| `socialLink` | KEEP TYPE | Approved as v1 standalone type; fields still require 02.3 review. |
+| `socialLink` | KEEP TYPE | Approved as v1 standalone type; fields approved by Batch 02.3. |
 | `navigationItem` | KEEP TYPE | Approved as v1 standalone type; route constraints and references require 02.4 review. |
 | `siteSettings` | KEEP TYPE | Approved singleton type; code-owned configuration fields may need removal/refinement. |
-| `personProfile` | KEEP TYPE | Approved singleton type; fields require 02.3 review. |
-| `project` | KEEP TYPE | Approved type; SEO references and field set require later reconciliation. |
-| `article` | KEEP TYPE | Approved type; SEO references, reading time, and field set require later reconciliation. |
-| `experienceItem` | KEEP TYPE | Approved type; field set and relationships require later reconciliation. |
+| `personProfile` | KEEP TYPE | Approved singleton type; fields approved by Batch 02.3. |
+| `project` | KEEP TYPE | Approved type; field set approved by Batch 02.3; references require later reconciliation. |
+| `article` | KEEP TYPE | Approved type; field set approved by Batch 02.3; references require later reconciliation. |
+| `experienceItem` | KEEP TYPE | Approved type; field set approved by Batch 02.3; relationships require later reconciliation. |
 | `skill` | KEEP TYPE | Approved type; proficiency fields likely removal/review. |
 | `skillGroup` | KEEP TYPE | Approved type; relationship direction/cardinality require 02.4. |
 | `tool` | ADD TYPE IN FUTURE RECONCILIATION | Approved new v1 type not present in migration. |
-| Learning / Certification | NO TYPE CHANGE | Absorb into owning profile fields if 02.3 validates. |
+| Learning / Certification | NO TYPE CHANGE | Absorbed into owning profile field `learningHighlights` by Batch 02.3. |
 | Contact | NO TYPE CHANGE | Compose from profile/site/social sources. |
 | Media | NO TYPE CHANGE | Use Contentful Assets through owning entries; no wrapper type. |
 | Taxonomy | NO TYPE CHANGE | Dedicated taxonomy type deferred. |
 
-## Downstream Field Questions
+## Downstream Reference and Validation Questions
 
-Do not solve these in Batch 02.2:
+Do not solve these in the Batch 02.2 type contract. Batch 02.3 approves fields and field IDs; Batch 02.4 owns reference, validation, and editor-contract detail:
 
-- exact fields and field IDs for every approved type;
-- required versus optional state;
 - display fields;
 - route slug fields and validations;
 - singleton selection/enforcement;

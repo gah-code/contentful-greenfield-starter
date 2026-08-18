@@ -8,7 +8,7 @@ The repository demonstrates how I approach content systems with the same structu
 ![Phase](https://img.shields.io/badge/phase-02%20active-blue)
 ![CMS](https://img.shields.io/badge/CMS-Contentful-2478CC)
 ![Node](https://img.shields.io/badge/node-%3E%3D22-339933)
-![Model](https://img.shields.io/badge/model-type%20contract%20approved-555555)
+![Model](https://img.shields.io/badge/model-field%20contract%20approved-2f855a)
 
 > **Architecture North Star**
 >
@@ -21,7 +21,7 @@ The repository demonstrates how I approach content systems with the same structu
 
 ## Why This Project
 
-Contentful can model a personal website as a durable content system instead of a set of component-shaped database tables. This starter keeps editorial meaning separate from frontend implementation by modeling concepts such as projects, articles, experience, skills, navigation, and SEO metadata.
+Contentful can model a personal website as a durable content system instead of a set of component-shaped database tables. This starter keeps editorial meaning separate from frontend implementation by modeling concepts such as projects, articles, experience, skills, navigation, tools, and lean SEO override inputs.
 
 The project also shows how enterprise CMS practices scale down cleanly: field IDs are governed as API contracts, model changes begin as migrations, snapshots support portability, secrets stay server-side, environments are explicit, and phase gates require evidence before closeout.
 
@@ -31,10 +31,11 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | --- | --- |
 | Current phase | Phase 02 - Content Model Contract + Bootstrap Migration |
 | Latest completed phase | Phase 01 - Complete / Frozen |
-| Latest approved batch | Batch 02.2 - Content Type Contract |
-| Next batch | Batch 02.3 - Field + Field-ID Contract |
+| Latest approved batch | Batch 02.3 - Field + Field-ID Contract |
+| Current batch | Batch 02.4 - References + Validations + Editorial Contract - Next |
+| Next batch | Batch 02.4 - References + Validations + Editorial Contract |
 | Previous phase | Phase 00 - Complete |
-| Content model | 10 approved v1 semantic content types; fields, field IDs, references, and migration remain pending |
+| Content model | 10 approved v1 semantic content types; field and field-ID contract approved; references, validations, and migration remain pending |
 | Environments | `master` + `dev` |
 | Bootstrap migration | Blocked / not run |
 | Seed content | Not started |
@@ -182,11 +183,11 @@ See [docs/IMPLEMENTATION-ROADMAP.md](docs/IMPLEMENTATION-ROADMAP.md) for full ga
 
 ## Content Model Direction
 
-The existing proposed v1 direction starts from 10 semantic content types:
+The historical proposed v1 direction started from 10 semantic content types:
 
 `seoMetadata`, `socialLink`, `navigationItem`, `siteSettings`, `personProfile`, `project`, `article`, `experienceItem`, `skill`, and `skillGroup`.
 
-Phase 02 / Batch 02.2 approves the v1 standalone type inventory before any field ID, reference, validation, or migration execution is approved. The approved inventory keeps semantic content separate from React components, absorbs the broad legacy `seoMetadata` type into owning editorial types, and adds `tool` as a standalone semantic type. Content type ownership lives in [docs/content-model/CONTENT-TYPE-LEDGER.md](docs/content-model/CONTENT-TYPE-LEDGER.md), field contracts live in [docs/content-model/FIELD-ID-LEDGER.md](docs/content-model/FIELD-ID-LEDGER.md), and references live in [docs/content-model/REFERENCE-MAP.md](docs/content-model/REFERENCE-MAP.md).
+Phase 02 / Batch 02.2 approves the current v1 standalone type inventory: `siteSettings`, `personProfile`, `socialLink`, `navigationItem`, `project`, `article`, `experienceItem`, `skill`, `skillGroup`, and `tool`. Phase 02 / Batch 02.3 approves the field and field-ID contract without approving references, validations, or migration execution. The approved inventory keeps semantic content separate from React components, absorbs the broad legacy `seoMetadata` type into owning editorial types, and adds `tool` as a standalone semantic type. Content type ownership lives in [docs/content-model/CONTENT-TYPE-LEDGER.md](docs/content-model/CONTENT-TYPE-LEDGER.md), field contracts live in [docs/content-model/FIELD-ID-LEDGER.md](docs/content-model/FIELD-ID-LEDGER.md), and references live in [docs/content-model/REFERENCE-MAP.md](docs/content-model/REFERENCE-MAP.md).
 
 ## Documentation
 

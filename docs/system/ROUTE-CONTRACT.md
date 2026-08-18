@@ -98,7 +98,7 @@ Approved supporting decisions:
 | Work vs Projects | Work answers where and when contribution happened. Projects answer how specific problems were approached, solved, and evidenced. |
 | Projects index vs detail | `/projects` owns discovery and summary. `/projects/[slug]` owns the full public-safe case study. |
 | Writing index vs detail | `/writing` owns article discovery and previews. `/writing/[slug]` owns one complete public article. |
-| Skills vs Tools | RESOLVED / APPROVED by Batch 01.4. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise that capability. Batch 02.2 later approved Tool as a standalone v1 type; fields and references remain downstream Phase 02 work. |
+| Skills vs Tools | RESOLVED / APPROVED by Batch 01.4. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise that capability. Batch 02.2 later approved Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; references and validations remain downstream Phase 02 work. |
 | Contact vs social links | `/contact` owns the conversion context. Social links are reused contact/profile data. |
 
 ## Route State Vocabulary
@@ -1381,7 +1381,7 @@ Route path, canonical URL, breadcrumbs if used, relationship labels where safely
 
 ### Reuse Rules
 
-Tools and skills are related but distinct. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise that capability. This distinction is RESOLVED / APPROVED by Batch 01.4. Batch 02.2 later approved Tool as a standalone v1 type; fields and references remain downstream Phase 02 work.
+Tools and skills are related but distinct. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise that capability. This distinction is RESOLVED / APPROVED by Batch 01.4. Batch 02.2 later approved Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; references and validations remain downstream Phase 02 work.
 
 Do not use proficiency percentages, proficiency bars, or a logo grid with no explanatory value.
 
@@ -1622,7 +1622,7 @@ Contact form, phone number, residential address, private contact information, un
 | `/tools` | Needs tool inventory, category/context rules, relationships to skills/projects/work, and route SEO inputs. |
 | `/contact` | Needs contact copy/channels, social links, résumé access, profile context, and route SEO inputs. |
 
-These route-contract implications are now carried into the approved `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`. Batch 01.5 — Phase 01 Validation + Freeze — is approved, Batch 02.1 is approved, Batch 02.2 is approved, and Batch 02.3 is next. They remain directional Phase 02 inputs and do not change field, reference, validation, or migration ledgers.
+These route-contract implications are now carried into the approved `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`. Batch 01.5 — Phase 01 Validation + Freeze — is approved, Batch 02.1 is approved, Batch 02.2 is approved, and Batch 02.3 field IDs are approved. They remain directional Phase 02 inputs and do not approve reference, validation, or migration ledgers.
 
 ## Deferred Behavior
 
@@ -1659,7 +1659,7 @@ Resolved downstream route-related decision:
 
 | ID | Status |
 |---|---|
-| OD-08 — Skills vs Tools semantic boundary | RESOLVED / APPROVED by Batch 01.4 external validation. Skill = professional capability; Tool = product, platform, framework, technology, or software used to exercise a capability. Batch 02.2 later approved Tool as a standalone v1 type; fields and references remain downstream Phase 02 work. |
+| OD-08 — Skills vs Tools semantic boundary | RESOLVED / APPROVED by Batch 01.4 external validation. Skill = professional capability; Tool = product, platform, framework, technology, or software used to exercise a capability. Batch 02.2 later approved Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; references remain downstream Phase 02 work. |
 
 Route-adjacent decisions still unresolved:
 
@@ -1680,4 +1680,4 @@ Unrelated open decisions intentionally not resolved:
 Resolved downstream decision:
 
 - OD-15 — SEO overrides vs generated defaults: RESOLVED / APPROVED by `docs/system/SEO-AND-METADATA-CONTRACT.md`.
-- OD-11 — certification / learning representation: RESOLVED / APPROVED by Phase 02 / Batch 02.2 as lightweight profile-owned content; exact fields remain Batch 02.3 work.
+- OD-11 — certification / learning representation: RESOLVED / APPROVED by Phase 02 / Batch 02.2 as lightweight profile-owned content; Batch 02.3 approves `personProfile.learningHighlights`.

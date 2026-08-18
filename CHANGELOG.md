@@ -137,6 +137,24 @@ All meaningful project changes should be recorded here.
 - Rejected generic Page/PageSection/component-shaped modeling.
 - Advanced Batch 02.3 — Field + Field-ID Contract to NEXT.
 - Bootstrap migration remains blocked/not run.
+- Started Phase 02 / Batch 02.3 — Field + Field-ID Contract.
+- Proposed field and field-ID contracts for all 10 approved standalone v1 types.
+- Reconciled the legacy field ledger and bootstrap-migration field pressure without editing the migration.
+- Proposed direct Project/Article SEO override fields: `seoTitle`, `seoDescription`, and `socialImage`.
+- Proposed lightweight profile-owned Learning/Certification as `learningHighlights`.
+- Preserved relationship direction, cardinality, validations, display fields, and editor help for Batch 02.4.
+- Kept broad `seoMetadata`, `canonicalUrl`, `noIndex`, `noFollow`, `readingTimeMinutes`, `proficiency`, and presentation-shaped fields out of the proposed editorial field contract.
+- Confirmed no reference map, migration, fixture, frontend, Contentful command, bootstrap, seed, staging, commit, or push occurred.
+- Approved Phase 02 / Batch 02.3 — Field + Field-ID Contract after external validation returned PASS WITH NOTES.
+- Approved stable v1 field IDs for the 10-type semantic model.
+- Approved scalar/asset primitive direction and required/optional intent.
+- Approved Project lean-hybrid narrative strategy.
+- Approved Project/Article SEO override field IDs.
+- Approved profile-owned `learningHighlights`.
+- Preserved derived/code/system exclusions.
+- Advanced Batch 02.4 — References + Validations + Editorial Contract to NEXT.
+- Reference map remains unreconciled.
+- Migration remains unchanged and blocked.
 
 ### Security
 

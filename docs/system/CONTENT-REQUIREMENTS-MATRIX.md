@@ -28,7 +28,8 @@ Batch 01.5 — APPROVED
 Phase 02 — ACTIVE
 Batch 02.1 — APPROVED
 Batch 02.2 — APPROVED
-Batch 02.3 — NEXT
+Batch 02.3 — APPROVED
+Batch 02.4 — NEXT
 Bootstrap migration — BLOCKED / NOT RUN
 Seed content — NOT STARTED
 ```
@@ -200,7 +201,7 @@ Route type: Landing.
 | Selected tools | Tool | OPTIONAL | EDITORIAL | Tool | Does not block READY | Must connect to actual work | Avoid logo-only meaning | Supports professional stack intent | Tool logo optional | Tool fixture | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | Do not require exhaustive inventory |
 | Availability | Contact / Profile | OPTIONAL | EDITORIAL | Profile or Contact | Does not block READY | Avoid private scheduling details | Plain text | May inform route description when present | N/A | Contact fixture variant | LIKELY FIELD | OD-03 remains open |
 | Secondary About CTA | Navigation | OPTIONAL | CODE | Navigation | Does not block READY | N/A | Descriptive link text | N/A | N/A | Navigation fixture | CODE CONFIG — DO NOT MODEL | Exact label implementation-owned |
-| Learning/certification evidence | Learning / Certification | OPTIONAL | EDITORIAL | Profile or Learning | Does not block READY | Credential URLs must be public-safe | Link text names credential/provider | Supports expertise if present | N/A | Optional credential fixture | LIKELY FIELD / NEEDS PHASE 02 DECISION | OD-11 resolved by Batch 02.2 as lightweight profile-owned content; exact fields remain Batch 02.3 work |
+| Learning/certification evidence | Learning / Certification | OPTIONAL | EDITORIAL | Profile or Learning | Does not block READY | Credential URLs must be public-safe | Link text names credential/provider | Supports expertise if present | N/A | Optional credential fixture | LIKELY FIELD / NEEDS PHASE 02 DECISION | OD-11 resolved by Batch 02.2 as lightweight profile-owned content; Batch 02.3 approves `personProfile.learningHighlights` |
 | Full resume, all projects, all writing, exhaustive skills/tools, long project narratives | Profile / Project / Article / Skill / Tool | NOT APPLICABLE | MIXED | Deeper routes | Must not be homepage readiness requirement | N/A | Avoid overwhelming route purpose | N/A | N/A | Negative fixture not needed | CODE CONFIG — DO NOT MODEL | Deeper routes own full detail |
 
 ### `/about`
@@ -220,7 +221,7 @@ Route type: Narrative.
 | Learning orientation | Profile / Learning | REQUIRED | EDITORIAL | Profile, Learning | READY requires ongoing growth signal | Credential details public-safe only | Descriptive links for credentials | Supports expertise intent | N/A | Profile fixture | LIKELY FIELD / NEEDS PHASE 02 DECISION | Certifications themselves optional |
 | Career direction | Profile / Contact | REQUIRED | EDITORIAL | Profile, Contact | READY requires current direction | Avoid over-specific private job-search details unless approved | Clear CTA/link text | Description fallback input | N/A | Profile/Contact fixture | LIKELY FIELD | OD-03 remains open |
 | Values | Profile | OPTIONAL | EDITORIAL | Profile | Does not block READY | Avoid generic filler | Section heading if used | N/A | N/A | Optional profile fixture | LIKELY FIELD | N/A |
-| Certifications | Learning / Certification | OPTIONAL | EDITORIAL | Learning / Certification | Does not block READY | Public credential only | Descriptive credential links | Can support expertise | N/A | Optional certification fixture | LIKELY FIELD / NEEDS PHASE 02 DECISION | OD-11 resolved by Batch 02.2 as lightweight profile-owned content; exact fields remain Batch 02.3 work |
+| Certifications | Learning / Certification | OPTIONAL | EDITORIAL | Learning / Certification | Does not block READY | Public credential only | Descriptive credential links | Can support expertise | N/A | Optional certification fixture | LIKELY FIELD / NEEDS PHASE 02 DECISION | OD-11 resolved by Batch 02.2 as lightweight profile-owned content; Batch 02.3 approves `personProfile.learningHighlights` |
 | Personal interests | Profile | OPTIONAL | EDITORIAL | Profile | Does not block READY | Keep professional and non-private | Plain text | N/A | N/A | Optional profile fixture | LIKELY FIELD | N/A |
 | Deeper career-transition context | Profile / Experience | OPTIONAL | EDITORIAL | Profile, Experience | Does not block READY | Public-safe only | Narrative clarity | N/A | N/A | Optional profile fixture | LIKELY FIELD | Earlier creative work may be condensed |
 
@@ -408,7 +409,7 @@ Skill = professional capability.
 Tool = product, platform, framework, technology, or software used to exercise capability.
 ```
 
-OD-08 itself did not decide whether Tool becomes a standalone Contentful content type. Phase 02 / Batch 02.2 later approves Tool as a standalone v1 type; exact fields and references remain downstream Phase 02 work.
+OD-08 itself did not decide whether Tool becomes a standalone Contentful content type. Phase 02 / Batch 02.2 later approves Tool as a standalone v1 type; Batch 02.3 approves exact Tool field IDs; references remain downstream Phase 02 work.
 
 ## Fixture Requirements Matrix
 
@@ -571,8 +572,8 @@ No field IDs, content types, or reference validations are approved by this matri
 | Article is heavily reused. | Standalone domain clearly justified. | Article remains core writing domain. |
 | Experience is independently meaningful and reused. | Likely standalone domain. | Experience remains professional context domain. |
 | Skill vs Tool distinction is supported by requirements. | Boundary is materially valid. | OD-08 resolved; Batch 02.2 approves Tool as a standalone v1 type; fields/references remain downstream. |
-| SEO override values are owned by Project/Article meaning. | Reuse requirement not demonstrated enough for a standalone type. | Batch 02.2 absorbs SEO override concepts into owning content; exact fields remain Batch 02.3 work. |
-| Learning/certification remains lightweight. | No standalone type required by current requirements. | OD-11 resolved by Batch 02.2 as lightweight profile-owned content; exact fields remain Batch 02.3 work. |
+| SEO override values are owned by Project/Article meaning. | Reuse requirement not demonstrated enough for a standalone type. | Batch 02.2 absorbs SEO override concepts into owning content; Batch 02.3 approves exact field IDs. |
+| Learning/certification remains lightweight. | No standalone type required by current requirements. | OD-11 resolved by Batch 02.2 as lightweight profile-owned content; Batch 02.3 approves `personProfile.learningHighlights`. |
 | Related content appears in Projects, Writing, and Work. | Relationship approach needs decision. | OD-13 remains open. |
 | Taxonomy is useful but not deeply specified. | Avoid uncontrolled taxonomy types. | OD-12 remains open. |
 
@@ -584,7 +585,7 @@ Batch 01.4 requirements do not currently demand uncontrolled type growth.
 
 New or still-open Phase 02 model questions:
 
-- exact Tool fields, field IDs, categories, and relationships;
+- exact Tool relationships and validation rules;
 - exact lightweight Learning / Certification profile fields;
 - whether taxonomy remains controlled text/arrays or requires referenced entries;
 - whether related content is manual editorial selection, derived relationship, or mixed;
@@ -619,7 +620,7 @@ Requirement-related narrowing:
 
 - OD-09: homepage requires 3 manually curated featured Project references; exact projects remain open.
 - OD-10: project and experience readiness require public-safety classification; exact publishable enterprise projects remain open.
-- OD-11: certifications remain optional/lightweight v1 and profile-owned; exact fields remain Batch 02.3 work.
+- OD-11: certifications remain optional/lightweight v1 and profile-owned; Batch 02.3 approves `personProfile.learningHighlights`.
 - OD-12: taxonomy must support useful classification without filters or complex taxonomy in v1; final depth remains open.
 - OD-13: related content is required conceptually where useful; manual vs derived implementation remains open.
 - OD-14: proof metrics are CONDITIONAL and public-safe only; final metrics remain open.
@@ -632,7 +633,7 @@ Requirement-related narrowing:
 - No fixtures were created.
 - No frontend implementation was created.
 - No SEO implementation was created.
-- Exact Contentful representation remains deferred to Phase 02.
+- Field-level Contentful representation is approved by Phase 02 / Batch 02.3; references, validations, editor interfaces, and migration implementation remain downstream.
 - Batch 01.5 is approved, Phase 01 is complete / frozen, and this matrix is frozen for Phase 02 input.
 
 ## Closeout State
@@ -645,7 +646,7 @@ Batch 01.4 is approved after external validation:
 - Batch 01.3 is APPROVED.
 - Batch 01.4 is APPROVED.
 - At Batch 01.4 closeout, Batch 01.5 advanced to NEXT. Batch 01.5 is now APPROVED, and Phase 01 is complete / frozen.
-- At Batch 01.4 closeout, Phase 02 was DEFERRED. Phase 02 is now ACTIVE; Batch 02.1 is approved, Batch 02.2 is APPROVED, and Batch 02.3 is NEXT.
+- At Batch 01.4 closeout, Phase 02 was DEFERRED. Phase 02 is now ACTIVE; Batch 02.1 is approved, Batch 02.2 is APPROVED, Batch 02.3 is APPROVED, and Batch 02.4 is NEXT.
 - all nine approved routes have content requirements.
 - required, optional, conditional, deferred, and not-applicable requirements are classified.
 - editorial/code/derived/mixed ownership is classified.

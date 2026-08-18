@@ -69,10 +69,41 @@ Status: APPROVED
 - [x] Confirm no migration mutation
 - [x] External Batch 02.2 validation
 
+#### Batch 02.3 — Field + Field-ID Contract
+
+Status: APPROVED
+
+- [x] Confirm Batch 02.2 approved
+- [x] Inspect existing field-ID ledger
+- [x] Inspect reference map read-only
+- [x] Inspect bootstrap migration read-only
+- [x] Compare existing fields against frozen Phase 01 contracts
+- [x] Reconcile legacy technical SEO fields
+- [x] Propose fields and field IDs for all 10 approved types
+- [x] Classify required and optional field intent
+- [x] Record v1 localization state
+- [x] Propose Project and Article SEO override fields
+- [x] Exclude canonical, robots, sitemap, structured data, and route-state fields
+- [x] Exclude proficiency and derived reading time
+- [x] Propose lightweight profile-owned Learning/Certification field
+- [x] Record Contact composition ownership
+- [x] Review media accessibility representation
+- [x] Preserve public-safety governance boundary
+- [x] Record relationship field intents without freezing reference shape
+- [x] Review required/optional policy
+- [x] Review field count pressure
+- [x] Review duplicate meaning pressure
+- [x] Validate route coverage across all nine v1 routes
+- [x] Confirm future fixture compatibility
+- [x] Preview migration impact without editing migration
+- [x] Update FIELD-ID-LEDGER.md as proposed/in review
+- [x] Confirm REFERENCE-MAP.md unchanged
+- [x] Confirm no migration mutation
+- [x] External Batch 02.3 validation
+
 #### Later Phase 02 Batches
 
-- Batch 02.3 — Field + Field-ID Contract — NEXT
-- Batch 02.4 — References + Validations + Editorial Contract — LATER
+- Batch 02.4 — References + Validations + Editorial Contract — NEXT
 - Batch 02.5 — Bootstrap Migration Reconciliation + Preflight — LATER
 - Batch 02.6 — Bootstrap Migration Execution — LATER
 - Batch 02.7 — Phase 02 Validation + Closeout — LATER
@@ -269,7 +300,8 @@ Recorded Phase 00 evidence:
 - Phase 02 is active.
 - Batch 02.1 is approved after external validation.
 - Batch 02.2 is approved after external validation.
-- Batch 02.3 is next.
+- Batch 02.3 is approved after external validation.
+- Batch 02.4 is next.
 - Bootstrap migration remains blocked and not run.
 - Seed content remains not started.
-- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by Batch 02.2 approval reconciliation.
+- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by Batch 02.3 field-contract work.

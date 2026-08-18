@@ -3,8 +3,8 @@
 Project: `contentful-greenfield-starter`
 Current phase: Phase 02 — ACTIVE
 Latest completed phase: Phase 01 — COMPLETE / FROZEN
-Latest approved batch: Batch 02.2 — Content Type Contract — APPROVED
-Current work item: Batch 02.3 — Field + Field-ID Contract — NEXT
+Latest approved batch: Batch 02.3 — Field + Field-ID Contract — APPROVED
+Current / next work item: Batch 02.4 — References + Validations + Editorial Contract — NEXT
 Bootstrap migration: BLOCKED / NOT RUN
 Seed content: NOT STARTED
 
@@ -15,6 +15,7 @@ Batch 01.4 external validation passed.
 Batch 01.5 external validation passed with notes.
 Batch 02.1 external validation passed with notes.
 Batch 02.2 external validation passed with notes.
+Batch 02.3 external validation passed with notes.
 
 The content-strategy foundation is approved with open decisions intentionally carried forward to later Phase 01 batches.
 
@@ -28,23 +29,37 @@ Batch 01.3 approved Option 2 hybrid SEO ownership. Editorial SEO override scope 
 
 Batch 01.4 approved the implementation-facing Content Requirements Matrix in `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`. The matrix maps approved route, content-strategy, and SEO requirements to semantic content domains, ownership, reuse, route readiness, future fixture needs, media/accessibility/SEO/public-safety requirements, and directional Phase 02 handoff classifications. It does not create Contentful schema, field IDs, migrations, fixtures, frontend implementation, or seed content.
 
-OD-08 is resolved and approved: Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise a capability. Batch 02.2 later approves Tool as a standalone v1 type; fields and references remain downstream Phase 02 work.
+OD-08 is resolved and approved: Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise a capability. Batch 02.2 later approves Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; references and validations remain downstream Phase 02 work.
 
-Batch 01.5 approved the Phase 01 requirements freeze after external validation. Nine v1 routes, content strategy, route responsibilities, SEO architecture, content requirements, editorial/code/derived ownership, fixture requirements, and the Phase 02 handoff are frozen as Phase 02 inputs. Open decisions are classified by downstream owner; none blocks the Phase 01 requirements freeze. Content-model artifacts remain proposed Phase 02 inputs pending reconciliation. No Contentful schema, migration, fixture, frontend, or seed implementation has started.
+Batch 01.5 approved the Phase 01 requirements freeze after external validation. Nine v1 routes, content strategy, route responsibilities, SEO architecture, content requirements, editorial/code/derived ownership, fixture requirements, and the Phase 02 handoff are frozen as Phase 02 inputs. Open decisions are classified by downstream owner; none blocks the Phase 01 requirements freeze. At Phase 01 closeout, content-model artifacts remained proposed Phase 02 inputs pending reconciliation. No Contentful schema, migration, fixture, frontend, or seed implementation started.
 
-Batch 02.1 approved the entry and existing model reconciliation against frozen Phase 01 contracts. The proposed field-ID ledger, reference map, bootstrap migration, snapshots, reports, and Contentful scripts remain reconciliation inputs only. No field/reference/schema contract is final, and migration execution remains gated.
+Batch 02.1 approved the entry and existing model reconciliation against frozen Phase 01 contracts. At Batch 02.1 closeout, the proposed field-ID ledger, reference map, bootstrap migration, snapshots, reports, and Contentful scripts remained reconciliation inputs only. Migration execution remains gated.
 
-Batch 02.2 approved the v1 semantic content type inventory in `docs/content-model/CONTENT-TYPE-LEDGER.md`. The approved standalone v1 content types are `siteSettings`, `personProfile`, `socialLink`, `navigationItem`, `project`, `article`, `experienceItem`, `skill`, `skillGroup`, and `tool`. Approved standalone type count: 10. Content type IDs are approved; fields, field IDs, references, cardinality, validations, editor interfaces, and migration implementation remain unfrozen.
+Batch 02.2 approved the v1 semantic content type inventory in `docs/content-model/CONTENT-TYPE-LEDGER.md`. The approved standalone v1 content types are `siteSettings`, `personProfile`, `socialLink`, `navigationItem`, `project`, `article`, `experienceItem`, `skill`, `skillGroup`, and `tool`. Approved standalone type count: 10. Content type IDs are approved; Batch 02.3 later approves fields and field IDs. References, cardinality, validations, editor interfaces, and migration implementation remain unfrozen.
 
 Batch 02.2 approved type-level outcomes: broad `seoMetadata` is absorbed into owning Project/Article SEO override fields, Tool is a standalone v1 type, SkillGroup is a standalone v1 type, Learning/Certification is lightweight profile-owned content, Contact is composed from owning sources, Media uses Contentful Assets without a wrapper type, dedicated taxonomy is deferred, and generic Page/PageSection/component-shaped modeling remains code-owned.
 
-OD-11 is resolved and approved: Certification / learning evidence is lightweight profile-owned content in v1. No standalone Certification or Learning content type is required. Exact field representation remains Batch 02.3 work.
+OD-11 is resolved and approved: Certification / learning evidence is lightweight profile-owned content in v1. No standalone Certification or Learning content type is required. Batch 02.3 approves exact profile-owned field representation as `personProfile.learningHighlights`.
 
-Phase 02 model questions currently include final field IDs, field types, required-state policy, display fields, exact SEO override fields, SkillGroup relationship mechanics, taxonomy depth, related content, asset/reference strategy, validation strength, editor interfaces, and the final migration diff.
+Phase 02 model questions currently include display fields, SkillGroup relationship mechanics, taxonomy depth, related content, asset/reference strategy, validation strength, editor interfaces, and the final migration diff.
 
 Batch 02.1 carry-forward notes: public safety remains a governance/readiness requirement unless later evidence proves explicit CMS state is needed. Media alt/context requirements remain representation questions and do not automatically approve a dedicated media wrapper or exact asset-metadata strategy.
 
-Batch 02.2 freezes the semantic v1 type inventory for downstream field design. It does not authorize Batch 02.3 implementation during approval reconciliation.
+Batch 02.3 approved the field and field-ID contract in `docs/content-model/FIELD-ID-LEDGER.md` after external validation returned PASS WITH NOTES. The approved contract covers all 10 approved types, direct Project/Article SEO override fields, lightweight profile-owned Learning/Certification, relationship field intents, required/optional intent, v1 localization, legacy field reconciliation, non-modeled technical/derived/governance exclusions, route coverage, fixture compatibility, and migration impact preview.
+
+Type contract: APPROVED V1.
+
+Field contract: APPROVED V1.
+
+Field IDs: APPROVED V1.
+
+Reference contract: NOT FINAL.
+
+Validations: NOT FINAL.
+
+Editor interfaces: NOT FINAL.
+
+Migration: UNCHANGED / NOT FINAL.
 
 ## Phase 02 Batch State
 
@@ -52,8 +67,8 @@ Batch 02.2 freezes the semantic v1 type inventory for downstream field design. I
 |---|---|---|---|
 | 02.1 | Entry + Existing Model Reconciliation | Approved | External validation passed with notes; Phase 01 frozen inputs confirmed; proposed ledgers, reference map, bootstrap migration, and Contentful scripts inspected read-only in `docs/phases/PHASE-02-CONTENT-MODEL-CONTRACT-AND-BOOTSTRAP-MIGRATION.md` |
 | 02.2 | Content Type Contract | Approved | External validation passed with notes; 10 standalone v1 content types and stable type IDs approved in `docs/content-model/CONTENT-TYPE-LEDGER.md`; field/reference/migration work remains deferred |
-| 02.3 | Field + Field-ID Contract | Next | Must approve fields, field IDs, types, required states, and semantic purpose |
-| 02.4 | References + Validations + Editorial Contract | Later | Must approve reference direction/cardinality, validations, display fields, and editor-facing contract |
+| 02.3 | Field + Field-ID Contract | Approved | External validation passed with notes; approved field and field-ID contract recorded in `docs/content-model/FIELD-ID-LEDGER.md`; reference shape and validations remain deferred |
+| 02.4 | References + Validations + Editorial Contract | Next | Must approve reference direction/cardinality, validations, display fields, and editor-facing contract |
 | 02.5 | Bootstrap Migration Reconciliation + Preflight | Later | Must align migration to approved model contract and perform non-mutating preflight |
 | 02.6 | Bootstrap Migration Execution | Later | May execute approved bootstrap against `dev` only after explicit approval |
 | 02.7 | Phase 02 Validation + Closeout | Later | Verifies model state, master protection, migration evidence, and Phase 03 readiness |
@@ -68,7 +83,7 @@ Batch 02.2 freezes the semantic v1 type inventory for downstream field design. I
 | 01.4 | Content Requirements Matrix | Approved | External validation passed; `docs/system/CONTENT-REQUIREMENTS-MATRIX.md` maps approved strategy, route, and SEO contracts into route/domain requirements, readiness, reuse, fixture, media, accessibility, public-safety, and Phase 02 handoff inputs; OD-08 resolved |
 | 01.5 | Phase 01 Validation + Freeze | Approved | External validation passed with notes; Phase 01 requirements freeze approved in `docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md` |
 
-At Phase 01 closeout, Phase 02 advanced to NEXT without creating static fixtures, implementing frontend metadata, running migrations, running Contentful commands, or mutating Contentful state. Phase 02 is now active; Batch 02.1 is approved, Batch 02.2 is approved, and Batch 02.3 is next.
+At Phase 01 closeout, Phase 02 advanced to NEXT without creating static fixtures, implementing frontend metadata, running migrations, running Contentful commands, or mutating Contentful state. Phase 02 is now active; Batch 02.1 is approved, Batch 02.2 is approved, Batch 02.3 is approved, and Batch 02.4 is next.
 
 ## Batch 01.1 Strategy Summary
 
@@ -131,7 +146,7 @@ Phase 00 is complete. Bootstrap migration remains blocked and not run. Seed cont
 | `dev` role | Single rotating sandbox for schema development, model review, and editorial QA |
 | Verification | Workflow state, not a persistent environment ID |
 | Phase 03 target | Freshly recreated `dev` after protected `master` clone/recreation process |
-| Model target | Approved 10 standalone v1 semantic content types; fields/references/migration not frozen |
+| Model target | Approved 10 standalone v1 semantic content types; field contract proposed/in review; references, validations, and migration not frozen |
 | Bootstrap target | Never `master`; later approved migration work targets `dev` |
 
 ## Batch 00.4 Contentful Verification Evidence
@@ -239,6 +254,6 @@ No deletion automation is part of this repair.
 
 Phase 00 is complete. Batch 00.1, Batch 00.2, Batch 00.3, Batch 00.4, and Batch 00.5 are approved.
 
-Phase 01 is complete / frozen. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is approved after external validation. Batch 01.4 is approved after external validation. Batch 01.5 is approved after external validation. Phase 02 is active, Batch 02.1 is approved, Batch 02.2 is approved, and Batch 02.3 is next.
+Phase 01 is complete / frozen. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is approved after external validation. Batch 01.4 is approved after external validation. Batch 01.5 is approved after external validation. Phase 02 is active, Batch 02.1 is approved, Batch 02.2 is approved, Batch 02.3 is approved, and Batch 02.4 is next.
 
-Bootstrap migration, seed content, environment deletion, Contentful model mutation, Contentful export/import, static fixtures, frontend implementation, and Batch 02.3 implementation remain out of scope.
+Bootstrap migration, seed content, environment deletion, Contentful model mutation, Contentful export/import, static fixtures, frontend implementation, and Batch 02.4 implementation remain out of scope.

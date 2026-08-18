@@ -224,7 +224,7 @@ The v1 editorial SEO contract excludes:
 
 Status: RESOLVED / APPROVED
 
-Recorded during Phase 01 / Batch 01.4 final approval reconciliation. Phase 01 is complete / frozen, Batch 01.5 — Phase 01 Validation + Freeze — is approved, Batch 02.1 is approved, Batch 02.2 is approved, and Batch 02.3 is next.
+Recorded during Phase 01 / Batch 01.4 final approval reconciliation. Phase 01 is complete / frozen, Batch 01.5 — Phase 01 Validation + Freeze — is approved, Batch 02.1 is approved, Batch 02.2 is approved, and Batch 02.3 is approved.
 
 Batch 01.5 open-decision triage is recorded in `docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md`. No unrelated open decision is resolved by that validation pass.
 
@@ -244,7 +244,7 @@ This decision resolves semantic responsibility only.
 
 ### Not Decided
 
-OD-08 itself did not decide exact Contentful representation. Phase 02 / Batch 02.2 later approved Tool as a standalone v1 content type; Tool fields, references, and validations remain downstream Phase 02 work.
+OD-08 itself did not decide exact Contentful representation. Phase 02 / Batch 02.2 later approved Tool as a standalone v1 content type. Batch 02.3 approves Tool field IDs; Tool references and validations remain downstream Phase 02 work.
 
 ---
 
@@ -266,7 +266,7 @@ This decision resolves type-level ownership only.
 
 ### Not Decided
 
-Exact fields, field IDs, field types, required state, validation, ordering, and display structure remain Batch 02.3 / 02.4 work.
+Exact field ownership, field ID, field type, and required-state intent are approved by Batch 02.3 as `personProfile.learningHighlights`. Validation, ordering, references, and display structure remain Batch 02.4 work.
 
 ---
 
@@ -276,6 +276,6 @@ Status: reference only; no new decision recorded
 
 Phase 02 / Batch 02.1 approved the current model decision queue in `docs/phases/PHASE-02-CONTENT-MODEL-CONTRACT-AND-BOOTSTRAP-MIGRATION.md` as reconciliation findings and carry-forward questions. Batch 02.2 approves the content type contract in `docs/content-model/CONTENT-TYPE-LEDGER.md`.
 
-Remaining queue items cover field IDs, field types, required states, direct SEO override fields, SkillGroup relationship mechanics, taxonomy depth, related-content representation, references, validations, display fields, final migration diff, and bootstrap execution gates.
+Remaining queue items cover SkillGroup relationship mechanics, taxonomy depth, related-content representation, references, validations, display fields, final migration diff, and bootstrap execution gates.
 
-Do not treat this queue as approval of content types, field IDs, references, validations, or migration execution. Formal decision records should be added only when a later Phase 02 batch makes an actual architectural decision.
+Do not treat this queue as approval of references, validations, or migration execution. Formal decision records should be added only when a later Phase 02 batch makes an actual architectural decision.

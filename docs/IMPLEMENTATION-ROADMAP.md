@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 active; Batch 02.1 approved; Batch 02.2 approved; Batch 02.3 next
+Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 active; Batch 02.1 approved; Batch 02.2 approved; Batch 02.3 approved
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -9,7 +9,7 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 |---|---|---|---|
 | 00 | Baseline + Two-Environment Setup | Complete; safe repository, secure tooling boundary, and governed `master` + `dev` operating model | None |
 | 01 | Content Strategy + Route Contract | Complete / frozen; requirements system approved for Phase 02 input | None |
-| 02 | Content Model Contract + Bootstrap Migration | Active; Batch 02.2 content type contract approved; Batch 02.3 field contract next | CMS only |
+| 02 | Content Model Contract + Bootstrap Migration | Active; Batch 02.3 field and field-ID contract approved; Batch 02.4 next | CMS only |
 | 03 | Model Export + Serial Clean-Room Verification | Approved model-only snapshot rebuilt into fresh `dev` from protected `master` | CMS only |
 | 04 | Editorial QA + Model Freeze | Editor-friendly baseline v1 | CMS only |
 | 05 | Representative Seed Content | Realistic draft entries after clean-room verification | CMS only |
@@ -41,8 +41,8 @@ Batch 01.5 — APPROVED
 Phase 02 — ACTIVE
 Batch 02.1 — APPROVED
 Batch 02.2 — APPROVED
-Batch 02.3 — NEXT
-Batch 02.4 — LATER
+Batch 02.3 — APPROVED
+Batch 02.4 — NEXT
 Batch 02.5 — LATER
 Batch 02.6 — LATER
 Batch 02.7 — LATER
@@ -116,7 +116,7 @@ Define what the website needs to communicate before finalizing CMS fields.
 - `docs/system/ROUTE-CONTRACT.md` formalizes and approves all nine v1 route contracts.
 - Route responsibility boundaries, route states, content readiness, internal linking, responsive intent, accessibility intent, directional SEO intent, and future CMS implication boundaries are documented.
 - OD-07 — final formal v1 route contract — is resolved and approved.
-- OD-08 — Skills vs Tools semantic boundary — is resolved and approved by Batch 01.4; Batch 02.2 later approves Tool as a standalone v1 type, with fields and references still downstream.
+- OD-08 — Skills vs Tools semantic boundary — is resolved and approved by Batch 01.4; Batch 02.2 later approves Tool as a standalone v1 type, and Batch 02.3 approves Tool field IDs.
 - Detailed SEO metadata behavior remains deferred to Batch 01.3.
 - Contentful schema and bootstrap migration work remain deferred.
 
@@ -162,7 +162,7 @@ Define what the website needs to communicate before finalizing CMS fields.
 
 ## Phase 02 — Content Model Contract + Bootstrap Migration
 
-Current state: ACTIVE. Latest approved batch: 02.2 — Content Type Contract — APPROVED. Current batch: 02.3 — Field + Field-ID Contract — NEXT.
+Current state: ACTIVE. Latest approved batch: 02.3 — Field + Field-ID Contract — APPROVED. Next batch: 02.4 — References + Validations + Editorial Contract — NEXT.
 
 ### Goal
 
@@ -174,8 +174,8 @@ Translate frozen Phase 01 requirements into a lean, stable, migration-governed C
 |---|---|---|
 | 02.1 | Entry + Existing Model Reconciliation | APPROVED |
 | 02.2 | Content Type Contract | APPROVED |
-| 02.3 | Field + Field-ID Contract | NEXT |
-| 02.4 | References + Validations + Editorial Contract | LATER |
+| 02.3 | Field + Field-ID Contract | APPROVED |
+| 02.4 | References + Validations + Editorial Contract | NEXT |
 | 02.5 | Bootstrap Migration Reconciliation + Preflight | LATER |
 | 02.6 | Bootstrap Migration Execution | LATER |
 | 02.7 | Phase 02 Validation + Closeout | LATER |
@@ -185,7 +185,7 @@ Translate frozen Phase 01 requirements into a lean, stable, migration-governed C
 - Frozen Phase 01 contracts are authoritative inputs.
 - Existing content-model ledgers remain proposed.
 - The bootstrap migration remains proposed and read-only until later approval.
-- Legacy broad `seoMetadata`, Tool representation, Learning/Certification representation, Skill/SkillGroup scope, taxonomy, related content, field IDs, references, validations, and migration diff are queued for Phase 02 decisions.
+- At Batch 02.1 closeout, legacy broad `seoMetadata`, Tool representation, Learning/Certification representation, Skill/SkillGroup scope, taxonomy, related content, field IDs, references, validations, and migration diff were queued for Phase 02 decisions.
 - Public-safety requirements do not automatically imply a CMS field.
 - Media alt/context requirements do not automatically approve a media wrapper or exact asset-metadata strategy.
 - Bootstrap migration remains BLOCKED / NOT RUN.
@@ -199,7 +199,19 @@ Translate frozen Phase 01 requirements into a lean, stable, migration-governed C
 - Approved standalone type count: 10, under the <=25 cap.
 - Approved non-standalone concepts: broad `seoMetadata`, Learning/Certification, Contact, Media, dedicated Taxonomy, and generic Page/PageSection/component types do not become standalone v1 types.
 - OD-11 — certification / learning representation — is resolved as lightweight profile-owned content.
-- Fields, field IDs, references, validations, editor interfaces, and migration implementation remain deferred.
+- At Batch 02.2 closeout, fields, field IDs, references, validations, editor interfaces, and migration implementation remained deferred. Batch 02.3 later approves fields and field IDs.
+
+### Approved Batch 02.3 Evidence
+
+- External Batch 02.3 validation returned PASS WITH NOTES.
+- `docs/content-model/FIELD-ID-LEDGER.md` approves the field and field-ID contract for all 10 approved types.
+- Project and Article SEO override field IDs are `seoTitle`, `seoDescription`, and `socialImage`.
+- Relationship field intents are approved, but exact reference shape, direction, cardinality, and validations remain Batch 02.4 work.
+- Legacy `canonicalUrl`, `noIndex`, `noFollow`, `readingTimeMinutes`, `proficiency`, broad `seoMetadata`, and presentation-shaped fields are reconciled as remove/replace/derived/code-owned as applicable.
+- Lightweight Learning/Certification is approved as profile-owned `learningHighlights`.
+- Public safety remains governance/readiness-owned, not a blanket CMS boolean.
+- `REFERENCE-MAP.md`, bootstrap migration files, snapshots, reports, Contentful scripts, fixtures, and frontend/application files remain unchanged.
+- Batch 02.4 — References + Validations + Editorial Contract — is next, but not started.
 
 ### Execution Gate
 
