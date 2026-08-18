@@ -31,14 +31,16 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | --- | --- |
 | Current phase | Phase 02 - Content Model Contract + Bootstrap Migration |
 | Latest completed phase | Phase 01 - Complete / Frozen |
-| Latest approved batch | Batch 02.5 - Bootstrap Migration Reconciliation + Preflight |
-| Next batch | Batch 02.6 - Bootstrap Migration Execution |
+| Latest approved batch | Batch 02.5 - Compatibility correction re-approved |
+| Next gate | Batch 02.6 - Fresh Gate A |
 | Previous phase | Phase 00 - Complete |
 | Content model | Approved V1 model contract |
-| Migration implementation | Approved / reconciled V1 |
-| Migration executed | No |
+| Migration implementation | Approved corrected migration / not re-executed |
+| Corrected checksum | `46d5702fe8685d1b995eaf37dfb3097fda717e2a02dc2913464328c315e38c0c` |
+| First Gate B attempt | Partial / no schema created |
+| Migration retry | Not authorized |
 | Environments | `master` + `dev` |
-| Bootstrap migration | Blocked pending Batch 02.6 execution gates |
+| Bootstrap migration | Blocked pending fresh Gate A |
 | Seed content | Not started |
 
 > For canonical current state, see [docs/PROJECT-STATE.md](docs/PROJECT-STATE.md) and [TASKS.md](TASKS.md).

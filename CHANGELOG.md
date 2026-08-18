@@ -194,6 +194,19 @@ All meaningful project changes should be recorded here.
 - Migration not run; `dev` and `master` were not mutated.
 - Bootstrap remains blocked pending Batch 02.6 execution gates.
 - Seed content remains not started.
+- First Batch 02.6 Gate B execution attempt did not create schema.
+- Investigation identified unsupported Rich Text migration validation values.
+- Reopened Batch 02.5 for narrow migration compatibility correction.
+- Removed unsupported Rich Text `enabledNodeTypes` from the bootstrap migration.
+- Added noninteractive migration confirmation handling to the bootstrap wrapper.
+- Corrected migration remains unexecuted.
+- Retry remains unauthorized.
+- Seed remains not started.
+- Re-approved reopened Phase 02 / Batch 02.5 after migration compatibility correction.
+- Preserved the original failed Gate B attempt as historical evidence.
+- Preserved the approved `10 types / 99 fields / 18 references` model.
+- Recorded corrected migration checksum: `46d5702fe8685d1b995eaf37dfb3097fda717e2a02dc2913464328c315e38c0c`.
+- Fresh Gate A is required after the clean synchronized checkpoint.
 
 ### Security
 

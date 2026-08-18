@@ -3,9 +3,10 @@
 Project: `contentful-greenfield-starter`
 Current phase: Phase 02 — ACTIVE
 Latest completed phase: Phase 01 — COMPLETE / FROZEN
-Latest approved batch: Batch 02.5 — Bootstrap Migration Reconciliation + Preflight — APPROVED
-Current work item: Batch 02.6 — Bootstrap Migration Execution — NEXT
-Bootstrap migration: APPROVED / RECONCILED V1 / NOT RUN / BLOCKED PENDING 02.6 EXECUTION GATES
+Latest approved batch: Batch 02.5 — RE-APPROVED AFTER COMPATIBILITY CORRECTION
+Next operational gate: Phase 02 / Batch 02.6 — Fresh Gate A
+Batch 02.6: BLOCKED UNTIL CLEAN GIT CHECKPOINT + FRESH GATE A
+Bootstrap migration: ATTEMPTED ONCE / NO MODEL CREATED / RETRY BLOCKED
 Seed content: NOT STARTED
 
 Batch 01.1 external validation passed.
@@ -17,7 +18,7 @@ Batch 02.1 external validation passed with notes.
 Batch 02.2 external validation passed with notes.
 Batch 02.3 external validation passed with notes.
 Batch 02.4 external validation passed with notes.
-Batch 02.5 external validation passed with notes.
+Batch 02.5 external validation passed with notes, then Batch 02.6 Gate B execution evidence forced a narrow compatibility reopen. Corrected Batch 02.5 artifacts passed external revalidation.
 
 The content-strategy foundation is approved with open decisions intentionally carried forward to later Phase 01 batches.
 
@@ -43,7 +44,7 @@ Batch 02.2 approved type-level outcomes: broad `seoMetadata` is absorbed into ow
 
 OD-11 is resolved and approved: Certification / learning evidence is lightweight profile-owned content in v1. No standalone Certification or Learning content type is required. Batch 02.3 approves exact profile-owned field representation as `personProfile.learningHighlights`.
 
-Batch 02.5 approved the reconciled v1 bootstrap migration implementation and static/non-mutating preflight. The migration implements the approved v1 type, field, reference, validation, asset, Rich Text, localization, and display-field contract. Execution has not run; Batch 02.6 owns live `dev` mutation evidence after execution-time gates and explicit human approval.
+Batch 02.5 originally approved the reconciled v1 bootstrap migration implementation and static/non-mutating preflight. The first Batch 02.6 Gate B execution attempt was invoked once, the child process exited nonzero, and live read-only checks found `dev` still blank with 0 content types, 0 entries, 0 assets, and `en-US` locale. Investigation identified a local migration-validator incompatibility with Rich Text `enabledNodeTypes` plus a secondary missing noninteractive confirmation flag. Corrected Batch 02.5 artifacts are re-approved after external validation; retry remains unauthorized and fresh Gate A is required after a clean Git checkpoint.
 
 Batch 02.1 carry-forward notes: public safety remains a governance/readiness requirement unless later evidence proves explicit CMS state is needed. Media alt/context requirements remain representation questions and do not automatically approve a dedicated media wrapper or exact asset-metadata strategy.
 
@@ -63,19 +64,23 @@ Validation contract: APPROVED V1.
 
 Editorial contract: APPROVED V1.
 
-Migration implementation: APPROVED / RECONCILED V1.
+Migration implementation: APPROVED / RECONCILED V1 / NOT RE-EXECUTED.
 
-Migration execution: NOT RUN.
+Migration execution: ONE ATTEMPT / PARTIAL / CHILD EXIT 1 / NO SCHEMA CREATED.
 
 Static preflight: APPROVED.
 
-Contentful commands: NONE.
+Corrected checksum: `46d5702fe8685d1b995eaf37dfb3097fda717e2a02dc2913464328c315e38c0c`.
 
-`dev` mutation: NONE.
+Contentful mutation commands during reopened correction: NONE.
+
+Latest known live `dev` evidence: 0 types / 0 entries / 0 assets / en-US after the first attempt. This is historical read-only evidence and is not a substitute for fresh Gate A.
 
 `master` mutation: NONE.
 
-Bootstrap: BLOCKED PENDING 02.6 EXECUTION GATES.
+Bootstrap: ATTEMPTED ONCE / NO MODEL CREATED / RETRY BLOCKED.
+
+Corrected wrapper: APPROVED FOR FUTURE NONINTERACTIVE EXECUTION / NOT RUN.
 
 ## Phase 02 Batch State
 
@@ -85,8 +90,8 @@ Bootstrap: BLOCKED PENDING 02.6 EXECUTION GATES.
 | 02.2 | Content Type Contract | Approved | External validation passed with notes; 10 standalone v1 content types and stable type IDs approved in `docs/content-model/CONTENT-TYPE-LEDGER.md`; field/reference/migration work remains deferred |
 | 02.3 | Field + Field-ID Contract | Approved | External validation passed with notes; approved field and field-ID contract recorded in `docs/content-model/FIELD-ID-LEDGER.md`; reference shape and validations remain deferred |
 | 02.4 | References + Validations + Editorial Contract | Approved | External validation passed with notes; reference, validation, and editorial contract approved in `docs/content-model/REFERENCE-MAP.md` and `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md` |
-| 02.5 | Bootstrap Migration Reconciliation + Preflight | Approved | External validation passed with notes; migration implementation approved / reconciled V1; non-mutating preflight report recorded in `content-model/reports/PHASE-02-BATCH-02.5-MIGRATION-PREFLIGHT.md`; migration execution not run |
-| 02.6 | Bootstrap Migration Execution | Next | May execute approved bootstrap against `dev` only after execution-time gates and explicit human execution approval |
+| 02.5 | Bootstrap Migration Reconciliation + Preflight | Re-approved after compatibility correction | Originally approved after external validation passed with notes; reopened after first Gate B attempt found migration compatibility defects; corrected artifacts externally reapproved |
+| 02.6 | Bootstrap Migration Execution | Blocked pending fresh Gate A | Blocked until clean Git checkpoint, fresh Gate A, and fresh explicit Gate B retry authorization |
 | 02.7 | Phase 02 Validation + Closeout | Later | Verifies model state, master protection, migration evidence, and Phase 03 readiness |
 
 ## Phase 01 Batch State
@@ -99,7 +104,7 @@ Bootstrap: BLOCKED PENDING 02.6 EXECUTION GATES.
 | 01.4 | Content Requirements Matrix | Approved | External validation passed; `docs/system/CONTENT-REQUIREMENTS-MATRIX.md` maps approved strategy, route, and SEO contracts into route/domain requirements, readiness, reuse, fixture, media, accessibility, public-safety, and Phase 02 handoff inputs; OD-08 resolved |
 | 01.5 | Phase 01 Validation + Freeze | Approved | External validation passed with notes; Phase 01 requirements freeze approved in `docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md` |
 
-At Phase 01 closeout, Phase 02 advanced to NEXT without creating static fixtures, implementing frontend metadata, running migrations, running Contentful commands, or mutating Contentful state. Phase 02 is now active; Batch 02.1 is approved, Batch 02.2 is approved, Batch 02.3 is approved, Batch 02.4 is approved, Batch 02.5 is approved, and Batch 02.6 is next.
+At Phase 01 closeout, Phase 02 advanced to NEXT without creating static fixtures, implementing frontend metadata, running migrations, running Contentful commands, or mutating Contentful state. Phase 02 is now active; Batch 02.1 is approved, Batch 02.2 is approved, Batch 02.3 is approved, Batch 02.4 is approved, Batch 02.5 is re-approved after compatibility correction, and Batch 02.6 is blocked pending fresh Gate A.
 
 ## Batch 01.1 Strategy Summary
 
@@ -270,6 +275,6 @@ No deletion automation is part of this repair.
 
 Phase 00 is complete. Batch 00.1, Batch 00.2, Batch 00.3, Batch 00.4, and Batch 00.5 are approved.
 
-Phase 01 is complete / frozen. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is approved after external validation. Batch 01.4 is approved after external validation. Batch 01.5 is approved after external validation. Phase 02 is active, Batch 02.1 is approved, Batch 02.2 is approved, Batch 02.3 is approved, Batch 02.4 is approved, Batch 02.5 is approved after external validation, and Batch 02.6 is next.
+Phase 01 is complete / frozen. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is approved after external validation. Batch 01.4 is approved after external validation. Batch 01.5 is approved after external validation. Phase 02 is active, Batch 02.1 is approved, Batch 02.2 is approved, Batch 02.3 is approved, Batch 02.4 is approved, Batch 02.5 is re-approved after compatibility correction, and Batch 02.6 is blocked pending fresh Gate A.
 
-Bootstrap execution, seed content, environment deletion, Contentful model mutation, Contentful export/import, static fixtures, frontend implementation, and Batch 02.6 execution remain out of scope until the next approved execution pass.
+Bootstrap retry, seed content, environment deletion, Contentful model mutation, Contentful export/import, static fixtures, frontend implementation, and Batch 02.6 execution remain out of scope until a clean Git checkpoint, fresh Gate A, and fresh explicit retry authorization.

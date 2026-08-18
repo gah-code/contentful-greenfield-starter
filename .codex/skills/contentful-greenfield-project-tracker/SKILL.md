@@ -13,7 +13,7 @@ Inspect the current repository before editing in every mode. Use current reposit
 
 Personal Website CMS — Greenfield Contentful Starter
 Repository: `contentful-greenfield-starter`
-Model target: approved 10 standalone v1 semantic content types; field and field-ID contract approved; reference, validation, and editorial contract approved; migration approved / reconciled V1 / not run
+Model target: approved 10 standalone v1 semantic content types; field and field-ID contract approved; reference, validation, and editorial contract approved; corrected migration approved / not re-executed after first failed Gate B attempt
 
 ## Project Mantra
 
@@ -38,10 +38,12 @@ Documentation is part of the build.
 - 02.2 — APPROVED.
 - 02.3 — APPROVED.
 - 02.4 — APPROVED.
-- 02.5 — APPROVED.
-- 02.6 — NEXT.
+- 02.5 — RE-APPROVED AFTER COMPATIBILITY CORRECTION.
+- 02.6 — BLOCKED PENDING FRESH GATE A.
 - 02.7 — LATER.
-- Bootstrap migration — APPROVED / RECONCILED V1 / NOT RUN / BLOCKED PENDING BATCH 02.6 EXECUTION GATES.
+- Bootstrap migration — ATTEMPTED ONCE / NO MODEL CREATED / RETRY BLOCKED.
+- `dev` — 0 types / 0 entries / 0 assets / en-US after first attempt.
+- Retry — NOT AUTHORIZED; fresh Gate A required after clean Git checkpoint.
 - Seed content — NOT STARTED.
 
 Batch 01.3 approved hybrid SEO ownership: editorial SEO overrides are limited conceptually to title, description, and social image; technical SEO remains code/state-derived. Exact Contentful representation and schema implementation remain deferred to Phase 02.
@@ -58,7 +60,7 @@ Batch 02.3 is approved after external validation returned PASS WITH NOTES. It ap
 
 Batch 02.4 is approved after external validation returned PASS WITH NOTES. It approves the reference, validation, and editorial contract in `docs/content-model/REFERENCE-MAP.md` and `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md`; supplemental external decision validation resolves OD-06, OD-12, and OD-13 without changing the approved contracts. It does not approve migration changes, bootstrap execution, fixtures, frontend implementation, Contentful mutation, or seed content.
 
-Batch 02.5 is approved after external validation returned PASS WITH NOTES. It reconciles `content-model/migrations/0001-bootstrap-portfolio-model.js` to the approved v1 model contract and records non-mutating preflight evidence in `content-model/reports/PHASE-02-BATCH-02.5-MIGRATION-PREFLIGHT.md`. It approves the migration implementation only; migration execution, bootstrap execution, Contentful mutation, fixtures, frontend implementation, and seed content remain blocked.
+Batch 02.5 was approved after external validation returned PASS WITH NOTES, then reopened after first Gate B execution evidence. The first Batch 02.6 Gate B attempt invoked the bootstrap once, exited nonzero, and live read-only checks found `dev` still blank. Corrected Batch 02.5 artifacts are re-approved after external revalidation. Retry, bootstrap execution, Contentful mutation, fixtures, frontend implementation, and seed content remain blocked pending fresh Gate A and fresh explicit Gate B authorization.
 
 Approved Batch 02.2 standalone type IDs:
 
@@ -82,7 +84,8 @@ Contract layer status:
 - References — APPROVED.
 - Validations — APPROVED.
 - Editorial rules — APPROVED.
-- Migration — APPROVED / RECONCILED V1 / NOT RUN.
+- Migration — APPROVED / RECONCILED V1 / NOT RE-EXECUTED.
+- Corrected checksum — `46d5702fe8685d1b995eaf37dfb3097fda717e2a02dc2913464328c315e38c0c`.
 - Static preflight — APPROVED.
 - Seed content — NOT STARTED.
 

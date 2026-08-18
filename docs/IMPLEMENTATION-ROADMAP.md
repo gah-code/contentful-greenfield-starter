@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 active; Batch 02.1 approved; Batch 02.2 approved; Batch 02.3 approved; Batch 02.4 approved; Batch 02.5 approved; Batch 02.6 next
+Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 active; Batch 02.1 approved; Batch 02.2 approved; Batch 02.3 approved; Batch 02.4 approved; Batch 02.5 re-approved after compatibility correction; Batch 02.6 blocked pending fresh Gate A
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -9,7 +9,7 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 |---|---|---|---|
 | 00 | Baseline + Two-Environment Setup | Complete; safe repository, secure tooling boundary, and governed `master` + `dev` operating model | None |
 | 01 | Content Strategy + Route Contract | Complete / frozen; requirements system approved for Phase 02 input | None |
-| 02 | Content Model Contract + Bootstrap Migration | Active; Batch 02.5 migration reconciliation + preflight approved; Batch 02.6 bootstrap migration execution next | CMS only |
+| 02 | Content Model Contract + Bootstrap Migration | Active; Batch 02.5 re-approved after compatibility correction; Batch 02.6 blocked pending fresh Gate A | CMS only |
 | 03 | Model Export + Serial Clean-Room Verification | Approved model-only snapshot rebuilt into fresh `dev` from protected `master` | CMS only |
 | 04 | Editorial QA + Model Freeze | Editor-friendly baseline v1 | CMS only |
 | 05 | Representative Seed Content | Realistic draft entries after clean-room verification | CMS only |
@@ -43,8 +43,8 @@ Batch 02.1 — APPROVED
 Batch 02.2 — APPROVED
 Batch 02.3 — APPROVED
 Batch 02.4 — APPROVED
-Batch 02.5 — APPROVED
-Batch 02.6 — NEXT
+Batch 02.5 — RE-APPROVED AFTER COMPATIBILITY CORRECTION
+Batch 02.6 — BLOCKED PENDING FRESH GATE A
 Batch 02.7 — LATER
 ```
 
@@ -162,7 +162,7 @@ Define what the website needs to communicate before finalizing CMS fields.
 
 ## Phase 02 — Content Model Contract + Bootstrap Migration
 
-Current state: ACTIVE. Latest approved batch: 02.5 — Bootstrap Migration Reconciliation + Preflight — APPROVED. Current / next batch: 02.6 — Bootstrap Migration Execution — NEXT.
+Current state: ACTIVE. Latest approved batch: 02.5 — Bootstrap Migration Reconciliation + Preflight — RE-APPROVED AFTER COMPATIBILITY CORRECTION. Batch 02.6 is blocked pending fresh Gate A after a clean Git checkpoint.
 
 ### Goal
 
@@ -176,8 +176,8 @@ Translate frozen Phase 01 requirements into a lean, stable, migration-governed C
 | 02.2 | Content Type Contract | APPROVED |
 | 02.3 | Field + Field-ID Contract | APPROVED |
 | 02.4 | References + Validations + Editorial Contract | APPROVED |
-| 02.5 | Bootstrap Migration Reconciliation + Preflight | APPROVED |
-| 02.6 | Bootstrap Migration Execution | NEXT |
+| 02.5 | Bootstrap Migration Reconciliation + Preflight | RE-APPROVED AFTER COMPATIBILITY CORRECTION |
+| 02.6 | Bootstrap Migration Execution | BLOCKED PENDING FRESH GATE A |
 | 02.7 | Phase 02 Validation + Closeout | LATER |
 
 ### Approved Batch 02.1 Evidence
@@ -226,9 +226,19 @@ Translate frozen Phase 01 requirements into a lean, stable, migration-governed C
 - Migration execution remains NOT RUN.
 - Bootstrap remains blocked pending Batch 02.6 execution gates.
 
+### Reopened Batch 02.5 Reapproval Evidence
+
+- First Batch 02.6 Gate B execution was attempted once and exited nonzero.
+- Live read-only checks found `dev` still blank: 0 content types, 0 entries, 0 assets, and `en-US` locale.
+- Investigation identified unsupported Rich Text `enabledNodeTypes` in the migration and a secondary missing noninteractive confirmation flag.
+- Batch 02.5 was reopened for narrow compatibility correction and re-approved after external revalidation.
+- Corrected migration remains unexecuted.
+- Batch 02.6 retry remains unauthorized.
+- Next operational step is fresh Gate A after commit/push and clean `0 0`.
+
 ### Execution Gate
 
-Bootstrap migration execution remains blocked until Batch 02.6 verifies:
+Bootstrap migration execution remains blocked until fresh Batch 02.6 Gate A verifies:
 
 - content type inventory
 - type IDs

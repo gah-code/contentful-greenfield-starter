@@ -11,11 +11,11 @@ Phase 02 starts from approved content requirements, reconciles the existing prop
 
 ## Current Gate
 
-Batch 02.6 — Bootstrap Migration Execution — NEXT
+Batch 02.6 — Fresh Gate A — BLOCKED PENDING CLEAN GIT CHECKPOINT
 
 Bootstrap migration:
 
-APPROVED / RECONCILED V1 / NOT RUN / BLOCKED PENDING BATCH 02.6 EXECUTION GATES
+APPROVED CORRECTED MIGRATION / NOT RE-EXECUTED / RETRY NOT AUTHORIZED
 
 Seed content:
 
@@ -51,8 +51,8 @@ The migration is not the source of requirements. It is proposed implementation i
 | 02.2 | Content Type Contract | Approve the semantic v1 content type inventory and type IDs. | APPROVED |
 | 02.3 | Field + Field-ID Contract | Approve fields, field IDs, types, required states, localization behavior, relationship semantic intents, and semantic purpose. | APPROVED |
 | 02.4 | References + Validations + Editorial Contract | Approve references, cardinality, validations, display fields, editor-facing help, and editorial usability constraints. | APPROVED |
-| 02.5 | Bootstrap Migration Reconciliation + Preflight | Align the existing bootstrap migration to the approved model contract and perform non-mutating safety review. | APPROVED |
-| 02.6 | Bootstrap Migration Execution | Execute the approved bootstrap migration against `dev` only and record evidence. | NEXT |
+| 02.5 | Bootstrap Migration Reconciliation + Preflight | Align the existing bootstrap migration to the approved model contract and perform non-mutating safety review. | RE-APPROVED AFTER COMPATIBILITY CORRECTION |
+| 02.6 | Bootstrap Migration Execution | Execute the approved bootstrap migration against `dev` only and record evidence. | BLOCKED PENDING FRESH GATE A |
 | 02.7 | Phase 02 Validation + Closeout | Verify expected model state, master protection, migration evidence, truth-surface alignment, and readiness for Phase 03. | LATER |
 
 ## Modeling Boundaries
@@ -1626,12 +1626,12 @@ Carry forward to Batch 02.6:
 
 actual bootstrap execution.
 
-Batch 02.5 is APPROVED after external validation returned PASS WITH NOTES. Bootstrap migration is APPROVED / RECONCILED V1 / NOT RUN / BLOCKED PENDING BATCH 02.6 EXECUTION GATES. Seed content remains NOT STARTED.
+Batch 02.5 was APPROVED after external validation returned PASS WITH NOTES, then reopened after first Gate B execution evidence. Corrected Batch 02.5 artifacts are RE-APPROVED after external revalidation. Bootstrap migration is APPROVED CORRECTED MIGRATION / NOT RE-EXECUTED / RETRY NOT AUTHORIZED. Seed content remains NOT STARTED.
 
 ## Batch 02.5 — Bootstrap Migration Reconciliation + Preflight
 
 Status:
-APPROVED
+RE-APPROVED AFTER COMPATIBILITY CORRECTION
 
 ### Goal
 
@@ -1651,9 +1651,9 @@ The approved ledgers remain the canonical model truth. The migration is implemen
 The bootstrap migration now implements the approved v1 type, field, reference, validation, asset, Rich Text, localization, and display-field contract. It is intended for a verified blank `dev` environment only.
 
 Migration execution:
-NOT RUN
+FIRST GATE B ATTEMPT PARTIAL / CORRECTED MIGRATION NOT RUN
 
-Contentful commands:
+Contentful mutation commands during reopened correction:
 NONE
 
 ### Type Diff
@@ -1763,13 +1763,64 @@ Search checks found no active legacy schema declarations and no page-builder/com
 
 ### Wrapper Safety Review
 
-Read-only wrapper review confirmed:
+Wrapper review confirmed:
 
 - `scripts/contentful/run-bootstrap-migration.mjs` imports the environment safety check;
 - the safety helper rejects `master`;
 - the safety helper requires `dev`;
+- the bootstrap wrapper now passes `--yes` to the Contentful migration CLI;
 - token values are not printed by the helper;
-- no wrapper files were modified.
+- no retry, cleanup, seed, export, import, or environment mutation behavior was added.
+
+## Batch 02.6 Gate B Incident + Remediation
+
+- Gate A passed before the first execution attempt.
+- First Gate B execution was attempted once.
+- The child migration process exited nonzero.
+- Live read-only checks found `dev` remained blank: 0 content types, 0 entries, 0 assets, and `en-US` locale.
+- Root cause was identified as local migration-validator incompatibility with unsupported Rich Text `enabledNodeTypes`.
+- Migration remediation removed unsupported Rich Text node values while preserving the 10 / 99 / 18 contract.
+- Wrapper remediation added explicit noninteractive confirmation handling with `--yes`.
+- No retry was performed.
+- Corrected migration is externally reapproved and awaits fresh Gate A after a clean Git checkpoint.
+
+## Batch 02.5 Reopened Compatibility Correction Closeout
+
+Status:
+RE-APPROVED
+
+External revalidation:
+PASS
+
+Root cause:
+local Rich Text migration validation incompatibility
+
+Corrections:
+
+- unsupported `paragraph` removed from `enabledNodeTypes`;
+- unsupported `list-item` removed from `enabledNodeTypes`;
+- wrapper adds noninteractive `--yes`.
+
+Model contract:
+UNCHANGED / APPROVED V1
+
+Corrected migration checksum:
+`46d5702fe8685d1b995eaf37dfb3097fda717e2a02dc2913464328c315e38c0c`
+
+Corrected migration execution:
+NOT RUN
+
+First Gate B attempt:
+PARTIAL / NO MODEL CREATED
+
+Retry:
+NOT AUTHORIZED
+
+Next:
+fresh Gate A after Git checkpoint
+
+Seed:
+NOT STARTED
 
 ### Blank-Dev Requirement
 
@@ -1799,31 +1850,34 @@ Batch 02.6 owns actual bootstrap execution against `dev` only after execution-ti
 ## Batch 02.5 Closeout
 
 Status:
-APPROVED
+RE-APPROVED AFTER COMPATIBILITY CORRECTION
 
 External validation:
-PASS WITH NOTES
+PASS WITH NOTES (historical original approval)
+
+External revalidation:
+PASS
 
 Migration implementation:
-APPROVED / RECONCILED V1
+APPROVED / RECONCILED V1 / NOT RE-EXECUTED
 
 Migration execution:
-NOT RUN
+ATTEMPTED ONCE / PARTIAL / NO MODEL CREATED
 
 Static preflight:
 PASS / APPROVED
 
-Contentful commands:
+Contentful mutation commands during reopened correction:
 NONE
 
 `dev` mutation:
-NONE
+NO MODEL CREATED
 
 `master` mutation:
 NONE
 
 Bootstrap:
-BLOCKED PENDING BATCH 02.6 EXECUTION GATES
+APPROVED CORRECTED MIGRATION / NOT RE-EXECUTED / RETRY NOT AUTHORIZED
 
 Seed:
 NOT STARTED

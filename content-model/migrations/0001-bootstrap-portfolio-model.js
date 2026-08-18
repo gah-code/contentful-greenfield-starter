@@ -130,12 +130,10 @@ module.exports = function bootstrapPortfolioModel(migration) {
   const richTextStandard = [
     {
       enabledNodeTypes: [
-        "paragraph",
         "heading-2",
         "heading-3",
         "unordered-list",
         "ordered-list",
-        "list-item",
         "blockquote",
         "hyperlink",
       ],
@@ -150,12 +148,10 @@ module.exports = function bootstrapPortfolioModel(migration) {
     },
     {
       enabledNodeTypes: [
-        "paragraph",
         "heading-2",
         "heading-3",
         "unordered-list",
         "ordered-list",
-        "list-item",
         "blockquote",
         "hyperlink",
         "embedded-asset-block",
@@ -167,10 +163,8 @@ module.exports = function bootstrapPortfolioModel(migration) {
   const simpleRichText = [
     {
       enabledNodeTypes: [
-        "paragraph",
         "unordered-list",
         "ordered-list",
-        "list-item",
         "hyperlink",
       ],
       message: "Use approved rich text nodes only.",

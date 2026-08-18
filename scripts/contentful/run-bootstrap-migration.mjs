@@ -8,5 +8,6 @@ runContentful([
   process.env.CONTENTFUL_SPACE_ID,
   "--environment-id",
   process.env.CONTENTFUL_ENVIRONMENT_ID,
+  "--yes",
   "content-model/migrations/0001-bootstrap-portfolio-model.js",
 ]);

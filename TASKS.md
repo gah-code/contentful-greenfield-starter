@@ -151,7 +151,9 @@ Status: APPROVED
 
 #### Batch 02.5 — Bootstrap Migration Reconciliation + Preflight
 
-Status: APPROVED
+Status: RE-APPROVED AFTER COMPATIBILITY CORRECTION
+
+Previously approved after external validation returned PASS WITH NOTES. Later Batch 02.6 Gate B execution evidence forced a narrow compatibility reopen. Corrected artifacts are externally reapproved; corrected migration has not been re-executed.
 
 - [x] Confirm complete v1 model contract approved
 - [x] Audit legacy migration
@@ -188,16 +190,37 @@ Status: APPROVED
 - [x] Confirm migration not executed
 - [x] External Batch 02.5 validation
 
+##### Batch 02.5 Reopen — Migration Compatibility Correction
+
+- [x] Diagnose first Gate B attempt
+- [x] Confirm dev remained blank
+- [x] Identify unsupported Rich Text node validation
+- [x] Remove unsupported Rich Text enabledNodeTypes
+- [x] Preserve 10 / 99 / 18 model contract
+- [x] Add noninteractive migration confirmation
+- [x] Re-run migration syntax check
+- [x] Re-run wrapper syntax check
+- [x] Re-run local validator compatibility
+- [x] Calculate corrected migration checksum
+- [x] External revalidation
+- [x] Final approval reconciliation
+- [ ] Commit/push corrected artifacts
+- [ ] Confirm clean 0 0
+- [ ] Fresh Gate A
+- [ ] Fresh explicit Gate B retry authorization
+
 #### Later Phase 02 Batches
 
-- Batch 02.6 — Bootstrap Migration Execution — NEXT
+- Batch 02.6 — Bootstrap Migration Execution — BLOCKED PENDING FRESH GATE A
 - Batch 02.7 — Phase 02 Validation + Closeout — LATER
 
-Migration implementation: APPROVED / RECONCILED V1
+Migration implementation: APPROVED / RECONCILED V1 / NOT RE-EXECUTED
 
-Migration execution: NOT RUN
+Migration execution: FIRST GATE B ATTEMPT PARTIAL / CORRECTED MIGRATION NOT RUN
 
-Bootstrap migration: BLOCKED PENDING BATCH 02.6 EXECUTION GATES
+Bootstrap migration: ATTEMPTED ONCE / NO MODEL CREATED / RETRY BLOCKED
+
+Migration retry: NOT AUTHORIZED
 
 Seed content: NOT STARTED
 
@@ -391,8 +414,8 @@ Recorded Phase 00 evidence:
 - Batch 02.2 is approved after external validation.
 - Batch 02.3 is approved after external validation.
 - Batch 02.4 is approved after external validation.
-- Batch 02.5 is approved after external validation returned PASS WITH NOTES.
-- Migration implementation is approved / reconciled V1; migration execution has not run.
-- Bootstrap migration is blocked pending Batch 02.6 execution gates.
+- Batch 02.5 was approved after external validation returned PASS WITH NOTES, reopened after first Gate B execution evidence, and re-approved after compatibility correction.
+- Migration implementation is approved / reconciled V1 / not re-executed.
+- Bootstrap migration was attempted once; no model was created; retry remains blocked pending fresh Gate A and fresh explicit Gate B authorization.
 - Seed content remains not started.
-- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by Batch 02.5 implementation.
+- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by reopened Batch 02.5 remediation.

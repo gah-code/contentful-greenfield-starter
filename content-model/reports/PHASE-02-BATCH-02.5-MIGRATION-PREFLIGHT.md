@@ -1,6 +1,6 @@
 # Phase 02 / Batch 02.5 Migration Preflight
 
-Status: APPROVED
+Status: RE-APPROVED AFTER COMPATIBILITY CORRECTION
 Owner: Phase 02 - Content Model Contract + Bootstrap Migration
 
 This report records non-canonical implementation evidence for Batch 02.5. The approved model truth remains in:
@@ -19,35 +19,38 @@ Batch:
 02.5 — Bootstrap Migration Reconciliation + Preflight
 
 Status:
-APPROVED
+RE-APPROVED AFTER COMPATIBILITY CORRECTION
 
 External validation:
-PASS WITH NOTES
+PASS WITH NOTES (historical original approval)
+
+External revalidation:
+PASS
 
 Migration implementation:
-APPROVED / RECONCILED V1
+APPROVED / RECONCILED V1 / NOT RE-EXECUTED
 
 Migration execution:
-NOT RUN
+ATTEMPTED ONCE / PARTIAL / NO MODEL CREATED
 
-Contentful commands:
+Contentful mutation commands during reopened correction:
 NONE
 
 `dev` mutation:
-NONE
+NO MODEL CREATED
 
 `master` mutation:
 NONE
 
 Bootstrap:
-BLOCKED PENDING BATCH 02.6 EXECUTION GATES
+APPROVED CORRECTED MIGRATION / NOT RE-EXECUTED / RETRY NOT AUTHORIZED
 
 Seed:
 NOT STARTED
 
 ## Scope
 
-Batch 02.5 reconciles `content-model/migrations/0001-bootstrap-portfolio-model.js` to the approved v1 model contract and performs static, non-mutating preflight only.
+Batch 02.5 reconciles `content-model/migrations/0001-bootstrap-portfolio-model.js` to the approved v1 model contract and performs static, non-mutating preflight only. This report was reopened after first Gate B execution evidence proved a narrow migration/tooling compatibility defect.
 
 Out of scope:
 
@@ -58,6 +61,79 @@ Out of scope:
 - fixtures;
 - frontend/application implementation;
 - changes to approved model-contract ledgers.
+
+## Post-Execution Compatibility Correction
+
+First Gate B attempt:
+PARTIAL / NO SCHEMA CREATED
+
+Root cause:
+local migration validation rejected unsupported Rich Text `enabledNodeTypes` values: `paragraph` and `list-item`.
+
+Live `dev` after attempt:
+
+- 0 content types
+- 0 entries
+- 0 assets
+- en-US
+
+Corrections:
+
+- removed unsupported Rich Text node types from `enabledNodeTypes`;
+- added approved noninteractive confirmation handling with `--yes`.
+
+Corrected migration status:
+APPROVED / RECONCILED V1 / NOT RE-EXECUTED
+
+Original externally approved checksum, now historical:
+`ee19461b16e77b91acab7c7ffa9320b963699d5521c9dba0b4282a5bfa0c6eb5`
+
+Corrected approved checksum:
+`46d5702fe8685d1b995eaf37dfb3097fda717e2a02dc2913464328c315e38c0c`
+
+Corrected checksum classification:
+APPROVED CORRECTED MIGRATION CHECKSUM
+
+Migration execution after correction:
+NOT RUN
+
+Retry authorization:
+NOT GRANTED
+
+## Reopened Batch 02.5 Approval Status
+
+Status:
+RE-APPROVED AFTER COMPATIBILITY CORRECTION
+
+External revalidation:
+PASS
+
+Original migration checksum:
+`ee19461b16e77b91acab7c7ffa9320b963699d5521c9dba0b4282a5bfa0c6eb5`
+
+Classification:
+HISTORICAL / SUPERSEDED FOR EXECUTION
+
+Corrected migration checksum:
+`46d5702fe8685d1b995eaf37dfb3097fda717e2a02dc2913464328c315e38c0c`
+
+Classification:
+APPROVED CORRECTED MIGRATION CHECKSUM
+
+Corrected migration execution:
+NOT RUN
+
+First Gate B attempt:
+ONE ATTEMPT / CHILD EXIT 1 / NO SCHEMA DETECTED
+
+Current retry authorization:
+NOT AUTHORIZED
+
+Next execution prerequisite:
+FRESH GATE A AFTER CLEAN SYNCHRONIZED GIT CHECKPOINT
+
+Seed:
+NOT STARTED
 
 ## Approved Contract Inputs
 
@@ -72,7 +148,7 @@ Out of scope:
 
 Path: `content-model/migrations/0001-bootstrap-portfolio-model.js`
 
-Status: APPROVED / RECONCILED V1 / NOT RUN
+Status: APPROVED / RECONCILED V1 / NOT RE-EXECUTED
 
 Implementation posture:
 
@@ -263,9 +339,10 @@ Findings:
 - environment safety helper rejects `master`;
 - environment safety helper requires target `dev`;
 - management credential presence is checked without printing token values;
-- wrapper was not modified.
+- bootstrap wrapper now passes `--yes` to skip interactive migration confirmation;
+- wrapper still adds no retry, cleanup, seed, export, import, or environment mutation behavior.
 
-Contentful command run: none.
+Live Contentful mutation command run during reopened correction: none. Local CLI help was inspected.
 
 ## Enforcement Gaps
 
@@ -291,7 +368,7 @@ Contentful command run: none.
 
 Batch 02.6 must verify all gates immediately before execution:
 
-- Batch 02.5 has external approval;
+- corrected Batch 02.5 has external reapproval;
 - repository is clean and synchronized;
 - no files are staged unexpectedly;
 - target environment is explicitly `dev`;
@@ -340,8 +417,8 @@ NOT RUN.
 
 ## Bootstrap Status
 
-BLOCKED PENDING BATCH 02.6 EXECUTION GATES.
+APPROVED CORRECTED MIGRATION / NOT RE-EXECUTED / RETRY NOT AUTHORIZED.
 
 ## Batch 02.6 Handoff
 
-Batch 02.6 may only execute the approved migration after execution-time safety checks and explicit human approval. It owns live `dev` mutation evidence, not Batch 02.5.
+Batch 02.6 may only retry the corrected migration after a clean synchronized Git checkpoint, fresh Gate A, external/human review, and fresh explicit Gate B authorization. It owns live `dev` mutation evidence, not Batch 02.5.
