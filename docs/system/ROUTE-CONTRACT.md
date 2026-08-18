@@ -1451,11 +1451,11 @@ Professional stack and platform capability discovery. Detailed metadata rules ar
 
 ### Future CMS Implications
 
-This route consumes Tool, Skill, Skill Group, Project, Experience, Article, and SEO metadata domains. Batch 02.2 later approves Tool as a standalone v1 type; fields, references, and validations remain Phase 02 input only.
+This route consumes Tool, Skill, Skill Group, Project, Experience, Article, and SEO metadata domains. Phase 02 approves Tool as a standalone v1 type, approves its fields/references/validations, and approves the reconciled migration implementation; execution remains deferred to Batch 02.6 gates.
 
 ### Deferred Behavior
 
-Final skills/tools taxonomy, Tool fields/references, filtering, ratings, hardware, and logo-wall behavior.
+Filtering, ratings, hardware, and logo-wall behavior.
 
 ### Resolved Downstream Model Decisions
 
@@ -1634,7 +1634,7 @@ Contact form, phone number, residential address, private contact information, un
 | `/tools` | Needs tool inventory, category/context rules, relationships to skills/projects/work, and route SEO inputs. |
 | `/contact` | Needs contact copy/channels, social links, résumé access, profile context, and route SEO inputs. |
 
-These route-contract implications are now carried into the approved `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`. Batch 01.5 — Phase 01 Validation + Freeze — is approved, Batch 02.1 is approved, Batch 02.2 is approved, and Batch 02.3 field IDs are approved. They remain directional Phase 02 inputs and do not approve reference, validation, or migration ledgers.
+These route-contract implications are now carried into the approved `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`. Batch 01.5 — Phase 01 Validation + Freeze — is approved. Phase 02 has approved the content type, field-ID, reference, validation, editorial, and reconciled migration implementation layers through Batch 02.5. Migration execution remains deferred to Batch 02.6 gates.
 
 ## Deferred Behavior
 
