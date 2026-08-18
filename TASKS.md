@@ -37,11 +37,41 @@ Status: APPROVED
 
 #### Batch 02.2 — Content Type Contract
 
-Status: NEXT
+Status: APPROVED
+
+- [x] Confirm Batch 02.1 approved
+- [x] Apply semantic content-type decision test
+- [x] Review siteSettings
+- [x] Review personProfile
+- [x] Review socialLink
+- [x] Review navigationItem
+- [x] Review project
+- [x] Review article
+- [x] Review experienceItem
+- [x] Review skill
+- [x] Reconcile skillGroup
+- [x] Reconcile seoMetadata
+- [x] Decide proposed Tool representation
+- [x] Decide proposed Learning/Certification representation
+- [x] Confirm Contact does/does not need standalone type
+- [x] Confirm Media does/does not need standalone type
+- [x] Review taxonomy type pressure
+- [x] Reject generic Page/PageSection model
+- [x] Propose stable content type IDs
+- [x] Validate route coverage
+- [x] Validate reuse coverage
+- [x] Review editorial usability
+- [x] Review orphan-entry risk
+- [x] Review type-count pressure
+- [x] Preview migration impact
+- [x] Update CONTENT-TYPE-LEDGER.md
+- [x] Confirm no field contract was created
+- [x] Confirm no migration mutation
+- [x] External Batch 02.2 validation
 
 #### Later Phase 02 Batches
 
-- Batch 02.3 — Field + Field-ID Contract — LATER
+- Batch 02.3 — Field + Field-ID Contract — NEXT
 - Batch 02.4 — References + Validations + Editorial Contract — LATER
 - Batch 02.5 — Bootstrap Migration Reconciliation + Preflight — LATER
 - Batch 02.6 — Bootstrap Migration Execution — LATER
@@ -238,7 +268,8 @@ Recorded Phase 00 evidence:
 - Batch 01.5 is approved after external validation.
 - Phase 02 is active.
 - Batch 02.1 is approved after external validation.
-- Batch 02.2 is next.
+- Batch 02.2 is approved after external validation.
+- Batch 02.3 is next.
 - Bootstrap migration remains blocked and not run.
 - Seed content remains not started.
-- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by Batch 02.1.
+- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by Batch 02.2 approval reconciliation.

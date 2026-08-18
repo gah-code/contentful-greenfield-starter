@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 active; Batch 02.1 approved; Batch 02.2 next
+Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 active; Batch 02.1 approved; Batch 02.2 approved; Batch 02.3 next
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -9,7 +9,7 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 |---|---|---|---|
 | 00 | Baseline + Two-Environment Setup | Complete; safe repository, secure tooling boundary, and governed `master` + `dev` operating model | None |
 | 01 | Content Strategy + Route Contract | Complete / frozen; requirements system approved for Phase 02 input | None |
-| 02 | Content Model Contract + Bootstrap Migration | Active; Batch 02.1 approved; Batch 02.2 owns semantic content type decisions before schema approval | CMS only |
+| 02 | Content Model Contract + Bootstrap Migration | Active; Batch 02.2 content type contract approved; Batch 02.3 field contract next | CMS only |
 | 03 | Model Export + Serial Clean-Room Verification | Approved model-only snapshot rebuilt into fresh `dev` from protected `master` | CMS only |
 | 04 | Editorial QA + Model Freeze | Editor-friendly baseline v1 | CMS only |
 | 05 | Representative Seed Content | Realistic draft entries after clean-room verification | CMS only |
@@ -40,8 +40,8 @@ Batch 01.5 — APPROVED
 
 Phase 02 — ACTIVE
 Batch 02.1 — APPROVED
-Batch 02.2 — NEXT
-Batch 02.3 — LATER
+Batch 02.2 — APPROVED
+Batch 02.3 — NEXT
 Batch 02.4 — LATER
 Batch 02.5 — LATER
 Batch 02.6 — LATER
@@ -116,7 +116,7 @@ Define what the website needs to communicate before finalizing CMS fields.
 - `docs/system/ROUTE-CONTRACT.md` formalizes and approves all nine v1 route contracts.
 - Route responsibility boundaries, route states, content readiness, internal linking, responsive intent, accessibility intent, directional SEO intent, and future CMS implication boundaries are documented.
 - OD-07 — final formal v1 route contract — is resolved and approved.
-- OD-08 — Skills vs Tools semantic boundary — is resolved and approved by Batch 01.4; exact Tool Contentful representation remains deferred to Phase 02.
+- OD-08 — Skills vs Tools semantic boundary — is resolved and approved by Batch 01.4; Batch 02.2 later approves Tool as a standalone v1 type, with fields and references still downstream.
 - Detailed SEO metadata behavior remains deferred to Batch 01.3.
 - Contentful schema and bootstrap migration work remain deferred.
 
@@ -127,7 +127,7 @@ Define what the website needs to communicate before finalizing CMS fields.
 - Option 2 hybrid SEO ownership is approved.
 - Future editorial SEO overrides are limited conceptually to SEO title, SEO description, and social image.
 - Canonical URLs, robots/indexability, sitemap eligibility, structured data, breadcrumbs, preview exclusion, and fallback resolution remain code/state-derived.
-- The broad legacy `seoMetadata` proposal is classified as PROPOSED / REQUIRES PHASE 02 RECONCILIATION.
+- The broad legacy `seoMetadata` proposal was classified as PROPOSED / REQUIRES PHASE 02 RECONCILIATION by Batch 01.3; Batch 02.2 later rejects it as a standalone v1 type and absorbs SEO override concepts into owning content.
 - OD-15 — SEO override/default strategy — is resolved by the Batch 01.3 contract.
 - Exact Contentful field representation, frontend metadata implementation, and bootstrap migration work remain deferred.
 
@@ -162,7 +162,7 @@ Define what the website needs to communicate before finalizing CMS fields.
 
 ## Phase 02 — Content Model Contract + Bootstrap Migration
 
-Current state: ACTIVE. Latest approved batch: 02.1 — Entry + Existing Model Reconciliation — APPROVED. Next batch: 02.2 — Content Type Contract — NEXT.
+Current state: ACTIVE. Latest approved batch: 02.2 — Content Type Contract — APPROVED. Current batch: 02.3 — Field + Field-ID Contract — NEXT.
 
 ### Goal
 
@@ -173,8 +173,8 @@ Translate frozen Phase 01 requirements into a lean, stable, migration-governed C
 | Batch | Name | Status |
 |---|---|---|
 | 02.1 | Entry + Existing Model Reconciliation | APPROVED |
-| 02.2 | Content Type Contract | NEXT |
-| 02.3 | Field + Field-ID Contract | LATER |
+| 02.2 | Content Type Contract | APPROVED |
+| 02.3 | Field + Field-ID Contract | NEXT |
 | 02.4 | References + Validations + Editorial Contract | LATER |
 | 02.5 | Bootstrap Migration Reconciliation + Preflight | LATER |
 | 02.6 | Bootstrap Migration Execution | LATER |
@@ -190,6 +190,16 @@ Translate frozen Phase 01 requirements into a lean, stable, migration-governed C
 - Media alt/context requirements do not automatically approve a media wrapper or exact asset-metadata strategy.
 - Bootstrap migration remains BLOCKED / NOT RUN.
 - Seed content remains NOT STARTED.
+
+### Approved Batch 02.2 Evidence
+
+- External Batch 02.2 validation returned PASS WITH NOTES.
+- `docs/content-model/CONTENT-TYPE-LEDGER.md` approves the v1 standalone content type inventory and stable type IDs.
+- Approved standalone types: `siteSettings`, `personProfile`, `socialLink`, `navigationItem`, `project`, `article`, `experienceItem`, `skill`, `skillGroup`, and `tool`.
+- Approved standalone type count: 10, under the <=25 cap.
+- Approved non-standalone concepts: broad `seoMetadata`, Learning/Certification, Contact, Media, dedicated Taxonomy, and generic Page/PageSection/component types do not become standalone v1 types.
+- OD-11 — certification / learning representation — is resolved as lightweight profile-owned content.
+- Fields, field IDs, references, validations, editor interfaces, and migration implementation remain deferred.
 
 ### Execution Gate
 

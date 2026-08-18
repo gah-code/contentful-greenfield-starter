@@ -119,6 +119,24 @@ All meaningful project changes should be recorded here.
 - Preserved unresolved SEO, Tool, Learning/Certification, SkillGroup, taxonomy, and related-content decisions for later Phase 02 batches.
 - Confirmed the migration remains unchanged and blocked.
 - Advanced Batch 02.2 — Content Type Contract to NEXT.
+- Started Phase 02 / Batch 02.2 — Content Type Contract.
+- Evaluated semantic concepts against frozen Phase 01 requirements.
+- Proposed the v1 standalone content-type inventory and stable type IDs.
+- Reconciled `skillGroup`, `seoMetadata`, Tool, and Learning/Certification at the type level.
+- Validated route, reuse, editorial-usability, orphan-risk, and type-count coverage.
+- No field contract, reference contract, validation contract, or migration implementation was created.
+- Bootstrap remains blocked.
+- Approved Phase 02 / Batch 02.2 — Content Type Contract after external validation returned PASS WITH NOTES.
+- Approved 10 standalone v1 Contentful semantic types and stable type IDs.
+- Replaced standalone `seoMetadata` direction with owning-type SEO overrides.
+- Approved Tool as a standalone v1 semantic type.
+- Approved SkillGroup as a standalone v1 type.
+- Resolved OD-11 with lightweight profile-owned Learning/Certification.
+- Kept Contact and Media from becoming standalone v1 types.
+- Deferred dedicated taxonomy.
+- Rejected generic Page/PageSection/component-shaped modeling.
+- Advanced Batch 02.3 — Field + Field-ID Contract to NEXT.
+- Bootstrap migration remains blocked/not run.
 
 ### Security
 

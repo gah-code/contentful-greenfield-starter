@@ -11,7 +11,7 @@ Phase 02 starts from approved content requirements, reconciles the existing prop
 
 ## Current Gate
 
-Batch 02.2 — Content Type Contract — NEXT
+Batch 02.3 — Field + Field-ID Contract — NEXT
 
 Bootstrap migration:
 
@@ -48,8 +48,8 @@ The migration is not the source of requirements. It is proposed implementation i
 | Batch | Name | Purpose | Status |
 |---|---|---|---|
 | 02.1 | Entry + Existing Model Reconciliation | Reconcile existing proposed model artifacts with frozen Phase 01 requirements. | APPROVED |
-| 02.2 | Content Type Contract | Approve the semantic v1 content type inventory and type IDs. | NEXT |
-| 02.3 | Field + Field-ID Contract | Approve fields, field IDs, types, required states, and semantic purpose. | LATER |
+| 02.2 | Content Type Contract | Approve the semantic v1 content type inventory and type IDs. | APPROVED |
+| 02.3 | Field + Field-ID Contract | Approve fields, field IDs, types, required states, and semantic purpose. | NEXT |
 | 02.4 | References + Validations + Editorial Contract | Approve references, cardinality, validations, display fields, editor-facing help, and editorial usability constraints. | LATER |
 | 02.5 | Bootstrap Migration Reconciliation + Preflight | Align the existing bootstrap migration to the approved model contract and perform non-mutating safety review. | LATER |
 | 02.6 | Bootstrap Migration Execution | Execute the approved bootstrap migration against `dev` only and record evidence. | LATER |
@@ -182,7 +182,9 @@ Article
 └── socialImage?
 ```
 
-Phase 02 must compare:
+Batch 02.2 later resolves the type-level comparison: broad standalone `seoMetadata` is not a v1 content type, and SEO override concepts are absorbed into owning Project/Article content. Exact fields remain Batch 02.3 work.
+
+Historical comparison considered:
 
 | Option | Candidate | Evaluation Required |
 |---|---|---|
@@ -377,7 +379,7 @@ Migration file inspected:
 
 | Area | Migration Current State | Frozen Requirement | Classification | Future Action |
 |---|---|---|---|---|
-| Content types | Creates `seoMetadata`, `socialLink`, `navigationItem`, `siteSettings`, `personProfile`, `project`, `article`, `experienceItem`, `skill`, `skillGroup`. | Original 10-type direction is proposed; Tool, Learning/Certification, taxonomy, SEO representation require decisions. | NEEDS RECONCILIATION | Batch 02.2 approves final type inventory before execution. |
+| Content types | Creates `seoMetadata`, `socialLink`, `navigationItem`, `siteSettings`, `personProfile`, `project`, `article`, `experienceItem`, `skill`, `skillGroup`. | Batch 02.2 approves the 10-type inventory, removes standalone `seoMetadata`, adds `tool`, absorbs Learning/Certification, and defers taxonomy. | NEEDS RECONCILIATION | Migration reconciliation waits until Batch 02.5. |
 | Display fields | Uses internal/name/title/role labels. | Display fields must support editor usability. | LIKELY ALIGNED / NEEDS REVIEW | Batch 02.4 validates display fields. |
 | Field IDs | Migration includes many fields beyond the thin ledger. | Field IDs must be approved before migration. | NEEDS RECONCILIATION | Batch 02.3 creates approved field ledger. |
 | Required states | Several fields are required, including SEO title/description and article reading fields. | Required state must follow route readiness, not early schema assumptions. | NEEDS RECONCILIATION | Batch 02.3 / 02.4 approve required policy. |
@@ -417,12 +419,12 @@ BLOCKED / NOT RUN
 
 ## Model Decision Queue
 
-P0 — before Content Type Contract:
+P0 — resolved at the type level by Batch 02.2:
 
-1. legacy `seoMetadata` representation;
-2. Tool representation;
-3. Learning/Certification representation;
-4. Skill/SkillGroup semantic scope.
+1. legacy `seoMetadata` representation: absorbed into owning content;
+2. Tool representation: standalone v1 type approved;
+3. Learning/Certification representation: lightweight profile-owned content;
+4. Skill/SkillGroup semantic scope: `skill` and `skillGroup` standalone v1 types approved, with relationships and taxonomy depth downstream.
 
 P1 — before Field Contract:
 
@@ -459,16 +461,16 @@ Do not resolve the queue in Batch 02.1.
 | Final type count frozen | No. | CURRENT |
 | <=25 constraint preserved | Yes. | CURRENT |
 | Uncontrolled type growth detected | No. | CURRENT |
-| `seoMetadata` may reduce count | Removing or absorbing broad `seoMetadata` could reduce count by one. | POSSIBLE |
-| Tool may add pressure | Standalone Tool could add one type. | POSSIBLE |
-| Learning/Certification may add pressure | Standalone representation could add one or more types, but current evidence is lightweight. | POSSIBLE / LOW |
+| `seoMetadata` reduces count | Standalone broad `seoMetadata` is absorbed into owning content. | APPROVED |
+| Tool adds pressure | Standalone Tool adds one approved type. | APPROVED |
+| Learning/Certification pressure | Standalone representation is not approved; current evidence is lightweight profile-owned content. | APPROVED NON-STANDALONE |
 | taxonomy types currently justified | No dedicated taxonomy type is justified yet. | NOT APPROVED |
 
 Current pressure assessment:
 
 LOW PRESSURE
 
-The main pressure sources are SEO representation, Tool representation, Learning/Certification representation, and possible taxonomy/related-content structures. Current frozen requirements do not justify uncontrolled type growth.
+Batch 02.2 resolves the main type-count pressure sources at the content-type level: SEO is absorbed, Tool is standalone, Learning/Certification is profile-owned, and no dedicated taxonomy type is approved. Remaining pressure belongs to field, reference, validation, and related-content design, not additional approved v1 content types.
 
 ## Future Content-Type Decision Test
 
@@ -537,10 +539,10 @@ Approved findings:
 - field-ID ledger was audited read-only;
 - reference map was audited read-only;
 - bootstrap migration was audited read-only;
-- legacy `seoMetadata` requires reconciliation;
-- Tool representation remains unresolved;
-- Learning/Certification representation remains unresolved;
-- SkillGroup/taxonomy questions remain unresolved;
+- legacy `seoMetadata` required reconciliation at Batch 02.1 and is resolved at the type level by Batch 02.2;
+- Tool representation was unresolved at Batch 02.1 and is resolved as a standalone v1 type by Batch 02.2;
+- Learning/Certification representation was unresolved at Batch 02.1 and is resolved as lightweight profile-owned content by Batch 02.2;
+- SkillGroup type status is resolved by Batch 02.2; taxonomy depth and relationship mechanics remain unresolved;
 - related-content representation remains unresolved;
 - migration execution gate is preserved;
 - no Contentful, schema, or migration mutation occurred.
@@ -567,3 +569,352 @@ Do not start Batch 02.2 implementation during Batch 02.1 approval reconciliation
 - No migration was edited.
 - No fixture, frontend implementation, adapter, SEO implementation, sitemap, robots file, Open Graph generator, or structured-data implementation was created.
 - Batch 02.1 is approved after external validation returned PASS WITH NOTES.
+
+## Batch 02.2 — Content Type Contract
+
+Status:
+
+APPROVED
+
+This batch approves the v1 standalone Contentful content type inventory and stable content type IDs after external validation. It does not approve fields, field IDs, field types, required states, references, cardinality, validations, editor interfaces, rich-text configuration, or migration implementation.
+
+### Goal
+
+Answer which semantic concepts deserve standalone Contentful content types for v1.
+
+### Approved Inputs
+
+- Frozen Phase 01 content strategy, route contract, SEO contract, and Content Requirements Matrix.
+- Approved Batch 02.1 reconciliation findings.
+- Existing content-model ledgers, reference map, and bootstrap migration as proposed/read-only input.
+
+### Content Type Decision Test
+
+Each candidate was evaluated against semantic identity, editorial lifecycle, reuse, addressability, governance, authoring clarity, relationship value, simplification, rendering independence, and complexity cost.
+
+### Candidate Inventory
+
+| Semantic Concept | Classification | Type ID | Status |
+|---|---|---|---|
+| Site Settings | APPROVED V1 SINGLETON TYPE | `siteSettings` | APPROVED |
+| Person Profile | APPROVED V1 SINGLETON TYPE | `personProfile` | APPROVED |
+| Social Link | APPROVED V1 TYPE | `socialLink` | APPROVED |
+| Navigation Item | APPROVED V1 TYPE | `navigationItem` | APPROVED |
+| Project | APPROVED V1 TYPE | `project` | APPROVED |
+| Article | APPROVED V1 TYPE | `article` | APPROVED |
+| Experience Item | APPROVED V1 TYPE | `experienceItem` | APPROVED |
+| Skill | APPROVED V1 TYPE | `skill` | APPROVED |
+| Skill Group | APPROVED V1 TYPE | `skillGroup` | APPROVED |
+| SEO Metadata | ABSORB INTO OWNING TYPE | N/A | APPROVED NON-STANDALONE |
+| Tool | APPROVED V1 TYPE | `tool` | APPROVED |
+| Learning / Certification | ABSORB INTO OWNING TYPE | N/A | APPROVED NON-STANDALONE |
+| Contact | ABSORB INTO OWNING TYPE | N/A | APPROVED NON-STANDALONE |
+| Media | ABSORB INTO OWNING TYPE | N/A | APPROVED NON-STANDALONE |
+| Taxonomy | DEFER FROM V1 | N/A | APPROVED DEFERRED |
+| Generic Page / PageSection | CODE-OWNED / DO NOT MODEL | N/A | APPROVED NON-MODELED |
+
+### Singleton Review
+
+| Type | Semantic Cardinality | Technical Enforcement Status |
+|---|---|---|
+| `siteSettings` | ONE ACTIVE V1 ENTRY | Phase 02.4/editorial workflow/application selection decision. |
+| `personProfile` | ONE ACTIVE V1 ENTRY | Phase 02.4/editorial workflow/application selection decision. |
+
+Contentful content type existence alone does not enforce singleton behavior.
+
+### `siteSettings` Decision
+
+Classification: APPROVED V1 SINGLETON TYPE.
+
+`siteSettings` has site-level editorial meaning for global site identity, global fallback copy, and shared navigation/social/contact support. It does not justify code configuration fields such as site origin, environment identifiers, technical canonical base, runtime flags, secrets, or deployment configuration.
+
+### `personProfile` Decision
+
+Classification: APPROVED V1 SINGLETON TYPE.
+
+`personProfile` is the canonical professional identity source reused by home, about, contact, article author context, footer/social context, resume CTA, and structured-data candidates. It has clear independent editorial lifecycle and should not be duplicated per route.
+
+### `socialLink` Decision
+
+Classification: APPROVED V1 TYPE.
+
+`socialLink` is reused by profile, footer, and contact contexts. A standalone type reduces duplicate URLs and labels. Icon rendering may remain code-derived from platform unless later field-contract evidence proves editorial need.
+
+### `navigationItem` Decision
+
+Classification: APPROVED V1 TYPE.
+
+Navigation labels, destinations, ordering, and active intent are meaningful shared editorial concerns, but route inventory remains code-governed. CMS navigation must not create arbitrary routes or page-builder behavior.
+
+### `project` Decision
+
+Classification: APPROVED V1 TYPE.
+
+`project` is an independently addressable case-study/proof domain used by `/projects`, `/projects/[slug]`, homepage features, work evidence, writing relationships, skill/tool relationships, media, public-safety readiness, and SEO fallback inputs.
+
+### `article` Decision
+
+Classification: APPROVED V1 TYPE.
+
+`article` is an independently addressable writing domain used by `/writing`, `/writing/[slug]`, homepage highlights, project relationships, author/profile context, editorial body content, and SEO fallback inputs.
+
+### `experienceItem` Decision
+
+Classification: APPROVED V1 TYPE.
+
+`experienceItem` represents durable professional role/history evidence reused by home, about, work, and project evidence contexts. It has clearer lifecycle than route-specific work-page copy.
+
+### `skill` Decision
+
+Classification: APPROVED V1 TYPE.
+
+`skill` remains professional capability, not tool/technology. It supports expertise, work, project, article, and tool contexts. Proficiency percentages, bars, and unsupported precision remain excluded.
+
+### `skillGroup` Decision
+
+Classification: APPROVED V1 TYPE.
+
+`skillGroup` is approved as a small curated grouping type because Phase 01 requires grouped capability presentation and fixture coverage. OD-06 and OD-12 remain relevant to grouping taxonomy, ordering, and relationship shape. References are not frozen in Batch 02.2.
+
+### `seoMetadata` Decision
+
+Classification: ABSORB INTO OWNING TYPE.
+
+Standalone broad `seoMetadata` lacks independent semantic identity and lifecycle for v1. Project and Article detail content may later receive direct optional editorial override fields for `seoTitle?`, `seoDescription?`, and `socialImage?`, but those fields belong to Batch 02.3. Technical SEO remains code/state-owned.
+
+Excluded from editorial type approval:
+
+- `canonicalUrl`
+- `noIndex`
+- `noFollow`
+- meta keywords
+- arbitrary structured-data JSON
+
+### Tool Decision
+
+Classification: APPROVED V1 TYPE.
+
+`tool` is approved as a standalone type because Tool has approved semantic identity distinct from Skill, powers `/tools`, and is reused by projects, experience, skills, homepage selections, and professional usage context. Field structure, categories, external URLs, logos/icons, and references remain deferred.
+
+### Learning / Certification Decision
+
+Classification: ABSORB INTO OWNING TYPE.
+
+Learning and certification evidence remains lightweight in v1 and is best represented through the owning `personProfile` unless future volume or lifecycle proves a standalone type. No certification, learning item, course, or credential content type is approved in Batch 02.2.
+
+### Contact Representation
+
+Classification: ABSORB INTO OWNING TYPE.
+
+Contact is represented through `personProfile`, `siteSettings`, `socialLink`, and code-owned route composition. No standalone Contact type is proposed. Contact form remains deferred.
+
+### Media Representation
+
+Classification: ABSORB INTO OWNING TYPE.
+
+Contentful Asset remains the underlying media object. No standalone Media wrapper type is approved. Profile photo, project representative image, optional article media, optional logos/icons, resume PDF, and alt/context strategy belong to owning entries and later field/reference/editorial contracts.
+
+### Taxonomy-Type Review
+
+Classification: DEFER FROM V1.
+
+No dedicated taxonomy content type is approved for v1. Article category/pillar, project type, tags, tool category, and skill grouping can start as owning-entry values or `skillGroup` where appropriate. OD-12 remains open for taxonomy depth and validation strength.
+
+### Generic Page-Builder Rejection
+
+Classification: CODE-OWNED / DO NOT MODEL.
+
+The approved inventory rejects Page, PageSection, HeroSection, CTA, Card, ProjectCard, ArticleCard, SkillPanel, GalleryItem, Component, Module, Block, CMS-driven visual composition, and generic page-builder types.
+
+### Approved V1 Type Inventory
+
+| Semantic Concept | Classification | Type ID | Lifecycle | Reuse Evidence | Reason |
+|---|---|---|---|---|---|
+| Site Settings | APPROVED V1 SINGLETON TYPE | `siteSettings` | Global editorial values | Site-wide identity/navigation/social/contact support | Prevent duplicate global copy while excluding code config. |
+| Person Profile | APPROVED V1 SINGLETON TYPE | `personProfile` | Canonical professional profile | Home, About, Contact, author context, footer, SEO/structured data | Single profile source avoids route duplication. |
+| Social Link | APPROVED V1 TYPE | `socialLink` | Public link lifecycle | Profile, footer, contact | Reused public destinations justify standalone entries. |
+| Navigation Item | APPROVED V1 TYPE | `navigationItem` | Navigation label/order lifecycle | Header/footer navigation | Editorial labels without CMS route creation. |
+| Project | APPROVED V1 TYPE | `project` | Case-study lifecycle | Project routes, homepage, work, writing, skills, tools | Core independently addressable proof domain. |
+| Article | APPROVED V1 TYPE | `article` | Writing lifecycle | Writing routes, homepage, projects, author/profile | Core independently addressable writing domain. |
+| Experience Item | APPROVED V1 TYPE | `experienceItem` | Role/history lifecycle | Home, About, Work, project evidence | Durable career evidence. |
+| Skill | APPROVED V1 TYPE | `skill` | Capability lifecycle | Expertise, work, projects, tools, articles | Approved capability semantic. |
+| Skill Group | APPROVED V1 TYPE | `skillGroup` | Curated grouping lifecycle | Skill group fixtures and expertise grouping | Small grouping type improves editorial consistency. |
+| Tool | APPROVED V1 TYPE | `tool` | Tool/platform lifecycle | `/tools`, projects, experience, skills, homepage | Approved semantic distinct from Skill. |
+
+### Approved Content Type IDs
+
+Approved IDs:
+
+- `siteSettings`
+- `personProfile`
+- `socialLink`
+- `navigationItem`
+- `project`
+- `article`
+- `experienceItem`
+- `skill`
+- `skillGroup`
+- `tool`
+
+These type IDs are approved by Batch 02.2. Field IDs remain unapproved until Batch 02.3.
+
+### Type Count Review
+
+Original historical proposal: 10.
+
+Approved standalone v1 type count: 10.
+
+Count changes:
+
+- `seoMetadata` absorbed into owning types: -1.
+- `tool` added as standalone type: +1.
+- Learning/Certification, Contact, Media, and Taxonomy add no standalone types.
+
+Cap: <=25.
+
+Status: PASS.
+
+### Type-to-Route Coverage
+
+| Route | Required Semantic Sources | Approved Types Cover Requirement? | Notes |
+|---|---|---|---|
+| `/` | Profile, Projects, Articles, Experience, Skills/Skill Groups, Tools, Contact CTA, Navigation, Social Links, Site Settings | Yes | No Page type required. |
+| `/about` | Profile, Experience, Skills/Skill Groups, Tools, Learning/Certification, Social Links | Yes | Learning/Certification absorbed into Profile. |
+| `/work` | Experience, Skills, Tools, Projects, Articles, Contact CTA | Yes | Relationships deferred to 02.4. |
+| `/projects` | Project previews, Skills, Tools, optional classification | Yes | No CMS-owned page composition. |
+| `/projects/[slug]` | Project detail, media, Skills, Tools, Experience/Article context, SEO overrides | Yes | SEO override fields deferred. |
+| `/writing` | Article previews, Profile/author context, Project/Skill/Tool labels | Yes | Taxonomy/filtering remains deferred. |
+| `/writing/[slug]` | Article detail, Profile author, Project/Skill/Tool context, SEO overrides | Yes | Reading time remains derived. |
+| `/tools` | Tool inventory, Skills, Projects, Experience, Articles | Yes | Standalone `tool` covers route meaning. |
+| `/contact` | Profile, Social Links, Site Settings/contact copy, resume access | Yes | No Contact type required. |
+
+### Reuse Coverage
+
+- Profile reuse is covered by `personProfile`.
+- Experience reuse is covered by `experienceItem`.
+- Project reuse is covered by `project`.
+- Article reuse is covered by `article`.
+- Skill reuse is covered by `skill` and `skillGroup`.
+- Tool reuse is covered by `tool`.
+- Navigation reuse is covered by `navigationItem`.
+- Social link reuse is covered by `socialLink`.
+- SEO overrides are absorbed into owning Project/Article semantics; standalone reuse was not proven.
+
+### Editorial Usability Review
+
+| Type | Usability | Notes |
+|---|---|---|
+| `siteSettings` | CLEAR WITH DOCUMENTATION | Needs singleton and code/config boundary guidance. |
+| `personProfile` | CLEAR WITH DOCUMENTATION | Needs singleton and author/profile reuse guidance. |
+| `socialLink` | CLEAR | Public profile destinations are easy to understand. |
+| `navigationItem` | CLEAR WITH DOCUMENTATION | Needs approved-route guardrails. |
+| `project` | CLEAR | Familiar independent case-study entry. |
+| `article` | CLEAR | Familiar independent writing entry. |
+| `experienceItem` | CLEAR | Familiar role/history entry. |
+| `skill` | CLEAR WITH DOCUMENTATION | Needs capability-vs-tool guidance. |
+| `skillGroup` | CLEAR WITH DOCUMENTATION | Needs taxonomy/order guidance. |
+| `tool` | CLEAR WITH DOCUMENTATION | Needs usage-context and no-exhaustive-inventory guidance. |
+
+No approved type is rated POOR.
+
+### Orphan Risk Review
+
+| Type | Risk | Notes |
+|---|---|---|
+| `socialLink` | LOW | Small reused set. |
+| `navigationItem` | MEDIUM | Needs route constraints and siteSettings references. |
+| `skill` | MEDIUM | Needs duplicate-prevention guidance. |
+| `skillGroup` | MEDIUM | Needs relationship/order guidance. |
+| `tool` | MEDIUM | Needs naming/category/relationship guidance. |
+| `seoMetadata` if retained | HIGH | Absorbed into owning types to avoid orphan SEO entries. |
+
+### Migration Impact Preview
+
+| Existing Migration Concept | Future Direction | Status |
+|---|---|---|
+| `seoMetadata` | REMOVE TYPE IN FUTURE RECONCILIATION | Approved absorbed SEO ownership. |
+| `socialLink` | KEEP TYPE | Field/references still require review. |
+| `navigationItem` | KEEP TYPE | Route constraints still require review. |
+| `siteSettings` | KEEP TYPE | Code-owned fields may need removal/refinement. |
+| `personProfile` | KEEP TYPE | Fields still require review. |
+| `project` | KEEP TYPE | SEO references and field set require reconciliation. |
+| `article` | KEEP TYPE | SEO references, reading time, and field set require reconciliation. |
+| `experienceItem` | KEEP TYPE | Field set and relationships require reconciliation. |
+| `skill` | KEEP TYPE | Proficiency fields likely removal/review. |
+| `skillGroup` | KEEP TYPE | Relationship direction/cardinality require review. |
+| `tool` | ADD TYPE IN FUTURE RECONCILIATION | Approved new v1 type. |
+
+Migration changed: no.
+
+Migration executed: no.
+
+### Downstream Field Questions
+
+Batch 02.3 must decide fields, field IDs, field types, required states, display-field candidates, direct SEO override fields, public-safety representation, media/alt ownership, skill/tool fields, lightweight Learning/Certification shape, and simple taxonomy values.
+
+Batch 02.4 must decide references, cardinality, validations, singleton selection, editor help, route constraints, relationship direction, orphan-risk mitigation, and editor usability rules.
+
+### Evidence Limitations
+
+- No live CMS evidence was read.
+- No Contentful command was run.
+- No migration was edited.
+- No field, field ID, reference, validation, editor interface, or migration diff is approved by this batch.
+- Content type inventory and type IDs are approved; downstream fields, references, validations, editor interfaces, and migration diff remain pending.
+
+## Batch 02.2 Closeout
+
+Status:
+
+APPROVED
+
+External validation:
+
+PASS WITH NOTES
+
+Approved standalone type IDs:
+
+- `siteSettings`
+- `personProfile`
+- `socialLink`
+- `navigationItem`
+- `project`
+- `article`
+- `experienceItem`
+- `skill`
+- `skillGroup`
+- `tool`
+
+Approved type count: 10.
+
+Approved type-level outcomes:
+
+- `seoMetadata` is absorbed into owning Project/Article SEO override fields;
+- `tool` is approved as a standalone v1 type;
+- Learning/Certification is profile-owned lightweight v1 content;
+- `skillGroup` is approved as a standalone v1 type;
+- Contact standalone type is rejected;
+- Media standalone type is rejected;
+- dedicated Taxonomy content type is deferred;
+- generic Page/PageSection/component-shaped modeling is rejected.
+
+Resolved decision:
+
+- OD-11 — certification / learning representation — RESOLVED / APPROVED.
+
+Carry-forward:
+
+- fields — Batch 02.3;
+- field IDs — Batch 02.3;
+- required states — Batch 02.3;
+- media accessibility representation — Batch 02.3 / 02.4;
+- public-safety representation — Batch 02.3 / governance review;
+- references/cardinality — Batch 02.4;
+- validation/editorial contract — Batch 02.4;
+- migration reconciliation — Batch 02.5.
+
+Next:
+
+Batch 02.3 — Field + Field-ID Contract
+
+Do not start Batch 02.3 implementation during Batch 02.2 approval reconciliation.

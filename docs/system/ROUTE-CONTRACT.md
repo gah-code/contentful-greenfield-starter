@@ -98,7 +98,7 @@ Approved supporting decisions:
 | Work vs Projects | Work answers where and when contribution happened. Projects answer how specific problems were approached, solved, and evidenced. |
 | Projects index vs detail | `/projects` owns discovery and summary. `/projects/[slug]` owns the full public-safe case study. |
 | Writing index vs detail | `/writing` owns article discovery and previews. `/writing/[slug]` owns one complete public article. |
-| Skills vs Tools | RESOLVED / APPROVED by Batch 01.4. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise that capability. Exact Tool Contentful representation remains deferred to Phase 02. |
+| Skills vs Tools | RESOLVED / APPROVED by Batch 01.4. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise that capability. Batch 02.2 later approved Tool as a standalone v1 type; fields and references remain downstream Phase 02 work. |
 | Contact vs social links | `/contact` owns the conversion context. Social links are reused contact/profile data. |
 
 ## Route State Vocabulary
@@ -520,13 +520,12 @@ This route consumes Profile, Experience summary, Skill, Tool, Certification/Lear
 
 ### Deferred Behavior
 
-Final certification representation, personal-interest depth, and structured-data behavior.
+Certification field shape, personal-interest depth, and structured-data behavior.
 
 ### Open Decisions
 
 - OD-02 — secondary professional title / specialty
 - OD-03 — desired work type
-- OD-11 — certification representation
 
 ## Route: `/work`
 
@@ -1382,7 +1381,7 @@ Route path, canonical URL, breadcrumbs if used, relationship labels where safely
 
 ### Reuse Rules
 
-Tools and skills are related but distinct. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise that capability. This distinction is RESOLVED / APPROVED by Batch 01.4. Exact Tool Contentful representation remains deferred to Phase 02.
+Tools and skills are related but distinct. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise that capability. This distinction is RESOLVED / APPROVED by Batch 01.4. Batch 02.2 later approved Tool as a standalone v1 type; fields and references remain downstream Phase 02 work.
 
 Do not use proficiency percentages, proficiency bars, or a logo grid with no explanatory value.
 
@@ -1440,11 +1439,11 @@ Professional stack and platform capability discovery. Detailed metadata rules ar
 
 ### Future CMS Implications
 
-This route consumes Tool, Skill, Skill Group, Project, Experience, Article, and SEO metadata domains. It may require a content requirements decision about whether tools remain embedded/structured data or become a later standalone model. This is Content Requirements Matrix and Phase 02 input only.
+This route consumes Tool, Skill, Skill Group, Project, Experience, Article, and SEO metadata domains. Batch 02.2 later approves Tool as a standalone v1 type; fields, references, and validations remain Phase 02 input only.
 
 ### Deferred Behavior
 
-Final skills/tools taxonomy, standalone Contentful representation, filtering, ratings, hardware, and logo-wall behavior.
+Final skills/tools taxonomy, Tool fields/references, filtering, ratings, hardware, and logo-wall behavior.
 
 ### Open Decisions
 
@@ -1623,7 +1622,7 @@ Contact form, phone number, residential address, private contact information, un
 | `/tools` | Needs tool inventory, category/context rules, relationships to skills/projects/work, and route SEO inputs. |
 | `/contact` | Needs contact copy/channels, social links, résumé access, profile context, and route SEO inputs. |
 
-These route-contract implications are now carried into the approved `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`. Batch 01.5 — Phase 01 Validation + Freeze — is approved, Batch 02.1 is approved, and Batch 02.2 is next. They remain directional Phase 02 inputs and do not change content-model ledgers.
+These route-contract implications are now carried into the approved `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`. Batch 01.5 — Phase 01 Validation + Freeze — is approved, Batch 02.1 is approved, Batch 02.2 is approved, and Batch 02.3 is next. They remain directional Phase 02 inputs and do not change field, reference, validation, or migration ledgers.
 
 ## Deferred Behavior
 
@@ -1660,7 +1659,7 @@ Resolved downstream route-related decision:
 
 | ID | Status |
 |---|---|
-| OD-08 — Skills vs Tools semantic boundary | RESOLVED / APPROVED by Batch 01.4 external validation. Skill = professional capability; Tool = product, platform, framework, technology, or software used to exercise a capability. Exact Tool Contentful representation remains deferred to Phase 02. |
+| OD-08 — Skills vs Tools semantic boundary | RESOLVED / APPROVED by Batch 01.4 external validation. Skill = professional capability; Tool = product, platform, framework, technology, or software used to exercise a capability. Batch 02.2 later approved Tool as a standalone v1 type; fields and references remain downstream Phase 02 work. |
 
 Route-adjacent decisions still unresolved:
 
@@ -1678,8 +1677,7 @@ Unrelated open decisions intentionally not resolved:
 - OD-04 — final status of AI-Assisted Workflows & Automation pillar
 - OD-05 — final status of SEO, Accessibility & Content Quality pillar
 - OD-06 — final skill-group taxonomy
-- OD-11 — certification representation
-
 Resolved downstream decision:
 
 - OD-15 — SEO overrides vs generated defaults: RESOLVED / APPROVED by `docs/system/SEO-AND-METADATA-CONTRACT.md`.
+- OD-11 — certification / learning representation: RESOLVED / APPROVED by Phase 02 / Batch 02.2 as lightweight profile-owned content; exact fields remain Batch 02.3 work.

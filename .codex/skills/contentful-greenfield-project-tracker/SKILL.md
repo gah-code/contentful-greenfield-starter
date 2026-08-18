@@ -13,7 +13,7 @@ Inspect the current repository before editing in every mode. Use current reposit
 
 Personal Website CMS — Greenfield Contentful Starter
 Repository: `contentful-greenfield-starter`
-Model target: proposed ~10 semantic content type direction; final count not frozen until Phase 02 approval
+Model target: approved 10 standalone v1 semantic content types; fields, references, validations, and migration remain downstream Phase 02 work
 
 ## Project Mantra
 
@@ -35,8 +35,8 @@ Documentation is part of the build.
 - 01.5 — APPROVED.
 - Phase 02 — ACTIVE.
 - 02.1 — APPROVED.
-- 02.2 — NEXT.
-- 02.3 — LATER.
+- 02.2 — APPROVED.
+- 02.3 — NEXT.
 - 02.4 — LATER.
 - 02.5 — LATER.
 - 02.6 — LATER.
@@ -50,12 +50,30 @@ Batch 01.4 approved the Content Requirements Matrix and does not authorize Conte
 
 Batch 01.5 approved the Phase 01 requirements freeze after external validation returned PASS WITH NOTES.
 
-Batch 02.1 is approved after external validation returned PASS WITH NOTES. It reconciled proposed model artifacts against frozen Phase 01 requirements and does not approve content types, fields, field IDs, references, validations, migration changes, bootstrap execution, fixtures, frontend implementation, or seed content. Batch 02.2 owns the next content type contract work.
+Batch 02.1 is approved after external validation returned PASS WITH NOTES. It reconciled proposed model artifacts against frozen Phase 01 requirements and does not approve content types, fields, field IDs, references, validations, migration changes, bootstrap execution, fixtures, frontend implementation, or seed content.
+
+Batch 02.2 is approved after external validation returned PASS WITH NOTES. It approves the v1 standalone content type inventory and stable type IDs in `docs/content-model/CONTENT-TYPE-LEDGER.md`; it does not approve fields, field IDs, references, validations, migration changes, bootstrap execution, fixtures, frontend implementation, or seed content.
+
+Approved Batch 02.2 standalone type IDs:
+
+- `siteSettings`
+- `personProfile`
+- `socialLink`
+- `navigationItem`
+- `project`
+- `article`
+- `experienceItem`
+- `skill`
+- `skillGroup`
+- `tool`
+
+Approved standalone type count: 10.
 
 Decision summary:
 
 - OD-07 — RESOLVED / APPROVED.
-- OD-08 — RESOLVED / APPROVED. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise a capability. Exact Tool representation remains Phase 02 work.
+- OD-08 — RESOLVED / APPROVED. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise a capability. Batch 02.2 later approves Tool as a standalone v1 type; fields and references remain downstream Phase 02 work.
+- OD-11 — RESOLVED / APPROVED. Certification / learning evidence is lightweight profile-owned content in v1. Exact fields remain Batch 02.3 work.
 - OD-15 — RESOLVED / APPROVED.
 
 Remaining open decisions preserved for downstream work:
@@ -68,7 +86,6 @@ Remaining open decisions preserved for downstream work:
 - OD-06
 - OD-09
 - OD-10
-- OD-11
 - OD-12
 - OD-13
 - OD-14

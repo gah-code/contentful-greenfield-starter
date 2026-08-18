@@ -8,7 +8,7 @@ The repository demonstrates how I approach content systems with the same structu
 ![Phase](https://img.shields.io/badge/phase-02%20active-blue)
 ![CMS](https://img.shields.io/badge/CMS-Contentful-2478CC)
 ![Node](https://img.shields.io/badge/node-%3E%3D22-339933)
-![Model](https://img.shields.io/badge/model-under%20reconciliation-555555)
+![Model](https://img.shields.io/badge/model-type%20contract%20approved-555555)
 
 > **Architecture North Star**
 >
@@ -31,10 +31,10 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | --- | --- |
 | Current phase | Phase 02 - Content Model Contract + Bootstrap Migration |
 | Latest completed phase | Phase 01 - Complete / Frozen |
-| Latest approved batch | Batch 02.1 - Entry + Existing Model Reconciliation |
-| Next batch | Batch 02.2 - Content Type Contract - NEXT |
+| Latest approved batch | Batch 02.2 - Content Type Contract |
+| Next batch | Batch 02.3 - Field + Field-ID Contract |
 | Previous phase | Phase 00 - Complete |
-| Content model | Proposed artifacts under reconciliation |
+| Content model | 10 approved v1 semantic content types; fields, field IDs, references, and migration remain pending |
 | Environments | `master` + `dev` |
 | Bootstrap migration | Blocked / not run |
 | Seed content | Not started |
@@ -186,7 +186,7 @@ The existing proposed v1 direction starts from 10 semantic content types:
 
 `seoMetadata`, `socialLink`, `navigationItem`, `siteSettings`, `personProfile`, `project`, `article`, `experienceItem`, `skill`, and `skillGroup`.
 
-Phase 02 / Batch 02.1 reconciled that proposal against frozen Phase 01 requirements before any final content type, field ID, reference, validation, or migration execution is approved. The model represents editorial concepts rather than React components. Batch 01.3 approved Option 2 hybrid SEO ownership and classifies the broad legacy `seoMetadata` proposal as Phase 02 reconciliation input; the SEO contract prefers optional Project/Article editorial overrides for SEO title, SEO description, and social image unless later evidence justifies a reduced reusable SEO reference. Content type ownership lives in [docs/content-model/CONTENT-TYPE-LEDGER.md](docs/content-model/CONTENT-TYPE-LEDGER.md), field contracts live in [docs/content-model/FIELD-ID-LEDGER.md](docs/content-model/FIELD-ID-LEDGER.md), and references live in [docs/content-model/REFERENCE-MAP.md](docs/content-model/REFERENCE-MAP.md).
+Phase 02 / Batch 02.2 approves the v1 standalone type inventory before any field ID, reference, validation, or migration execution is approved. The approved inventory keeps semantic content separate from React components, absorbs the broad legacy `seoMetadata` type into owning editorial types, and adds `tool` as a standalone semantic type. Content type ownership lives in [docs/content-model/CONTENT-TYPE-LEDGER.md](docs/content-model/CONTENT-TYPE-LEDGER.md), field contracts live in [docs/content-model/FIELD-ID-LEDGER.md](docs/content-model/FIELD-ID-LEDGER.md), and references live in [docs/content-model/REFERENCE-MAP.md](docs/content-model/REFERENCE-MAP.md).
 
 ## Documentation
 
