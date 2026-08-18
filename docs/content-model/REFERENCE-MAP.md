@@ -27,7 +27,7 @@ Approved scope:
 - orphan/reuse guidance.
 
 Migration implementation:
-APPROVED / RECONCILED V1 / NOT RUN after Batch 02.5
+RE-APPROVED CORRECTED / RECONCILED V1 / NOT RE-EXECUTED after Batch 02.5
 
 Owner: Phase 02 - Content Model Contract + Bootstrap Migration
 
@@ -166,7 +166,7 @@ Project is the highest-pressure type because it carries case-study proof, media,
 
 ## Migration Implications
 
-Batch 02.5 reconciled the existing bootstrap migration against this approved contract.
+Batch 02.5 re-approves the corrected bootstrap migration against this approved contract.
 
 | Area | Approved 02.5 Result |
 |---|---|
@@ -180,6 +180,6 @@ Batch 02.5 reconciled the existing bootstrap migration against this approved con
 | Homepage selection | No `featuredProjects` field added. |
 | Legacy migration references | Removed `siteSettings.defaultSeo`, `project.seo`, and `article.seo`. |
 
-Migration implementation changed in Batch 02.5: yes, approved after external validation returned PASS WITH NOTES.
+Migration implementation changed in Batch 02.5: yes, re-approved after compatibility correction external revalidation.
 
 Contentful command run: no.

@@ -36,7 +36,7 @@ Approved scope:
 - derived/code/system exclusions.
 
 Migration syntax:
-APPROVED / RECONCILED V1 / NOT RUN after Batch 02.5
+RE-APPROVED CORRECTED / RECONCILED V1 / NOT RE-EXECUTED after Batch 02.5
 
 Owner: Phase 02 - Content Model Contract + Bootstrap Migration
 
@@ -429,13 +429,13 @@ OD-01, OD-02, OD-03, OD-04, OD-05, OD-09, OD-10, and OD-14 remain open content-a
 
 - No Contentful command was run.
 - No live CMS state was read.
-- Migration syntax is approved / reconciled V1 after Batch 02.5 and remains unexecuted.
+- Corrected migration syntax is re-approved / reconciled V1 after Batch 02.5 and remains unexecuted.
 - No fixtures, frontend adapters, or route implementations were created.
 - Cross-field validations may require application/editorial enforcement if Contentful schema validation cannot express them directly.
 
 ## Migration Handoff
 
-Batch 02.5 approved migration syntax, migration diff, and non-mutating preflight evidence.
+Batch 02.5 re-approves corrected migration syntax, migration diff, and non-mutating preflight evidence.
 
 | Area | Approved 02.5 Result |
 |---|---|
@@ -447,4 +447,4 @@ Batch 02.5 approved migration syntax, migration diff, and non-mutating preflight
 | Editor guidance/interface | Added concise field help and widgets where supported. |
 | SEO legacy | Replaced `seo` references with owning-type SEO fields. |
 | Derived values | Did not implement reading time, canonical URL, route path, robots, sitemap, breadcrumbs, or structured data fields. |
-| Safety | Bootstrap remains blocked pending Batch 02.6 execution gates. |
+| Safety | Bootstrap remains blocked pending fresh Batch 02.6 execution gates. |

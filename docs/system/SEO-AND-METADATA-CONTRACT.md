@@ -702,7 +702,7 @@ Batch 01.3 is approved after external validation:
 - Batch 01.3 is APPROVED.
 - At Batch 01.3 closeout, Batch 01.4 advanced to NEXT. This is historical, not the current Batch 01.4 state.
 - At Batch 01.3 closeout, Batch 01.5 was LATER. This is historical, not the current Batch 01.5 state.
-- At Batch 01.3 closeout, Phase 02 was DEFERRED. Phase 02 is now ACTIVE; Batch 02.1 is APPROVED, Batch 02.2 is APPROVED, Batch 02.3 is APPROVED, Batch 02.4 is APPROVED, Batch 02.5 is APPROVED, and Batch 02.6 is NEXT.
+- At Batch 01.3 closeout, Phase 02 was DEFERRED. Phase 02 is now ACTIVE; Batch 02.1 is APPROVED, Batch 02.2 is APPROVED, Batch 02.3 is APPROVED, Batch 02.4 is APPROVED, Batch 02.5 is RE-APPROVED AFTER COMPATIBILITY CORRECTION, and Batch 02.6 is BLOCKED PENDING FRESH GATE A.
 - Option 2 hybrid SEO ownership is documented.
 - OD-15 is RESOLVED / APPROVED.
 - OD-07 remains RESOLVED / APPROVED.

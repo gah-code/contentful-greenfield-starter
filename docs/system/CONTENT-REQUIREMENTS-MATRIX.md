@@ -646,7 +646,7 @@ Batch 01.4 is approved after external validation:
 - Batch 01.3 is APPROVED.
 - Batch 01.4 is APPROVED.
 - At Batch 01.4 closeout, Batch 01.5 advanced to NEXT. Batch 01.5 is now APPROVED, and Phase 01 is complete / frozen.
-- At Batch 01.4 closeout, Phase 02 was DEFERRED. Phase 02 is now ACTIVE; Batch 02.1 is APPROVED, Batch 02.2 is APPROVED, Batch 02.3 is APPROVED, Batch 02.4 is APPROVED, Batch 02.5 is APPROVED, and Batch 02.6 is NEXT.
+- At Batch 01.4 closeout, Phase 02 was DEFERRED. Phase 02 is now ACTIVE; Batch 02.1 is APPROVED, Batch 02.2 is APPROVED, Batch 02.3 is APPROVED, Batch 02.4 is APPROVED, Batch 02.5 is RE-APPROVED AFTER COMPATIBILITY CORRECTION, and Batch 02.6 is BLOCKED PENDING FRESH GATE A.
 - all nine approved routes have content requirements.
 - required, optional, conditional, deferred, and not-applicable requirements are classified.
 - editorial/code/derived/mixed ownership is classified.
