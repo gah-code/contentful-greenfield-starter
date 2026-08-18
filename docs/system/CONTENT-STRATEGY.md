@@ -2,7 +2,7 @@
 
 Status: Phase 01 / Batch 01.1 — APPROVED / FROZEN FOR PHASE 02 INPUT
 Owner: Phase 01 — Content Strategy + Route Contract
-Current downstream consumer: Phase 02 — Content Model Contract + Bootstrap Migration — ACTIVE / Batch 02.3 APPROVED / Batch 02.4 NEXT
+Current downstream consumer: Phase 02 — Content Model Contract + Bootstrap Migration — ACTIVE / Batch 02.4 APPROVED / Batch 02.5 NEXT
 
 ## Purpose
 
@@ -211,7 +211,7 @@ Conditional domain:
 Current domain decisions:
 
 - Learning / certifications: lightweight v1.
-- Tools: v1. Batch 02.2 later approves Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; references and validations remain downstream Phase 02 work.
+- Tools: v1. Batch 02.2 later approves Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; Batch 02.4 approves Tool references and validations.
 - Reusable CTA: do not automatically create a standalone model.
 - Other: no speculative catch-all domain.
 
@@ -791,11 +791,8 @@ Do not mark these assumptions validated until their gates produce direct evidenc
 | OD-03 | Desired work type | Positioning/career direction decision |
 | OD-04 | Final status of AI-Assisted Workflows & Automation pillar | Fixture/content validation |
 | OD-05 | Final status of SEO, Accessibility & Content Quality pillar | Fixture/content validation |
-| OD-06 | Final skill-group taxonomy | Content requirements matrix |
 | OD-09 | Which three projects become homepage features | Fixture/content decision |
 | OD-10 | Which enterprise projects are safely publishable | Confidentiality review |
-| OD-12 | Taxonomy depth | Content requirements matrix / Phase 02 |
-| OD-13 | Manual vs derived related content | Content requirements / adapter contract |
 | OD-14 | Public-safe homepage proof metrics | Content validation |
 
 These are not Batch 01.1 failures unless they materially prevent the content-strategy foundation from being documented.
@@ -805,8 +802,11 @@ These are not Batch 01.1 failures unless they materially prevent the content-str
 | ID | Decision | Resolution |
 |---|---|---|
 | OD-07 | Final formal v1 route contract | RESOLVED / APPROVED by Phase 01 / Batch 01.2 — Route Contract external validation. Approved v1 routes: `/`, `/about`, `/work`, `/projects`, `/projects/[slug]`, `/writing`, `/writing/[slug]`, `/tools`, `/contact`. |
-| OD-08 | Skills vs Tools semantic boundary | RESOLVED / APPROVED by Phase 01 / Batch 01.4 — Content Requirements Matrix external validation. Skill = professional capability; Tool = product, platform, framework, technology, or software used to exercise a capability. Batch 02.2 later approved Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; references remain downstream Phase 02 work. |
+| OD-08 | Skills vs Tools semantic boundary | RESOLVED / APPROVED by Phase 01 / Batch 01.4 — Content Requirements Matrix external validation. Skill = professional capability; Tool = product, platform, framework, technology, or software used to exercise a capability. Batch 02.2 later approved Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; Batch 02.4 approves references and validations. |
 | OD-11 | Certification representation | RESOLVED / APPROVED by Phase 02 / Batch 02.2 — Content Type Contract. Certification / learning evidence is lightweight profile-owned content in v1; Batch 02.3 approves `personProfile.learningHighlights`. |
+| OD-06 | Final skill-group taxonomy | RESOLVED / APPROVED by supplemental Phase 02 / Batch 02.4 decision validation. SkillGroup remains a small flat v1 capability grouping type; membership and order live on `skillGroup.skills`. |
+| OD-12 | Taxonomy depth | RESOLVED / APPROVED by supplemental Phase 02 / Batch 02.4 decision validation. V1 uses lean controlled values/freeform tags where appropriate and no dedicated taxonomy content type. |
+| OD-13 | Manual vs derived related content | RESOLVED / APPROVED by supplemental Phase 02 / Batch 02.4 decision validation. Authored semantic references are used where editor intent matters; reverse relationships derive where duplicate authorship would drift. |
 | OD-15 | SEO overrides vs generated defaults | RESOLVED / APPROVED by Phase 01 / Batch 01.3 — SEO + Metadata Contract. SEO uses hybrid ownership: optional editorial overrides for SEO title, SEO description, and social image; technical SEO is code/state-derived. Batch 02.3 approves the Project/Article SEO override field IDs. |
 
 ## Downstream Consumers
@@ -817,4 +817,4 @@ Batch 01.1 prepares controlled strategy input for:
 - Batch 01.3 — SEO + Metadata Contract
 - Batch 01.4 — Content Requirements Matrix, approved in `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`
 - Batch 01.5 — Phase 01 Validation + Freeze, approved
-- Phase 02 — Content Model Contract + Bootstrap Migration, active; Batch 02.3 approved and Batch 02.4 next
+- Phase 02 — Content Model Contract + Bootstrap Migration, active; Batch 02.4 approved and Batch 02.5 next

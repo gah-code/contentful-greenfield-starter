@@ -831,7 +831,7 @@ The approved Batch 01.2 internal-link relationship map remains authoritative.
 
 Important routes must not be orphaned, link labels must be meaningful, related links must be contextually justified, and links must not be added solely for search manipulation.
 
-OD-13 remains OPEN.
+At Batch 01.3 closeout, OD-13 remained OPEN. It is later RESOLVED / APPROVED by supplemental Phase 02 / Batch 02.4 decision validation.
 
 ### Phase 02 CMS Handoff
 
@@ -1125,7 +1125,7 @@ Resolved:
 Preserved:
 
 - Phase 02 model representation decisions remain deferred.
-- OD-01 through OD-06 and OD-09 through OD-14 remain unresolved as applicable.
+- At Batch 01.4 closeout, OD-01 through OD-06 and OD-09 through OD-14 remained unresolved as applicable. Later Phase 02 validation resolves OD-06, OD-11, OD-12, and OD-13.
 - no model artifacts were changed.
 
 Next:
@@ -1316,12 +1316,12 @@ Fixture requirements are defined but not created:
 | OD-03 — Desired work type | PROPOSED / OPEN | CONTENT AUTHORING DECISION | No | Contact/profile positioning decision. |
 | OD-04 — AI-assisted workflow pillar validation | PROPOSED / OPEN | CONTENT AUTHORING DECISION | No | Validate against real project/article inventory. |
 | OD-05 — SEO/accessibility/content-quality pillar validation | PROPOSED / OPEN | CONTENT AUTHORING DECISION | No | Validate as pillar or supporting theme against real content. |
-| OD-06 — Skill-group taxonomy | PROPOSED / OPEN | PHASE 02 MODEL DECISION | No | Decide taxonomy representation and grouping depth. |
+| OD-06 — Skill-group taxonomy | RESOLVED / APPROVED AFTER PHASE 01 | PHASE 02 MODEL DECISION | No | Resolved by supplemental Phase 02 / Batch 02.4 decision validation. |
 | OD-09 — Exact homepage featured projects | PROPOSED / OPEN | CONTENT AUTHORING DECISION | No | Choose public-safe featured Project entries later. |
 | OD-10 — Exact public-safe enterprise projects | PROPOSED / OPEN | CONTENT AUTHORING DECISION | No | Confidentiality review before publication. |
-| OD-11 — Certification representation | PROPOSED / OPEN | PHASE 02 MODEL DECISION | No | Decide lightweight profile content vs modeled structure. |
-| OD-12 — Taxonomy depth | PROPOSED / OPEN | PHASE 02 MODEL DECISION | No | Decide text, arrays, references, or controlled taxonomy. |
-| OD-13 — Manual vs derived related content | PROPOSED / OPEN | PHASE 02 MODEL DECISION | No | Decide references, derived relationships, or mixed approach. |
+| OD-11 — Certification representation | RESOLVED / APPROVED AFTER PHASE 01 | PHASE 02 MODEL DECISION | No | Resolved by Phase 02 / Batch 02.2. |
+| OD-12 — Taxonomy depth | RESOLVED / APPROVED AFTER PHASE 01 | PHASE 02 MODEL DECISION | No | Resolved by supplemental Phase 02 / Batch 02.4 decision validation. |
+| OD-13 — Manual vs derived related content | RESOLVED / APPROVED AFTER PHASE 01 | PHASE 02 MODEL DECISION | No | Resolved by supplemental Phase 02 / Batch 02.4 decision validation. |
 | OD-14 — Homepage proof metrics | PROPOSED / OPEN | CONTENT AUTHORING DECISION | No | Choose credible public-safe metrics only if available. |
 
 Resolved decisions remain unchanged:
@@ -1380,7 +1380,7 @@ Read-only review of proposed model artifacts found no Phase 01 blocker:
 | `article` | ALIGNED WITH PHASE 01 | Core Article domain is approved; fields, validations, relationships, and SEO overrides remain Phase 02 work. |
 | `experienceItem` | ALIGNED WITH PHASE 01 | Supports `/work`, homepage proof, and project context. |
 | `skill` | ALIGNED WITH PHASE 01 | Skill means professional capability. |
-| `skillGroup` | NEEDS PHASE 02 RECONCILIATION | Grouping depth remains OD-06 / OD-12 work. |
+| `skillGroup` | RECONCILED AFTER PHASE 01 | Grouping depth resolved by supplemental Phase 02 / Batch 02.4 decision validation. |
 | `seoMetadata` | NEEDS PHASE 02 RECONCILIATION | Broad reusable SEO proposal conflicts with approved lean/hybrid v1 direction unless reduced and justified. |
 | Tool concept | NEEDS PHASE 02 RECONCILIATION | Tool is semantically approved but exact representation is not frozen. |
 | Learning / Certification concept | NEEDS PHASE 02 RECONCILIATION | Optional evidence is approved; model shape remains open. |
@@ -1401,7 +1401,7 @@ Generic page builders and CMS-driven component composition remain deferred/out o
 |---|---|---|
 | Phase state references | CURRENT / HISTORICAL | Current state is Phase 01 COMPLETE / FROZEN, Batch 01.5 APPROVED, and Phase 02 NEXT. Earlier freeze-candidate and next-batch states are historical. |
 | Route references | CURRENT / PROHIBITIVE | Approved v1 route inventory remains the nine-route set. `/uses`, `/resume`, `/blog`, `/articles`, and `/skills` are not active v1 routes. |
-| Decision references | CURRENT / HISTORICAL | OD-07, OD-08, and OD-15 are resolved/approved. OD-01 through OD-06 and OD-09 through OD-14 remain open. Earlier OD-08 open references are historical. |
+| Decision references | CURRENT / HISTORICAL | OD-07, OD-08, OD-15, and later Phase 02 decisions OD-06, OD-11, OD-12, and OD-13 are resolved/approved. OD-01 through OD-05, OD-09, OD-10, and OD-14 remain open. Earlier open references are historical. |
 | SEO/model references | CURRENT / PROPOSED | Hybrid SEO is approved. Broad legacy `seoMetadata` remains proposed and requires Phase 02 reconciliation. |
 | Page-builder references | CURRENT / PROHIBITIVE | Generic page builders and CMS-driven page composition remain excluded from v1. |
 | Model artifacts | PROPOSED | Proposed model ledgers and bootstrap migration are Phase 02 inputs only. |

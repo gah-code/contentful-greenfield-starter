@@ -13,7 +13,7 @@ Inspect the current repository before editing in every mode. Use current reposit
 
 Personal Website CMS — Greenfield Contentful Starter
 Repository: `contentful-greenfield-starter`
-Model target: approved 10 standalone v1 semantic content types; field and field-ID contract approved; references, validations, and migration remain downstream Phase 02 work
+Model target: approved 10 standalone v1 semantic content types; field and field-ID contract approved; reference, validation, and editorial contract approved; migration remains downstream Phase 02 work
 
 ## Project Mantra
 
@@ -37,8 +37,8 @@ Documentation is part of the build.
 - 02.1 — APPROVED.
 - 02.2 — APPROVED.
 - 02.3 — APPROVED.
-- 02.4 — NEXT.
-- 02.5 — LATER.
+- 02.4 — APPROVED.
+- 02.5 — NEXT.
 - 02.6 — LATER.
 - 02.7 — LATER.
 - Bootstrap migration — BLOCKED / NOT RUN.
@@ -55,6 +55,8 @@ Batch 02.1 is approved after external validation returned PASS WITH NOTES. It re
 Batch 02.2 is approved after external validation returned PASS WITH NOTES. It approves the v1 standalone content type inventory and stable type IDs in `docs/content-model/CONTENT-TYPE-LEDGER.md`; it does not approve fields, field IDs, references, validations, migration changes, bootstrap execution, fixtures, frontend implementation, or seed content.
 
 Batch 02.3 is approved after external validation returned PASS WITH NOTES. It approves the field and field-ID contract in `docs/content-model/FIELD-ID-LEDGER.md`; it does not approve reference cardinality, target restrictions, validations, editor interfaces, migration changes, bootstrap execution, fixtures, frontend implementation, or seed content.
+
+Batch 02.4 is approved after external validation returned PASS WITH NOTES. It approves the reference, validation, and editorial contract in `docs/content-model/REFERENCE-MAP.md` and `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md`; supplemental external decision validation resolves OD-06, OD-12, and OD-13 without changing the approved contracts. It does not approve migration changes, bootstrap execution, fixtures, frontend implementation, Contentful mutation, or seed content.
 
 Approved Batch 02.2 standalone type IDs:
 
@@ -75,16 +77,20 @@ Contract layer status:
 
 - Type contract — APPROVED.
 - Field + field-ID contract — APPROVED.
-- Reference + validation contract — NEXT / NOT FINAL.
-- Editor-interface contract — NOT FINAL.
+- References — APPROVED.
+- Validations — APPROVED.
+- Editorial rules — APPROVED.
 - Migration — BLOCKED / NOT RUN.
 - Seed content — NOT STARTED.
 
 Decision summary:
 
 - OD-07 — RESOLVED / APPROVED.
-- OD-08 — RESOLVED / APPROVED. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise a capability. Batch 02.2 later approves Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; references and validations remain downstream Phase 02 work.
-- OD-11 — RESOLVED / APPROVED. Certification / learning evidence is lightweight profile-owned content in v1. Batch 02.3 approves `personProfile.learningHighlights`; validation and editor guidance remain Batch 02.4 work.
+- OD-08 — RESOLVED / APPROVED. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise a capability. Batch 02.2 later approves Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; Batch 02.4 approves Tool references and validations.
+- OD-11 — RESOLVED / APPROVED. Certification / learning evidence is lightweight profile-owned content in v1. Batch 02.3 approves `personProfile.learningHighlights`; Batch 02.4 approves validation and editor guidance.
+- OD-06 — RESOLVED / APPROVED.
+- OD-12 — RESOLVED / APPROVED.
+- OD-13 — RESOLVED / APPROVED.
 - OD-15 — RESOLVED / APPROVED.
 
 Remaining open decisions preserved for downstream work:
@@ -94,11 +100,8 @@ Remaining open decisions preserved for downstream work:
 - OD-03
 - OD-04
 - OD-05
-- OD-06
 - OD-09
 - OD-10
-- OD-12
-- OD-13
 - OD-14
 
 ## Environment Model

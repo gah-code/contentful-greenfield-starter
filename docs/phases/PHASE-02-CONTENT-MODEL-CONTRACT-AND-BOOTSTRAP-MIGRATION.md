@@ -11,7 +11,7 @@ Phase 02 starts from approved content requirements, reconciles the existing prop
 
 ## Current Gate
 
-Batch 02.3 — Field + Field-ID Contract — APPROVED
+Batch 02.5 — Bootstrap Migration Reconciliation + Preflight — NEXT
 
 Bootstrap migration:
 
@@ -50,8 +50,8 @@ The migration is not the source of requirements. It is proposed implementation i
 | 02.1 | Entry + Existing Model Reconciliation | Reconcile existing proposed model artifacts with frozen Phase 01 requirements. | APPROVED |
 | 02.2 | Content Type Contract | Approve the semantic v1 content type inventory and type IDs. | APPROVED |
 | 02.3 | Field + Field-ID Contract | Approve fields, field IDs, types, required states, localization behavior, relationship semantic intents, and semantic purpose. | APPROVED |
-| 02.4 | References + Validations + Editorial Contract | Approve references, cardinality, validations, display fields, editor-facing help, and editorial usability constraints. | NEXT |
-| 02.5 | Bootstrap Migration Reconciliation + Preflight | Align the existing bootstrap migration to the approved model contract and perform non-mutating safety review. | LATER |
+| 02.4 | References + Validations + Editorial Contract | Approve references, cardinality, validations, display fields, editor-facing help, and editorial usability constraints. | APPROVED |
+| 02.5 | Bootstrap Migration Reconciliation + Preflight | Align the existing bootstrap migration to the approved model contract and perform non-mutating safety review. | NEXT |
 | 02.6 | Bootstrap Migration Execution | Execute the approved bootstrap migration against `dev` only and record evidence. | LATER |
 | 02.7 | Phase 02 Validation + Closeout | Verify expected model state, master protection, migration evidence, truth-surface alignment, and readiness for Phase 03. | LATER |
 
@@ -114,9 +114,9 @@ These are directional classifications only. They are not field IDs, finalized Co
 | Project | Title, slug, summary, narrative, role, problem, approach, outcomes, public safety, media, related content, SEO inputs. | LIKELY FIELD / LIKELY REFERENCE / NEEDS PHASE 02 DECISION | How much long-form structure is modeled as fields versus rich text? |
 | Article | Title, slug, excerpt, publish date, body, author/profile context, classification, related content, SEO inputs. | LIKELY FIELD / LIKELY REFERENCE / DERIVED — DO NOT MODEL | Reading time must remain derived unless later evidence says otherwise. |
 | Skill | Capability labels reused across routes; no proficiency bars or percentages. | LIKELY FIELD / LIKELY REFERENCE | How should skills group, order, and relate to tools/projects? |
-| Skill Group | Grouping is useful, but OD-06 and OD-12 remain open. | NEEDS PHASE 02 DECISION | Is `skillGroup` still a type, a controlled value, or code/config grouping? |
+| Skill Group | Grouping is useful; OD-06 and OD-12 are resolved/approved by supplemental Batch 02.4 decision reconciliation. | NEEDS PHASE 02 DECISION | Batch 02.2 approves `skillGroup` as a type; Batch 02.4 approves grouping/reference/validation rules. |
 | Tool | Product/platform/framework/software used to exercise a capability. | NEEDS PHASE 02 DECISION | Standalone type versus embedded values, controlled vocabulary, taxonomy, or mixed strategy. |
-| Learning / Certification | Lightweight optional evidence, credential links public-safe. | NEEDS PHASE 02 DECISION | Profile-owned `learningHighlights` field approved by Batch 02.3; RichText guidance remains 02.4. |
+| Learning / Certification | Lightweight optional evidence, credential links public-safe. | NEEDS PHASE 02 DECISION | Profile-owned `learningHighlights` field approved by Batch 02.3; Batch 02.4 approves Rich Text guidance. |
 | Contact | Public contact method, invitation copy, availability/context, social link reuse, resume access. | LIKELY FIELD / NEEDS PHASE 02 DECISION | Site/profile singleton boundary and resume asset strategy. |
 | SEO Editorial Override | Optional `seoTitle?`, `seoDescription?`, `socialImage?` on dynamic editorial content. | LIKELY FIELD / NEEDS PHASE 02 DECISION | Direct Project/Article fields versus reduced reusable `seoMetadata` reference. |
 | Media | Profile photo, project representative image, resume PDF required; other media optional/deferred. | LIKELY FIELD / NEEDS PHASE 02 DECISION | Asset fields, alt text ownership, galleries, and public-safety review shape. |
@@ -133,11 +133,11 @@ These are directional classifications only. They are not field IDs, finalized Co
 | `article` | Proposed writing content type. | Article is a core collection/detail domain. | ALIGNED WITH REFINEMENT | 02.2 / 02.3 / 02.4 |
 | `experienceItem` | Proposed professional timeline entry. | Experience is independently meaningful and reused by `/`, `/about`, `/work`, and project evidence. | ALIGNED WITH REFINEMENT | 02.2 / 02.3 / 02.4 |
 | `skill` | Proposed individual capability or technology. | Phase 01 resolves Skill as professional capability, not tool. Proficiency percentages are excluded. | ALIGNED WITH REFINEMENT | 02.2 / 02.3 |
-| `skillGroup` | Proposed grouped skills. | Skill grouping remains OD-06 / OD-12 work. | NEEDS PHASE 02 RECONCILIATION | 02.2 |
+| `skillGroup` | Proposed grouped skills. | Skill grouping is resolved by OD-06 / OD-12 and approved Batch 02.4 grouping/reference rules. | RECONCILED | 02.2 / 02.4 |
 | `seoMetadata` | Broad reusable SEO type. | Hybrid SEO limits editorial overrides to title, description, and social image; technical SEO is code/state-owned. | NEEDS PHASE 02 RECONCILIATION | 02.2 / 02.3 |
 | Tool requirement | No standalone proposed `tool` type; tools appear as strings/technology arrays and route/domain requirements. | Tool semantic identity is approved, but Contentful representation is not. | NEEDS PHASE 02 DECISION | 02.2 |
 | Learning / Certification requirement | Explicitly deferred as a type in the original ledger. | Lightweight optional evidence is approved; profile-owned `learningHighlights` field approved by Batch 02.3. | NEEDS PHASE 02 DECISION | 02.4 editorial guidance |
-| taxonomy | Tags/categories begin as short text or arrays in proposal. | Taxonomy depth remains OD-12. | NEEDS PHASE 02 DECISION | 02.3 |
+| taxonomy | Tags/categories begin as short text or arrays in proposal. | Taxonomy depth is resolved by OD-12; no dedicated taxonomy content type is approved. | RECONCILED | 02.3 / 02.4 |
 | related content | `article.relatedProjects[]`; other relationships absent. | Related content appears across project, article, work, tool, and experience contexts. | NEEDS PHASE 02 RECONCILIATION | 02.4 |
 
 No final type inventory is approved by Batch 02.1.
@@ -182,13 +182,13 @@ Article
 └── socialImage?
 ```
 
-Batch 02.2 later resolves the type-level comparison: broad standalone `seoMetadata` is not a v1 content type, and SEO override concepts are absorbed into owning Project/Article content. Batch 02.3 approves exact owning-type field IDs; validation remains Batch 02.4 work.
+Batch 02.2 later resolves the type-level comparison: broad standalone `seoMetadata` is not a v1 content type, and SEO override concepts are absorbed into owning Project/Article content. Batch 02.3 approves exact owning-type field IDs; Batch 02.4 approves validation guidance.
 
 Historical comparison considered:
 
 | Option | Candidate | Evaluation Required |
 |---|---|---|
-| A | Direct optional Project/Article SEO fields | Approved at the field-ID level by Batch 02.3; validation remains Batch 02.4 work. |
+| A | Direct optional Project/Article SEO fields | Approved at the field-ID level by Batch 02.3; Batch 02.4 approves validation guidance. |
 | B | Reduced reusable `seoMetadata` reference | Requires demonstrated reuse, independent editorial lifecycle, and editor value. |
 
 Evaluation criteria:
@@ -316,7 +316,7 @@ Presentation-only icon or component decisions must not become CMS fields without
 | organization/client, timeline, team, metrics, architecture | LIKELY FIELD / NEEDS PHASE 02 DECISION | Conditional, public-safe, and evidence-backed. |
 | CMS/platform, frontend stack, tools | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | Depends on Tool representation. |
 | repository URL, live URL | LIKELY FIELD | Public-safe links only. |
-| related writing, related experience | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | OD-13 remains open. |
+| related writing, related experience | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | At Batch 02.1, OD-13 remained open; it is later resolved by supplemental Batch 02.4 decision reconciliation. |
 | SEO overrides | LIKELY FIELD / NEEDS PHASE 02 DECISION | Direct fields versus reduced reusable reference remains open. |
 
 ## Article Pressure Review
@@ -326,8 +326,8 @@ Presentation-only icon or component decisions must not become CMS fields without
 | title, slug, excerpt, publish date, body | LIKELY FIELD | No field IDs approved. |
 | updated date, hero media, references, code examples | LIKELY FIELD / NEEDS PHASE 02 DECISION | Optional unless content pattern requires it. |
 | author/profile | LIKELY REFERENCE | Reuse canonical Profile. |
-| classification/pillar, tags | NEEDS PHASE 02 DECISION | OD-05 and OD-12 remain open. |
-| related writing, related projects | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | OD-13 remains open. |
+| classification/pillar, tags | NEEDS PHASE 02 DECISION | OD-05 remains open; OD-12 is later resolved by supplemental Batch 02.4 decision reconciliation. |
+| related writing, related projects | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | At Batch 02.1, OD-13 remained open; it is later resolved by supplemental Batch 02.4 decision reconciliation. |
 | reading time | DERIVED — DO NOT MODEL | Calculate from body if reliable. |
 | SEO overrides | LIKELY FIELD / NEEDS PHASE 02 DECISION | Direct fields versus reduced reusable reference remains open. |
 
@@ -338,7 +338,7 @@ Presentation-only icon or component decisions must not become CMS fields without
 | company, role, dates, summary, responsibilities, achievements | LIKELY FIELD | Public-safe wording required. |
 | tools/tech, CMS/platform | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | Depends on Tool representation. |
 | employment type, location, metrics, company URL, logo, team/market scale | LIKELY FIELD / NEEDS PHASE 02 DECISION | Optional or conditional. |
-| related projects, related writing | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | OD-13 remains open. |
+| related projects, related writing | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | At Batch 02.1, OD-13 remained open; it is later resolved by supplemental Batch 02.4 decision reconciliation. |
 
 ## Field-ID Ledger Audit
 
@@ -366,7 +366,7 @@ No field ID changed.
 | POSSIBLY JUSTIFIED | 1 relationship: `article.relatedProjects[]`. |
 | NEEDS RECONCILIATION | 4 relationships: `siteSettings.defaultSeo`, `project.seo`, `article.seo`, `skillGroup.skills[]`. |
 | PRESENTATION-DRIVEN — QUESTIONABLE | None conclusively from the current reference map. |
-| DERIVABLE — QUESTIONABLE | Related Project/Article relationships may be derivable or mixed; OD-13 remains open. |
+| DERIVABLE — QUESTIONABLE | Related Project/Article relationships may be derivable or mixed; at Batch 02.1 OD-13 remained open and is later resolved by supplemental Batch 02.4 decision reconciliation. |
 | UNSUPPORTED | Broad SEO references are unsupported as final schema truth until SEO representation is decided. |
 
 No reference changed.
@@ -380,11 +380,11 @@ Migration file inspected:
 | Area | Migration Current State | Frozen Requirement | Classification | Future Action |
 |---|---|---|---|---|
 | Content types | Creates `seoMetadata`, `socialLink`, `navigationItem`, `siteSettings`, `personProfile`, `project`, `article`, `experienceItem`, `skill`, `skillGroup`. | Batch 02.2 approves the 10-type inventory, removes standalone `seoMetadata`, adds `tool`, absorbs Learning/Certification, and defers taxonomy. | NEEDS RECONCILIATION | Migration reconciliation waits until Batch 02.5. |
-| Display fields | Uses internal/name/title/role labels. | Display fields must support editor usability. | LIKELY ALIGNED / NEEDS REVIEW | Batch 02.4 validates display fields. |
+| Display fields | Uses internal/name/title/role labels. | Display fields must support editor usability. | RECONCILED | Batch 02.4 approves display fields. |
 | Field IDs | Migration includes many fields beyond the thin ledger. | Field IDs must be approved before migration. | NEEDS RECONCILIATION | Batch 02.3 approves the field ledger; migration reconciliation waits until Batch 02.5. |
 | Required states | Several fields are required, including SEO title/description and article reading fields. | Required state must follow route readiness, not early schema assumptions. | NEEDS RECONCILIATION | Batch 02.3 / 02.4 approve required policy. |
-| Validations | Slug regex, length limits, numeric ranges, link content types. | Validations must be evidence-based and editor-friendly. | NEEDS RECONCILIATION | Batch 02.4 approves validation strength. |
-| References | SEO references, social/navigation references, article-to-project reference, skillGroup-to-skill reference. | References need semantic ownership and cardinality review. | NEEDS RECONCILIATION | Batch 02.4 approves reference map. |
+| Validations | Slug regex, length limits, numeric ranges, link content types. | Validations must be evidence-based and editor-friendly. | RECONCILED | Batch 02.4 approves validation strength. |
+| References | SEO references, social/navigation references, article-to-project reference, skillGroup-to-skill reference. | References need semantic ownership and cardinality review. | RECONCILED | Batch 02.4 approves the reference map. |
 | Rich text | `personProfile.longBio`, `project.body`, `article.body`. | Long-form content is required in some domains. | LIKELY ALIGNED / NEEDS REVIEW | Batch 02.3 determines field shape and configuration. |
 | SEO assumptions | Broad `seoMetadata` includes `canonicalUrl`, `openGraphImage`, `noIndex`, `noFollow`. | Technical SEO is code/state-owned; only title/description/social image overrides are editorial candidates. | NEEDS RECONCILIATION | Remove, reduce, or refactor in later migration reconciliation after approval. |
 | Fields no longer justified | `canonicalUrl`, `noIndex`, `noFollow`, `article.readingTimeMinutes`, `skill.proficiency` are not supported by frozen Phase 01 as CMS-owned fields. | Derived/code-owned/excluded concepts should not be modeled. | POTENTIAL REMOVAL / REQUIRES DECISION | Batch 02.3 approves exclusion; migration edit waits until Batch 02.5. |
@@ -674,7 +674,7 @@ Classification: APPROVED V1 TYPE.
 
 Classification: APPROVED V1 TYPE.
 
-`skillGroup` is approved as a small curated grouping type because Phase 01 requires grouped capability presentation and fixture coverage. OD-06 and OD-12 remain relevant to grouping taxonomy, ordering, and relationship shape. References are not frozen in Batch 02.2.
+`skillGroup` is approved as a small curated grouping type because Phase 01 requires grouped capability presentation and fixture coverage. At Batch 02.2, OD-06 and OD-12 remained relevant to grouping taxonomy, ordering, and relationship shape; both are later resolved by supplemental Batch 02.4 decision reconciliation. References are not frozen in Batch 02.2.
 
 ### `seoMetadata` Decision
 
@@ -718,7 +718,7 @@ Contentful Asset remains the underlying media object. No standalone Media wrappe
 
 Classification: DEFER FROM V1.
 
-No dedicated taxonomy content type is approved for v1. Article category/pillar, project type, tags, tool category, and skill grouping can start as owning-entry values or `skillGroup` where appropriate. OD-12 remains open for taxonomy depth and validation strength.
+No dedicated taxonomy content type is approved for v1. Article category/pillar, project type, tags, tool category, and skill grouping can start as owning-entry values or `skillGroup` where appropriate. At Batch 02.2, OD-12 remained open for taxonomy depth and validation strength; it is later resolved by supplemental Batch 02.4 decision reconciliation.
 
 ### Generic Page-Builder Rejection
 
@@ -850,9 +850,9 @@ Migration executed: no.
 
 ### Downstream Field Questions
 
-Batch 02.3 approves fields, field IDs, field types, required-state intent, direct SEO override fields, public-safety representation, media/alt ownership baseline, skill/tool fields, lightweight Learning/Certification shape, and simple taxonomy values. Display-field candidates, exact validations, and editor interfaces remain Batch 02.4 work.
+Batch 02.3 approves fields, field IDs, field types, required-state intent, direct SEO override fields, public-safety representation, media/alt ownership baseline, skill/tool fields, lightweight Learning/Certification shape, and simple taxonomy values. Batch 02.4 approves display fields, exact validations, and editor guidance where documented.
 
-Batch 02.4 must decide references, cardinality, validations, singleton selection, editor help, route constraints, relationship direction, orphan-risk mitigation, and editor usability rules.
+Batch 02.4 approves references, cardinality, validations, singleton selection, editor help, route constraints, relationship direction, orphan-risk mitigation, and editor usability rules.
 
 ### Evidence Limitations
 
@@ -907,10 +907,10 @@ Carry-forward:
 - fields — approved by Batch 02.3;
 - field IDs — approved by Batch 02.3;
 - required-state intent — approved by Batch 02.3;
-- media accessibility representation — Batch 02.3 baseline approved; editorial rules in Batch 02.4;
-- public-safety representation — Batch 02.3 governance-first boundary approved; editorial rules in Batch 02.4;
-- references/cardinality — Batch 02.4;
-- validation/editorial contract — Batch 02.4;
+- media accessibility representation — Batch 02.3 baseline approved; Batch 02.4 approves editorial rules;
+- public-safety representation — Batch 02.3 governance-first boundary approved; Batch 02.4 approves editorial rules;
+- references/cardinality — approved by Batch 02.4;
+- validation/editorial contract — approved by Batch 02.4;
 - migration reconciliation — Batch 02.5.
 
 Next:
@@ -1048,7 +1048,7 @@ Relationship intents:
 
 ### Article Classification Strategy
 
-Approved strategy: lean owning-entry classification through `contentPillar`, `category`, and `tags`. No taxonomy type is created. OD-05 and OD-12 remain open; allowed values and validation strength are 02.4 work.
+Approved strategy: lean owning-entry classification through `contentPillar`, `category`, and `tags`. No taxonomy type is created. OD-05 remains open; OD-12 is resolved/approved by supplemental Batch 02.4 decision reconciliation. Allowed values and validation strength are approved by Batch 02.4 where documented.
 
 ### experienceItem Fields
 
@@ -1083,7 +1083,7 @@ Relationship intent:
 
 - `skills`
 
-OD-06 and OD-12 remain open for grouping taxonomy and validation strength.
+OD-06 and OD-12 are resolved/approved by supplemental Batch 02.4 decision reconciliation; Batch 02.4 approves grouping mechanics and validation strength where documented.
 
 ### tool Fields
 
@@ -1145,7 +1145,7 @@ No standalone Contact type, contact form model, private phone, residential addre
 
 Contentful Asset remains the media object. Approved asset fields live on owning entries: `profileImage`, `resume`, `heroImage`, `galleryImages`, `socialImage`, `companyLogo`, and `logo`.
 
-Batch 02.3 approves Asset metadata as the sufficient v1 baseline, with 02.4 required to define alt/context, decorative media, public-safe media, and resume link-label guidance.
+Batch 02.3 approves Asset metadata as the sufficient v1 baseline; Batch 02.4 approves alt/context, decorative media, public-safe media, and resume link-label guidance.
 
 ### Public-Safety Representation
 
@@ -1303,3 +1303,327 @@ Next:
 Batch 02.4 — References + Validations + Editorial Contract
 
 Do not start Batch 02.4 implementation during this Batch 02.3 approval reconciliation.
+
+## Batch 02.4 — References + Validations + Editorial Contract
+
+Status:
+APPROVED
+
+Canonical artifacts:
+
+- `docs/content-model/REFERENCE-MAP.md`
+- `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md`
+
+### Goal
+
+Complete the non-migration model contract by approving reference direction, cardinality, target restrictions, required relationship state, reverse derivation, validations, display fields, singleton strategy, and editor-facing guidance.
+
+Batch 02.4 approval does not edit migrations, run Contentful, create fixtures, start frontend work, stage, commit, or push.
+
+### Approved Inputs
+
+- Phase 01 complete / frozen requirements.
+- Batch 02.1 existing model reconciliation.
+- Batch 02.2 approved 10-type inventory.
+- Batch 02.3 approved field and field-ID ledger.
+- Existing bootstrap migration inspected read-only as 02.5 implementation input.
+
+### Reference Ownership Rules
+
+- One authored relationship should own each semantic connection where practical.
+- Reverse display should derive from authored relationships when duplication would drift.
+- Bidirectional authoring is allowed only when both directions carry independent editorial meaning.
+- Relationship absence is valid unless the source entry loses semantic validity without the target.
+
+### Authoritative Reference Map
+
+The approved authored reference map lives in `docs/content-model/REFERENCE-MAP.md`.
+
+Authoritative references include:
+
+- `siteSettings.primaryNavigationItems` -> `navigationItem` ordered multi, required;
+- `siteSettings.footerNavigationItems` -> `navigationItem` ordered multi, optional;
+- `siteSettings.socialLinks` -> `socialLink` ordered multi, optional;
+- `personProfile.socialLinks` -> `socialLink` ordered multi, optional;
+- Project references to Skills, Tools, primary Experience, and curated related Projects;
+- Article references to author Profile, related Projects, related Articles, Skills, and Tools;
+- Experience references to Skills, Tools, and related Articles;
+- `skillGroup.skills` ordered multi, required;
+- `tool.skills` multi, optional.
+
+### Derived Reverse Relationships
+
+Derived reverse views include:
+
+- Project -> Articles from `article.relatedProjects`;
+- Experience -> Projects from `project.relatedExperience`;
+- Tool -> Projects from `project.tools`;
+- Tool -> Experience from `experienceItem.tools`;
+- Tool -> Articles from `article.tools`;
+- Skill -> Projects/Experience/Articles/Tools from owning references;
+- Skill -> Group from `skillGroup.skills`;
+- Profile -> Articles from `article.authorProfile`.
+
+### Project Reference Density
+
+Project remains the highest-pressure type.
+
+Project relationship intent count: 5.
+
+Approved authored Project relationships:
+
+- `skills`;
+- `tools`;
+- `relatedExperience`;
+- `relatedProjects`.
+
+Approved derived reverse:
+
+- `relatedArticles`.
+
+Assessment:
+HIGH - ACCEPT WITH JUSTIFICATION.
+
+Mitigation:
+derive article reverse links, make `relatedExperience` single optional, keep skill/tool relationships unordered, and keep related projects optional and editorially curated.
+
+### SkillGroup Contract
+
+Approved contract direction:
+
+- `skillGroup.skills` owns membership and order;
+- Skill has no back-reference field;
+- no nested groups;
+- SkillGroup remains a small 2-4 group capability structure;
+- each Skill should appear in one primary group by editorial rule.
+
+OD-06 is resolved/approved by supplemental external decision validation.
+
+### Related Content Strategy
+
+Approved OD-13 direction:
+
+```text
+explicit authored semantic references where editor intent matters
++
+derived reverse relationships where duplicate authoring would drift
+```
+
+No recommendation engine, generalized related-content system, or page-builder relation is introduced.
+
+### Taxonomy Depth
+
+Approved OD-12 direction:
+
+- no dedicated taxonomy type;
+- no nested taxonomy;
+- lean controlled values for route/category/status fields;
+- freeform tags only where intentional;
+- SkillGroup is capability grouping, not a generic taxonomy framework.
+
+OD-12 is resolved/approved by supplemental external decision validation.
+
+### routeKey Validation
+
+`navigationItem.routeKey` allowed values:
+
+- `home` -> `/`;
+- `about` -> `/about`;
+- `work` -> `/work`;
+- `projects` -> `/projects`;
+- `writing` -> `/writing`;
+- `tools` -> `/tools`;
+- `contact` -> `/contact`.
+
+Home is selectable but not required in primary navigation because the logo/name links to `/`. Dynamic detail routes and arbitrary URLs are excluded.
+
+### Slug Validation
+
+Only `project.slug` and `article.slug` are slug fields.
+
+Approved hard pattern:
+
+```text
+^[a-z0-9]+(?:-[a-z0-9]+)*$
+```
+
+Slugs must be lowercase, kebab-style route segments without leading slash, route prefix, uppercase characters, spaces, trailing hyphen, or canonical URL content.
+
+### Scalar Validation
+
+The detailed scalar validation table lives in `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md`.
+
+Key approved rules:
+
+- identity/title fields use hard ceilings to prevent pathological content;
+- summaries/excerpts cap at concise preview length;
+- SEO title and description overrides are optional with hard maximums and soft display guidance;
+- tags are unique within an entry and limited in count;
+- controlled values remain lean v1 enums, not taxonomy entries.
+
+### SEO Override Guidance
+
+Project and Article SEO overrides remain optional:
+
+- `seoTitle`;
+- `seoDescription`;
+- `socialImage`.
+
+Fallback behavior remains title/summary or title/excerpt plus representative image. Canonical URL, robots/indexability, sitemap eligibility, breadcrumbs, structured data, preview exclusion, and metadata fallback resolution remain code/state-derived.
+
+### URL Validation
+
+External URL fields must be absolute public `https://` URLs. Internal navigation uses `routeKey`; detail-route URLs derive from slugs. `personProfile.publicEmail` is validated as an email, not a URL field.
+
+### Date Rules
+
+Article `updatedDate` should not precede `publishDate`. Experience `endDate` should not precede `startDate`, and current roles normally omit `endDate`. Cross-field checks may need application/editorial validation if not schema-expressible.
+
+### Rich Text Contract
+
+Rich Text fields are limited to narrative and structured editorial text. Embedded entries and page-builder behavior remain excluded. Embedded assets are allowed only where narrative images are meaningful in Project case-study body or Article body.
+
+### Asset Contract
+
+Contentful Asset remains the media object. No Media wrapper type and no universal `altText` field are approved. Asset metadata is the primary v1 accessibility metadata source.
+
+### Accessibility Contract
+
+Meaningful images need Asset title/description suitable for alt or figure context. Decorative logos/icons remain supported only when text labels provide meaning. Reused Asset contextual-alt limitations are accepted for v1.
+
+### Public-Safety Guidance
+
+Public safety remains governance/readiness policy, not a boolean field. Editors must avoid credentials, tokens, private environment details, confidential screenshots, personal data, unreleased material, proprietary internal architecture, and unsupported confidential metrics. Anonymized, generalized, recreated, redacted, or aggregated evidence is allowed when accurate.
+
+### Singleton Enforcement
+
+`siteSettings` and `personProfile` remain semantic singletons.
+
+Runtime selection rule:
+
+- query published entries with `limit=2`;
+- zero entries yield controlled missing-state behavior;
+- more than one published entry yields diagnostics instead of silent selection.
+
+No new singleton field is approved.
+
+### Display Fields
+
+Approved display fields:
+
+| Type | Display Field |
+|---|---|
+| `siteSettings` | `siteName` |
+| `personProfile` | `name` |
+| `socialLink` | `label` |
+| `navigationItem` | `label` |
+| `project` | `title` |
+| `article` | `title` |
+| `experienceItem` | `role` |
+| `skill` | `name` |
+| `skillGroup` | `name` |
+| `tool` | `name` |
+
+Every display field uses an approved Batch 02.3 field ID.
+
+### Editor Guidance
+
+Type-level and high-risk field guidance is approved in `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md`. It covers entry purpose, create/reuse rules, semantic misuse, public-safety reminders, routeKey, slugs, learning highlights, case-study body, SEO overrides, tags, metrics, assets, and relationships.
+
+### Orphan Risk
+
+Reusable entry risk is documented in `REFERENCE-MAP.md`:
+
+- `socialLink`: LOW;
+- `navigationItem`: MEDIUM;
+- `skill`: MEDIUM;
+- `skillGroup`: MEDIUM;
+- `tool`: MEDIUM.
+
+No HIGH orphan risk remains unexplained.
+
+### OD-06 Review
+
+Status:
+RESOLVED / APPROVED.
+
+Proposed rule:
+SkillGroup is a small flat capability grouping. Membership and order live on `skillGroup.skills`; no nested groups; each Skill should appear in one primary group by editorial rule.
+
+### OD-12 Review
+
+Status:
+RESOLVED / APPROVED.
+
+Proposed rule:
+No dedicated taxonomy type, no nested taxonomy, lean controlled values where useful, freeform tags only where intentional, and SkillGroup limited to capability grouping.
+
+### OD-13 Review
+
+Status:
+RESOLVED / APPROVED.
+
+Proposed rule:
+Use explicit authored references where editor intent matters and derive reverse/display relationships where duplicate authoring would drift.
+
+### Migration Handoff
+
+Batch 02.5 must reconcile the migration to:
+
+- remove legacy `seoMetadata`;
+- add approved `tool`;
+- align fields to `FIELD-ID-LEDGER.md`;
+- implement only externally approved authored references;
+- add routeKey, slug, enum, size, URL, Asset, Rich Text, display-field, and help-text implementation where supported;
+- keep derived/code/system exclusions out of the schema.
+
+### Evidence Limitations
+
+- No live CMS state was read.
+- No Contentful command was run.
+- No migration file was edited.
+- No migration was executed.
+- No fixtures or frontend code were created.
+- Cross-field validations may need application/editorial enforcement.
+
+## Batch 02.4 Closeout
+
+Status:
+APPROVED
+
+External validation:
+PASS WITH NOTES
+
+Approved model layer:
+
+- reference direction;
+- cardinality;
+- target restrictions;
+- reverse derivation;
+- validations;
+- controlled values;
+- Rich Text rules;
+- Asset rules;
+- accessibility guidance;
+- public-safety guidance;
+- singleton behavior;
+- display fields;
+- editor guidance.
+
+Decision status:
+
+- OD-06 — RESOLVED / APPROVED.
+- OD-12 — RESOLVED / APPROVED.
+- OD-13 — RESOLVED / APPROVED.
+
+Supplemental external decision validation approved the exact OD-06, OD-12, and OD-13 proposal wording without changing the approved Batch 02.4 contracts.
+
+Carry forward to Batch 02.5:
+
+migration reconciliation + non-mutating preflight.
+
+Carry forward to Batch 02.6:
+
+actual bootstrap execution.
+
+Batch 02.5 is NEXT and is not active. Bootstrap migration remains BLOCKED / NOT RUN. Seed content remains NOT STARTED.

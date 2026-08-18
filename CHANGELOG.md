@@ -155,6 +155,25 @@ All meaningful project changes should be recorded here.
 - Advanced Batch 02.4 — References + Validations + Editorial Contract to NEXT.
 - Reference map remains unreconciled.
 - Migration remains unchanged and blocked.
+- Started Phase 02 / Batch 02.4 — References + Validations + Editorial Contract.
+- Reconciled authoritative reference direction and cardinality.
+- Reduced bidirectional-reference pressure through derived reverse relationships.
+- Defined validation, accessibility, singleton, display-field, and editorial rules.
+- Reconciled `routeKey`, slug, Rich Text, Asset, and controlled-value contracts.
+- Reviewed OD-06, OD-12, and OD-13 for possible resolution pending external validation.
+- No migration or Contentful changes occurred.
+- Bootstrap remains blocked/not run.
+- Approved Phase 02 / Batch 02.4 — References + Validations + Editorial Contract after external validation returned PASS WITH NOTES.
+- Approved reference direction, cardinality, ordering, target restrictions, relationship requiredness, and derived reverse behavior.
+- Approved routeKey, slug, scalar, URL, date, controlled-value, Rich Text, Asset, accessibility, singleton, display-field, and editor-guidance rules.
+- Preserved governance-first public safety.
+- Advanced Batch 02.5 — Bootstrap Migration Reconciliation + Preflight to NEXT.
+- OD-06, OD-12, and OD-13 were held pending until supplemental external decision review.
+- Migration remains unchanged / not run.
+- Bootstrap remains blocked.
+- Resolved OD-06, OD-12, and OD-13 after supplemental external decision validation.
+- Preserved the approved SkillGroup, taxonomy-depth, and related-content wording without changing reference or validation architecture.
+- Batch 02.5 remains next and not started.
 
 ### Security
 

@@ -228,7 +228,7 @@ Recorded during Phase 01 / Batch 01.4 final approval reconciliation. Phase 01 is
 
 Batch 01.5 open-decision triage is recorded in `docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md`. No unrelated open decision is resolved by that validation pass.
 
-Phase 01 freeze does not require all downstream content-authoring or model decisions to be resolved. OD-01 through OD-06, OD-09, OD-10, and OD-12 through OD-14 remain open and carried forward to their documented downstream owners. OD-11 is resolved by Phase 02 / Batch 02.2.
+Phase 01 freeze did not require all downstream content-authoring or model decisions to be resolved. Current state: OD-01 through OD-05, OD-09, OD-10, and OD-14 remain open; OD-06, OD-12, and OD-13 are resolved by Phase 02 / Batch 02.4 supplemental decision reconciliation; OD-11 is resolved by Phase 02 / Batch 02.2.
 
 ### Decision
 
@@ -244,7 +244,7 @@ This decision resolves semantic responsibility only.
 
 ### Not Decided
 
-OD-08 itself did not decide exact Contentful representation. Phase 02 / Batch 02.2 later approved Tool as a standalone v1 content type. Batch 02.3 approves Tool field IDs; Tool references and validations remain downstream Phase 02 work.
+OD-08 itself did not decide exact Contentful representation. Phase 02 / Batch 02.2 later approved Tool as a standalone v1 content type. Batch 02.3 approves Tool field IDs; Batch 02.4 approves Tool references and validations.
 
 ---
 
@@ -266,7 +266,87 @@ This decision resolves type-level ownership only.
 
 ### Not Decided
 
-Exact field ownership, field ID, field type, and required-state intent are approved by Batch 02.3 as `personProfile.learningHighlights`. Validation, ordering, references, and display structure remain Batch 02.4 work.
+Exact field ownership, field ID, field type, and required-state intent are approved by Batch 02.3 as `personProfile.learningHighlights`. Validation, ordering, references, and display structure are approved by Batch 02.4 where documented.
+
+---
+
+## OD-06 — Skill-Group Taxonomy
+
+Status: RESOLVED / APPROVED
+
+Recorded during Phase 02 / Batch 02.4 implementation, preserved after Batch 02.4 approval, and resolved by supplemental external decision validation.
+
+### Decision
+
+SkillGroup remains a small flat v1 capability grouping type.
+
+Membership and order live on `skillGroup.skills`.
+
+Skill does not own a back-reference to SkillGroup.
+
+Nested groups are not supported in v1.
+
+Each Skill should appear in one primary SkillGroup by editorial rule; duplicate group membership should be diagnosed during content QA or adapter validation if it appears.
+
+### Scope
+
+This proposal resolves grouping mechanics for the approved `skill` and `skillGroup` types only.
+
+### Not Decided
+
+This proposal does not create a generic taxonomy framework, skill detail routes, proficiency scoring, years-of-experience precision, or nested skill hierarchy.
+
+---
+
+## OD-12 — Taxonomy Depth
+
+Status: RESOLVED / APPROVED
+
+Recorded during Phase 02 / Batch 02.4 implementation, preserved after Batch 02.4 approval, and resolved by supplemental external decision validation.
+
+### Decision
+
+V1 uses a lean taxonomy strategy:
+
+- no dedicated taxonomy content type;
+- no nested taxonomy;
+- controlled field values where route/model evidence supports them;
+- freeform tags only where intentionally useful;
+- SkillGroup is limited to capability grouping and is not a generic taxonomy framework.
+
+### Scope
+
+This proposal covers Article classification, Project type/status/tags, Tool category, route-key values, and SkillGroup capability grouping.
+
+### Not Decided
+
+This proposal does not finalize future filtering UI, search behavior, large publication taxonomy, or localized taxonomy labels.
+
+---
+
+## OD-13 — Manual vs Derived Related Content
+
+Status: RESOLVED / APPROVED
+
+Recorded during Phase 02 / Batch 02.4 implementation, preserved after Batch 02.4 approval, and resolved by supplemental external decision validation.
+
+### Decision
+
+Use a hybrid related-content strategy.
+
+Author explicit semantic references where editor intent matters.
+
+Derive reverse relationships where duplicate authoring would drift.
+
+### Proposed Authoring Rule
+
+Authored examples include Project Skills/Tools/Experience/Related Projects, Article author/Related Projects/Related Articles/Skills/Tools, Experience Skills/Tools/Related Articles, SkillGroup Skills, and Tool Skills.
+
+Derived examples include Project Related Articles from Article Related Projects, Experience Related Projects from Project Related Experience, Tool Projects from Project Tools, Tool Experience from Experience Tools, and Tool Articles from Article Tools.
+
+### Not Decided
+
+This proposal does not create a generalized recommendation engine, relevance-scoring system, page-builder relationship model, or homepage featured-project field. Exact homepage featured project choices remain OD-09.
 
 ---
 
@@ -276,6 +356,6 @@ Status: reference only; no new decision recorded
 
 Phase 02 / Batch 02.1 approved the current model decision queue in `docs/phases/PHASE-02-CONTENT-MODEL-CONTRACT-AND-BOOTSTRAP-MIGRATION.md` as reconciliation findings and carry-forward questions. Batch 02.2 approves the content type contract in `docs/content-model/CONTENT-TYPE-LEDGER.md`.
 
-Remaining queue items cover SkillGroup relationship mechanics, taxonomy depth, related-content representation, references, validations, display fields, final migration diff, and bootstrap execution gates.
+Remaining queue items cover final migration diff and bootstrap execution gates. OD-06, OD-12, and OD-13 are now resolved/approved by supplemental external decision validation.
 
 Do not treat this queue as approval of references, validations, or migration execution. Formal decision records should be added only when a later Phase 02 batch makes an actual architectural decision.

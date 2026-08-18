@@ -98,7 +98,7 @@ Approved supporting decisions:
 | Work vs Projects | Work answers where and when contribution happened. Projects answer how specific problems were approached, solved, and evidenced. |
 | Projects index vs detail | `/projects` owns discovery and summary. `/projects/[slug]` owns the full public-safe case study. |
 | Writing index vs detail | `/writing` owns article discovery and previews. `/writing/[slug]` owns one complete public article. |
-| Skills vs Tools | RESOLVED / APPROVED by Batch 01.4. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise that capability. Batch 02.2 later approved Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; references and validations remain downstream Phase 02 work. |
+| Skills vs Tools | RESOLVED / APPROVED by Batch 01.4. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise that capability. Batch 02.2 later approved Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; Batch 02.4 approves Tool references and validations. |
 | Contact vs social links | `/contact` owns the conversion context. Social links are reused contact/profile data. |
 
 ## Route State Vocabulary
@@ -680,8 +680,11 @@ Filtering, complex timeline interaction, confidential employer details, and exac
 ### Open Decisions
 
 - OD-10 — public-safe enterprise projects
-- OD-13 — manual vs derived related content
 - OD-14 — public-safe homepage/proof metrics where experience evidence overlaps
+
+Resolved downstream model decision:
+
+- OD-13 — manual vs derived related content: RESOLVED / APPROVED by supplemental Phase 02 / Batch 02.4 decision validation.
 
 ## Route: `/projects`
 
@@ -831,8 +834,11 @@ Search, complex filtering, automated related-content engine, final sort logic, a
 
 - OD-09 — homepage featured projects
 - OD-10 — public-safe enterprise projects
-- OD-12 — taxonomy depth
-- OD-13 — manual vs derived related content
+
+Resolved downstream model decisions:
+
+- OD-12 — taxonomy depth: RESOLVED / APPROVED by supplemental Phase 02 / Batch 02.4 decision validation.
+- OD-13 — manual vs derived related content: RESOLVED / APPROVED by supplemental Phase 02 / Batch 02.4 decision validation.
 
 ## Route: `/projects/[slug]`
 
@@ -999,8 +1005,11 @@ Preview authentication, screenshot/gallery implementation, structured data, fina
 ### Open Decisions
 
 - OD-10 — public-safe enterprise projects
-- OD-12 — taxonomy depth
-- OD-13 — manual vs derived related content
+
+Resolved downstream model decisions:
+
+- OD-12 — taxonomy depth: RESOLVED / APPROVED by supplemental Phase 02 / Batch 02.4 decision validation.
+- OD-13 — manual vs derived related content: RESOLVED / APPROVED by supplemental Phase 02 / Batch 02.4 decision validation.
 
 ## Route: `/writing`
 
@@ -1145,8 +1154,11 @@ Search, complex taxonomy, filtering, automated related-content engine, final fea
 ### Open Decisions
 
 - OD-05 — SEO, Accessibility & Content Quality pillar validation
-- OD-12 — taxonomy depth
-- OD-13 — manual vs derived related content
+
+Resolved downstream model decisions:
+
+- OD-12 — taxonomy depth: RESOLVED / APPROVED by supplemental Phase 02 / Batch 02.4 decision validation.
+- OD-13 — manual vs derived related content: RESOLVED / APPROVED by supplemental Phase 02 / Batch 02.4 decision validation.
 
 ## Route: `/writing/[slug]`
 
@@ -1297,10 +1309,10 @@ This route consumes Article detail, Profile, Project relationship, Skill/Tool la
 
 Preview authentication, structured data, canonical implementation, Open Graph rules, complex taxonomy, and manual vs derived related content.
 
-### Open Decisions
+### Resolved Downstream Model Decisions
 
-- OD-12 — taxonomy depth
-- OD-13 — manual vs derived related content
+- OD-12 — taxonomy depth: RESOLVED / APPROVED by supplemental Phase 02 / Batch 02.4 decision validation.
+- OD-13 — manual vs derived related content: RESOLVED / APPROVED by supplemental Phase 02 / Batch 02.4 decision validation.
 
 ## Route: `/tools`
 
@@ -1381,7 +1393,7 @@ Route path, canonical URL, breadcrumbs if used, relationship labels where safely
 
 ### Reuse Rules
 
-Tools and skills are related but distinct. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise that capability. This distinction is RESOLVED / APPROVED by Batch 01.4. Batch 02.2 later approved Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; references and validations remain downstream Phase 02 work.
+Tools and skills are related but distinct. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise that capability. This distinction is RESOLVED / APPROVED by Batch 01.4. Batch 02.2 later approved Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; Batch 02.4 approves Tool references and validations.
 
 Do not use proficiency percentages, proficiency bars, or a logo grid with no explanatory value.
 
@@ -1445,10 +1457,10 @@ This route consumes Tool, Skill, Skill Group, Project, Experience, Article, and 
 
 Final skills/tools taxonomy, Tool fields/references, filtering, ratings, hardware, and logo-wall behavior.
 
-### Open Decisions
+### Resolved Downstream Model Decisions
 
-- OD-06 — final skill-group taxonomy
-- OD-12 — taxonomy depth
+- OD-06 — final skill-group taxonomy: RESOLVED / APPROVED by supplemental Phase 02 / Batch 02.4 decision validation.
+- OD-12 — taxonomy depth: RESOLVED / APPROVED by supplemental Phase 02 / Batch 02.4 decision validation.
 
 ## Route: `/contact`
 
@@ -1659,15 +1671,18 @@ Resolved downstream route-related decision:
 
 | ID | Status |
 |---|---|
-| OD-08 — Skills vs Tools semantic boundary | RESOLVED / APPROVED by Batch 01.4 external validation. Skill = professional capability; Tool = product, platform, framework, technology, or software used to exercise a capability. Batch 02.2 later approved Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; references remain downstream Phase 02 work. |
+| OD-08 — Skills vs Tools semantic boundary | RESOLVED / APPROVED by Batch 01.4 external validation. Skill = professional capability; Tool = product, platform, framework, technology, or software used to exercise a capability. Batch 02.2 later approved Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; Batch 02.4 approves references and validations. |
 
-Route-adjacent decisions still unresolved:
+Route-adjacent content decisions still open:
 
 - OD-09 — which three projects become homepage features
 - OD-10 — which enterprise projects are safely publishable
-- OD-12 — taxonomy depth
-- OD-13 — manual vs derived related content
 - OD-14 — public-safe homepage proof metrics
+
+Route-adjacent model decisions resolved by supplemental Batch 02.4 decision reconciliation:
+
+- OD-12 — taxonomy depth: RESOLVED / APPROVED.
+- OD-13 — manual vs derived related content: RESOLVED / APPROVED.
 
 Unrelated open decisions intentionally not resolved:
 
@@ -1676,7 +1691,10 @@ Unrelated open decisions intentionally not resolved:
 - OD-03 — desired work type
 - OD-04 — final status of AI-Assisted Workflows & Automation pillar
 - OD-05 — final status of SEO, Accessibility & Content Quality pillar
-- OD-06 — final skill-group taxonomy
+
+Unrelated model decision resolved by supplemental Batch 02.4 decision reconciliation:
+
+- OD-06 — final skill-group taxonomy: RESOLVED / APPROVED.
 Resolved downstream decision:
 
 - OD-15 — SEO overrides vs generated defaults: RESOLVED / APPROVED by `docs/system/SEO-AND-METADATA-CONTRACT.md`.

@@ -101,10 +101,57 @@ Status: APPROVED
 - [x] Confirm no migration mutation
 - [x] External Batch 02.3 validation
 
+#### Batch 02.4 — References + Validations + Editorial Contract
+
+Status: APPROVED
+
+- [x] Confirm Batch 02.3 approved
+- [x] Inventory all relationship intents
+- [x] Determine authoritative authoring direction
+- [x] Eliminate unnecessary bidirectional references
+- [x] Finalize reference cardinality
+- [x] Finalize reference ordering behavior
+- [x] Finalize reference requiredness
+- [x] Define target-type restrictions
+- [x] Reconcile siteSettings references
+- [x] Reconcile personProfile references
+- [x] Reconcile Project references
+- [x] Reconcile Article references
+- [x] Reconcile Experience references
+- [x] Reconcile SkillGroup references
+- [x] Reconcile Tool relationships
+- [x] Define related-content strategy
+- [x] Define routeKey allowed values
+- [x] Define slug rules
+- [x] Define scalar validation rules
+- [x] Define SEO override guidance
+- [x] Define URL rules
+- [x] Define date rules
+- [x] Define controlled values
+- [x] Define Rich Text rules
+- [x] Define Asset rules
+- [x] Define accessibility editorial rules
+- [x] Preserve public-safety governance boundary
+- [x] Define singleton enforcement strategy
+- [x] Define display fields
+- [x] Define type-level editor guidance
+- [x] Review orphan-entry risk
+- [x] Review Project reference density
+- [x] Reconcile REFERENCE-MAP.md
+- [x] Create/update validation/editorial contract
+- [x] Review OD-06
+- [x] Review OD-12
+- [x] Review OD-13
+- [x] Record Batch 02.5 migration handoff
+- [x] Confirm migration unchanged
+- [x] Confirm no Contentful commands
+- [x] External Batch 02.4 validation
+- [x] Supplemental OD-06 / OD-12 / OD-13 external decision validation
+- [x] Resolve OD-06 / OD-12 / OD-13 after supplemental validation
+
 #### Later Phase 02 Batches
 
-- Batch 02.4 — References + Validations + Editorial Contract — NEXT
-- Batch 02.5 — Bootstrap Migration Reconciliation + Preflight — LATER
+- Batch 02.5 — Bootstrap Migration Reconciliation + Preflight — NEXT
 - Batch 02.6 — Bootstrap Migration Execution — LATER
 - Batch 02.7 — Phase 02 Validation + Closeout — LATER
 
@@ -301,7 +348,8 @@ Recorded Phase 00 evidence:
 - Batch 02.1 is approved after external validation.
 - Batch 02.2 is approved after external validation.
 - Batch 02.3 is approved after external validation.
-- Batch 02.4 is next.
+- Batch 02.4 is approved after external validation.
+- Batch 02.5 is next.
 - Bootstrap migration remains blocked and not run.
 - Seed content remains not started.
-- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by Batch 02.3 field-contract work.
+- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by Batch 02.4 approval reconciliation.

@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 active; Batch 02.1 approved; Batch 02.2 approved; Batch 02.3 approved
+Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 active; Batch 02.1 approved; Batch 02.2 approved; Batch 02.3 approved; Batch 02.4 approved; Batch 02.5 next
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -9,7 +9,7 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 |---|---|---|---|
 | 00 | Baseline + Two-Environment Setup | Complete; safe repository, secure tooling boundary, and governed `master` + `dev` operating model | None |
 | 01 | Content Strategy + Route Contract | Complete / frozen; requirements system approved for Phase 02 input | None |
-| 02 | Content Model Contract + Bootstrap Migration | Active; Batch 02.3 field and field-ID contract approved; Batch 02.4 next | CMS only |
+| 02 | Content Model Contract + Bootstrap Migration | Active; Batch 02.4 reference/validation/editorial contract approved; Batch 02.5 migration reconciliation + preflight next | CMS only |
 | 03 | Model Export + Serial Clean-Room Verification | Approved model-only snapshot rebuilt into fresh `dev` from protected `master` | CMS only |
 | 04 | Editorial QA + Model Freeze | Editor-friendly baseline v1 | CMS only |
 | 05 | Representative Seed Content | Realistic draft entries after clean-room verification | CMS only |
@@ -42,8 +42,8 @@ Phase 02 — ACTIVE
 Batch 02.1 — APPROVED
 Batch 02.2 — APPROVED
 Batch 02.3 — APPROVED
-Batch 02.4 — NEXT
-Batch 02.5 — LATER
+Batch 02.4 — APPROVED
+Batch 02.5 — NEXT
 Batch 02.6 — LATER
 Batch 02.7 — LATER
 ```
@@ -162,7 +162,7 @@ Define what the website needs to communicate before finalizing CMS fields.
 
 ## Phase 02 — Content Model Contract + Bootstrap Migration
 
-Current state: ACTIVE. Latest approved batch: 02.3 — Field + Field-ID Contract — APPROVED. Next batch: 02.4 — References + Validations + Editorial Contract — NEXT.
+Current state: ACTIVE. Latest approved batch: 02.4 — References + Validations + Editorial Contract — APPROVED. Next batch: 02.5 — Bootstrap Migration Reconciliation + Preflight.
 
 ### Goal
 
@@ -175,8 +175,8 @@ Translate frozen Phase 01 requirements into a lean, stable, migration-governed C
 | 02.1 | Entry + Existing Model Reconciliation | APPROVED |
 | 02.2 | Content Type Contract | APPROVED |
 | 02.3 | Field + Field-ID Contract | APPROVED |
-| 02.4 | References + Validations + Editorial Contract | NEXT |
-| 02.5 | Bootstrap Migration Reconciliation + Preflight | LATER |
+| 02.4 | References + Validations + Editorial Contract | APPROVED |
+| 02.5 | Bootstrap Migration Reconciliation + Preflight | NEXT |
 | 02.6 | Bootstrap Migration Execution | LATER |
 | 02.7 | Phase 02 Validation + Closeout | LATER |
 
@@ -206,12 +206,12 @@ Translate frozen Phase 01 requirements into a lean, stable, migration-governed C
 - External Batch 02.3 validation returned PASS WITH NOTES.
 - `docs/content-model/FIELD-ID-LEDGER.md` approves the field and field-ID contract for all 10 approved types.
 - Project and Article SEO override field IDs are `seoTitle`, `seoDescription`, and `socialImage`.
-- Relationship field intents are approved, but exact reference shape, direction, cardinality, and validations remain Batch 02.4 work.
+- Relationship field intents are approved, and Batch 02.4 approves the reference map, validations, display fields, singleton rules, and editor guidance after external validation.
 - Legacy `canonicalUrl`, `noIndex`, `noFollow`, `readingTimeMinutes`, `proficiency`, broad `seoMetadata`, and presentation-shaped fields are reconciled as remove/replace/derived/code-owned as applicable.
 - Lightweight Learning/Certification is approved as profile-owned `learningHighlights`.
 - Public safety remains governance/readiness-owned, not a blanket CMS boolean.
-- `REFERENCE-MAP.md`, bootstrap migration files, snapshots, reports, Contentful scripts, fixtures, and frontend/application files remain unchanged.
-- Batch 02.4 — References + Validations + Editorial Contract — is next, but not started.
+- Bootstrap migration files, snapshots, reports, Contentful scripts, fixtures, and frontend/application files remain unchanged.
+- Batch 02.4 — References + Validations + Editorial Contract — is approved.
 
 ### Execution Gate
 

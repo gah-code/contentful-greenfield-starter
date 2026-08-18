@@ -29,7 +29,7 @@ Approved v1 routes:
 
 OD-07 remains RESOLVED / APPROVED by the Batch 01.2 route contract.
 
-OD-08 is RESOLVED / APPROVED by Batch 01.4. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise that capability. Batch 02.2 later approved Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; references and validations remain downstream Phase 02 work.
+OD-08 is RESOLVED / APPROVED by Batch 01.4. Skill = professional capability. Tool = product, platform, framework, technology, or software used to exercise that capability. Batch 02.2 later approved Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; Batch 02.4 approves Tool references and validations.
 
 ## Batch 01.3 Approval
 
@@ -53,7 +53,7 @@ Approved architecture:
 - no page-level editorial noFollow;
 - no freeform editorial canonical in v1.
 
-Project/Article SEO override field IDs are approved by Phase 02 / Batch 02.3; validation remains Batch 02.4 work.
+Project/Article SEO override field IDs are approved by Phase 02 / Batch 02.3; validation guidance is approved by Batch 02.4 in `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md`.
 
 ## Option 2 Alignment Audit
 
@@ -64,7 +64,7 @@ Batch 01.3 adopts Option 2 — Hybrid / Lean SEO Ownership.
 | `docs/system/ROUTE-CONTRACT.md` SEO intent | CURRENT | Route SEO intent is approved, while detailed metadata behavior was deferred to Batch 01.3. | Use as route input. |
 | `docs/system/CONTENT-STRATEGY.md` OD-15 | CURRENT | SEO overrides vs generated defaults was open for Batch 01.3. | Resolve in this contract. |
 | `docs/content-model/CONTENT-TYPE-LEDGER.md` `seoMetadata` type | NOT APPROVED AS V1 STANDALONE TYPE | Existing model proposal included reusable SEO Metadata. | Batch 02.2 absorbs SEO override concepts into owning content. |
-| `docs/content-model/FIELD-ID-LEDGER.md` legacy `seoMetadata.title` and `description` | RECONCILED BY BATCH 02.3 | Legacy proposal is replaced by optional owning-type `seoTitle` and `seoDescription` field IDs. | Validation remains Batch 02.4; migration reconciliation remains Batch 02.5. |
+| `docs/content-model/FIELD-ID-LEDGER.md` legacy `seoMetadata.title` and `description` | RECONCILED BY BATCH 02.3 | Legacy proposal is replaced by optional owning-type `seoTitle` and `seoDescription` field IDs. | Validation guidance is approved by Batch 02.4; migration reconciliation remains Batch 02.5. |
 | `docs/content-model/REFERENCE-MAP.md` SEO references | PROPOSED / REQUIRES REFERENCE RECONCILIATION | Existing proposal references `seoMetadata` from site settings, projects, and articles. | Remove or replace during downstream reference/migration reconciliation. |
 | `content-model/migrations/0001-bootstrap-portfolio-model.js` broad SEO fields | PROPOSED / REQUIRES MIGRATION RECONCILIATION | Migration currently proposes `canonicalUrl`, `openGraphImage`, `noIndex`, and `noFollow`. | Do not run or mutate; reconcile before migration approval. |
 | hard title/description lengths in migration | PROPOSED / REQUIRES PHASE 02 RECONCILIATION | Proposed title max 70 and description max 170 appear in migration validations. | Treat as proposed guidance only, not a Batch 01.3 publication gate. |
@@ -512,7 +512,7 @@ Requirements:
 - link labels must be meaningful
 - related links must be contextually justified
 - do not add links solely for search manipulation
-- OD-13 remains OPEN unless separately resolved
+- OD-13 is outside the SEO ownership contract and is RESOLVED / APPROVED by supplemental Batch 02.4 decision reconciliation
 
 ## Route SEO Matrix
 
@@ -603,7 +603,7 @@ Article
 
 This representation is not frozen in Batch 01.3.
 
-Phase 02 / Batch 02.2 resolves the type-level question: broad standalone `seoMetadata` is not a v1 content type and SEO override concepts are absorbed into the owning Project/Article content. Batch 02.3 approves exact fields, field IDs, and required-state intent; validation remains Batch 02.4 work.
+Phase 02 / Batch 02.2 resolves the type-level question: broad standalone `seoMetadata` is not a v1 content type and SEO override concepts are absorbed into the owning Project/Article content. Batch 02.3 approves exact fields, field IDs, and required-state intent; Batch 02.4 approves validation guidance.
 
 Historical Phase 01 handoff comparison:
 
@@ -638,7 +638,7 @@ Do not modify content-model ledgers or migrations in Batch 01.3.
 | Decision | Status |
 |---|---|
 | OD-07 — Final formal v1 route contract | RESOLVED / APPROVED; unchanged. |
-| OD-08 — Skills vs Tools semantic boundary | RESOLVED / APPROVED by Batch 01.4 external validation. Batch 02.2 later approved Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; references remain downstream Phase 02 work. |
+| OD-08 — Skills vs Tools semantic boundary | RESOLVED / APPROVED by Batch 01.4 external validation. Batch 02.2 later approved Tool as a standalone v1 type; Batch 02.3 approves Tool field IDs; Batch 02.4 approves references and validations. |
 | OD-11 — certification / learning representation | RESOLVED / APPROVED by Phase 02 / Batch 02.2 as lightweight profile-owned content. |
 | OD-15 — SEO overrides vs generated defaults | RESOLVED / APPROVED by this contract. |
 
@@ -660,22 +660,25 @@ Technical:
 - breadcrumbs
 - preview exclusion
 
-Project/Article SEO override field IDs are approved by Phase 02 / Batch 02.3; validation remains Batch 02.4 work.
+Project/Article SEO override field IDs are approved by Phase 02 / Batch 02.3; validation guidance is approved by Batch 02.4.
 ```
 
-Remaining open decisions:
+Remaining open content-authoring decisions:
 
 - OD-01 — canonical one-sentence positioning statement
 - OD-02 — secondary professional title / specialty
 - OD-03 — desired work type
 - OD-04 — final status of AI-Assisted Workflows & Automation pillar
 - OD-05 — final status of SEO, Accessibility & Content Quality pillar
-- OD-06 — final skill-group taxonomy
 - OD-09 — which three projects become homepage features
 - OD-10 — which enterprise projects are safely publishable
-- OD-12 — taxonomy depth
-- OD-13 — manual vs derived related content
 - OD-14 — public-safe homepage proof metrics
+
+Resolved downstream model decisions:
+
+- OD-06 — final skill-group taxonomy: RESOLVED / APPROVED.
+- OD-12 — taxonomy depth: RESOLVED / APPROVED.
+- OD-13 — manual vs derived related content: RESOLVED / APPROVED.
 
 ## Evidence Limitations
 
@@ -685,7 +688,7 @@ Remaining open decisions:
 - No static fixtures were created.
 - No Contentful command was run.
 - No Contentful schema, locale, environment, export, import, migration, field ID, reference, or seed mutation occurred.
-- Exact Contentful SEO field representation is approved by Phase 02 / Batch 02.3 for Project and Article; validation remains Batch 02.4 work.
+- Exact Contentful SEO field representation is approved by Phase 02 / Batch 02.3 for Project and Article; validation guidance is approved by Batch 02.4.
 - Content Requirements Matrix work is approved in `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`.
 - Batch 01.5 — Phase 01 Validation + Freeze — is approved, and Phase 01 is complete / frozen.
 
@@ -699,7 +702,7 @@ Batch 01.3 is approved after external validation:
 - Batch 01.3 is APPROVED.
 - At Batch 01.3 closeout, Batch 01.4 advanced to NEXT. This is historical, not the current Batch 01.4 state.
 - At Batch 01.3 closeout, Batch 01.5 was LATER. This is historical, not the current Batch 01.5 state.
-- At Batch 01.3 closeout, Phase 02 was DEFERRED. Phase 02 is now ACTIVE; Batch 02.1 is approved, Batch 02.2 is APPROVED, Batch 02.3 is APPROVED, and Batch 02.4 is NEXT.
+- At Batch 01.3 closeout, Phase 02 was DEFERRED. Phase 02 is now ACTIVE; Batch 02.1 is approved, Batch 02.2 is APPROVED, Batch 02.3 is APPROVED, Batch 02.4 is APPROVED, and Batch 02.5 is NEXT.
 - Option 2 hybrid SEO ownership is documented.
 - OD-15 is RESOLVED / APPROVED.
 - OD-07 remains RESOLVED / APPROVED.

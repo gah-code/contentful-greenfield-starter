@@ -13,6 +13,8 @@ This ledger records approved V1 Contentful fields, field IDs, primitive shapes, 
 
 Do not run or edit the bootstrap migration from this ledger until Batch 02.5 reconciles the approved field, reference, validation, and editorial-interface contracts.
 
+Batch 02.4 approves reference cardinality, target restrictions, validation rules, display fields, and editor guidance in `docs/content-model/REFERENCE-MAP.md` and `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md`. Those documents do not rename approved field IDs or approve migration execution.
+
 ## Approval Status
 
 Phase:
@@ -39,14 +41,7 @@ Approved scope:
 
 Not approved here:
 
-- reference cardinality;
-- target restrictions;
-- allowed-value validation;
-- detailed scalar validation;
-- Rich Text restrictions;
-- editor-interface behavior;
-- display fields;
-- singleton technical enforcement;
+- reference cardinality, target restrictions, allowed-value validation, detailed scalar validation, Rich Text restrictions, editor-interface behavior, display fields, and singleton technical behavior, which are approved by Batch 02.4 in `docs/content-model/REFERENCE-MAP.md` and `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md`;
 - migration implementation.
 
 ## Governing Rules
@@ -56,8 +51,8 @@ Not approved here:
 - Field IDs use lower camel case, semantic names, and no route, layout, framework, widget, or visual-component terminology.
 - Fields store editorial meaning only.
 - Derived values, code configuration, route state, Contentful system metadata, and governance-only readiness concerns are not modeled as editorial fields.
-- References are expressed only as relationship field intent. Batch 02.4 owns reference direction, cardinality, target restrictions, required counts, and validations.
-- Validations, allowed values, editor widgets, help text, display fields, field groups, and sidebar/editor layout are deferred to Batch 02.4.
+- References are expressed in this ledger only as relationship field intent. Batch 02.4 approves reference direction, cardinality, target restrictions, required counts, and validations.
+- Validations, allowed values, editor widgets, help text, display fields, field groups, and sidebar/editor layout are governed by the approved Batch 02.4 validation/editorial contract where documented.
 - Migration implementation, migration diff, field creation, field deletion, and migration execution are deferred to Batch 02.5 and later.
 - Localization is `NO — V1` for every approved field unless a later approved localization contract changes that.
 - Contentful Asset remains the media object. No standalone Media wrapper type is approved.
@@ -115,7 +110,7 @@ Approved standalone type count remains 10.
 | `project` | Title | `title` | APPROVED FIELD | Symbol | YES | NO — V1 | Project/case-study title and SEO title fallback. | Display-field candidate. | APPROVED V1 FIELD ID |
 | `project` | Slug | `slug` | APPROVED FIELD | Symbol | YES | NO — V1 | Detail-route identity segment. | Slug regex/uniqueness validation in 02.4. | APPROVED V1 FIELD ID |
 | `project` | Summary | `summary` | APPROVED FIELD | Text | YES | NO — V1 | Preview summary and SEO description fallback. | Length guidance in 02.4. | APPROVED V1 FIELD ID |
-| `project` | Project Type | `projectType` | APPROVED FIELD | Symbol | YES | NO — V1 | Public project classification. | OD-12 remains open; allowed values deferred. | APPROVED V1 FIELD ID |
+| `project` | Project Type | `projectType` | APPROVED FIELD | Symbol | YES | NO — V1 | Public project classification. | OD-12 resolved/approved; allowed values approved by Batch 02.4. | APPROVED V1 FIELD ID |
 | `project` | Project Status | `projectStatus` | APPROVED OPTIONAL FIELD | Symbol | NO | NO — V1 | Editorial project lifecycle/status such as ongoing or completed. | Allowed values and route use in 02.4. | APPROVED V1 FIELD ID |
 | `project` | Role | `role` | APPROVED FIELD | Text | YES | NO — V1 | Public-safe role, contribution, or responsibility context. | Help text for public-safe wording. | APPROVED V1 FIELD ID |
 | `project` | Context Summary | `contextSummary` | APPROVED OPTIONAL FIELD | Text | NO | NO — V1 | Organization, timeframe, team, client, or engagement context when public-safe. | Public-safety guidance in 02.4. | APPROVED V1 FIELD ID |
@@ -128,31 +123,31 @@ Approved standalone type count remains 10.
 | `project` | Gallery Images | `galleryImages` | APPROVED ASSET FIELD | Asset field; exact collection shape deferred | NO | NO — V1 | Optional screenshots, diagrams, or supporting media. | Asset cardinality, alt/context, and file rules in 02.4. | APPROVED V1 FIELD ID |
 | `project` | Live URL | `liveUrl` | APPROVED OPTIONAL FIELD | Symbol | NO | NO — V1 | Public live-project destination when available and safe. | URL validation/external-link guidance in 02.4. | APPROVED V1 FIELD ID |
 | `project` | Repository URL | `repositoryUrl` | APPROVED OPTIONAL FIELD | Symbol | NO | NO — V1 | Public repository or technical evidence URL when available. | URL validation/external-link guidance in 02.4. | APPROVED V1 FIELD ID |
-| `project` | Tags | `tags` | APPROVED OPTIONAL FIELD | Array of Symbol | NO | NO — V1 | Lightweight labels for discovery/classification, not meta keywords. | OD-12 allowed-values strategy in 02.4. | APPROVED V1 FIELD ID |
+| `project` | Tags | `tags` | APPROVED OPTIONAL FIELD | Array of Symbol | NO | NO — V1 | Lightweight labels for discovery/classification, not meta keywords. | OD-12 resolved/approved; tag guidance approved by Batch 02.4. | APPROVED V1 FIELD ID |
 | `project` | SEO Title | `seoTitle` | APPROVED OPTIONAL FIELD | Symbol | NO | NO — V1 | Optional editorial SEO title override. | Length/help text in 02.4. | APPROVED V1 FIELD ID |
 | `project` | SEO Description | `seoDescription` | APPROVED OPTIONAL FIELD | Text | NO | NO — V1 | Optional editorial SEO description override. | Length/help text in 02.4. | APPROVED V1 FIELD ID |
 | `project` | Social Image | `socialImage` | APPROVED ASSET FIELD | Asset | NO | NO — V1 | Optional editorial social image override. | Asset alt/fallback guidance in 02.4. | APPROVED V1 FIELD ID |
 | `project` | Skills | `skills` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Capabilities used or demonstrated by the project. | Direction, cardinality, and reverse-lookup strategy. | APPROVED V1 FIELD ID |
 | `project` | Tools | `tools` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Platforms/frameworks/software used in project work. | Direction, cardinality, and reverse-lookup strategy. | APPROVED V1 FIELD ID |
-| `project` | Related Articles | `relatedArticles` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Writing that explains or supports the project. | OD-13 manual vs derived relationship decision. | APPROVED V1 FIELD ID |
+| `project` | Related Articles | `relatedArticles` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Writing that explains or supports the project. | OD-13 resolved/approved; derived reverse behavior approved by Batch 02.4. | APPROVED V1 FIELD ID |
 | `project` | Related Experience | `relatedExperience` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Experience context connected to the project. | Direction and duplication review in 02.4. | APPROVED V1 FIELD ID |
-| `project` | Related Projects | `relatedProjects` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Related case studies when editorially useful. | OD-13 manual vs derived relationship decision. | APPROVED V1 FIELD ID |
+| `project` | Related Projects | `relatedProjects` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Related case studies when editorially useful. | OD-13 resolved/approved; relationship behavior approved by Batch 02.4. | APPROVED V1 FIELD ID |
 | `article` | Title | `title` | APPROVED FIELD | Symbol | YES | NO — V1 | Article title and SEO title fallback. | Display-field candidate. | APPROVED V1 FIELD ID |
 | `article` | Slug | `slug` | APPROVED FIELD | Symbol | YES | NO — V1 | Detail-route identity segment. | Slug regex/uniqueness validation in 02.4. | APPROVED V1 FIELD ID |
 | `article` | Excerpt | `excerpt` | APPROVED FIELD | Text | YES | NO — V1 | Article preview summary and SEO description fallback. | Length guidance in 02.4. | APPROVED V1 FIELD ID |
 | `article` | Body | `body` | APPROVED FIELD | RichText | YES | NO — V1 | Complete article content. | Rich-text node rules/editor help in 02.4. | APPROVED V1 FIELD ID |
 | `article` | Publish Date | `publishDate` | APPROVED FIELD | Date | YES | NO — V1 | Public article publication date. | Date validation and display guidance in 02.4. | APPROVED V1 FIELD ID |
 | `article` | Updated Date | `updatedDate` | APPROVED OPTIONAL FIELD | Date | NO | NO — V1 | Editorial update date when displayed. | Validation relationship to publish date in 02.4. | APPROVED V1 FIELD ID |
-| `article` | Content Pillar | `contentPillar` | APPROVED OPTIONAL FIELD | Symbol | NO | NO — V1 | High-level strategy/pillar classification. | OD-05/OD-12 allowed-values strategy in 02.4. | APPROVED V1 FIELD ID |
-| `article` | Category | `category` | APPROVED OPTIONAL FIELD | Symbol | NO | NO — V1 | Lean article category for collection grouping. | OD-12 validation/control strategy in 02.4. | APPROVED V1 FIELD ID |
-| `article` | Tags | `tags` | APPROVED OPTIONAL FIELD | Array of Symbol | NO | NO — V1 | Lightweight labels for discovery/classification, not meta keywords. | OD-12 allowed-values strategy in 02.4. | APPROVED V1 FIELD ID |
+| `article` | Content Pillar | `contentPillar` | APPROVED OPTIONAL FIELD | Symbol | NO | NO — V1 | High-level strategy/pillar classification. | OD-05 remains open; OD-12 resolved/approved; allowed values approved by Batch 02.4. | APPROVED V1 FIELD ID |
+| `article` | Category | `category` | APPROVED OPTIONAL FIELD | Symbol | NO | NO — V1 | Lean article category for collection grouping. | OD-12 resolved/approved; validation/control strategy approved by Batch 02.4. | APPROVED V1 FIELD ID |
+| `article` | Tags | `tags` | APPROVED OPTIONAL FIELD | Array of Symbol | NO | NO — V1 | Lightweight labels for discovery/classification, not meta keywords. | OD-12 resolved/approved; tag guidance approved by Batch 02.4. | APPROVED V1 FIELD ID |
 | `article` | Hero Image | `heroImage` | APPROVED ASSET FIELD | Asset | NO | NO — V1 | Optional article media and social fallback candidate. | Asset alt/public-safety guidance in 02.4. | APPROVED V1 FIELD ID |
 | `article` | SEO Title | `seoTitle` | APPROVED OPTIONAL FIELD | Symbol | NO | NO — V1 | Optional editorial SEO title override. | Length/help text in 02.4. | APPROVED V1 FIELD ID |
 | `article` | SEO Description | `seoDescription` | APPROVED OPTIONAL FIELD | Text | NO | NO — V1 | Optional editorial SEO description override. | Length/help text in 02.4. | APPROVED V1 FIELD ID |
 | `article` | Social Image | `socialImage` | APPROVED ASSET FIELD | Asset | NO | NO — V1 | Optional editorial social image override. | Asset alt/fallback guidance in 02.4. | APPROVED V1 FIELD ID |
 | `article` | Author Profile | `authorProfile` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Canonical profile/author context. | Direction, singleton handling, and requiredness in 02.4. | APPROVED V1 FIELD ID |
-| `article` | Related Projects | `relatedProjects` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Project evidence related to the article. | OD-13 manual vs derived relationship decision. | APPROVED V1 FIELD ID |
-| `article` | Related Articles | `relatedArticles` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Related writing when editorially useful. | OD-13 manual vs derived relationship decision. | APPROVED V1 FIELD ID |
+| `article` | Related Projects | `relatedProjects` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Project evidence related to the article. | OD-13 resolved/approved; relationship behavior approved by Batch 02.4. | APPROVED V1 FIELD ID |
+| `article` | Related Articles | `relatedArticles` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Related writing when editorially useful. | OD-13 resolved/approved; relationship behavior approved by Batch 02.4. | APPROVED V1 FIELD ID |
 | `article` | Skills | `skills` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Capabilities discussed or demonstrated by the article. | Direction and taxonomy-depth review in 02.4. | APPROVED V1 FIELD ID |
 | `article` | Tools | `tools` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Tools/platforms discussed by the article. | Direction and reverse-lookup strategy in 02.4. | APPROVED V1 FIELD ID |
 | `experienceItem` | Company | `company` | APPROVED FIELD | Symbol | YES | NO — V1 | Public company/organization label or generalized employer context. | Public-safe wording help in 02.4. | APPROVED V1 FIELD ID |
@@ -172,16 +167,16 @@ Approved standalone type count remains 10.
 | `experienceItem` | Related Projects | `relatedProjects` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Projects that evidence the experience item. | Direction and duplication review in 02.4. | APPROVED V1 FIELD ID |
 | `experienceItem` | Skills | `skills` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Capabilities used in the role. | Direction and cardinality in 02.4. | APPROVED V1 FIELD ID |
 | `experienceItem` | Tools | `tools` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Platforms/frameworks/software used in the role. | Direction and cardinality in 02.4. | APPROVED V1 FIELD ID |
-| `experienceItem` | Related Articles | `relatedArticles` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Writing that explains related work or methods. | OD-13 manual vs derived relationship decision. | APPROVED V1 FIELD ID |
+| `experienceItem` | Related Articles | `relatedArticles` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Writing that explains related work or methods. | OD-13 resolved/approved; relationship behavior approved by Batch 02.4. | APPROVED V1 FIELD ID |
 | `skill` | Name | `name` | APPROVED FIELD | Symbol | YES | NO — V1 | Professional capability label. | Display-field candidate; duplicate-prevention help. | APPROVED V1 FIELD ID |
 | `skill` | Summary | `summary` | APPROVED OPTIONAL FIELD | Text | NO | NO — V1 | Brief explanation of the capability. | Length/help guidance in 02.4. | APPROVED V1 FIELD ID |
 | `skill` | Proof Summary | `proofSummary` | APPROVED OPTIONAL FIELD | Text | NO | NO — V1 | Optional evidence-oriented description without proficiency scoring. | Help text to avoid unsupported claims. | APPROVED V1 FIELD ID |
-| `skillGroup` | Name | `name` | APPROVED FIELD | Symbol | YES | NO — V1 | Curated capability group label. | Display-field candidate; OD-06/OD-12 preserved. | APPROVED V1 FIELD ID |
+| `skillGroup` | Name | `name` | APPROVED FIELD | Symbol | YES | NO — V1 | Curated capability group label. | Display field approved by Batch 02.4; OD-06/OD-12 resolved/approved. | APPROVED V1 FIELD ID |
 | `skillGroup` | Description | `description` | APPROVED OPTIONAL FIELD | Text | NO | NO — V1 | Optional explanation of the grouping. | Length/help guidance in 02.4. | APPROVED V1 FIELD ID |
 | `skillGroup` | Sort Order | `sortOrder` | APPROVED OPTIONAL FIELD | Integer | NO | NO — V1 | Optional global order for the small v1 grouping set. | Confirm whether relationship ordering replaces this. | APPROVED V1 FIELD ID |
 | `skillGroup` | Skills | `skills` | APPROVED RELATIONSHIP FIELD INTENT — SHAPE DEFERRED TO 02.4 | Relationship intent | NEEDS 02.4 DECISION | NO — V1 | Skills included in the curated group. | Direction, cardinality, ordering, and validation in 02.4. | APPROVED V1 FIELD ID |
 | `tool` | Name | `name` | APPROVED FIELD | Symbol | YES | NO — V1 | Product, platform, framework, technology, or software name. | Display-field candidate; duplicate-prevention help. | APPROVED V1 FIELD ID |
-| `tool` | Category | `category` | APPROVED FIELD | Symbol | YES | NO — V1 | Lean tool category for `/tools` grouping and discovery. | OD-12 allowed-values strategy in 02.4. | APPROVED V1 FIELD ID |
+| `tool` | Category | `category` | APPROVED FIELD | Symbol | YES | NO — V1 | Lean tool category for `/tools` grouping and discovery. | OD-12 resolved/approved; allowed values approved by Batch 02.4. | APPROVED V1 FIELD ID |
 | `tool` | Usage Context | `usageContext` | APPROVED FIELD | Text | YES | NO — V1 | Professional context explaining how/why the tool is used. | Length/help guidance in 02.4. | APPROVED V1 FIELD ID |
 | `tool` | External URL | `externalUrl` | APPROVED OPTIONAL FIELD | Symbol | NO | NO — V1 | Public product/documentation URL when useful. | URL validation/external-link guidance in 02.4. | APPROVED V1 FIELD ID |
 | `tool` | Logo | `logo` | APPROVED ASSET FIELD | Asset | NO | NO — V1 | Optional public logo/icon; text label remains required. | Asset rights/decorative-alt guidance in 02.4. | APPROVED V1 FIELD ID |
@@ -274,7 +269,7 @@ These are approved relationship semantic field IDs only. They do not freeze Link
 | `personProfile.heroImage` | REPLACE WITH NEW FIELD | Use `profileImage` for semantic identity media. |
 | `personProfile.resumeUrl` | REPLACE WITH NEW FIELD | Use `resume` Asset instead of a freeform resume URL. |
 | `project.body` | REPLACE WITH NEW FIELD | Use lean hybrid `caseStudyBody` plus required semantic summary fields. |
-| `project.category` | REPLACE WITH NEW FIELD | Use `projectType`; taxonomy depth remains OD-12. |
+| `project.category` | REPLACE WITH NEW FIELD | Use `projectType`; taxonomy depth is resolved by OD-12. |
 | `project.technologies` | REPLACE WITH RELATIONSHIP INTENT | Tools are standalone v1 content; reference shape deferred to 02.4. |
 | `project.seo` | REPLACE WITH NEW FIELDS | Use direct optional `seoTitle`, `seoDescription`, and `socialImage`. |
 | `project.featured` | NEEDS 02.4 DECISION | Homepage feature selection method remains open. |
@@ -315,7 +310,7 @@ These are approved relationship semantic field IDs only. They do not freeze Link
 | Project classification | Define allowed values for `projectType`, `projectStatus`, and tags without creating taxonomy types. |
 | Tool category | Define lean category values without broad taxonomy architecture. |
 | Homepage selections | Decide featured Project/Article/Tool selection mechanism without resolving exact OD-09 project choices. |
-| Related content | Resolve manual vs derived vs mixed approach for OD-13. |
+| Related content | OD-13 resolved/approved; implement the approved authored plus derived reverse strategy. |
 | Migration diff | Keep queued for 02.5 after 02.4 approvals. |
 
 ## Project Long-Form Strategy
@@ -326,7 +321,7 @@ Approved strategy: lean hybrid.
 
 This avoids a single unstructured body as the only proof source while also avoiding a large set of page-builder sections.
 
-Project reference density must be reviewed in Batch 02.4 so relationship intents do not turn the highest-pressure type into a dense bidirectional graph.
+Project reference density is reviewed and mitigated in the approved Batch 02.4 reference contract so relationship intents do not turn the highest-pressure type into a dense bidirectional graph.
 
 ## Article Classification Strategy
 
@@ -336,7 +331,7 @@ Project reference density must be reviewed in Batch 02.4 so relationship intents
 - `category`
 - `tags`
 
-No dedicated taxonomy content type is approved. OD-05 and OD-12 remain open for pillar validation and taxonomy depth. Allowed values and editor guidance belong to Batch 02.4.
+No dedicated taxonomy content type is approved. OD-05 remains open for pillar validation; OD-12 is resolved/approved. Allowed values and editor guidance are governed by the approved Batch 02.4 validation/editorial contract.
 
 ## Learning / Certification Representation
 
@@ -350,9 +345,9 @@ Rationale: current requirements need lightweight optional profile-owned evidence
 
 ## Media Accessibility Representation
 
-Approved v1 direction: Asset metadata sufficient for v1, with 02.4 editorial rules.
+Approved v1 direction: Asset metadata sufficient for v1, with Batch 02.4 editorial rules.
 
-This ledger approves semantic asset fields on owning entries and does not add alt/caption fields everywhere. Batch 02.4 must define how Contentful Asset title/description support meaningful alt text, decorative treatment, public-safe media notes, and link text for the resume asset.
+This ledger approves semantic asset fields on owning entries and does not add alt/caption fields everywhere. Batch 02.4 defines how Contentful Asset title/description support meaningful alt text, decorative treatment, public-safe media notes, and link text for the resume asset.
 
 ## Field Count Pressure
 

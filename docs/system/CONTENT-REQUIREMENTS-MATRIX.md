@@ -29,7 +29,7 @@ Phase 02 — ACTIVE
 Batch 02.1 — APPROVED
 Batch 02.2 — APPROVED
 Batch 02.3 — APPROVED
-Batch 02.4 — NEXT
+Batch 02.4 — APPROVED
 Bootstrap migration — BLOCKED / NOT RUN
 Seed content — NOT STARTED
 ```
@@ -195,7 +195,7 @@ Route type: Landing.
 | Featured projects target of 3 | Project | REQUIRED | EDITORIAL | Project | READY requires selected proof path; final three not chosen here | Only public-safe projects eligible | Project links must be descriptive | Project title/summary/social image can feed fallback | Project media required on project detail, optional in preview | 2-3 Project fixtures with featured eligibility | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | OD-09 remains open |
 | Experience snapshot | Experience | REQUIRED | EDITORIAL | Experience | READY requires professional context | Confidential employer details may be generalized | Dates/roles understandable as text | Supports professional experience intent | Logo optional/public-safe | 2-3 Experience fixtures | LIKELY REFERENCE | Do not duplicate Work history wholesale |
 | Writing highlights | Article | REQUIRED | EDITORIAL | Article | READY requires writing authority path when available for v1 intent | Published/public articles only | Article links descriptive | Article title/excerpt feed fallback | Article hero optional | 2+ Article fixtures | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | Selection/freshness logic remains implementation/Phase 02 question |
-| Core expertise/skills | Skill / Skill Group | REQUIRED | EDITORIAL | Skill, Skill Group | READY requires capability signal | No subjective percentage scores | Text labels required, not icon-only meaning | Supports route description | N/A | 8-12 Skill fixtures, 2-4 Skill Group fixtures | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | OD-06 remains open |
+| Core expertise/skills | Skill / Skill Group | REQUIRED | EDITORIAL | Skill, Skill Group | READY requires capability signal | No subjective percentage scores | Text labels required, not icon-only meaning | Supports route description | N/A | 8-12 Skill fixtures, 2-4 Skill Group fixtures | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | OD-06 resolved by supplemental Batch 02.4 decision reconciliation |
 | Contact/conversion path | Contact / Social Links | REQUIRED | MIXED | Contact, Social Links | READY requires viable contact path | No private phone/address requirement | CTA/link text must describe destination | Static route metadata code-owned | N/A | Contact fixture, Social Links fixtures | LIKELY FIELD / LIKELY REFERENCE | CTA copy implementation-owned |
 | Public-safe proof metrics | Project / Experience | CONDITIONAL | EDITORIAL | Project, Experience | Can strengthen READY but must not block when absent | Only credible, public-safe, non-confidential metrics | Metrics must be understandable as text | May strengthen route description but not required | N/A | Metric-present and metric-absent fixture states | LIKELY FIELD / NEEDS PHASE 02 DECISION | OD-14 remains open |
 | Selected tools | Tool | OPTIONAL | EDITORIAL | Tool | Does not block READY | Must connect to actual work | Avoid logo-only meaning | Supports professional stack intent | Tool logo optional | Tool fixture | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | Do not require exhaustive inventory |
@@ -241,7 +241,7 @@ Route type: Narrative / Collection hybrid.
 | CMS/platform where appropriate | Tool | REQUIRED | EDITORIAL | Tool | READY requirement where relevant | Public platform names only | Text labels required | Supports CMS/content evidence | Logos optional | Tool fixture | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | N/A |
 | Public-safe metrics | Experience / Project | CONDITIONAL | EDITORIAL | Experience, Project | Required only when credible public metric exists | Must not expose confidential analytics | Text explanation required | Can support description but not required | N/A | Metric-present/absent fixture states | LIKELY FIELD / NEEDS PHASE 02 DECISION | OD-14 remains open |
 | Location, employment type, company URL, logo, team/market scale | Experience / Media | OPTIONAL | EDITORIAL | Experience | Does not block READY | Public-safe only | Link/logo accessibility where used | N/A | Logo optional | Optional experience fixture | LIKELY FIELD | N/A |
-| Related projects or writing | Project / Article | CONDITIONAL | EDITORIAL | Project, Article | Required only when relationship clarifies evidence | Related content must be public-safe | Descriptive links | Supports internal-link SEO intent | N/A | Related-content fixture variant | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | OD-13 remains open |
+| Related projects or writing | Project / Article | CONDITIONAL | EDITORIAL | Project, Article | Required only when relationship clarifies evidence | Related content must be public-safe | Descriptive links | Supports internal-link SEO intent | N/A | Related-content fixture variant | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | OD-13 resolved by supplemental Batch 02.4 decision reconciliation |
 | Earlier creative experience condensed representation | Experience | CONDITIONAL | EDITORIAL | Experience | Valid when useful to narrative; not all history required | Public-safe only | Clear chronology | N/A | N/A | Optional experience fixture | LIKELY FIELD | Do not require confidential employer detail |
 
 ### `/projects`
@@ -255,7 +255,7 @@ Route type: Collection.
 | Summary | Project | REQUIRED | EDITORIAL | Project | READY item requirement | No confidential specifics | Clear preview text | Description fallback for detail | N/A | Project fixture | LIKELY FIELD | N/A |
 | Project type | Project | REQUIRED | EDITORIAL | Project | READY item requirement | Public-safe classification | Text label | Supports SEO semantic meaning | N/A | Project fixture | LIKELY FIELD / NEEDS PHASE 02 DECISION | Taxonomy depth open |
 | Role/context | Project / Experience | REQUIRED | EDITORIAL | Project, Experience | READY item requirement | Public-safe | Text-readable | Supports description | N/A | Project fixture | LIKELY FIELD / LIKELY REFERENCE | N/A |
-| Primary capabilities | Skill | REQUIRED | EDITORIAL | Skill | READY item requirement | Public-safe | Text labels | Supports semantic classification | N/A | Skill fixture | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | OD-06/OD-12 remain open |
+| Primary capabilities | Skill | REQUIRED | EDITORIAL | Skill | READY item requirement | Public-safe | Text labels | Supports semantic classification | N/A | Skill fixture | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | OD-06/OD-12 resolved by supplemental Batch 02.4 decision reconciliation |
 | Technologies/platform context | Tool | REQUIRED | EDITORIAL | Tool | READY item requirement | Public platform/tool names only | Text labels, not logo-only | Supports route intent | Logos optional | Tool fixture | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | OD-08 boundary approved; Batch 02.2 approves Tool type; fields/references deferred |
 | Outcome indicator where meaningful | Project | CONDITIONAL | EDITORIAL | Project | Required only when credible public-safe outcome exists | No unsupported/confidential metrics | Outcome readable as text | Supports route description | N/A | Project fixture with/without metric | LIKELY FIELD | OD-14 remains open |
 | Detail-route link | Project | REQUIRED | DERIVED | Project | READY requires valid intended detail route | Only link public-safe eligible details | Link text must identify project | Canonical derived from slug | N/A | Detail READY fixture | DERIVED — DO NOT MODEL | Slug identity belongs to Project detail |
@@ -279,10 +279,10 @@ Route type: Detail.
 | Outcomes and lessons learned | Project | REQUIRED | EDITORIAL | Project | READY requirement | Outcomes must be supported and public-safe | Outcomes text-readable | Description support | N/A | Project fixture | LIKELY FIELD | Metrics conditional |
 | Representative hero/media | Media | REQUIRED | EDITORIAL | Project media | READY requires accessible required media | Must be public-safe; recreate/redact when needed | Meaningful alt text required | Social image fallback input | Hero/representative image required | Media present fixture | LIKELY FIELD / NEEDS PHASE 02 DECISION | Screenshots/gallery optional |
 | Public-safe classification | Project | REQUIRED | EDITORIAL | Project | READY requires public-safe approval | Must classify publishability before public route | N/A | Indexability depends on public-safe content | N/A | Public-safe and blocked fixture notes | LIKELY FIELD / NEEDS PHASE 02 DECISION | OD-10 remains open |
-| Relevant tags/classification | Project / Skill / Tool | REQUIRED | EDITORIAL | Skill, Tool | READY classification requirement | Public-safe labels only | Text labels | Supports semantic grouping, not meta-keywords | N/A | Project/Skill/Tool fixtures | NEEDS PHASE 02 DECISION | OD-12 remains open |
+| Relevant tags/classification | Project / Skill / Tool | REQUIRED | EDITORIAL | Skill, Tool | READY classification requirement | Public-safe labels only | Text labels | Supports semantic grouping, not meta-keywords | N/A | Project/Skill/Tool fixtures | NEEDS PHASE 02 DECISION | OD-12 resolved by supplemental Batch 02.4 decision reconciliation |
 | Canonical route state | Project | REQUIRED | DERIVED | Project slug/publication state | READY/MISSING/DRAFT depends on slug and publication | Draft/preview cannot be public canonical | N/A | Canonical code-derived | N/A | READY/MISSING/DRAFT fixtures | DERIVED — DO NOT MODEL | Do not create freeform canonical field |
 | SEO fallback inputs | Project / SEO Editorial Override | REQUIRED | MIXED | Project | READY requires semantic fallback; overrides optional | Must not override with misleading metadata | Social image alt/context where used | `seoTitle?`, `seoDescription?`, `socialImage?` optional; title/summary/image fallback | Hero image supports social fallback | Override and fallback fixtures | LIKELY FIELD / NEEDS PHASE 02 DECISION | Exact representation deferred |
-| Organization/client, timeline, team, metrics, architecture, CMS/platform, frontend stack, screenshots, gallery, repo/live URL, related writing/experience | Project / Experience / Article / Tool / Media | CONDITIONAL | EDITORIAL | Project, Experience, Article, Tool | Required only when available, public-safe, and useful | May anonymize, generalize, redact, or omit | Links/media need accessible labels/alt | Supports internal-link SEO intent where relevant | Screenshots/gallery optional; video deferred | Conditional fixture variants | LIKELY FIELD / LIKELY REFERENCE / NEEDS PHASE 02 DECISION | OD-13 remains open |
+| Organization/client, timeline, team, metrics, architecture, CMS/platform, frontend stack, screenshots, gallery, repo/live URL, related writing/experience | Project / Experience / Article / Tool / Media | CONDITIONAL | EDITORIAL | Project, Experience, Article, Tool | Required only when available, public-safe, and useful | May anonymize, generalize, redact, or omit | Links/media need accessible labels/alt | Supports internal-link SEO intent where relevant | Screenshots/gallery optional; video deferred | Conditional fixture variants | LIKELY FIELD / LIKELY REFERENCE / NEEDS PHASE 02 DECISION | OD-13 resolved by supplemental Batch 02.4 decision reconciliation |
 
 ### `/writing`
 
@@ -294,11 +294,11 @@ Route type: Collection.
 | Article preview title | Article | REQUIRED | EDITORIAL | Article | READY item requirement | Public-safe title | Link identifies article | Title fallback input | N/A | Article fixture | LIKELY FIELD | N/A |
 | Excerpt | Article | REQUIRED | EDITORIAL | Article | READY item requirement | Public-safe summary | Clear preview text | Description fallback input | N/A | Article fixture | LIKELY FIELD | Manual excerpt preferred |
 | Publication date | Article | REQUIRED | EDITORIAL | Article | READY item requirement | Public publish date | Date text-readable | Required semantic article input | N/A | Article fixture | LIKELY FIELD | N/A |
-| Pillar/category where available | Article / Skill | CONDITIONAL | EDITORIAL | Article, Skill | Required when article classification exists | Public-safe category names | Text labels | Supports semantic grouping, not meta-keywords | N/A | Article taxonomy variant | NEEDS PHASE 02 DECISION | OD-05/OD-12 remain open |
+| Pillar/category where available | Article / Skill | CONDITIONAL | EDITORIAL | Article, Skill | Required when article classification exists | Public-safe category names | Text labels | Supports semantic grouping, not meta-keywords | N/A | Article taxonomy variant | NEEDS PHASE 02 DECISION | OD-05 remains open; OD-12 resolved by supplemental Batch 02.4 decision reconciliation |
 | Article detail link | Article | REQUIRED | DERIVED | Article slug | READY item requirement | Only public articles link | Descriptive link text | Canonical derived from slug | N/A | Detail READY fixture | DERIVED — DO NOT MODEL | N/A |
-| Hero image, updated date, tags, reading time, related project, featured state | Article / Project / Media | OPTIONAL | MIXED | Article, Project | Does not block collection READY | Public-safe media/relationships only | Alt text if image used | Reading time derived; related links contextual | Hero optional | Media present/absent, related-content variants | LIKELY FIELD / LIKELY REFERENCE / DERIVED — DO NOT MODEL | OD-13 remains open |
+| Hero image, updated date, tags, reading time, related project, featured state | Article / Project / Media | OPTIONAL | MIXED | Article, Project | Does not block collection READY | Public-safe media/relationships only | Alt text if image used | Reading time derived; related links contextual | Hero optional | Media present/absent, related-content variants | LIKELY FIELD / LIKELY REFERENCE / DERIVED — DO NOT MODEL | OD-13 resolved by supplemental Batch 02.4 decision reconciliation |
 | Search | Article | DEFERRED | CODE | Article | Not required for READY | N/A | N/A | N/A | N/A | Not created | DEFERRED | N/A |
-| Complex taxonomy | Article / Skill | DEFERRED | EDITORIAL | Article, Skill | Not required for READY | Public-safe only if later used | Text labels | Not meta-keywords | N/A | Not created | DEFERRED / NEEDS PHASE 02 DECISION | OD-12 remains open |
+| Complex taxonomy | Article / Skill | DEFERRED | EDITORIAL | Article, Skill | Not required for READY | Public-safe only if later used | Text labels | Not meta-keywords | N/A | Not created | DEFERRED / NEEDS PHASE 02 DECISION | OD-12 resolved by supplemental Batch 02.4 decision reconciliation |
 | Filtering | Article | OPTIONAL | CODE | Article | Does not block READY | N/A | N/A | N/A | N/A | Optional future fixture only | NEEDS PHASE 02 DECISION | Volume must justify |
 
 ### `/writing/[slug]`
@@ -312,10 +312,10 @@ Route type: Detail.
 | Publication date | Article | REQUIRED | EDITORIAL | Article | READY requirement | Public publish date | Date text-readable | Required semantic article input | N/A | Article fixture | LIKELY FIELD | N/A |
 | Author/profile context | Profile | REQUIRED | EDITORIAL | Profile | READY requirement | Public profile only | Author link/text descriptive | Structured-data candidate input | Profile photo optional in article context | Profile fixture | LIKELY REFERENCE | Reuse canonical Profile |
 | Body | Article | REQUIRED | EDITORIAL | Article | READY requirement | No confidential details | Logical headings, readable order, descriptive links | Metadata must match visible content | Inline media optional | Article fixture | LIKELY FIELD | N/A |
-| Classification/pillar where applicable | Article / Skill | CONDITIONAL | EDITORIAL | Article, Skill | Required when classification exists | Public-safe labels | Text labels | Supports semantic grouping, not meta-keywords | N/A | Article classification variant | NEEDS PHASE 02 DECISION | OD-05/OD-12 remain open |
+| Classification/pillar where applicable | Article / Skill | CONDITIONAL | EDITORIAL | Article, Skill | Required when classification exists | Public-safe labels | Text labels | Supports semantic grouping, not meta-keywords | N/A | Article classification variant | NEEDS PHASE 02 DECISION | OD-05 remains open; OD-12 resolved by supplemental Batch 02.4 decision reconciliation |
 | Public publication state | Article | REQUIRED | MIXED | Article | Draft/unpublished = DRAFT/PREVIEW, not public READY | Draft content not public | N/A | Robots/indexability derived from publication state | N/A | Draft/preview fixture | LIKELY FIELD / DERIVED — DO NOT MODEL | Preview implementation unresolved |
 | SEO fallback inputs | Article / SEO Editorial Override / Profile | REQUIRED | MIXED | Article, Profile | READY requires semantic fallback; overrides optional | Overrides must match article content | Social image alt/context where used | `seoTitle?`, `seoDescription?`, `socialImage?` optional; title/excerpt/image/author/date fallback | Hero optional | Override and fallback fixtures | LIKELY FIELD / NEEDS PHASE 02 DECISION | Exact representation deferred |
-| Updated date, hero image, table of contents, references, code examples, tags, related articles, related projects, reading time | Article / Project / Media / Tool | OPTIONAL | MIXED | Article, Project, Tool | Does not block READY unless content pattern requires it | Public-safe references/code only | Code examples accessible; links descriptive; alt text if media used | Reading time derived; updated date semantic if shown | Hero/inline images optional; video deferred | Optional variants | LIKELY FIELD / LIKELY REFERENCE / DERIVED — DO NOT MODEL | OD-13 remains open |
+| Updated date, hero image, table of contents, references, code examples, tags, related articles, related projects, reading time | Article / Project / Media / Tool | OPTIONAL | MIXED | Article, Project, Tool | Does not block READY unless content pattern requires it | Public-safe references/code only | Code examples accessible; links descriptive; alt text if media used | Reading time derived; updated date semantic if shown | Hero/inline images optional; video deferred | Optional variants | LIKELY FIELD / LIKELY REFERENCE / DERIVED — DO NOT MODEL | OD-13 resolved by supplemental Batch 02.4 decision reconciliation |
 
 ### `/tools`
 
@@ -324,9 +324,9 @@ Route type: Collection / Reference.
 | Requirement | Domain | Level | Ownership | Reuse Source | Route State Impact | Public-Safety Rule | Accessibility Rule | SEO Dependency | Media Requirement | Fixture Need | Future CMS Implication | Notes / Open Decision |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Tool name | Tool | REQUIRED | EDITORIAL | Tool | READY requires at least one tool; otherwise EMPTY | Public tool/platform names only | Text label required | Static route metadata code-owned | Logo optional | 6-12 Tool fixtures | LIKELY FIELD / NEEDS PHASE 02 DECISION | Tool = product/platform/framework/software |
-| Category | Tool / Skill Group | REQUIRED | EDITORIAL | Tool, Skill Group | READY requirement | Public-safe label | Text label | Supports discovery, not meta-keywords | N/A | Tool category fixture | LIKELY FIELD / NEEDS PHASE 02 DECISION | OD-06/OD-12 remain open |
+| Category | Tool / Skill Group | REQUIRED | EDITORIAL | Tool, Skill Group | READY requirement | Public-safe label | Text label | Supports discovery, not meta-keywords | N/A | Tool category fixture | LIKELY FIELD / NEEDS PHASE 02 DECISION | OD-06/OD-12 resolved by supplemental Batch 02.4 decision reconciliation |
 | Professional usage context | Tool | REQUIRED | EDITORIAL | Tool | READY requirement | Must relate to real work without private details | Plain explanatory text | Supports route description | N/A | Tool fixture | LIKELY FIELD | Not a logo wall |
-| Relationship to actual work | Project / Experience / Skill | REQUIRED | EDITORIAL | Project, Experience, Skill | READY requirement for meaningful route | Public-safe relationships only | Descriptive links | Supports internal-link SEO intent | N/A | Related project/experience fixture | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | OD-13 remains open |
+| Relationship to actual work | Project / Experience / Skill | REQUIRED | EDITORIAL | Project, Experience, Skill | READY requirement for meaningful route | Public-safe relationships only | Descriptive links | Supports internal-link SEO intent | N/A | Related project/experience fixture | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | OD-13 resolved by supplemental Batch 02.4 decision reconciliation |
 | Logo/icon | Media | OPTIONAL | EDITORIAL | Tool media | Does not block READY | Public-safe/logo rights considered later | Decorative unless meaningful; text label still required | N/A | Optional | Media present/absent fixture | LIKELY FIELD / NEEDS PHASE 02 DECISION | No icon-only meaning |
 | External documentation URL | Tool | OPTIONAL | EDITORIAL | Tool | Does not block READY | Public URL only | Link text descriptive | External links policy later | N/A | Optional tool fixture | LIKELY FIELD | N/A |
 | Featured state | Tool | OPTIONAL | EDITORIAL | Tool | Does not block READY | Public-safe | Text label if shown | N/A | N/A | Optional fixture | NEEDS PHASE 02 DECISION | N/A |
@@ -409,7 +409,7 @@ Skill = professional capability.
 Tool = product, platform, framework, technology, or software used to exercise capability.
 ```
 
-OD-08 itself did not decide whether Tool becomes a standalone Contentful content type. Phase 02 / Batch 02.2 later approves Tool as a standalone v1 type; Batch 02.3 approves exact Tool field IDs; references remain downstream Phase 02 work.
+OD-08 itself did not decide whether Tool becomes a standalone Contentful content type. Phase 02 / Batch 02.2 later approves Tool as a standalone v1 type; Batch 02.3 approves exact Tool field IDs; Batch 02.4 approves references and validations.
 
 ## Fixture Requirements Matrix
 
@@ -548,15 +548,15 @@ Do not implement readiness logic in Batch 01.4.
 |---|---|---|---|
 | Project title | Case-study title | LIKELY FIELD | No field ID approved. |
 | Project slug | Detail route identity | LIKELY FIELD / DERIVED — DO NOT MODEL for canonical URL | Slug value may be modeled; canonical URL is derived. |
-| Project related Article | Related writing | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | Manual vs derived remains open. |
+| Project related Article | Related writing | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | Manual vs derived resolved by OD-13 and the approved Batch 02.4 reference contract. |
 | Project canonical URL | Absolute route URL | DERIVED — DO NOT MODEL | Code/state-derived. |
 | Project SEO title override | Optional editorial override | LIKELY FIELD / NEEDS PHASE 02 DECISION | Direct Project field preferred unless reuse evidence justifies reduced reference. |
 | Article reading time | Estimated reading duration | DERIVED — DO NOT MODEL | Calculate from article body if reliable. |
-| Article related Project | Evidence relationship | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | OD-13 remains open. |
+| Article related Project | Evidence relationship | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | OD-13 resolved by supplemental Batch 02.4 decision reconciliation. |
 | Static route section order | Page composition | CODE CONFIG — DO NOT MODEL | ADR-004 preserved. |
 | Homepage featured project selection | Curated project references | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | Target is 3; exact projects remain OD-09. |
 | Skills/tools relationship | Capability to technology mapping | LIKELY REFERENCE / NEEDS PHASE 02 DECISION | OD-08 semantic boundary approved; exact representation remains Phase 02 work. |
-| Taxonomy/tags | Category labels | NEEDS PHASE 02 DECISION | OD-12 remains open. |
+| Taxonomy/tags | Category labels | NEEDS PHASE 02 DECISION | OD-12 resolved by supplemental Batch 02.4 decision reconciliation. |
 | Contact form | Form model | DEFERRED | Not v1. |
 | Page-level `noFollow` | Editorial robots control | DERIVED — DO NOT MODEL / DEFERRED | Explicitly excluded from v1 editorial SEO. |
 | Generic page/page section | CMS-driven page composition | DEFERRED | ADR-004 preserved. |
@@ -571,11 +571,11 @@ No field IDs, content types, or reference validations are approved by this matri
 | Project is heavily reused. | Standalone domain clearly justified. | Project remains core proof domain. |
 | Article is heavily reused. | Standalone domain clearly justified. | Article remains core writing domain. |
 | Experience is independently meaningful and reused. | Likely standalone domain. | Experience remains professional context domain. |
-| Skill vs Tool distinction is supported by requirements. | Boundary is materially valid. | OD-08 resolved; Batch 02.2 approves Tool as a standalone v1 type; fields/references remain downstream. |
+| Skill vs Tool distinction is supported by requirements. | Boundary is materially valid. | OD-08 resolved; Batch 02.2 approves Tool as a standalone v1 type; fields approved by Batch 02.3; references/validations approved by Batch 02.4. |
 | SEO override values are owned by Project/Article meaning. | Reuse requirement not demonstrated enough for a standalone type. | Batch 02.2 absorbs SEO override concepts into owning content; Batch 02.3 approves exact field IDs. |
 | Learning/certification remains lightweight. | No standalone type required by current requirements. | OD-11 resolved by Batch 02.2 as lightweight profile-owned content; Batch 02.3 approves `personProfile.learningHighlights`. |
-| Related content appears in Projects, Writing, and Work. | Relationship approach needs decision. | OD-13 remains open. |
-| Taxonomy is useful but not deeply specified. | Avoid uncontrolled taxonomy types. | OD-12 remains open. |
+| Related content appears in Projects, Writing, and Work. | Relationship approach needs decision. | OD-13 resolved by supplemental Batch 02.4 decision reconciliation. |
+| Taxonomy is useful but not deeply specified. | Avoid uncontrolled taxonomy types. | OD-12 resolved by supplemental Batch 02.4 decision reconciliation. |
 
 ## Content Type Cap Check
 
@@ -600,6 +600,9 @@ Resolved decisions preserved:
 - OD-07 — Final formal v1 route contract: RESOLVED / APPROVED.
 - OD-08 — Skills vs Tools semantic boundary: RESOLVED / APPROVED.
 - OD-11 — certification / learning representation: RESOLVED / APPROVED by Phase 02 / Batch 02.2 as lightweight profile-owned content.
+- OD-06 — final skill-group taxonomy: RESOLVED / APPROVED by supplemental Phase 02 / Batch 02.4 decision validation.
+- OD-12 — taxonomy depth: RESOLVED / APPROVED by supplemental Phase 02 / Batch 02.4 decision validation.
+- OD-13 — manual vs derived related content: RESOLVED / APPROVED by supplemental Phase 02 / Batch 02.4 decision validation.
 - OD-15 — SEO override/default strategy: RESOLVED / APPROVED.
 
 Remaining open decisions:
@@ -609,11 +612,8 @@ Remaining open decisions:
 - OD-03 — desired work type.
 - OD-04 — final status of AI-Assisted Workflows & Automation pillar.
 - OD-05 — final status of SEO, Accessibility & Content Quality pillar.
-- OD-06 — final skill-group taxonomy.
 - OD-09 — which three projects become homepage features.
 - OD-10 — which enterprise projects are safely publishable.
-- OD-12 — taxonomy depth.
-- OD-13 — manual vs derived related content.
 - OD-14 — public-safe homepage proof metrics.
 
 Requirement-related narrowing:
@@ -621,8 +621,8 @@ Requirement-related narrowing:
 - OD-09: homepage requires 3 manually curated featured Project references; exact projects remain open.
 - OD-10: project and experience readiness require public-safety classification; exact publishable enterprise projects remain open.
 - OD-11: certifications remain optional/lightweight v1 and profile-owned; Batch 02.3 approves `personProfile.learningHighlights`.
-- OD-12: taxonomy must support useful classification without filters or complex taxonomy in v1; final depth remains open.
-- OD-13: related content is required conceptually where useful; manual vs derived implementation remains open.
+- OD-12: taxonomy must support useful classification without filters or complex taxonomy in v1; resolved by supplemental Batch 02.4 decision reconciliation.
+- OD-13: related content is required conceptually where useful; authored vs derived strategy resolved by supplemental Batch 02.4 decision reconciliation.
 - OD-14: proof metrics are CONDITIONAL and public-safe only; final metrics remain open.
 
 ## Evidence Limitations
@@ -646,7 +646,7 @@ Batch 01.4 is approved after external validation:
 - Batch 01.3 is APPROVED.
 - Batch 01.4 is APPROVED.
 - At Batch 01.4 closeout, Batch 01.5 advanced to NEXT. Batch 01.5 is now APPROVED, and Phase 01 is complete / frozen.
-- At Batch 01.4 closeout, Phase 02 was DEFERRED. Phase 02 is now ACTIVE; Batch 02.1 is approved, Batch 02.2 is APPROVED, Batch 02.3 is APPROVED, and Batch 02.4 is NEXT.
+- At Batch 01.4 closeout, Phase 02 was DEFERRED. Phase 02 is now ACTIVE; Batch 02.1 is approved, Batch 02.2 is APPROVED, Batch 02.3 is APPROVED, Batch 02.4 is APPROVED, and Batch 02.5 is NEXT.
 - all nine approved routes have content requirements.
 - required, optional, conditional, deferred, and not-applicable requirements are classified.
 - editorial/code/derived/mixed ownership is classified.
