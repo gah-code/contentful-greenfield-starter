@@ -207,6 +207,29 @@ All meaningful project changes should be recorded here.
 - Preserved the approved `10 types / 99 fields / 18 references` model.
 - Recorded corrected migration checksum: `46d5702fe8685d1b995eaf37dfb3097fda717e2a02dc2913464328c315e38c0c`.
 - Fresh Gate A is required after the clean synchronized checkpoint.
+- Corrected Gate B retry executed once and failed.
+- `siteSettings` and `personProfile` were created before failure.
+- `socialLink.url` validation caused the migration to stop.
+- Reopened Batch 02.5 for complete Contentful regex/RE2 compatibility audit.
+- Removed URL regex lookaheads and explicit `flags: null` from migration regex payloads.
+- Recorded proposed RE2-corrected migration checksum: `4a2319e069245d94a62e253acc9d4d67ad57f5e3450a143c71607f8c10360e24`.
+- No second retry occurred.
+- No dev cleanup/reset occurred.
+- Master remained untouched.
+- Seed remains not started.
+- Re-approved reopened Phase 02 / Batch 02.5 after complete RE2/regex compatibility correction.
+- Preserved the second Gate B failure and partial dev state.
+- Audited all migration regex validations.
+- Corrected shared URL validation for RE2 compatibility.
+- Removed explicit `flags: null`.
+- Preserved slug and email validation semantics.
+- Clarified private/local URL destination enforcement as application/QA/editorial responsibility.
+- Recorded approved checksum: `4a2319e069245d94a62e253acc9d4d67ad57f5e3450a143c71607f8c10360e24`.
+- Corrected migration has not been executed.
+- Batch 02.6 remains blocked by partial dev schema.
+- Retry remains unauthorized.
+- Dev reset remains unauthorized.
+- Seed remains not started.
 
 ### Security
 

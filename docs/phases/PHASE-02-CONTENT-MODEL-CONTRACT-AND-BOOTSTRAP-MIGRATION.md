@@ -11,11 +11,11 @@ Phase 02 starts from approved content requirements, reconciles the existing prop
 
 ## Current Gate
 
-Batch 02.6 — Fresh Gate A — BLOCKED PENDING CLEAN GIT CHECKPOINT
+Batch 02.5 — RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION
 
 Bootstrap migration:
 
-APPROVED CORRECTED MIGRATION / NOT RE-EXECUTED / RETRY NOT AUTHORIZED
+APPROVED RE2-CORRECTED / NOT EXECUTED / RETRY NOT AUTHORIZED
 
 Seed content:
 
@@ -51,8 +51,8 @@ The migration is not the source of requirements. It is proposed implementation i
 | 02.2 | Content Type Contract | Approve the semantic v1 content type inventory and type IDs. | APPROVED |
 | 02.3 | Field + Field-ID Contract | Approve fields, field IDs, types, required states, localization behavior, relationship semantic intents, and semantic purpose. | APPROVED |
 | 02.4 | References + Validations + Editorial Contract | Approve references, cardinality, validations, display fields, editor-facing help, and editorial usability constraints. | APPROVED |
-| 02.5 | Bootstrap Migration Reconciliation + Preflight | Align the existing bootstrap migration to the approved model contract and perform non-mutating safety review. | RE-APPROVED AFTER COMPATIBILITY CORRECTION |
-| 02.6 | Bootstrap Migration Execution | Execute the approved bootstrap migration against `dev` only and record evidence. | BLOCKED PENDING FRESH GATE A |
+| 02.5 | Bootstrap Migration Reconciliation + Preflight | Align the existing bootstrap migration to the approved model contract and perform non-mutating safety review. | RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION |
+| 02.6 | Bootstrap Migration Execution | Execute the approved bootstrap migration against `dev` only and record evidence. | BLOCKED BY PARTIAL DEV STATE |
 | 02.7 | Phase 02 Validation + Closeout | Verify expected model state, master protection, migration evidence, truth-surface alignment, and readiness for Phase 03. | LATER |
 
 ## Modeling Boundaries
@@ -1626,12 +1626,12 @@ Carry forward to Batch 02.6:
 
 actual bootstrap execution.
 
-Batch 02.5 was APPROVED after external validation returned PASS WITH NOTES, then reopened after first Gate B execution evidence. Corrected Batch 02.5 artifacts are RE-APPROVED after external revalidation. Bootstrap migration is APPROVED CORRECTED MIGRATION / NOT RE-EXECUTED / RETRY NOT AUTHORIZED. Seed content remains NOT STARTED.
+Batch 02.5 was APPROVED after external validation returned PASS WITH NOTES, then reopened after first Gate B execution evidence. Corrected Batch 02.5 artifacts were RE-APPROVED after external revalidation. A later corrected Gate B retry executed once and failed on `socialLink.url` regex validation after partially mutating `dev`. Batch 02.5 is now RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION. Bootstrap migration retry is NOT AUTHORIZED. Seed content remains NOT STARTED.
 
 ## Batch 02.5 — Bootstrap Migration Reconciliation + Preflight
 
 Status:
-RE-APPROVED AFTER COMPATIBILITY CORRECTION
+RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION
 
 ### Goal
 
@@ -1651,7 +1651,7 @@ The approved ledgers remain the canonical model truth. The migration is implemen
 The bootstrap migration now implements the approved v1 type, field, reference, validation, asset, Rich Text, localization, and display-field contract. It is intended for a verified blank `dev` environment only.
 
 Migration execution:
-FIRST GATE B ATTEMPT PARTIAL / CORRECTED MIGRATION NOT RUN
+SECOND GATE B ATTEMPT EXIT 1 / PARTIAL DEV SCHEMA
 
 Contentful mutation commands during reopened correction:
 NONE
@@ -1784,7 +1784,76 @@ Wrapper review confirmed:
 - No retry was performed.
 - Corrected migration is externally reapproved and awaits fresh Gate A after a clean Git checkpoint.
 
+## Batch 02.6 Corrected Retry Incident + RE2 Reopen
+
+- Fresh Gate A passed external validation.
+- Corrected Gate B retry executed exactly once after explicit human authorization.
+- Schema creation partially succeeded.
+- `siteSettings` and `personProfile` exist in `dev` and were created/published before failure.
+- Migration failed on `socialLink.url`.
+- Failure classification: RE2 / URL regex validation compatibility.
+- No second retry occurred.
+- No cleanup occurred.
+- No `dev` reset/recreation occurred.
+- `master` was not targeted or mutated.
+- Batch 02.5 was reopened for complete regex audit and RE2-compatible URL validation correction.
+- Future `dev` reset remains separately gated and unauthorized.
+
+## Batch 02.5 RE2 Compatibility Closeout
+
+Status:
+RE-APPROVED
+
+External validation:
+PASS WITH NOTES
+
+Regex audit:
+
+- 8 regexp validations;
+- 0 prohibitRegexp validations;
+- 3 unique patterns;
+- 5 URL fields;
+- 2 slug fields;
+- 1 other regex field.
+
+Corrections:
+
+- removed RE2-incompatible negative lookaheads;
+- removed explicit `flags: null`;
+- preserved positive HTTPS structural validation;
+- preserved slug/email semantic validation;
+- clarified private/local destination enforcement ownership.
+
+Model contract:
+UNCHANGED / APPROVED V1
+
+Approved migration checksum:
+`4a2319e069245d94a62e253acc9d4d67ad57f5e3450a143c71607f8c10360e24`
+
+Migration execution:
+NOT RUN AFTER RE2 CORRECTION
+
+02.6:
+BLOCKED BY PARTIAL DEV
+
+Latest known dev:
+2 types / 0 entries / 0 assets / en-US
+
+Retry:
+NOT AUTHORIZED
+
+Dev reset:
+NOT AUTHORIZED
+
+Next:
+separate destructive dev recovery gate after Git checkpoint
+
+Seed:
+NOT STARTED
+
 ## Batch 02.5 Reopened Compatibility Correction Closeout
+
+Historical status before the corrected Gate B retry failed on URL regex validation. Superseded for current execution readiness by the RE2 compatibility reopen above.
 
 Status:
 RE-APPROVED
@@ -1847,10 +1916,10 @@ Batch 02.6 requires:
 
 Batch 02.6 owns actual bootstrap execution against `dev` only after execution-time gates and explicit human approval. It also owns live mutation evidence.
 
-## Batch 02.5 Closeout
+## Historical Batch 02.5 Closeout Before RE2 Reopen
 
 Status:
-RE-APPROVED AFTER COMPATIBILITY CORRECTION
+SUPERSEDED BY RE2 REGEX COMPATIBILITY REOPEN
 
 External validation:
 PASS WITH NOTES (historical original approval)
@@ -1859,10 +1928,10 @@ External revalidation:
 PASS
 
 Migration implementation:
-APPROVED / RECONCILED V1 / NOT RE-EXECUTED
+APPROVED RE2-CORRECTED / NOT EXECUTED
 
 Migration execution:
-ATTEMPTED ONCE / PARTIAL / NO MODEL CREATED
+ATTEMPTED TWICE / SECOND ATTEMPT EXIT 1 / PARTIAL DEV SCHEMA
 
 Static preflight:
 PASS / APPROVED
@@ -1871,13 +1940,13 @@ Contentful mutation commands during reopened correction:
 NONE
 
 `dev` mutation:
-NO MODEL CREATED
+PARTIAL DEV SCHEMA — `siteSettings` AND `personProfile`
 
 `master` mutation:
 NONE
 
 Bootstrap:
-APPROVED CORRECTED MIGRATION / NOT RE-EXECUTED / RETRY NOT AUTHORIZED
+APPROVED RE2-CORRECTED / NOT EXECUTED / RETRY NOT AUTHORIZED
 
 Seed:
 NOT STARTED

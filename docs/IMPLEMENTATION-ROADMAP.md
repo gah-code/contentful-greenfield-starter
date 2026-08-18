@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 active; Batch 02.1 approved; Batch 02.2 approved; Batch 02.3 approved; Batch 02.4 approved; Batch 02.5 re-approved after compatibility correction; Batch 02.6 blocked pending fresh Gate A
+Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 active; Batch 02.1 approved; Batch 02.2 approved; Batch 02.3 approved; Batch 02.4 approved; Batch 02.5 re-approved after RE2 compatibility correction; Batch 02.6 blocked by partial dev state
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -9,7 +9,7 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 |---|---|---|---|
 | 00 | Baseline + Two-Environment Setup | Complete; safe repository, secure tooling boundary, and governed `master` + `dev` operating model | None |
 | 01 | Content Strategy + Route Contract | Complete / frozen; requirements system approved for Phase 02 input | None |
-| 02 | Content Model Contract + Bootstrap Migration | Active; Batch 02.5 re-approved after compatibility correction; Batch 02.6 blocked pending fresh Gate A | CMS only |
+| 02 | Content Model Contract + Bootstrap Migration | Active; Batch 02.5 re-approved after RE2 compatibility correction; Batch 02.6 blocked by partial dev state | CMS only |
 | 03 | Model Export + Serial Clean-Room Verification | Approved model-only snapshot rebuilt into fresh `dev` from protected `master` | CMS only |
 | 04 | Editorial QA + Model Freeze | Editor-friendly baseline v1 | CMS only |
 | 05 | Representative Seed Content | Realistic draft entries after clean-room verification | CMS only |
@@ -43,8 +43,8 @@ Batch 02.1 — APPROVED
 Batch 02.2 — APPROVED
 Batch 02.3 — APPROVED
 Batch 02.4 — APPROVED
-Batch 02.5 — RE-APPROVED AFTER COMPATIBILITY CORRECTION
-Batch 02.6 — BLOCKED PENDING FRESH GATE A
+Batch 02.5 — RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION
+Batch 02.6 — BLOCKED BY PARTIAL DEV STATE
 Batch 02.7 — LATER
 ```
 
@@ -162,7 +162,7 @@ Define what the website needs to communicate before finalizing CMS fields.
 
 ## Phase 02 — Content Model Contract + Bootstrap Migration
 
-Current state: ACTIVE. Latest approved batch: 02.5 — Bootstrap Migration Reconciliation + Preflight — RE-APPROVED AFTER COMPATIBILITY CORRECTION. Batch 02.6 is blocked pending fresh Gate A after a clean Git checkpoint.
+Current state: ACTIVE. Batch 02.5 — Bootstrap Migration Reconciliation + Preflight — is RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION. Batch 02.6 is blocked by partial live `dev` schema.
 
 ### Goal
 
@@ -176,8 +176,8 @@ Translate frozen Phase 01 requirements into a lean, stable, migration-governed C
 | 02.2 | Content Type Contract | APPROVED |
 | 02.3 | Field + Field-ID Contract | APPROVED |
 | 02.4 | References + Validations + Editorial Contract | APPROVED |
-| 02.5 | Bootstrap Migration Reconciliation + Preflight | RE-APPROVED AFTER COMPATIBILITY CORRECTION |
-| 02.6 | Bootstrap Migration Execution | BLOCKED PENDING FRESH GATE A |
+| 02.5 | Bootstrap Migration Reconciliation + Preflight | RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION |
+| 02.6 | Bootstrap Migration Execution | BLOCKED BY PARTIAL DEV STATE |
 | 02.7 | Phase 02 Validation + Closeout | LATER |
 
 ### Approved Batch 02.1 Evidence
@@ -232,13 +232,27 @@ Translate frozen Phase 01 requirements into a lean, stable, migration-governed C
 - Live read-only checks found `dev` still blank: 0 content types, 0 entries, 0 assets, and `en-US` locale.
 - Investigation identified unsupported Rich Text `enabledNodeTypes` in the migration and a secondary missing noninteractive confirmation flag.
 - Batch 02.5 was reopened for narrow compatibility correction and re-approved after external revalidation.
-- Corrected migration remains unexecuted.
-- Batch 02.6 retry remains unauthorized.
-- Next operational step is fresh Gate A after commit/push and clean `0 0`.
+- Corrected Gate B retry executed once after Fresh Gate A external validation and explicit human authorization.
+- The retry failed on `socialLink.url` URL regex validation after creating/publishing `siteSettings` and `personProfile`.
+- Batch 02.5 was reopened again for complete regex/RE2 compatibility correction and re-approved after external validation returned PASS WITH NOTES.
+- Migration retry and destructive dev recovery remain unauthorized.
+- Next operational step after a Git checkpoint is separate destructive `dev` recovery approval.
+
+### Recovery Sequence After RE2 Correction
+
+```text
+02.5 RE2 correction approval
+-> Git checkpoint
+-> explicit dev recovery authorization
+-> dev reset/recreation
+-> verify blank dev
+-> Fresh Gate A
+-> new Gate B authorization
+```
 
 ### Execution Gate
 
-Bootstrap migration execution remains blocked until fresh Batch 02.6 Gate A verifies:
+Bootstrap migration execution remains blocked until `dev` recovery is separately authorized and completed, and fresh Batch 02.6 Gate A verifies:
 
 - content type inventory
 - type IDs

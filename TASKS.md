@@ -151,9 +151,9 @@ Status: APPROVED
 
 #### Batch 02.5 — Bootstrap Migration Reconciliation + Preflight
 
-Status: RE-APPROVED AFTER COMPATIBILITY CORRECTION
+Status: RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION
 
-Previously approved after external validation returned PASS WITH NOTES. Later Batch 02.6 Gate B execution evidence forced a narrow compatibility reopen. Corrected artifacts are externally reapproved; corrected migration has not been re-executed.
+Previously approved after external validation returned PASS WITH NOTES, then reopened for Rich Text migration compatibility and re-approved. The corrected Gate B retry executed once and failed after partially mutating `dev`; Batch 02.5 was reopened again for RE2 URL-validation compatibility and complete regex audit, then externally re-approved after PASS WITH NOTES validation.
 
 - [x] Confirm complete v1 model contract approved
 - [x] Audit legacy migration
@@ -192,6 +192,8 @@ Previously approved after external validation returned PASS WITH NOTES. Later Ba
 
 ##### Batch 02.5 Reopen — Migration Compatibility Correction
 
+Historical compatibility correction; superseded for execution readiness by the later RE2 correction and partial `dev` recovery boundary.
+
 - [x] Diagnose first Gate B attempt
 - [x] Confirm dev remained blank
 - [x] Identify unsupported Rich Text node validation
@@ -204,23 +206,52 @@ Previously approved after external validation returned PASS WITH NOTES. Later Ba
 - [x] Calculate corrected migration checksum
 - [x] External revalidation
 - [x] Final approval reconciliation
-- [ ] Commit/push corrected artifacts
+- [ ] Review / stage / commit / push current corrected artifacts
+- [ ] Confirm clean 0 0 after checkpoint
+- [ ] Fresh Gate A after separate dev recovery
+- [ ] Fresh explicit Gate B authorization
+
+##### Batch 02.5 Reopen — RE2 URL Validation Compatibility
+
+- [x] Preserve second Gate B failure evidence
+- [x] Confirm partial dev state
+- [x] Confirm no second retry
+- [x] Inventory every migration regexp
+- [x] Inventory every prohibitRegexp
+- [x] Audit all patterns for RE2 unsupported syntax
+- [x] Audit regex payload shape / flags
+- [x] Correct shared URL validation
+- [x] Audit slug regex
+- [x] Audit all non-URL regex
+- [x] Run local RE2 compatibility where available
+- [x] Run local migration validation
+- [x] Preserve static 10 / 99 / 18
+- [x] Calculate new migration checksum
+- [x] Ensure raw error log is outside repository
+- [x] External revalidation
+- [x] Final approval reconciliation
+- [ ] Review / stage / commit / push
 - [ ] Confirm clean 0 0
+- [ ] Obtain explicit destructive dev recovery approval
+- [ ] Recover/recreate blank dev
+- [ ] Verify blank dev
 - [ ] Fresh Gate A
-- [ ] Fresh explicit Gate B retry authorization
+- [ ] Fresh Gate B authorization
 
 #### Later Phase 02 Batches
 
-- Batch 02.6 — Bootstrap Migration Execution — BLOCKED PENDING FRESH GATE A
+- Batch 02.6 — Bootstrap Migration Execution — BLOCKED BY PARTIAL DEV STATE / AWAITING SEPARATE DESTRUCTIVE DEV RECOVERY GATE
 - Batch 02.7 — Phase 02 Validation + Closeout — LATER
 
-Migration implementation: APPROVED / RECONCILED V1 / NOT RE-EXECUTED
+Migration implementation: APPROVED RE2-CORRECTED / NOT EXECUTED
 
-Migration execution: FIRST GATE B ATTEMPT PARTIAL / CORRECTED MIGRATION NOT RUN
+Migration execution: SECOND GATE B ATTEMPT EXIT 1 / PARTIAL DEV SCHEMA
 
-Bootstrap migration: ATTEMPTED ONCE / NO MODEL CREATED / RETRY BLOCKED
+Bootstrap migration: ATTEMPTED TWICE / SECOND ATTEMPT CREATED PARTIAL DEV SCHEMA
 
 Migration retry: NOT AUTHORIZED
+
+Dev reset: NOT AUTHORIZED
 
 Seed content: NOT STARTED
 
@@ -414,8 +445,8 @@ Recorded Phase 00 evidence:
 - Batch 02.2 is approved after external validation.
 - Batch 02.3 is approved after external validation.
 - Batch 02.4 is approved after external validation.
-- Batch 02.5 was approved after external validation returned PASS WITH NOTES, reopened after first Gate B execution evidence, and re-approved after compatibility correction.
-- Migration implementation is approved / reconciled V1 / not re-executed.
-- Bootstrap migration was attempted once; no model was created; retry remains blocked pending fresh Gate A and fresh explicit Gate B authorization.
+- Batch 02.5 was approved after external validation returned PASS WITH NOTES, reopened after first Gate B execution evidence, re-approved after Rich Text compatibility correction, reopened again after corrected Gate B retry failed on URL regex compatibility, and re-approved after RE2 compatibility correction.
+- Migration implementation is approved RE2-corrected / not executed.
+- Bootstrap migration was attempted twice; the second attempt created `siteSettings` and `personProfile` before failing on `socialLink.url`; retry and dev reset remain unauthorized.
 - Seed content remains not started.
-- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by reopened Batch 02.5 remediation.
+- No Contentful environment, locale, schema, content, export, import, retry, dev cleanup, or seed mutation is authorized by Batch 02.5 RE2 final approval reconciliation.

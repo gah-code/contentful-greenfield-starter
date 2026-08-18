@@ -31,16 +31,17 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | --- | --- |
 | Current phase | Phase 02 - Content Model Contract + Bootstrap Migration |
 | Latest completed phase | Phase 01 - Complete / Frozen |
-| Latest approved batch | Batch 02.5 - Compatibility correction re-approved |
-| Next gate | Batch 02.6 - Fresh Gate A |
+| Current batch | Batch 02.5 - RE2 compatibility correction re-approved |
+| Next gate | Separate dev recovery approval after Git checkpoint |
 | Previous phase | Phase 00 - Complete |
 | Content model | Approved V1 model contract |
-| Migration implementation | Approved corrected migration / not re-executed |
-| Corrected checksum | `46d5702fe8685d1b995eaf37dfb3097fda717e2a02dc2913464328c315e38c0c` |
-| First Gate B attempt | Partial / no schema created |
+| Migration implementation | Approved RE2-corrected / not executed |
+| Approved checksum | `4a2319e069245d94a62e253acc9d4d67ad57f5e3450a143c71607f8c10360e24` |
+| Live `dev` | Partial - 2 types / 0 entries / 0 assets / en-US |
 | Migration retry | Not authorized |
+| Dev reset | Not authorized |
 | Environments | `master` + `dev` |
-| Bootstrap migration | Blocked pending fresh Gate A |
+| Bootstrap migration | Blocked |
 | Seed content | Not started |
 
 > For canonical current state, see [docs/PROJECT-STATE.md](docs/PROJECT-STATE.md) and [TASKS.md](TASKS.md).
@@ -77,7 +78,7 @@ The implementation sequence keeps CMS decisions upstream of templates and keeps 
 | Environment | Responsibility | Current posture |
 | --- | --- | --- |
 | `master` | Permanent protected baseline and future release target | Verified clean protected baseline |
-| `dev` | Single rotating sandbox for migration development, model review, and editorial QA | Verified clean sandbox for future approved bootstrap work |
+| `dev` | Single rotating sandbox for migration development, model review, and editorial QA | Partial schema after failed Gate B retry; destructive recovery not authorized |
 
 Verification is a workflow state, not a third Contentful environment.
 

@@ -1,6 +1,6 @@
 # Phase 02 / Batch 02.5 Migration Preflight
 
-Status: RE-APPROVED AFTER COMPATIBILITY CORRECTION
+Status: RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION
 Owner: Phase 02 - Content Model Contract + Bootstrap Migration
 
 This report records non-canonical implementation evidence for Batch 02.5. The approved model truth remains in:
@@ -19,38 +19,38 @@ Batch:
 02.5 — Bootstrap Migration Reconciliation + Preflight
 
 Status:
-RE-APPROVED AFTER COMPATIBILITY CORRECTION
+RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION
 
 External validation:
 PASS WITH NOTES (historical original approval)
 
 External revalidation:
-PASS
+PASS WITH NOTES — RE2-corrected migration externally approved
 
 Migration implementation:
-APPROVED / RECONCILED V1 / NOT RE-EXECUTED
+APPROVED RE2-CORRECTED / NOT EXECUTED
 
 Migration execution:
-ATTEMPTED ONCE / PARTIAL / NO MODEL CREATED
+ATTEMPTED TWICE / SECOND ATTEMPT EXIT 1 / PARTIAL DEV SCHEMA
 
 Contentful mutation commands during reopened correction:
 NONE
 
 `dev` mutation:
-NO MODEL CREATED
+PARTIAL DEV SCHEMA FROM GATE B RETRY — `siteSettings` AND `personProfile`
 
 `master` mutation:
 NONE
 
 Bootstrap:
-APPROVED CORRECTED MIGRATION / NOT RE-EXECUTED / RETRY NOT AUTHORIZED
+APPROVED RE2-CORRECTED / NOT EXECUTED / RETRY NOT AUTHORIZED
 
 Seed:
 NOT STARTED
 
 ## Scope
 
-Batch 02.5 reconciles `content-model/migrations/0001-bootstrap-portfolio-model.js` to the approved v1 model contract and performs static, non-mutating preflight only. This report was reopened after first Gate B execution evidence proved a narrow migration/tooling compatibility defect.
+Batch 02.5 reconciles `content-model/migrations/0001-bootstrap-portfolio-model.js` to the approved v1 model contract and performs static, non-mutating preflight only. This report was reopened after first Gate B execution evidence proved a narrow migration/tooling compatibility defect, and reopened again after the corrected Gate B retry failed on URL regex validation after partially mutating `dev`.
 
 Out of scope:
 
@@ -82,28 +82,168 @@ Corrections:
 - removed unsupported Rich Text node types from `enabledNodeTypes`;
 - added approved noninteractive confirmation handling with `--yes`.
 
-Corrected migration status:
-APPROVED / RECONCILED V1 / NOT RE-EXECUTED
+Corrected migration status before second Gate B attempt:
+HISTORICAL / SUPERSEDED BY RE2 REGEX COMPATIBILITY REOPEN
 
 Original externally approved checksum, now historical:
 `ee19461b16e77b91acab7c7ffa9320b963699d5521c9dba0b4282a5bfa0c6eb5`
 
-Corrected approved checksum:
+Corrected approved checksum, now historical:
 `46d5702fe8685d1b995eaf37dfb3097fda717e2a02dc2913464328c315e38c0c`
 
 Corrected checksum classification:
-APPROVED CORRECTED MIGRATION CHECKSUM
+HISTORICAL / SUPERSEDED FOR FUTURE EXECUTION
 
 Migration execution after correction:
-NOT RUN
+EXECUTED ONCE AS CORRECTED RETRY / EXIT 1 / PARTIAL DEV SCHEMA
 
 Retry authorization:
 NOT GRANTED
 
-## Reopened Batch 02.5 Approval Status
+## Second Gate B Failure — Regex Compatibility Reopen
+
+Execution attempt:
+#2 overall
+
+Corrected retry:
+#1
+
+Result:
+EXIT 1 / PARTIAL DEV SCHEMA
+
+Failure point:
+`socialLink.url`
+
+Live post-failure state:
+
+- 2 content types
+- 0 entries
+- 0 assets
+- en-US
+
+Created types:
+
+- `siteSettings`
+- `personProfile`
+
+Root cause classification:
+RE2 / URL REGEX VALIDATION COMPATIBILITY
+
+Raw error log:
+NOT STORED IN REPOSITORY
+
+Migration retry:
+NOT AUTHORIZED
+
+Dev cleanup/reset:
+NOT AUTHORIZED
+
+## Complete Regex Audit
+
+Total regex validations: 8.
+
+`regexp` count: 8.
+
+`prohibitRegexp` count: 0.
+
+Unique regex patterns: 3.
+
+Fields using URL regex: 5.
+
+Fields using slug regex: 2.
+
+Other regex purposes: 1 email field.
+
+RE2-incompatible patterns found:
+
+- original shared public URL helper used negative lookaheads for localhost/private-IP exclusions.
+
+Corrected patterns:
+
+- shared public URL helper changed from the negative-lookahead pattern to `^https:\/\/(?:[A-Za-z0-9-]+\.)+[A-Za-z]{2,}(?::[0-9]+)?(?:\/[^\s]*)?$`;
+- explicit `flags: null` removed from slug, URL, and email regexp payloads.
+
+Regexes kept unchanged:
+
+- slug structural pattern: `^[a-z0-9]+(?:-[a-z0-9]+)*$`;
+- email structural pattern: `^[^\s@]+@[^\s@]+\.[^\s@]+$`.
+
+Enforcement gaps:
+
+- Contentful schema enforces a RE2-compatible structural absolute HTTPS DNS-style URL.
+- No-private/local URL policy remains an approved semantic rule enforced by application validation, QA, and editorial governance where Contentful regex cannot safely express it.
+
+Local compatibility result:
+PASS — installed migration validation accepted all regex payloads, all flags are absent, unsupported-feature scan found no lookahead/lookbehind/backreference in active migration regex validators, Rich Text compatibility remains PASS, and static shape remains 10 / 99 / 18.
+
+Pre-RE2 correction checksum:
+`46d5702fe8685d1b995eaf37dfb3097fda717e2a02dc2913464328c315e38c0c`
+
+Pre-RE2 checksum classification:
+HISTORICAL / SUPERSEDED FOR FUTURE EXECUTION
+
+Current RE2-corrected checksum:
+`4a2319e069245d94a62e253acc9d4d67ad57f5e3450a143c71607f8c10360e24`
+
+Current checksum classification:
+APPROVED RE2-CORRECTED MIGRATION CHECKSUM
+
+## RE2 Compatibility Reapproval Status
 
 Status:
-RE-APPROVED AFTER COMPATIBILITY CORRECTION
+RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION
+
+External validation:
+PASS WITH NOTES
+
+Current approved migration checksum:
+`4a2319e069245d94a62e253acc9d4d67ad57f5e3450a143c71607f8c10360e24`
+
+Classification:
+APPROVED RE2-CORRECTED MIGRATION CHECKSUM
+
+Execution status:
+NOT EXECUTED
+
+Previous corrected checksum:
+`46d5702fe8685d1b995eaf37dfb3097fda717e2a02dc2913464328c315e38c0c`
+
+Classification:
+HISTORICAL / SUPERSEDED FOR FUTURE EXECUTION
+
+Original checksum:
+`ee19461b16e77b91acab7c7ffa9320b963699d5521c9dba0b4282a5bfa0c6eb5`
+
+Classification:
+HISTORICAL / SUPERSEDED
+
+Second Gate B attempt:
+#2 overall / exit 1 / partial dev schema
+
+Latest known dev state:
+2 content types / 0 entries / 0 assets / en-US
+
+Detected types:
+`siteSettings`, `personProfile`
+
+Migration retry:
+NOT AUTHORIZED
+
+Dev reset/recreation:
+NOT AUTHORIZED
+
+Next operational gate after Git checkpoint:
+SEPARATE DESTRUCTIVE DEV RECOVERY APPROVAL
+
+Seed:
+NOT STARTED
+
+## Reopened Batch 02.5 Approval Status
+
+Historical status before the corrected Gate B retry failed on URL regex validation. Superseded for execution readiness by the RE2 compatibility reopen above.
+
+Status:
+SUPERSEDED BY RE2 REGEX COMPATIBILITY REOPEN
 
 External revalidation:
 PASS
@@ -118,10 +258,10 @@ Corrected migration checksum:
 `46d5702fe8685d1b995eaf37dfb3097fda717e2a02dc2913464328c315e38c0c`
 
 Classification:
-APPROVED CORRECTED MIGRATION CHECKSUM
+HISTORICAL / SUPERSEDED FOR FUTURE EXECUTION
 
 Corrected migration execution:
-NOT RUN
+EXECUTED ONCE AS CORRECTED RETRY / EXIT 1 / PARTIAL DEV SCHEMA
 
 First Gate B attempt:
 ONE ATTEMPT / CHILD EXIT 1 / NO SCHEMA DETECTED
@@ -130,7 +270,7 @@ Current retry authorization:
 NOT AUTHORIZED
 
 Next execution prerequisite:
-FRESH GATE A AFTER CLEAN SYNCHRONIZED GIT CHECKPOINT
+SEPARATE DESTRUCTIVE DEV RECOVERY APPROVAL AFTER GIT CHECKPOINT
 
 Seed:
 NOT STARTED
@@ -148,7 +288,7 @@ NOT STARTED
 
 Path: `content-model/migrations/0001-bootstrap-portfolio-model.js`
 
-Status: APPROVED / RECONCILED V1 / NOT RE-EXECUTED
+Status: APPROVED RE2-CORRECTED / NOT EXECUTED AFTER CORRECTION
 
 Implementation posture:
 
@@ -413,12 +553,12 @@ NONE.
 
 ## Migration Execution
 
-NOT RUN.
+SECOND GATE B ATTEMPT EXIT 1 / PARTIAL DEV SCHEMA. APPROVED RE2-CORRECTED MIGRATION NOT EXECUTED.
 
 ## Bootstrap Status
 
-APPROVED CORRECTED MIGRATION / NOT RE-EXECUTED / RETRY NOT AUTHORIZED.
+APPROVED RE2-CORRECTED / NOT EXECUTED / RETRY NOT AUTHORIZED.
 
 ## Batch 02.6 Handoff
 
-Batch 02.6 may only retry the corrected migration after a clean synchronized Git checkpoint, fresh Gate A, external/human review, and fresh explicit Gate B authorization. It owns live `dev` mutation evidence, not Batch 02.5.
+Batch 02.6 remains blocked until a clean Git checkpoint exists, destructive `dev` recovery is explicitly authorized and completed, blank `dev` is verified, fresh Gate A passes, and fresh explicit Gate B authorization is granted.

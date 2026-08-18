@@ -84,7 +84,6 @@ module.exports = function bootstrapPortfolioModel(migration) {
     {
       regexp: {
         pattern: "^[a-z0-9]+(?:-[a-z0-9]+)*$",
-        flags: null,
       },
       message: "Use a lowercase route segment with hyphen-separated words.",
     },
@@ -98,8 +97,7 @@ module.exports = function bootstrapPortfolioModel(migration) {
     {
       regexp: {
         pattern:
-          "^https:\\/\\/(?!localhost(?:[:\\/]|$))(?!127\\.)(?!10\\.)(?!192\\.168\\.)(?!172\\.(?:1[6-9]|2[0-9]|3[0-1])\\.)(?!169\\.254\\.)(?:[A-Za-z0-9-]+\\.)+[A-Za-z]{2,}(?::[0-9]+)?(?:\\/[^\\s]*)?$",
-        flags: null,
+          "^https:\\/\\/(?:[A-Za-z0-9-]+\\.)+[A-Za-z]{2,}(?::[0-9]+)?(?:\\/[^\\s]*)?$",
       },
       message: "Use an absolute public https URL.",
     },
@@ -109,7 +107,6 @@ module.exports = function bootstrapPortfolioModel(migration) {
     {
       regexp: {
         pattern: "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
-        flags: null,
       },
       message: "Use a valid public email address.",
     },

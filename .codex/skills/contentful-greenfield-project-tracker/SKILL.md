@@ -13,7 +13,7 @@ Inspect the current repository before editing in every mode. Use current reposit
 
 Personal Website CMS — Greenfield Contentful Starter
 Repository: `contentful-greenfield-starter`
-Model target: approved 10 standalone v1 semantic content types; field and field-ID contract approved; reference, validation, and editorial contract approved; corrected migration approved / not re-executed after first failed Gate B attempt
+Model target: approved 10 standalone v1 semantic content types; field and field-ID contract approved; reference, validation, and editorial contract approved; migration re-approved after RE2 compatibility correction; Batch 02.6 blocked by partial dev schema
 
 ## Project Mantra
 
@@ -38,12 +38,14 @@ Documentation is part of the build.
 - 02.2 — APPROVED.
 - 02.3 — APPROVED.
 - 02.4 — APPROVED.
-- 02.5 — RE-APPROVED AFTER COMPATIBILITY CORRECTION.
-- 02.6 — BLOCKED PENDING FRESH GATE A.
+- 02.5 — RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION.
+- 02.6 — BLOCKED BY PARTIAL DEV STATE.
 - 02.7 — LATER.
-- Bootstrap migration — ATTEMPTED ONCE / NO MODEL CREATED / RETRY BLOCKED.
-- `dev` — 0 types / 0 entries / 0 assets / en-US after first attempt.
-- Retry — NOT AUTHORIZED; fresh Gate A required after clean Git checkpoint.
+- Bootstrap migration — ATTEMPTED TWICE / SECOND ATTEMPT PARTIAL / RETRY BLOCKED.
+- `dev` — 2 types / 0 entries / 0 assets / en-US after corrected Gate B retry failure.
+- Detected live `dev` types — `siteSettings`, `personProfile`.
+- Retry — NOT AUTHORIZED.
+- Dev reset — NOT AUTHORIZED.
 - Seed content — NOT STARTED.
 
 Batch 01.3 approved hybrid SEO ownership: editorial SEO overrides are limited conceptually to title, description, and social image; technical SEO remains code/state-derived. Exact Contentful representation and schema implementation remain deferred to Phase 02.
@@ -60,7 +62,7 @@ Batch 02.3 is approved after external validation returned PASS WITH NOTES. It ap
 
 Batch 02.4 is approved after external validation returned PASS WITH NOTES. It approves the reference, validation, and editorial contract in `docs/content-model/REFERENCE-MAP.md` and `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md`; supplemental external decision validation resolves OD-06, OD-12, and OD-13 without changing the approved contracts. It does not approve migration changes, bootstrap execution, fixtures, frontend implementation, Contentful mutation, or seed content.
 
-Batch 02.5 was approved after external validation returned PASS WITH NOTES, then reopened after first Gate B execution evidence. The first Batch 02.6 Gate B attempt invoked the bootstrap once, exited nonzero, and live read-only checks found `dev` still blank. Corrected Batch 02.5 artifacts are re-approved after external revalidation. Retry, bootstrap execution, Contentful mutation, fixtures, frontend implementation, and seed content remain blocked pending fresh Gate A and fresh explicit Gate B authorization.
+Batch 02.5 was approved after external validation returned PASS WITH NOTES, then reopened after first Gate B execution evidence. The first Batch 02.6 Gate B attempt invoked the bootstrap once, exited nonzero, and live read-only checks found `dev` still blank. Corrected Batch 02.5 artifacts were re-approved after external revalidation. The corrected Gate B retry executed once and failed on `socialLink.url` URL regex validation after creating/publishing `siteSettings` and `personProfile`. Batch 02.5 is now re-approved after RE2 URL validation compatibility correction. Retry, destructive dev recovery, bootstrap execution, Contentful mutation, fixtures, frontend implementation, and seed content remain blocked pending clean Git checkpoint, explicit dev recovery authorization, verified blank `dev`, fresh Gate A, and fresh explicit Gate B authorization.
 
 Approved Batch 02.2 standalone type IDs:
 
@@ -84,8 +86,9 @@ Contract layer status:
 - References — APPROVED.
 - Validations — APPROVED.
 - Editorial rules — APPROVED.
-- Migration — APPROVED / RECONCILED V1 / NOT RE-EXECUTED.
-- Corrected checksum — `46d5702fe8685d1b995eaf37dfb3097fda717e2a02dc2913464328c315e38c0c`.
+- Migration — APPROVED RE2-CORRECTED / NOT EXECUTED.
+- Pre-RE2 correction checksum — `46d5702fe8685d1b995eaf37dfb3097fda717e2a02dc2913464328c315e38c0c`.
+- Approved RE2-corrected checksum — `4a2319e069245d94a62e253acc9d4d67ad57f5e3450a143c71607f8c10360e24`.
 - Static preflight — APPROVED.
 - Seed content — NOT STARTED.
 

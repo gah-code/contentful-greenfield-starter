@@ -5,7 +5,7 @@ Owner: Phase 02 - Content Model Contract + Bootstrap Migration
 
 This is the approved v1 semantic content type contract after external Batch 02.2 validation. It approves standalone Contentful content types and stable type IDs only.
 
-Approval of this Batch 02.2 ledger did not approve fields, field IDs, required states, references, validations, editor interfaces, display fields, or migration implementation. Batch 02.3 later approves the field and field-ID contract. Batch 02.4 approves references, validations, editor guidance, singleton behavior, and display fields. Batch 02.5 re-approves the corrected reconciled migration implementation and keeps migration execution blocked pending fresh Batch 02.6 gates.
+Approval of this Batch 02.2 ledger did not approve fields, field IDs, required states, references, validations, editor interfaces, display fields, or migration implementation. Batch 02.3 later approves the field and field-ID contract. Batch 02.4 approves references, validations, editor guidance, singleton behavior, and display fields. Batch 02.5 records the approved RE2-corrected migration and keeps execution blocked pending separate dev recovery and later gates.
 
 ## Batch 02.2 Approval
 
@@ -32,7 +32,7 @@ Type count status: PASS.
 | Skill Group | `skillGroup` | APPROVED V1 TYPE |
 | Tool | `tool` | APPROVED V1 TYPE |
 
-Exact fields and field IDs are approved by `docs/content-model/FIELD-ID-LEDGER.md`. References, cardinality, validations, display fields, and editor guidance are approved by Batch 02.4 in `docs/content-model/REFERENCE-MAP.md` and `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md`. Corrected migration implementation is re-approved / reconciled V1 by Batch 02.5 and remains unexecuted.
+Exact fields and field IDs are approved by `docs/content-model/FIELD-ID-LEDGER.md`. References, cardinality, validations, display fields, and editor guidance are approved by Batch 02.4 in `docs/content-model/REFERENCE-MAP.md` and `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md`. Migration implementation is approved RE2-corrected by Batch 02.5 and remains unexecuted after correction.
 
 ## Model Principle
 

@@ -27,7 +27,7 @@ Approved scope:
 - orphan/reuse guidance.
 
 Migration implementation:
-RE-APPROVED CORRECTED / RECONCILED V1 / NOT RE-EXECUTED after Batch 02.5
+APPROVED RE2-CORRECTED / NOT EXECUTED after Batch 02.5
 
 Owner: Phase 02 - Content Model Contract + Bootstrap Migration
 
@@ -166,9 +166,9 @@ Project is the highest-pressure type because it carries case-study proof, media,
 
 ## Migration Implications
 
-Batch 02.5 re-approves the corrected bootstrap migration against this approved contract.
+Batch 02.5 records the approved RE2-corrected bootstrap migration against this approved contract.
 
-| Area | Approved 02.5 Result |
+| Area | Batch 02.5 Approved RE2-Corrected Result |
 |---|---|
 | Types | Kept approved types, added `tool`, and removed legacy `seoMetadata`. |
 | Field IDs | Aligned migration fields to `FIELD-ID-LEDGER.md`; did not add fields from this reference map. |
@@ -180,6 +180,6 @@ Batch 02.5 re-approves the corrected bootstrap migration against this approved c
 | Homepage selection | No `featuredProjects` field added. |
 | Legacy migration references | Removed `siteSettings.defaultSeo`, `project.seo`, and `article.seo`. |
 
-Migration implementation changed in Batch 02.5: yes, re-approved after compatibility correction external revalidation.
+Migration implementation changed in Batch 02.5: yes, re-approved after RE2 compatibility correction following corrected Gate B retry evidence.
 
 Contentful command run: no.

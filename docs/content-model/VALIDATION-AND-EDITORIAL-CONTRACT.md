@@ -36,7 +36,7 @@ Approved scope:
 - derived/code/system exclusions.
 
 Migration syntax:
-RE-APPROVED CORRECTED / RECONCILED V1 / NOT RE-EXECUTED after Batch 02.5
+APPROVED RE2-CORRECTED / NOT EXECUTED after Batch 02.5
 
 Owner: Phase 02 - Content Model Contract + Bootstrap Migration
 
@@ -210,6 +210,11 @@ Hard validation:
 - no internal route paths;
 - no JavaScript/data URLs;
 - no private local network URLs.
+
+Migration enforcement note:
+
+- Contentful schema uses a RE2-compatible structural HTTPS DNS-style URL regex.
+- Private/local destination policy remains an approved semantic rule enforced through application validation, QA, and editorial governance where Contentful regex cannot safely express it.
 
 Email:
 
@@ -429,15 +434,15 @@ OD-01, OD-02, OD-03, OD-04, OD-05, OD-09, OD-10, and OD-14 remain open content-a
 
 - No Contentful command was run.
 - No live CMS state was read.
-- Corrected migration syntax is re-approved / reconciled V1 after Batch 02.5 and remains unexecuted.
+- RE2-corrected migration syntax is approved after Batch 02.5 and remains unexecuted.
 - No fixtures, frontend adapters, or route implementations were created.
 - Cross-field validations may require application/editorial enforcement if Contentful schema validation cannot express them directly.
 
 ## Migration Handoff
 
-Batch 02.5 re-approves corrected migration syntax, migration diff, and non-mutating preflight evidence.
+Batch 02.5 records approved RE2-corrected migration syntax, migration diff, and non-mutating preflight evidence.
 
-| Area | Approved 02.5 Result |
+| Area | Batch 02.5 Approved RE2-Corrected Result |
 |---|---|
 | Types | Removed legacy `seoMetadata`; added approved `tool`; kept approved type IDs. |
 | Fields | Aligned to `FIELD-ID-LEDGER.md`; removed legacy derived/code-owned fields. |
