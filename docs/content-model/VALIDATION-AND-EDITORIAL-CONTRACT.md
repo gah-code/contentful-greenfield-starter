@@ -36,13 +36,13 @@ Approved scope:
 - derived/code/system exclusions.
 
 Migration syntax:
-NOT IMPLEMENTED
+APPROVED / RECONCILED V1 / NOT RUN after Batch 02.5
 
 Owner: Phase 02 - Content Model Contract + Bootstrap Migration
 
 This is the approved v1 validation and editor-facing contract for the approved 10-type Contentful model. It completes requiredness rules, slug and route-key policy, scalar validations, controlled values, Rich Text and Asset rules, accessibility guidance, singleton behavior, display fields, and editorial help after external Batch 02.4 validation.
 
-This document does not implement migration syntax, run Contentful, create fixtures, add fields, remove fields, or start Batch 02.5.
+This document itself does not implement migration syntax, run Contentful, create fixtures, add fields, or remove fields.
 
 ## Validation Philosophy
 
@@ -429,22 +429,22 @@ OD-01, OD-02, OD-03, OD-04, OD-05, OD-09, OD-10, and OD-14 remain open content-a
 
 - No Contentful command was run.
 - No live CMS state was read.
-- No migration syntax was implemented.
+- Migration syntax is approved / reconciled V1 after Batch 02.5 and remains unexecuted.
 - No fixtures, frontend adapters, or route implementations were created.
 - Cross-field validations may require application/editorial enforcement if Contentful schema validation cannot express them directly.
 
 ## Migration Handoff
 
-Batch 02.5 owns migration syntax, migration diff, editor-interface implementation, and non-mutating preflight.
+Batch 02.5 approved migration syntax, migration diff, and non-mutating preflight evidence.
 
-| Area | Expected 02.5 Action |
+| Area | Approved 02.5 Result |
 |---|---|
-| Types | Remove legacy `seoMetadata`; add approved `tool`; keep approved type IDs. |
-| Fields | Align to `FIELD-ID-LEDGER.md`; remove legacy derived/code-owned fields. |
-| References | Implement externally approved authored references and target restrictions. |
-| Validations | Implement approved regex, enum, size, URL, asset, and link-type validations where migration API supports them. |
+| Types | Removed legacy `seoMetadata`; added approved `tool`; kept approved type IDs. |
+| Fields | Aligned to `FIELD-ID-LEDGER.md`; removed legacy derived/code-owned fields. |
+| References | Implemented externally approved authored references and target restrictions. |
+| Validations | Implemented approved regex, enum, size, URL, asset, and link-type validations where the migration API supports them. |
 | Display fields | Set display fields from this contract. |
-| Editor guidance/interface | Add concise field help and widgets where supported. |
-| SEO legacy | Replace `seo` references with owning-type SEO fields. |
-| Derived values | Do not implement reading time, canonical URL, route path, robots, sitemap, breadcrumbs, or structured data fields. |
-| Safety | Continue blocking bootstrap until migration reconciliation and preflight are externally approved. |
+| Editor guidance/interface | Added concise field help and widgets where supported. |
+| SEO legacy | Replaced `seo` references with owning-type SEO fields. |
+| Derived values | Did not implement reading time, canonical URL, route path, robots, sitemap, breadcrumbs, or structured data fields. |
+| Safety | Bootstrap remains blocked pending Batch 02.6 execution gates. |

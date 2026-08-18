@@ -11,7 +11,7 @@ Field contract status: APPROVED V1 FIELD + FIELD-ID CONTRACT.
 
 This ledger records approved V1 Contentful fields, field IDs, primitive shapes, required-state intent, v1 localization state, semantic purpose, relationship semantic intent, and downstream follow-up questions for the approved 10-type v1 inventory. External Batch 02.3 validation returned PASS WITH NOTES.
 
-Do not run or edit the bootstrap migration from this ledger until Batch 02.5 reconciles the approved field, reference, validation, and editorial-interface contracts.
+Do not run the bootstrap migration from this ledger. Batch 02.5 approves the reconciled migration implementation against the approved field, reference, validation, and editorial-interface contracts and leaves execution blocked pending Batch 02.6 execution gates.
 
 Batch 02.4 approves reference cardinality, target restrictions, validation rules, display fields, and editor guidance in `docs/content-model/REFERENCE-MAP.md` and `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md`. Those documents do not rename approved field IDs or approve migration execution.
 
@@ -42,7 +42,7 @@ Approved scope:
 Not approved here:
 
 - reference cardinality, target restrictions, allowed-value validation, detailed scalar validation, Rich Text restrictions, editor-interface behavior, display fields, and singleton technical behavior, which are approved by Batch 02.4 in `docs/content-model/REFERENCE-MAP.md` and `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md`;
-- migration implementation.
+- migration implementation or execution.
 
 ## Governing Rules
 
@@ -53,7 +53,7 @@ Not approved here:
 - Derived values, code configuration, route state, Contentful system metadata, and governance-only readiness concerns are not modeled as editorial fields.
 - References are expressed in this ledger only as relationship field intent. Batch 02.4 approves reference direction, cardinality, target restrictions, required counts, and validations.
 - Validations, allowed values, editor widgets, help text, display fields, field groups, and sidebar/editor layout are governed by the approved Batch 02.4 validation/editorial contract where documented.
-- Migration implementation, migration diff, field creation, field deletion, and migration execution are deferred to Batch 02.5 and later.
+- Migration implementation and migration diff are approved / reconciled V1 by Batch 02.5. Migration execution, field creation in Contentful, and any live Contentful mutation remain deferred to Batch 02.6 or later approval.
 - Localization is `NO — V1` for every approved field unless a later approved localization contract changes that.
 - Contentful Asset remains the media object. No standalone Media wrapper type is approved.
 
@@ -311,7 +311,7 @@ These are approved relationship semantic field IDs only. They do not freeze Link
 | Tool category | Define lean category values without broad taxonomy architecture. |
 | Homepage selections | Decide featured Project/Article/Tool selection mechanism without resolving exact OD-09 project choices. |
 | Related content | OD-13 resolved/approved; implement the approved authored plus derived reverse strategy. |
-| Migration diff | Keep queued for 02.5 after 02.4 approvals. |
+| Migration diff | Approved / reconciled V1 by Batch 02.5; execution remains deferred to Batch 02.6 gates. |
 
 ## Project Long-Form Strategy
 
@@ -434,7 +434,7 @@ Planning only. Do not edit or run the migration in Batch 02.3.
 
 | Existing Migration Field | Approved Type | Approved V1 Direction | Future Action |
 |---|---|---|---|
-| `seoMetadata.*` | N/A | Remove standalone type and replace title/description/image concepts with owning fields. | REMOVE / REVIEW IN 02.5 |
+| `seoMetadata.*` | N/A | Remove standalone type and replace title/description/image concepts with owning fields. | REMOVED / RECONCILED IN 02.5 |
 | `socialLink.platform` | `socialLink` | Keep. | KEEP |
 | `socialLink.label` | `socialLink` | Keep. | KEEP |
 | `socialLink.url` | `socialLink` | Keep. | KEEP |
@@ -448,7 +448,7 @@ Planning only. Do not edit or run the migration in Batch 02.3.
 | `navigationItem.openInNewTab` | `navigationItem` | Remove from v1 internal route navigation. | REMOVE |
 | `navigationItem.isActive` | `navigationItem` | Remove; use publication/relationship selection. | REMOVE |
 | `siteSettings.siteName` | `siteSettings` | Keep. | KEEP |
-| `siteSettings.tagline` | `siteSettings` | Replace with profile positioning/site description strategy. | REVIEW IN 02.5 |
+| `siteSettings.tagline` | `siteSettings` | Replace with profile positioning/site description strategy. | RECONCILED IN 02.5 |
 | `siteSettings.description` | `siteSettings` | Rename/refine as `siteDescription`. | RENAME/REPLACE |
 | `siteSettings.logo` | `siteSettings` | Defer/remove unless 02.4 proves editorial need. | REVIEW IN 02.4 |
 | `siteSettings.favicon` | `siteSettings` | Remove; code-owned. | REMOVE |

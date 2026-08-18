@@ -174,6 +174,26 @@ All meaningful project changes should be recorded here.
 - Resolved OD-06, OD-12, and OD-13 after supplemental external decision validation.
 - Preserved the approved SkillGroup, taxonomy-depth, and related-content wording without changing reference or validation architecture.
 - Batch 02.5 remains next and not started.
+- Started Phase 02 / Batch 02.5 — Bootstrap Migration Reconciliation + Preflight.
+- Reconciled the bootstrap migration against the approved v1 model contract.
+- Removed legacy `seoMetadata`, technical SEO, reading-time, and proficiency schema drift from the active migration schema.
+- Added the approved `tool` type.
+- Reconciled approved references, validations, requiredness, and display fields in the migration.
+- Completed static/non-mutating migration preflight.
+- Recorded enforcement gaps and Batch 02.6 execution gates.
+- No Contentful command executed.
+- Migration not run.
+- Bootstrap remains blocked pending external approval.
+- Approved Phase 02 / Batch 02.5 — Bootstrap Migration Reconciliation + Preflight after external validation returned PASS WITH NOTES.
+- Approved the reconciled v1 bootstrap migration implementation against the approved model contract.
+- Confirmed the migration implements 10 approved content types, 99 stored fields, and 18 authored references.
+- Confirmed legacy broad SEO, technical SEO, reading-time, proficiency, and page-builder schema drift are absent from the active migration schema.
+- Confirmed Tool implementation, route-key and slug validations, non-localized v1 fields, direct Project/Article SEO overrides, and wrapper safety.
+- Advanced Batch 02.6 — Bootstrap Migration Execution to NEXT.
+- No Contentful command executed during approval reconciliation.
+- Migration not run; `dev` and `master` were not mutated.
+- Bootstrap remains blocked pending Batch 02.6 execution gates.
+- Seed content remains not started.
 
 ### Security
 

@@ -3,9 +3,9 @@
 Project: `contentful-greenfield-starter`
 Current phase: Phase 02 — ACTIVE
 Latest completed phase: Phase 01 — COMPLETE / FROZEN
-Latest approved batch: Batch 02.4 — References + Validations + Editorial Contract — APPROVED
-Current / next work item: Batch 02.5 — Bootstrap Migration Reconciliation + Preflight — NEXT
-Bootstrap migration: BLOCKED / NOT RUN
+Latest approved batch: Batch 02.5 — Bootstrap Migration Reconciliation + Preflight — APPROVED
+Current work item: Batch 02.6 — Bootstrap Migration Execution — NEXT
+Bootstrap migration: APPROVED / RECONCILED V1 / NOT RUN / BLOCKED PENDING 02.6 EXECUTION GATES
 Seed content: NOT STARTED
 
 Batch 01.1 external validation passed.
@@ -17,6 +17,7 @@ Batch 02.1 external validation passed with notes.
 Batch 02.2 external validation passed with notes.
 Batch 02.3 external validation passed with notes.
 Batch 02.4 external validation passed with notes.
+Batch 02.5 external validation passed with notes.
 
 The content-strategy foundation is approved with open decisions intentionally carried forward to later Phase 01 batches.
 
@@ -42,7 +43,7 @@ Batch 02.2 approved type-level outcomes: broad `seoMetadata` is absorbed into ow
 
 OD-11 is resolved and approved: Certification / learning evidence is lightweight profile-owned content in v1. No standalone Certification or Learning content type is required. Batch 02.3 approves exact profile-owned field representation as `personProfile.learningHighlights`.
 
-Phase 02 model work now advances to migration reconciliation. Reference direction, display fields, SkillGroup relationship mechanics, taxonomy-depth proposal text, related-content proposal text, asset/reference strategy, validation strength, and editor guidance are approved as Batch 02.4 model-contract layers; the final migration diff remains Batch 02.5 work.
+Batch 02.5 approved the reconciled v1 bootstrap migration implementation and static/non-mutating preflight. The migration implements the approved v1 type, field, reference, validation, asset, Rich Text, localization, and display-field contract. Execution has not run; Batch 02.6 owns live `dev` mutation evidence after execution-time gates and explicit human approval.
 
 Batch 02.1 carry-forward notes: public safety remains a governance/readiness requirement unless later evidence proves explicit CMS state is needed. Media alt/context requirements remain representation questions and do not automatically approve a dedicated media wrapper or exact asset-metadata strategy.
 
@@ -62,7 +63,19 @@ Validation contract: APPROVED V1.
 
 Editorial contract: APPROVED V1.
 
-Migration: UNCHANGED / BLOCKED.
+Migration implementation: APPROVED / RECONCILED V1.
+
+Migration execution: NOT RUN.
+
+Static preflight: APPROVED.
+
+Contentful commands: NONE.
+
+`dev` mutation: NONE.
+
+`master` mutation: NONE.
+
+Bootstrap: BLOCKED PENDING 02.6 EXECUTION GATES.
 
 ## Phase 02 Batch State
 
@@ -72,8 +85,8 @@ Migration: UNCHANGED / BLOCKED.
 | 02.2 | Content Type Contract | Approved | External validation passed with notes; 10 standalone v1 content types and stable type IDs approved in `docs/content-model/CONTENT-TYPE-LEDGER.md`; field/reference/migration work remains deferred |
 | 02.3 | Field + Field-ID Contract | Approved | External validation passed with notes; approved field and field-ID contract recorded in `docs/content-model/FIELD-ID-LEDGER.md`; reference shape and validations remain deferred |
 | 02.4 | References + Validations + Editorial Contract | Approved | External validation passed with notes; reference, validation, and editorial contract approved in `docs/content-model/REFERENCE-MAP.md` and `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md` |
-| 02.5 | Bootstrap Migration Reconciliation + Preflight | Next | Must align migration to the approved model contract and perform non-mutating preflight |
-| 02.6 | Bootstrap Migration Execution | Later | May execute approved bootstrap against `dev` only after explicit approval |
+| 02.5 | Bootstrap Migration Reconciliation + Preflight | Approved | External validation passed with notes; migration implementation approved / reconciled V1; non-mutating preflight report recorded in `content-model/reports/PHASE-02-BATCH-02.5-MIGRATION-PREFLIGHT.md`; migration execution not run |
+| 02.6 | Bootstrap Migration Execution | Next | May execute approved bootstrap against `dev` only after execution-time gates and explicit human execution approval |
 | 02.7 | Phase 02 Validation + Closeout | Later | Verifies model state, master protection, migration evidence, and Phase 03 readiness |
 
 ## Phase 01 Batch State
@@ -86,7 +99,7 @@ Migration: UNCHANGED / BLOCKED.
 | 01.4 | Content Requirements Matrix | Approved | External validation passed; `docs/system/CONTENT-REQUIREMENTS-MATRIX.md` maps approved strategy, route, and SEO contracts into route/domain requirements, readiness, reuse, fixture, media, accessibility, public-safety, and Phase 02 handoff inputs; OD-08 resolved |
 | 01.5 | Phase 01 Validation + Freeze | Approved | External validation passed with notes; Phase 01 requirements freeze approved in `docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md` |
 
-At Phase 01 closeout, Phase 02 advanced to NEXT without creating static fixtures, implementing frontend metadata, running migrations, running Contentful commands, or mutating Contentful state. Phase 02 is now active; Batch 02.1 is approved, Batch 02.2 is approved, Batch 02.3 is approved, Batch 02.4 is approved, and Batch 02.5 is next.
+At Phase 01 closeout, Phase 02 advanced to NEXT without creating static fixtures, implementing frontend metadata, running migrations, running Contentful commands, or mutating Contentful state. Phase 02 is now active; Batch 02.1 is approved, Batch 02.2 is approved, Batch 02.3 is approved, Batch 02.4 is approved, Batch 02.5 is approved, and Batch 02.6 is next.
 
 ## Batch 01.1 Strategy Summary
 
@@ -149,7 +162,7 @@ Phase 00 is complete. Bootstrap migration remains blocked and not run. Seed cont
 | `dev` role | Single rotating sandbox for schema development, model review, and editorial QA |
 | Verification | Workflow state, not a persistent environment ID |
 | Phase 03 target | Freshly recreated `dev` after protected `master` clone/recreation process |
-| Model target | Approved 10 standalone v1 semantic content types; field contract proposed/in review; references, validations, and migration not frozen |
+| Model target | Approved 10 standalone v1 semantic content types with approved fields, references, validations, and editorial contract; migration reconciled / in review / not run |
 | Bootstrap target | Never `master`; later approved migration work targets `dev` |
 
 ## Batch 00.4 Contentful Verification Evidence
@@ -257,6 +270,6 @@ No deletion automation is part of this repair.
 
 Phase 00 is complete. Batch 00.1, Batch 00.2, Batch 00.3, Batch 00.4, and Batch 00.5 are approved.
 
-Phase 01 is complete / frozen. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is approved after external validation. Batch 01.4 is approved after external validation. Batch 01.5 is approved after external validation. Phase 02 is active, Batch 02.1 is approved, Batch 02.2 is approved, Batch 02.3 is approved, Batch 02.4 is approved, and Batch 02.5 is next.
+Phase 01 is complete / frozen. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is approved after external validation. Batch 01.4 is approved after external validation. Batch 01.5 is approved after external validation. Phase 02 is active, Batch 02.1 is approved, Batch 02.2 is approved, Batch 02.3 is approved, Batch 02.4 is approved, Batch 02.5 is approved after external validation, and Batch 02.6 is next.
 
-Bootstrap migration, seed content, environment deletion, Contentful model mutation, Contentful export/import, static fixtures, frontend implementation, and Batch 02.5 implementation remain out of scope.
+Bootstrap execution, seed content, environment deletion, Contentful model mutation, Contentful export/import, static fixtures, frontend implementation, and Batch 02.6 execution remain out of scope until the next approved execution pass.

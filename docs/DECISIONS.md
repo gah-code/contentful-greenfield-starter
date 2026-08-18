@@ -224,7 +224,7 @@ The v1 editorial SEO contract excludes:
 
 Status: RESOLVED / APPROVED
 
-Recorded during Phase 01 / Batch 01.4 final approval reconciliation. Phase 01 is complete / frozen, Batch 01.5 — Phase 01 Validation + Freeze — is approved, Batch 02.1 is approved, Batch 02.2 is approved, and Batch 02.3 is approved.
+Recorded during Phase 01 / Batch 01.4 final approval reconciliation. Phase 01 is complete / frozen. Phase 02 is active; Batch 02.1 through Batch 02.5 are approved, and Batch 02.6 is next.
 
 Batch 01.5 open-decision triage is recorded in `docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md`. No unrelated open decision is resolved by that validation pass.
 
@@ -244,7 +244,7 @@ This decision resolves semantic responsibility only.
 
 ### Not Decided
 
-OD-08 itself did not decide exact Contentful representation. Phase 02 / Batch 02.2 later approved Tool as a standalone v1 content type. Batch 02.3 approves Tool field IDs; Batch 02.4 approves Tool references and validations.
+OD-08 itself did not decide exact Contentful representation. Phase 02 / Batch 02.2 later approved Tool as a standalone v1 content type. Batch 02.3 approves Tool field IDs; Batch 02.4 approves Tool references and validations; Batch 02.5 approves the reconciled migration implementation.
 
 ---
 
@@ -354,8 +354,8 @@ This proposal does not create a generalized recommendation engine, relevance-sco
 
 Status: reference only; no new decision recorded
 
-Phase 02 / Batch 02.1 approved the current model decision queue in `docs/phases/PHASE-02-CONTENT-MODEL-CONTRACT-AND-BOOTSTRAP-MIGRATION.md` as reconciliation findings and carry-forward questions. Batch 02.2 approves the content type contract in `docs/content-model/CONTENT-TYPE-LEDGER.md`.
+Phase 02 / Batch 02.1 approved the model decision queue in `docs/phases/PHASE-02-CONTENT-MODEL-CONTRACT-AND-BOOTSTRAP-MIGRATION.md` as reconciliation findings and carry-forward questions. Batch 02.2 approves the content type contract in `docs/content-model/CONTENT-TYPE-LEDGER.md`; Batch 02.3 approves the field contract in `docs/content-model/FIELD-ID-LEDGER.md`; Batch 02.4 approves references, validations, and editorial rules; Batch 02.5 approves the reconciled migration implementation.
 
-Remaining queue items cover final migration diff and bootstrap execution gates. OD-06, OD-12, and OD-13 are now resolved/approved by supplemental external decision validation.
+Remaining queue items cover bootstrap execution gates. OD-06, OD-12, and OD-13 are now resolved/approved by supplemental external decision validation.
 
-Do not treat this queue as approval of references, validations, or migration execution. Formal decision records should be added only when a later Phase 02 batch makes an actual architectural decision.
+Do not treat this queue as approval of migration execution. Formal decision records should be added only when a later Phase 02 batch makes an actual architectural decision.

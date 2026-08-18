@@ -27,13 +27,13 @@ Approved scope:
 - orphan/reuse guidance.
 
 Migration implementation:
-NOT STARTED / Batch 02.5
+APPROVED / RECONCILED V1 / NOT RUN after Batch 02.5
 
 Owner: Phase 02 - Content Model Contract + Bootstrap Migration
 
 This is the approved v1 reference contract for the approved 10-type Contentful model. It completes reference direction, cardinality, target restrictions, requiredness, ordering, reverse behavior, and reuse guidance after external Batch 02.4 validation.
 
-This document does not edit migrations, execute Contentful changes, create fixtures, add fields, remove fields, or start Batch 02.5.
+This document itself does not edit migrations, execute Contentful changes, create fixtures, add fields, or remove fields.
 
 ## Governing Rules
 
@@ -166,20 +166,20 @@ Project is the highest-pressure type because it carries case-study proof, media,
 
 ## Migration Implications
 
-Batch 02.5 must reconcile the existing bootstrap migration against this approved contract.
+Batch 02.5 reconciled the existing bootstrap migration against this approved contract.
 
-| Area | Expected 02.5 Action |
+| Area | Approved 02.5 Result |
 |---|---|
-| Types | Keep approved types, add `tool`, remove legacy `seoMetadata`. |
-| Field IDs | Align migration fields to `FIELD-ID-LEDGER.md`; do not add fields from this reference map. |
-| References | Replace legacy SEO references; implement only externally approved authored references. |
-| Derived reverses | Do not create duplicate authoring fields for reverse views unless external validation rejects derivation. |
-| Cardinality | Set `article.authorProfile` and `project.relatedExperience` as single Entry references; use Entry arrays for approved multi references. |
-| Target restrictions | Use link content type validations matching this map. |
-| Ordering | Preserve array order for navigation, social lists, related content, and SkillGroup membership. |
-| Homepage selection | Do not add a `featuredProjects` field in 02.5 unless external validation creates a field-contract revision. |
-| Legacy migration references | Remove `siteSettings.defaultSeo`, `project.seo`, and `article.seo` during Batch 02.5 reconciliation. |
+| Types | Kept approved types, added `tool`, and removed legacy `seoMetadata`. |
+| Field IDs | Aligned migration fields to `FIELD-ID-LEDGER.md`; did not add fields from this reference map. |
+| References | Replaced legacy SEO references; implemented only externally approved authored references. |
+| Derived reverses | Did not create duplicate authoring fields for reverse views. |
+| Cardinality | Set `article.authorProfile` and `project.relatedExperience` as single Entry references; used Entry arrays for approved multi references. |
+| Target restrictions | Used link content type validations matching this map. |
+| Ordering | Preserved array order for navigation, social lists, related content, and SkillGroup membership. |
+| Homepage selection | No `featuredProjects` field added. |
+| Legacy migration references | Removed `siteSettings.defaultSeo`, `project.seo`, and `article.seo`. |
 
-Migration changed: no.
+Migration implementation changed in Batch 02.5: yes, approved after external validation returned PASS WITH NOTES.
 
 Contentful command run: no.

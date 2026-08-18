@@ -11,11 +11,11 @@ Phase 02 starts from approved content requirements, reconciles the existing prop
 
 ## Current Gate
 
-Batch 02.5 — Bootstrap Migration Reconciliation + Preflight — NEXT
+Batch 02.6 — Bootstrap Migration Execution — NEXT
 
 Bootstrap migration:
 
-BLOCKED / NOT RUN
+APPROVED / RECONCILED V1 / NOT RUN / BLOCKED PENDING BATCH 02.6 EXECUTION GATES
 
 Seed content:
 
@@ -51,8 +51,8 @@ The migration is not the source of requirements. It is proposed implementation i
 | 02.2 | Content Type Contract | Approve the semantic v1 content type inventory and type IDs. | APPROVED |
 | 02.3 | Field + Field-ID Contract | Approve fields, field IDs, types, required states, localization behavior, relationship semantic intents, and semantic purpose. | APPROVED |
 | 02.4 | References + Validations + Editorial Contract | Approve references, cardinality, validations, display fields, editor-facing help, and editorial usability constraints. | APPROVED |
-| 02.5 | Bootstrap Migration Reconciliation + Preflight | Align the existing bootstrap migration to the approved model contract and perform non-mutating safety review. | NEXT |
-| 02.6 | Bootstrap Migration Execution | Execute the approved bootstrap migration against `dev` only and record evidence. | LATER |
+| 02.5 | Bootstrap Migration Reconciliation + Preflight | Align the existing bootstrap migration to the approved model contract and perform non-mutating safety review. | APPROVED |
+| 02.6 | Bootstrap Migration Execution | Execute the approved bootstrap migration against `dev` only and record evidence. | NEXT |
 | 02.7 | Phase 02 Validation + Closeout | Verify expected model state, master protection, migration evidence, truth-surface alignment, and readiness for Phase 03. | LATER |
 
 ## Modeling Boundaries
@@ -1626,4 +1626,215 @@ Carry forward to Batch 02.6:
 
 actual bootstrap execution.
 
-Batch 02.5 is NEXT and is not active. Bootstrap migration remains BLOCKED / NOT RUN. Seed content remains NOT STARTED.
+Batch 02.5 is APPROVED after external validation returned PASS WITH NOTES. Bootstrap migration is APPROVED / RECONCILED V1 / NOT RUN / BLOCKED PENDING BATCH 02.6 EXECUTION GATES. Seed content remains NOT STARTED.
+
+## Batch 02.5 — Bootstrap Migration Reconciliation + Preflight
+
+Status:
+APPROVED
+
+### Goal
+
+Translate the approved v1 model contract into `content-model/migrations/0001-bootstrap-portfolio-model.js` without touching a live Contentful environment.
+
+### Approved Inputs
+
+- `docs/content-model/CONTENT-TYPE-LEDGER.md`
+- `docs/content-model/FIELD-ID-LEDGER.md`
+- `docs/content-model/REFERENCE-MAP.md`
+- `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md`
+
+The approved ledgers remain the canonical model truth. The migration is implementation evidence.
+
+### Migration Reconciliation Summary
+
+The bootstrap migration now implements the approved v1 type, field, reference, validation, asset, Rich Text, localization, and display-field contract. It is intended for a verified blank `dev` environment only.
+
+Migration execution:
+NOT RUN
+
+Contentful commands:
+NONE
+
+### Type Diff
+
+- approved type count: 10;
+- migration type count: 10;
+- `tool` added;
+- standalone broad SEO metadata type removed;
+- no unknown type remains.
+
+### Field Diff
+
+The migration implements 99 approved stored fields after the Batch 02.4 derived reverse relationships are omitted from authoring.
+
+Key changes:
+
+- direct Project and Article SEO override fields are implemented;
+- Project, Article, Experience, Skill, SkillGroup, and Tool fields align to the approved field IDs;
+- legacy aliases and presentation/configuration fields are removed;
+- v1 fields are non-localized.
+
+### Reference Diff
+
+The migration implements only approved authored references from `REFERENCE-MAP.md`, including target restrictions. Derived reverse views are omitted from the authored schema.
+
+Required references implemented:
+
+- `siteSettings.primaryNavigationItems`;
+- `article.authorProfile`;
+- `skillGroup.skills`.
+
+### Validation Diff
+
+Hard validations are implemented where supported by the migration API:
+
+- route-key enum;
+- Project and Article slug regex and uniqueness;
+- title/name, navigation-label, summary/excerpt, long-text, and SEO override maximums;
+- approved controlled values;
+- URL and email shape checks;
+- tag count and per-tag length;
+- Asset MIME groups;
+- Rich Text node/mark boundaries where practical.
+
+Cross-field and editorial-quality rules remain outside migration enforcement.
+
+### Legacy Removals
+
+Removed from the active migration schema:
+
+- standalone broad SEO metadata type;
+- freeform canonical URL;
+- Open Graph image field naming in favor of owning-type `socialImage`;
+- page-level editorial robots controls;
+- article reading-time field;
+- skill proficiency and precision fields;
+- arbitrary navigation URL fields;
+- homepage feature/order flags.
+
+### Tool Addition
+
+The approved `tool` content type is implemented with:
+
+- `name`;
+- `category`;
+- `usageContext`;
+- `externalUrl`;
+- `logo`;
+- `skills`.
+
+Derived Tool reverse views remain adapter/query-owned.
+
+### Display Fields
+
+The migration sets display fields to the approved Batch 02.4 mapping:
+
+- `siteSettings` -> `siteName`;
+- `personProfile` -> `name`;
+- `socialLink` -> `label`;
+- `navigationItem` -> `label`;
+- `project` -> `title`;
+- `article` -> `title`;
+- `experienceItem` -> `role`;
+- `skill` -> `name`;
+- `skillGroup` -> `name`;
+- `tool` -> `name`.
+
+### Enforcement Gaps
+
+Documented in `content-model/reports/PHASE-02-BATCH-02.5-MIGRATION-PREFLIGHT.md`:
+
+- singleton count;
+- cross-field date rules;
+- current-role/end-date consistency;
+- tag uniqueness within an entry;
+- public-safety judgment;
+- asset alt quality, rights, and redaction;
+- SEO fallback behavior;
+- derived reverse relationships;
+- route-readiness and writing-quality review.
+
+### Static Preflight
+
+`node --check content-model/migrations/0001-bootstrap-portfolio-model.js` passes.
+
+Search checks found no active legacy schema declarations and no page-builder/component schema in the reconciled migration.
+
+### Wrapper Safety Review
+
+Read-only wrapper review confirmed:
+
+- `scripts/contentful/run-bootstrap-migration.mjs` imports the environment safety check;
+- the safety helper rejects `master`;
+- the safety helper requires `dev`;
+- token values are not printed by the helper;
+- no wrapper files were modified.
+
+### Blank-Dev Requirement
+
+Batch 02.6 must verify `dev` is appropriate for bootstrap immediately before execution. Historical blank-dev evidence is not sufficient for execution-time approval.
+
+### Master Protection
+
+Migration target must be `dev`. `master` must not be mutated.
+
+### Execution Preconditions
+
+Batch 02.6 requires:
+
+- Batch 02.5 external approval;
+- clean and synchronized repository state;
+- explicit `dev` target;
+- `master` rejection confirmed;
+- execution-time blank-dev verification;
+- secret-safe credential loading;
+- reviewed bootstrap command;
+- explicit human approval in the active session.
+
+### Batch 02.6 Handoff
+
+Batch 02.6 owns actual bootstrap execution against `dev` only after execution-time gates and explicit human approval. It also owns live mutation evidence.
+
+## Batch 02.5 Closeout
+
+Status:
+APPROVED
+
+External validation:
+PASS WITH NOTES
+
+Migration implementation:
+APPROVED / RECONCILED V1
+
+Migration execution:
+NOT RUN
+
+Static preflight:
+PASS / APPROVED
+
+Contentful commands:
+NONE
+
+`dev` mutation:
+NONE
+
+`master` mutation:
+NONE
+
+Bootstrap:
+BLOCKED PENDING BATCH 02.6 EXECUTION GATES
+
+Seed:
+NOT STARTED
+
+Carry forward to 02.6 gates:
+
+- execution-time `dev` verification;
+- explicit target environment = `dev`;
+- `master` mutation prevention;
+- clean synchronized repository check;
+- no unexpected staged files;
+- secret-safe credential loading;
+- reviewed bootstrap command;
+- explicit human approval in the active session.

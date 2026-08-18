@@ -149,13 +149,55 @@ Status: APPROVED
 - [x] Supplemental OD-06 / OD-12 / OD-13 external decision validation
 - [x] Resolve OD-06 / OD-12 / OD-13 after supplemental validation
 
+#### Batch 02.5 — Bootstrap Migration Reconciliation + Preflight
+
+Status: APPROVED
+
+- [x] Confirm complete v1 model contract approved
+- [x] Audit legacy migration
+- [x] Reconcile exact 10-type inventory
+- [x] Remove standalone `seoMetadata`
+- [x] Add Tool type
+- [x] Reconcile all approved fields
+- [x] Remove `canonicalUrl`
+- [x] Replace `openGraphImage` with `socialImage`
+- [x] Remove `noIndex`
+- [x] Remove `noFollow`
+- [x] Remove `readingTimeMinutes`
+- [x] Remove `skill.proficiency`
+- [x] Reconcile references
+- [x] Reconcile cardinality
+- [x] Reconcile target restrictions
+- [x] Reconcile requiredness
+- [x] Reconcile routeKey validation
+- [x] Reconcile slug validation
+- [x] Reconcile scalar validations
+- [x] Reconcile controlled values
+- [x] Reconcile Rich Text contract
+- [x] Reconcile Asset contract
+- [x] Reconcile display fields
+- [x] Preserve singleton strategy without new fields
+- [x] Preserve public-safety governance boundary
+- [x] Preserve accessibility ownership boundary
+- [x] Audit derived reverse relationships
+- [x] Run static syntax preflight
+- [x] Review bootstrap safety wrapper read-only
+- [x] Define Batch 02.6 execution gates
+- [x] Record enforcement gaps
+- [x] Confirm no Contentful commands
+- [x] Confirm migration not executed
+- [x] External Batch 02.5 validation
+
 #### Later Phase 02 Batches
 
-- Batch 02.5 — Bootstrap Migration Reconciliation + Preflight — NEXT
-- Batch 02.6 — Bootstrap Migration Execution — LATER
+- Batch 02.6 — Bootstrap Migration Execution — NEXT
 - Batch 02.7 — Phase 02 Validation + Closeout — LATER
 
-Bootstrap migration: BLOCKED / NOT RUN
+Migration implementation: APPROVED / RECONCILED V1
+
+Migration execution: NOT RUN
+
+Bootstrap migration: BLOCKED PENDING BATCH 02.6 EXECUTION GATES
 
 Seed content: NOT STARTED
 
@@ -349,7 +391,8 @@ Recorded Phase 00 evidence:
 - Batch 02.2 is approved after external validation.
 - Batch 02.3 is approved after external validation.
 - Batch 02.4 is approved after external validation.
-- Batch 02.5 is next.
-- Bootstrap migration remains blocked and not run.
+- Batch 02.5 is approved after external validation returned PASS WITH NOTES.
+- Migration implementation is approved / reconciled V1; migration execution has not run.
+- Bootstrap migration is blocked pending Batch 02.6 execution gates.
 - Seed content remains not started.
-- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by Batch 02.4 approval reconciliation.
+- No Contentful environment, locale, schema, content, export, import, or seed mutation is authorized by Batch 02.5 implementation.

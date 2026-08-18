@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 active; Batch 02.1 approved; Batch 02.2 approved; Batch 02.3 approved; Batch 02.4 approved; Batch 02.5 next
+Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 active; Batch 02.1 approved; Batch 02.2 approved; Batch 02.3 approved; Batch 02.4 approved; Batch 02.5 approved; Batch 02.6 next
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -9,7 +9,7 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 |---|---|---|---|
 | 00 | Baseline + Two-Environment Setup | Complete; safe repository, secure tooling boundary, and governed `master` + `dev` operating model | None |
 | 01 | Content Strategy + Route Contract | Complete / frozen; requirements system approved for Phase 02 input | None |
-| 02 | Content Model Contract + Bootstrap Migration | Active; Batch 02.4 reference/validation/editorial contract approved; Batch 02.5 migration reconciliation + preflight next | CMS only |
+| 02 | Content Model Contract + Bootstrap Migration | Active; Batch 02.5 migration reconciliation + preflight approved; Batch 02.6 bootstrap migration execution next | CMS only |
 | 03 | Model Export + Serial Clean-Room Verification | Approved model-only snapshot rebuilt into fresh `dev` from protected `master` | CMS only |
 | 04 | Editorial QA + Model Freeze | Editor-friendly baseline v1 | CMS only |
 | 05 | Representative Seed Content | Realistic draft entries after clean-room verification | CMS only |
@@ -43,8 +43,8 @@ Batch 02.1 — APPROVED
 Batch 02.2 — APPROVED
 Batch 02.3 — APPROVED
 Batch 02.4 — APPROVED
-Batch 02.5 — NEXT
-Batch 02.6 — LATER
+Batch 02.5 — APPROVED
+Batch 02.6 — NEXT
 Batch 02.7 — LATER
 ```
 
@@ -162,7 +162,7 @@ Define what the website needs to communicate before finalizing CMS fields.
 
 ## Phase 02 — Content Model Contract + Bootstrap Migration
 
-Current state: ACTIVE. Latest approved batch: 02.4 — References + Validations + Editorial Contract — APPROVED. Next batch: 02.5 — Bootstrap Migration Reconciliation + Preflight.
+Current state: ACTIVE. Latest approved batch: 02.5 — Bootstrap Migration Reconciliation + Preflight — APPROVED. Current / next batch: 02.6 — Bootstrap Migration Execution — NEXT.
 
 ### Goal
 
@@ -176,8 +176,8 @@ Translate frozen Phase 01 requirements into a lean, stable, migration-governed C
 | 02.2 | Content Type Contract | APPROVED |
 | 02.3 | Field + Field-ID Contract | APPROVED |
 | 02.4 | References + Validations + Editorial Contract | APPROVED |
-| 02.5 | Bootstrap Migration Reconciliation + Preflight | NEXT |
-| 02.6 | Bootstrap Migration Execution | LATER |
+| 02.5 | Bootstrap Migration Reconciliation + Preflight | APPROVED |
+| 02.6 | Bootstrap Migration Execution | NEXT |
 | 02.7 | Phase 02 Validation + Closeout | LATER |
 
 ### Approved Batch 02.1 Evidence
@@ -213,20 +213,34 @@ Translate frozen Phase 01 requirements into a lean, stable, migration-governed C
 - Bootstrap migration files, snapshots, reports, Contentful scripts, fixtures, and frontend/application files remain unchanged.
 - Batch 02.4 — References + Validations + Editorial Contract — is approved.
 
+### Approved Batch 02.5 Evidence
+
+- `content-model/migrations/0001-bootstrap-portfolio-model.js` is reconciled to the approved v1 model contract.
+- The migration implements exactly the 10 approved standalone type IDs and adds approved `tool`.
+- Legacy broad SEO, technical SEO, derived reading-time, skill proficiency, and page-builder schema drift are removed from the active migration schema.
+- Approved fields, authored references, target restrictions, requiredness, hard validations where supported, Asset/Rich Text boundaries, v1 non-localization, and display fields are implemented.
+- `content-model/reports/PHASE-02-BATCH-02.5-MIGRATION-PREFLIGHT.md` records non-canonical preflight evidence, enforcement gaps, wrapper safety review, and Batch 02.6 execution gates.
+- External Batch 02.5 validation returned PASS WITH NOTES.
+- `node --check content-model/migrations/0001-bootstrap-portfolio-model.js` passes.
+- No Contentful command was run.
+- Migration execution remains NOT RUN.
+- Bootstrap remains blocked pending Batch 02.6 execution gates.
+
 ### Execution Gate
 
-Bootstrap migration execution remains blocked until Phase 02 approves:
+Bootstrap migration execution remains blocked until Batch 02.6 verifies:
 
 - content type inventory
 - type IDs
 - field ledger
 - reference map
 - validations
-- migration diff
+- approved migration diff
+- Batch 02.5 external approval recorded
 - explicit target environment = `dev`
 - master protection
 - expected blank `dev` baseline
-- external approval before execution
+- explicit human approval before execution
 
 ### Exit criteria
 
