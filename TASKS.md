@@ -419,25 +419,86 @@ Status: APPROVED
 - [x] Record Phase 01 as complete / frozen
 - [x] External Batch 01.5 / Phase 01 freeze validation
 
-## Next
+## Now
 
 ### Phase 03 — Model Export + Serial Clean-Room Verification
 
+Status: ACTIVE
+
+#### Batch 03.1 — Model Export + Serial Clean-Room Verification Preflight
+
+Status: APPROVED
+
+- [x] Confirm clean synchronized Phase 02 checkpoint
+- [x] Confirm Phase 02 truth surfaces
+- [x] Confirm current `master`/`dev` baseline through GET-only reads
+- [x] Verify approved migration checksum and syntax
+- [x] Inventory Phase 03 tooling
+- [x] Verify helper syntax
+- [x] Investigate credential binding
+- [x] Investigate strict model-only export scope
+- [x] Audit snapshot verifier coverage
+- [x] Evaluate environment lifecycle guard requirement
+- [x] Define snapshot governance
+- [x] Define semantic comparison contract
+- [x] Define export gate
+- [x] Define snapshot approval gate
+- [x] Define destructive gate
+- [x] Define blank-state gate
+- [x] Define import gate
+- [x] Define post-import evidence plan
+- [x] Create Batch 03.1 preflight report
+- [x] External Batch 03.1 validation — PASS WITH NOTES
+
+#### Batch 03.2 — Export, Import + Snapshot Verification Tooling Hardening
+
+Status: APPROVED
+
+- [x] Approve Phase 03 tooling-hardening scope
+- [x] Inspect installed programmatic export/import APIs
+- [x] Bind export credential explicitly
+- [x] Bind import credential explicitly
+- [x] Remove persisted CLI authentication dependency from export/import
+- [x] Preserve exact `dev` target and `master` rejection
+- [x] Exclude entries and assets from governed export
+- [x] Exclude tags, roles, and webhooks from governed export
+- [x] Preserve content types, editor interfaces, and locales
+- [x] Enforce governed `dev` v1 snapshot filenames and overwrite protection
+- [x] Implement exact snapshot verifier
+- [x] Anchor expected semantic truth to the approved migration checksum
+- [x] Preserve exact Phase 02 model invariants
+- [x] Validate verifier against temporary synthetic fixtures
+- [x] Validate all required negative drift cases
+- [x] Preserve TG-04 gated CLI lifecycle without adding a helper
+- [x] Confirm dependencies and Phase 02 artifacts are unchanged
+- [x] Create Batch 03.2 tooling-hardening report
+- [x] External Batch 03.2 validation — PASS WITH NOTES
+- [x] TG-01 credential hardening approved
+- [x] TG-02 strict export scope approved
+- [x] TG-03 semantic snapshot verifier approved
+- [x] TG-04 lifecycle strategy approved with no helper
+
+Pre-export tooling: APPROVED. TG-01, TG-02, and TG-03 are corrected / approved. TG-04 remains no correction required. Export and every later execution gate remain unauthorized.
+
+#### Batch 03.3 — Governed Model Export + Snapshot Validation
+
 Status: NEXT / NOT STARTED
 
-- [ ] Develop model in `dev`
-- [ ] Export approved model-only snapshot
-- [ ] Verify snapshot structure and checksum
-- [ ] Record CLI/runtime metadata
-- [ ] Record pre-deletion model evidence
-- [ ] Confirm committed migration history
-- [ ] Confirm `dev` contains no irreplaceable content
-- [ ] Confirm recovery procedure
-- [ ] Obtain explicit human approval before deleting `dev`
-- [ ] Recreate `dev` from protected `master`
-- [ ] Import model-only snapshot into fresh `dev`
-- [ ] Compare rebuilt `dev` to pre-deletion evidence
-- [ ] Declare `dev` verified before seed content begins
+- [ ] Review/stage/commit/push Batch 03.1 + 03.2 checkpoint
+- [ ] Confirm clean synchronized `0 0`
+- [ ] Batch 03.3 export pre-execution gate
+- [ ] Explicit governed export authorization
+- [ ] Execute governed model export exactly once
+- [ ] Validate real exported snapshot
+- [ ] Capture SHA-256
+- [ ] Secret-scan snapshot
+- [ ] Approve snapshot for recovery use
+
+Future separately gated work:
+
+- [ ] Destructive `dev` rotation
+- [ ] Import snapshot
+- [ ] Seed content
 
 ## Completed Evidence
 
@@ -497,6 +558,10 @@ Recorded Phase 00 evidence:
 - Attempts #1 and #2 remain historical failures; destructive recovery completed, the successful Gate B authorization is consumed, and no additional bootstrap or dev reset is authorized.
 - Batch 02.7 is approved after external validation returned PASS WITH NOTES for the read-only comparison of 10 types, 99 stored fields, 18 authored references, 102 validation objects, 10 display fields, 2 explicit editor controls, and zero material drift.
 - Phase 02 closeout review/stage/commit/push and clean synchronized `0 0` confirmation are complete.
-- Phase 03 — Model Export + Serial Clean-Room Verification — is next and has not started.
+- Phase 03 — Model Export + Serial Clean-Room Verification — is active.
+- Batch 03.1 — Model Export + Serial Clean-Room Verification Preflight — is approved after external validation returned PASS WITH NOTES.
+- Batch 03.2 — Export, Import + Snapshot Verification Tooling Hardening — is approved after external validation returned PASS WITH NOTES.
+- Pre-export tooling is approved; Batch 03.3 — Governed Model Export + Snapshot Validation — is next but not started.
+- Export has not run, no snapshot exists, destructive authorization is not granted, and import has not run.
 - Seed content remains not started.
-- No further Contentful environment, locale, schema, content, export, import, bootstrap, dev cleanup, or seed mutation is authorized by this reconciliation.
+- No Contentful environment, locale, schema, content, export, import, bootstrap, dev cleanup, or seed mutation is authorized by Batch 03.2.

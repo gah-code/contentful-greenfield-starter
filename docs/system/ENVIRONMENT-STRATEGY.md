@@ -1,6 +1,6 @@
 # Environment Strategy
 
-Status: Phase 00 complete; Phase 02 complete / frozen; Phase 03 next / not started
+Status: Phase 00 complete; Phase 02 complete / frozen; Phase 03 active; Batches 03.1 and 03.2 approved; Batch 03.3 next
 Owner: Phase 00 — Baseline + Two-Environment Setup
 Canonical environment topology: `master` + `dev`
 
@@ -49,31 +49,28 @@ After historical Attempt #2 left a partial schema, destructive `dev` recovery wa
 
 The recovery authorization and Gate B authorization are consumed. Additional `dev` reset and additional bootstrap execution are not authorized. `master` remains blank and protected.
 
-Batch 02.7 externally validated the live `dev` contract with zero material drift and closed Phase 02 as complete / frozen. Phase 03 serial clean-room verification is next / not started; no Phase 03 environment lifecycle action is authorized by Phase 02 closeout.
+Batch 02.7 externally validated the live `dev` contract with zero material drift and closed Phase 02 as complete / frozen. Phase 03 Batch 03.1 externally passed with notes and is approved. Its GET-only baseline reconfirmed ready blank `master` and ready validated `dev`; no environment lifecycle action was authorized or executed.
+
+Batch 03.2 externally passed with notes and approved hardened export/import credential binding, strict model-only scope, and exact local snapshot verification. Batch 03.3 export/snapshot work is next but not started, and export remains unauthorized. Export has not run, no snapshot exists, destructive authorization is not granted, and import has not run.
 
 Seed content remains NOT STARTED.
 
 ## Serial Clean-Room Workflow
 
-Phase 03 proves model portability by rebuilding the same `dev` environment ID:
+Phase 03 proves model portability through separately approved serial gates while rebuilding the same `dev` environment ID:
 
 ```text
-modeled dev
--> technical + editorial model review
--> export approved model-only snapshot
--> verify snapshot structure
--> record checksum
--> record CLI/runtime metadata
--> record pre-deletion model evidence
--> confirm committed migration history
--> confirm dev contains no irreplaceable content
--> confirm recovery procedure
--> obtain explicit human approval
--> delete dev
--> recreate dev from protected master
--> confirm fresh dev state
--> import model-only snapshot into dev
--> compare rebuilt dev to pre-deletion evidence
+validated dev
+-> export approval
+-> governed model-only export
+-> snapshot validation and checksum approval
+-> separate destructive approval
+-> delete dev exactly once
+-> recreate dev exactly once from protected master
+-> independent blank-state validation
+-> separate import approval
+-> import snapshot exactly once
+-> semantic comparison
 -> freshly recreated verified dev
 ```
 
@@ -91,7 +88,9 @@ Deleting `dev` requires explicit human approval in the active session after all 
 - confirmation that `dev` has no irreplaceable content
 - documented recovery procedure
 
-No environment deletion automation belongs in this repository during this repair.
+Current destructive authorization: NOT GRANTED.
+
+Batch 03.2 approved the existing policy without requiring a repository lifecycle helper. A future destructive gate may use separately approved exact one-time CLI commands for one delete and one recreate, followed by post-operation evidence and an independent blank-state check. No automatic retry, cleanup-and-rerun behavior, import, or seed is part of that authorization.
 
 ## Environment Variable Contract
 

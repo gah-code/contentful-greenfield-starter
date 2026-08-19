@@ -253,6 +253,29 @@ All meaningful project changes should be recorded here.
 - Closed Phase 02 — Content Model Contract + Bootstrap Migration as COMPLETE / FROZEN.
 - Advanced Phase 03 — Model Export + Serial Clean-Room Verification to NEXT / NOT STARTED.
 - Seed content remains not started.
+- Started Phase 03 — Model Export + Serial Clean-Room Verification.
+- Started Batch 03.1 non-destructive preflight and moved it to IN REVIEW.
+- Revalidated the clean synchronized Phase 02 checkpoint and the GET-only `master`/`dev` baseline.
+- Inspected export, import, snapshot verification, and environment lifecycle tooling without changing implementation.
+- Defined governed snapshot scope, semantic clean-room comparison, failure policy, and serial approval gates.
+- Identified pre-export tooling hardening for explicit credential binding, tag exclusion, and exact snapshot verification; no tooling was modified.
+- Kept export unexecuted, snapshot uncreated, destructive authorization ungranted, import unexecuted, and seed not started.
+- Approved Phase 03 / Batch 03.1 preflight after external validation returned PASS WITH NOTES.
+- Started Batch 03.2 — Export, Import + Snapshot Verification Tooling Hardening.
+- Replaced persisted CLI-auth dependency in export/import helpers with explicit secret-safe Management credential binding through installed programmatic APIs.
+- Added strict content, Asset, tag, role, and webhook exclusion to the governed model export.
+- Added governed `dev` v1 snapshot filename and overwrite guards.
+- Expanded local snapshot verification to enforce the checksum-locked Phase 02 semantic contract.
+- Passed the approved synthetic fixture and all required negative semantic-drift fixtures outside the repository.
+- Preserved TG-04 without adding destructive lifecycle automation.
+- Kept export unexecuted, snapshot uncreated, destructive authorization ungranted, import unexecuted, and seed not started.
+- Approved Phase 03 / Batch 03.2 tooling hardening after external validation returned PASS WITH NOTES.
+- Approved explicit programmatic Management credential binding for export/import.
+- Approved strict governed-export scope with tags excluded.
+- Approved exact semantic snapshot verification against the checksum-locked Phase 02 migration contract.
+- Confirmed no destructive lifecycle helper is required.
+- Advanced Batch 03.3 — Governed Model Export + Snapshot Validation to NEXT.
+- No export, snapshot, environment rotation, import, or seed occurred.
 
 ### Security
 

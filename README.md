@@ -5,7 +5,7 @@ A production-minded Contentful project showcasing how I design scalable CMS arch
 The repository demonstrates how I approach content systems with the same structure, documentation, and validation practices used in professional web and CMS environments.
 
 ![Status](https://img.shields.io/badge/status-active-blue)
-![Phase](https://img.shields.io/badge/phase-02%20complete-2f855a)
+![Phase](https://img.shields.io/badge/phase-03%20active-2478CC)
 ![CMS](https://img.shields.io/badge/CMS-Contentful-2478CC)
 ![Node](https://img.shields.io/badge/node-%3E%3D22-339933)
 ![Model](https://img.shields.io/badge/model-design%20approved-2f855a)
@@ -29,11 +29,11 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 
 | Area | Current state |
 | --- | --- |
-| Current project state | Phase 02 - Complete / Frozen |
+| Current project state | Phase 03 - Model Export + Serial Clean-Room Verification - Active |
 | Latest completed phase | Phase 02 - Content Model Contract + Bootstrap Migration |
-| Latest approved batch | Batch 02.7 - Validation + Closeout |
-| Next phase | Phase 03 - Model Export + Serial Clean-Room Verification - Next / Not Started |
-| Previous phase | Phase 00 - Complete |
+| Latest approved batch | Batch 03.2 - Export, Import + Snapshot Verification Tooling Hardening |
+| Next batch | Batch 03.3 - Governed Model Export + Snapshot Validation - Next / not started |
+| Pre-export tooling | Approved |
 | Content model | Approved V1 model contract |
 | Migration implementation | Approved RE2-corrected V1 |
 | Migration execution | Successful in `dev` |
@@ -46,6 +46,10 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Destructive recovery | Complete / externally approved; additional reset not authorized |
 | Environments | `master` + `dev` |
 | Bootstrap migration | Executed successfully in `dev` |
+| Export | Not run |
+| Snapshot | Not created |
+| Destructive authorization | Not granted |
+| Import | Not run |
 | Seed content | Not started |
 
 > For canonical current state, see [docs/PROJECT-STATE.md](docs/PROJECT-STATE.md) and [TASKS.md](TASKS.md).
@@ -86,7 +90,7 @@ The implementation sequence keeps CMS decisions upstream of templates and keeps 
 
 Verification is a workflow state, not a third Contentful environment.
 
-In Phase 03, the approved `dev` model will be exported as a model-only snapshot, recoverability evidence will be recorded, explicit human approval will be required, and `dev` will be recreated from protected `master` before the snapshot is imported back into fresh `dev`. See [docs/system/ENVIRONMENT-STRATEGY.md](docs/system/ENVIRONMENT-STRATEGY.md) for the complete procedure and destructive gate.
+Phase 03 Batches 03.1 and 03.2 are approved. Batch 03.2 replaced persisted CLI authentication in export/import, excluded tags from the governed export, and expanded local snapshot verification to the exact Phase 02 semantic contract. Batch 03.3 is next but not started. Export, snapshot creation, destructive rotation, import, and seed remain unauthorized and unexecuted. See [docs/system/ENVIRONMENT-STRATEGY.md](docs/system/ENVIRONMENT-STRATEGY.md) for the serial gate structure.
 
 ## Repository Operating System
 
@@ -179,7 +183,7 @@ Do not run authentication, migration, export, import, or environment commands un
 | 00 | Baseline + Two-Environment Setup - complete |
 | 01 | Content Strategy + Route Contract - complete / frozen |
 | 02 | Content Model Contract + Bootstrap Migration - complete / frozen |
-| 03 | Model Export + Serial Clean-Room Verification |
+| 03 | Model Export + Serial Clean-Room Verification - active; Batch 03.2 approved; Batch 03.3 next |
 | 04 | Editorial QA + Model Freeze |
 | 05 | Representative Seed Content |
 | 06 | Frontend Contracts + Adapter Boundary |
@@ -223,9 +227,10 @@ Phase 02 / Batch 02.2 approves the current v1 standalone type inventory: `siteSe
 - [docs/content-model/REFERENCE-MAP.md](docs/content-model/REFERENCE-MAP.md) - approved reference contract
 - [docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md](docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md) - approved validation and editorial contract
 
-### Active Phase
+### Phase Documents
 
-- [docs/phases/PHASE-02-CONTENT-MODEL-CONTRACT-AND-BOOTSTRAP-MIGRATION.md](docs/phases/PHASE-02-CONTENT-MODEL-CONTRACT-AND-BOOTSTRAP-MIGRATION.md) - Phase 02 batch plan, existing model reconciliation, decision queue, and migration execution gates
+- [docs/phases/PHASE-03-MODEL-EXPORT-AND-SERIAL-CLEAN-ROOM-VERIFICATION.md](docs/phases/PHASE-03-MODEL-EXPORT-AND-SERIAL-CLEAN-ROOM-VERIFICATION.md) - active Phase 03 scope, serial gates, and Batch 03.3 handoff
+- [docs/phases/PHASE-02-CONTENT-MODEL-CONTRACT-AND-BOOTSTRAP-MIGRATION.md](docs/phases/PHASE-02-CONTENT-MODEL-CONTRACT-AND-BOOTSTRAP-MIGRATION.md) - completed Phase 02 model and migration closeout
 - [docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md](docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md) - completed Phase 01 closeout, frozen requirements evidence, and Phase 02 handoff boundary
 
 ## Safety and Governance

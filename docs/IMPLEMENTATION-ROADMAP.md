@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Batch 02.1-02.4 approved; Batch 02.5 re-approved after compatibility corrections; Batch 02.6 approved after successful bootstrap execution in `dev`; Batch 02.7 approved after external live-contract validation; Phase 03 next
+Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Phase 03 active; Batches 03.1 and 03.2 approved; Batch 03.3 next
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -10,7 +10,7 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 | 00 | Baseline + Two-Environment Setup | Complete; safe repository, secure tooling boundary, and governed `master` + `dev` operating model | None |
 | 01 | Content Strategy + Route Contract | Complete / frozen; requirements system approved for Phase 02 input | None |
 | 02 | Content Model Contract + Bootstrap Migration | Complete / frozen; approved live model has zero material drift | CMS only |
-| 03 | Model Export + Serial Clean-Room Verification | Next / not started; approved model-only snapshot rebuilt into fresh `dev` from protected `master` | CMS only |
+| 03 | Model Export + Serial Clean-Room Verification | Active; Batch 03.2 approved; Batch 03.3 next; export not authorized | CMS only |
 | 04 | Editorial QA + Model Freeze | Editor-friendly baseline v1 | CMS only |
 | 05 | Representative Seed Content | Realistic draft entries after clean-room verification | CMS only |
 | 06 | Frontend Contracts + Adapter Boundary | Stable CMS-agnostic data contracts | Code only |
@@ -47,7 +47,14 @@ Batch 02.5 — RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION
 Batch 02.6 — APPROVED — BOOTSTRAP EXECUTED SUCCESSFULLY IN DEV
 Batch 02.7 — APPROVED — LIVE CONTRACT VALIDATED
 
-Phase 03 — NEXT / NOT STARTED
+Phase 03 — ACTIVE
+Batch 03.1 — APPROVED
+Batch 03.2 — APPROVED
+Batch 03.3 — NEXT
+Batch 03.4 — LATER
+Batch 03.5 — LATER
+Batch 03.6 — LATER
+Pre-export tooling — APPROVED
 ```
 
 ## Phase 00 — Baseline + Two-Environment Setup
@@ -78,7 +85,7 @@ Create a safe operating surface before any content type is created.
 
 ## Phase 01 — Content Strategy + Route Contract
 
-Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 is now COMPLETE / FROZEN; Phase 03 is NEXT / NOT STARTED.
+Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 is COMPLETE / FROZEN; Phase 03 is ACTIVE with Batches 03.1 and 03.2 approved and Batch 03.3 next.
 
 ### Goal
 
@@ -285,7 +292,7 @@ Evidence: `content-model/reports/PHASE-02-BATCH-02.7-LIVE-SCHEMA-VALIDATION.md`.
 
 Result: 10 / 10 types, 99 / 99 stored fields, 18 / 18 authored references, 102 / 102 validation objects, 10 / 10 display fields, 2 / 2 explicit editor controls, and 0 material mismatches.
 
-Phase 02 is COMPLETE / FROZEN. Phase 03 is NEXT / NOT STARTED.
+Phase 02 is COMPLETE / FROZEN. Phase 03 is ACTIVE; Batches 03.1 and 03.2 are APPROVED, and Batch 03.3 is NEXT / NOT STARTED.
 
 ### Exit criteria
 
@@ -296,11 +303,28 @@ Phase 02 is COMPLETE / FROZEN. Phase 03 is NEXT / NOT STARTED.
 
 ## Phase 03 — Model Export + Serial Clean-Room Verification
 
-Current state: NEXT / NOT STARTED. Not active.
+Current state: ACTIVE. Batch 03.1 — Model Export + Serial Clean-Room Verification Preflight — APPROVED. Batch 03.2 — Export, Import + Snapshot Verification Tooling Hardening — APPROVED. Batch 03.3 — Governed Model Export + Snapshot Validation — NEXT / NOT STARTED.
+
+Pre-export tooling: APPROVED. Export has not run, no snapshot exists, destructive authorization is not granted, import has not run, and seed content has not started.
 
 ### Goal
 
 Prove that the approved model-only snapshot is portable by rebuilding `dev` from protected `master` and importing the snapshot into fresh `dev`.
+
+### Batch Architecture
+
+Batch 03.1 external approval established this Phase 03 sequence:
+
+| Batch | Name | Status |
+|---|---|---|
+| 03.1 | Model Export + Serial Clean-Room Verification Preflight | APPROVED |
+| 03.2 | Export, Import + Snapshot Verification Tooling Hardening | APPROVED |
+| 03.3 | Governed Model Export + Snapshot Validation | NEXT |
+| 03.4 | Destructive Dev Rotation + Blank-State Validation | LATER |
+| 03.5 | Snapshot Import + Clean-Room Comparison | LATER |
+| 03.6 | Phase 03 Validation + Closeout | LATER |
+
+Batch 03.2 external validation returned PASS WITH NOTES. TG-01 credential binding, TG-02 strict export scope, and TG-03 exact snapshot verification are corrected / approved. TG-04 requires no repository lifecycle helper under the existing exact-command and separate-approval policy. Batch 03.3 is next but not started, and export remains unauthorized.
 
 ### Destructive gates before deleting `dev`
 

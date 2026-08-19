@@ -38,6 +38,20 @@ Do not expose sensitive Contentful variables through browser-public prefixes suc
 - Pass credentials through environment state only, with values hidden from output.
 - Do not run authentication, environment mutation, migration, export, or import commands unless the current batch explicitly authorizes them.
 
+## Phase 03 Export / Import Credential Contract
+
+Phase 03 export and import helpers use `process.env.CONTENTFUL_MANAGEMENT_TOKEN` as the explicit Management credential source. They supply it directly to the installed programmatic `contentful-export` and `contentful-import` APIs.
+
+Persisted Contentful CLI authentication is not the approved export/import credential path. The helpers must fail closed when the environment-loaded token is absent.
+
+Token values are never:
+
+- printed;
+- passed through command-line arguments;
+- serialized into snapshots;
+- stored in reports;
+- copied from persisted CLI state into the repository.
+
 ## Presence-Only Verification
 
 Helper scripts may report that a required value is configured, present, missing, or not configured. Helper scripts must not print actual secret values, serialize `process.env`, dump the shell environment, or include token substrings in errors.
@@ -79,4 +93,4 @@ Batch 00.3 verifies credential handling and variable separation without reading 
 
 Batch 00.4 recorded direct account, space, environment inventory, default locale, `master`, and `dev` evidence. Batch 00.5 external validation approved Phase 00.
 
-Phase 01 and Phase 02 are complete / frozen. Batch 02.7 external validation approved the zero-drift read-only live comparison. Phase 03 — Model Export + Serial Clean-Room Verification — is next / not started. The successful Gate B and destructive recovery authorizations are consumed. Additional bootstrap execution, environment reset, export, import, seed content, locale changes, schema mutation, frontend implementation, and Phase 03 lifecycle work require separate authorization. Existing secret policy remains unchanged: credentials stay in ignored local environment state, never appear in CLI arguments or logs, and `contentful config list` remains prohibited.
+Phase 01 and Phase 02 are complete / frozen. Phase 03 is active; Batches 03.1 and 03.2 are approved, and Batch 03.3 is next but not started. The approved export/import helpers use explicit programmatic environment-token binding, but no export or import is authorized. The successful Gate B and destructive recovery authorizations are consumed. Additional bootstrap execution, environment reset, export, snapshot creation, import, seed content, locale changes, schema mutation, frontend implementation, and later Phase 03 lifecycle work require separate authorization. Credentials stay in ignored local environment state, never appear in CLI arguments or logs, and `contentful config list` remains prohibited.

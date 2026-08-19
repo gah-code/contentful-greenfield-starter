@@ -13,7 +13,7 @@ Inspect the current repository before editing in every mode. Use current reposit
 
 Personal Website CMS — Greenfield Contentful Starter
 Repository: `contentful-greenfield-starter`
-Model target: approved and frozen 10-type v1 semantic model; RE2-corrected migration executed successfully in `dev`; Batch 02.7 live validation approved with zero material drift; Phase 03 serial clean-room verification next
+Model target: approved and frozen 10-type v1 semantic model; RE2-corrected migration executed successfully in `dev`; Batch 02.7 live validation approved with zero material drift; Phase 03 Batch 03.2 tooling hardening approved
 
 ## Project Mantra
 
@@ -49,8 +49,19 @@ Documentation is part of the build.
 - Additional bootstrap execution — NOT AUTHORIZED.
 - Destructive dev recovery — COMPLETE / EXTERNALLY APPROVED / AUTHORIZATION CONSUMED.
 - Additional dev reset — NOT AUTHORIZED.
+- Phase 03 — Model Export + Serial Clean-Room Verification — ACTIVE.
+- 03.1 — MODEL EXPORT + SERIAL CLEAN-ROOM VERIFICATION PREFLIGHT — APPROVED.
+- 03.2 — EXPORT, IMPORT + SNAPSHOT VERIFICATION TOOLING HARDENING — APPROVED.
+- 03.3 — GOVERNED MODEL EXPORT + SNAPSHOT VALIDATION — NEXT / NOT STARTED.
+- 03.4 — DESTRUCTIVE DEV ROTATION + BLANK-STATE VALIDATION — LATER.
+- 03.5 — SNAPSHOT IMPORT + CLEAN-ROOM COMPARISON — LATER.
+- 03.6 — PHASE 03 VALIDATION + CLOSEOUT — LATER.
+- Pre-export tooling — APPROVED.
+- Export — NOT RUN.
+- Snapshot — NOT CREATED.
+- Destructive authorization — NOT GRANTED.
+- Import — NOT RUN.
 - Seed content — NOT STARTED.
-- Phase 03 — Model Export + Serial Clean-Room Verification — NEXT / NOT STARTED.
 
 Batch 01.3 approved hybrid SEO ownership: editorial SEO overrides are limited conceptually to title, description, and social image; technical SEO remains code/state-derived. Exact Contentful representation and schema implementation remain deferred to Phase 02.
 
@@ -68,7 +79,11 @@ Batch 02.4 is approved after external validation returned PASS WITH NOTES. It ap
 
 Batch 02.5 was approved after external validation returned PASS WITH NOTES, then reopened after first Gate B execution evidence. Historical Attempt #1 exited nonzero before creating schema because of Rich Text compatibility. Historical Attempt #2 exited nonzero after creating/publishing `siteSettings` and `personProfile` because of `socialLink.url` RE2 validation. Batch 02.5 was re-approved after the RE2 correction. Separately authorized destructive recovery completed, Fresh Gate A passed, and current Attempt #3 executed the RE2-corrected migration successfully against `dev` with exit 0. External Gate B validation returned PASS WITH NOTES and approved Batch 02.6. The Gate B and destructive recovery authorizations are consumed; additional bootstrap execution, additional dev reset, fixtures, frontend implementation, and seed content remain unauthorized.
 
-Batch 02.7 is approved after external validation returned PASS WITH NOTES for a read-only live comparison with zero material contract drift across 10 content types, 99 stored fields, 18 authored references, 102 validation objects, 10 display fields, and 2 explicit editor-interface overrides. `master` remains blank and protected; `dev` remains at 0 entries / 0 assets / `en-US`. Phase 02 is complete / frozen. Phase 03 is next / not started.
+Batch 02.7 is approved after external validation returned PASS WITH NOTES for a read-only live comparison with zero material contract drift across 10 content types, 99 stored fields, 18 authored references, 102 validation objects, 10 display fields, and 2 explicit editor-interface overrides. `master` remains blank and protected; `dev` remains at 0 entries / 0 assets / `en-US`. Phase 02 is complete / frozen.
+
+Batch 03.1 is approved after external validation returned PASS WITH NOTES. Its non-destructive preflight passed repository, migration-integrity, helper-syntax, secret-safe configuration, and GET-only live-baseline gates. It delegated TG-01, TG-02, and TG-03 to Batch 03.2 and confirmed TG-04 required no correction.
+
+Batch 03.2 is approved after external validation returned PASS WITH NOTES. TG-01 is corrected / approved through programmatic export/import APIs and explicit `process.env.CONTENTFUL_MANAGEMENT_TOKEN` binding without persisted CLI authentication. TG-02 is corrected / approved through strict content, Asset, tag, role, and webhook exclusion. TG-03 is corrected / approved through checksum-anchored exact semantic snapshot verification; the positive synthetic fixture and all required negative drift cases pass. TG-04 remains no correction required. Batch 03.3 is next but not started. No Contentful call occurred; export, snapshot creation, destructive rotation, import, bootstrap, and seed remain unauthorized and unexecuted.
 
 Approved Batch 02.2 standalone type IDs:
 
@@ -140,6 +155,7 @@ Do not leave active instructions for:
 - Never commit `.env.local`.
 - Never read `.env.local` unless the user explicitly authorizes that in a separate request.
 - Never pass management, delivery, or preview tokens through CLI arguments.
+- Phase 03 export/import must bind `process.env.CONTENTFUL_MANAGEMENT_TOKEN` through installed programmatic APIs and must not depend on persisted CLI authentication.
 - Never use browser-public prefixes for sensitive values.
 - Use locally installed CLI tooling only.
 - Verify secret presence without exposing values.
@@ -152,22 +168,17 @@ Do not leave active instructions for:
 Approved fresh-dev lifecycle:
 
 ```text
-develop model in dev
--> technical + editorial model review
--> export approved model-only snapshot
--> verify snapshot structure
--> record checksum
--> record CLI/runtime metadata
--> record pre-deletion model evidence
--> confirm committed migration history
--> confirm dev contains no irreplaceable content
--> confirm recovery procedure
--> obtain explicit human approval
--> delete dev
--> recreate dev from protected master
--> confirm fresh dev state
--> import model-only snapshot into dev
--> compare rebuilt dev to pre-deletion evidence
+validated dev
+-> export approval
+-> governed model-only export
+-> snapshot validation and checksum approval
+-> explicit destructive approval
+-> delete dev exactly once
+-> recreate dev exactly once from protected master
+-> independent blank-state validation
+-> explicit import approval
+-> import snapshot exactly once
+-> semantic comparison
 -> declare dev verified
 -> continue using dev
 ```

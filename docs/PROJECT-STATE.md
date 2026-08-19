@@ -1,13 +1,20 @@
 # Project State
 
 Project: `contentful-greenfield-starter`
-Current project state: Phase 02 — COMPLETE / FROZEN
+Current project state: Phase 03 — ACTIVE
 Latest completed phase: Phase 02 — CONTENT MODEL CONTRACT + BOOTSTRAP MIGRATION — COMPLETE / FROZEN
-Latest approved batch: Batch 02.7 — VALIDATION + CLOSEOUT — APPROVED
+Latest approved batch: Batch 03.2 — EXPORT, IMPORT + SNAPSHOT VERIFICATION TOOLING HARDENING — APPROVED
+Next batch: Batch 03.3 — GOVERNED MODEL EXPORT + SNAPSHOT VALIDATION — NEXT / NOT STARTED
 Live model: VALIDATED / 0 MATERIAL DRIFT
-Next phase: Phase 03 — MODEL EXPORT + SERIAL CLEAN-ROOM VERIFICATION — NEXT / NOT STARTED
+Pre-export tooling: APPROVED
+`master`: PROTECTED BLANK BASELINE
+`dev`: VALIDATED PHASE 02 MODEL / PHASE 03 EXPORT SOURCE
 Bootstrap migration: APPROVED RE2-CORRECTED V1 / EXECUTED SUCCESSFULLY IN DEV / LIVE CONTRACT VALIDATED
 Additional bootstrap execution: NOT AUTHORIZED
+Export: NOT RUN
+Snapshot: NOT CREATED
+Destructive authorization: NOT GRANTED
+Import: NOT RUN
 Seed content: NOT STARTED
 
 Batch 01.1 external validation passed.
@@ -24,6 +31,14 @@ Batch 02.5 external validation passed with notes, then Batch 02.6 Gate B executi
 Batch 02.6 destructive `dev` recovery completed under separate authorization and passed external validation. A fresh Gate A then passed, and the current RE2-corrected migration executed once against `dev` on overall Attempt #3 with exit code 0. External Gate B validation returned PASS WITH NOTES and approved the result. All 10 approved v1 content type IDs are present; `dev` remains at 0 entries, 0 assets, and `en-US`. `master` remained untouched and blank. The Gate B and destructive recovery authorizations are consumed; additional bootstrap execution or environment reset is not authorized.
 
 Batch 02.7 completed a read-only live comparison against the approved Phase 02 model contract. External validation returned PASS WITH NOTES and approved the 10 content types, 99 stored fields, 18 authored references, 102 validation objects, 10 display fields, and 2 explicit editor-interface overrides with zero material mismatches. `dev` remains at 0 entries / 0 assets / `en-US`; `master` remains blank and protected. Phase 02 is complete / frozen.
+
+Batch 03.1 started Phase 03 with a non-destructive preflight. Repository, migration, secret-safe configuration, helper syntax, and GET-only live-baseline gates passed. `master` remains ready and blank; `dev` remains ready with the validated Phase 02 model at 10 content types / 0 entries / 0 assets / `en-US`.
+
+Batch 03.1 concluded that pre-export tooling hardening was required: TG-01 explicit credential binding, TG-02 tag exclusion, and TG-03 exact snapshot verification blocked export. TG-04 did not require a repository lifecycle helper under the existing separately approved one-time command policy. No tooling changed during that preflight.
+
+External validation returned PASS WITH NOTES and approved Batch 03.1. Batch 03.2 corrected TG-01, TG-02, and TG-03; external validation returned PASS WITH NOTES and approved the tooling hardening. Export/import helpers use installed programmatic APIs with explicit environment-loaded Management credential binding; the governed export excludes tags and all content; the snapshot verifier enforces the checksum-locked Phase 02 semantic contract. TG-04 remains no change required.
+
+Local syntax, configuration, and temporary synthetic-fixture tests pass. No Contentful call occurred, no actual snapshot was created, and no export, import, environment lifecycle action, bootstrap, or seed ran. Batch 03.3 is next but not started, and export remains unauthorized.
 
 The content-strategy foundation is approved with open decisions intentionally carried forward to later Phase 01 batches.
 
@@ -277,6 +292,9 @@ No deletion automation is part of this repair.
 | `dev` deletion before recoverability | Open | Require committed migrations, snapshot, checksum, pre-deletion evidence, recovery procedure, and explicit human approval |
 | Stale three-environment documentation | Open | Search for obsolete topology terms during closeout and Phase 03 readiness |
 | Token exposure | Controlled in repository | Ignore local env files, avoid CLI token args, avoid browser prefixes, and print presence only |
+| Phase 03 export/import credential ambiguity | Corrected / approved | Programmatic APIs bind the environment-loaded Management credential without CLI arguments or persisted CLI context |
+| Over-broad recovery snapshot | Corrected / approved | Governed export explicitly excludes content, assets, tags, roles, and webhooks |
+| Insufficient snapshot validation | Corrected / approved | Checksum-anchored verifier enforces exact Phase 02 semantic invariants |
 | Locale compatibility | Resolved | `master` and `dev` both use `en-US` as the default locale with no fallback; revalidate compatibility before the Phase 03 clean-room import |
 | Historical baseline commit mixed CMS/model artifacts | Accepted deviation | Do not rewrite history; use focused commits in future batches |
 
@@ -286,4 +304,4 @@ Phase 00 is complete. Batch 00.1, Batch 00.2, Batch 00.3, Batch 00.4, and Batch 
 
 Phase 01 is complete / frozen. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is approved after external validation. Batch 01.4 is approved after external validation. Batch 01.5 is approved after external validation. Phase 02 is complete / frozen, Batch 02.1 through Batch 02.4 are approved, Batch 02.5 is re-approved after compatibility corrections, Batch 02.6 is approved after successful bootstrap execution in `dev`, and Batch 02.7 is approved after external validation.
 
-Phase 03 — Model Export + Serial Clean-Room Verification — is NEXT / NOT STARTED. Additional bootstrap execution, additional environment reset, seed content, Contentful export/import, static fixtures, frontend implementation, and Phase 03 lifecycle actions remain out of scope until separately authorized.
+Phase 03 — Model Export + Serial Clean-Room Verification — is ACTIVE. Batch 03.1 — Preflight — and Batch 03.2 — Export, Import + Snapshot Verification Tooling Hardening — are APPROVED. Pre-export tooling is APPROVED. Batch 03.3 — Governed Model Export + Snapshot Validation — is NEXT / NOT STARTED. Export, snapshot, bootstrap, environment reset, import, seed, fixture, frontend, and other lifecycle execution remain unauthorized.
