@@ -224,7 +224,7 @@ The v1 editorial SEO contract excludes:
 
 Status: RESOLVED / APPROVED
 
-Recorded during Phase 01 / Batch 01.4 final approval reconciliation. Phase 01 is complete / frozen. Phase 02 is active; Batch 02.1 through Batch 02.4 are approved, Batch 02.5 is re-approved after RE2 compatibility correction, Batch 02.6 is approved after successful bootstrap execution in `dev`, and Batch 02.7 is next.
+Recorded during Phase 01 / Batch 01.4 final approval reconciliation. Phase 01 and Phase 02 are complete / frozen. Batch 02.1 through Batch 02.4 are approved, Batch 02.5 is re-approved after compatibility corrections, Batch 02.6 is approved after successful bootstrap execution in `dev`, and Batch 02.7 is approved after external validation confirmed zero material live-contract drift. Phase 03 is next / not started.
 
 Batch 01.5 open-decision triage is recorded in `docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md`. No unrelated open decision is resolved by that validation pass.
 

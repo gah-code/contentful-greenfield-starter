@@ -2,11 +2,11 @@
 
 This tracker records current project truth. Do not mark future batches complete without direct repository, command, or Contentful evidence.
 
-## Now
+## Completed
 
 ### Phase 02 — Content Model Contract + Bootstrap Migration
 
-Status: ACTIVE
+Status: COMPLETE / FROZEN
 
 #### Batch 02.1 — Entry + Existing Model Reconciliation
 
@@ -273,10 +273,31 @@ Seed content: NOT STARTED
 
 #### Batch 02.7 — Phase 02 Validation + Closeout
 
-Status: NEXT
+Status: APPROVED
 
-- [ ] Batch 02.7 full live schema validation
-- [ ] Phase 02 closeout
+- [x] Verify exact 10 live content types
+- [x] Verify exact 99 stored fields
+- [x] Verify field IDs
+- [x] Verify primitives
+- [x] Verify requiredness
+- [x] Verify non-localized v1 contract
+- [x] Verify 18 authored references
+- [x] Verify target restrictions
+- [x] Verify derived reverses absent
+- [x] Verify hard validations
+- [x] Verify regex validations
+- [x] Verify Rich Text restrictions
+- [x] Verify 10 display fields
+- [x] Verify explicit editor-interface overrides
+- [x] Verify legacy schema absent
+- [x] Verify master remains blank
+- [x] Verify dev entries remain 0
+- [x] Verify dev assets remain 0
+- [x] Create Batch 02.7 validation report
+- [x] External Batch 02.7 validation
+- [x] Final Phase 02 approval reconciliation
+- [ ] Review / stage / commit / push Phase 02 closeout
+- [ ] Confirm clean synchronized 0 0
 
 ### Completed Phase 01 — Content Strategy + Route Contract
 
@@ -398,9 +419,11 @@ Status: APPROVED
 - [x] Record Phase 01 as complete / frozen
 - [x] External Batch 01.5 / Phase 01 freeze validation
 
-## Deferred
+## Next
 
 ### Phase 03 — Model Export + Serial Clean-Room Verification
+
+Status: NEXT / NOT STARTED
 
 - [ ] Develop model in `dev`
 - [ ] Export approved model-only snapshot
@@ -463,7 +486,7 @@ Recorded Phase 00 evidence:
 - Batch 01.3 is approved after external validation.
 - Batch 01.4 is approved after external validation.
 - Batch 01.5 is approved after external validation.
-- Phase 02 is active.
+- Phase 02 is complete / frozen.
 - Batch 02.1 is approved after external validation.
 - Batch 02.2 is approved after external validation.
 - Batch 02.3 is approved after external validation.
@@ -472,6 +495,8 @@ Recorded Phase 00 evidence:
 - Batch 02.6 is approved after external Gate B validation returned PASS WITH NOTES; the RE2-corrected migration executed successfully in `dev` on overall Attempt #3 and created all 10 approved type IDs.
 - Migration implementation is approved RE2-corrected V1 and execution succeeded in `dev`.
 - Attempts #1 and #2 remain historical failures; destructive recovery completed, the successful Gate B authorization is consumed, and no additional bootstrap or dev reset is authorized.
-- Batch 02.7 is next and has not started.
+- Batch 02.7 is approved after external validation returned PASS WITH NOTES for the read-only comparison of 10 types, 99 stored fields, 18 authored references, 102 validation objects, 10 display fields, 2 explicit editor controls, and zero material drift.
+- Phase 02 closeout review/stage/commit/push and clean synchronized `0 0` confirmation remain pending.
+- Phase 03 — Model Export + Serial Clean-Room Verification — is next and has not started.
 - Seed content remains not started.
 - No further Contentful environment, locale, schema, content, export, import, bootstrap, dev cleanup, or seed mutation is authorized by this reconciliation.

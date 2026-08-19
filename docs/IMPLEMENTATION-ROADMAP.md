@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 active; Batch 02.1-02.4 approved; Batch 02.5 re-approved after RE2 compatibility correction; Batch 02.6 approved after successful bootstrap execution in `dev`; Batch 02.7 next
+Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Batch 02.1-02.4 approved; Batch 02.5 re-approved after compatibility corrections; Batch 02.6 approved after successful bootstrap execution in `dev`; Batch 02.7 approved after external live-contract validation; Phase 03 next
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -9,8 +9,8 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 |---|---|---|---|
 | 00 | Baseline + Two-Environment Setup | Complete; safe repository, secure tooling boundary, and governed `master` + `dev` operating model | None |
 | 01 | Content Strategy + Route Contract | Complete / frozen; requirements system approved for Phase 02 input | None |
-| 02 | Content Model Contract + Bootstrap Migration | Active; Batch 02.6 bootstrap execution approved; Batch 02.7 validation + closeout next | CMS only |
-| 03 | Model Export + Serial Clean-Room Verification | Approved model-only snapshot rebuilt into fresh `dev` from protected `master` | CMS only |
+| 02 | Content Model Contract + Bootstrap Migration | Complete / frozen; approved live model has zero material drift | CMS only |
+| 03 | Model Export + Serial Clean-Room Verification | Next / not started; approved model-only snapshot rebuilt into fresh `dev` from protected `master` | CMS only |
 | 04 | Editorial QA + Model Freeze | Editor-friendly baseline v1 | CMS only |
 | 05 | Representative Seed Content | Realistic draft entries after clean-room verification | CMS only |
 | 06 | Frontend Contracts + Adapter Boundary | Stable CMS-agnostic data contracts | Code only |
@@ -38,14 +38,16 @@ Batch 01.3 — APPROVED
 Batch 01.4 — APPROVED
 Batch 01.5 — APPROVED
 
-Phase 02 — ACTIVE
+Phase 02 — COMPLETE / FROZEN
 Batch 02.1 — APPROVED
 Batch 02.2 — APPROVED
 Batch 02.3 — APPROVED
 Batch 02.4 — APPROVED
 Batch 02.5 — RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION
 Batch 02.6 — APPROVED — BOOTSTRAP EXECUTED SUCCESSFULLY IN DEV
-Batch 02.7 — NEXT
+Batch 02.7 — APPROVED — LIVE CONTRACT VALIDATED
+
+Phase 03 — NEXT / NOT STARTED
 ```
 
 ## Phase 00 — Baseline + Two-Environment Setup
@@ -162,7 +164,7 @@ Define what the website needs to communicate before finalizing CMS fields.
 
 ## Phase 02 — Content Model Contract + Bootstrap Migration
 
-Current state: ACTIVE. Batch 02.6 — Bootstrap Migration Execution — is APPROVED after successful execution in `dev`. Batch 02.7 — Phase 02 Validation + Closeout — is NEXT.
+Current state: COMPLETE / FROZEN. Batch 02.6 — Bootstrap Migration Execution — is APPROVED after successful execution in `dev`. Batch 02.7 — Phase 02 Validation + Closeout — is APPROVED after external validation returned PASS WITH NOTES for a read-only comparison with zero material drift.
 
 ### Goal
 
@@ -178,7 +180,7 @@ Translate frozen Phase 01 requirements into a lean, stable, migration-governed C
 | 02.4 | References + Validations + Editorial Contract | APPROVED |
 | 02.5 | Bootstrap Migration Reconciliation + Preflight | RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION |
 | 02.6 | Bootstrap Migration Execution | APPROVED — EXECUTED SUCCESSFULLY IN DEV |
-| 02.7 | Phase 02 Validation + Closeout | NEXT |
+| 02.7 | Phase 02 Validation + Closeout | APPROVED |
 
 ### Approved Batch 02.1 Evidence
 
@@ -262,9 +264,11 @@ Status: COMPLETE. Each authorization was single-use and is now consumed.
 - Seed content remains NOT STARTED.
 - Sanitized evidence is recorded in `content-model/reports/PHASE-02-BATCH-02.6-BOOTSTRAP-EXECUTION.md`.
 
-### Batch 02.7 Handoff
+### Batch 02.7 Approval Evidence
 
-Batch 02.7 remains responsible for:
+Status: APPROVED. External validation: PASS WITH NOTES.
+
+Completed read-only validation:
 
 - content type inventory
 - type IDs
@@ -275,7 +279,13 @@ Batch 02.7 remains responsible for:
 - live model-versus-contract comparison
 - editor controls and interfaces
 - master protection evidence
-- Phase 02 closeout and Phase 03 readiness
+- Phase 02 closeout and Phase 03 readiness review
+
+Evidence: `content-model/reports/PHASE-02-BATCH-02.7-LIVE-SCHEMA-VALIDATION.md`.
+
+Result: 10 / 10 types, 99 / 99 stored fields, 18 / 18 authored references, 102 / 102 validation objects, 10 / 10 display fields, 2 / 2 explicit editor controls, and 0 material mismatches.
+
+Phase 02 is COMPLETE / FROZEN. Phase 03 is NEXT / NOT STARTED.
 
 ### Exit criteria
 
@@ -285,6 +295,8 @@ Batch 02.7 remains responsible for:
 - every field has a clear frontend purpose
 
 ## Phase 03 — Model Export + Serial Clean-Room Verification
+
+Current state: NEXT / NOT STARTED. Not active.
 
 ### Goal
 

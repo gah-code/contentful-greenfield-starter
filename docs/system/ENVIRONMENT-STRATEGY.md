@@ -1,6 +1,6 @@
 # Environment Strategy
 
-Status: Phase 00 complete
+Status: Phase 00 complete; Phase 02 complete / frozen; Phase 03 next / not started
 Owner: Phase 00 — Baseline + Two-Environment Setup
 Canonical environment topology: `master` + `dev`
 
@@ -8,8 +8,8 @@ Canonical environment topology: `master` + `dev`
 
 | Environment | Role | Rules | Verification state |
 |---|---|---|---|
-| `master` | Permanent protected baseline and future production/release target | No bootstrap migration, no experimental schema work, no imports during development | Protected blank baseline; 0 types / 0 entries / 0 assets / en-US after approved Batch 02.6 execution |
-| `dev` | Only non-master sandbox | Migration development target, model/editorial QA target, later clean-room verification target after controlled deletion and recreation | Approved v1 schema after successful Batch 02.6 execution; 10 types / 0 entries / 0 assets / en-US |
+| `master` | Permanent protected baseline and future production/release target | No bootstrap migration, no experimental schema work, no imports during development | Protected blank baseline; 0 types / 0 entries / 0 assets / en-US after approved Batch 02.7 validation |
+| `dev` | Only non-master sandbox | Validated Phase 02 model environment and later clean-room verification target after controlled deletion and recreation | Approved v1 schema; 10 types / 99 fields / 18 authored references / 0 entries / 0 assets / en-US; 0 material drift |
 
 Verification is a workflow state, not an environment ID. This project does not maintain a separate physical environment for verification.
 
@@ -38,16 +38,18 @@ Approved uses:
 
 Current limits:
 
-- preserve the successfully bootstrapped Batch 02.6 schema until a later approved gate changes it
+- preserve the externally validated Phase 02 schema until a later approved Phase 03 gate changes it
 - Gate B authorization is consumed; do not run the bootstrap migration again without fresh explicit authorization
 - do not delete or recreate `dev` outside a separately approved destructive gate
 - do not store irreplaceable content in `dev` before the Phase 03 recoverability gate
 
-## Batch 02.6 Recovery and Bootstrap Record
+## Phase 02 Recovery, Bootstrap, and Validation Record
 
 After historical Attempt #2 left a partial schema, destructive `dev` recovery was separately authorized, completed, and externally approved. `dev` was recreated from protected blank `master`, Fresh Gate A passed, and overall Attempt #3 executed the current RE2-corrected migration successfully against `dev`.
 
 The recovery authorization and Gate B authorization are consumed. Additional `dev` reset and additional bootstrap execution are not authorized. `master` remains blank and protected.
+
+Batch 02.7 externally validated the live `dev` contract with zero material drift and closed Phase 02 as complete / frozen. Phase 03 serial clean-room verification is next / not started; no Phase 03 environment lifecycle action is authorized by Phase 02 closeout.
 
 Seed content remains NOT STARTED.
 

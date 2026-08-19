@@ -11,7 +11,7 @@ Field contract status: APPROVED V1 FIELD + FIELD-ID CONTRACT.
 
 This ledger records approved V1 Contentful fields, field IDs, primitive shapes, required-state intent, v1 localization state, semantic purpose, relationship semantic intent, and downstream follow-up questions for the approved 10-type v1 inventory. External Batch 02.3 validation returned PASS WITH NOTES.
 
-Do not run the bootstrap migration from this ledger. Batch 02.5 records the approved RE2-corrected migration against the approved field, reference, validation, and editorial-interface contracts. Batch 02.6 records successful execution in `dev`; full live field comparison remains Batch 02.7.
+Do not run the bootstrap migration from this ledger. Batch 02.5 records the approved RE2-corrected migration against the approved field, reference, validation, and editorial-interface contracts. Batch 02.6 records successful execution in `dev`; Batch 02.7 externally validates the live field contract with zero material drift and closes Phase 02 as complete / frozen. Phase 03 serial clean-room verification is next.
 
 Batch 02.4 approves reference cardinality, target restrictions, validation rules, display fields, and editor guidance in `docs/content-model/REFERENCE-MAP.md` and `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md`. Those documents do not rename approved field IDs or approve migration execution.
 
@@ -53,7 +53,7 @@ Not approved here:
 - Derived values, code configuration, route state, Contentful system metadata, and governance-only readiness concerns are not modeled as editorial fields.
 - References are expressed in this ledger only as relationship field intent. Batch 02.4 approves reference direction, cardinality, target restrictions, required counts, and validations.
 - Validations, allowed values, editor widgets, help text, display fields, field groups, and sidebar/editor layout are governed by the approved Batch 02.4 validation/editorial contract where documented.
-- Migration implementation and migration diff are approved RE2-corrected by Batch 02.5 and executed successfully in `dev` by Batch 02.6. This execution record does not claim field-level live validation, which remains Batch 02.7.
+- Migration implementation and migration diff are approved RE2-corrected by Batch 02.5 and executed successfully in `dev` by Batch 02.6. Batch 02.7 field-level validation is approved with zero material mismatches.
 - Localization is `NO — V1` for every approved field unless a later approved localization contract changes that.
 - Contentful Asset remains the media object. No standalone Media wrapper type is approved.
 
@@ -311,7 +311,7 @@ These are approved relationship semantic field IDs only. They do not freeze Link
 | Tool category | Define lean category values without broad taxonomy architecture. |
 | Homepage selections | Decide featured Project/Article/Tool selection mechanism without resolving exact OD-09 project choices. |
 | Related content | OD-13 resolved/approved; implement the approved authored plus derived reverse strategy. |
-| Migration diff | Approved RE2-corrected by Batch 02.5 and executed successfully in `dev` by Batch 02.6; full live field comparison remains Batch 02.7. |
+| Migration diff | Approved RE2-corrected by Batch 02.5 and executed successfully in `dev` by Batch 02.6; Batch 02.7 live field comparison is approved with zero material mismatches. |
 
 ## Project Long-Form Strategy
 
