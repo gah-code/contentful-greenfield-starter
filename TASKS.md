@@ -484,8 +484,8 @@ Pre-export tooling: APPROVED. TG-01, TG-02, and TG-03 are corrected / approved. 
 
 Status: NEXT / NOT STARTED
 
-- [ ] Review/stage/commit/push Batch 03.1 + 03.2 checkpoint
-- [ ] Confirm clean synchronized `0 0`
+- [x] Review/stage/commit/push Batch 03.1 + 03.2 checkpoint
+- [x] Confirm clean synchronized `0 0`
 - [ ] Batch 03.3 export pre-execution gate
 - [ ] Explicit governed export authorization
 - [ ] Execute governed model export exactly once
