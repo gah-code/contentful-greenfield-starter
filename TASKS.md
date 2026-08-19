@@ -498,9 +498,9 @@ Status: NEXT / NOT STARTED
 
 Status: TRACKED IMPLEMENTATION APPROVED / PASS WITH NOTES
 
-Final approval reconciliation: COMPLETED FOR EXTERNAL REVIEW
+Final approval reconciliation: EXTERNALLY VALIDATED / PASS WITH NOTES
 
-Git checkpoint: PENDING
+Git checkpoint: COMPLETE / COMMITTED / PUSHED / CLEAN 0 0
 
 - [x] Preserve blocked pre-execution evidence
 - [x] Confirm no Contentful request occurred

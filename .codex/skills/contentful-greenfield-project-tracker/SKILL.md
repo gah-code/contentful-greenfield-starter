@@ -55,8 +55,8 @@ Documentation is part of the build.
 - 03.3 — GOVERNED MODEL EXPORT + SNAPSHOT VALIDATION — NEXT / NOT STARTED.
 - 03.3 pre-execution Attempt 1 — BLOCKED ON INVALID LOCAL SNAPSHOT OVERRIDE.
 - Snapshot naming/configuration contract correction — EXTERNALLY APPROVED / PASS WITH NOTES.
-- Final corrective reconciliation — AWAITING EXTERNAL VALIDATION.
-- Corrective Git checkpoint — PENDING.
+- Final corrective reconciliation — EXTERNALLY VALIDATED / PASS WITH NOTES.
+- Corrective Git checkpoint — COMPLETE / COMMITTED / PUSHED / CLEAN 0 0.
 - Local snapshot selector correction — PENDING / HUMAN LOCAL CONFIGURATION STEP.
 - 03.4 — DESTRUCTIVE DEV ROTATION + BLANK-STATE VALIDATION — LATER.
 - 03.5 — SNAPSHOT IMPORT + CLEAN-ROOM COMPARISON — LATER.
@@ -90,7 +90,7 @@ Batch 03.1 is approved after external validation returned PASS WITH NOTES. Its n
 
 Batch 03.2 is approved after external validation returned PASS WITH NOTES. TG-01 is corrected / approved through programmatic export/import APIs and explicit `process.env.CONTENTFUL_MANAGEMENT_TOKEN` binding without persisted CLI authentication. TG-02 is corrected / approved through strict content, Asset, tag, role, and webhook exclusion. TG-03 is corrected / approved through checksum-anchored exact semantic snapshot verification; the positive synthetic fixture and all required negative drift cases pass. TG-04 remains no correction required. Batch 03.3 is next but not started. No Contentful call occurred; export, snapshot creation, destructive rotation, import, bootstrap, and seed remain unauthorized and unexecuted.
 
-Batch 03.3 read-only pre-execution Attempt 1 stopped before any Contentful request because the local snapshot override was invalid under the governed timestamped filename contract. The tracked naming/configuration correction is externally approved after validation returned PASS WITH NOTES; final reconciliation awaits external validation. Blank/unset `CONTENTFUL_MODEL_SNAPSHOT` during export generates the governed UTC timestamped filename, while direct verifier invocation requires an explicit path. The corrective Git checkpoint and human local correction remain pending. Export remains NOT AUTHORIZED / NOT RUN, no snapshot exists, and the complete 03.3 pre-execution gate must be rerun.
+Batch 03.3 read-only pre-execution Attempt 1 stopped before any Contentful request because the local snapshot override was invalid under the governed timestamped filename contract. The tracked naming/configuration correction and final reconciliation are externally validated after PASS WITH NOTES verdicts. Blank/unset `CONTENTFUL_MODEL_SNAPSHOT` during export generates the governed UTC timestamped filename, while direct verifier invocation requires an explicit path. The corrective Git checkpoint is COMPLETE / COMMITTED / PUSHED / CLEAN 0 0; the human local correction remains pending. Export remains NOT AUTHORIZED / NOT RUN, no snapshot exists, and the complete 03.3 pre-execution gate must be rerun.
 
 Approved Batch 02.2 standalone type IDs:
 

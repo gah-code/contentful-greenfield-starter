@@ -326,7 +326,7 @@ Batch 03.1 external approval established this Phase 03 sequence:
 
 Batch 03.2 external validation returned PASS WITH NOTES. TG-01 credential binding, TG-02 strict export scope, and TG-03 exact snapshot verification are corrected / approved. TG-04 requires no repository lifecycle helper under the existing exact-command and separate-approval policy. Batch 03.3 is next but not started, and export remains unauthorized.
 
-Batch 03.3 pre-execution Attempt 1 blocked on a local snapshot selector mismatch before any Contentful request. The tracked Snapshot Naming + Configuration Contract correction is EXTERNALLY APPROVED / PASS WITH NOTES, and final reconciliation is pending external validation. The corrective Git checkpoint, human local selector correction, and full 03.3 read-only pre-execution rerun remain pending. Export remains not authorized and not run.
+Batch 03.3 pre-execution Attempt 1 blocked on a local snapshot selector mismatch before any Contentful request. The tracked Snapshot Naming + Configuration Contract correction and final reconciliation are EXTERNALLY VALIDATED / PASS WITH NOTES. The corrective Git checkpoint is COMPLETE / COMMITTED / PUSHED / CLEAN 0 0. The human local selector correction and full 03.3 read-only pre-execution rerun remain pending. Export remains not authorized and not run.
 
 ### Destructive gates before deleting `dev`
 

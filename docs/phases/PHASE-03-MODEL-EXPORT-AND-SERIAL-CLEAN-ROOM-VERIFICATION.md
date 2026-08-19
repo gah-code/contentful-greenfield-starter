@@ -129,7 +129,13 @@ Status: TRACKED IMPLEMENTATION EXTERNALLY APPROVED
 
 External validation: PASS WITH NOTES
 
-Final reconciliation: COMPLETED / PENDING EXTERNAL VALIDATION
+Final reconciliation: EXTERNALLY VALIDATED / PASS WITH NOTES
+
+Corrective Git checkpoint: COMPLETE / COMMITTED / PUSHED / CLEAN 0 0
+
+Human local selector correction: PENDING
+
+Full 03.3 pre-execution gate: NOT PASSED / MUST BE RERUN
 
 ### Approved Selector Contract
 
@@ -138,7 +144,7 @@ Final reconciliation: COMPLETED / PENDING EXTERNAL VALIDATION
 - A fixed `current` snapshot alias is not an approved active default.
 - Direct snapshot verification requires an explicit snapshot path.
 
-The fixed `current` alias is historical only and is not an active default. The corrective-gate approval does not approve the complete 03.3 export pre-execution gate and does not authorize export. Batch 03.3 remains NEXT / NOT STARTED; the corrective Git checkpoint and human local selector correction remain pending.
+The fixed `current` alias is historical only and is not an active default. The corrective-gate approval does not approve the complete 03.3 export pre-execution gate and does not authorize export. Batch 03.3 remains NEXT / NOT STARTED; the corrective Git checkpoint is complete, while the human local selector correction and full pre-execution rerun remain pending.
 
 ## Clean-Room Success Contract
 
