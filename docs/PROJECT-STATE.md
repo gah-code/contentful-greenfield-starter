@@ -8,9 +8,9 @@ Next batch: Batch 03.3 — GOVERNED MODEL EXPORT + SNAPSHOT VALIDATION — NEXT 
 Live model: VALIDATED / 0 MATERIAL DRIFT
 Pre-export tooling: APPROVED
 Snapshot Naming + Configuration Contract correction: EXTERNALLY APPROVED / PASS WITH NOTES
-Final approval reconciliation: COMPLETED FOR EXTERNAL REVIEW
-Corrective Git checkpoint: PENDING
-Local `CONTENTFUL_MODEL_SNAPSHOT` correction: PENDING / HUMAN LOCAL CONFIGURATION STEP
+Final approval reconciliation: EXTERNALLY VALIDATED / PASS WITH NOTES
+Corrective Git checkpoint: COMPLETE / COMMITTED / PUSHED / CLEAN 0 0
+Local CONTENTFUL_MODEL_SNAPSHOT correction: PENDING / HUMAN LOCAL CONFIGURATION STEP
 `master`: PROTECTED BLANK BASELINE
 `dev`: VALIDATED PHASE 02 MODEL / PHASE 03 EXPORT SOURCE
 Bootstrap migration: APPROVED RE2-CORRECTED V1 / EXECUTED SUCCESSFULLY IN DEV / LIVE CONTRACT VALIDATED
@@ -115,7 +115,7 @@ Corrected wrapper: APPROVED FOR NONINTERACTIVE EXECUTION / UNCHANGED.
 ## Phase 02 Batch State
 
 | Batch | Name | Status | Evidence |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 02.1 | Entry + Existing Model Reconciliation | Approved | External validation passed with notes; Phase 01 frozen inputs confirmed; proposed ledgers, reference map, bootstrap migration, and Contentful scripts inspected read-only in `docs/phases/PHASE-02-CONTENT-MODEL-CONTRACT-AND-BOOTSTRAP-MIGRATION.md` |
 | 02.2 | Content Type Contract | Approved | External validation passed with notes; 10 standalone v1 content types and stable type IDs approved in `docs/content-model/CONTENT-TYPE-LEDGER.md`; field/reference/migration work remains deferred |
 | 02.3 | Field + Field-ID Contract | Approved | External validation passed with notes; approved field and field-ID contract recorded in `docs/content-model/FIELD-ID-LEDGER.md`; reference shape and validations remain deferred |
@@ -127,7 +127,7 @@ Corrected wrapper: APPROVED FOR NONINTERACTIVE EXECUTION / UNCHANGED.
 ## Phase 01 Batch State
 
 | Batch | Name | Status | Evidence |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 01.1 | Content Strategy Foundation | Approved | External validation passed; Batch 01.1 strategy workbook reconciled into `docs/system/CONTENT-STRATEGY.md`, this phase state, `TASKS.md`, the roadmap, README, route-contract status, and the Phase 01 document |
 | 01.2 | Route Contract | Approved | External validation passed; formal v1 route contract documented in `docs/system/ROUTE-CONTRACT.md`; OD-07 resolved; OD-08 preserved as open at Batch 01.2 closeout |
 | 01.3 | SEO + Metadata Contract | Approved | External validation passed; `docs/system/SEO-AND-METADATA-CONTRACT.md` documents approved Option 2 hybrid SEO ownership, route metadata behavior, route-state SEO behavior, OD-15 resolution, and Phase 02 model reconciliation inputs |
@@ -166,7 +166,7 @@ Non-blocking open decisions include canonical positioning sentence, secondary pr
 ## Phase 00 Batch State
 
 | Batch | Name | Status | Evidence |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 00.1 | Repository and Project Truth | Approved | Repository identity, canonical docs, and initial deviation recorded |
 | 00.2 | Runtime and Contentful Tooling | Approved | Runtime/package declarations and local CLI wrapper documented |
 | 00.3 | Two-Environment Strategy Alignment + Secret Safety | Approved | External validation passed; repository secret-safety controls verified without reading `.env.local` contents |
@@ -191,7 +191,7 @@ At Phase 00 closeout, the bootstrap migration was blocked and not run. Seed cont
 ## Confirmed Architecture
 
 | Area | Current truth |
-|---|---|
+| --- | --- |
 | Physical environments | `master` + `dev` only |
 | `master` role | Permanent protected baseline and future release target |
 | `dev` role | Single rotating sandbox for schema development, model review, and editorial QA |
@@ -253,7 +253,7 @@ Not verified in Batch 00.3:
 ## Runtime and Tooling Evidence
 
 | Tool | Detected version | Evidence source |
-|---|---:|---|
+| --- | ---: | --- |
 | Node.js | `v22.2.0` | `node -v` during Phase 00 audit |
 | npm | `10.8.3` | `npm -v` during Phase 00 audit |
 | contentful-cli | `4.0.4` | installed package version |
@@ -293,7 +293,7 @@ No deletion automation is part of this repair.
 ## Current Risks
 
 | Risk | Status | Control |
-|---|---|---|
+| --- | --- | --- |
 | Accidental `master` mutation | Open | Migration/import scripts reject `master` |
 | `dev` deletion before recoverability | Open | Require committed migrations, snapshot, checksum, pre-deletion evidence, recovery procedure, and explicit human approval |
 | Stale three-environment documentation | Open | Search for obsolete topology terms during closeout and Phase 03 readiness |
