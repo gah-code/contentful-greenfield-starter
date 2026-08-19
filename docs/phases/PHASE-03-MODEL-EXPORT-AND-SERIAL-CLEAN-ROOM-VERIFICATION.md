@@ -21,16 +21,17 @@ Phase 03 uses the existing two-environment topology. `master` is the permanent p
 | Batch 03.1 | APPROVED |
 | Batch 03.2 | APPROVED |
 | Batch 03.3 | NEXT / NOT STARTED |
+| Snapshot naming/configuration correction | EXTERNALLY APPROVED / PASS WITH NOTES |
 | Batch 03.4 | LATER |
 | Batch 03.5 | LATER |
 | Batch 03.6 | LATER |
 | `master` | ready; 0 types / 0 entries / 0 assets / `en-US`; protected |
 | `dev` | ready; validated Phase 02 model; 10 types / 0 entries / 0 assets / `en-US` |
 | Pre-export tooling | APPROVED |
-| Export | NOT RUN |
-| Snapshot | NOT CREATED |
-| Destructive authorization | NOT GRANTED |
-| Import | NOT RUN |
+| Export | NOT AUTHORIZED / NOT RUN |
+| Snapshot | NOT AUTHORIZED / NOT CREATED |
+| Destructive rotation | NOT AUTHORIZED |
+| Import | NOT AUTHORIZED / NOT RUN |
 | Seed | NOT STARTED |
 
 ## Batch 03.1 Result
@@ -107,6 +108,37 @@ Each gate fails closed. No gate authorizes the next destructive or mutating acti
 Include content types, editor interfaces, and locale configuration. Exclude entries, assets, tags, roles, webhooks, API keys, secrets, seed content, and unrelated space configuration.
 
 The raw timestamped `dev` JSON snapshot remains ignored by Git under the existing repository policy. Capture its SHA-256 and sanitized validation evidence in a tracked Markdown report. Semantic comparison ignores only non-semantic CMA/runtime metadata.
+
+## 03.3 Pre-Execution Attempt 1
+
+Result: BLOCKED
+
+Blocker: invalid local snapshot override
+
+Stopped before: snapshot governance and the fresh live Contentful baseline
+
+Contentful reads: 0
+
+Contentful writes: 0
+
+Export: 0
+
+## Snapshot Naming + Configuration Contract Correction
+
+Status: TRACKED IMPLEMENTATION EXTERNALLY APPROVED
+
+External validation: PASS WITH NOTES
+
+Final reconciliation: COMPLETED / PENDING EXTERNAL VALIDATION
+
+### Approved Selector Contract
+
+- `CONTENTFUL_MODEL_SNAPSHOT` unset or blank: the export helper generates `contentful-model.dev.v1.<YYYYMMDDTHHMMSSZ>.json` using the current UTC timestamp.
+- `CONTENTFUL_MODEL_SNAPSHOT` explicitly set: the value must match the governed `dev` v1 timestamp pattern and must not collide with an existing output.
+- A fixed `current` snapshot alias is not an approved active default.
+- Direct snapshot verification requires an explicit snapshot path.
+
+The fixed `current` alias is historical only and is not an active default. The corrective-gate approval does not approve the complete 03.3 export pre-execution gate and does not authorize export. Batch 03.3 remains NEXT / NOT STARTED; the corrective Git checkpoint and human local selector correction remain pending.
 
 ## Clean-Room Success Contract
 

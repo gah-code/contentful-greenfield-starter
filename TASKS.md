@@ -494,6 +494,32 @@ Status: NEXT / NOT STARTED
 - [ ] Secret-scan snapshot
 - [ ] Approve snapshot for recovery use
 
+##### 03.3 Pre-Execution Correction — Snapshot Naming + Configuration Contract
+
+Status: TRACKED IMPLEMENTATION APPROVED / PASS WITH NOTES
+
+Final approval reconciliation: COMPLETED FOR EXTERNAL REVIEW
+
+Git checkpoint: PENDING
+
+- [x] Preserve blocked pre-execution evidence
+- [x] Confirm no Contentful request occurred
+- [x] Confirm export did not run
+- [x] Identify stale snapshot alias contract
+- [x] Remove active fixed alias from `.env.example`
+- [x] Require explicit direct verifier snapshot path
+- [x] Preserve export auto-generated governed filename
+- [x] Preserve export overwrite protection
+- [x] Preserve import governed filename contract
+- [x] Preserve historical 03.1 evidence unchanged
+- [x] Run local static verification
+- [x] External corrective-gate validation — PASS WITH NOTES
+- [x] Final approval reconciliation
+- [ ] External final reconciliation validation
+- [ ] Git checkpoint
+- [ ] Human local `CONTENTFUL_MODEL_SNAPSHOT` correction
+- [ ] Repeat full 03.3 read-only export pre-execution gate
+
 Future separately gated work:
 
 - [ ] Destructive `dev` rotation

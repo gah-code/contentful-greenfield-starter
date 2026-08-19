@@ -276,6 +276,15 @@ All meaningful project changes should be recorded here.
 - Confirmed no destructive lifecycle helper is required.
 - Advanced Batch 03.3 — Governed Model Export + Snapshot Validation to NEXT.
 - No export, snapshot, environment rotation, import, or seed occurred.
+- Reconciled the tracked snapshot selector contract with governed timestamped `dev` v1 filenames.
+- Removed the stale direct-verifier fixed snapshot fallback and required an explicit verification path.
+- Preserved the approved export/import behavior and historical Batch 03.1 evidence.
+- Recorded Batch 03.3 pre-execution Attempt 1 as blocked before any Contentful call or export.
+- Externally validated the Phase 03 snapshot naming/configuration correction with PASS WITH NOTES.
+- Approved the tracked governed timestamp selector and explicit verifier-path contract for final reconciliation.
+- Preserved the blocked first 03.3 pre-execution attempt as historical evidence.
+- Kept the local snapshot selector correction pending until after the corrective Git checkpoint.
+- Kept export, snapshot creation, destructive rotation, import, bootstrap, and seed unauthorized.
 
 ### Security
 

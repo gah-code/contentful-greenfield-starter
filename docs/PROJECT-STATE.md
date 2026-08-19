@@ -7,14 +7,18 @@ Latest approved batch: Batch 03.2 — EXPORT, IMPORT + SNAPSHOT VERIFICATION TOO
 Next batch: Batch 03.3 — GOVERNED MODEL EXPORT + SNAPSHOT VALIDATION — NEXT / NOT STARTED
 Live model: VALIDATED / 0 MATERIAL DRIFT
 Pre-export tooling: APPROVED
+Snapshot Naming + Configuration Contract correction: EXTERNALLY APPROVED / PASS WITH NOTES
+Final approval reconciliation: COMPLETED FOR EXTERNAL REVIEW
+Corrective Git checkpoint: PENDING
+Local `CONTENTFUL_MODEL_SNAPSHOT` correction: PENDING / HUMAN LOCAL CONFIGURATION STEP
 `master`: PROTECTED BLANK BASELINE
 `dev`: VALIDATED PHASE 02 MODEL / PHASE 03 EXPORT SOURCE
 Bootstrap migration: APPROVED RE2-CORRECTED V1 / EXECUTED SUCCESSFULLY IN DEV / LIVE CONTRACT VALIDATED
 Additional bootstrap execution: NOT AUTHORIZED
-Export: NOT RUN
-Snapshot: NOT CREATED
-Destructive authorization: NOT GRANTED
-Import: NOT RUN
+Export: NOT AUTHORIZED / NOT RUN
+Snapshot: NOT AUTHORIZED / NOT CREATED
+Destructive rotation: NOT AUTHORIZED
+Import: NOT AUTHORIZED / NOT RUN
 Seed content: NOT STARTED
 
 Batch 01.1 external validation passed.
@@ -39,6 +43,8 @@ Batch 03.1 concluded that pre-export tooling hardening was required: TG-01 expli
 External validation returned PASS WITH NOTES and approved Batch 03.1. Batch 03.2 corrected TG-01, TG-02, and TG-03; external validation returned PASS WITH NOTES and approved the tooling hardening. Export/import helpers use installed programmatic APIs with explicit environment-loaded Management credential binding; the governed export excludes tags and all content; the snapshot verifier enforces the checksum-locked Phase 02 semantic contract. TG-04 remains no change required.
 
 Local syntax, configuration, and temporary synthetic-fixture tests pass. No Contentful call occurred, no actual snapshot was created, and no export, import, environment lifecycle action, bootstrap, or seed ran. Batch 03.3 is next but not started, and export remains unauthorized.
+
+Batch 03.3 read-only export pre-execution gate Attempt 1 stopped as BLOCKED because the local `CONTENTFUL_MODEL_SNAPSHOT` override did not satisfy the governed timestamped filename contract. The gate made 0 Contentful GET reads and 0 Contentful writes; export did not run and no snapshot was created. External validation returned PASS WITH NOTES and approved the tracked Snapshot Naming + Configuration Contract correction for final reconciliation and Git checkpoint. Final reconciliation is complete for external review; the checkpoint and human-controlled local correction remain pending. The full 03.3 pre-execution gate has not passed and export remains unauthorized.
 
 The content-strategy foundation is approved with open decisions intentionally carried forward to later Phase 01 batches.
 

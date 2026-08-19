@@ -11,8 +11,6 @@ const MIGRATION_PATH = fileURLToPath(
     import.meta.url
   )
 );
-const DEFAULT_SNAPSHOT =
-  "content-model/snapshots/contentful-model.current.json";
 
 const REQUIRED_METRICS = Object.freeze({
   types: 10,
@@ -872,9 +870,18 @@ const isMain = process.argv[1]
   : false;
 
 if (isMain) {
-  const snapshotPath = process.argv[2] || DEFAULT_SNAPSHOT;
-  const result = verifySnapshotFile(snapshotPath);
-  if (!result.ok) {
+  const snapshotPath = process.argv[2];
+
+  if (!snapshotPath) {
+    console.error(
+      "Missing required snapshot path. Pass an explicit governed snapshot file."
+    );
     process.exitCode = 1;
+  } else {
+    const result = verifySnapshotFile(snapshotPath);
+
+    if (!result.ok) {
+      process.exitCode = 1;
+    }
   }
 }
