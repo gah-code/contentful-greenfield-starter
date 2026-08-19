@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Phase 03 active; Batches 03.1 and 03.2 approved; Batch 03.3 next
+Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Phase 03 active; Batches 03.1 through 03.3 approved / checkpointed; Batch 03.4 next / not started
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -10,7 +10,7 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 | 00 | Baseline + Two-Environment Setup | Complete; safe repository, secure tooling boundary, and governed `master` + `dev` operating model | None |
 | 01 | Content Strategy + Route Contract | Complete / frozen; requirements system approved for Phase 02 input | None |
 | 02 | Content Model Contract + Bootstrap Migration | Complete / frozen; approved live model has zero material drift | CMS only |
-| 03 | Model Export + Serial Clean-Room Verification | Active; Batch 03.2 approved; Batch 03.3 next; export not authorized | CMS only |
+| 03 | Model Export + Serial Clean-Room Verification | Active; governed export complete; snapshot approved for recovery use; Batch 03.3 checkpointed; Batch 03.4 next; destructive rotation not authorized | CMS only |
 | 04 | Editorial QA + Model Freeze | Editor-friendly baseline v1 | CMS only |
 | 05 | Representative Seed Content | Realistic draft entries after clean-room verification | CMS only |
 | 06 | Frontend Contracts + Adapter Boundary | Stable CMS-agnostic data contracts | Code only |
@@ -50,8 +50,8 @@ Batch 02.7 — APPROVED — LIVE CONTRACT VALIDATED
 Phase 03 — ACTIVE
 Batch 03.1 — APPROVED
 Batch 03.2 — APPROVED
-Batch 03.3 — NEXT
-Batch 03.4 — LATER
+Batch 03.3 — APPROVED / CHECKPOINTED
+Batch 03.4 — NEXT / NOT STARTED
 Batch 03.5 — LATER
 Batch 03.6 — LATER
 Pre-export tooling — APPROVED
@@ -85,7 +85,7 @@ Create a safe operating surface before any content type is created.
 
 ## Phase 01 — Content Strategy + Route Contract
 
-Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 is COMPLETE / FROZEN; Phase 03 is ACTIVE with Batches 03.1 and 03.2 approved and Batch 03.3 next.
+Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 is COMPLETE / FROZEN; Phase 03 is ACTIVE with Batches 03.1 through 03.3 approved / checkpointed and Batch 03.4 next / not started.
 
 ### Goal
 
@@ -292,7 +292,7 @@ Evidence: `content-model/reports/PHASE-02-BATCH-02.7-LIVE-SCHEMA-VALIDATION.md`.
 
 Result: 10 / 10 types, 99 / 99 stored fields, 18 / 18 authored references, 102 / 102 validation objects, 10 / 10 display fields, 2 / 2 explicit editor controls, and 0 material mismatches.
 
-Phase 02 is COMPLETE / FROZEN. Phase 03 is ACTIVE; Batches 03.1 and 03.2 are APPROVED, and Batch 03.3 is NEXT / NOT STARTED.
+Phase 02 is COMPLETE / FROZEN. Phase 03 is ACTIVE; Batches 03.1 through 03.3 are APPROVED / CHECKPOINTED, and Batch 03.4 is NEXT / NOT STARTED.
 
 ### Exit criteria
 
@@ -303,9 +303,9 @@ Phase 02 is COMPLETE / FROZEN. Phase 03 is ACTIVE; Batches 03.1 and 03.2 are APP
 
 ## Phase 03 — Model Export + Serial Clean-Room Verification
 
-Current state: ACTIVE. Batch 03.1 — Model Export + Serial Clean-Room Verification Preflight — APPROVED. Batch 03.2 — Export, Import + Snapshot Verification Tooling Hardening — APPROVED. Batch 03.3 — Governed Model Export + Snapshot Validation — NEXT / NOT STARTED.
+Current state: ACTIVE. Batch 03.1 — Model Export + Serial Clean-Room Verification Preflight — APPROVED. Batch 03.2 — Export, Import + Snapshot Verification Tooling Hardening — APPROVED. Batch 03.3 — Governed Model Export + Snapshot Validation — APPROVED / CHECKPOINTED. Batch 03.4 — Destructive Dev Rotation + Blank-State Validation — NEXT / NOT STARTED.
 
-Pre-export tooling: APPROVED. Export has not run, no snapshot exists, destructive authorization is not granted, import has not run, and seed content has not started.
+Pre-export tooling: APPROVED. One governed export from `dev` completed under consumed one-time authorization, and the resulting snapshot is externally approved for recovery use. Batch 03.3 is checkpointed and Batch 03.4 is next. Destructive rotation is not authorized, import has not run, and seed content has not started.
 
 ### Goal
 
@@ -319,14 +319,16 @@ Batch 03.1 external approval established this Phase 03 sequence:
 |---|---|---|
 | 03.1 | Model Export + Serial Clean-Room Verification Preflight | APPROVED |
 | 03.2 | Export, Import + Snapshot Verification Tooling Hardening | APPROVED |
-| 03.3 | Governed Model Export + Snapshot Validation | NEXT |
-| 03.4 | Destructive Dev Rotation + Blank-State Validation | LATER |
+| 03.3 | Governed Model Export + Snapshot Validation | APPROVED / CHECKPOINTED |
+| 03.4 | Destructive Dev Rotation + Blank-State Validation | NEXT / NOT STARTED |
 | 03.5 | Snapshot Import + Clean-Room Comparison | LATER |
 | 03.6 | Phase 03 Validation + Closeout | LATER |
 
-Batch 03.2 external validation returned PASS WITH NOTES. TG-01 credential binding, TG-02 strict export scope, and TG-03 exact snapshot verification are corrected / approved. TG-04 requires no repository lifecycle helper under the existing exact-command and separate-approval policy. Batch 03.3 is next but not started, and export remains unauthorized.
+Batch 03.2 external validation returned PASS WITH NOTES. TG-01 credential binding, TG-02 strict export scope, and TG-03 exact snapshot verification are corrected / approved. TG-04 requires no repository lifecycle helper under the existing exact-command and separate-approval policy.
 
-Batch 03.3 pre-execution Attempt 1 blocked on a local snapshot selector mismatch before any Contentful request. The tracked Snapshot Naming + Configuration Contract correction and final reconciliation are EXTERNALLY VALIDATED / PASS WITH NOTES. The corrective Git checkpoint is COMPLETE / COMMITTED / PUSHED / CLEAN 0 0. The human local selector correction and full 03.3 read-only pre-execution rerun remain pending. Export remains not authorized and not run.
+Batch 03.3 pre-execution Attempt 1 blocked on a local snapshot selector mismatch before any Contentful request. The tracked Snapshot Naming + Configuration Contract correction and final reconciliation are EXTERNALLY VALIDATED / PASS WITH NOTES, the corrective Git checkpoint is complete, and the human local selector correction is complete. The full read-only pre-execution gate later passed with notes; current raw CMA evidence represented readiness through `sys.status.sys.id = ready` while `sys.state` was absent.
+
+Exactly one authorized governed export from `dev` exited 0. Three rate-limited GET requests were retried internally inside that single top-level invocation. The resulting ignored snapshot, `contentful-model.dev.v1.20260819T210704Z.json`, has SHA-256 `0e731940722a86e9c70a9bc71a84a101f740a4efbed553bb998f12a840c9b64a` and passed exact semantic and structural validation with zero material failures. External validation returned PASS WITH NOTES and approved it for recovery use. The Export + Snapshot Approval Reconciliation and External Final Reconciliation Validation each returned PASS WITH NOTES. Batch 03.3 is approved / checkpointed; Batch 03.4 is next / not started, and destructive execution remains unauthorized.
 
 ### Destructive gates before deleting `dev`
 

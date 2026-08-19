@@ -478,21 +478,28 @@ Status: APPROVED
 - [x] TG-03 semantic snapshot verifier approved
 - [x] TG-04 lifecycle strategy approved with no helper
 
-Pre-export tooling: APPROVED. TG-01, TG-02, and TG-03 are corrected / approved. TG-04 remains no correction required. Export and every later execution gate remain unauthorized.
+Pre-export tooling: APPROVED. TG-01, TG-02, and TG-03 are corrected / approved. TG-04 remains no correction required. The separately authorized Batch 03.3 export is complete; every later destructive or mutating execution gate remains unauthorized.
 
 #### Batch 03.3 — Governed Model Export + Snapshot Validation
 
-Status: NEXT / NOT STARTED
+Status: APPROVED / CHECKPOINTED
 
 - [x] Review/stage/commit/push Batch 03.1 + 03.2 checkpoint
 - [x] Confirm clean synchronized `0 0`
-- [ ] Batch 03.3 export pre-execution gate
-- [ ] Explicit governed export authorization
-- [ ] Execute governed model export exactly once
-- [ ] Validate real exported snapshot
-- [ ] Capture SHA-256
-- [ ] Secret-scan snapshot
-- [ ] Approve snapshot for recovery use
+- [x] Batch 03.3 export pre-execution gate — PASS WITH NOTES / externally validated
+- [x] Explicit governed export authorization — GRANTED / CONSUMED
+- [x] Execute governed model export exactly once — 1 invocation / exit 0
+- [x] Validate real exported snapshot — PASS
+- [x] Capture SHA-256
+- [x] Secret-scan snapshot — PASS
+- [x] Approve snapshot for recovery use — EXTERNAL PASS WITH NOTES
+- [x] Create Batch 03.3 sanitized export/snapshot evidence report
+- [x] Reconcile current Phase 03 truth surfaces
+- [x] External Batch 03.3 approval reconciliation validation — PASS WITH NOTES
+- [x] Final Batch 03.3 approval reconciliation
+- [x] External Batch 03.3 final reconciliation validation — PASS WITH NOTES
+- [x] Batch 03.3 Git checkpoint — established by this commit
+- [x] Confirm clean synchronized `0 0` after Batch 03.3 checkpoint
 
 ##### 03.3 Pre-Execution Correction — Snapshot Naming + Configuration Contract
 
@@ -517,8 +524,14 @@ Git checkpoint: COMPLETE / COMMITTED / PUSHED / CLEAN 0 0
 - [x] Final approval reconciliation
 - [x] External final reconciliation validation — PASS WITH NOTES
 - [x] Git checkpoint — 62990af / committed / pushed / clean 0 0
-- [ ] Human local `CONTENTFUL_MODEL_SNAPSHOT` correction
-- [ ] Repeat full 03.3 read-only export pre-execution gate
+- [x] Human local `CONTENTFUL_MODEL_SNAPSHOT` correction
+- [x] Complete full 03.3 read-only export pre-execution gate — PASS WITH NOTES
+
+#### Batch 03.4 — Destructive Dev Rotation + Blank-State Validation
+
+Status: NEXT / NOT STARTED
+
+Destructive execution: NOT AUTHORIZED
 
 Future separately gated work:
 
@@ -587,7 +600,8 @@ Recorded Phase 00 evidence:
 - Phase 03 — Model Export + Serial Clean-Room Verification — is active.
 - Batch 03.1 — Model Export + Serial Clean-Room Verification Preflight — is approved after external validation returned PASS WITH NOTES.
 - Batch 03.2 — Export, Import + Snapshot Verification Tooling Hardening — is approved after external validation returned PASS WITH NOTES.
-- Pre-export tooling is approved; Batch 03.3 — Governed Model Export + Snapshot Validation — is next but not started.
-- Export has not run, no snapshot exists, destructive authorization is not granted, and import has not run.
+- Pre-export tooling is approved; Batch 03.3 — Governed Model Export + Snapshot Validation — is approved / checkpointed after external final validation returned PASS WITH NOTES.
+- The one-export authorization is consumed after exactly one successful top-level export invocation. The governed snapshot is locally validated and approved for recovery use; a second export, destructive rotation, import, and bootstrap are not authorized.
+- Batch 03.4 — Destructive Dev Rotation + Blank-State Validation — is next / not started; destructive execution is not authorized.
 - Seed content remains not started.
-- No Contentful environment, locale, schema, content, export, import, bootstrap, dev cleanup, or seed mutation is authorized by Batch 03.2.
+- Batch 03.3 performed read-only export collection only and made no Contentful writes. No environment, locale, schema, content, import, bootstrap, dev cleanup, or seed mutation is authorized by this reconciliation.

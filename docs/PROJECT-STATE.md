@@ -3,20 +3,27 @@
 Project: `contentful-greenfield-starter`
 Current project state: Phase 03 — ACTIVE
 Latest completed phase: Phase 02 — CONTENT MODEL CONTRACT + BOOTSTRAP MIGRATION — COMPLETE / FROZEN
-Latest approved batch: Batch 03.2 — EXPORT, IMPORT + SNAPSHOT VERIFICATION TOOLING HARDENING — APPROVED
-Next batch: Batch 03.3 — GOVERNED MODEL EXPORT + SNAPSHOT VALIDATION — NEXT / NOT STARTED
+Latest approved/checkpointed batch: Batch 03.3 — GOVERNED MODEL EXPORT + SNAPSHOT VALIDATION — APPROVED / CHECKPOINTED
+Next batch: Batch 03.4 — DESTRUCTIVE DEV ROTATION + BLANK-STATE VALIDATION — NEXT / NOT STARTED
 Live model: VALIDATED / 0 MATERIAL DRIFT
 Pre-export tooling: APPROVED
+03.3 pre-execution gate: PASS WITH NOTES / EXTERNALLY VALIDATED
 Snapshot Naming + Configuration Contract correction: EXTERNALLY APPROVED / PASS WITH NOTES
-Final approval reconciliation: EXTERNALLY VALIDATED / PASS WITH NOTES
+Snapshot naming final reconciliation: EXTERNALLY VALIDATED / PASS WITH NOTES
 Corrective Git checkpoint: COMPLETE / COMMITTED / PUSHED / CLEAN 0 0
-Local CONTENTFUL_MODEL_SNAPSHOT correction: PENDING / HUMAN LOCAL CONFIGURATION STEP
+Local CONTENTFUL_MODEL_SNAPSHOT correction: COMPLETE / LOCAL ONLY
+Export + Snapshot Approval Reconciliation: EXTERNALLY VALIDATED / PASS WITH NOTES
+Final Approval Reconciliation: COMPLETE
+Batch 03.3 external final validation: PASS WITH NOTES
+Batch 03.3 Git checkpoint: ESTABLISHED BY THE COMMIT CONTAINING THIS STATE
+One-export authorization: GRANTED / CONSUMED
+Export: COMPLETE / EXACTLY ONE TOP-LEVEL INVOCATION / EXIT 0
+Snapshot: CREATED / LOCALLY VALIDATED / EXTERNALLY APPROVED FOR RECOVERY USE
+Snapshot SHA-256: `0e731940722a86e9c70a9bc71a84a101f740a4efbed553bb998f12a840c9b64a`
 `master`: PROTECTED BLANK BASELINE
 `dev`: VALIDATED PHASE 02 MODEL / PHASE 03 EXPORT SOURCE
 Bootstrap migration: APPROVED RE2-CORRECTED V1 / EXECUTED SUCCESSFULLY IN DEV / LIVE CONTRACT VALIDATED
 Additional bootstrap execution: NOT AUTHORIZED
-Export: NOT AUTHORIZED / NOT RUN
-Snapshot: NOT AUTHORIZED / NOT CREATED
 Destructive rotation: NOT AUTHORIZED
 Import: NOT AUTHORIZED / NOT RUN
 Seed content: NOT STARTED
@@ -42,9 +49,17 @@ Batch 03.1 concluded that pre-export tooling hardening was required: TG-01 expli
 
 External validation returned PASS WITH NOTES and approved Batch 03.1. Batch 03.2 corrected TG-01, TG-02, and TG-03; external validation returned PASS WITH NOTES and approved the tooling hardening. Export/import helpers use installed programmatic APIs with explicit environment-loaded Management credential binding; the governed export excludes tags and all content; the snapshot verifier enforces the checksum-locked Phase 02 semantic contract. TG-04 remains no change required.
 
-Local syntax, configuration, and temporary synthetic-fixture tests pass. No Contentful call occurred, no actual snapshot was created, and no export, import, environment lifecycle action, bootstrap, or seed ran. Batch 03.3 is next but not started, and export remains unauthorized.
+Local syntax, configuration, and temporary synthetic-fixture tests passed during Batch 03.2 without Contentful access. Batch 03.3 later completed the separately gated read-only pre-execution and one governed export workflow described below.
 
-Batch 03.3 read-only export pre-execution gate Attempt 1 stopped as BLOCKED because the local `CONTENTFUL_MODEL_SNAPSHOT` override did not satisfy the governed timestamped filename contract. The gate made 0 Contentful GET reads and 0 Contentful writes; export did not run and no snapshot was created. External validation returned PASS WITH NOTES for the tracked correction and final reconciliation. The corrective Git checkpoint is COMPLETE / COMMITTED / PUSHED / CLEAN 0 0. The human-controlled local correction remains pending, the full 03.3 pre-execution gate has not passed and must be rerun, and export remains unauthorized.
+Batch 03.3 read-only export pre-execution Attempt 1 stopped as BLOCKED because the local `CONTENTFUL_MODEL_SNAPSHOT` override did not satisfy the governed timestamped filename contract. It made 0 Contentful requests and export did not run. The selector contract correction, final reconciliation, and corrective Git checkpoint were externally approved; the human-controlled local selector correction then completed.
+
+Attempt 2 passed repository, configuration, migration, tooling, and snapshot-governance checks. Temporary Gate G diagnostics established the required fresh baseline while preserving their failure history: an SDK helper failed before HTTP, the native CMA baseline confirmed counts/locales/type IDs, and Gate G2 confirmed current environment readiness through `sys.status.sys.id = ready` because `sys.state` was absent in the observed raw responses. External validation returned PASS WITH NOTES.
+
+One explicit export authorization was granted and consumed. Exactly one top-level governed export from `dev` exited 0; the SDK internally retried three rate-limited GET requests inside that invocation, and no second export occurred. The resulting ignored snapshot is `content-model/snapshots/contentful-model.dev.v1.20260819T210704Z.json` with SHA-256 `0e731940722a86e9c70a9bc71a84a101f740a4efbed553bb998f12a840c9b64a`. Semantic verification passed the exact 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2 contract with 0 entries, 0 assets, `en-US`, and 0 material failures. Structural validation found 0 secret-bearing keys and 0 excluded-category violations. External snapshot validation returned PASS WITH NOTES and approved the snapshot for recovery use. Contentful writes, destructive operations, import, bootstrap, and seed all remained at 0.
+
+The Export + Snapshot Approval Reconciliation was externally validated with PASS WITH NOTES, and Final Approval Reconciliation is complete. The three internal rate-limited GET retries remain classified as idempotent/read-only library retries inside the single governed export invocation, not as a second governed export operation.
+
+External Final Reconciliation Validation returned PASS WITH NOTES and approved Batch 03.3 for this Git checkpoint. Batch 03.3 is approved / checkpointed by the commit containing this state. Batch 03.4 becomes next / not started after successful push verification, but destructive rotation and all later mutating operations remain unauthorized.
 
 The content-strategy foundation is approved with open decisions intentionally carried forward to later Phase 01 batches.
 
@@ -310,4 +325,4 @@ Phase 00 is complete. Batch 00.1, Batch 00.2, Batch 00.3, Batch 00.4, and Batch 
 
 Phase 01 is complete / frozen. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is approved after external validation. Batch 01.4 is approved after external validation. Batch 01.5 is approved after external validation. Phase 02 is complete / frozen, Batch 02.1 through Batch 02.4 are approved, Batch 02.5 is re-approved after compatibility corrections, Batch 02.6 is approved after successful bootstrap execution in `dev`, and Batch 02.7 is approved after external validation.
 
-Phase 03 — Model Export + Serial Clean-Room Verification — is ACTIVE. Batch 03.1 — Preflight — and Batch 03.2 — Export, Import + Snapshot Verification Tooling Hardening — are APPROVED. Pre-export tooling is APPROVED. Batch 03.3 — Governed Model Export + Snapshot Validation — is NEXT / NOT STARTED. Export, snapshot, bootstrap, environment reset, import, seed, fixture, frontend, and other lifecycle execution remain unauthorized.
+Phase 03 — Model Export + Serial Clean-Room Verification — is ACTIVE. Batch 03.1 — Preflight — and Batch 03.2 — Export, Import + Snapshot Verification Tooling Hardening — are APPROVED / CHECKPOINTED. Batch 03.3 — Governed Model Export + Snapshot Validation — is APPROVED / CHECKPOINTED after external final validation returned PASS WITH NOTES. Batch 03.4 — Destructive Dev Rotation + Blank-State Validation — is NEXT / NOT STARTED. Destructive execution is not authorized. A second export, bootstrap, environment reset, import, seed, fixture, frontend, and other lifecycle execution remain unauthorized.

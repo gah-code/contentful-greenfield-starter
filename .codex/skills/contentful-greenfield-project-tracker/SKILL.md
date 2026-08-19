@@ -13,7 +13,7 @@ Inspect the current repository before editing in every mode. Use current reposit
 
 Personal Website CMS — Greenfield Contentful Starter
 Repository: `contentful-greenfield-starter`
-Model target: approved and frozen 10-type v1 semantic model; RE2-corrected migration executed successfully in `dev`; Batch 02.7 live validation approved with zero material drift; Phase 03 Batch 03.2 tooling hardening approved
+Model target: approved and frozen 10-type v1 semantic model; RE2-corrected migration executed successfully in `dev`; Batch 02.7 live validation approved with zero material drift; Phase 03 Batch 03.3 governed export complete and snapshot externally approved for recovery use
 
 ## Project Mantra
 
@@ -52,18 +52,30 @@ Documentation is part of the build.
 - Phase 03 — Model Export + Serial Clean-Room Verification — ACTIVE.
 - 03.1 — MODEL EXPORT + SERIAL CLEAN-ROOM VERIFICATION PREFLIGHT — APPROVED.
 - 03.2 — EXPORT, IMPORT + SNAPSHOT VERIFICATION TOOLING HARDENING — APPROVED.
-- 03.3 — GOVERNED MODEL EXPORT + SNAPSHOT VALIDATION — NEXT / NOT STARTED.
+- 03.3 — GOVERNED MODEL EXPORT + SNAPSHOT VALIDATION — APPROVED / CHECKPOINTED.
 - 03.3 pre-execution Attempt 1 — BLOCKED ON INVALID LOCAL SNAPSHOT OVERRIDE.
 - Snapshot naming/configuration contract correction — EXTERNALLY APPROVED / PASS WITH NOTES.
 - Final corrective reconciliation — EXTERNALLY VALIDATED / PASS WITH NOTES.
 - Corrective Git checkpoint — COMPLETE / COMMITTED / PUSHED / CLEAN 0 0.
-- Local snapshot selector correction — PENDING / HUMAN LOCAL CONFIGURATION STEP.
-- 03.4 — DESTRUCTIVE DEV ROTATION + BLANK-STATE VALIDATION — LATER.
+- Local snapshot selector correction — COMPLETE / LOCAL ONLY.
+- 03.3 pre-execution gate — PASS WITH NOTES / EXTERNALLY VALIDATED.
+- One-export authorization — GRANTED / CONSUMED.
+- Export — COMPLETE / EXACTLY ONE TOP-LEVEL INVOCATION / EXIT 0.
+- Snapshot — `contentful-model.dev.v1.20260819T210704Z.json`.
+- Snapshot SHA-256 — `0e731940722a86e9c70a9bc71a84a101f740a4efbed553bb998f12a840c9b64a`.
+- Snapshot semantic validation — PASS / 0 MATERIAL FAILURES.
+- Snapshot external approval — PASS WITH NOTES / APPROVED FOR RECOVERY USE.
+- SDK internal GET retries — 3 / READ-ONLY / INSIDE ONE EXPORT INVOCATION.
+- Export + Snapshot Approval Reconciliation — EXTERNALLY VALIDATED / PASS WITH NOTES.
+- Final Approval Reconciliation — COMPLETE.
+- External Final Reconciliation Validation — PASS WITH NOTES.
+- Batch 03.3 checkpoint — ESTABLISHED.
+- 03.4 — DESTRUCTIVE DEV ROTATION + BLANK-STATE VALIDATION — NEXT / NOT STARTED.
+- 03.4 destructive execution — NOT AUTHORIZED.
 - 03.5 — SNAPSHOT IMPORT + CLEAN-ROOM COMPARISON — LATER.
 - 03.6 — PHASE 03 VALIDATION + CLOSEOUT — LATER.
 - Pre-export tooling — APPROVED.
-- Export — NOT AUTHORIZED / NOT RUN.
-- Snapshot — NOT AUTHORIZED / NOT CREATED.
+- Second export — NOT AUTHORIZED.
 - Destructive rotation — NOT AUTHORIZED.
 - Import — NOT AUTHORIZED / NOT RUN.
 - Seed content — NOT STARTED.
@@ -88,9 +100,13 @@ Batch 02.7 is approved after external validation returned PASS WITH NOTES for a 
 
 Batch 03.1 is approved after external validation returned PASS WITH NOTES. Its non-destructive preflight passed repository, migration-integrity, helper-syntax, secret-safe configuration, and GET-only live-baseline gates. It delegated TG-01, TG-02, and TG-03 to Batch 03.2 and confirmed TG-04 required no correction.
 
-Batch 03.2 is approved after external validation returned PASS WITH NOTES. TG-01 is corrected / approved through programmatic export/import APIs and explicit `process.env.CONTENTFUL_MANAGEMENT_TOKEN` binding without persisted CLI authentication. TG-02 is corrected / approved through strict content, Asset, tag, role, and webhook exclusion. TG-03 is corrected / approved through checksum-anchored exact semantic snapshot verification; the positive synthetic fixture and all required negative drift cases pass. TG-04 remains no correction required. Batch 03.3 is next but not started. No Contentful call occurred; export, snapshot creation, destructive rotation, import, bootstrap, and seed remain unauthorized and unexecuted.
+Batch 03.2 is approved after external validation returned PASS WITH NOTES. TG-01 is corrected / approved through programmatic export/import APIs and explicit `process.env.CONTENTFUL_MANAGEMENT_TOKEN` binding without persisted CLI authentication. TG-02 is corrected / approved through strict content, Asset, tag, role, and webhook exclusion. TG-03 is corrected / approved through checksum-anchored exact semantic snapshot verification; the positive synthetic fixture and all required negative drift cases pass. TG-04 remains no correction required. At Batch 03.2 closeout, Batch 03.3 had not started and no Contentful call, export, snapshot creation, destructive rotation, import, bootstrap, or seed had occurred.
 
-Batch 03.3 read-only pre-execution Attempt 1 stopped before any Contentful request because the local snapshot override was invalid under the governed timestamped filename contract. The tracked naming/configuration correction and final reconciliation are externally validated after PASS WITH NOTES verdicts. Blank/unset `CONTENTFUL_MODEL_SNAPSHOT` during export generates the governed UTC timestamped filename, while direct verifier invocation requires an explicit path. The corrective Git checkpoint is COMPLETE / COMMITTED / PUSHED / CLEAN 0 0; the human local correction remains pending. Export remains NOT AUTHORIZED / NOT RUN, no snapshot exists, and the complete 03.3 pre-execution gate must be rerun.
+Batch 03.3 read-only pre-execution Attempt 1 stopped before any Contentful request because the local snapshot override was invalid under the governed timestamped filename contract. The tracked naming/configuration correction and final reconciliation are externally validated after PASS WITH NOTES verdicts. Blank/unset `CONTENTFUL_MODEL_SNAPSHOT` during export generates the governed UTC timestamped filename, while direct verifier invocation requires an explicit path. The corrective Git checkpoint and human local correction are complete. The full pre-execution gate later passed with notes and was externally validated.
+
+Current CMA environment readiness evidence uses `sys.status.sys.id`. Observed `sys.state` was absent in the current raw response. Do not silently substitute one representation for the other; record which field the evidence actually used.
+
+One explicit export authorization was granted and consumed. Exactly one top-level governed export from `dev` exited 0 and produced the ignored snapshot `contentful-model.dev.v1.20260819T210704Z.json` with SHA-256 `0e731940722a86e9c70a9bc71a84a101f740a4efbed553bb998f12a840c9b64a`. The SDK internally retried three rate-limited read-only GET requests inside that invocation; these were not equivalent to a second export attempt, and no second export operation occurred. Semantic verification passed with 0 material failures, and external validation returned PASS WITH NOTES and approved the snapshot for recovery use. The Export + Snapshot Approval Reconciliation and External Final Reconciliation Validation each returned PASS WITH NOTES. Batch 03.3 is approved / checkpointed. Batch 03.4 is next / not started, but its destructive execution is not authorized. A second export, destructive rotation, `dev` deletion/recreation, import, bootstrap, and seed remain unauthorized.
 
 Approved Batch 02.2 standalone type IDs:
 

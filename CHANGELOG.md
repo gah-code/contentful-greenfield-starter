@@ -285,6 +285,27 @@ All meaningful project changes should be recorded here.
 - Preserved the blocked first 03.3 pre-execution attempt as historical evidence.
 - Kept the local snapshot selector correction pending until after the corrective Git checkpoint.
 - Kept export, snapshot creation, destructive rotation, import, bootstrap, and seed unauthorized.
+- Completed exactly one authorized governed model export from `dev`.
+- Created the governed timestamped recovery snapshot `contentful-model.dev.v1.20260819T210704Z.json`.
+- Captured and approved snapshot SHA-256 `0e731940722a86e9c70a9bc71a84a101f740a4efbed553bb998f12a840c9b64a`.
+- Validated the exact 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2 semantic contract with zero material failures.
+- Confirmed entries, assets, tags, roles, and webhooks are excluded and no secret-bearing keys exist.
+- Recorded external snapshot validation PASS WITH NOTES and approval for recovery use.
+- Recorded three internal rate-limited GET retries inside the single top-level export invocation.
+- Preserved destructive rotation, import, bootstrap, and seed as separately unauthorized.
+- External validation approved the Batch 03.3 Export + Snapshot Approval Reconciliation with PASS WITH NOTES.
+- Completed the Batch 03.3 Final Approval Reconciliation.
+- Preserved the one-export authorization as consumed.
+- Preserved the approved recovery snapshot filename and SHA-256.
+- Preserved the internal three rate-limited GET retry note.
+- Kept the Batch 03.3 checkpoint pending external final reconciliation validation.
+- Kept destructive rotation, import, bootstrap, and seed unauthorized.
+- External final reconciliation validation returned PASS WITH NOTES.
+- Approved and checkpointed Phase 03 / Batch 03.3.
+- Preserved the governed recovery snapshot and approved SHA-256.
+- Preserved the consumed one-export authorization and internal GET retry evidence.
+- Advanced Batch 03.4 to NEXT / NOT STARTED.
+- Kept destructive rotation, import, bootstrap, and seed unauthorized after the checkpoint.
 
 ### Security
 

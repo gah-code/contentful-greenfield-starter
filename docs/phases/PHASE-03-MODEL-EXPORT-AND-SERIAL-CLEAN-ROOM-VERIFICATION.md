@@ -2,7 +2,7 @@
 
 Status: ACTIVE
 
-Next batch: 03.3 — Governed Model Export + Snapshot Validation — NEXT / NOT STARTED
+Next batch: 03.4 — Destructive Dev Rotation + Blank-State Validation — NEXT / NOT STARTED
 
 Owner: repository maintainer
 
@@ -20,16 +20,16 @@ Phase 03 uses the existing two-environment topology. `master` is the permanent p
 | Phase 03 | ACTIVE |
 | Batch 03.1 | APPROVED |
 | Batch 03.2 | APPROVED |
-| Batch 03.3 | NEXT / NOT STARTED |
+| Batch 03.3 | APPROVED / CHECKPOINTED |
 | Snapshot naming/configuration correction | EXTERNALLY APPROVED / PASS WITH NOTES |
-| Batch 03.4 | LATER |
+| Batch 03.4 | NEXT / NOT STARTED |
 | Batch 03.5 | LATER |
 | Batch 03.6 | LATER |
 | `master` | ready; 0 types / 0 entries / 0 assets / `en-US`; protected |
 | `dev` | ready; validated Phase 02 model; 10 types / 0 entries / 0 assets / `en-US` |
 | Pre-export tooling | APPROVED |
-| Export | NOT AUTHORIZED / NOT RUN |
-| Snapshot | NOT AUTHORIZED / NOT CREATED |
+| Export | COMPLETE / ONE AUTHORIZATION CONSUMED / EXIT 0 |
+| Snapshot | CREATED / EXTERNALLY APPROVED FOR RECOVERY USE |
 | Destructive rotation | NOT AUTHORIZED |
 | Import | NOT AUTHORIZED / NOT RUN |
 | Seed | NOT STARTED |
@@ -88,17 +88,38 @@ Batch 03.3 requires its own explicit export authorization and does not authorize
 ## Serial Gate Structure
 
 ```text
-export approval
--> governed model-only export
--> snapshot validation and checksum approval
--> separate destructive approval
--> delete dev exactly once
--> recreate dev exactly once from master
--> independent blank-state validation
--> separate import approval
--> import snapshot exactly once
--> full semantic comparison
--> Phase 03 closeout
+pre-export gate
+✓
+
+one governed export
+✓
+
+snapshot validation
+✓
+
+snapshot external approval
+✓
+
+approval reconciliation
+✓
+
+external reconciliation validation
+✓
+
+final approval reconciliation
+✓
+
+external final validation
+✓
+
+Batch 03.3 Git checkpoint
+✓ THIS COMMIT
+
+03.4 read-only destructive preflight
+-> NEXT
+
+destructive authorization
+-> NOT GRANTED
 ```
 
 Each gate fails closed. No gate authorizes the next destructive or mutating action implicitly.
@@ -133,9 +154,9 @@ Final reconciliation: EXTERNALLY VALIDATED / PASS WITH NOTES
 
 Corrective Git checkpoint: COMPLETE / COMMITTED / PUSHED / CLEAN 0 0
 
-Human local selector correction: PENDING
+Human local selector correction: COMPLETE
 
-Full 03.3 pre-execution gate: NOT PASSED / MUST BE RERUN
+Full 03.3 pre-execution gate: PASS WITH NOTES / EXTERNALLY VALIDATED
 
 ### Approved Selector Contract
 
@@ -144,7 +165,39 @@ Full 03.3 pre-execution gate: NOT PASSED / MUST BE RERUN
 - A fixed `current` snapshot alias is not an approved active default.
 - Direct snapshot verification requires an explicit snapshot path.
 
-The fixed `current` alias is historical only and is not an active default. The corrective-gate approval does not approve the complete 03.3 export pre-execution gate and does not authorize export. Batch 03.3 remains NEXT / NOT STARTED; the corrective Git checkpoint is complete, while the human local selector correction and full pre-execution rerun remain pending.
+The fixed `current` alias is historical only and is not an active default. The corrective-gate approval did not itself authorize export; the later full pre-execution gate and explicit one-time export authorization remained separate gates.
+
+## Batch 03.3 Result
+
+Status: APPROVED / CHECKPOINTED
+
+Pre-execution gate: PASS WITH NOTES / EXTERNALLY VALIDATED
+
+One-export authorization: CONSUMED
+
+Export: COMPLETE / 1 TOP-LEVEL INVOCATION / EXIT 0
+
+Snapshot: CREATED / LOCALLY VALIDATED / EXTERNALLY APPROVED FOR RECOVERY USE
+
+Export + Snapshot Approval Reconciliation: PASS WITH NOTES / EXTERNALLY VALIDATED
+
+Final Approval Reconciliation: COMPLETE
+
+External Final Reconciliation Validation: PASS WITH NOTES
+
+Batch 03.3: APPROVED
+
+Checkpoint: ESTABLISHED BY THE COMMIT CONTAINING THIS DOCUMENT
+
+Evidence: `content-model/reports/PHASE-03-BATCH-03.3-GOVERNED-MODEL-EXPORT-AND-SNAPSHOT-VALIDATION.md`
+
+Current raw CMA environment evidence represented readiness through `sys.status.sys.id = ready`; `sys.state` was absent in the observed payload. Historical temporary checks that expected `sys.state` remain preserved as diagnostic evidence.
+
+Exactly one governed model export from `dev` produced `contentful-model.dev.v1.20260819T210704Z.json` with SHA-256 `0e731940722a86e9c70a9bc71a84a101f740a4efbed553bb998f12a840c9b64a`. The SDK internally retried three rate-limited GET requests inside that single top-level invocation; no second export operation occurred.
+
+Semantic verification passed the exact 10 content types / 99 fields / 18 references / 102 validations / 10 display fields / 8 regex validations / 6 Rich Text fields / 2 editor overrides contract, with 0 entries, 0 assets, `en-US`, and 0 material failures. Structural validation found 0 secret-bearing keys and 0 excluded-category violations. External validation returned PASS WITH NOTES and approved the snapshot for recovery use.
+
+Destructive rotation, `dev` deletion/recreation, import, bootstrap, and seed remain unauthorized. Batch 03.4 read-only destructive preflight is next; this checkpoint does not authorize destructive execution.
 
 ## Clean-Room Success Contract
 
@@ -164,13 +217,13 @@ Batch 03.1 external approval established this Phase 03 sequence:
 |---|---|---|
 | 03.1 | Model Export + Serial Clean-Room Verification Preflight | APPROVED |
 | 03.2 | Export, Import + Snapshot Verification Tooling Hardening | APPROVED |
-| 03.3 | Governed Model Export + Snapshot Validation | NEXT |
-| 03.4 | Destructive Dev Rotation + Blank-State Validation | LATER |
+| 03.3 | Governed Model Export + Snapshot Validation | APPROVED / CHECKPOINTED |
+| 03.4 | Destructive Dev Rotation + Blank-State Validation | NEXT / NOT STARTED |
 | 03.5 | Snapshot Import + Clean-Room Comparison | LATER |
 | 03.6 | Phase 03 Validation + Closeout | LATER |
 
-Batch 03.3 is next but not started. Export remains unauthorized.
+Batch 03.3 final approval reconciliation and external final validation are complete. The commit containing this document establishes the checkpoint. The one-export authorization is consumed; no second export is authorized.
 
 ## Current Boundary
 
-Stop after Batch 03.2 approval reconciliation. Pre-export tooling is approved, but Batch 03.3 has not started and grants no execution authorization. Export, snapshot creation, destructive rotation, import, bootstrap, and seed remain unauthorized. Package files and Phase 02 artifacts are unchanged.
+Stop after the Batch 03.3 checkpoint. Batch 03.4 read-only destructive preflight is the next permitted work area, but destructive execution is not authorized. A second export, destructive rotation, `dev` deletion/recreation, import, bootstrap, and seed remain unauthorized. Package files, Phase 02 artifacts, and the ignored raw snapshot remain unchanged by this checkpoint.
