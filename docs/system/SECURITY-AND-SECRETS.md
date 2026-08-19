@@ -93,4 +93,51 @@ Batch 00.3 verifies credential handling and variable separation without reading 
 
 Batch 00.4 recorded direct account, space, environment inventory, default locale, `master`, and `dev` evidence. Batch 00.5 external validation approved Phase 00.
 
-Phase 01 and Phase 02 are complete / frozen. Phase 03 is active; Batches 03.1 and 03.2 are approved, and Batch 03.3 is next but not started. The approved export/import helpers use explicit programmatic environment-token binding, but no export or import is authorized. The successful Gate B and destructive recovery authorizations are consumed. Additional bootstrap execution, environment reset, export, snapshot creation, import, seed content, locale changes, schema mutation, frontend implementation, and later Phase 03 lifecycle work require separate authorization. Credentials stay in ignored local environment state, never appear in CLI arguments or logs, and `contentful config list` remains prohibited.
+Phase 01 and Phase 02 are complete / frozen. Phase 03 is ACTIVE. Batches 03.1 through 03.3 are APPROVED / CHECKPOINTED.
+
+Batch 03.4 is NEXT / NOT STARTED.
+
+One governed export from `dev` completed under explicit authorization. That one-export authorization is CONSUMED. The recovery snapshot exists and is externally approved for recovery use.
+
+Current authorization boundary:
+
+- Second export: NOT AUTHORIZED.
+- Destructive `dev` rotation: NOT AUTHORIZED.
+- `dev` deletion: NOT AUTHORIZED.
+- `dev` recreation: NOT AUTHORIZED.
+- Import: NOT AUTHORIZED.
+- Additional bootstrap: NOT AUTHORIZED.
+- Seed: NOT STARTED.
+
+The approved export/import helpers use explicit programmatic environment-token binding. The successful Gate B and destructive recovery authorizations are consumed. Credentials stay in ignored local environment state, never appear in CLI arguments or logs, and `contentful config list` remains prohibited.
+
+### Destructive Lifecycle Credential Boundary
+
+The future Batch 03.4 destructive lifecycle credential path must pass read-only review before destructive authorization. Do not infer that persisted Contentful CLI authentication is approved merely because the CLI is installed. No management token may be placed in command-line arguments. No authentication mutation or login command is authorized by this documentation reconciliation.
+
+The upcoming read-only Batch 03.4 preflight must still review:
+
+- exact local CLI lifecycle commands;
+- credential execution mechanics;
+- token non-exposure;
+- the one-delete / one-recreate boundary;
+- independent post-recreation blank-state verification.
+
+## Phase 03 / Batch 03.4 Safety Truth-Surface Reconciliation
+
+Batch 03.4 Attempt 1: BLOCKED before Contentful access at the current-truth consistency gate because `ENVIRONMENT-STRATEGY.md` and `SECURITY-AND-SECRETS.md` still contained pre-03.3 current-state wording.
+
+- Attempt 1 Contentful reads: 0.
+- Attempt 1 Contentful writes: 0.
+- Attempt 1 environment mutations: 0.
+- Safety Truth-Surface Reconciliation: COMPLETE.
+- External Validation: PASS WITH NOTES.
+- Final Approval Reconciliation: COMPLETE.
+- External Final Validation: PASS WITH NOTES / APPROVED.
+- Safety Truth-Surface Git Checkpoint: ESTABLISHED BY THE COMMIT CONTAINING THIS DOCUMENT.
+- Batch 03.4 Preflight Attempt 2: NOT YET RUN / NEXT AFTER CLEAN CHECKPOINT.
+- Safety reconciliation Contentful reads: 0.
+
+The reconciliation is documentation-only. The current `dev` model description reflects the last approved validation state and is not fresh Batch 03.4 live proof. Attempt 2 must independently collect fresh pre-deletion evidence.
+
+Snapshot recoverability approval does not approve the destructive credential path and does not grant destructive execution authorization. This reconciliation corrects documentation only and grants no destructive authorization.
