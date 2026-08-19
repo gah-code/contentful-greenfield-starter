@@ -78,7 +78,7 @@ Create a safe operating surface before any content type is created.
 
 ## Phase 01 — Content Strategy + Route Contract
 
-Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Current phase: 02 — Content Model Contract + Bootstrap Migration — ACTIVE.
+Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 is now COMPLETE / FROZEN; Phase 03 is NEXT / NOT STARTED.
 
 ### Goal
 

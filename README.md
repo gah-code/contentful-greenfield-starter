@@ -178,7 +178,7 @@ Do not run authentication, migration, export, import, or environment commands un
 | --- | --- |
 | 00 | Baseline + Two-Environment Setup - complete |
 | 01 | Content Strategy + Route Contract - complete / frozen |
-| 02 | Content Model Contract + Bootstrap Migration - active |
+| 02 | Content Model Contract + Bootstrap Migration - complete / frozen |
 | 03 | Model Export + Serial Clean-Room Verification |
 | 04 | Editorial QA + Model Freeze |
 | 05 | Representative Seed Content |
