@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Phase 03 active; Batches 03.1 and 03.2 approved; Batches 03.3 through 03.5 approved / checkpointed; Batch 03.6 next / not started after successful checkpoint verification
+Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Phase 03 complete / frozen by the containing commit; Batch 03.6 approved / checkpointed; Phase 04 next / not started after successful Phase 03 closeout checkpoint verification
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -10,8 +10,8 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 | 00 | Baseline + Two-Environment Setup | Complete; safe repository, secure tooling boundary, and governed `master` + `dev` operating model | None |
 | 01 | Content Strategy + Route Contract | Complete / frozen; requirements system approved for Phase 02 input | None |
 | 02 | Content Model Contract + Bootstrap Migration | Complete / frozen; approved live model has zero material drift | CMS only |
-| 03 | Model Export + Serial Clean-Room Verification | Active; Batch 03.5 approved/checkpointed after exit-1 HTTP 429 incident and independently verified zero-drift semantic recovery; Batch 03.6 next/not started | CMS only |
-| 04 | Editorial QA + Model Freeze | Editor-friendly baseline v1 | CMS only |
+| 03 | Model Export + Serial Clean-Room Verification | Complete / frozen; 22 of 22 exit criteria pass; zero-drift recovered model checkpointed | CMS only |
+| 04 | Editorial QA + Model Freeze | Next / not started; editor-friendly baseline v1 | CMS only |
 | 05 | Representative Seed Content | Realistic draft entries after clean-room verification | CMS only |
 | 06 | Frontend Contracts + Adapter Boundary | Stable CMS-agnostic data contracts | Code only |
 | 07 | Delivery Integration | Published content loaded route by route | Runtime |
@@ -47,13 +47,14 @@ Batch 02.5 — RE-APPROVED AFTER RE2 COMPATIBILITY CORRECTION
 Batch 02.6 — APPROVED — BOOTSTRAP EXECUTED SUCCESSFULLY IN DEV
 Batch 02.7 — APPROVED — LIVE CONTRACT VALIDATED
 
-Phase 03 — ACTIVE
+Phase 03 — COMPLETE / FROZEN
 Batch 03.1 — APPROVED
 Batch 03.2 — APPROVED
 Batch 03.3 — APPROVED / CHECKPOINTED
 Batch 03.4 — APPROVED / CHECKPOINTED
 Batch 03.5 — APPROVED / CHECKPOINTED
-Batch 03.6 — NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION
+Batch 03.6 — APPROVED / CHECKPOINTED
+Phase 04 — NEXT / NOT STARTED
 Pre-export tooling — APPROVED
 ```
 
@@ -85,7 +86,7 @@ Create a safe operating surface before any content type is created.
 
 ## Phase 01 — Content Strategy + Route Contract
 
-Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 is COMPLETE / FROZEN; Phase 03 is ACTIVE with Batches 03.1 and 03.2 approved, Batches 03.3 through 03.5 approved / checkpointed, and Batch 03.6 next / not started after successful checkpoint verification.
+Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 and Phase 03 are COMPLETE / FROZEN. Batch 03.6 is APPROVED / CHECKPOINTED by the containing commit after all 22 exit criteria passed and External Final Validation returned PASS WITH NOTES. Phase 04 is NEXT / NOT STARTED.
 
 ### Goal
 
@@ -292,7 +293,7 @@ Evidence: `content-model/reports/PHASE-02-BATCH-02.7-LIVE-SCHEMA-VALIDATION.md`.
 
 Result: 10 / 10 types, 99 / 99 stored fields, 18 / 18 authored references, 102 / 102 validation objects, 10 / 10 display fields, 2 / 2 explicit editor controls, and 0 material mismatches.
 
-Phase 02 is COMPLETE / FROZEN. Phase 03 is ACTIVE; Batches 03.1 and 03.2 are APPROVED, Batches 03.3 through 03.5 are APPROVED / CHECKPOINTED, and Batch 03.6 is NEXT / NOT STARTED after successful checkpoint verification.
+Phase 02 and Phase 03 are COMPLETE / FROZEN. Batches 03.1 and 03.2 are APPROVED, Batches 03.3 through 03.5 are APPROVED / CHECKPOINTED, and Batch 03.6 is APPROVED / CHECKPOINTED by the containing commit after all 22 exit criteria passed. Phase 04 is NEXT / NOT STARTED.
 
 ### Exit criteria
 
@@ -303,7 +304,7 @@ Phase 02 is COMPLETE / FROZEN. Phase 03 is ACTIVE; Batches 03.1 and 03.2 are APP
 
 ## Phase 03 — Model Export + Serial Clean-Room Verification
 
-Current state: ACTIVE. Batch 03.1 — Model Export + Serial Clean-Room Verification Preflight — APPROVED. Batch 03.2 — Export, Import + Snapshot Verification Tooling Hardening — APPROVED. Batch 03.3 — Governed Model Export + Snapshot Validation — APPROVED / CHECKPOINTED. Batch 03.4 — Destructive Dev Rotation + Blank-State Validation — APPROVED / CHECKPOINTED. Batch 03.5 — Snapshot Import + Clean-Room Comparison — APPROVED / CHECKPOINTED. Batch 03.6 — Phase 03 Validation + Closeout — NEXT / NOT STARTED after successful checkpoint verification.
+Current state: COMPLETE / FROZEN BY THE CONTAINING COMMIT. Batch 03.1 — Model Export + Serial Clean-Room Verification Preflight — APPROVED. Batch 03.2 — Export, Import + Snapshot Verification Tooling Hardening — APPROVED. Batch 03.3 — Governed Model Export + Snapshot Validation — APPROVED / CHECKPOINTED. Batch 03.4 — Destructive Dev Rotation + Blank-State Validation — APPROVED / CHECKPOINTED. Batch 03.5 — Snapshot Import + Clean-Room Comparison — APPROVED / CHECKPOINTED. Batch 03.6 — Phase 03 Validation + Closeout — APPROVED / CHECKPOINTED BY THE CONTAINING COMMIT. Phase 04 is NEXT / NOT STARTED.
 
 Pre-export tooling: APPROVED. One governed export from `dev` completed under consumed one-time authorization, and the resulting snapshot remains externally approved for recovery use. Batch 03.4 completed exactly one authorized `dev` deletion and recreation from protected `master`. Batch 03.5 then consumed one import authorization; the sole top-level import command exited 1 after an HTTP 429 with 0 automatic request replays. Twenty-three GET-only forensic requests independently proved that current `dev` contains the complete approved recovery model at 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2, 0 entries / 0 assets / 0 tags / `en-US`, and zero material drift. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. The commit containing this state establishes the Batch 03.5 checkpoint, and no second import or repair is authorized.
 
@@ -324,7 +325,7 @@ Batch 03.1 external approval established this Phase 03 sequence:
 | 03.3 | Governed Model Export + Snapshot Validation | APPROVED / CHECKPOINTED |
 | 03.4 | Destructive Dev Rotation + Blank-State Validation | APPROVED / CHECKPOINTED |
 | 03.5 | Snapshot Import + Clean-Room Comparison | APPROVED / CHECKPOINTED |
-| 03.6 | Phase 03 Validation + Closeout | NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION |
+| 03.6 | Phase 03 Validation + Closeout | APPROVED / CHECKPOINTED BY THE CONTAINING COMMIT |
 
 Batch 03.2 external validation returned PASS WITH NOTES. TG-01 credential binding, TG-02 strict export scope, and TG-03 exact snapshot verification are corrected / approved. TG-04 requires no repository lifecycle helper under the existing exact-command and separate-approval policy.
 
@@ -334,7 +335,9 @@ Exactly one authorized governed export from `dev` exited 0. Three rate-limited G
 
 Batch 03.4 later passed the read-only destructive preflight and credential-path correction, then completed one separately authorized `dev` DELETE and one recreation from protected `master` with 0 automatic destructive retries. Independent validation confirmed recreated `dev` and protected `master` were ready and blank at 0 content types / 0 entries / 0 assets / 0 tags / `en-US`. Rotation/blank-state validation, external reconciliation validation, and external final validation returned PASS WITH NOTES, establishing the Batch 03.4 checkpoint.
 
-Batch 03.5 passed its corrected pre-execution and retry-semantics gates, then consumed one explicit import authorization. The sole top-level import command returned nonzero after an HTTP 429 during Editor Interface processing. The workflow stopped mutations: no automatic replay, second import, repair, reset, bootstrap, additional export, or seed followed. Twenty-three GET-only forensic requests found all 10 approved content types published and all 10 Editor Interfaces present. The semantic verifier passed the exact recovery contract with zero failures and zero material drift, classified as `COMPLETE_APPROVED_SEMANTIC_STATE_PRESENT`. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. The commit containing this state establishes the Batch 03.5 checkpoint; Batch 03.6 is next / not started after successful checkpoint verification.
+Batch 03.5 passed its corrected pre-execution and retry-semantics gates, then consumed one explicit import authorization. The sole top-level import command returned nonzero after an HTTP 429 during Editor Interface processing. The workflow stopped mutations: no automatic replay, second import, repair, reset, bootstrap, additional export, or seed followed. Twenty-three GET-only forensic requests found all 10 approved content types published and all 10 Editor Interfaces present. The semantic verifier passed the exact recovery contract with zero failures and zero material drift, classified as `COMPLETE_APPROVED_SEMANTIC_STATE_PRESENT`. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. The commit containing this state establishes the Batch 03.5 checkpoint.
+
+Batch 03.6 preserves the initial final-live validator as an unresolved evidence-capture incident with 0 writes and no retry. One externally authorized corrective GET-only validator invocation passed with 23 GETs, 0 writes, exact topology, protected blank `master`, the complete recovered `dev` model, and zero material drift. All 22 Phase 03 technical exit criteria pass; external Batch 03.6 validation and External Final Validation returned PASS WITH NOTES. The containing commit establishes the Phase 03 closeout and Batch 03.6 checkpoint.
 
 ### Destructive gates before deleting `dev`
 
@@ -371,6 +374,8 @@ Batch 03.5 passed its corrected pre-execution and retry-semantics gates, then co
 - no seed content starts before verified `dev` is declared
 
 ## Phase 04 — Editorial QA + Model Freeze
+
+Current state: NEXT / NOT STARTED AFTER SUCCESSFUL PHASE 03 CLOSEOUT CHECKPOINT VERIFICATION.
 
 ### Goal
 

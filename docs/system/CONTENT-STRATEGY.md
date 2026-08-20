@@ -2,7 +2,7 @@
 
 Status: Phase 01 / Batch 01.1 — APPROVED / FROZEN FOR PHASE 02 INPUT
 Owner: Phase 01 — Content Strategy + Route Contract
-Current downstream consumer: Phase 03 — Model Export + Serial Clean-Room Verification — NEXT / NOT STARTED; Phase 02 COMPLETE / FROZEN
+Current downstream consumer: Phase 04 — Editorial QA + Model Freeze — NEXT / NOT STARTED AFTER SUCCESSFUL PHASE 03 CLOSEOUT CHECKPOINT VERIFICATION; Phase 03 COMPLETE / FROZEN
 
 ## Purpose
 

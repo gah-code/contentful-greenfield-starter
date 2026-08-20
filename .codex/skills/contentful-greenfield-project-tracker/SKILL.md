@@ -49,7 +49,7 @@ Documentation is part of the build.
 - Additional bootstrap execution — NOT AUTHORIZED.
 - Destructive dev recovery — COMPLETE / EXTERNALLY APPROVED / AUTHORIZATION CONSUMED.
 - Additional dev reset — NOT AUTHORIZED.
-- Phase 03 — Model Export + Serial Clean-Room Verification — ACTIVE.
+- Phase 03 — Model Export + Serial Clean-Room Verification — COMPLETE / FROZEN BY THE COMMIT CONTAINING THIS SKILL.
 - 03.1 — MODEL EXPORT + SERIAL CLEAN-ROOM VERIFICATION PREFLIGHT — APPROVED.
 - 03.2 — EXPORT, IMPORT + SNAPSHOT VERIFICATION TOOLING HARDENING — APPROVED.
 - 03.3 — GOVERNED MODEL EXPORT + SNAPSHOT VALIDATION — APPROVED / CHECKPOINTED.
@@ -85,7 +85,10 @@ Documentation is part of the build.
 - 03.5 import operational result — EXIT 1 / HTTP 429 INCIDENT.
 - 03.5 semantic recovery — PASS / ZERO MATERIAL DRIFT.
 - 03.5 external final validation — PASS WITH NOTES / APPROVED FOR GIT CHECKPOINT.
-- 03.6 — PHASE 03 VALIDATION + CLOSEOUT — NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION.
+- 03.6 initial final-live validation — PROCESS COMPLETE / TERMINAL EVIDENCE UNRECOVERABLE / RESULT UNRESOLVED / 0 WRITES / NO RETRY.
+- 03.6 corrective final-live validation — PASS / 23 GETS / 0 WRITES / 0 RETRIES / EXTERNALLY ACCEPTED WITH NOTES.
+- 03.6 — PHASE 03 VALIDATION + CLOSEOUT — APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS SKILL.
+- Phase 04 — EDITORIAL QA + MODEL FREEZE — NEXT / NOT STARTED AFTER SUCCESSFUL PHASE 03 CLOSEOUT CHECKPOINT VERIFICATION.
 - Pre-export tooling — APPROVED.
 - Second export — NOT AUTHORIZED.
 - Import authorization — CONSUMED AFTER EXACTLY ONE TOP-LEVEL INVOCATION.
@@ -133,7 +136,9 @@ Historical Batch 03.4 checkpoint state: independent validation used 14 GETs and 
 
 Batch 03.5 passed its corrected read-only pre-execution and retry-semantics gates. Runtime evidence preserved `contentful-import` 10.0.18, `contentful-management` 12.10.0, `contentful-sdk-core` 9.4.5, SDK-default `retryOnError = true`, `retryLimit = 0`, and 0 effective automatic request replays. One explicit import authorization was granted and consumed when the sole top-level import invocation began. The command exited 1 after an HTTP 429 during Editor Interface import. No second import, repair, reset, bootstrap, additional export, or seed followed.
 
-Twenty-three GET-only forensic requests made 0 writes and found exact `dev` + `master` topology, blank protected `master`, all 10 approved types present and published in `dev`, all 10 Editor Interfaces present, and 0 entries / 0 assets / 0 tags / `en-US`. The checksum-anchored semantic verifier returned 0 failures across the exact 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2 contract. Classification is `COMPLETE_APPROVED_SEMANTIC_STATE_PRESENT`: the import command failed operationally, while semantic recovery and clean-room comparison passed with zero material drift. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. Truth-surface and Final Approval Reconciliation are complete; the commit containing this skill establishes the Batch 03.5 checkpoint, and Batch 03.6 is next / not started after successful checkpoint verification.
+Twenty-three GET-only forensic requests made 0 writes and found exact `dev` + `master` topology, blank protected `master`, all 10 approved types present and published in `dev`, all 10 Editor Interfaces present, and 0 entries / 0 assets / 0 tags / `en-US`. The checksum-anchored semantic verifier returned 0 failures across the exact 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2 contract. Classification is `COMPLETE_APPROVED_SEMANTIC_STATE_PRESENT`: the import command failed operationally, while semantic recovery and clean-room comparison passed with zero material drift. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. Truth-surface and Final Approval Reconciliation are complete; the commit containing this skill establishes the Batch 03.5 checkpoint.
+
+Batch 03.6 preserves its initial final-live process as an unresolved evidence-capture incident with 0 writes and no retry. External review separately authorized one corrective GET-only validator invocation, which passed with 23 GETs, 0 writes, exact `dev` + `master` topology, protected blank `master`, the complete recovered `dev` model, all expected type publication and Editor Interfaces, and zero material drift. All 22 Phase 03 technical exit criteria pass, and external Batch 03.6 validation and External Final Validation returned PASS WITH NOTES. The commit containing this skill establishes Batch 03.6 as approved / checkpointed and Phase 03 as complete / frozen. Phase 04 is next / not started after successful checkpoint verification.
 
 Approved Batch 02.2 standalone type IDs:
 
@@ -306,7 +311,37 @@ external final validation
 Batch 03.5 checkpoint
 ✓ ESTABLISHED BY COMMIT CONTAINING THIS SKILL
 
-Batch 03.6 Phase 03 Validation + Closeout
+Batch 03.6 initial final-live validation
+! EVIDENCE UNRECOVERABLE / RESULT UNRESOLVED
+
+Batch 03.6 corrective final-live validation
+✓ PASS / 23 GETs / 0 WRITES
+
+Phase 03 exit criteria
+✓ 22 / 22 PASS
+
+Batch 03.6 closeout reconciliation
+✓ COMPLETE
+
+Content Strategy scope correction
+✓ COMPLETE
+
+External Batch 03.6 Validation
+✓ PASS WITH NOTES
+
+Final Approval Reconciliation
+✓ COMPLETE
+
+External Final Validation
+✓ PASS WITH NOTES
+
+Batch 03.6 / Phase 03 closeout Git checkpoint
+✓ ESTABLISHED BY COMMIT CONTAINING THIS SKILL
+
+Phase 03
+✓ COMPLETE / FROZEN
+
+Phase 04
 -> NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION
 ```
 

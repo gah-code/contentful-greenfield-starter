@@ -423,7 +423,7 @@ Status: APPROVED
 
 ### Phase 03 — Model Export + Serial Clean-Room Verification
 
-Status: ACTIVE
+Status: COMPLETE / FROZEN BY THE COMMIT CONTAINING THIS FILE
 
 #### Batch 03.1 — Model Export + Serial Clean-Room Verification Preflight
 
@@ -599,7 +599,47 @@ Seed content: NOT STARTED
 
 #### Batch 03.6 — Phase 03 Validation + Closeout
 
-Status: NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION
+Status: APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS FILE
+
+- [x] Confirm Batch 03.5 approved / checkpointed
+- [x] Confirm clean synchronized starting checkpoint
+- [x] Inventory Phase 03 evidence
+- [x] Validate recovery snapshot integrity
+- [x] Validate migration integrity
+- [x] Record original Gate F evidence-capture incident
+- [x] Complete corrective GET-only validation
+- [x] Confirm corrective validation used 23 GETs / 0 writes
+- [x] Confirm exact `dev` + `master` topology
+- [x] Confirm protected blank `master`
+- [x] Confirm recovered `dev` model
+- [x] Confirm exact 10 type IDs
+- [x] Confirm all 10 published
+- [x] Confirm all 10 Editor Interfaces
+- [x] Confirm 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2
+- [x] Confirm entries 0
+- [x] Confirm assets 0
+- [x] Confirm tags 0
+- [x] Confirm `en-US` / default true / fallback null
+- [x] Confirm material drift 0
+- [x] Validate authorization ledger
+- [x] Preserve Batch 03.5 exit-1 / HTTP-429 incident
+- [x] Preserve semantic recovery PASS
+- [x] Confirm second import / rotation / export / repair unauthorized
+- [x] Confirm seed not started
+- [x] Evaluate all 22 Phase 03 exit criteria
+- [x] Create Batch 03.6 closeout report
+- [x] Reconcile current truth surfaces
+- [x] Correct stale Content Strategy downstream pointer
+- [x] External Batch 03.6 validation — PASS WITH NOTES
+- [x] Final Approval Reconciliation
+
+- [x] External Final Validation — PASS WITH NOTES / APPROVED FOR CLOSEOUT CHECKPOINT
+- [x] Batch 03.6 / Phase 03 closeout Git checkpoint — established by the commit containing this file
+- [x] Confirm clean synchronized `0 0` after successful checkpoint verification
+
+### Phase 04 — Editorial QA + Model Freeze
+
+Status: NEXT / NOT STARTED AFTER SUCCESSFUL PHASE 03 CLOSEOUT CHECKPOINT VERIFICATION
 
 ## Completed Evidence
 
@@ -659,7 +699,7 @@ Recorded Phase 00 evidence:
 - Attempts #1 and #2 remain historical failures; destructive recovery completed, the successful Gate B authorization is consumed, and no additional bootstrap or dev reset is authorized.
 - Batch 02.7 is approved after external validation returned PASS WITH NOTES for the read-only comparison of 10 types, 99 stored fields, 18 authored references, 102 validation objects, 10 display fields, 2 explicit editor controls, and zero material drift.
 - Phase 02 closeout review/stage/commit/push and clean synchronized `0 0` confirmation are complete.
-- Phase 03 — Model Export + Serial Clean-Room Verification — is active.
+- Phase 03 — Model Export + Serial Clean-Room Verification — is complete / frozen by the commit containing this file after 22 of 22 technical exit criteria passed, external Batch 03.6 validation and External Final Validation returned PASS WITH NOTES, and Final Approval Reconciliation completed.
 - Batch 03.1 — Model Export + Serial Clean-Room Verification Preflight — is approved after external validation returned PASS WITH NOTES.
 - Batch 03.2 — Export, Import + Snapshot Verification Tooling Hardening — is approved after external validation returned PASS WITH NOTES.
 - Pre-export tooling is approved; Batch 03.3 — Governed Model Export + Snapshot Validation — is approved / checkpointed after external final validation returned PASS WITH NOTES.
@@ -668,6 +708,8 @@ Recorded Phase 00 evidence:
 - `master` is ready / blank / protected. Current `dev` is ready with the approved recovered v1 model at 10 content types / 99 fields / 18 references / 102 validations / 10 display fields / 8 regex validations / 6 Rich Text fields / 2 editor overrides / 0 entries / 0 assets / 0 tags / `en-US` / zero material drift.
 - The destructive authorization is consumed. A second rotation and additional bootstrap are not authorized.
 - Batch 03.5 used its one explicit import authorization. The only top-level import invocation exited 1 after an HTTP 429, with 0 automatic request replays; the authorization is consumed and no second import or repair is authorized.
-- Batch 03.5 post-failure GET-only forensics and semantic comparison passed. Truth-surface and Final Approval Reconciliation are complete; external reconciliation and final validation returned PASS WITH NOTES. The commit containing this file establishes the Batch 03.5 checkpoint, and Batch 03.6 is next / not started after successful checkpoint verification.
+- Batch 03.5 post-failure GET-only forensics and semantic comparison passed. Truth-surface and Final Approval Reconciliation are complete; external reconciliation and final validation returned PASS WITH NOTES. The commit containing this file establishes the Batch 03.5 checkpoint.
+- Batch 03.6 records the original final-live process as an unresolved evidence-capture incident with 0 writes and no retry. One externally authorized corrective GET-only validator invocation then passed with 23 GETs and 0 writes.
+- All 22 Phase 03 technical exit criteria pass, Batch 03.6 closeout truth reconciliation and the Content Strategy pointer correction are complete, and external Batch 03.6 validation and External Final Validation returned PASS WITH NOTES. The commit containing this file establishes Batch 03.6 as approved / checkpointed and Phase 03 as complete / frozen. Phase 04 is next / not started after successful checkpoint verification.
 - Seed content remains not started.
 - This incident/recovery reconciliation is repository-only and authorizes no Contentful read, write, environment mutation, export, import, bootstrap, or seed operation.

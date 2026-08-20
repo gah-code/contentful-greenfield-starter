@@ -94,7 +94,7 @@ Batch 00.3 verifies credential handling and variable separation without reading 
 
 Batch 00.4 recorded direct account, space, environment inventory, default locale, `master`, and `dev` evidence. Batch 00.5 external validation approved Phase 00.
 
-Phase 01 and Phase 02 are complete / frozen. Phase 03 is ACTIVE. Batches 03.1 and 03.2 are APPROVED. Batches 03.3 through 03.5 are APPROVED / CHECKPOINTED.
+Phase 01, Phase 02, and Phase 03 are complete / frozen. Batch 03.6 is approved / checkpointed by the commit containing this document. Phase 04 is next / not started, and no Phase 04 Contentful mutation is authorized. Batches 03.1 and 03.2 are APPROVED. Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED.
 
 Batch 03.5 used one explicit import authorization. The sole top-level import invocation exited 1 after an HTTP 429 during Editor Interface processing, with 0 effective automatic request replays. The authorization is consumed. GET-only forensics independently proved complete semantic recovery with zero material drift. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. Incident/recovery truth reconciliation and Final Approval Reconciliation are complete; the commit containing this document establishes the Batch 03.5 checkpoint.
 
@@ -166,13 +166,30 @@ The single import invocation exited nonzero after an HTTP 429. No automatic repl
 
 After the incident, 23 GET-only forensic requests made 0 writes, retries, or mutating requests and proved that `dev` contains the complete approved semantic model with zero material drift. No second import or repair is required for semantic recovery; both remain unauthorized.
 
-Approval progression:
+### Batch 03.6 Final Validation Security Boundary
 
-- incident/recovery reconciliation: COMPLETE;
-- external reconciliation validation: PASS WITH NOTES;
+The initial Batch 03.6 final-live validator process completed without recoverable terminal evidence. Its semantic result remains unresolved; it made 0 writes and was not retried.
+
+External review separately authorized one corrective GET-only validator invocation. It completed with:
+
+- GET requests: 23;
+- Contentful writes: 0;
+- retries: 0;
+- mutating requests: 0;
+- credential exposure: none;
+- exact topology, `master` protection, recovered `dev` model, and semantic verification: PASS.
+
+The resumed closeout reconciliation performs 0 Contentful reads and 0 writes. The Phase 03 security closeout is PASS. External Batch 03.6 validation and External Final Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. The commit containing this document establishes the Phase 03 closeout checkpoint and Phase 03 complete / frozen state. One-export, destructive, and import authorizations remain consumed. A second export, second rotation, second import, manual repair/reset, additional bootstrap, and seed remain unauthorized or not started.
+
+Batch 03.6 approval progression:
+
+- closeout truth reconciliation: COMPLETE;
+- external Batch 03.6 validation: PASS WITH NOTES;
 - Final Approval Reconciliation: COMPLETE;
-- external final validation: PASS WITH NOTES / APPROVED FOR GIT CHECKPOINT;
-- Batch 03.5 Git checkpoint: ESTABLISHED BY THE COMMIT CONTAINING THIS DOCUMENT.
+- external final validation: PASS WITH NOTES / APPROVED FOR PHASE 03 CLOSEOUT GIT CHECKPOINT;
+- Batch 03.6 / Phase 03 closeout Git checkpoint: ESTABLISHED BY THE COMMIT CONTAINING THIS DOCUMENT;
+- Phase 03 security closeout: PASS;
+- Phase 03: COMPLETE / FROZEN.
 
 ## Phase 03 / Batch 03.4 Safety Truth-Surface Reconciliation
 

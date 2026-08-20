@@ -27,6 +27,16 @@ All meaningful project changes should be recorded here.
 
 ### Changed
 
+- Completed the Batch 03.6 corrective GET-only final-live validation after the original validation process finished without recoverable terminal evidence.
+- The corrective validation used 23 GETs and 0 writes and reconfirmed exact `dev` + `master` topology, protected blank `master`, all 10 published types, all expected Editor Interfaces, and the exact zero-drift semantic contract.
+- Phase 03 technical exit criteria passed and closeout truth reconciliation completed.
+- External Batch 03.6 closeout validation returned PASS WITH NOTES after the expanded 11-file truth-surface reconciliation.
+- Completed the Phase 03 / Batch 03.6 Final Approval Reconciliation. At that pre-checkpoint stage, Phase 03 remained active pending External Final Validation and the closeout Git checkpoint.
+- At that pre-checkpoint stage, Phase 04 remained later / not started; no additional Contentful mutation or validation was authorized.
+- External Final Validation returned PASS WITH NOTES and approved Phase 03 / Batch 03.6 for the Phase 03 closeout checkpoint.
+- Closed Phase 03 after 22 / 22 technical exit criteria passed, including the corrective 23-GET / 0-write final-live validation, protected blank `master`, and zero-drift recovered `dev` model.
+- Batch 03.6 is checkpointed by the containing commit. Phase 04 — Editorial QA + Model Freeze — becomes NEXT / NOT STARTED after successful checkpoint verification.
+- No additional Contentful export, rotation, import, repair, bootstrap, or seed operation was authorized by Phase 03 closeout.
 - Executed the single authorized Phase 03 / Batch 03.5 model-only snapshot import into `dev`; the authorization was consumed and the importer exited nonzero after an HTTP 429 during Editor Interface processing.
 - Per the fail-closed contract, performed no second import, repair, reset, bootstrap, export, or seed operation.
 - Completed 23-request GET-only post-failure forensics and confirmed all 10 approved content types are present and published, all expected Editor Interfaces are available, and protected `master` remains blank.
@@ -36,7 +46,7 @@ All meaningful project changes should be recorded here.
 - Completed the Batch 03.5 Final Approval Reconciliation before subsequent external final validation.
 - External Final Validation returned PASS WITH NOTES and approved Phase 03 / Batch 03.5 for checkpoint.
 - Checkpointed Batch 03.5 while preserving the distinction between the importer exit-1 HTTP 429 incident and the independently verified complete semantic recovery with zero material drift.
-- Advanced Batch 03.6 to NEXT / NOT STARTED after successful checkpoint verification; no second import or repair was authorized.
+- At the Batch 03.5 checkpoint, advanced Batch 03.6 to NEXT / NOT STARTED; that historical starting state authorized no second import or repair.
 - Aligned the technical package name with `contentful-greenfield-starter`.
 - Declared npm as `packageManager` with `npm@10.8.3`.
 - Renamed the active Phase 00 document to `docs/phases/PHASE-00-BASELINE-AND-ENVIRONMENT-SETUP.md`.

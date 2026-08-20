@@ -1,6 +1,6 @@
 # Environment Strategy
 
-Status: Phase 00 complete; Phase 02 complete / frozen; Phase 03 active; Batches 03.1 and 03.2 approved; Batches 03.3 through 03.5 approved / checkpointed; Batch 03.6 next / not started after successful checkpoint verification
+Status: Phase 00 complete; Phase 02 complete / frozen; Phase 03 complete / frozen by the containing commit; Batch 03.6 approved / checkpointed; Phase 04 next / not started
 Owner: Phase 00 — Baseline + Two-Environment Setup
 Canonical environment topology: `master` + `dev`
 
@@ -61,7 +61,9 @@ Batch 03.4 completed exactly one separately authorized `dev` deletion and exactl
 
 Batch 03.4 destructive authorization is CONSUMED. Delete count is 1, recreation count is 1, source is `master`, automatic retries are 0, and blank-state validation is PASS. Post-rotation reconciliation is COMPLETE, external reconciliation validation is PASS WITH NOTES, and final approval reconciliation is COMPLETE. External final validation returned PASS WITH NOTES, and the Batch 03.4 checkpoint is established. A second rotation and additional bootstrap execution remain NOT AUTHORIZED.
 
-Batch 03.5 passed its corrected pre-execution and retry-semantics gates, then consumed one explicit import authorization. The sole top-level import command exited 1 after an HTTP 429 during Editor Interface import. Effective automatic request replays were 0; no second import, repair, reset, bootstrap, additional export, or seed followed. Twenty-three GET-only forensic requests independently confirmed protected blank `master` and current `dev` with all 10 approved types published, all 10 Editor Interfaces present, 0 entries / 0 assets / 0 tags, and `en-US`. The semantic verifier passed the exact 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2 contract with zero material drift. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. Truth-surface and Final Approval Reconciliation are complete; the commit containing this document establishes the Batch 03.5 checkpoint, and Batch 03.6 is next / not started after successful checkpoint verification.
+Batch 03.5 passed its corrected pre-execution and retry-semantics gates, then consumed one explicit import authorization. The sole top-level import command exited 1 after an HTTP 429 during Editor Interface import. Effective automatic request replays were 0; no second import, repair, reset, bootstrap, additional export, or seed followed. Twenty-three GET-only forensic requests independently confirmed protected blank `master` and current `dev` with all 10 approved types published, all 10 Editor Interfaces present, 0 entries / 0 assets / 0 tags, and `en-US`. The semantic verifier passed the exact 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2 contract with zero material drift. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. Truth-surface and Final Approval Reconciliation are complete; the commit containing this document establishes the Batch 03.5 checkpoint.
+
+Batch 03.6 records the initial final-live validator as an unresolved evidence-capture incident with 0 writes and no retry. The separately authorized corrective final-live validation used 23 GETs and 0 writes and passed exact `dev` + `master` topology, `master` protection, the recovered `dev` model, all 10 published types, all 10 Editor Interfaces, locale compatibility, and zero material drift. All 22 Phase 03 technical exit criteria pass, and external Batch 03.6 validation and External Final Validation returned PASS WITH NOTES. The commit containing this document establishes the Phase 03 closeout and Batch 03.6 checkpoint. Phase 03 is complete / frozen; Phase 04 is next / not started. Additional environment lifecycle operations remain not authorized.
 
 Seed content remains NOT STARTED.
 
@@ -166,7 +168,40 @@ external final validation
 03.5 checkpoint
 ✓ ESTABLISHED BY COMMIT CONTAINING THIS DOCUMENT
 
-03.6 Phase 03 Validation + Closeout
+03.6 initial final-live validation
+! EVIDENCE UNRECOVERABLE / RESULT UNRESOLVED
+
+03.6 corrective topology validation
+✓ PASS / 23 GETs / 0 WRITES
+
+master protection
+✓ PASS
+
+dev recovery model
+✓ PASS / ZERO MATERIAL DRIFT
+
+Phase 03 exit criteria
+✓ 22 / 22 PASS
+
+03.6 closeout reconciliation
+✓ COMPLETE
+
+External Batch 03.6 Validation
+✓ PASS WITH NOTES
+
+Final Approval Reconciliation
+✓ COMPLETE
+
+External Final Validation
+✓ PASS WITH NOTES
+
+Batch 03.6 / Phase 03 closeout checkpoint
+✓ ESTABLISHED BY COMMIT CONTAINING THIS DOCUMENT
+
+Phase 03
+✓ COMPLETE / FROZEN
+
+Phase 04
 -> NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION
 ```
 
