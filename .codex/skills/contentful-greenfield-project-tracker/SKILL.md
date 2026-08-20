@@ -13,7 +13,7 @@ Inspect the current repository before editing in every mode. Use current reposit
 
 Personal Website CMS — Greenfield Contentful Starter
 Repository: `contentful-greenfield-starter`
-Model target: approved and frozen 10-type v1 semantic model; RE2-corrected migration executed successfully in `dev`; Batch 02.7 live validation approved with zero material drift; Phase 03 Batch 03.3 governed export complete and snapshot externally approved for recovery use
+Model target: approved and frozen 10-type v1 semantic model preserved in the externally approved recovery snapshot; Phase 03 Batch 03.4 completed one authorized `dev` rotation and verified recreated `dev` blank pending separately authorized import
 
 ## Project Mantra
 
@@ -42,9 +42,9 @@ Documentation is part of the build.
 - 02.6 — APPROVED / BOOTSTRAP EXECUTED SUCCESSFULLY IN DEV.
 - 02.7 — APPROVED / LIVE CONTRACT VALIDATED.
 - Bootstrap migration — APPROVED RE2-CORRECTED V1 / SUCCESSFULLY EXECUTED IN DEV.
-- `dev` — 10 types / 99 fields / 18 authored references / 0 entries / 0 assets / en-US.
-- Live contract drift — 0 material mismatches / externally approved.
-- `master` — blank / protected / untouched.
+- `dev` — READY / FRESHLY RECREATED / BLANK / 0 types / 0 entries / 0 assets / 0 tags / en-US.
+- Pre-rotation live contract drift — 0 material mismatches / externally approved / model preserved in the recovery snapshot.
+- `master` — READY / BLANK / PROTECTED / 0 types / 0 entries / 0 assets / 0 tags / en-US.
 - Gate B authorization — CONSUMED.
 - Additional bootstrap execution — NOT AUTHORIZED.
 - Destructive dev recovery — COMPLETE / EXTERNALLY APPROVED / AUTHORIZATION CONSUMED.
@@ -66,17 +66,25 @@ Documentation is part of the build.
 - Snapshot semantic validation — PASS / 0 MATERIAL FAILURES.
 - Snapshot external approval — PASS WITH NOTES / APPROVED FOR RECOVERY USE.
 - SDK internal GET retries — 3 / READ-ONLY / INSIDE ONE EXPORT INVOCATION.
-- Export + Snapshot Approval Reconciliation — EXTERNALLY VALIDATED / PASS WITH NOTES.
-- Final Approval Reconciliation — COMPLETE.
-- External Final Reconciliation Validation — PASS WITH NOTES.
+- 03.3 Export + Snapshot Approval Reconciliation — EXTERNALLY VALIDATED / PASS WITH NOTES.
+- 03.3 Final Approval Reconciliation — COMPLETE.
+- 03.3 External Final Reconciliation Validation — PASS WITH NOTES.
 - Batch 03.3 checkpoint — ESTABLISHED.
-- 03.4 — DESTRUCTIVE DEV ROTATION + BLANK-STATE VALIDATION — NEXT / NOT STARTED.
-- 03.4 destructive execution — NOT AUTHORIZED.
-- 03.5 — SNAPSHOT IMPORT + CLEAN-ROOM COMPARISON — LATER.
+- 03.4 — DESTRUCTIVE DEV ROTATION + BLANK-STATE VALIDATION — APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS SKILL.
+- 03.4 post-rotation reconciliation — COMPLETE.
+- 03.4 external reconciliation validation — PASS WITH NOTES.
+- 03.4 final approval reconciliation — COMPLETE.
+- 03.4 external final validation — PASS WITH NOTES / APPROVED FOR GIT CHECKPOINT.
+- 03.4 checkpoint — ESTABLISHED BY THE COMMIT CONTAINING THIS SKILL.
+- 03.4 destructive authorization — CONSUMED.
+- 03.4 authorized deletion — 1 / COMPLETE.
+- 03.4 authorized recreation from `master` — 1 / COMPLETE.
+- 03.4 automatic destructive retries — 0.
+- Second rotation — NOT AUTHORIZED.
+- 03.5 — SNAPSHOT IMPORT + CLEAN-ROOM COMPARISON — NEXT / NOT STARTED / READ-ONLY PRE-EXECUTION GATE FIRST.
 - 03.6 — PHASE 03 VALIDATION + CLOSEOUT — LATER.
 - Pre-export tooling — APPROVED.
 - Second export — NOT AUTHORIZED.
-- Destructive rotation — NOT AUTHORIZED.
 - Import — NOT AUTHORIZED / NOT RUN.
 - Seed content — NOT STARTED.
 
@@ -106,7 +114,13 @@ Batch 03.3 read-only pre-execution Attempt 1 stopped before any Contentful reque
 
 Current CMA environment readiness evidence uses `sys.status.sys.id`. Observed `sys.state` was absent in the current raw response. Do not silently substitute one representation for the other; record which field the evidence actually used.
 
-One explicit export authorization was granted and consumed. Exactly one top-level governed export from `dev` exited 0 and produced the ignored snapshot `contentful-model.dev.v1.20260819T210704Z.json` with SHA-256 `0e731940722a86e9c70a9bc71a84a101f740a4efbed553bb998f12a840c9b64a`. The SDK internally retried three rate-limited read-only GET requests inside that invocation; these were not equivalent to a second export attempt, and no second export operation occurred. Semantic verification passed with 0 material failures, and external validation returned PASS WITH NOTES and approved the snapshot for recovery use. The Export + Snapshot Approval Reconciliation and External Final Reconciliation Validation each returned PASS WITH NOTES. Batch 03.3 is approved / checkpointed. Batch 03.4 is next / not started, but its destructive execution is not authorized. A second export, destructive rotation, `dev` deletion/recreation, import, bootstrap, and seed remain unauthorized.
+One explicit export authorization was granted and consumed. Exactly one top-level governed export from `dev` exited 0 and produced the ignored snapshot `contentful-model.dev.v1.20260819T210704Z.json` with SHA-256 `0e731940722a86e9c70a9bc71a84a101f740a4efbed553bb998f12a840c9b64a`. The SDK internally retried three rate-limited read-only GET requests inside that invocation; these were not equivalent to a second export attempt, and no second export operation occurred. Semantic verification passed with 0 material failures, and external validation returned PASS WITH NOTES and approved the snapshot for recovery use. The Export + Snapshot Approval Reconciliation and External Final Reconciliation Validation each returned PASS WITH NOTES. Batch 03.3 is approved / checkpointed. At that checkpoint, Batch 03.4 was next / not started and destructive execution remained separately gated.
+
+Batch 03.4 preflight Attempt 1 failed closed before Contentful access because of stale active safety truth. The correction was externally approved and checkpointed at `e7a613a7710e15050b5d5959d3e71b88f8598432`. Attempt 2 passed Gates A–J with 23 fresh GETs and 0 writes. Initial Gate K blocked on uncompiled CLI source loading; a read-only corrective gate selected the public `contentful-management` SDK and made 0 Contentful requests.
+
+The initial execution start then stopped before Contentful access because `npm ls contentful-management --depth=0` falsely required a direct root dependency. It made 0 DELETE and 0 CREATE attempts, so authorization remained unconsumed. External review approved continuation without package changes. The resumed JIT baseline passed with 13 GETs. Public `contentful-management` 12.10.0 then deleted `dev` exactly once and recreated `dev` exactly once from protected `master`, using one `DELETE`, one `PUT`, and 0 automatic retries. Authorization is CONSUMED.
+
+Independent validation used 14 GETs and 1 readiness poll. Recreated `dev` and protected `master` are ready and blank at 0 types / 0 entries / 0 assets / 0 tags / `en-US`; external rotation validation returned PASS WITH NOTES. Post-rotation reconciliation is complete, external reconciliation validation returned PASS WITH NOTES, and final approval reconciliation is complete. External final validation returned PASS WITH NOTES and approved the Batch 03.4 checkpoint established by the commit containing this skill. Batch 03.5 is next / not started with its read-only pre-execution gate first; second export, second rotation, import, additional bootstrap, and seed remain unauthorized.
 
 Approved Batch 02.2 standalone type IDs:
 
@@ -209,6 +223,43 @@ validated dev
 Never delete `dev` automatically.
 
 Deletion requires explicit human approval in the active session after recoverability evidence is proven.
+
+Current serial position:
+
+```text
+approved snapshot
+✓
+
+destructive preflight and credential gate
+✓
+
+explicit destructive authorization
+✓ CONSUMED
+
+delete dev exactly once
+✓
+
+recreate dev exactly once from protected master
+✓
+
+independent blank-state validation
+✓
+
+Batch 03.4 final reconciliation
+✓
+
+external final validation
+✓ PASS WITH NOTES
+
+Batch 03.4 checkpoint
+✓ ESTABLISHED BY COMMIT CONTAINING THIS SKILL
+
+Batch 03.5 read-only pre-execution gate
+-> NEXT
+
+import authorization
+-> NOT GRANTED
+```
 
 ## Documentation Ownership
 

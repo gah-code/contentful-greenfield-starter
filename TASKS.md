@@ -478,7 +478,7 @@ Status: APPROVED
 - [x] TG-03 semantic snapshot verifier approved
 - [x] TG-04 lifecycle strategy approved with no helper
 
-Pre-export tooling: APPROVED. TG-01, TG-02, and TG-03 are corrected / approved. TG-04 remains no correction required. The separately authorized Batch 03.3 export is complete; every later destructive or mutating execution gate remains unauthorized.
+Pre-export tooling: APPROVED. TG-01, TG-02, and TG-03 are corrected / approved. TG-04 remains no correction required. At Batch 03.2 closeout, every later destructive or mutating execution gate remained separately gated.
 
 #### Batch 03.3 — Governed Model Export + Snapshot Validation
 
@@ -529,15 +529,40 @@ Git checkpoint: COMPLETE / COMMITTED / PUSHED / CLEAN 0 0
 
 #### Batch 03.4 — Destructive Dev Rotation + Blank-State Validation
 
+Status: APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS FILE
+
+Destructive authorization: CONSUMED
+
+- [x] Safety truth correction checkpoint
+- [x] Read-only destructive preflight Attempt 2
+- [x] Credential-path corrective gate
+- [x] Explicit destructive authorization
+- [x] JIT baseline
+- [x] Delete `dev` exactly once
+- [x] Recreate `dev` exactly once from `master`
+- [x] Automatic destructive retries = 0
+- [x] Verify recreated `dev` ready
+- [x] Verify recreated `dev` blank
+- [x] Verify `master` remains blank
+- [x] External rotation + blank-state validation
+- [x] Post-rotation truth-surface reconciliation
+- [x] External reconciliation validation — PASS WITH NOTES
+- [x] Final approval reconciliation
+- [x] External final validation — PASS WITH NOTES / APPROVED FOR GIT CHECKPOINT
+- [x] Batch 03.4 Git checkpoint — established by the commit containing this file
+- [x] Confirm clean synchronized `0 0` after successful checkpoint push verification
+
+Second rotation: NOT AUTHORIZED
+
+#### Batch 03.5 — Snapshot Import + Clean-Room Comparison
+
 Status: NEXT / NOT STARTED
 
-Destructive execution: NOT AUTHORIZED
+Next permitted work: READ-ONLY PRE-EXECUTION GATE
 
-Future separately gated work:
+Import: NOT AUTHORIZED / NOT RUN
 
-- [ ] Destructive `dev` rotation
-- [ ] Import snapshot
-- [ ] Seed content
+Seed content: NOT STARTED
 
 ## Completed Evidence
 
@@ -601,7 +626,10 @@ Recorded Phase 00 evidence:
 - Batch 03.1 — Model Export + Serial Clean-Room Verification Preflight — is approved after external validation returned PASS WITH NOTES.
 - Batch 03.2 — Export, Import + Snapshot Verification Tooling Hardening — is approved after external validation returned PASS WITH NOTES.
 - Pre-export tooling is approved; Batch 03.3 — Governed Model Export + Snapshot Validation — is approved / checkpointed after external final validation returned PASS WITH NOTES.
-- The one-export authorization is consumed after exactly one successful top-level export invocation. The governed snapshot is locally validated and approved for recovery use; a second export, destructive rotation, import, and bootstrap are not authorized.
-- Batch 03.4 — Destructive Dev Rotation + Blank-State Validation — is next / not started; destructive execution is not authorized.
+- The one-export authorization is consumed after exactly one successful top-level export invocation. The governed snapshot is locally validated and approved for recovery use; a second export remains unauthorized.
+- Batch 03.4 — Destructive Dev Rotation + Blank-State Validation — is approved / checkpointed by the commit containing this file after external final validation returned PASS WITH NOTES.
+- `master` is ready / blank / protected. Recreated `dev` is ready / freshly recreated / blank at 0 content types / 0 entries / 0 assets / 0 tags / `en-US`.
+- The destructive authorization is consumed. A second rotation, additional bootstrap, and import are not authorized.
+- Batch 03.5 — Snapshot Import + Clean-Room Comparison — is next / not started. Its read-only pre-execution gate is next; import remains separately gated and unauthorized.
 - Seed content remains not started.
-- Batch 03.3 performed read-only export collection only and made no Contentful writes. No environment, locale, schema, content, import, bootstrap, dev cleanup, or seed mutation is authorized by this reconciliation.
+- This post-rotation reconciliation is repository-only and authorizes no Contentful read, write, environment mutation, export, import, bootstrap, or seed operation.

@@ -304,8 +304,15 @@ All meaningful project changes should be recorded here.
 - Approved and checkpointed Phase 03 / Batch 03.3.
 - Preserved the governed recovery snapshot and approved SHA-256.
 - Preserved the consumed one-export authorization and internal GET retry evidence.
-- Advanced Batch 03.4 to NEXT / NOT STARTED.
-- Kept destructive rotation, import, bootstrap, and seed unauthorized after the checkpoint.
+- At the Batch 03.3 checkpoint, advanced Batch 03.4 to NEXT / NOT STARTED.
+- At the Batch 03.3 checkpoint, kept destructive rotation, import, bootstrap, and seed unauthorized.
+- Completed the separately authorized Phase 03 / Batch 03.4 `dev` clean-room rotation with exactly one deletion and one recreation from protected `master`.
+- Used the approved public `contentful-management` 12.10.0 in-process credential path with zero automatic destructive retries.
+- Verified recreated `dev` and protected `master` are ready and blank at 0 content types / 0 entries / 0 assets / 0 tags / `en-US`.
+- Consumed the destructive authorization; a second rotation and import remain unauthorized.
+- Recorded the root-depth dependency check as a pre-mutation false negative rather than a lifecycle failure.
+- Completed the Phase 03 / Batch 03.4 final approval reconciliation after external post-rotation reconciliation validation returned PASS WITH NOTES; external final validation and the Batch 03.4 Git checkpoint remain pending.
+- External final validation approved Batch 03.4 with notes, and this checkpoint records the completed single `dev` rotation, blank-state validation, and reconciliation evidence.
 
 ### Security
 

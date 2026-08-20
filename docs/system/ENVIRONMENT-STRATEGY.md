@@ -1,6 +1,6 @@
 # Environment Strategy
 
-Status: Phase 00 complete; Phase 02 complete / frozen; Phase 03 active; Batches 03.1 through 03.3 approved / checkpointed; Batch 03.4 next / not started
+Status: Phase 00 complete; Phase 02 complete / frozen; Phase 03 active; Batches 03.1 through 03.4 approved / checkpointed; Batch 03.5 next / not started with read-only pre-execution gate first
 Owner: Phase 00 — Baseline + Two-Environment Setup
 Canonical environment topology: `master` + `dev`
 
@@ -8,8 +8,8 @@ Canonical environment topology: `master` + `dev`
 
 | Environment | Role | Rules | Verification state |
 |---|---|---|---|
-| `master` | Permanent protected baseline and future production/release target | No bootstrap migration, no experimental schema work, no imports during development | Protected blank baseline; 0 types / 0 entries / 0 assets / en-US after approved Batch 02.7 validation |
-| `dev` | Only non-master sandbox | Validated Phase 02 model environment and source state for later rotation only after a separately approved destructive gate | Approved v1 schema; 10 types / 99 fields / 18 authored references / 0 entries / 0 assets / en-US; 0 material drift |
+| `master` | Permanent protected baseline and future production/release target | No bootstrap migration, no experimental schema work, no imports during development | Ready / protected blank; 0 types / 0 entries / 0 assets / 0 tags / `en-US`; default true / fallback null |
+| `dev` | Only non-master rotating sandbox | Freshly recreated once from protected `master`; preserve blank state until a separately authorized import | Ready / freshly recreated / blank; 0 types / 0 entries / 0 assets / 0 tags / `en-US`; default true / fallback null |
 
 Verification is a workflow state, not an environment ID. This project does not maintain a separate physical environment for verification.
 
@@ -38,9 +38,9 @@ Approved uses:
 
 Current limits:
 
-- preserve the externally validated Phase 02 schema until a later approved Phase 03 gate changes it
+- preserve the freshly recreated blank state until a separately approved import gate
 - Gate B authorization is consumed; do not run the bootstrap migration again without fresh explicit authorization
-- do not delete or recreate `dev` outside a separately approved destructive gate
+- Batch 03.4 destructive authorization is consumed; a second deletion or recreation is not authorized
 - do not store irreplaceable content in `dev` before the Phase 03 recoverability gate
 
 ## Phase 02 Recovery, Bootstrap, and Validation Record
@@ -57,7 +57,9 @@ Batch 03.3 is APPROVED / CHECKPOINTED. Exactly one explicitly authorized governe
 
 The approved recovery snapshot is `contentful-model.dev.v1.20260819T210704Z.json` with SHA-256 `0e731940722a86e9c70a9bc71a84a101f740a4efbed553bb998f12a840c9b64a`. It is locally validated and externally approved for recovery use. The raw snapshot remains local and Git-ignored.
 
-Batch 03.4 is NEXT / NOT STARTED. Destructive rotation, import, and additional bootstrap execution remain NOT AUTHORIZED.
+Batch 03.4 completed exactly one separately authorized `dev` deletion and exactly one recreation from protected `master`. The lifecycle operation used public `contentful-management` 12.10.0 with in-process credential binding, one `DELETE`, one `PUT`, and 0 automatic destructive retries. Independent validation passed with 14 GETs and 1 readiness poll: recreated `dev` and protected `master` are ready and blank at 0 types / 0 entries / 0 assets / 0 tags / `en-US`. External validation returned PASS WITH NOTES.
+
+Batch 03.4 destructive authorization is CONSUMED. Delete count is 1, recreation count is 1, source is `master`, automatic retries are 0, and blank-state validation is PASS. Post-rotation reconciliation is COMPLETE, external reconciliation validation is PASS WITH NOTES, and final approval reconciliation is COMPLETE. External final validation returned PASS WITH NOTES, and the commit containing this document establishes the Batch 03.4 checkpoint. A second rotation, import, and additional bootstrap execution remain NOT AUTHORIZED. Batch 03.5 is NEXT / NOT STARTED with its read-only pre-execution gate first.
 
 Seed content remains NOT STARTED.
 
@@ -70,12 +72,20 @@ Batch 03.4 Read-Only Destructive Preflight Attempt 1: BLOCKED / FAIL-CLOSED at t
 - Attempt 1 environment mutations: 0.
 - Safety Truth-Surface Reconciliation: COMPLETE.
 - External Safety Truth-Surface Validation: PASS WITH NOTES.
-- Final Approval Reconciliation: COMPLETE.
-- External Final Validation: PASS WITH NOTES / APPROVED.
+- Safety Truth-Surface Final Approval Reconciliation: COMPLETE.
+- Safety Truth-Surface External Final Validation: PASS WITH NOTES / APPROVED.
 - Safety Truth-Surface Git Checkpoint: ESTABLISHED BY THE COMMIT CONTAINING THIS DOCUMENT.
-- Batch 03.4 Read-Only Destructive Preflight Attempt 2: NEXT AFTER SUCCESSFUL CHECKPOINT VERIFICATION.
+- Batch 03.4 Read-Only Destructive Preflight Attempt 2: PASS / Gates A–J / 23 fresh GETs / 0 writes.
+- Initial Gate K: BLOCKED because the probe loaded uncompiled CLI source instead of the installed compiled runtime.
+- Corrective credential-path gate: PASS WITH NOTES / public `contentful-management` SDK selected / 0 Contentful requests.
+- Initial destructive execution start: BLOCKED BEFORE CONTENTFUL ACCESS by a false root-depth dependency assertion / 0 DELETE / 0 CREATE / authorization not consumed.
+- External false-negative review: continuation of the existing unconsumed authorization approved.
+- Resumed JIT baseline: PASS / 13 GETs / exact pre-deletion topology and model IDs confirmed.
+- Authorized rotation: 1 successful DELETE / 1 successful recreation from `master` / 0 automatic retries.
+- Independent blank-state validation: PASS / 14 GETs / 1 readiness poll / 0 writes.
+- Destructive authorization: CONSUMED.
 
-The current `dev` model description is the last approved validation state. Fresh live pre-deletion evidence has NOT yet been collected for Attempt 2 and must be collected before destructive authorization.
+Current `dev` is the freshly recreated blank sandbox. The approved recovery snapshot remains the model source for a later separately authorized import; the snapshot model must not be described as current live `dev`.
 
 ## Serial Clean-Room Workflow
 
@@ -83,18 +93,61 @@ Phase 03 proves model portability through separately approved serial gates while
 
 ```text
 validated dev
--> approved snapshot
--> read-only destructive preflight
--> external validation
--> separate explicit destructive authorization
--> delete dev exactly once
--> recreate dev exactly once from protected master
--> STOP
--> independent blank-state validation
--> separate import approval
--> import snapshot exactly once
--> semantic comparison
--> freshly recreated verified dev
+✓
+
+approved snapshot
+✓
+
+read-only destructive preflight
+✓
+
+external validation
+✓
+
+separate explicit destructive authorization
+✓ CONSUMED
+
+delete dev exactly once
+✓
+
+recreate dev exactly once from protected master
+✓
+
+STOP MUTATIONS
+✓
+
+independent blank-state validation
+✓
+
+post-rotation reconciliation
+✓
+
+external reconciliation validation
+✓ PASS WITH NOTES
+
+final approval reconciliation
+✓
+
+external final validation
+✓ PASS WITH NOTES
+
+Batch 03.4 checkpoint
+✓ ESTABLISHED BY COMMIT CONTAINING THIS DOCUMENT
+
+03.5 snapshot import pre-execution gate
+-> NEXT
+
+import authorization
+-> NOT GRANTED
+
+import snapshot exactly once
+-> LATER
+
+semantic comparison
+-> LATER
+
+verified dev
+-> LATER
 ```
 
 The environment ID remains `dev` before and after the clean-room recreation.
@@ -112,11 +165,11 @@ Deleting `dev` requires explicit human approval in the active session after the 
 - documented recovery procedure
 - explicit human authorization
 
-Current destructive authorization: NOT GRANTED.
+Current destructive authorization: CONSUMED.
 
-Batch 03.4 read-only destructive preflight Attempt 1 stopped before Contentful access because active safety documentation contained stale current-state wording. This documentation reconciliation does not satisfy the full Batch 03.4 destructive preflight. The complete read-only preflight must be rerun after this correction is externally validated and checkpointed.
+Batch 03.4 read-only destructive preflight Attempt 1 stopped before Contentful access because active safety documentation contained stale current-state wording. That safety correction was externally validated and checkpointed. Attempt 2 and its credential-path correction later passed, and the separately authorized lifecycle operation completed exactly once.
 
-Batch 03.2 approved the existing policy without requiring a repository lifecycle helper. A future destructive gate may use separately approved exact one-time CLI commands for one delete and one recreate, followed by post-operation evidence and an independent blank-state check. No automatic retry, cleanup-and-rerun behavior, import, or seed is part of that authorization.
+The executed lifecycle mechanism was the public `contentful-management` 12.10.0 SDK with process-only credential binding. It performed one delete and one recreation from `master`, then stopped mutations. No automatic retry, cleanup-and-rerun behavior, import, or seed was part of that authorization. A second lifecycle execution is not authorized.
 
 ## Environment Variable Contract
 

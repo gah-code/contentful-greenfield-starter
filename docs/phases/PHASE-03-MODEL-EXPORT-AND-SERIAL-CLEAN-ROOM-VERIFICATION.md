@@ -2,7 +2,7 @@
 
 Status: ACTIVE
 
-Next batch: 03.4 — Destructive Dev Rotation + Blank-State Validation — NEXT / NOT STARTED
+Current batch: 03.5 — Snapshot Import + Clean-Room Comparison — NEXT / NOT STARTED / READ-ONLY PRE-EXECUTION GATE FIRST
 
 Owner: repository maintainer
 
@@ -22,15 +22,16 @@ Phase 03 uses the existing two-environment topology. `master` is the permanent p
 | Batch 03.2 | APPROVED |
 | Batch 03.3 | APPROVED / CHECKPOINTED |
 | Snapshot naming/configuration correction | EXTERNALLY APPROVED / PASS WITH NOTES |
-| Batch 03.4 | NEXT / NOT STARTED |
-| Batch 03.5 | LATER |
+| Batch 03.4 | APPROVED / CHECKPOINTED |
+| Batch 03.5 | NEXT / NOT STARTED / READ-ONLY PRE-EXECUTION GATE FIRST |
 | Batch 03.6 | LATER |
-| `master` | ready; 0 types / 0 entries / 0 assets / `en-US`; protected |
-| `dev` | ready; validated Phase 02 model; 10 types / 0 entries / 0 assets / `en-US` |
+| `master` | ready; 0 types / 0 entries / 0 assets / 0 tags / `en-US`; default true / fallback null; protected |
+| `dev` | ready; freshly recreated / blank; 0 types / 0 entries / 0 assets / 0 tags / `en-US` |
 | Pre-export tooling | APPROVED |
 | Export | COMPLETE / ONE AUTHORIZATION CONSUMED / EXIT 0 |
 | Snapshot | CREATED / EXTERNALLY APPROVED FOR RECOVERY USE |
-| Destructive rotation | NOT AUTHORIZED |
+| Destructive rotation | COMPLETE EXACTLY ONCE / AUTHORIZATION CONSUMED |
+| Second rotation | NOT AUTHORIZED |
 | Import | NOT AUTHORIZED / NOT RUN |
 | Seed | NOT STARTED |
 
@@ -113,12 +114,51 @@ external final validation
 ✓
 
 Batch 03.3 Git checkpoint
-✓ THIS COMMIT
+✓
 
 03.4 read-only destructive preflight
--> NEXT
+✓
+
+credential-path corrective gate
+✓
 
 destructive authorization
+✓ CONSUMED
+
+delete dev exactly once
+✓
+
+recreate dev from master exactly once
+✓
+
+STOP MUTATIONS
+✓
+
+independent blank-state validation
+✓
+
+external rotation validation
+✓ PASS WITH NOTES
+
+post-rotation truth reconciliation
+✓
+
+external reconciliation validation
+✓ PASS WITH NOTES
+
+final approval reconciliation
+✓
+
+external final validation
+✓ PASS WITH NOTES
+
+Batch 03.4 Git checkpoint
+✓ ESTABLISHED BY COMMIT CONTAINING THIS DOCUMENT
+
+03.5 snapshot import pre-execution gate
+-> NEXT
+
+import authorization
 -> NOT GRANTED
 ```
 
@@ -197,7 +237,59 @@ Exactly one governed model export from `dev` produced `contentful-model.dev.v1.2
 
 Semantic verification passed the exact 10 content types / 99 fields / 18 references / 102 validations / 10 display fields / 8 regex validations / 6 Rich Text fields / 2 editor overrides contract, with 0 entries, 0 assets, `en-US`, and 0 material failures. Structural validation found 0 secret-bearing keys and 0 excluded-category violations. External validation returned PASS WITH NOTES and approved the snapshot for recovery use.
 
-Destructive rotation, `dev` deletion/recreation, import, bootstrap, and seed remain unauthorized. Batch 03.4 read-only destructive preflight is next; this checkpoint does not authorize destructive execution.
+At the Batch 03.3 checkpoint, destructive rotation, `dev` deletion/recreation, import, bootstrap, and seed remained unauthorized. Batch 03.4 read-only destructive preflight was the next gate; that checkpoint did not authorize destructive execution.
+
+## Batch 03.4 Result
+
+Status: APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS DOCUMENT
+
+External Final Validation: PASS WITH NOTES / APPROVED FOR GIT CHECKPOINT
+
+Checkpoint: ESTABLISHED BY THE COMMIT CONTAINING THIS DOCUMENT
+
+Evidence: `content-model/reports/PHASE-03-BATCH-03.4-DESTRUCTIVE-DEV-ROTATION-AND-BLANK-STATE-VALIDATION.md`
+
+Preflight history:
+
+- Attempt 1 blocked before Contentful access because active safety truth surfaces were stale; reads, writes, and environment mutations were all 0.
+- The safety correction was externally approved and checkpointed at `e7a613a7710e15050b5d5959d3e71b88f8598432`.
+- Attempt 2 passed Gates A–J with 23 fresh GETs and 0 writes.
+- Initial Gate K blocked because its probe loaded uncompiled CLI source rather than the installed compiled runtime.
+- The corrective read-only credential gate selected the public `contentful-management` SDK path and made 0 Contentful requests.
+
+Authorization and false-negative execution stop:
+
+- explicit destructive authorization was granted;
+- the first execution start blocked before Contentful access because a root-depth package check incorrectly required a direct dependency;
+- that stop made 0 requests, 0 DELETE attempts, and 0 CREATE attempts;
+- external review approved continuation of the still-unconsumed authorization without package changes.
+
+Successful resumed execution:
+
+- 13 JIT GETs reconfirmed exact `dev` + `master` topology, blank protected `master`, and the exact approved 10-type pre-deletion `dev` model;
+- public `contentful-management` 12.10.0 was used with in-process credential binding;
+- `dev` DELETE attempts: 1 / success;
+- `dev` recreation attempts: 1 / success;
+- source environment: `master`;
+- mutation methods: one `DELETE` and one `PUT`;
+- automatic destructive retries: 0;
+- `master` mutations: 0;
+- destructive authorization: CONSUMED.
+
+Independent post-recreation validation:
+
+- 14 GETs;
+- 1 readiness poll;
+- physical topology exactly `dev` + `master`;
+- recreated `dev`: ready / 0 types / 0 entries / 0 assets / 0 tags / `en-US` / default true / fallback null;
+- protected `master`: ready / 0 types / 0 entries / 0 assets / 0 tags / `en-US` / default true / fallback null;
+- Contentful writes during verification: 0;
+- blank-state validation: PASS;
+- external validation: PASS WITH NOTES.
+
+The approved snapshot remains local, Git-ignored, unchanged, and approved for recovery use. It represents the 10-type recovery model; it does not describe current live `dev`, which is intentionally blank.
+
+Batch 03.4 post-rotation reconciliation is complete. External reconciliation validation returned PASS WITH NOTES and approved final approval reconciliation, which is complete. External final validation returned PASS WITH NOTES and approved the Git checkpoint established by the commit containing this document. Batch 03.5 is next / not started; only its read-only pre-execution gate is next, and import is not authorized or run.
 
 ## Clean-Room Success Contract
 
@@ -218,12 +310,12 @@ Batch 03.1 external approval established this Phase 03 sequence:
 | 03.1 | Model Export + Serial Clean-Room Verification Preflight | APPROVED |
 | 03.2 | Export, Import + Snapshot Verification Tooling Hardening | APPROVED |
 | 03.3 | Governed Model Export + Snapshot Validation | APPROVED / CHECKPOINTED |
-| 03.4 | Destructive Dev Rotation + Blank-State Validation | NEXT / NOT STARTED |
-| 03.5 | Snapshot Import + Clean-Room Comparison | LATER |
+| 03.4 | Destructive Dev Rotation + Blank-State Validation | APPROVED / CHECKPOINTED |
+| 03.5 | Snapshot Import + Clean-Room Comparison | NEXT / NOT STARTED |
 | 03.6 | Phase 03 Validation + Closeout | LATER |
 
 Batch 03.3 final approval reconciliation and external final validation are complete. The commit containing this document establishes the checkpoint. The one-export authorization is consumed; no second export is authorized.
 
 ## Current Boundary
 
-Stop after the Batch 03.3 checkpoint. Batch 03.4 read-only destructive preflight is the next permitted work area, but destructive execution is not authorized. A second export, destructive rotation, `dev` deletion/recreation, import, bootstrap, and seed remain unauthorized. Package files, Phase 02 artifacts, and the ignored raw snapshot remain unchanged by this checkpoint.
+Stop after the Batch 03.4 checkpoint. Exactly one authorized `dev` deletion and one recreation from protected `master` are complete, independent blank-state validation passed, and the destructive authorization is consumed. Batch 03.4 is approved / checkpointed by the commit containing this document. Batch 03.5 is next / not started, and its read-only pre-execution gate is the next permitted work. Import authorization is not granted. A second export, second rotation, second `dev` deletion/recreation, import, bootstrap, and seed remain unauthorized. Package files, Phase 02 artifacts, and the ignored raw snapshot remain unchanged by this checkpoint.

@@ -34,6 +34,7 @@ Do not expose sensitive Contentful variables through browser-public prefixes suc
 - Use locally installed Contentful tooling only.
 - Prefer `npx --no-install contentful` or direct local binary execution.
 - Do not pass the Contentful management token as a command-line argument.
+- Shell CLI invocation with `--management-token` is prohibited.
 - Do not pass delivery or preview tokens as command-line arguments.
 - Pass credentials through environment state only, with values hidden from output.
 - Do not run authentication, environment mutation, migration, export, or import commands unless the current batch explicitly authorizes them.
@@ -95,33 +96,52 @@ Batch 00.4 recorded direct account, space, environment inventory, default locale
 
 Phase 01 and Phase 02 are complete / frozen. Phase 03 is ACTIVE. Batches 03.1 through 03.3 are APPROVED / CHECKPOINTED.
 
-Batch 03.4 is NEXT / NOT STARTED.
+Batch 03.4 destructive rotation execution and blank-state validation are APPROVED / CHECKPOINTED by the commit containing this document. External rotation validation, external post-rotation reconciliation validation, and external final validation each returned PASS WITH NOTES. Final approval reconciliation is COMPLETE. Batch 03.5 is NEXT / NOT STARTED with a read-only pre-execution gate first; import remains NOT AUTHORIZED.
 
 One governed export from `dev` completed under explicit authorization. That one-export authorization is CONSUMED. The recovery snapshot exists and is externally approved for recovery use.
 
 Current authorization boundary:
 
 - Second export: NOT AUTHORIZED.
-- Destructive `dev` rotation: NOT AUTHORIZED.
-- `dev` deletion: NOT AUTHORIZED.
-- `dev` recreation: NOT AUTHORIZED.
+- Completed destructive `dev` rotation: exactly one deletion and one recreation from protected `master`.
+- Destructive authorization: CONSUMED.
+- Second destructive `dev` rotation: NOT AUTHORIZED.
+- Second `dev` deletion: NOT AUTHORIZED.
+- Second `dev` recreation: NOT AUTHORIZED.
 - Import: NOT AUTHORIZED.
 - Additional bootstrap: NOT AUTHORIZED.
 - Seed: NOT STARTED.
 
 The approved export/import helpers use explicit programmatic environment-token binding. The successful Gate B and destructive recovery authorizations are consumed. Credentials stay in ignored local environment state, never appear in CLI arguments or logs, and `contentful config list` remains prohibited.
 
-### Destructive Lifecycle Credential Boundary
+### Executed Destructive Lifecycle Credential Boundary
 
-The future Batch 03.4 destructive lifecycle credential path must pass read-only review before destructive authorization. Do not infer that persisted Contentful CLI authentication is approved merely because the CLI is installed. No management token may be placed in command-line arguments. No authentication mutation or login command is authorized by this documentation reconciliation.
+The approved one-time Batch 03.4 lifecycle mechanism was the public `contentful-management` SDK version `12.10.0`.
 
-The upcoming read-only Batch 03.4 preflight must still review:
+| Item | Executed evidence |
+|---|---|
+| Credential source | `process.env.CONTENTFUL_MANAGEMENT_TOKEN` |
+| Binding | in-process only |
+| Token in command arguments | NO |
+| Persisted CLI authentication | NOT USED / NOT APPROVED |
+| Token printed | NO |
+| Authentication mutation | 0 |
+| Automatic destructive retries | 0 |
 
-- exact local CLI lifecycle commands;
-- credential execution mechanics;
-- token non-exposure;
-- the one-delete / one-recreate boundary;
-- independent post-recreation blank-state verification.
+Persisted Contentful CLI authentication is not approved merely because the CLI is installed. Shell CLI invocation with `--management-token` remains prohibited. No management token may be placed in command-line arguments, and no login or authentication mutation is authorized.
+
+The selected public SDK path performed exactly one `dev` DELETE and one recreation from protected `master`. The destructive authorization is consumed, and a second lifecycle execution is not authorized.
+
+The initial destructive execution start used `npm ls contentful-management --depth=0` and falsely required the runtime package to be a direct root dependency. The stop occurred before Contentful access with 0 DELETE and 0 CREATE attempts. Lockfile and runtime evidence established `contentful-management@12.10.0` without package corruption or any need to change `package.json` or `package-lock.json`. External review approved continuation of the still-unconsumed authorization.
+
+The approved lifecycle evidence confirms:
+
+- public SDK credential execution mechanics;
+- process-only token binding and non-exposure;
+- exactly one delete and one recreate;
+- no automatic destructive retry;
+- independent post-recreation blank-state verification;
+- no persisted CLI authentication or dependency change.
 
 ## Phase 03 / Batch 03.4 Safety Truth-Surface Reconciliation
 
@@ -132,12 +152,21 @@ Batch 03.4 Attempt 1: BLOCKED before Contentful access at the current-truth cons
 - Attempt 1 environment mutations: 0.
 - Safety Truth-Surface Reconciliation: COMPLETE.
 - External Validation: PASS WITH NOTES.
-- Final Approval Reconciliation: COMPLETE.
-- External Final Validation: PASS WITH NOTES / APPROVED.
+- Safety Truth-Surface Final Approval Reconciliation: COMPLETE.
+- Safety Truth-Surface External Final Validation: PASS WITH NOTES / APPROVED.
 - Safety Truth-Surface Git Checkpoint: ESTABLISHED BY THE COMMIT CONTAINING THIS DOCUMENT.
-- Batch 03.4 Preflight Attempt 2: NOT YET RUN / NEXT AFTER CLEAN CHECKPOINT.
+- Batch 03.4 Preflight Attempt 2: PASS / 23 fresh GETs / 0 writes.
+- Credential-path corrective gate: PASS WITH NOTES / public SDK selected / 0 Contentful requests.
+- Initial destructive execution start: false-negative stop before Contentful access / authorization not consumed.
+- External false-negative review: continuation approved.
+- Resumed JIT baseline: PASS / 13 GETs.
+- Authorized lifecycle operation: 1 DELETE / 1 PUT recreation / 0 automatic retries.
+- Independent blank-state validation: PASS / 14 GETs / 1 readiness poll / 0 writes.
+- Destructive authorization: CONSUMED.
 - Safety reconciliation Contentful reads: 0.
 
-The reconciliation is documentation-only. The current `dev` model description reflects the last approved validation state and is not fresh Batch 03.4 live proof. Attempt 2 must independently collect fresh pre-deletion evidence.
+This post-rotation reconciliation is documentation-only and performs no Contentful access. Current `dev` is ready / freshly recreated / blank. The approved recovery snapshot remains unchanged and awaits a later separately authorized import.
 
-Snapshot recoverability approval does not approve the destructive credential path and does not grant destructive execution authorization. This reconciliation corrects documentation only and grants no destructive authorization.
+External post-rotation reconciliation validation and external final validation returned PASS WITH NOTES, and final approval reconciliation is COMPLETE. The commit containing this document establishes the Batch 03.4 checkpoint. Batch 03.5 is next / not started, but import remains NOT AUTHORIZED.
+
+Snapshot recoverability approval does not authorize import or a second lifecycle operation. This reconciliation records completed evidence only and grants no Contentful authorization.
