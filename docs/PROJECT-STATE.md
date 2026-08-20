@@ -3,15 +3,25 @@
 Project: `contentful-greenfield-starter`
 Current project state: Phase 03 — ACTIVE
 Latest completed phase: Phase 02 — CONTENT MODEL CONTRACT + BOOTSTRAP MIGRATION — COMPLETE / FROZEN
-Latest approved/checkpointed batch: Batch 03.4 — DESTRUCTIVE DEV ROTATION + BLANK-STATE VALIDATION — APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS STATE
-Next batch: Batch 03.5 — SNAPSHOT IMPORT + CLEAN-ROOM COMPARISON — NEXT / NOT STARTED / READ-ONLY PRE-EXECUTION GATE FIRST
+Latest approved/checkpointed batch: Batch 03.5 — SNAPSHOT IMPORT + CLEAN-ROOM COMPARISON — APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS STATE
+Current / next batch: Batch 03.6 — PHASE 03 VALIDATION + CLOSEOUT — NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION
 Batch 03.4 post-rotation reconciliation: COMPLETE
 Batch 03.4 external reconciliation validation: PASS WITH NOTES
 Batch 03.4 final approval reconciliation: COMPLETE
 Batch 03.4 external final validation: PASS WITH NOTES / APPROVED FOR GIT CHECKPOINT
 Batch 03.4 checkpoint: ESTABLISHED BY THE COMMIT CONTAINING THIS STATE
-Batch 03.5: NEXT / NOT STARTED / IMPORT NOT AUTHORIZED
-Batch 03.6: LATER
+Batch 03.5 import authorization: CONSUMED
+Batch 03.5 operational import result: EXIT 1 / HTTP 429 DURING EDITOR INTERFACE IMPORT
+Batch 03.5 automatic request replays: 0
+Batch 03.5 post-failure forensics: PASS / 23 GETS / 0 WRITES
+Batch 03.5 semantic recovery: PASS / `COMPLETE_APPROVED_SEMANTIC_STATE_PRESENT`
+Batch 03.5 clean-room comparison: PASS / 0 MATERIAL DRIFT
+Batch 03.5 truth-surface reconciliation: COMPLETE
+Batch 03.5 external reconciliation validation: PASS WITH NOTES
+Batch 03.5 Final Approval Reconciliation: COMPLETE
+Batch 03.5 external final validation: PASS WITH NOTES / APPROVED FOR GIT CHECKPOINT
+Batch 03.5 Git checkpoint: ESTABLISHED BY THE COMMIT CONTAINING THIS STATE
+Batch 03.6: NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION
 Recovery model: VALIDATED SNAPSHOT / 0 MATERIAL DRIFT / APPROVED FOR RECOVERY USE
 Pre-export tooling: APPROVED
 03.3 pre-execution gate: PASS WITH NOTES / EXTERNALLY VALIDATED
@@ -28,13 +38,18 @@ Export: COMPLETE / EXACTLY ONE TOP-LEVEL INVOCATION / EXIT 0
 Snapshot: CREATED / LOCALLY VALIDATED / EXTERNALLY APPROVED FOR RECOVERY USE
 Snapshot SHA-256: `0e731940722a86e9c70a9bc71a84a101f740a4efbed553bb998f12a840c9b64a`
 `master`: READY / BLANK / PROTECTED / 0 TYPES / 0 ENTRIES / 0 ASSETS / 0 TAGS / en-US
-`dev`: READY / FRESHLY RECREATED / BLANK / 0 TYPES / 0 ENTRIES / 0 ASSETS / 0 TAGS / en-US
+`dev`: READY / APPROVED RECOVERY MODEL PRESENT / 10 TYPES / 99 FIELDS / 18 REFERENCES / 102 VALIDATIONS / 10 DISPLAY FIELDS / 8 REGEX / 6 RICH TEXT / 2 EDITOR OVERRIDES / 0 ENTRIES / 0 ASSETS / 0 TAGS / en-US / 0 MATERIAL DRIFT
 Bootstrap migration: APPROVED RE2-CORRECTED V1 / EXECUTED SUCCESSFULLY IN DEV / LIVE CONTRACT VALIDATED
 Additional bootstrap execution: NOT AUTHORIZED
 Destructive rotation: COMPLETE EXACTLY ONCE / EXTERNALLY VALIDATED WITH NOTES
 Destructive authorization: CONSUMED
 Second rotation: NOT AUTHORIZED
-Import: NOT AUTHORIZED / NOT RUN
+Authorized import invocations: 1 / CONSUMED
+Operational import result: EXIT 1 / HTTP 429 INCIDENT
+Semantic recovery result: PASS
+Clean-room comparison: PASS
+Second import: NOT AUTHORIZED
+Repair/reset: NOT AUTHORIZED
 Seed content: NOT STARTED
 
 Batch 01.1 external validation passed.
@@ -77,6 +92,10 @@ The first destructive execution start then stopped before Contentful access beca
 The resumed JIT baseline passed with 13 GETs and reconfirmed exact `dev` + `master` topology, blank protected `master`, and the approved 10-type pre-deletion `dev` model. The authorized public `contentful-management` 12.10.0 SDK path deleted `dev` exactly once and recreated `dev` exactly once from `master`, using one `DELETE`, one `PUT`, and 0 automatic destructive retries. The authorization was consumed when the DELETE was invoked.
 
 Independent post-recreation validation used 14 GETs and 1 readiness poll. Recreated `dev` and protected `master` are both ready and blank at 0 content types / 0 entries / 0 assets / 0 tags / `en-US`, with default locale true and fallback null. External validation returned PASS WITH NOTES. Batch 03.4 execution, blank-state validation, post-rotation reconciliation, and final approval reconciliation are complete. External post-rotation reconciliation validation and external final validation each returned PASS WITH NOTES. The commit containing this state establishes the Batch 03.4 checkpoint. A second rotation, second export, import, additional bootstrap, and seed remain unauthorized. See `content-model/reports/PHASE-03-BATCH-03.4-DESTRUCTIVE-DEV-ROTATION-AND-BLANK-STATE-VALIDATION.md`.
+
+Batch 03.5 then passed its corrected read-only pre-execution and retry-semantics gates. One explicit import authorization was granted and consumed when the single top-level import invocation began. The command exited 1 after an HTTP 429 during Editor Interface import, with 0 automatic request replays. The workflow stopped mutations and performed no second import, repair, reset, bootstrap, additional export, or seed.
+
+Post-failure forensics used 23 GETs and 0 writes. They confirmed exact `dev` + `master` topology, protected blank `master`, all 10 expected content types present and published in `dev`, all 10 Editor Interfaces present, 0 entries / 0 assets / 0 tags, and `en-US`. The checksum-anchored verifier passed the exact 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2 semantic contract with 0 failures and 0 material drift. The result is classified as `COMPLETE_APPROVED_SEMANTIC_STATE_PRESENT`: the import failed operationally, while semantic recovery and clean-room comparison passed. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. Truth-surface and Final Approval Reconciliation are complete; the commit containing this state establishes the Batch 03.5 checkpoint. See `content-model/reports/PHASE-03-BATCH-03.5-SNAPSHOT-IMPORT-AND-CLEAN-ROOM-COMPARISON.md`.
 
 The content-strategy foundation is approved with open decisions intentionally carried forward to later Phase 01 batches.
 
@@ -226,10 +245,10 @@ At Phase 00 closeout, the bootstrap migration was blocked and not run. Seed cont
 | --- | --- |
 | Physical environments | `master` + `dev` only |
 | `master` role | Permanent protected blank baseline and future release target; ready at 0 types / 0 entries / 0 assets / 0 tags / `en-US` |
-| `dev` role | Single rotating sandbox; freshly recreated from `master`, ready and blank pending separately authorized import |
+| `dev` role | Single rotating sandbox; ready with the approved recovered v1 model and zero material drift after the single authorized import incident |
 | Verification | Workflow state, not a persistent environment ID |
-| Phase 03 target | Freshly recreated `dev` after protected `master` clone/recreation process |
-| Model target | Approved and frozen 10-type v1 semantic model preserved in the approved recovery snapshot; current live `dev` is intentionally blank |
+| Phase 03 target | Recovered `dev` after the protected `master` clone/recreation and single authorized import invocation |
+| Model target | Approved and frozen 10-type v1 semantic model preserved in the approved recovery snapshot and independently verified in current live `dev` |
 | Bootstrap target | `dev` only; successful Gate B authorization consumed; additional execution not authorized; never `master` |
 
 ## Batch 00.4 Contentful Verification Evidence
@@ -333,7 +352,7 @@ No deletion automation is part of this repair.
 | Phase 03 export/import credential ambiguity | Corrected / approved | Programmatic APIs bind the environment-loaded Management credential without CLI arguments or persisted CLI context |
 | Over-broad recovery snapshot | Corrected / approved | Governed export explicitly excludes content, assets, tags, roles, and webhooks |
 | Insufficient snapshot validation | Corrected / approved | Checksum-anchored verifier enforces exact Phase 02 semantic invariants |
-| Locale compatibility | Resolved | `master` and `dev` both use `en-US` as the default locale with no fallback; revalidate compatibility before the Phase 03 clean-room import |
+| Locale compatibility | Resolved | `master` and `dev` both use `en-US` as the default locale with no fallback; post-import forensics reconfirmed compatibility |
 | Historical baseline commit mixed CMS/model artifacts | Accepted deviation | Do not rewrite history; use focused commits in future batches |
 
 ## Current Phase Boundary
@@ -342,4 +361,4 @@ Phase 00 is complete. Batch 00.1, Batch 00.2, Batch 00.3, Batch 00.4, and Batch 
 
 Phase 01 is complete / frozen. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is approved after external validation. Batch 01.4 is approved after external validation. Batch 01.5 is approved after external validation. Phase 02 is complete / frozen, Batch 02.1 through Batch 02.4 are approved, Batch 02.5 is re-approved after compatibility corrections, Batch 02.6 is approved after successful bootstrap execution in `dev`, and Batch 02.7 is approved after external validation.
 
-Phase 03 — Model Export + Serial Clean-Room Verification — is ACTIVE. Batches 03.1 through 03.4 are APPROVED / CHECKPOINTED. External final validation returned PASS WITH NOTES and approved the Batch 03.4 Git checkpoint established by the commit containing this state. Batch 03.5 — Snapshot Import + Clean-Room Comparison — is NEXT / NOT STARTED, with a read-only pre-execution gate first. Batch 03.6 remains LATER. The destructive authorization is consumed. A second export, second rotation, bootstrap, import, seed, fixture, frontend, and other lifecycle execution remain unauthorized.
+Phase 03 — Model Export + Serial Clean-Room Verification — is ACTIVE. Batches 03.1 and 03.2 are APPROVED. Batches 03.3 through 03.5 are APPROVED / CHECKPOINTED. Batch 03.5 completed one authorized import attempt, recorded the operational exit 1 / HTTP 429 incident, passed post-failure forensics and semantic clean-room comparison with zero material drift, received external semantic recovery, reconciliation, and final validation PASS WITH NOTES, and completed truth-surface and Final Approval Reconciliation. The commit containing this state establishes the Batch 03.5 checkpoint. Batch 03.6 is NEXT / NOT STARTED after successful checkpoint verification. The import and destructive authorizations are consumed. A second export, second import, second rotation, repair/reset, bootstrap, seed, fixture, frontend, and other lifecycle execution remain unauthorized.

@@ -556,13 +556,50 @@ Second rotation: NOT AUTHORIZED
 
 #### Batch 03.5 — Snapshot Import + Clean-Room Comparison
 
-Status: NEXT / NOT STARTED
+Status: APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS FILE
 
-Next permitted work: READ-ONLY PRE-EXECUTION GATE
+Import authorization: CONSUMED
 
-Import: NOT AUTHORIZED / NOT RUN
+Import result: EXIT 1 / HTTP 429 DURING EDITOR INTERFACE IMPORT
+
+Semantic recovery: PASS / `COMPLETE_APPROVED_SEMANTIC_STATE_PRESENT` / ZERO MATERIAL DRIFT
+
+Second import: NOT AUTHORIZED
 
 Seed content: NOT STARTED
+
+- [x] Batch 03.4 checkpoint confirmed
+- [x] Initial 03.5 read-only pre-execution attempt
+- [x] Gate G static-assertion false negative identified
+- [x] Corrected read-only pre-execution gate
+- [x] Fresh blank `dev` / `master` baseline
+- [x] Import runtime and verifier runtime validated
+- [x] Retry-semantics corrective gate
+- [x] Effective automatic request replays = 0
+- [x] Explicit one-time import authorization
+- [x] Fresh JIT pre-import baseline
+- [x] Invoke governed import exactly once
+- [x] Consume import authorization
+- [x] Record nonzero exit / HTTP 429 incident
+- [x] Perform no second import
+- [x] Perform no repair / reset / bootstrap
+- [x] Post-failure GET-only live-state forensics
+- [x] Confirm exact `dev` / `master` topology
+- [x] Confirm all 10 content types present and published
+- [x] Confirm all 10 Editor Interfaces present
+- [x] Semantic verifier PASS / zero material drift
+- [x] Classify `COMPLETE_APPROVED_SEMANTIC_STATE_PRESENT`
+- [x] External post-failure semantic recovery validation — PASS WITH NOTES
+- [x] Import-incident + semantic-recovery truth reconciliation
+- [x] External reconciliation validation — PASS WITH NOTES
+- [x] Final approval reconciliation
+- [x] External final validation — PASS WITH NOTES / APPROVED FOR GIT CHECKPOINT
+- [x] Batch 03.5 Git checkpoint — established by the commit containing this file
+- [x] Confirm clean synchronized `0 0` after successful checkpoint push verification
+
+#### Batch 03.6 — Phase 03 Validation + Closeout
+
+Status: NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION
 
 ## Completed Evidence
 
@@ -628,8 +665,9 @@ Recorded Phase 00 evidence:
 - Pre-export tooling is approved; Batch 03.3 — Governed Model Export + Snapshot Validation — is approved / checkpointed after external final validation returned PASS WITH NOTES.
 - The one-export authorization is consumed after exactly one successful top-level export invocation. The governed snapshot is locally validated and approved for recovery use; a second export remains unauthorized.
 - Batch 03.4 — Destructive Dev Rotation + Blank-State Validation — is approved / checkpointed by the commit containing this file after external final validation returned PASS WITH NOTES.
-- `master` is ready / blank / protected. Recreated `dev` is ready / freshly recreated / blank at 0 content types / 0 entries / 0 assets / 0 tags / `en-US`.
-- The destructive authorization is consumed. A second rotation, additional bootstrap, and import are not authorized.
-- Batch 03.5 — Snapshot Import + Clean-Room Comparison — is next / not started. Its read-only pre-execution gate is next; import remains separately gated and unauthorized.
+- `master` is ready / blank / protected. Current `dev` is ready with the approved recovered v1 model at 10 content types / 99 fields / 18 references / 102 validations / 10 display fields / 8 regex validations / 6 Rich Text fields / 2 editor overrides / 0 entries / 0 assets / 0 tags / `en-US` / zero material drift.
+- The destructive authorization is consumed. A second rotation and additional bootstrap are not authorized.
+- Batch 03.5 used its one explicit import authorization. The only top-level import invocation exited 1 after an HTTP 429, with 0 automatic request replays; the authorization is consumed and no second import or repair is authorized.
+- Batch 03.5 post-failure GET-only forensics and semantic comparison passed. Truth-surface and Final Approval Reconciliation are complete; external reconciliation and final validation returned PASS WITH NOTES. The commit containing this file establishes the Batch 03.5 checkpoint, and Batch 03.6 is next / not started after successful checkpoint verification.
 - Seed content remains not started.
-- This post-rotation reconciliation is repository-only and authorizes no Contentful read, write, environment mutation, export, import, bootstrap, or seed operation.
+- This incident/recovery reconciliation is repository-only and authorizes no Contentful read, write, environment mutation, export, import, bootstrap, or seed operation.

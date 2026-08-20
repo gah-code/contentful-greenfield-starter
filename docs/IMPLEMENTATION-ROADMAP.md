@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Phase 03 active; Batches 03.1 through 03.4 approved / checkpointed; Batch 03.5 next / not started with read-only pre-execution gate first
+Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Phase 03 active; Batches 03.1 and 03.2 approved; Batches 03.3 through 03.5 approved / checkpointed; Batch 03.6 next / not started after successful checkpoint verification
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -10,7 +10,7 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 | 00 | Baseline + Two-Environment Setup | Complete; safe repository, secure tooling boundary, and governed `master` + `dev` operating model | None |
 | 01 | Content Strategy + Route Contract | Complete / frozen; requirements system approved for Phase 02 input | None |
 | 02 | Content Model Contract + Bootstrap Migration | Complete / frozen; approved live model has zero material drift | CMS only |
-| 03 | Model Export + Serial Clean-Room Verification | Active; governed export and single `dev` rotation complete; recreated `dev` blank; Batch 03.4 approved/checkpointed; Batch 03.5 next/read-only gate first; import not authorized | CMS only |
+| 03 | Model Export + Serial Clean-Room Verification | Active; Batch 03.5 approved/checkpointed after exit-1 HTTP 429 incident and independently verified zero-drift semantic recovery; Batch 03.6 next/not started | CMS only |
 | 04 | Editorial QA + Model Freeze | Editor-friendly baseline v1 | CMS only |
 | 05 | Representative Seed Content | Realistic draft entries after clean-room verification | CMS only |
 | 06 | Frontend Contracts + Adapter Boundary | Stable CMS-agnostic data contracts | Code only |
@@ -52,8 +52,8 @@ Batch 03.1 — APPROVED
 Batch 03.2 — APPROVED
 Batch 03.3 — APPROVED / CHECKPOINTED
 Batch 03.4 — APPROVED / CHECKPOINTED
-Batch 03.5 — NEXT / NOT STARTED
-Batch 03.6 — LATER
+Batch 03.5 — APPROVED / CHECKPOINTED
+Batch 03.6 — NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION
 Pre-export tooling — APPROVED
 ```
 
@@ -85,7 +85,7 @@ Create a safe operating surface before any content type is created.
 
 ## Phase 01 — Content Strategy + Route Contract
 
-Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 is COMPLETE / FROZEN; Phase 03 is ACTIVE with Batches 03.1 through 03.4 approved / checkpointed and Batch 03.5 next / not started.
+Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 is COMPLETE / FROZEN; Phase 03 is ACTIVE with Batches 03.1 and 03.2 approved, Batches 03.3 through 03.5 approved / checkpointed, and Batch 03.6 next / not started after successful checkpoint verification.
 
 ### Goal
 
@@ -292,7 +292,7 @@ Evidence: `content-model/reports/PHASE-02-BATCH-02.7-LIVE-SCHEMA-VALIDATION.md`.
 
 Result: 10 / 10 types, 99 / 99 stored fields, 18 / 18 authored references, 102 / 102 validation objects, 10 / 10 display fields, 2 / 2 explicit editor controls, and 0 material mismatches.
 
-Phase 02 is COMPLETE / FROZEN. Phase 03 is ACTIVE; Batches 03.1 through 03.4 are APPROVED / CHECKPOINTED, and Batch 03.5 is NEXT / NOT STARTED.
+Phase 02 is COMPLETE / FROZEN. Phase 03 is ACTIVE; Batches 03.1 and 03.2 are APPROVED, Batches 03.3 through 03.5 are APPROVED / CHECKPOINTED, and Batch 03.6 is NEXT / NOT STARTED after successful checkpoint verification.
 
 ### Exit criteria
 
@@ -303,9 +303,11 @@ Phase 02 is COMPLETE / FROZEN. Phase 03 is ACTIVE; Batches 03.1 through 03.4 are
 
 ## Phase 03 — Model Export + Serial Clean-Room Verification
 
-Current state: ACTIVE. Batch 03.1 — Model Export + Serial Clean-Room Verification Preflight — APPROVED. Batch 03.2 — Export, Import + Snapshot Verification Tooling Hardening — APPROVED. Batch 03.3 — Governed Model Export + Snapshot Validation — APPROVED / CHECKPOINTED. Batch 03.4 — Destructive Dev Rotation + Blank-State Validation — APPROVED / CHECKPOINTED. Batch 03.5 — Snapshot Import + Clean-Room Comparison — NEXT / NOT STARTED.
+Current state: ACTIVE. Batch 03.1 — Model Export + Serial Clean-Room Verification Preflight — APPROVED. Batch 03.2 — Export, Import + Snapshot Verification Tooling Hardening — APPROVED. Batch 03.3 — Governed Model Export + Snapshot Validation — APPROVED / CHECKPOINTED. Batch 03.4 — Destructive Dev Rotation + Blank-State Validation — APPROVED / CHECKPOINTED. Batch 03.5 — Snapshot Import + Clean-Room Comparison — APPROVED / CHECKPOINTED. Batch 03.6 — Phase 03 Validation + Closeout — NEXT / NOT STARTED after successful checkpoint verification.
 
-Pre-export tooling: APPROVED. One governed export from `dev` completed under consumed one-time authorization, and the resulting snapshot is externally approved for recovery use. Batch 03.4 completed exactly one authorized `dev` deletion and recreation from protected `master` with zero automatic destructive retries; recreated `dev` is ready and blank, and blank-state validation passed. External final validation returned PASS WITH NOTES, and the commit containing this state establishes the Batch 03.4 checkpoint. Batch 03.5 is next / not started with its read-only pre-execution gate first. The destructive authorization is consumed, import is not authorized, and seed content has not started.
+Pre-export tooling: APPROVED. One governed export from `dev` completed under consumed one-time authorization, and the resulting snapshot remains externally approved for recovery use. Batch 03.4 completed exactly one authorized `dev` deletion and recreation from protected `master`. Batch 03.5 then consumed one import authorization; the sole top-level import command exited 1 after an HTTP 429 with 0 automatic request replays. Twenty-three GET-only forensic requests independently proved that current `dev` contains the complete approved recovery model at 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2, 0 entries / 0 assets / 0 tags / `en-US`, and zero material drift. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. The commit containing this state establishes the Batch 03.5 checkpoint, and no second import or repair is authorized.
+
+Seed content has not started.
 
 ### Goal
 
@@ -321,8 +323,8 @@ Batch 03.1 external approval established this Phase 03 sequence:
 | 03.2 | Export, Import + Snapshot Verification Tooling Hardening | APPROVED |
 | 03.3 | Governed Model Export + Snapshot Validation | APPROVED / CHECKPOINTED |
 | 03.4 | Destructive Dev Rotation + Blank-State Validation | APPROVED / CHECKPOINTED |
-| 03.5 | Snapshot Import + Clean-Room Comparison | NEXT / NOT STARTED |
-| 03.6 | Phase 03 Validation + Closeout | LATER |
+| 03.5 | Snapshot Import + Clean-Room Comparison | APPROVED / CHECKPOINTED |
+| 03.6 | Phase 03 Validation + Closeout | NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION |
 
 Batch 03.2 external validation returned PASS WITH NOTES. TG-01 credential binding, TG-02 strict export scope, and TG-03 exact snapshot verification are corrected / approved. TG-04 requires no repository lifecycle helper under the existing exact-command and separate-approval policy.
 
@@ -330,7 +332,9 @@ Batch 03.3 pre-execution Attempt 1 blocked on a local snapshot selector mismatch
 
 Exactly one authorized governed export from `dev` exited 0. Three rate-limited GET requests were retried internally inside that single top-level invocation. The resulting ignored snapshot, `contentful-model.dev.v1.20260819T210704Z.json`, has SHA-256 `0e731940722a86e9c70a9bc71a84a101f740a4efbed553bb998f12a840c9b64a` and passed exact semantic and structural validation with zero material failures. External validation returned PASS WITH NOTES and approved it for recovery use. The Export + Snapshot Approval Reconciliation and External Final Reconciliation Validation each returned PASS WITH NOTES. Batch 03.3 is approved / checkpointed.
 
-Batch 03.4 later passed the read-only destructive preflight and credential-path correction, then completed one separately authorized `dev` DELETE and one recreation from protected `master` with 0 automatic destructive retries. Independent validation confirmed recreated `dev` and protected `master` are ready and blank at 0 content types / 0 entries / 0 assets / 0 tags / `en-US`. Rotation/blank-state validation, external reconciliation validation, and external final validation returned PASS WITH NOTES. The commit containing this state establishes the Batch 03.4 checkpoint. Batch 03.5 is next / not started, but only its read-only pre-execution gate is next; import is not authorized.
+Batch 03.4 later passed the read-only destructive preflight and credential-path correction, then completed one separately authorized `dev` DELETE and one recreation from protected `master` with 0 automatic destructive retries. Independent validation confirmed recreated `dev` and protected `master` were ready and blank at 0 content types / 0 entries / 0 assets / 0 tags / `en-US`. Rotation/blank-state validation, external reconciliation validation, and external final validation returned PASS WITH NOTES, establishing the Batch 03.4 checkpoint.
+
+Batch 03.5 passed its corrected pre-execution and retry-semantics gates, then consumed one explicit import authorization. The sole top-level import command returned nonzero after an HTTP 429 during Editor Interface processing. The workflow stopped mutations: no automatic replay, second import, repair, reset, bootstrap, additional export, or seed followed. Twenty-three GET-only forensic requests found all 10 approved content types published and all 10 Editor Interfaces present. The semantic verifier passed the exact recovery contract with zero failures and zero material drift, classified as `COMPLETE_APPROVED_SEMANTIC_STATE_PRESENT`. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. The commit containing this state establishes the Batch 03.5 checkpoint; Batch 03.6 is next / not started after successful checkpoint verification.
 
 ### Destructive gates before deleting `dev`
 

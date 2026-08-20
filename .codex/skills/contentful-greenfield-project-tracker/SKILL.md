@@ -13,7 +13,7 @@ Inspect the current repository before editing in every mode. Use current reposit
 
 Personal Website CMS — Greenfield Contentful Starter
 Repository: `contentful-greenfield-starter`
-Model target: approved and frozen 10-type v1 semantic model preserved in the externally approved recovery snapshot; Phase 03 Batch 03.4 completed one authorized `dev` rotation and verified recreated `dev` blank pending separately authorized import
+Model target: approved and frozen 10-type v1 semantic model preserved in the externally approved recovery snapshot and independently verified in current `dev` after the single authorized Batch 03.5 import incident
 
 ## Project Mantra
 
@@ -42,7 +42,7 @@ Documentation is part of the build.
 - 02.6 — APPROVED / BOOTSTRAP EXECUTED SUCCESSFULLY IN DEV.
 - 02.7 — APPROVED / LIVE CONTRACT VALIDATED.
 - Bootstrap migration — APPROVED RE2-CORRECTED V1 / SUCCESSFULLY EXECUTED IN DEV.
-- `dev` — READY / FRESHLY RECREATED / BLANK / 0 types / 0 entries / 0 assets / 0 tags / en-US.
+- `dev` — READY / APPROVED RECOVERY MODEL PRESENT / 10 types / 99 fields / 18 references / 102 validations / 10 display fields / 8 regex / 6 Rich Text / 2 editor overrides / 0 entries / 0 assets / 0 tags / en-US / ZERO MATERIAL DRIFT.
 - Pre-rotation live contract drift — 0 material mismatches / externally approved / model preserved in the recovery snapshot.
 - `master` — READY / BLANK / PROTECTED / 0 types / 0 entries / 0 assets / 0 tags / en-US.
 - Gate B authorization — CONSUMED.
@@ -81,11 +81,20 @@ Documentation is part of the build.
 - 03.4 authorized recreation from `master` — 1 / COMPLETE.
 - 03.4 automatic destructive retries — 0.
 - Second rotation — NOT AUTHORIZED.
-- 03.5 — SNAPSHOT IMPORT + CLEAN-ROOM COMPARISON — NEXT / NOT STARTED / READ-ONLY PRE-EXECUTION GATE FIRST.
-- 03.6 — PHASE 03 VALIDATION + CLOSEOUT — LATER.
+- 03.5 — SNAPSHOT IMPORT + CLEAN-ROOM COMPARISON — APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS SKILL.
+- 03.5 import operational result — EXIT 1 / HTTP 429 INCIDENT.
+- 03.5 semantic recovery — PASS / ZERO MATERIAL DRIFT.
+- 03.5 external final validation — PASS WITH NOTES / APPROVED FOR GIT CHECKPOINT.
+- 03.6 — PHASE 03 VALIDATION + CLOSEOUT — NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION.
 - Pre-export tooling — APPROVED.
 - Second export — NOT AUTHORIZED.
-- Import — NOT AUTHORIZED / NOT RUN.
+- Import authorization — CONSUMED AFTER EXACTLY ONE TOP-LEVEL INVOCATION.
+- Import operational result — EXIT 1 / HTTP 429 DURING EDITOR INTERFACE IMPORT.
+- Effective automatic request replays — 0 / PROVEN.
+- Post-failure forensics — PASS / 23 GETS / 0 WRITES.
+- Semantic recovery — PASS / `COMPLETE_APPROVED_SEMANTIC_STATE_PRESENT` / ZERO MATERIAL DRIFT.
+- Second import — NOT AUTHORIZED.
+- Repair/reset — NOT AUTHORIZED.
 - Seed content — NOT STARTED.
 
 Batch 01.3 approved hybrid SEO ownership: editorial SEO overrides are limited conceptually to title, description, and social image; technical SEO remains code/state-derived. Exact Contentful representation and schema implementation remain deferred to Phase 02.
@@ -120,7 +129,11 @@ Batch 03.4 preflight Attempt 1 failed closed before Contentful access because of
 
 The initial execution start then stopped before Contentful access because `npm ls contentful-management --depth=0` falsely required a direct root dependency. It made 0 DELETE and 0 CREATE attempts, so authorization remained unconsumed. External review approved continuation without package changes. The resumed JIT baseline passed with 13 GETs. Public `contentful-management` 12.10.0 then deleted `dev` exactly once and recreated `dev` exactly once from protected `master`, using one `DELETE`, one `PUT`, and 0 automatic retries. Authorization is CONSUMED.
 
-Independent validation used 14 GETs and 1 readiness poll. Recreated `dev` and protected `master` are ready and blank at 0 types / 0 entries / 0 assets / 0 tags / `en-US`; external rotation validation returned PASS WITH NOTES. Post-rotation reconciliation is complete, external reconciliation validation returned PASS WITH NOTES, and final approval reconciliation is complete. External final validation returned PASS WITH NOTES and approved the Batch 03.4 checkpoint established by the commit containing this skill. Batch 03.5 is next / not started with its read-only pre-execution gate first; second export, second rotation, import, additional bootstrap, and seed remain unauthorized.
+Historical Batch 03.4 checkpoint state: independent validation used 14 GETs and 1 readiness poll. Recreated `dev` and protected `master` were ready and blank at 0 types / 0 entries / 0 assets / 0 tags / `en-US`; external rotation validation returned PASS WITH NOTES. Post-rotation reconciliation, external reconciliation validation, final approval reconciliation, and external final validation established the Batch 03.4 checkpoint. At that checkpoint, Batch 03.5 was next / not started with its read-only pre-execution gate first; second export, second rotation, import, additional bootstrap, and seed remained unauthorized.
+
+Batch 03.5 passed its corrected read-only pre-execution and retry-semantics gates. Runtime evidence preserved `contentful-import` 10.0.18, `contentful-management` 12.10.0, `contentful-sdk-core` 9.4.5, SDK-default `retryOnError = true`, `retryLimit = 0`, and 0 effective automatic request replays. One explicit import authorization was granted and consumed when the sole top-level import invocation began. The command exited 1 after an HTTP 429 during Editor Interface import. No second import, repair, reset, bootstrap, additional export, or seed followed.
+
+Twenty-three GET-only forensic requests made 0 writes and found exact `dev` + `master` topology, blank protected `master`, all 10 approved types present and published in `dev`, all 10 Editor Interfaces present, and 0 entries / 0 assets / 0 tags / `en-US`. The checksum-anchored semantic verifier returned 0 failures across the exact 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2 contract. Classification is `COMPLETE_APPROVED_SEMANTIC_STATE_PRESENT`: the import command failed operationally, while semantic recovery and clean-room comparison passed with zero material drift. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. Truth-surface and Final Approval Reconciliation are complete; the commit containing this skill establishes the Batch 03.5 checkpoint, and Batch 03.6 is next / not started after successful checkpoint verification.
 
 Approved Batch 02.2 standalone type IDs:
 
@@ -255,10 +268,46 @@ Batch 03.4 checkpoint
 ✓ ESTABLISHED BY COMMIT CONTAINING THIS SKILL
 
 Batch 03.5 read-only pre-execution gate
--> NEXT
+✓
+
+retry-semantics corrective gate
+✓
 
 import authorization
--> NOT GRANTED
+✓ CONSUMED
+
+single import invocation
+✓ EXECUTED / EXIT 1 / 429 INCIDENT
+
+mutation stop
+✓
+
+post-failure GET-only forensics
+✓
+
+semantic clean-room comparison
+✓ PASS / ZERO MATERIAL DRIFT
+
+external semantic recovery validation
+✓ PASS WITH NOTES
+
+incident + recovery truth reconciliation
+✓ COMPLETE
+
+external reconciliation validation
+✓ PASS WITH NOTES
+
+final approval reconciliation
+✓ COMPLETE
+
+external final validation
+✓ PASS WITH NOTES
+
+Batch 03.5 checkpoint
+✓ ESTABLISHED BY COMMIT CONTAINING THIS SKILL
+
+Batch 03.6 Phase 03 Validation + Closeout
+-> NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION
 ```
 
 ## Documentation Ownership

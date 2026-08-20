@@ -31,14 +31,14 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | --- | --- |
 | Current project state | Phase 03 - Model Export + Serial Clean-Room Verification - Active |
 | Latest completed phase | Phase 02 - Content Model Contract + Bootstrap Migration |
-| Latest approved/checkpointed batch | Batch 03.4 - Destructive Dev Rotation + Blank-State Validation |
-| Current batch | Batch 03.5 - Snapshot Import + Clean-Room Comparison - Next / not started; read-only pre-execution gate first |
+| Latest approved/checkpointed batch | Batch 03.5 - Snapshot Import + Clean-Room Comparison |
+| Current / next work | Batch 03.6 - Phase 03 Validation + Closeout - Next / not started after successful checkpoint verification |
 | Pre-export tooling | Approved |
 | Content model | Approved V1 model contract |
 | Migration implementation | Approved RE2-corrected V1 |
 | Migration execution | Successful in `dev` |
 | Approved checksum | `4a2319e069245d94a62e253acc9d4d67ad57f5e3450a143c71607f8c10360e24` |
-| Live `dev` | Ready / freshly recreated blank / 0 types / 0 entries / 0 assets / 0 tags / en-US |
+| Live `dev` | Ready / approved recovered v1 model / 10 types / 0 entries / 0 assets / 0 tags / en-US / zero material drift |
 | Pre-rotation model validation | Approved - zero material drift; preserved in recovery snapshot |
 | `master` | Ready / protected blank / 0 types / 0 entries / 0 assets / 0 tags / en-US |
 | Gate B authorization | Consumed |
@@ -50,7 +50,8 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Snapshot | Created / approved for recovery use |
 | Destructive rotation | Complete exactly once; blank-state validation passed |
 | Destructive authorization | Consumed; second rotation not authorized |
-| Import | Not authorized / not run |
+| Import | Executed exactly once / authorization consumed / operational exit 1 after HTTP 429; second import not authorized |
+| Semantic recovery | PASS / clean-room comparison PASS / zero material drift |
 | Seed content | Not started |
 
 > For canonical current state, see [docs/PROJECT-STATE.md](docs/PROJECT-STATE.md) and [TASKS.md](TASKS.md).
@@ -87,11 +88,11 @@ The implementation sequence keeps CMS decisions upstream of templates and keeps 
 | Environment | Responsibility | Current posture |
 | --- | --- | --- |
 | `master` | Permanent protected baseline and future release target | Ready / protected blank; 0 types / 0 entries / 0 assets / 0 tags / en-US |
-| `dev` | Single rotating sandbox for migration development, model review, and editorial QA | Ready / freshly recreated blank; 0 types / 0 entries / 0 assets / 0 tags / en-US; awaiting separately authorized import |
+| `dev` | Single rotating sandbox for migration development, model review, and editorial QA | Ready / approved recovered v1 model; 10 types / 0 entries / 0 assets / 0 tags / en-US; zero material drift |
 
 Verification is a workflow state, not a third Contentful environment.
 
-Phase 03 Batches 03.1 through 03.4 are approved / checkpointed. One governed export produced the approved recovery snapshot. Batch 03.4 then completed exactly one separately authorized `dev` deletion and recreation from protected `master`; independent validation confirmed both environments are ready and blank. External final validation returned PASS WITH NOTES, and the commit containing this state establishes the Batch 03.4 checkpoint. The destructive authorization is consumed. Batch 03.5 is next / not started, but only its read-only pre-execution gate is permitted; snapshot import remains separately gated and unauthorized. See [docs/system/ENVIRONMENT-STRATEGY.md](docs/system/ENVIRONMENT-STRATEGY.md) for the serial gate structure.
+Phase 03 Batches 03.1 and 03.2 are approved; Batches 03.3 through 03.5 are approved / checkpointed by their containing commits. Batch 03.5 consumed one explicit import authorization. The import command exited 1 after an HTTP 429, then 23 GET-only forensic requests independently confirmed that `dev` contains all 10 approved published types and matches the exact semantic recovery contract with zero material drift. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. The commit containing this state establishes the Batch 03.5 checkpoint. Batch 03.6 is next / not started after successful checkpoint verification. No second import or repair is authorized. See [the Batch 03.5 evidence report](content-model/reports/PHASE-03-BATCH-03.5-SNAPSHOT-IMPORT-AND-CLEAN-ROOM-COMPARISON.md) for the detailed record.
 
 ## Repository Operating System
 
@@ -184,7 +185,7 @@ Do not run authentication, migration, export, import, or environment commands un
 | 00 | Baseline + Two-Environment Setup - complete |
 | 01 | Content Strategy + Route Contract - complete / frozen |
 | 02 | Content Model Contract + Bootstrap Migration - complete / frozen |
-| 03 | Model Export + Serial Clean-Room Verification - active; Batch 03.4 approved/checkpointed; Batch 03.5 next/not started with read-only pre-execution gate first |
+| 03 | Model Export + Serial Clean-Room Verification - active; Batch 03.5 approved/checkpointed by the commit containing this state; Batch 03.6 next/not started after successful checkpoint verification |
 | 04 | Editorial QA + Model Freeze |
 | 05 | Representative Seed Content |
 | 06 | Frontend Contracts + Adapter Boundary |
@@ -230,7 +231,7 @@ Phase 02 / Batch 02.2 approves the current v1 standalone type inventory: `siteSe
 
 ### Phase Documents
 
-- [docs/phases/PHASE-03-MODEL-EXPORT-AND-SERIAL-CLEAN-ROOM-VERIFICATION.md](docs/phases/PHASE-03-MODEL-EXPORT-AND-SERIAL-CLEAN-ROOM-VERIFICATION.md) - active Phase 03 scope, serial gates, and Batch 03.5 read-only pre-execution handoff
+- [docs/phases/PHASE-03-MODEL-EXPORT-AND-SERIAL-CLEAN-ROOM-VERIFICATION.md](docs/phases/PHASE-03-MODEL-EXPORT-AND-SERIAL-CLEAN-ROOM-VERIFICATION.md) - active Phase 03 scope, serial gates, and Batch 03.5 incident/recovery state
 - [docs/phases/PHASE-02-CONTENT-MODEL-CONTRACT-AND-BOOTSTRAP-MIGRATION.md](docs/phases/PHASE-02-CONTENT-MODEL-CONTRACT-AND-BOOTSTRAP-MIGRATION.md) - completed Phase 02 model and migration closeout
 - [docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md](docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md) - completed Phase 01 closeout, frozen requirements evidence, and Phase 02 handoff boundary
 

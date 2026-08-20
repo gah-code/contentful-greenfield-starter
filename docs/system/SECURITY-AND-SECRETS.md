@@ -86,7 +86,7 @@ Approved physical environments are `master` and `dev`.
 | `dev` deletion before recoverability | Deletion requires committed migrations, verified snapshot, checksum, pre-deletion evidence, recovery procedure, and explicit human approval |
 | Stale three-environment documentation | Closeout and Phase 03 readiness include topology searches |
 | Token exposure | Local env files are ignored, CLI args omit tokens, browser prefixes are prohibited, and scripts print presence only |
-| Locale mismatch | Default locale is recorded in Phase 00 and checked before Phase 03 clean-room import |
+| Locale mismatch | Default locale is recorded in Phase 00 and checked before and after the Phase 03 clean-room import attempt |
 
 ## Current Phase Boundary
 
@@ -94,9 +94,9 @@ Batch 00.3 verifies credential handling and variable separation without reading 
 
 Batch 00.4 recorded direct account, space, environment inventory, default locale, `master`, and `dev` evidence. Batch 00.5 external validation approved Phase 00.
 
-Phase 01 and Phase 02 are complete / frozen. Phase 03 is ACTIVE. Batches 03.1 through 03.3 are APPROVED / CHECKPOINTED.
+Phase 01 and Phase 02 are complete / frozen. Phase 03 is ACTIVE. Batches 03.1 and 03.2 are APPROVED. Batches 03.3 through 03.5 are APPROVED / CHECKPOINTED.
 
-Batch 03.4 destructive rotation execution and blank-state validation are APPROVED / CHECKPOINTED by the commit containing this document. External rotation validation, external post-rotation reconciliation validation, and external final validation each returned PASS WITH NOTES. Final approval reconciliation is COMPLETE. Batch 03.5 is NEXT / NOT STARTED with a read-only pre-execution gate first; import remains NOT AUTHORIZED.
+Batch 03.5 used one explicit import authorization. The sole top-level import invocation exited 1 after an HTTP 429 during Editor Interface processing, with 0 effective automatic request replays. The authorization is consumed. GET-only forensics independently proved complete semantic recovery with zero material drift. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. Incident/recovery truth reconciliation and Final Approval Reconciliation are complete; the commit containing this document establishes the Batch 03.5 checkpoint.
 
 One governed export from `dev` completed under explicit authorization. That one-export authorization is CONSUMED. The recovery snapshot exists and is externally approved for recovery use.
 
@@ -108,7 +108,9 @@ Current authorization boundary:
 - Second destructive `dev` rotation: NOT AUTHORIZED.
 - Second `dev` deletion: NOT AUTHORIZED.
 - Second `dev` recreation: NOT AUTHORIZED.
-- Import: NOT AUTHORIZED.
+- Import authorization: CONSUMED after exactly one top-level invocation.
+- Second import: NOT AUTHORIZED.
+- Manual repair/reset: NOT AUTHORIZED.
 - Additional bootstrap: NOT AUTHORIZED.
 - Seed: NOT STARTED.
 
@@ -143,6 +145,35 @@ The approved lifecycle evidence confirms:
 - independent post-recreation blank-state verification;
 - no persisted CLI authentication or dependency change.
 
+### Executed Batch 03.5 Import Credential and Retry Boundary
+
+| Item | Executed evidence |
+|---|---|
+| Import mechanism | `scripts/contentful/import-model.mjs` + `contentful-import` 10.0.18 |
+| Management runtime | `contentful-management` 12.10.0 / `contentful-sdk-core` 9.4.5 |
+| Credential source | `process.env.CONTENTFUL_MANAGEMENT_TOKEN` |
+| Binding | in-process only |
+| Token in command arguments | NO |
+| Persisted CLI authentication | NOT USED / NOT APPROVED |
+| `retryOnError` | SDK default `true` |
+| `retryLimit` | `0` |
+| Effective automatic request replays | `0` / PROVEN |
+| One-time import authorization | CONSUMED |
+| Second import | NOT AUTHORIZED |
+| Repair/reset | NOT AUTHORIZED |
+
+The single import invocation exited nonzero after an HTTP 429. No automatic replay or second import was attempted, and no credential exposure was detected. `retryLimit = 0` is the proved control on the request replay path; the evidence must not be restated as `retryOnError = false`. Low-level HTTP requests/writes internal to the single import invocation are not asserted.
+
+After the incident, 23 GET-only forensic requests made 0 writes, retries, or mutating requests and proved that `dev` contains the complete approved semantic model with zero material drift. No second import or repair is required for semantic recovery; both remain unauthorized.
+
+Approval progression:
+
+- incident/recovery reconciliation: COMPLETE;
+- external reconciliation validation: PASS WITH NOTES;
+- Final Approval Reconciliation: COMPLETE;
+- external final validation: PASS WITH NOTES / APPROVED FOR GIT CHECKPOINT;
+- Batch 03.5 Git checkpoint: ESTABLISHED BY THE COMMIT CONTAINING THIS DOCUMENT.
+
 ## Phase 03 / Batch 03.4 Safety Truth-Surface Reconciliation
 
 Batch 03.4 Attempt 1: BLOCKED before Contentful access at the current-truth consistency gate because `ENVIRONMENT-STRATEGY.md` and `SECURITY-AND-SECRETS.md` still contained pre-03.3 current-state wording.
@@ -165,8 +196,8 @@ Batch 03.4 Attempt 1: BLOCKED before Contentful access at the current-truth cons
 - Destructive authorization: CONSUMED.
 - Safety reconciliation Contentful reads: 0.
 
-This post-rotation reconciliation is documentation-only and performs no Contentful access. Current `dev` is ready / freshly recreated / blank. The approved recovery snapshot remains unchanged and awaits a later separately authorized import.
+This Batch 03.4 section records historical pre-import state. Its post-rotation reconciliation was documentation-only and performed no Contentful access. At that checkpoint, `dev` was ready / freshly recreated / blank and the approved recovery snapshot awaited separately authorized import.
 
-External post-rotation reconciliation validation and external final validation returned PASS WITH NOTES, and final approval reconciliation is COMPLETE. The commit containing this document establishes the Batch 03.4 checkpoint. Batch 03.5 is next / not started, but import remains NOT AUTHORIZED.
+External post-rotation reconciliation validation and external final validation returned PASS WITH NOTES, and final approval reconciliation is COMPLETE. The Batch 03.4 checkpoint remains established. Subsequent Batch 03.5 evidence is authoritative for current `dev` and import state.
 
-Snapshot recoverability approval does not authorize import or a second lifecycle operation. This reconciliation records completed evidence only and grants no Contentful authorization.
+Snapshot recoverability approval did not itself authorize import or a second lifecycle operation. The later one-time Batch 03.5 import authorization is now consumed. This reconciliation records completed evidence only and grants no Contentful authorization.

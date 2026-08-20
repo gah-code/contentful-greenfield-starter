@@ -2,7 +2,7 @@
 
 Status: ACTIVE
 
-Current batch: 03.5 — Snapshot Import + Clean-Room Comparison — NEXT / NOT STARTED / READ-ONLY PRE-EXECUTION GATE FIRST
+Current / next batch: 03.6 — Phase 03 Validation + Closeout — NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION
 
 Owner: repository maintainer
 
@@ -23,16 +23,18 @@ Phase 03 uses the existing two-environment topology. `master` is the permanent p
 | Batch 03.3 | APPROVED / CHECKPOINTED |
 | Snapshot naming/configuration correction | EXTERNALLY APPROVED / PASS WITH NOTES |
 | Batch 03.4 | APPROVED / CHECKPOINTED |
-| Batch 03.5 | NEXT / NOT STARTED / READ-ONLY PRE-EXECUTION GATE FIRST |
-| Batch 03.6 | LATER |
+| Batch 03.5 | APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS DOCUMENT |
+| Batch 03.6 | NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION |
 | `master` | ready; 0 types / 0 entries / 0 assets / 0 tags / `en-US`; default true / fallback null; protected |
-| `dev` | ready; freshly recreated / blank; 0 types / 0 entries / 0 assets / 0 tags / `en-US` |
+| `dev` | ready; approved recovered v1 model; 10 types / 0 entries / 0 assets / 0 tags / `en-US`; zero material drift |
 | Pre-export tooling | APPROVED |
 | Export | COMPLETE / ONE AUTHORIZATION CONSUMED / EXIT 0 |
 | Snapshot | CREATED / EXTERNALLY APPROVED FOR RECOVERY USE |
 | Destructive rotation | COMPLETE EXACTLY ONCE / AUTHORIZATION CONSUMED |
 | Second rotation | NOT AUTHORIZED |
-| Import | NOT AUTHORIZED / NOT RUN |
+| Import | EXECUTED EXACTLY ONCE / AUTHORIZATION CONSUMED / EXIT 1 AFTER HTTP 429 |
+| Semantic recovery | PASS / `COMPLETE_APPROVED_SEMANTIC_STATE_PRESENT` / ZERO MATERIAL DRIFT |
+| Second import / repair | NOT AUTHORIZED / NOT NEEDED FOR SEMANTIC RECOVERY |
 | Seed | NOT STARTED |
 
 ## Batch 03.1 Result
@@ -156,10 +158,49 @@ Batch 03.4 Git checkpoint
 ✓ ESTABLISHED BY COMMIT CONTAINING THIS DOCUMENT
 
 03.5 snapshot import pre-execution gate
--> NEXT
+✓
+
+retry-semantics corrective gate
+✓
 
 import authorization
--> NOT GRANTED
+✓ CONSUMED
+
+JIT blank-state baseline
+✓
+
+single import invocation
+✓ EXECUTED / EXIT 1 / 429 INCIDENT
+
+STOP MUTATIONS
+✓
+
+post-failure GET-only forensics
+✓
+
+semantic clean-room comparison
+✓ PASS / ZERO DRIFT
+
+external semantic recovery validation
+✓ PASS WITH NOTES
+
+incident + recovery truth reconciliation
+✓ COMPLETE
+
+external reconciliation validation
+✓ PASS WITH NOTES
+
+final approval reconciliation
+✓ COMPLETE
+
+external final validation
+✓ PASS WITH NOTES
+
+Batch 03.5 Git checkpoint
+✓ ESTABLISHED BY COMMIT CONTAINING THIS DOCUMENT
+
+03.6 Phase 03 Validation + Closeout
+-> NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION
 ```
 
 Each gate fails closed. No gate authorizes the next destructive or mutating action implicitly.
@@ -289,7 +330,54 @@ Independent post-recreation validation:
 
 The approved snapshot remains local, Git-ignored, unchanged, and approved for recovery use. It represents the 10-type recovery model; it does not describe current live `dev`, which is intentionally blank.
 
-Batch 03.4 post-rotation reconciliation is complete. External reconciliation validation returned PASS WITH NOTES and approved final approval reconciliation, which is complete. External final validation returned PASS WITH NOTES and approved the Git checkpoint established by the commit containing this document. Batch 03.5 is next / not started; only its read-only pre-execution gate is next, and import is not authorized or run.
+Historical Batch 03.4 checkpoint state: post-rotation reconciliation was complete, external reconciliation validation returned PASS WITH NOTES, final approval reconciliation was complete, and external final validation approved the Git checkpoint. At that checkpoint, Batch 03.5 was next / not started; only its read-only pre-execution gate was next, and import was not authorized or run.
+
+## Batch 03.5 Result
+
+Status: APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS DOCUMENT
+
+External semantic recovery validation: PASS WITH NOTES
+
+Evidence: `content-model/reports/PHASE-03-BATCH-03.5-SNAPSHOT-IMPORT-AND-CLEAN-ROOM-COMPARISON.md`
+
+Pre-execution history:
+
+- the initial Gate G stopped on a static-assertion false negative without import or mutation;
+- the corrected read-only pre-execution gate passed;
+- the retry-semantics corrective gate proved `contentful-import` 10.0.18, `contentful-management` 12.10.0, and `contentful-sdk-core` 9.4.5 used SDK-default `retryOnError = true` with `retryLimit = 0` and 0 effective automatic request replays;
+- `CMA_MUTATING_RETRIES_DISABLED=PROVEN`.
+
+Authorized execution:
+
+- one explicit import authorization was granted for `dev` and the approved recovery snapshot;
+- 13 JIT GETs reconfirmed blank `dev`, blank protected `master`, exact topology, and locale compatibility;
+- exactly one top-level import invocation began, consuming the authorization;
+- the command exited 1 after an HTTP 429 during Editor Interface import;
+- automatic request replays: 0;
+- low-level HTTP requests/writes internal to the single import invocation: not asserted;
+- no second import, repair, reset, bootstrap, additional export, or seed followed.
+
+Post-failure evidence:
+
+- forensic mode: GET only;
+- forensic GETs: 23;
+- forensic writes, retries, and mutating requests: 0;
+- topology: exactly `dev` + `master`;
+- protected `master`: ready / blank / 0 types / 0 entries / 0 assets / 0 tags / `en-US`;
+- current `dev`: ready / 10 types / 0 entries / 0 assets / 0 tags / `en-US`;
+- all 10 approved type IDs are present and published;
+- all 10 expected Editor Interfaces are present;
+- missing or unexpected types and missing Editor Interfaces: none.
+
+The checksum-anchored semantic verifier returned `ok = true`, 0 failures, and the exact 10 types / 99 fields / 18 references / 102 validations / 10 display fields / 8 regex validations / 6 Rich Text fields / 2 editor overrides contract. The post-failure classification is `COMPLETE_APPROVED_SEMANTIC_STATE_PRESENT`.
+
+Import command outcome: FAILED OPERATIONALLY / EXIT 1 / HTTP 429.
+
+Semantic recovery outcome: PASS.
+
+Clean-room comparison: PASS / ZERO MATERIAL DRIFT.
+
+External failed-import handling validation returned PASS ON FAIL-CLOSED HANDLING. External forensic validation passed, and external semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. Final Approval Reconciliation is complete. No second import or repair is required to establish the approved semantic recovery state; both remain unauthorized. The commit containing this document establishes the Batch 03.5 checkpoint, and Batch 03.6 is next / not started after successful checkpoint verification.
 
 ## Clean-Room Success Contract
 
@@ -311,11 +399,11 @@ Batch 03.1 external approval established this Phase 03 sequence:
 | 03.2 | Export, Import + Snapshot Verification Tooling Hardening | APPROVED |
 | 03.3 | Governed Model Export + Snapshot Validation | APPROVED / CHECKPOINTED |
 | 03.4 | Destructive Dev Rotation + Blank-State Validation | APPROVED / CHECKPOINTED |
-| 03.5 | Snapshot Import + Clean-Room Comparison | NEXT / NOT STARTED |
-| 03.6 | Phase 03 Validation + Closeout | LATER |
+| 03.5 | Snapshot Import + Clean-Room Comparison | APPROVED / CHECKPOINTED |
+| 03.6 | Phase 03 Validation + Closeout | NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION |
 
 Batch 03.3 final approval reconciliation and external final validation are complete. The commit containing this document establishes the checkpoint. The one-export authorization is consumed; no second export is authorized.
 
 ## Current Boundary
 
-Stop after the Batch 03.4 checkpoint. Exactly one authorized `dev` deletion and one recreation from protected `master` are complete, independent blank-state validation passed, and the destructive authorization is consumed. Batch 03.4 is approved / checkpointed by the commit containing this document. Batch 03.5 is next / not started, and its read-only pre-execution gate is the next permitted work. Import authorization is not granted. A second export, second rotation, second `dev` deletion/recreation, import, bootstrap, and seed remain unauthorized. Package files, Phase 02 artifacts, and the ignored raw snapshot remain unchanged by this checkpoint.
+Stop after the Batch 03.5 checkpoint. One authorized import invocation is complete, the authorization is consumed, the command exited 1 after an HTTP 429, and independent GET-only forensics proved the complete approved semantic model is present in `dev` with zero material drift. External reconciliation and final validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. The commit containing this document establishes the Batch 03.5 checkpoint; Batch 03.6 is next / not started after successful checkpoint verification. A second export, second import, second rotation, `dev` deletion/recreation, manual repair, bootstrap, and seed remain unauthorized. Package files, tooling, Phase 02 artifacts, and the ignored raw snapshot remain unchanged by this checkpoint.

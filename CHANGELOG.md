@@ -27,6 +27,16 @@ All meaningful project changes should be recorded here.
 
 ### Changed
 
+- Executed the single authorized Phase 03 / Batch 03.5 model-only snapshot import into `dev`; the authorization was consumed and the importer exited nonzero after an HTTP 429 during Editor Interface processing.
+- Per the fail-closed contract, performed no second import, repair, reset, bootstrap, export, or seed operation.
+- Completed 23-request GET-only post-failure forensics and confirmed all 10 approved content types are present and published, all expected Editor Interfaces are available, and protected `master` remains blank.
+- Reused the checksum-anchored semantic verifier and confirmed the recovered `dev` model matches the exact 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2 contract with zero material drift.
+- At the incident-reconciliation stage, classified the result as an operational import incident with successful semantic clean-room recovery; Batch 03.5 approval and checkpoint were then pending.
+- External reconciliation validation returned PASS WITH NOTES for the Batch 03.5 import-incident and semantic-recovery truth-surface reconciliation.
+- Completed the Batch 03.5 Final Approval Reconciliation before subsequent external final validation.
+- External Final Validation returned PASS WITH NOTES and approved Phase 03 / Batch 03.5 for checkpoint.
+- Checkpointed Batch 03.5 while preserving the distinction between the importer exit-1 HTTP 429 incident and the independently verified complete semantic recovery with zero material drift.
+- Advanced Batch 03.6 to NEXT / NOT STARTED after successful checkpoint verification; no second import or repair was authorized.
 - Aligned the technical package name with `contentful-greenfield-starter`.
 - Declared npm as `packageManager` with `npm@10.8.3`.
 - Renamed the active Phase 00 document to `docs/phases/PHASE-00-BASELINE-AND-ENVIRONMENT-SETUP.md`.

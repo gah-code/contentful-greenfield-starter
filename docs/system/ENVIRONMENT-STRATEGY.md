@@ -1,6 +1,6 @@
 # Environment Strategy
 
-Status: Phase 00 complete; Phase 02 complete / frozen; Phase 03 active; Batches 03.1 through 03.4 approved / checkpointed; Batch 03.5 next / not started with read-only pre-execution gate first
+Status: Phase 00 complete; Phase 02 complete / frozen; Phase 03 active; Batches 03.1 and 03.2 approved; Batches 03.3 through 03.5 approved / checkpointed; Batch 03.6 next / not started after successful checkpoint verification
 Owner: Phase 00 — Baseline + Two-Environment Setup
 Canonical environment topology: `master` + `dev`
 
@@ -9,7 +9,7 @@ Canonical environment topology: `master` + `dev`
 | Environment | Role | Rules | Verification state |
 |---|---|---|---|
 | `master` | Permanent protected baseline and future production/release target | No bootstrap migration, no experimental schema work, no imports during development | Ready / protected blank; 0 types / 0 entries / 0 assets / 0 tags / `en-US`; default true / fallback null |
-| `dev` | Only non-master rotating sandbox | Freshly recreated once from protected `master`; preserve blank state until a separately authorized import | Ready / freshly recreated / blank; 0 types / 0 entries / 0 assets / 0 tags / `en-US`; default true / fallback null |
+| `dev` | Only non-master rotating sandbox | Recreated once from protected `master`; one authorized import invocation is complete and no second import or repair is authorized | Ready / approved recovered v1 model; 10 types / 0 entries / 0 assets / 0 tags / `en-US`; default true / fallback null; zero material drift |
 
 Verification is a workflow state, not an environment ID. This project does not maintain a separate physical environment for verification.
 
@@ -38,7 +38,7 @@ Approved uses:
 
 Current limits:
 
-- preserve the freshly recreated blank state until a separately approved import gate
+- preserve the independently verified recovered v1 model; no second import or repair is authorized
 - Gate B authorization is consumed; do not run the bootstrap migration again without fresh explicit authorization
 - Batch 03.4 destructive authorization is consumed; a second deletion or recreation is not authorized
 - do not store irreplaceable content in `dev` before the Phase 03 recoverability gate
@@ -59,7 +59,9 @@ The approved recovery snapshot is `contentful-model.dev.v1.20260819T210704Z.json
 
 Batch 03.4 completed exactly one separately authorized `dev` deletion and exactly one recreation from protected `master`. The lifecycle operation used public `contentful-management` 12.10.0 with in-process credential binding, one `DELETE`, one `PUT`, and 0 automatic destructive retries. Independent validation passed with 14 GETs and 1 readiness poll: recreated `dev` and protected `master` are ready and blank at 0 types / 0 entries / 0 assets / 0 tags / `en-US`. External validation returned PASS WITH NOTES.
 
-Batch 03.4 destructive authorization is CONSUMED. Delete count is 1, recreation count is 1, source is `master`, automatic retries are 0, and blank-state validation is PASS. Post-rotation reconciliation is COMPLETE, external reconciliation validation is PASS WITH NOTES, and final approval reconciliation is COMPLETE. External final validation returned PASS WITH NOTES, and the commit containing this document establishes the Batch 03.4 checkpoint. A second rotation, import, and additional bootstrap execution remain NOT AUTHORIZED. Batch 03.5 is NEXT / NOT STARTED with its read-only pre-execution gate first.
+Batch 03.4 destructive authorization is CONSUMED. Delete count is 1, recreation count is 1, source is `master`, automatic retries are 0, and blank-state validation is PASS. Post-rotation reconciliation is COMPLETE, external reconciliation validation is PASS WITH NOTES, and final approval reconciliation is COMPLETE. External final validation returned PASS WITH NOTES, and the Batch 03.4 checkpoint is established. A second rotation and additional bootstrap execution remain NOT AUTHORIZED.
+
+Batch 03.5 passed its corrected pre-execution and retry-semantics gates, then consumed one explicit import authorization. The sole top-level import command exited 1 after an HTTP 429 during Editor Interface import. Effective automatic request replays were 0; no second import, repair, reset, bootstrap, additional export, or seed followed. Twenty-three GET-only forensic requests independently confirmed protected blank `master` and current `dev` with all 10 approved types published, all 10 Editor Interfaces present, 0 entries / 0 assets / 0 tags, and `en-US`. The semantic verifier passed the exact 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2 contract with zero material drift. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. Truth-surface and Final Approval Reconciliation are complete; the commit containing this document establishes the Batch 03.5 checkpoint, and Batch 03.6 is next / not started after successful checkpoint verification.
 
 Seed content remains NOT STARTED.
 
@@ -85,7 +87,7 @@ Batch 03.4 Read-Only Destructive Preflight Attempt 1: BLOCKED / FAIL-CLOSED at t
 - Independent blank-state validation: PASS / 14 GETs / 1 readiness poll / 0 writes.
 - Destructive authorization: CONSUMED.
 
-Current `dev` is the freshly recreated blank sandbox. The approved recovery snapshot remains the model source for a later separately authorized import; the snapshot model must not be described as current live `dev`.
+The Batch 03.4 result above is historical pre-import evidence. Current `dev` is ready with the approved recovered v1 model after the single authorized Batch 03.5 import incident. The approved recovery snapshot remains local, ignored, unchanged, and approved for recovery use.
 
 ## Serial Clean-Room Workflow
 
@@ -135,19 +137,37 @@ Batch 03.4 checkpoint
 ✓ ESTABLISHED BY COMMIT CONTAINING THIS DOCUMENT
 
 03.5 snapshot import pre-execution gate
--> NEXT
+✓
 
 import authorization
--> NOT GRANTED
+✓ CONSUMED
 
 import snapshot exactly once
--> LATER
+✓ EXECUTED / EXIT 1 / 429 INCIDENT
 
-semantic comparison
--> LATER
+post-failure GET-only forensics
+✓
 
-verified dev
--> LATER
+semantic recovery
+✓ PASS / ZERO MATERIAL DRIFT
+
+03.5 reconciliation
+✓ COMPLETE
+
+external reconciliation validation
+✓ PASS WITH NOTES
+
+final approval reconciliation
+✓ COMPLETE
+
+external final validation
+✓ PASS WITH NOTES
+
+03.5 checkpoint
+✓ ESTABLISHED BY COMMIT CONTAINING THIS DOCUMENT
+
+03.6 Phase 03 Validation + Closeout
+-> NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION
 ```
 
 The environment ID remains `dev` before and after the clean-room recreation.
