@@ -31,8 +31,8 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | --- | --- |
 | Current project state | Phase 04 - Active by the commit containing this README |
 | Latest completed phase | Phase 03 - Model Export + Serial Clean-Room Verification |
-| Latest approved/checkpointed batch | Batch 04.1 - Read-Only Planning + Editorial-Quality Preflight - approved / checkpointed by the containing commit |
-| Current / next work | Batch 04.2 - Editorial QA Scenario + Temporary Authoring Contract - Next / not started after successful 04.1 checkpoint verification |
+| Latest approved/checkpointed batch | Batch 04.2 - Editorial QA Scenario + Temporary Authoring Contract - approved / checkpointed by the future containing commit after External Final Validation |
+| Current / next work | Batch 04.3 - Controlled Temporary Editorial QA Execution - next / not started after successful 04.2 checkpoint; read-only pre-execution first |
 | Batch 04.1 external validation | PASS WITH NOTES |
 | Pre-export tooling | Approved |
 | Content model | Approved V1 model contract |
@@ -54,7 +54,7 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Import | Executed exactly once / authorization consumed / operational exit 1 after HTTP 429; second import not authorized |
 | Semantic recovery | PASS / clean-room comparison PASS / zero material drift |
 | Phase 03 technical exit criteria | 22 / 22 PASS |
-| Phase 04 | Active by containing commit; Batch 04.2 next / not started |
+| Phase 04 | Active; Batch 04.2 Final Approval Reconciliation complete; Batch 04.3 mutation not authorized |
 | Seed content | Not started |
 
 > For canonical current state, see [docs/PROJECT-STATE.md](docs/PROJECT-STATE.md) and [TASKS.md](TASKS.md).
@@ -95,7 +95,7 @@ The implementation sequence keeps CMS decisions upstream of templates and keeps 
 
 Verification is a workflow state, not a third Contentful environment.
 
-Phase 03 Batches 03.1 and 03.2 are approved; Batches 03.3 through 03.6 are approved / checkpointed by their containing commits. Batch 03.5 consumed one explicit import authorization. The import command exited 1 after an HTTP 429, while independent forensics proved semantic recovery PASS with zero material drift. Batch 03.6 preserved the initial unresolved evidence-capture incident, completed one externally accepted corrective validation with 23 GETs and 0 writes, and passed all 22 Phase 03 technical exit criteria. External Batch 03.6 validation and External Final Validation returned PASS WITH NOTES. Phase 03 is complete / frozen. The commit containing this README activates Phase 04 and checkpoints Batch 04.1; Batch 04.2 is next / not started after successful checkpoint verification. No Phase 04 Contentful mutation is authorized.
+Phase 03 Batches 03.1 and 03.2 are approved; Batches 03.3 through 03.6 are approved / checkpointed by their containing commits. Batch 03.5 consumed one explicit import authorization. The import command exited 1 after an HTTP 429, while independent forensics proved semantic recovery PASS with zero material drift. Batch 03.6 preserved the initial unresolved evidence-capture incident, completed one externally accepted corrective validation with 23 GETs and 0 writes, and passed all 22 Phase 03 technical exit criteria. External Batch 03.6 validation and External Final Validation returned PASS WITH NOTES. Phase 03 is complete / frozen. Commit `33e01ae068769631b3bd997b28711535f7c7b340` activates Phase 04 and checkpoints Batch 04.1. Batch 04.2 External Validation returned PASS WITH NOTES and Final Approval Reconciliation is complete; its checkpoint requires External Final Validation and the future containing commit. Batch 04.3 then becomes next/not started with a read-only pre-execution gate first. No Phase 04 Contentful mutation is authorized.
 
 ## Repository Operating System
 
@@ -189,7 +189,7 @@ Do not run authentication, migration, export, import, or environment commands un
 | 01 | Content Strategy + Route Contract - complete / frozen |
 | 02 | Content Model Contract + Bootstrap Migration - complete / frozen |
 | 03 | Model Export + Serial Clean-Room Verification - complete / frozen; Batch 03.6 approved / checkpointed |
-| 04 | Editorial QA + Model Freeze - active by containing commit; Batch 04.1 approved / checkpointed; Batch 04.2 next |
+| 04 | Editorial QA + Model Freeze - active; Batch 04.2 checkpoint encoded for future containing commit; Batch 04.3 read-only gate next after verification |
 | 05 | Representative Seed Content |
 | 06 | Frontend Contracts + Adapter Boundary |
 | 07 | Delivery Integration |
@@ -236,6 +236,7 @@ Phase 02 / Batch 02.2 approves the current v1 standalone type inventory: `siteSe
 
 - [docs/phases/PHASE-04-EDITORIAL-QA-AND-MODEL-FREEZE.md](docs/phases/PHASE-04-EDITORIAL-QA-AND-MODEL-FREEZE.md) - active Phase 04 editorial-QA contract, mutation boundaries, and model-freeze intent
 - [content-model/reports/PHASE-04-BATCH-04.1-READ-ONLY-PLANNING-AND-EDITORIAL-QUALITY-PREFLIGHT.md](content-model/reports/PHASE-04-BATCH-04.1-READ-ONLY-PLANNING-AND-EDITORIAL-QUALITY-PREFLIGHT.md) - sanitized approved Batch 04.1 preflight evidence and editorial findings
+- [docs/system/EDITORIAL-QA-AND-TEMPORARY-AUTHORING-CONTRACT.md](docs/system/EDITORIAL-QA-AND-TEMPORARY-AUTHORING-CONTRACT.md) - externally validated Batch 04.2 scenario, temporary-artifact, authoring-envelope, and cleanup-boundary contract awaiting External Final Validation/checkpoint
 - [docs/phases/PHASE-03-MODEL-EXPORT-AND-SERIAL-CLEAN-ROOM-VERIFICATION.md](docs/phases/PHASE-03-MODEL-EXPORT-AND-SERIAL-CLEAN-ROOM-VERIFICATION.md) - completed Phase 03 serial verification, incident/recovery evidence, and closeout state
 - [docs/phases/PHASE-02-CONTENT-MODEL-CONTRACT-AND-BOOTSTRAP-MIGRATION.md](docs/phases/PHASE-02-CONTENT-MODEL-CONTRACT-AND-BOOTSTRAP-MIGRATION.md) - completed Phase 02 model and migration closeout
 - [docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md](docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md) - completed Phase 01 closeout, frozen requirements evidence, and Phase 02 handoff boundary

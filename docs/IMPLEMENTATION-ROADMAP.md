@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Phase 03 complete / frozen; Phase 04 active by the commit containing this roadmap; Batch 04.1 approved / checkpointed; Batch 04.2 next / not started after successful 04.1 checkpoint verification
+Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Phase 03 complete / frozen; Phase 04 active; Batch 04.2 approved / checkpointed by the future containing commit after External Final Validation; Batch 04.3 next / not started after successful checkpoint verification with read-only pre-execution first
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -56,8 +56,8 @@ Batch 03.5 — APPROVED / CHECKPOINTED
 Batch 03.6 — APPROVED / CHECKPOINTED
 Phase 04 — ACTIVE BY THE COMMIT CONTAINING THIS ROADMAP
 Batch 04.1 — APPROVED / CHECKPOINTED
-Batch 04.2 — NEXT / NOT STARTED
-Batch 04.3 — LATER
+Batch 04.2 — APPROVED / CHECKPOINTED BY FUTURE CONTAINING COMMIT AFTER EXTERNAL FINAL VALIDATION
+Batch 04.3 — NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION / READ-ONLY PRE-EXECUTION FIRST / MUTATION NOT AUTHORIZED
 Batch 04.4 — LATER
 Batch 04.5 — LATER
 Batch 04.6 — LATER
@@ -92,7 +92,7 @@ Create a safe operating surface before any content type is created.
 
 ## Phase 01 — Content Strategy + Route Contract
 
-Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 and Phase 03 are COMPLETE / FROZEN. Phase 04 is ACTIVE BY THE COMMIT CONTAINING THIS ROADMAP; Batch 04.1 is APPROVED / CHECKPOINTED and Batch 04.2 is NEXT / NOT STARTED.
+Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 and Phase 03 are COMPLETE / FROZEN. Phase 04 is ACTIVE; Batch 04.2 is approved / checkpointed by the future containing commit after External Final Validation, then Batch 04.3 becomes next/not started with read-only pre-execution first.
 
 ### Goal
 
@@ -299,7 +299,7 @@ Evidence: `content-model/reports/PHASE-02-BATCH-02.7-LIVE-SCHEMA-VALIDATION.md`.
 
 Result: 10 / 10 types, 99 / 99 stored fields, 18 / 18 authored references, 102 / 102 validation objects, 10 / 10 display fields, 2 / 2 explicit editor controls, and 0 material mismatches.
 
-Phase 02 and Phase 03 are COMPLETE / FROZEN. Batches 03.1 and 03.2 are APPROVED, and Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED. Phase 04 is ACTIVE BY THE COMMIT CONTAINING THIS ROADMAP; Batch 04.1 is APPROVED / CHECKPOINTED and Batch 04.2 is NEXT / NOT STARTED.
+Phase 02 and Phase 03 are COMPLETE / FROZEN. Batches 03.1 and 03.2 are APPROVED, and Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED. Phase 04 is ACTIVE; Batch 04.2 is approved / checkpointed by the future containing commit after External Final Validation, then Batch 04.3 becomes next/not started with read-only pre-execution first.
 
 ### Exit criteria
 
@@ -381,7 +381,7 @@ Batch 03.6 preserves the initial final-live validator as an unresolved evidence-
 
 ## Phase 04 — Editorial QA + Model Freeze
 
-Current state: ACTIVE BY THE COMMIT CONTAINING THIS ROADMAP. Before that commit exists, committed repository truth remains Phase 04 — NEXT / NOT STARTED.
+Current state: ACTIVE. Batch 04.1 is approved / checkpointed. Batch 04.2 External Validation returned PASS WITH NOTES and Final Approval Reconciliation is complete. The future containing commit establishes its checkpoint only after External Final Validation.
 
 ### Goal
 
@@ -392,15 +392,17 @@ Produce an editor-tested, migration-governed v1 model freeze candidate. The mode
 | Batch | Name | Operation class | Status after containing commit |
 | --- | --- | --- | --- |
 | 04.1 | Read-Only Planning + Editorial-Quality Preflight | GET-only / repository reads | APPROVED / CHECKPOINTED |
-| 04.2 | Editorial QA Scenario + Temporary Authoring Contract | REPOSITORY-ONLY | NEXT / NOT STARTED |
-| 04.3 | Controlled Temporary Editorial QA Execution | SEPARATELY GATED CONTENTFUL MUTATION | LATER |
+| 04.2 | Editorial QA Scenario + Temporary Authoring Contract | REPOSITORY-ONLY | APPROVED / CHECKPOINTED BY FUTURE CONTAINING COMMIT AFTER EXTERNAL FINAL VALIDATION |
+| 04.3 | Controlled Temporary Editorial QA Execution | READ-ONLY PRE-EXECUTION FIRST; MUTATION SEPARATELY GATED | NEXT / NOT STARTED AFTER SUCCESSFUL 04.2 CHECKPOINT VERIFICATION |
 | 04.4 | Editorial QA Findings Reconciliation + Conditional Model / Editor-Interface Corrections | Reconciliation / conditional mutation | LATER |
 | 04.5 | Editorial Workflow + Field Guidance | REPOSITORY-ONLY | LATER |
 | 04.6 | Model Freeze Validation + Phase 04 Closeout | READ-ONLY + REPOSITORY RECONCILIATION | LATER |
 
 ### Operating Boundaries
 
-- Batch 04.2 assigns one primary enforcement owner to every scenario and resolves EF-05 ownership before 04.3 can be authorized.
+- Batch 04.2 defines 102 scenarios with one primary owner each, plans 19 temporary Entries and 3 Assets, and externally validates EF-05 Option B editorial-guidance ownership with no model correction or live drift.
+- The 102 QA scenarios and 102 Contentful validation objects are independent counts whose equality is coincidental, not a coupled invariant.
+- Future Asset ingestion, creation, metadata update, processing, readiness checks, and publication are separately bounded; exact mechanics are a 04.3 read-only pre-execution prerequisite.
 - Temporary authoring in Batch 04.3 is not Phase 05 representative seed content.
 - Batch 04.3 requires a fresh read-only gate, external validation, and explicit human authorization.
 - Temporary QA cleanup is not automatic and requires separate evidence review, inventory, gate, authorization, zero-content proof, and external validation.

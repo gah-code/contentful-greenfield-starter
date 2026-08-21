@@ -438,6 +438,21 @@ OD-01, OD-02, OD-03, OD-04, OD-05, OD-09, OD-10, and OD-14 remain open content-a
 - No fixtures, frontend adapters, or route implementations were created.
 - Cross-field validations may require application/editorial enforcement if Contentful schema validation cannot express them directly.
 
+## Phase 04 Downstream Enforcement Clarification — EF-05
+
+Phase 04 / Batch 04.2 External Validation returned PASS WITH NOTES and accepted Option B for EF-05. This downstream clarification preserves the original approved requirement that Project and Article tag values should not be duplicated within one entry while making its enforcement owner explicit.
+
+| Tag rule | Primary enforcement owner | Current implementation |
+|---|---|---|
+| Maximum 12 tags per entry | CONTENTFUL HARD VALIDATION | Array cardinality validation in migration 0001 |
+| Maximum 40 characters per tag | CONTENTFUL HARD VALIDATION | Array item-length validation in migration 0001 |
+| No duplicate tag values within one entry | EDITORIAL GUIDANCE / QA | Editorial review and QA scenario enforcement |
+| Semantic tag quality | EDITORIAL GUIDANCE / QA | Editorial review |
+
+Contentful field-level `unique` validation is not used as a duplicate-item validator inside these Array-of-Symbol fields. Contentful may technically accept duplicate values in `project.tags` or `article.tags`; that acceptance is not schema drift or a schema defect. Editorial QA must identify duplicates as a failure of the approved editorial-quality contract.
+
+This clarification changes enforcement-ownership clarity only. It does not change field IDs, requiredness, references, validations, validation-object counts, regex, Rich Text behavior, editor overrides, migration semantics, or the live model. Migration 0001 remains correct and unchanged, the live model remains zero-drift, the validation-object count remains 102, and Phase 02 remains COMPLETE / FROZEN.
+
 ## Migration Handoff
 
 Batch 02.5 records approved RE2-corrected migration syntax, migration diff, and non-mutating preflight evidence.

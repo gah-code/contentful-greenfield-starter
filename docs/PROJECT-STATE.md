@@ -1,10 +1,10 @@
 # Project State
 
 Project: `contentful-greenfield-starter`
-Current project state: Phase 04 — ACTIVE BY THE COMMIT CONTAINING THIS STATE
+Current project state: Phase 04 — ACTIVE
 Latest completed phase: Phase 03 — MODEL EXPORT + SERIAL CLEAN-ROOM VERIFICATION — COMPLETE / FROZEN
-Latest approved/checkpointed batch: Batch 04.1 — READ-ONLY PLANNING + EDITORIAL-QUALITY PREFLIGHT — APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS STATE
-Current / next batch: Batch 04.2 — EDITORIAL QA SCENARIO + TEMPORARY AUTHORING CONTRACT — NEXT / NOT STARTED AFTER SUCCESSFUL 04.1 CHECKPOINT VERIFICATION
+Latest approved/checkpointed batch: Batch 04.2 — EDITORIAL QA SCENARIO + TEMPORARY AUTHORING CONTRACT — APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS STATE AFTER EXTERNAL FINAL VALIDATION
+Current / next batch: Batch 04.3 — CONTROLLED TEMPORARY EDITORIAL QA EXECUTION — NEXT / NOT STARTED AFTER SUCCESSFUL 04.2 CHECKPOINT; FIRST ACTION READ-ONLY PRE-EXECUTION GATE
 Batch 03.4 post-rotation reconciliation: COMPLETE
 Batch 03.4 external reconciliation validation: PASS WITH NOTES
 Batch 03.4 final approval reconciliation: COMPLETE
@@ -34,9 +34,20 @@ Phase 04: ACTIVE BY THE COMMIT CONTAINING THIS STATE
 Batch 04.1 preflight: PASS WITH NOTES / 23 GETS / 0 RETRIES / 0 WRITES / EXTERNALLY VALIDATED
 Batch 04.1 Final Approval Reconciliation: COMPLETE
 Batch 04.1 checkpoint: APPROVED / ESTABLISHED BY THE COMMIT CONTAINING THIS STATE
-Batch 04.2: NEXT / NOT STARTED AFTER SUCCESSFUL 04.1 CHECKPOINT VERIFICATION
-Batches 04.3–04.6: LATER
-EF-05: KNOWN PHASE 02 CONTRACT / ENFORCEMENT OWNERSHIP AMBIGUITY / 04.2 OWNER RESOLUTION REQUIRED / NOT LIVE DRIFT
+Batch 04.2 external validation: PASS WITH NOTES
+Batch 04.2 Final Approval Reconciliation: COMPLETE
+Batch 04.2 External Final Validation: PENDING
+Batch 04.2 checkpoint: ESTABLISHED ONLY BY FUTURE CONTAINING COMMIT AFTER EXTERNAL FINAL VALIDATION
+Batch 04.2 scenarios: 102 / ONE PRIMARY OWNER EACH
+Batch 04.2 temporary plan: 19 ENTRIES / 3 ASSETS / RESERVED `qa04-` IDENTITIES
+Batch 04.2 future authoring envelope: 19 ENTRY CREATES / 3 ASSET CREATES / 51 ENTRY UPDATE ABSOLUTE CEILING / 3 ASSET METADATA UPDATES / MAX 3 PLANNED INGESTION OPERATIONS / MAX 3 ASSET PROCESSING INVOCATIONS / CONDITIONAL READINESS CEILING 15 / 4 ENTRY PUBLISH ATTEMPTS / 2 SUCCESSFUL ENTRY PUBLISHES / 3 ASSET PUBLISHES / 0 UNPUBLISHES
+Batch 04.2 cleanup: SEPARATE FUTURE GATE / NOT AUTHORIZED
+Batch 04.3: NEXT / NOT STARTED ONLY AFTER SUCCESSFUL 04.2 CHECKPOINT / FIRST ACTION READ-ONLY PRE-EXECUTION / MUTATION NOT AUTHORIZED
+Batches 04.4–04.6: LATER
+EF-05: OPTION B / OWNERSHIP CLARIFIED / PRIMARY OWNER EDITORIAL GUIDANCE / NO MODEL CORRECTION REQUIRED / NOT LIVE DRIFT
+QA scenario count vs validation objects: 102 / 102 / EQUALITY COINCIDENTAL / NOT A COUPLED INVARIANT
+Asset ingestion method: MUST BE FROZEN DURING 04.3 READ-ONLY PRE-EXECUTION / BLOCKS MUTATION AUTHORIZATION UNTIL RESOLVED
+Asset readiness: CONDITIONAL PLANNING CEILING 15 / EXACT LIMIT REQUIRED IN 04.3 PRE-EXECUTION
 Model version: NOT YET FROZEN
 Recovery model: VALIDATED SNAPSHOT / 0 MATERIAL DRIFT / APPROVED FOR RECOVERY USE
 Pre-export tooling: APPROVED
@@ -115,7 +126,9 @@ Post-failure forensics used 23 GETs and 0 writes. They confirmed exact `dev` + `
 
 Batch 03.6 initial final-live Gate F completed without recoverable terminal evidence. Its semantic result remains unresolved, with 0 writes and no retry. External review approved one corrective GET-only invocation; it passed with 23 GETs, 0 writes, 0 retries, exact `dev` + `master` topology, protected blank `master`, all 10 published types, all 10 Editor Interfaces, and the exact zero-drift semantic contract. All 22 Phase 03 technical exit criteria pass, closeout truth reconciliation is complete, the Content Strategy pointer correction is complete, external Batch 03.6 validation and External Final Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. The Phase 03 containing commit established Batch 03.6 as approved / checkpointed and Phase 03 as complete / frozen. See `content-model/reports/PHASE-03-BATCH-03.6-PHASE-03-VALIDATION-AND-CLOSEOUT.md`.
 
-Batch 04.1 completed read-only repository and Contentful preflight, confirmed the exact frozen recovery contract and zero material drift, inventoried the editorial authoring surface, and established the externally approved Phase 04 architecture. Its live evidence was 23 GETs, 0 retries, and 0 writes; Final Approval Reconciliation did not rerun those checks and made zero Contentful calls. The commit containing this state activates Phase 04 and checkpoints Batch 04.1. Batch 04.2 is next / not started and must resolve EF-05 enforcement ownership before any Batch 04.3 mutation authorization. See `content-model/reports/PHASE-04-BATCH-04.1-READ-ONLY-PLANNING-AND-EDITORIAL-QUALITY-PREFLIGHT.md` and `docs/phases/PHASE-04-EDITORIAL-QA-AND-MODEL-FREEZE.md`.
+Batch 04.1 completed read-only repository and Contentful preflight, confirmed the exact frozen recovery contract and zero material drift, inventoried the editorial authoring surface, and established the externally approved Phase 04 architecture. Its live evidence was 23 GETs, 0 retries, and 0 writes; Final Approval Reconciliation did not rerun those checks and made zero Contentful calls. Commit `33e01ae068769631b3bd997b28711535f7c7b340` activates Phase 04 and checkpoints Batch 04.1.
+
+Batch 04.2 External Validation returned PASS WITH NOTES and accepted EF-05 Option B. Final Approval Reconciliation is complete; the future containing commit establishes the 04.2 checkpoint only after External Final Validation. The canonical contract preserves 102 countable scenarios, 19 planned temporary Entries, 3 planned temporary Assets, separately bounded authoring/cleanup, and a 51 Entry-update absolute ceiling. The 102 QA scenarios and 102 Contentful validation objects are independent counts whose equality is coincidental. Asset ingestion, creation, metadata update, processing, readiness checks, and publication are separately bounded; the exact ingestion path and readiness limit must be frozen by the 04.3 read-only pre-execution gate. Batch 04.2 made zero Contentful requests and mutations. After checkpoint verification, Batch 04.3 is next/not started with read-only pre-execution first; mutation remains unauthorized. See `docs/system/EDITORIAL-QA-AND-TEMPORARY-AUTHORING-CONTRACT.md` and `content-model/reports/PHASE-04-BATCH-04.2-EDITORIAL-QA-SCENARIO-AND-TEMPORARY-AUTHORING-CONTRACT.md`.
 
 The content-strategy foundation is approved with open decisions intentionally carried forward to later Phase 01 batches.
 
@@ -381,4 +394,4 @@ Phase 00 is complete. Batch 00.1, Batch 00.2, Batch 00.3, Batch 00.4, and Batch 
 
 Phase 01 is complete / frozen. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is approved after external validation. Batch 01.4 is approved after external validation. Batch 01.5 is approved after external validation. Phase 02 is complete / frozen, Batch 02.1 through Batch 02.4 are approved, Batch 02.5 is re-approved after compatibility corrections, Batch 02.6 is approved after successful bootstrap execution in `dev`, and Batch 02.7 is approved after external validation.
 
-Phase 03 — Model Export + Serial Clean-Room Verification — is COMPLETE / FROZEN. Batches 03.1 and 03.2 are APPROVED. Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED. Batch 03.5 preserves the operational exit 1 / HTTP 429 incident separately from semantic recovery PASS and zero material drift. Phase 04 is ACTIVE BY THE COMMIT CONTAINING THIS STATE; Batch 04.1 is APPROVED / CHECKPOINTED BY THAT COMMIT, Batch 04.2 is NEXT / NOT STARTED after successful checkpoint verification, and Batches 04.3 through 04.6 are LATER. The approved recovered `dev` model had zero material drift at 04.1 entry validation; `master` remains the protected blank baseline. EF-05 remains a known contract/enforcement ownership ambiguity, not live drift. The model version is not yet frozen. All one-time mutation authorizations are consumed, and editorial QA authoring, cleanup, model/Editor Interface correction, export, snapshot creation, import, migration, bootstrap, environment operations, seed, fixtures, frontend, and other lifecycle execution remain unauthorized.
+Phase 03 — Model Export + Serial Clean-Room Verification — is COMPLETE / FROZEN. Batches 03.1 and 03.2 are APPROVED. Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED. Batch 03.5 preserves the operational exit 1 / HTTP 429 incident separately from semantic recovery PASS and zero material drift. Phase 04 is ACTIVE; Batch 04.1 is APPROVED / CHECKPOINTED and Batch 04.2 is encoded as APPROVED / CHECKPOINTED BY THE FUTURE CONTAINING COMMIT after External Final Validation. Batch 04.3 then becomes NEXT / NOT STARTED with read-only pre-execution first; Batches 04.4 through 04.6 remain LATER. The approved recovered `dev` model had zero material drift at 04.1 entry validation; `master` remains the protected blank baseline. EF-05 Option B ownership is clarified under editorial guidance with no model correction or live drift. The model version is not yet frozen. All mutation authorizations remain closed, and editorial QA authoring, Asset ingestion/processing, cleanup, model/Editor Interface correction, export, snapshot creation, import, migration, bootstrap, environment operations, seed, fixtures, frontend, and other lifecycle execution remain unauthorized.

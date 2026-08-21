@@ -6,13 +6,13 @@
 | --- | --- |
 | Phase 04 | ACTIVE BY THE COMMIT CONTAINING THIS DOCUMENT |
 | Batch 04.1 — Read-Only Planning + Editorial-Quality Preflight | APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS DOCUMENT |
-| Batch 04.2 — Editorial QA Scenario + Temporary Authoring Contract | NEXT / NOT STARTED AFTER SUCCESSFUL 04.1 CHECKPOINT VERIFICATION |
-| Batch 04.3 — Controlled Temporary Editorial QA Execution | LATER |
+| Batch 04.2 — Editorial QA Scenario + Temporary Authoring Contract | APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS DOCUMENT |
+| Batch 04.3 — Controlled Temporary Editorial QA Execution | NEXT / NOT STARTED AFTER SUCCESSFUL 04.2 CHECKPOINT VERIFICATION; FIRST ACTION READ-ONLY PRE-EXECUTION |
 | Batch 04.4 — Editorial QA Findings Reconciliation + Conditional Model / Editor-Interface Corrections | LATER |
 | Batch 04.5 — Editorial Workflow + Field Guidance | LATER |
 | Batch 04.6 — Model Freeze Validation + Phase 04 Closeout | LATER |
 
-Before the containing commit exists, committed repository truth remains Phase 04 — NEXT / NOT STARTED. The containing commit establishes the Phase 04 transition and the Batch 04.1 checkpoint; this uncommitted working tree does not claim that checkpoint already exists.
+The Phase 04 transition and Batch 04.1 checkpoint are established at `33e01ae068769631b3bd997b28711535f7c7b340`. Before the future containing commit exists, committed truth remains at that Batch 04.1 checkpoint. This working-tree reconciliation has External Validation PASS WITH NOTES but still awaits External Final Validation and does not claim the 04.2 checkpoint already exists.
 
 ## Purpose
 
@@ -97,13 +97,19 @@ Purpose:
 
 Operation class: REPOSITORY-ONLY. No Contentful mutation.
 
-State: NEXT / NOT STARTED AFTER SUCCESSFUL 04.1 CHECKPOINT VERIFICATION.
+State: APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS DOCUMENT, only after External Final Validation and that future commit.
+
+Canonical contract: `docs/system/EDITORIAL-QA-AND-TEMPORARY-AUTHORING-CONTRACT.md`.
+
+Implementation evidence: `content-model/reports/PHASE-04-BATCH-04.2-EDITORIAL-QA-SCENARIO-AND-TEMPORARY-AUTHORING-CONTRACT.md`.
 
 ### 04.3 — Controlled Temporary Editorial QA Execution
 
 Purpose: execute only externally approved temporary QA scenarios.
 
 Operation class: CONTENTFUL MUTATION / SEPARATELY GATED.
+
+State after successful 04.2 checkpoint verification: NEXT / NOT STARTED. First action: READ-ONLY PRE-EXECUTION GATE. Mutation remains NOT AUTHORIZED.
 
 Required authoring workflow:
 
@@ -180,9 +186,9 @@ Examples:
 | Scenario | Primary owner |
 | --- | --- |
 | Invalid `projectType` enum | CONTENTFUL HARD VALIDATION |
-| Duplicate tag | OWNERSHIP MUST BE RESOLVED IN 04.2 |
-| Experience `endDate` before `startDate` | EDITORIAL GUIDANCE / APPLICATION |
-| Private or local HTTPS destination | GOVERNANCE / APPLICATION |
+| Duplicate tag | EDITORIAL GUIDANCE |
+| Experience `endDate` before `startDate` | EDITORIAL GUIDANCE |
+| Private or local HTTPS destination | GOVERNANCE |
 | Canonical URL behavior | APPLICATION / FUTURE FRONTEND |
 
 Contentful behavior is not a defect when the approved contract intentionally assigns enforcement elsewhere.
@@ -202,13 +208,30 @@ Externally approved refined classification:
 - 04.2 REQUIRED INPUT
 - 04.3 MUTATION AUTHORIZATION BLOCKED UNTIL OWNERSHIP IS RESOLVED
 
-Batch 04.2 must evaluate without prejudging the result:
+Batch 04.2 External Validation returned PASS WITH NOTES and accepted **Option B — EDITORIAL / QA OWNERSHIP**:
 
-- Option A: supported hard Contentful uniqueness enforcement is expected, making this a later correction candidate;
-- Option B: uniqueness is intentionally editorial/QA-owned, keeping the schema correct while clarifying wording and ownership;
-- Option C: another supported mechanism owns the rule, requiring its exact owner and behavior to be documented.
+- primary owner: `EDITORIAL GUIDANCE`;
+- classification: `EF-05 = RESOLVED OWNERSHIP CLARIFICATION`;
+- schema: CORRECT AS IMPLEMENTED;
+- model correction required from EF-05 alone: NO.
 
-No option is selected here. The frozen Phase 02 contract and migration remain unchanged.
+Migration 0001 enforces tag array size and item length but not duplicate-value distinctness. Phase 02 evidence explicitly assigns uniqueness and semantic quality to editorial/QA, and installed local package source/types provide no supported Array-of-Symbol duplicate-value validator contract. The schema is correct as implemented, live drift is NO, and EF-05 alone creates no Batch 04.4 correction candidate. A narrow downstream ownership clarification is now recorded in the frozen Phase 02 validation/editorial contract without changing migration 0001, schema semantics, or validation counts.
+
+## Batch 04.2 Implementation Record
+
+Status: External Validation PASS WITH NOTES / Final Approval Reconciliation COMPLETE / External Final Validation PENDING.
+
+- Complete countable QA matrix: 102 scenarios.
+- Frozen Contentful validation-object count: 102. Equality with the QA scenario count is coincidental; no one-to-one or coupled invariant exists.
+- Primary-owner partition: 56 Contentful hard validation / 36 editorial guidance / 2 application or future frontend / 8 governance.
+- Planned temporary inventory: 19 Entries / 3 Assets, all reserved under `qa04-` deterministic IDs.
+- Future authoring envelope: 19 Entry creates / 3 Asset creates / 51 Entry update absolute ceiling / 3 Asset metadata updates / 3 planned ingestion operations / 3 Asset processing invocations / conditional readiness ceiling 15 / 4 Entry publish attempts / 2 successful Entry publishes / 3 Asset publishes / 0 unpublishes.
+- Separate future cleanup envelope: 2 Entry unpublishes / 19 Entry deletes / 3 Asset unpublishes / 3 Asset deletes.
+- Contentful calls during 04.2: 0.
+- Contentful mutations during 04.2: 0.
+- Batch 04.3 becomes NEXT only after External Final Validation, the approved 04.2 Git checkpoint, and clean synchronized `master` `0 0`; its first action is a read-only pre-execution gate. Mutation remains NOT AUTHORIZED.
+
+The 04.3 read-only gate must reverify Git/checkpoint state, migration integrity, protected blank `master`, expected recovered `dev`, zero existing reserved QA artifacts, the exact 19 Entry and 3 Asset identities, the exact Asset ingestion method and JPEG/PNG/PDF sources, processing path, exact readiness limit, retry semantics, authoring envelope, cleanup prohibition, and seed state. Passing that gate does not authorize mutation.
 
 ## Other Editorial Findings
 
@@ -254,7 +277,7 @@ Batch 04.1 does not approve a version, tag the repository, or rename the recover
 | Operation | Current authorization |
 | --- | --- |
 | Editorial QA entry create/update/publish/unpublish/delete | NOT AUTHORIZED |
-| Asset create/update/publish/delete | NOT AUTHORIZED |
+| Asset ingestion/upload/create/metadata update/process/publish/delete | NOT AUTHORIZED |
 | Schema mutation | NOT AUTHORIZED |
 | Editor Interface mutation | NOT AUTHORIZED |
 | Migration execution or additional bootstrap | NOT AUTHORIZED |

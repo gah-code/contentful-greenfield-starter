@@ -91,12 +91,22 @@ Documentation is part of the build.
 - Phase 04 — EDITORIAL QA + MODEL FREEZE — ACTIVE BY THE COMMIT CONTAINING THIS SKILL.
 - 04.1 — READ-ONLY PLANNING + EDITORIAL-QUALITY PREFLIGHT — APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS SKILL.
 - 04.1 preflight — PASS WITH NOTES / 23 GETS / 0 RETRIES / 0 WRITES / EXTERNALLY VALIDATED.
-- 04.2 — EDITORIAL QA SCENARIO + TEMPORARY AUTHORING CONTRACT — NEXT / NOT STARTED AFTER SUCCESSFUL 04.1 CHECKPOINT VERIFICATION.
-- 04.3 — CONTROLLED TEMPORARY EDITORIAL QA EXECUTION — LATER / SEPARATELY GATED MUTATION.
+- 04.2 — EDITORIAL QA SCENARIO + TEMPORARY AUTHORING CONTRACT — APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS SKILL ONLY AFTER EXTERNAL FINAL VALIDATION.
+- 04.2 External Validation — PASS WITH NOTES.
+- 04.2 Final Approval Reconciliation — COMPLETE.
+- 04.2 External Final Validation — PENDING.
+- 04.3 — CONTROLLED TEMPORARY EDITORIAL QA EXECUTION — NEXT / NOT STARTED AFTER SUCCESSFUL 04.2 CHECKPOINT VERIFICATION / FIRST ACTION READ-ONLY PRE-EXECUTION / MUTATION NOT AUTHORIZED.
 - 04.4 — EDITORIAL QA FINDINGS RECONCILIATION + CONDITIONAL MODEL / EDITOR-INTERFACE CORRECTIONS — LATER.
 - 04.5 — EDITORIAL WORKFLOW + FIELD GUIDANCE — LATER.
 - 04.6 — MODEL FREEZE VALIDATION + PHASE 04 CLOSEOUT — LATER.
-- EF-05 — KNOWN CONTRACT / ENFORCEMENT OWNERSHIP AMBIGUITY / NOT LIVE DRIFT / 04.2 RESOLUTION REQUIRED BEFORE 04.3 AUTHORIZATION.
+- EF-05 — OPTION B / OWNERSHIP CLARIFIED / DUPLICATE TAG VALUES OWNED BY EDITORIAL GUIDANCE / SCHEMA CORRECT AS IMPLEMENTED / NO MODEL CORRECTION / NOT LIVE DRIFT.
+- 04.2 QA contract — 102 SCENARIOS / 56 HARD VALIDATION / 36 EDITORIAL / 2 FUTURE FRONTEND / 8 GOVERNANCE.
+- 04.2 count boundary — 102 QA SCENARIOS AND 102 VALIDATION OBJECTS ARE COINCIDENTAL / NOT COUPLED.
+- 04.2 temporary plan — 19 ENTRIES / 3 ASSETS / RESERVED `qa04-` IDENTITIES.
+- 04.2 future authoring envelope — 19 ENTRY CREATES / 3 ASSET CREATES / 51 ENTRY UPDATE ABSOLUTE CEILING / 3 ASSET METADATA UPDATES / MAX 3 PLANNED INGESTION OPERATIONS / MAX 3 PROCESSING INVOCATIONS / CONDITIONAL READINESS CEILING 15 / 4 ENTRY PUBLISH ATTEMPTS / 2 SUCCESSFUL ENTRY PUBLISHES / 3 ASSET PUBLISHES / 0 UNPUBLISHES.
+- 04.3 Asset gate — EXACT INGESTION METHOD, FILE SOURCES, PROCESSING PATH, READINESS LIMIT, AND RETRY SEMANTICS REQUIRED BEFORE MUTATION AUTHORIZATION.
+- 04.2 cleanup — SEPARATELY GATED / NOT AUTHORIZED.
+- 04.2 Contentful requests and mutations — 0.
 - Model version — NOT YET FROZEN.
 - Phase 04 Contentful mutation — NOT AUTHORIZED.
 - Pre-export tooling — APPROVED.
@@ -150,7 +160,9 @@ Twenty-three GET-only forensic requests made 0 writes and found exact `dev` + `m
 
 Batch 03.6 preserves its initial final-live process as an unresolved evidence-capture incident with 0 writes and no retry. External review separately authorized one corrective GET-only validator invocation, which passed with 23 GETs, 0 writes, exact `dev` + `master` topology, protected blank `master`, the complete recovered `dev` model, all expected type publication and Editor Interfaces, and zero material drift. All 22 Phase 03 technical exit criteria pass, and external Batch 03.6 validation and External Final Validation returned PASS WITH NOTES. The Phase 03 containing commit established Batch 03.6 as approved / checkpointed and Phase 03 as complete / frozen.
 
-Batch 04.1 completed an externally validated PASS WITH NOTES preflight with 23 GETs, 0 retries, and 0 writes. It confirmed the frozen recovered model at 10 types / 99 fields / 18 references / 102 validations / 10 display fields / 8 regex / 6 Rich Text / 2 editor overrides and established the canonical 04.1–04.6 architecture. The commit containing this skill activates Phase 04 and checkpoints Batch 04.1. Batch 04.2 is next / not started and must assign enforcement ownership for every scenario, including resolving EF-05 before any Batch 04.3 mutation authorization. Migration 0001 remains frozen; model version is not yet frozen; Contentful authoring, cleanup, correction, export, import, migration, bootstrap, environment operations, and seed remain unauthorized.
+Batch 04.1 completed an externally validated PASS WITH NOTES preflight with 23 GETs, 0 retries, and 0 writes. It confirmed the frozen recovered model at 10 types / 99 fields / 18 references / 102 validations / 10 display fields / 8 regex / 6 Rich Text / 2 editor overrides and established the canonical 04.1–04.6 architecture. Commit `33e01ae068769631b3bd997b28711535f7c7b340` activates Phase 04 and checkpoints Batch 04.1.
+
+Batch 04.2 External Validation returned PASS WITH NOTES and Final Approval Reconciliation is complete. The future containing commit establishes the checkpoint only after External Final Validation. Its canonical contract defines 102 scenarios with one primary owner each, 19 planned temporary Entries, 3 planned Assets, and separately bounded authoring and cleanup. EF-05 Option B is accepted: duplicate tag values are editorial-guidance-owned, the schema is correct as implemented, and no model correction or live drift exists. The 102 QA scenarios and 102 validation objects are independent counts whose equality is coincidental. Future Asset ingestion, creation, metadata update, processing, readiness, and publication are separate; the exact path and readiness limit must be frozen in 04.3 read-only pre-execution. Batch 04.2 made zero Contentful requests and mutations. Migration 0001 remains frozen; model version is not yet frozen; Batch 04.3 mutation, cleanup, correction, export, import, migration, bootstrap, environment operations, and seed remain unauthorized.
 
 Approved Batch 02.2 standalone type IDs:
 
@@ -360,9 +372,14 @@ Batch 04.1
 ✓ APPROVED / CHECKPOINTED BY COMMIT CONTAINING THIS SKILL
 
 Batch 04.2
--> NEXT / NOT STARTED AFTER SUCCESSFUL 04.1 CHECKPOINT VERIFICATION
+✓ EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE
+-> CHECKPOINT ONLY AFTER EXTERNAL FINAL VALIDATION + CONTAINING COMMIT
 
-Batches 04.3 through 04.6
+Batch 04.3
+-> NEXT / NOT STARTED AFTER SUCCESSFUL 04.2 CHECKPOINT
+-> FIRST ACTION READ-ONLY PRE-EXECUTION / MUTATION NOT AUTHORIZED
+
+Batches 04.4 through 04.6
 -> LATER
 ```
 

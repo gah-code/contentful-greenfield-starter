@@ -27,6 +27,14 @@ All meaningful project changes should be recorded here.
 
 ### Changed
 
+- Completed Phase 04 / Batch 04.2 Final Approval Reconciliation after External Validation returned PASS WITH NOTES.
+- Added the approved 102-scenario editorial-QA contract with 19 planned temporary Entries and 3 planned temporary Assets under reserved `qa04-` identities.
+- Accepted EF-05 Option B: duplicate tag values within one Project/Article entry remain an editorial QA rule; migration 0001 and the zero-drift schema remain correct and unchanged.
+- Added a narrow Phase 02 downstream clarification separating hard tag cardinality/item-length validation from editorial duplicate-value and semantic-quality enforcement.
+- Recorded that the 102 QA scenarios and 102 Contentful validation objects are independent counts whose equality is coincidental, not a coupled invariant.
+- Separated future Asset ingestion, creation, metadata update, processing, readiness checks, and publication, with at most 3 processing invocations and a conditional readiness ceiling of 15 pending the exact 04.3 pre-execution path.
+- Preserved separate authoring and cleanup gates; Batch 04.3 mutation remains unauthorized, the model version remains not yet frozen, and seed remains not started.
+- Final Approval Reconciliation made zero Contentful calls and mutations and did not change migration, model, tooling, packages, or recovery evidence.
 - Established the Phase 04 editorial-QA operating contract and canonical 04.1–04.6 batch architecture.
 - Approved/checkpointed Batch 04.1 — Read-Only Planning + Editorial-Quality Preflight by the commit containing this changelog after external validation returned PASS WITH NOTES.
 - Preserved the frozen Phase 03 recovery model and added sanitized Batch 04.1 editorial preflight evidence without rerunning Contentful validation.
