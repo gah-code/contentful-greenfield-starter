@@ -637,9 +637,74 @@ Status: APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS FILE
 - [x] Batch 03.6 / Phase 03 closeout Git checkpoint — established by the commit containing this file
 - [x] Confirm clean synchronized `0 0` after successful checkpoint verification
 
-### Phase 04 — Editorial QA + Model Freeze
+## Phase 04 — Editorial QA + Model Freeze
 
-Status: NEXT / NOT STARTED AFTER SUCCESSFUL PHASE 03 CLOSEOUT CHECKPOINT VERIFICATION
+Status: ACTIVE BY THE COMMIT CONTAINING THIS TRACKER
+
+Before the containing commit exists, committed repository truth remains Phase 04 — NEXT / NOT STARTED. The containing commit establishes the transition and the Batch 04.1 checkpoint.
+
+### Batch 04.1 — Read-Only Planning + Editorial-Quality Preflight
+
+Status: APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS TRACKER
+
+- [x] clean Git entry gate
+- [x] truth-surface reconciliation
+- [x] migration checksum verification
+- [x] recovery snapshot verification
+- [x] fresh master validation
+- [x] fresh dev validation
+- [x] zero-drift confirmation
+- [x] network write audit
+- [x] 10-type editorial surface review
+- [x] Rich Text review
+- [x] reference/picker review
+- [x] slug QA planning
+- [x] Asset/accessibility ownership review
+- [x] singleton review
+- [x] SEO boundary confirmation
+- [x] open decision triage
+- [x] future QA scenario planning
+- [x] Phase 04 architecture proposal
+- [x] external Batch 04.1 validation
+- [x] Final Approval Reconciliation
+- [x] checkpoint established by containing commit
+
+### Batch 04.2 — Editorial QA Scenario + Temporary Authoring Contract
+
+Status: NEXT / NOT STARTED AFTER SUCCESSFUL 04.1 CHECKPOINT VERIFICATION
+
+- [ ] define enforcement owner for every scenario
+- [ ] resolve EF-05 ownership
+- [ ] define exact temporary QA scenarios
+- [ ] define expected schema rejection behavior
+- [ ] define editorial-guidance scenarios
+- [ ] define application-owned scenarios
+- [ ] define governance scenarios
+- [ ] define temporary artifact naming/identification
+- [ ] define authoring dependency order
+- [ ] define future mutation maximum scope
+- [ ] define publish/update scope if needed
+- [ ] define cleanup inventory strategy
+- [ ] define separate cleanup gate
+- [ ] confirm temporary QA != seed content
+- [ ] confirm no Contentful mutation in 04.2
+- [ ] external 04.2 validation
+
+### Batch 04.3 — Controlled Temporary Editorial QA Execution
+
+Status: LATER / SEPARATELY GATED CONTENTFUL MUTATION
+
+### Batch 04.4 — Editorial QA Findings Reconciliation + Conditional Model / Editor-Interface Corrections
+
+Status: LATER / RECONCILIATION WITH CONDITIONAL SEPARATELY AUTHORIZED MUTATION
+
+### Batch 04.5 — Editorial Workflow + Field Guidance
+
+Status: LATER / REPOSITORY-ONLY
+
+### Batch 04.6 — Model Freeze Validation + Phase 04 Closeout
+
+Status: LATER / READ-ONLY + REPOSITORY RECONCILIATION
 
 ## Completed Evidence
 
@@ -710,6 +775,9 @@ Recorded Phase 00 evidence:
 - Batch 03.5 used its one explicit import authorization. The only top-level import invocation exited 1 after an HTTP 429, with 0 automatic request replays; the authorization is consumed and no second import or repair is authorized.
 - Batch 03.5 post-failure GET-only forensics and semantic comparison passed. Truth-surface and Final Approval Reconciliation are complete; external reconciliation and final validation returned PASS WITH NOTES. The commit containing this file establishes the Batch 03.5 checkpoint.
 - Batch 03.6 records the original final-live process as an unresolved evidence-capture incident with 0 writes and no retry. One externally authorized corrective GET-only validator invocation then passed with 23 GETs and 0 writes.
-- All 22 Phase 03 technical exit criteria pass, Batch 03.6 closeout truth reconciliation and the Content Strategy pointer correction are complete, and external Batch 03.6 validation and External Final Validation returned PASS WITH NOTES. The commit containing this file establishes Batch 03.6 as approved / checkpointed and Phase 03 as complete / frozen. Phase 04 is next / not started after successful checkpoint verification.
+- All 22 Phase 03 technical exit criteria pass, Batch 03.6 closeout truth reconciliation and the Content Strategy pointer correction are complete, and external Batch 03.6 validation and External Final Validation returned PASS WITH NOTES. The Phase 03 containing commit established Batch 03.6 as approved / checkpointed and Phase 03 as complete / frozen.
+- The commit containing this tracker activates Phase 04 and establishes Batch 04.1 as approved / checkpointed after its externally validated PASS WITH NOTES preflight. Batch 04.2 is next / not started after successful 04.1 checkpoint verification; Batches 04.3 through 04.6 remain later.
+- EF-05 is a known Phase 02 contract/enforcement ownership ambiguity, not live drift. Batch 04.2 must resolve ownership before Batch 04.3 mutation can be authorized.
+- Phase 04 model version is not yet frozen. No Contentful mutation, temporary QA authoring, cleanup, model correction, export, import, migration, bootstrap, environment operation, or seed is authorized.
 - Seed content remains not started.
 - This incident/recovery reconciliation is repository-only and authorizes no Contentful read, write, environment mutation, export, import, bootstrap, or seed operation.

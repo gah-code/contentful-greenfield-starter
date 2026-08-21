@@ -27,6 +27,11 @@ All meaningful project changes should be recorded here.
 
 ### Changed
 
+- Established the Phase 04 editorial-QA operating contract and canonical 04.1–04.6 batch architecture.
+- Approved/checkpointed Batch 04.1 — Read-Only Planning + Editorial-Quality Preflight by the commit containing this changelog after external validation returned PASS WITH NOTES.
+- Preserved the frozen Phase 03 recovery model and added sanitized Batch 04.1 editorial preflight evidence without rerunning Contentful validation.
+- Carried EF-05 forward as a known Phase 02 contract/enforcement ownership ambiguity for Batch 04.2 resolution, without model mutation or a premature defect classification.
+- Kept temporary editorial QA, cleanup, model correction, and model-freeze decisions separately gated; no Contentful mutation was authorized and seed remains not started.
 - Completed the Batch 03.6 corrective GET-only final-live validation after the original validation process finished without recoverable terminal evidence.
 - The corrective validation used 23 GETs and 0 writes and reconfirmed exact `dev` + `master` topology, protected blank `master`, all 10 published types, all expected Editor Interfaces, and the exact zero-drift semantic contract.
 - Phase 03 technical exit criteria passed and closeout truth reconciliation completed.

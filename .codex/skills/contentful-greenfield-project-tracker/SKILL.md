@@ -88,7 +88,17 @@ Documentation is part of the build.
 - 03.6 initial final-live validation — PROCESS COMPLETE / TERMINAL EVIDENCE UNRECOVERABLE / RESULT UNRESOLVED / 0 WRITES / NO RETRY.
 - 03.6 corrective final-live validation — PASS / 23 GETS / 0 WRITES / 0 RETRIES / EXTERNALLY ACCEPTED WITH NOTES.
 - 03.6 — PHASE 03 VALIDATION + CLOSEOUT — APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS SKILL.
-- Phase 04 — EDITORIAL QA + MODEL FREEZE — NEXT / NOT STARTED AFTER SUCCESSFUL PHASE 03 CLOSEOUT CHECKPOINT VERIFICATION.
+- Phase 04 — EDITORIAL QA + MODEL FREEZE — ACTIVE BY THE COMMIT CONTAINING THIS SKILL.
+- 04.1 — READ-ONLY PLANNING + EDITORIAL-QUALITY PREFLIGHT — APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS SKILL.
+- 04.1 preflight — PASS WITH NOTES / 23 GETS / 0 RETRIES / 0 WRITES / EXTERNALLY VALIDATED.
+- 04.2 — EDITORIAL QA SCENARIO + TEMPORARY AUTHORING CONTRACT — NEXT / NOT STARTED AFTER SUCCESSFUL 04.1 CHECKPOINT VERIFICATION.
+- 04.3 — CONTROLLED TEMPORARY EDITORIAL QA EXECUTION — LATER / SEPARATELY GATED MUTATION.
+- 04.4 — EDITORIAL QA FINDINGS RECONCILIATION + CONDITIONAL MODEL / EDITOR-INTERFACE CORRECTIONS — LATER.
+- 04.5 — EDITORIAL WORKFLOW + FIELD GUIDANCE — LATER.
+- 04.6 — MODEL FREEZE VALIDATION + PHASE 04 CLOSEOUT — LATER.
+- EF-05 — KNOWN CONTRACT / ENFORCEMENT OWNERSHIP AMBIGUITY / NOT LIVE DRIFT / 04.2 RESOLUTION REQUIRED BEFORE 04.3 AUTHORIZATION.
+- Model version — NOT YET FROZEN.
+- Phase 04 Contentful mutation — NOT AUTHORIZED.
 - Pre-export tooling — APPROVED.
 - Second export — NOT AUTHORIZED.
 - Import authorization — CONSUMED AFTER EXACTLY ONE TOP-LEVEL INVOCATION.
@@ -138,7 +148,9 @@ Batch 03.5 passed its corrected read-only pre-execution and retry-semantics gate
 
 Twenty-three GET-only forensic requests made 0 writes and found exact `dev` + `master` topology, blank protected `master`, all 10 approved types present and published in `dev`, all 10 Editor Interfaces present, and 0 entries / 0 assets / 0 tags / `en-US`. The checksum-anchored semantic verifier returned 0 failures across the exact 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2 contract. Classification is `COMPLETE_APPROVED_SEMANTIC_STATE_PRESENT`: the import command failed operationally, while semantic recovery and clean-room comparison passed with zero material drift. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. Truth-surface and Final Approval Reconciliation are complete; the commit containing this skill establishes the Batch 03.5 checkpoint.
 
-Batch 03.6 preserves its initial final-live process as an unresolved evidence-capture incident with 0 writes and no retry. External review separately authorized one corrective GET-only validator invocation, which passed with 23 GETs, 0 writes, exact `dev` + `master` topology, protected blank `master`, the complete recovered `dev` model, all expected type publication and Editor Interfaces, and zero material drift. All 22 Phase 03 technical exit criteria pass, and external Batch 03.6 validation and External Final Validation returned PASS WITH NOTES. The commit containing this skill establishes Batch 03.6 as approved / checkpointed and Phase 03 as complete / frozen. Phase 04 is next / not started after successful checkpoint verification.
+Batch 03.6 preserves its initial final-live process as an unresolved evidence-capture incident with 0 writes and no retry. External review separately authorized one corrective GET-only validator invocation, which passed with 23 GETs, 0 writes, exact `dev` + `master` topology, protected blank `master`, the complete recovered `dev` model, all expected type publication and Editor Interfaces, and zero material drift. All 22 Phase 03 technical exit criteria pass, and external Batch 03.6 validation and External Final Validation returned PASS WITH NOTES. The Phase 03 containing commit established Batch 03.6 as approved / checkpointed and Phase 03 as complete / frozen.
+
+Batch 04.1 completed an externally validated PASS WITH NOTES preflight with 23 GETs, 0 retries, and 0 writes. It confirmed the frozen recovered model at 10 types / 99 fields / 18 references / 102 validations / 10 display fields / 8 regex / 6 Rich Text / 2 editor overrides and established the canonical 04.1–04.6 architecture. The commit containing this skill activates Phase 04 and checkpoints Batch 04.1. Batch 04.2 is next / not started and must assign enforcement ownership for every scenario, including resolving EF-05 before any Batch 04.3 mutation authorization. Migration 0001 remains frozen; model version is not yet frozen; Contentful authoring, cleanup, correction, export, import, migration, bootstrap, environment operations, and seed remain unauthorized.
 
 Approved Batch 02.2 standalone type IDs:
 
@@ -342,7 +354,16 @@ Phase 03
 ✓ COMPLETE / FROZEN
 
 Phase 04
--> NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION
+✓ ACTIVE BY COMMIT CONTAINING THIS SKILL
+
+Batch 04.1
+✓ APPROVED / CHECKPOINTED BY COMMIT CONTAINING THIS SKILL
+
+Batch 04.2
+-> NEXT / NOT STARTED AFTER SUCCESSFUL 04.1 CHECKPOINT VERIFICATION
+
+Batches 04.3 through 04.6
+-> LATER
 ```
 
 ## Documentation Ownership
