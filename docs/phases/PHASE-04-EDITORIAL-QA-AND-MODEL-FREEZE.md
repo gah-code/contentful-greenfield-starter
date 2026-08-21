@@ -6,13 +6,16 @@
 | --- | --- |
 | Phase 04 | ACTIVE BY THE COMMIT CONTAINING THIS DOCUMENT |
 | Batch 04.1 — Read-Only Planning + Editorial-Quality Preflight | APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS DOCUMENT |
-| Batch 04.2 — Editorial QA Scenario + Temporary Authoring Contract | APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS DOCUMENT |
-| Batch 04.3 — Controlled Temporary Editorial QA Execution | NEXT / NOT STARTED AFTER SUCCESSFUL 04.2 CHECKPOINT VERIFICATION; FIRST ACTION READ-ONLY PRE-EXECUTION |
+| Batch 04.2 — Editorial QA Scenario + Temporary Authoring Contract | APPROVED / CHECKPOINTED AT `a85ebb37ef0f182b98d914221e70454cebb1351f` |
+| Batch 04.2 — Post-Checkpoint Truth-Surface Correction | IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE |
+| Correction External Final Validation | REQUIRED PRE-COMMIT GATE |
+| Corrective checkpoint | ESTABLISHED BY THE COMMIT CONTAINING THIS DOCUMENT AFTER EXTERNAL FINAL VALIDATION |
+| Batch 04.3 — Controlled Temporary Editorial QA Execution | BEFORE CORRECTIVE CONTAINING COMMIT BLOCKED; AFTER SUCCESSFUL CHECKPOINT VERIFICATION NEXT / NOT STARTED WITH READ-ONLY PRE-EXECUTION FIRST |
 | Batch 04.4 — Editorial QA Findings Reconciliation + Conditional Model / Editor-Interface Corrections | LATER |
 | Batch 04.5 — Editorial Workflow + Field Guidance | LATER |
 | Batch 04.6 — Model Freeze Validation + Phase 04 Closeout | LATER |
 
-The Phase 04 transition and Batch 04.1 checkpoint are established at `33e01ae068769631b3bd997b28711535f7c7b340`. Before the future containing commit exists, committed truth remains at that Batch 04.1 checkpoint. This working-tree reconciliation has External Validation PASS WITH NOTES but still awaits External Final Validation and does not claim the 04.2 checkpoint already exists.
+The Phase 04 transition and Batch 04.1 checkpoint are established at `33e01ae068769631b3bd997b28711535f7c7b340`. Batch 04.2 External Validation and External Final Validation returned PASS WITH NOTES, and its checkpoint is established at `a85ebb37ef0f182b98d914221e70454cebb1351f`. External checkpoint validation passed Git mechanics but returned NEEDS REVISION because stale pre-checkpoint status remained on canonical surfaces. This Post-Checkpoint Truth-Surface Correction implementation is complete, External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. Correction External Final Validation is a required pre-commit gate, and the corrective checkpoint is established by the commit containing this document only after that validation. Before the corrective containing commit exists, Batch 04.3 remains blocked; after successful checkpoint verification it becomes next / not started.
 
 ## Purpose
 
@@ -97,7 +100,7 @@ Purpose:
 
 Operation class: REPOSITORY-ONLY. No Contentful mutation.
 
-State: APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS DOCUMENT, only after External Final Validation and that future commit.
+State: APPROVED / CHECKPOINTED AT `a85ebb37ef0f182b98d914221e70454cebb1351f`.
 
 Canonical contract: `docs/system/EDITORIAL-QA-AND-TEMPORARY-AUTHORING-CONTRACT.md`.
 
@@ -109,7 +112,7 @@ Purpose: execute only externally approved temporary QA scenarios.
 
 Operation class: CONTENTFUL MUTATION / SEPARATELY GATED.
 
-State after successful 04.2 checkpoint verification: NEXT / NOT STARTED. First action: READ-ONLY PRE-EXECUTION GATE. Mutation remains NOT AUTHORIZED.
+Before the corrective containing commit: BLOCKED. After successful corrective checkpoint verification: NEXT / NOT STARTED. First action: READ-ONLY PRE-EXECUTION GATE. Mutation remains NOT AUTHORIZED.
 
 Required authoring workflow:
 
@@ -219,7 +222,7 @@ Migration 0001 enforces tag array size and item length but not duplicate-value d
 
 ## Batch 04.2 Implementation Record
 
-Status: External Validation PASS WITH NOTES / Final Approval Reconciliation COMPLETE / External Final Validation PENDING.
+Status: External Validation PASS WITH NOTES / Final Approval Reconciliation COMPLETE / External Final Validation PASS WITH NOTES / CHECKPOINT ESTABLISHED AT `a85ebb37ef0f182b98d914221e70454cebb1351f`.
 
 - Complete countable QA matrix: 102 scenarios.
 - Frozen Contentful validation-object count: 102. Equality with the QA scenario count is coincidental; no one-to-one or coupled invariant exists.
@@ -229,7 +232,11 @@ Status: External Validation PASS WITH NOTES / Final Approval Reconciliation COMP
 - Separate future cleanup envelope: 2 Entry unpublishes / 19 Entry deletes / 3 Asset unpublishes / 3 Asset deletes.
 - Contentful calls during 04.2: 0.
 - Contentful mutations during 04.2: 0.
-- Batch 04.3 becomes NEXT only after External Final Validation, the approved 04.2 Git checkpoint, and clean synchronized `master` `0 0`; its first action is a read-only pre-execution gate. Mutation remains NOT AUTHORIZED.
+- The correction External Validation returned PASS WITH NOTES and Final Approval Reconciliation is complete. External Final Validation remains a required pre-commit gate, and the corrective checkpoint is established by the commit containing this document only after that validation. Before that commit, Batch 04.3 remains blocked. After successful corrective checkpoint verification it becomes NEXT / NOT STARTED; its first action is a read-only pre-execution gate. Mutation remains NOT AUTHORIZED.
+
+### Post-Checkpoint Truth-Surface Correction
+
+External checkpoint validation confirmed Git mechanics PASS but returned NEEDS REVISION for canonical truth consistency because stale pre-checkpoint status survived checkpoint `a85ebb37ef0f182b98d914221e70454cebb1351f`. Correction implementation is COMPLETE, External Validation is PASS WITH NOTES, and Final Approval Reconciliation is COMPLETE. Correction External Final Validation is the required pre-commit gate. The corrective checkpoint is established by the commit containing this correction only after that validation; before that commit exists, Batch 04.3 remains blocked.
 
 The 04.3 read-only gate must reverify Git/checkpoint state, migration integrity, protected blank `master`, expected recovered `dev`, zero existing reserved QA artifacts, the exact 19 Entry and 3 Asset identities, the exact Asset ingestion method and JPEG/PNG/PDF sources, processing path, exact readiness limit, retry semantics, authoring envelope, cleanup prohibition, and seed state. Passing that gate does not authorize mutation.
 

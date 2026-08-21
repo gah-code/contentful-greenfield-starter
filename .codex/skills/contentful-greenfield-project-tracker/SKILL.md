@@ -91,11 +91,16 @@ Documentation is part of the build.
 - Phase 04 — EDITORIAL QA + MODEL FREEZE — ACTIVE BY THE COMMIT CONTAINING THIS SKILL.
 - 04.1 — READ-ONLY PLANNING + EDITORIAL-QUALITY PREFLIGHT — APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS SKILL.
 - 04.1 preflight — PASS WITH NOTES / 23 GETS / 0 RETRIES / 0 WRITES / EXTERNALLY VALIDATED.
-- 04.2 — EDITORIAL QA SCENARIO + TEMPORARY AUTHORING CONTRACT — APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS SKILL ONLY AFTER EXTERNAL FINAL VALIDATION.
+- 04.2 — EDITORIAL QA SCENARIO + TEMPORARY AUTHORING CONTRACT — APPROVED / CHECKPOINTED AT `a85ebb37ef0f182b98d914221e70454cebb1351f`.
 - 04.2 External Validation — PASS WITH NOTES.
 - 04.2 Final Approval Reconciliation — COMPLETE.
-- 04.2 External Final Validation — PENDING.
-- 04.3 — CONTROLLED TEMPORARY EDITORIAL QA EXECUTION — NEXT / NOT STARTED AFTER SUCCESSFUL 04.2 CHECKPOINT VERIFICATION / FIRST ACTION READ-ONLY PRE-EXECUTION / MUTATION NOT AUTHORIZED.
+- 04.2 External Final Validation — PASS WITH NOTES / APPROVED FOR GIT CHECKPOINT.
+- 04.2 checkpoint — ESTABLISHED AT `a85ebb37ef0f182b98d914221e70454cebb1351f`.
+- 04.2 external checkpoint validation — GIT MECHANICS PASS / CANONICAL TRUTH CONSISTENCY NEEDS REVISION.
+- 04.2 Post-Checkpoint Truth-Surface Correction — IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE.
+- 04.2 correction External Final Validation — REQUIRED PRE-COMMIT GATE.
+- 04.2 corrective checkpoint — ESTABLISHED BY THE COMMIT CONTAINING THIS SKILL AFTER CORRECTION EXTERNAL FINAL VALIDATION.
+- 04.3 — CONTROLLED TEMPORARY EDITORIAL QA EXECUTION — BEFORE THE CORRECTIVE CONTAINING COMMIT: BLOCKED / AFTER SUCCESSFUL CORRECTIVE CHECKPOINT VERIFICATION: NEXT / NOT STARTED / FIRST ACTION READ-ONLY PRE-EXECUTION / MUTATION NOT AUTHORIZED.
 - 04.4 — EDITORIAL QA FINDINGS RECONCILIATION + CONDITIONAL MODEL / EDITOR-INTERFACE CORRECTIONS — LATER.
 - 04.5 — EDITORIAL WORKFLOW + FIELD GUIDANCE — LATER.
 - 04.6 — MODEL FREEZE VALIDATION + PHASE 04 CLOSEOUT — LATER.
@@ -162,7 +167,7 @@ Batch 03.6 preserves its initial final-live process as an unresolved evidence-ca
 
 Batch 04.1 completed an externally validated PASS WITH NOTES preflight with 23 GETs, 0 retries, and 0 writes. It confirmed the frozen recovered model at 10 types / 99 fields / 18 references / 102 validations / 10 display fields / 8 regex / 6 Rich Text / 2 editor overrides and established the canonical 04.1–04.6 architecture. Commit `33e01ae068769631b3bd997b28711535f7c7b340` activates Phase 04 and checkpoints Batch 04.1.
 
-Batch 04.2 External Validation returned PASS WITH NOTES and Final Approval Reconciliation is complete. The future containing commit establishes the checkpoint only after External Final Validation. Its canonical contract defines 102 scenarios with one primary owner each, 19 planned temporary Entries, 3 planned Assets, and separately bounded authoring and cleanup. EF-05 Option B is accepted: duplicate tag values are editorial-guidance-owned, the schema is correct as implemented, and no model correction or live drift exists. The 102 QA scenarios and 102 validation objects are independent counts whose equality is coincidental. Future Asset ingestion, creation, metadata update, processing, readiness, and publication are separate; the exact path and readiness limit must be frozen in 04.3 read-only pre-execution. Batch 04.2 made zero Contentful requests and mutations. Migration 0001 remains frozen; model version is not yet frozen; Batch 04.3 mutation, cleanup, correction, export, import, migration, bootstrap, environment operations, and seed remain unauthorized.
+Batch 04.2 External Validation and External Final Validation returned PASS WITH NOTES, Final Approval Reconciliation is complete, and checkpoint `a85ebb37ef0f182b98d914221e70454cebb1351f` is established. External checkpoint validation passed Git mechanics but returned NEEDS REVISION for canonical truth consistency because stale pre-checkpoint status remained. The Post-Checkpoint Truth-Surface Correction implementation is complete, its External Validation returned PASS WITH NOTES, and its Final Approval Reconciliation is complete. Correction External Final Validation is a required pre-commit gate; the corrective checkpoint is established by the commit containing this skill only after that validation. Before the corrective containing commit exists, Batch 04.3 remains blocked; after successful corrective checkpoint verification it becomes next / not started. Its canonical contract defines 102 scenarios with one primary owner each, 19 planned temporary Entries, 3 planned Assets, and separately bounded authoring and cleanup. EF-05 Option B is accepted: duplicate tag values are editorial-guidance-owned, the schema is correct as implemented, and no model correction or live drift exists. The 102 QA scenarios and 102 validation objects are independent counts whose equality is coincidental. Future Asset ingestion, creation, metadata update, processing, readiness, and publication are separate; the exact path and readiness limit must be frozen in 04.3 read-only pre-execution. Batch 04.2 made zero Contentful requests and mutations. Migration 0001 remains frozen; model version is not yet frozen; Batch 04.3 mutation, cleanup, correction, export, import, migration, bootstrap, environment operations, and seed remain unauthorized.
 
 Approved Batch 02.2 standalone type IDs:
 
@@ -373,10 +378,18 @@ Batch 04.1
 
 Batch 04.2
 ✓ EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE
--> CHECKPOINT ONLY AFTER EXTERNAL FINAL VALIDATION + CONTAINING COMMIT
+✓ EXTERNAL FINAL VALIDATION PASS WITH NOTES / APPROVED FOR CHECKPOINT
+✓ CHECKPOINT ESTABLISHED AT `a85ebb37ef0f182b98d914221e70454cebb1351f`
+! EXTERNAL CHECKPOINT VALIDATION: GIT MECHANICS PASS / TRUTH CONSISTENCY NEEDS REVISION
+✓ POST-CHECKPOINT TRUTH-SURFACE CORRECTION IMPLEMENTATION COMPLETE
+✓ CORRECTION EXTERNAL VALIDATION PASS WITH NOTES
+✓ CORRECTION FINAL APPROVAL RECONCILIATION COMPLETE
+-> CORRECTION EXTERNAL FINAL VALIDATION REQUIRED PRE-COMMIT GATE
+-> CORRECTIVE CHECKPOINT ESTABLISHED BY COMMIT CONTAINING THIS SKILL AFTER EXTERNAL FINAL VALIDATION
 
 Batch 04.3
--> NEXT / NOT STARTED AFTER SUCCESSFUL 04.2 CHECKPOINT
+-> BEFORE CORRECTIVE CONTAINING COMMIT: BLOCKED
+-> AFTER SUCCESSFUL CORRECTIVE CHECKPOINT: NEXT / NOT STARTED
 -> FIRST ACTION READ-ONLY PRE-EXECUTION / MUTATION NOT AUTHORIZED
 
 Batches 04.4 through 04.6

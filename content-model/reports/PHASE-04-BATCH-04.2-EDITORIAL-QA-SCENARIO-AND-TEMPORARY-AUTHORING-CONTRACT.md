@@ -7,10 +7,16 @@
 | Implementation | COMPLETE |
 | External Validation | PASS WITH NOTES |
 | Final Approval Reconciliation | COMPLETE |
-| External Final Validation | PENDING |
-| Git checkpoint | ESTABLISHED ONLY BY THE FUTURE CONTAINING COMMIT AFTER EXTERNAL FINAL VALIDATION |
+| External Final Validation | PASS WITH NOTES / APPROVED FOR GIT CHECKPOINT |
+| Git checkpoint | ESTABLISHED AT `a85ebb37ef0f182b98d914221e70454cebb1351f` |
+| External checkpoint validation | GIT MECHANICS PASS / TRUTH CONSISTENCY NEEDS REVISION |
+| Post-Checkpoint Truth-Surface Correction implementation | COMPLETE |
+| Correction External Validation | PASS WITH NOTES |
+| Correction Final Approval Reconciliation | COMPLETE |
+| Correction External Final Validation | REQUIRED PRE-COMMIT GATE |
+| Corrective checkpoint | ESTABLISHED BY THE COMMIT CONTAINING THIS CORRECTIVE STATE AFTER EXTERNAL FINAL VALIDATION |
 
-This is repository-only reconciliation evidence. It is not External Final Validation, an existing checkpoint, Batch 04.3 mutation authorization, or Contentful mutation authorization.
+This report preserves the completed Batch 04.2 lifecycle and the repository-only truth-surface correction through Final Approval Reconciliation. Before the corrective containing commit exists, its checkpoint is not established and Batch 04.3 remains blocked. This evidence authorizes neither Batch 04.3 nor any Contentful request or mutation.
 
 ## Starting Git Evidence
 
@@ -27,7 +33,7 @@ This is repository-only reconciliation evidence. It is not External Final Valida
 
 - Skill path: `.codex/skills/contentful-greenfield-project-tracker/SKILL.md`.
 - Implementation starting context read: Phase 03 complete/frozen; Phase 04 active; 04.1 approved/checkpointed; 04.2 next/not started; 04.3–04.6 later; EF-05 unresolved; model version not frozen; Phase 04 mutation not authorized; seed not started.
-- Final reconciliation context: 04.2 External Validation PASS WITH NOTES; Final Approval Reconciliation complete; future containing-commit checkpoint pending External Final Validation; 04.3 mutation not authorized.
+- Final lifecycle context: 04.2 External Validation and External Final Validation PASS WITH NOTES; Final Approval Reconciliation complete; checkpoint `a85ebb37ef0f182b98d914221e70454cebb1351f` established; 04.3 mutation not authorized.
 - Safety applied: `master` protected blank baseline; `dev` rotating sandbox; verification is workflow state; prior one-time authorizations are not reusable; inspect before edit; fail closed; preserve secrets.
 - Operating mode: IMPLEMENTATION with LOCAL AUDIT + VALIDATION; CLOSEOUT not used.
 - SKILL/canonical-truth conflict: none.
@@ -183,6 +189,21 @@ Contentful mutations: 0. Contentful CLI/CMA/CDA/CPA operations: none.
 
 Created the canonical Batch 04.2 contract and this evidence report. Final Approval Reconciliation consumed External Validation PASS WITH NOTES, promoted EF-05 Option B, added the narrow Phase 02 ownership clarification, distinguished the Asset lifecycle bounds, and reconciled active truth surfaces. No Contentful call, model change, migration change, package/tooling change, or media creation occurred.
 
+## Post-Implementation Lifecycle
+
+- External Validation: PASS WITH NOTES.
+- Final Approval Reconciliation: COMPLETE.
+- External Final Validation: PASS WITH NOTES / APPROVED FOR GIT CHECKPOINT.
+- Git checkpoint: ESTABLISHED at `a85ebb37ef0f182b98d914221e70454cebb1351f`.
+- External checkpoint validation: NEEDS REVISION, with Git mechanics PASS.
+- Reason: stale pre-checkpoint canonical status survived the checkpoint.
+- Post-Checkpoint Truth-Surface Correction implementation: COMPLETE.
+- Correction External Validation: PASS WITH NOTES.
+- Correction Final Approval Reconciliation: COMPLETE.
+- Correction External Final Validation: REQUIRED PRE-COMMIT GATE.
+- Corrective checkpoint: ESTABLISHED BY THE COMMIT CONTAINING THIS CORRECTIVE STATE ONLY AFTER EXTERNAL FINAL VALIDATION.
+- Batch 04.3: before the corrective containing commit, BLOCKED; after successful corrective checkpoint verification, NEXT / NOT STARTED.
+
 ## Protected Artifact Verification
 
 - Phase 02 type, field-ID, and reference contracts: unchanged.
@@ -195,15 +216,15 @@ Created the canonical Batch 04.2 contract and this evidence report. Final Approv
 
 ## Open Questions
 
-- External Final Validation remains pending.
+- Correction External Final Validation remains the required pre-commit gate; the corrective checkpoint is established only by the containing commit after that validation.
 - Batch 04.3 read-only pre-execution must freeze the exact installed Asset ingestion/processing path, source files, readiness-check limit, and retry behavior before mutation authorization.
 - Batch 04.3 must observe and record the exact Contentful UI/API timing for invalid draft and publish-blocker behavior without changing the approved enforcement owner.
 - Any field-guidance wording or Editor Interface improvement remains evidence-dependent Batch 04.4/04.5 work.
 
 ## Blockers
 
-None for External Final Validation. Batch 04.3 mutation remains not authorized.
+Before the corrective containing commit, Batch 04.3 remains blocked. After successful checkpoint verification it becomes next / not started. Mutation remains not authorized.
 
 ## Recommended External Validation Gate
 
-External Final Validation — Phase 04 / Batch 04.2 Final Approval Reconciliation
+External Final Validation — Phase 04 / Batch 04.2 Post-Checkpoint Truth-Surface Correction Final Approval Reconciliation

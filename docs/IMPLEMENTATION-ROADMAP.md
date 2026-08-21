@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Phase 03 complete / frozen; Phase 04 active; Batch 04.2 approved / checkpointed by the future containing commit after External Final Validation; Batch 04.3 next / not started after successful checkpoint verification with read-only pre-execution first
+Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Phase 03 complete / frozen; Phase 04 active; Batch 04.2 approved / checkpointed at `a85ebb37ef0f182b98d914221e70454cebb1351f`; correction implementation, External Validation, and Final Approval Reconciliation complete; corrective checkpoint by containing commit after External Final Validation; Batch 04.3 blocked before that commit, then next / not started with read-only pre-execution first after verification
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -56,8 +56,11 @@ Batch 03.5 — APPROVED / CHECKPOINTED
 Batch 03.6 — APPROVED / CHECKPOINTED
 Phase 04 — ACTIVE BY THE COMMIT CONTAINING THIS ROADMAP
 Batch 04.1 — APPROVED / CHECKPOINTED
-Batch 04.2 — APPROVED / CHECKPOINTED BY FUTURE CONTAINING COMMIT AFTER EXTERNAL FINAL VALIDATION
-Batch 04.3 — NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION / READ-ONLY PRE-EXECUTION FIRST / MUTATION NOT AUTHORIZED
+Batch 04.2 — APPROVED / CHECKPOINTED AT `a85ebb37ef0f182b98d914221e70454cebb1351f`
+Batch 04.2 Post-Checkpoint Truth-Surface Correction — IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE
+Correction External Final Validation — REQUIRED PRE-COMMIT GATE
+Corrective checkpoint — ESTABLISHED BY COMMIT CONTAINING THIS ROADMAP AFTER EXTERNAL FINAL VALIDATION
+Batch 04.3 — BEFORE CORRECTIVE CONTAINING COMMIT BLOCKED / AFTER SUCCESSFUL CHECKPOINT VERIFICATION NEXT / NOT STARTED / READ-ONLY PRE-EXECUTION FIRST / MUTATION NOT AUTHORIZED
 Batch 04.4 — LATER
 Batch 04.5 — LATER
 Batch 04.6 — LATER
@@ -92,7 +95,7 @@ Create a safe operating surface before any content type is created.
 
 ## Phase 01 — Content Strategy + Route Contract
 
-Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 and Phase 03 are COMPLETE / FROZEN. Phase 04 is ACTIVE; Batch 04.2 is approved / checkpointed by the future containing commit after External Final Validation, then Batch 04.3 becomes next/not started with read-only pre-execution first.
+Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 and Phase 03 are COMPLETE / FROZEN. Phase 04 is ACTIVE; Batch 04.2 is approved / checkpointed at `a85ebb37ef0f182b98d914221e70454cebb1351f`, correction implementation/validation/Final Approval Reconciliation are complete, and its checkpoint is established by the containing commit after External Final Validation. Batch 04.3 remains blocked before that commit and becomes next/not started with read-only pre-execution first after successful checkpoint verification.
 
 ### Goal
 
@@ -299,7 +302,7 @@ Evidence: `content-model/reports/PHASE-02-BATCH-02.7-LIVE-SCHEMA-VALIDATION.md`.
 
 Result: 10 / 10 types, 99 / 99 stored fields, 18 / 18 authored references, 102 / 102 validation objects, 10 / 10 display fields, 2 / 2 explicit editor controls, and 0 material mismatches.
 
-Phase 02 and Phase 03 are COMPLETE / FROZEN. Batches 03.1 and 03.2 are APPROVED, and Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED. Phase 04 is ACTIVE; Batch 04.2 is approved / checkpointed by the future containing commit after External Final Validation, then Batch 04.3 becomes next/not started with read-only pre-execution first.
+Phase 02 and Phase 03 are COMPLETE / FROZEN. Batches 03.1 and 03.2 are APPROVED, and Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED. Phase 04 is ACTIVE; Batch 04.2 is approved / checkpointed at `a85ebb37ef0f182b98d914221e70454cebb1351f`, correction implementation/validation/Final Approval Reconciliation are complete, and its checkpoint is established by the containing commit after External Final Validation. Batch 04.3 remains blocked before that commit and becomes next/not started with read-only pre-execution first after successful checkpoint verification.
 
 ### Exit criteria
 
@@ -381,7 +384,7 @@ Batch 03.6 preserves the initial final-live validator as an unresolved evidence-
 
 ## Phase 04 — Editorial QA + Model Freeze
 
-Current state: ACTIVE. Batch 04.1 is approved / checkpointed. Batch 04.2 External Validation returned PASS WITH NOTES and Final Approval Reconciliation is complete. The future containing commit establishes its checkpoint only after External Final Validation.
+Current state: ACTIVE. Batch 04.1 is approved / checkpointed. Batch 04.2 External Validation and External Final Validation returned PASS WITH NOTES, Final Approval Reconciliation is complete, and checkpoint `a85ebb37ef0f182b98d914221e70454cebb1351f` is established. External checkpoint validation passed Git mechanics but returned NEEDS REVISION for truth consistency. The post-checkpoint correction implementation is complete, its External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. Correction External Final Validation is required before the containing corrective checkpoint; Batch 04.3 remains blocked before that commit.
 
 ### Goal
 
@@ -392,8 +395,8 @@ Produce an editor-tested, migration-governed v1 model freeze candidate. The mode
 | Batch | Name | Operation class | Status after containing commit |
 | --- | --- | --- | --- |
 | 04.1 | Read-Only Planning + Editorial-Quality Preflight | GET-only / repository reads | APPROVED / CHECKPOINTED |
-| 04.2 | Editorial QA Scenario + Temporary Authoring Contract | REPOSITORY-ONLY | APPROVED / CHECKPOINTED BY FUTURE CONTAINING COMMIT AFTER EXTERNAL FINAL VALIDATION |
-| 04.3 | Controlled Temporary Editorial QA Execution | READ-ONLY PRE-EXECUTION FIRST; MUTATION SEPARATELY GATED | NEXT / NOT STARTED AFTER SUCCESSFUL 04.2 CHECKPOINT VERIFICATION |
+| 04.2 | Editorial QA Scenario + Temporary Authoring Contract | REPOSITORY-ONLY | APPROVED / CHECKPOINTED AT `a85ebb37ef0f182b98d914221e70454cebb1351f`; CORRECTION IMPLEMENTATION / EXTERNAL VALIDATION / FINAL APPROVAL COMPLETE; CORRECTIVE CHECKPOINT BY CONTAINING COMMIT AFTER EXTERNAL FINAL VALIDATION |
+| 04.3 | Controlled Temporary Editorial QA Execution | READ-ONLY PRE-EXECUTION FIRST; MUTATION SEPARATELY GATED | BEFORE CORRECTIVE CONTAINING COMMIT BLOCKED; AFTER SUCCESSFUL CHECKPOINT VERIFICATION NEXT / NOT STARTED |
 | 04.4 | Editorial QA Findings Reconciliation + Conditional Model / Editor-Interface Corrections | Reconciliation / conditional mutation | LATER |
 | 04.5 | Editorial Workflow + Field Guidance | REPOSITORY-ONLY | LATER |
 | 04.6 | Model Freeze Validation + Phase 04 Closeout | READ-ONLY + REPOSITORY RECONCILIATION | LATER |

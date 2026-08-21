@@ -27,6 +27,14 @@ All meaningful project changes should be recorded here.
 
 ### Changed
 
+- Completed Final Approval Reconciliation for the Batch 04.2 post-checkpoint truth-surface correction after its External Validation returned PASS WITH NOTES.
+- Encoded correction External Final Validation as a required pre-commit gate and the corrective checkpoint through containing-commit semantics.
+- Preserved original checkpoint `a85ebb37ef0f182b98d914221e70454cebb1351f`; Batch 04.3 remains blocked before the corrective containing commit and mutation remains unauthorized.
+- Recorded Batch 04.2 External Final Validation as PASS WITH NOTES / approved for Git checkpoint and checkpoint `a85ebb37ef0f182b98d914221e70454cebb1351f` as established.
+- Recorded external checkpoint validation as Git mechanics PASS with canonical truth consistency NEEDS REVISION because stale pre-checkpoint status survived the checkpoint.
+- Implemented the Batch 04.2 post-checkpoint truth-surface correction; its External Validation returned PASS WITH NOTES and no Contentful/model/migration/tooling change occurred.
+- Kept Batch 04.3 blocked until successful corrective checkpoint verification, with read-only pre-execution still its future first action and mutation unauthorized.
+- Made no Contentful request or mutation and changed no model, migration, tooling, package, or Batch 04.2 contract mechanics during this correction.
 - Completed Phase 04 / Batch 04.2 Final Approval Reconciliation after External Validation returned PASS WITH NOTES.
 - Added the approved 102-scenario editorial-QA contract with 19 planned temporary Entries and 3 planned temporary Assets under reserved `qa04-` identities.
 - Accepted EF-05 Option B: duplicate tag values within one Project/Article entry remain an editorial QA rule; migration 0001 and the zero-drift schema remain correct and unchanged.

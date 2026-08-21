@@ -2,9 +2,9 @@
 
 ## Status
 
-Phase 04 / Batch 04.2: APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS CONTRACT, subject to External Final Validation and that future commit.
+Phase 04 / Batch 04.2: APPROVED / CHECKPOINTED AT `a85ebb37ef0f182b98d914221e70454cebb1351f`.
 
-External Validation: PASS WITH NOTES. Final Approval Reconciliation: COMPLETE. This document is a repository-only plan. It authorizes no Contentful request or mutation. Batch 04.3 remains separately gated and not authorized.
+External Validation: PASS WITH NOTES. Final Approval Reconciliation: COMPLETE. External Final Validation: PASS WITH NOTES / APPROVED FOR GIT CHECKPOINT. External checkpoint validation passed Git mechanics but returned NEEDS REVISION because stale pre-checkpoint status remained on canonical surfaces. The Post-Checkpoint Truth-Surface Correction implementation is COMPLETE, its External Validation is PASS WITH NOTES, and its Final Approval Reconciliation is COMPLETE. Correction External Final Validation is a REQUIRED PRE-COMMIT GATE. The corrective checkpoint is established by the commit containing this contract only after that validation. This document is a repository-only plan and authorizes no Contentful request or mutation. Before the corrective containing commit, Batch 04.3 remains blocked.
 
 ## Purpose
 
@@ -491,6 +491,6 @@ Entry and Asset creation/update/publish/unpublish/delete, schema and Editor Inte
 
 ## Batch 04.3 Entry Preconditions
 
-Batch 04.3 becomes NEXT only after External Final Validation of this reconciliation, an approved Git checkpoint, and a clean synchronized `master` at `0 0`. Its first action is a READ-ONLY PRE-EXECUTION GATE, not mutation.
+Before the corrective containing commit exists, Batch 04.3 remains BLOCKED. The corrective checkpoint is established only by the commit containing this contract after correction External Final Validation. After clean synchronized checkpoint verification, Batch 04.3 becomes NEXT / NOT STARTED. Its first action is a READ-ONLY PRE-EXECUTION GATE, not mutation.
 
 That gate must reverify clean Git state and the exact 04.2 checkpoint; Phase 04/04.2/04.3 state; migration checksum; protected blank `master`; expected recovered `dev`; zero existing reserved QA Entries/Assets; all 19 Entry and 3 Asset identities; the exact Asset ingestion method and file sources; processing path and readiness limit; retry semantics; complete authoring envelope; cleanup unauthorized; and seed not started. A successful read-only pre-execution gate still does not authorize mutation. The execution mechanism and evidence capture must then receive external review and explicit one-time human authorization. Cleanup remains excluded.
