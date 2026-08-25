@@ -4,11 +4,14 @@ Project: `contentful-greenfield-starter`
 Current project state: Phase 04 — ACTIVE
 Latest completed phase: Phase 03 — MODEL EXPORT + SERIAL CLEAN-ROOM VERIFICATION — COMPLETE / FROZEN
 Latest approved/checkpointed batch: Batch 04.2 — EDITORIAL QA SCENARIO + TEMPORARY AUTHORING CONTRACT — HISTORICALLY APPROVED / CHECKPOINTED AT `a85ebb37ef0f182b98d914221e70454cebb1351f`; NARROW AUTHORING-ENVELOPE CORRECTION RECONCILED
-Current Batch 04.3 lifecycle: STARTED / CONTROLLED AUTHORING STOPPED AFTER MUTATION AT R88 / PARTIAL STATE PRESERVED / NOT COMPLETE / FORENSICS DEFERRED
+Current Batch 04.3 lifecycle: STARTED / CONTROLLED AUTHORING STOPPED AFTER MUTATION AT R88 / PARTIAL STATE FRESHLY FORENSICALLY CONFIRMED / NOT COMPLETE / POST-STOP FORENSICS COMPLETE / OPTION B PREFERRED FOR PLANNING / CLEANUP NOT AUTHORIZED
 Batch 04.3 Partial Authoring Incident + Deferral Reconciliation: IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE
-Batch 04.3 Partial Authoring Incident + Deferral checkpoint condition: EXTERNAL FINAL VALIDATION REQUIRED PRE-COMMIT / ONLY AFTER IT PASSES FOR THIS EXACT RECONCILED STATE MAY THE CONTAINING COMMIT ESTABLISH THE CHECKPOINT
+Batch 04.3 Partial Authoring Incident + Deferral checkpoint: ESTABLISHED AT `93e4ff6dd995831af5d05475db02b1a60f027715`
 Batch 04.2 corrective checkpoint: ESTABLISHED AT `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`
-Required resume gate: Phase 04 / Batch 04.3 — POST-STOP PARTIAL-STATE + BRANCH-SENSITIVE FORENSICS / REQUIRED BEFORE ANY CONTINUATION, CLEANUP, OR 04.4 ADVANCEMENT
+Post-stop forensic gate: COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / 14 GET-EQUIVALENT / 0 WRITES / 0 RETRIES OR REPLAYS
+Post-Stop Forensic Findings + Recovery Decision Reconciliation: IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE
+Forensic/recovery reconciliation approval rule: EXTERNAL FINAL VALIDATION IS A REQUIRED PRE-COMMIT GATE / ONLY AFTER IT PASSES FOR THIS EXACT RECONCILED STATE MAY THE CONTAINING COMMIT ESTABLISH THE CHECKPOINT
+Future operational gate after External Checkpoint Validation PASS: PHASE 04 / BATCH 04.3 PARTIAL QA CLEANUP READ-ONLY PRE-EXECUTION GATE
 Batch 03.4 post-rotation reconciliation: COMPLETE
 Batch 03.4 external reconciliation validation: PASS WITH NOTES
 Batch 03.4 final approval reconciliation: COMPLETE
@@ -52,9 +55,9 @@ Batch 04.2 correction External Final Validation: COMPLETE / CHECKPOINT PREREQUIS
 Batch 04.2 corrective checkpoint: ESTABLISHED AT `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`
 Batch 04.2 scenarios: 102 / ONE PRIMARY OWNER EACH
 Batch 04.2 temporary plan: 19 ENTRIES / 3 ASSETS / RESERVED `qa04-` IDENTITIES
-Batch 04.2 corrected authoring envelope: 111 ENTRY UPDATE ABSOLUTE SAFETY CEILING / CANONICAL VALUE PRESERVED / PARKED FROM REUSE UNTIL POST-STOP BRANCH-SENSITIVE FORENSICS COMPLETE
+Batch 04.2 corrected authoring envelope: HISTORICAL 111 ENTRY UPDATE CEILING / PROVEN INSUFFICIENT FOR EXECUTION / NOT REUSABLE
 Batch 04.2 cleanup: SEPARATE FUTURE GATE / NOT AUTHORIZED
-Batch 04.3: STARTED / CONTROLLED AUTHORING STOPPED AFTER MUTATION / PARTIAL STATE PRESERVED / NOT COMPLETE / FORENSICS DEFERRED
+Batch 04.3: STARTED / CONTROLLED AUTHORING STOPPED AFTER MUTATION / PARTIAL STATE FRESHLY CONFIRMED / NOT COMPLETE / POST-STOP FORENSICS COMPLETE
 Batch 04.3 initial read-only pre-execution attempt: BLOCKED / MISSING APPROVED LOCAL ASSET SOURCES / 0 CONTENTFUL REQUESTS
 Batch 04.3 fixture generation: COMPLETE EXTERNALLY
 Batch 04.3 wrong-path fixture identity investigation: PASS / CLASS A
@@ -73,13 +76,16 @@ Batch 04.3 fixture path: `content-model/fixtures/phase-04/`
 Batch 04.3 fresh full read-only pre-execution rerun prerequisite: SATISFIED BEFORE THE LATER CONTROLLED EXECUTION / HISTORICAL
 Batch 04.3 earlier controlled authoring attempt: BLOCKED PRE-WRITE / GUARDED PROCESS NOT STARTED / FIRST MUTATION NOT INVOKED / 0 CONTENTFUL REQUESTS / 0 WRITES / HISTORICAL
 Batch 04.3 pre-write feasibility investigation: COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / CLASS A — ENVELOPE VALUES TOO LOW, SCENARIO SEMANTICS SOUND / 51 TO 111 ENTRY UPDATES
-Batch 04.2 Authoring-Envelope Correction: CHECKPOINTED AT `0e2057d26031d3ba7264810d00173713d83c11ef` / CORRECTED 111 ENTRY-UPDATE CEILING PRESERVED BUT PARKED FROM REUSE PENDING POST-STOP FORENSICS
+Batch 04.2 Authoring-Envelope Correction: CHECKPOINTED AT `0e2057d26031d3ba7264810d00173713d83c11ef` / HISTORICAL 111 CEILING PROVEN INSUFFICIENT / MUST NOT AUTHORIZE EXECUTION
 Previous 04.3 human authoring authorization: HISTORICALLY GRANTED / UNCONSUMED / SUPERSEDED FOR ACTIONABILITY / MUST NOT BE REUSED
 Latest 04.3 human authoring authorization: GRANTED / CONSUMED BY TA-01 ASSET UPLOAD / ADDITIONAL AUTHORING NOT AUTHORIZED
 Batch 04.3 controlled authoring execution: STARTED / ONE GUARDED PROCESS / STOPPED FAIL-CLOSED AT R88 / RESPONSE LOGGER HTTP 422 / CATCH-PATH ATTRIBUTION UNRESOLVED
-Batch 04.3 last-known partial state: EXECUTION EVIDENCE ONLY / NOT FRESHLY REVALIDATED DURING DEFERRAL RECONCILIATION / 19 ENTRIES CREATED / 3 ASSETS CREATED, PROCESSED, AND PUBLISHED / 39 ENTRY UPDATE ATTEMPTS / 0 ENTRY PUBLICATION ATTEMPTS / 0 CLEANUP
+Batch 04.3 fresh forensic state: `master` READY / BLANK / PROTECTED; `dev` READY / EXACT 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2 MODEL / 0 MATERIAL DRIFT / 19 UNPUBLISHED ENTRIES / 3 PROCESSED AND PUBLISHED ASSETS / NO UNEXPECTED `qa04-` ARTIFACTS
 Batch 04.3 scenario accounting: 28 PASS / 20 PASS WITH NOTE / 54 NOT EXECUTED DUE STOP / BATCH NOT COMPLETE
-Batch 04.3 TE-09 incident: `qa04-person-profile` LAST-KNOWN VERSION 9 / UNPUBLISHED / `longBio` RETAINS PROHIBITED `heading-1` / INTENDED RESTORATION DID NOT PERSIST / NOT FRESHLY REVALIDATED
+Batch 04.3 TE-09 incident: `qa04-person-profile` FRESHLY CONFIRMED VERSION 9 / UNPUBLISHED / `longBio` RETAINS PROHIBITED `heading-1` / `learningHighlights` VALID / R88 ATOMIC REJECTION CONFIRMED / RESTORATION NOT AUTHORIZED
+Batch 04.3 forensic planning bounds: FULL RUN 201 MINIMUM BRANCH-SAFE / 216 CONSERVATIVE NO-SHARING; CONTINUATION 173 / 186; NOT CONTROLLING CONTRACT MAXIMA
+Batch 04.3 evidence adequacy: 10 FULLY PROVEN / 15 PARTIAL ACCEPTED-RESTORED / 2 PARTIAL WITHOUT ATTRIBUTION / 29 UNEXECUTED / 0 PUBLICATION BLOCKERS PROVEN
+Batch 04.3 recovery decision: OPTION B — CLEANUP + FULL RESTART PREFERRED FOR PLANNING / 25 CLEANUP MUTATIONS PLANNED / CLEANUP NOT AUTHORIZED
 Batches 04.4–04.6: LATER / 04.4 MUST NOT ADVANCE WHILE 04.3 IS UNRESOLVED
 EF-05: OPTION B / OWNERSHIP CLARIFIED / PRIMARY OWNER EDITORIAL GUIDANCE / NO MODEL CORRECTION REQUIRED / NOT LIVE DRIFT
 QA scenario count vs validation objects: 102 / 102 / EQUALITY COINCIDENTAL / NOT A COUPLED INVARIANT
@@ -101,7 +107,7 @@ Export: COMPLETE / EXACTLY ONE TOP-LEVEL INVOCATION / EXIT 0
 Snapshot: CREATED / LOCALLY VALIDATED / EXTERNALLY APPROVED FOR RECOVERY USE
 Snapshot SHA-256: `0e731940722a86e9c70a9bc71a84a101f740a4efbed553bb998f12a840c9b64a`
 `master`: READY / BLANK / PROTECTED / 0 TYPES / 0 ENTRIES / 0 ASSETS / 0 TAGS / en-US
-`dev`: LAST KNOWN FROM CONTROLLED EXECUTION EVIDENCE / NOT FRESHLY REVALIDATED DURING DEFERRAL RECONCILIATION / APPROVED 10-TYPE MODEL / 19 TEMPORARY ENTRIES / 3 PROCESSED AND PUBLISHED TEMPORARY ASSETS / PARTIAL QA STATE PRESERVED
+`dev`: FRESH FORENSIC EVIDENCE / READY / APPROVED ZERO-DRIFT 10-TYPE MODEL / 19 UNPUBLISHED TEMPORARY ENTRIES / 3 PROCESSED AND PUBLISHED TEMPORARY ASSETS / NO UNEXPECTED `qa04-` ARTIFACTS
 Bootstrap migration: APPROVED RE2-CORRECTED V1 / EXECUTED SUCCESSFULLY IN DEV / LIVE CONTRACT VALIDATED
 Additional bootstrap execution: NOT AUTHORIZED
 Destructive rotation: COMPLETE EXACTLY ONCE / EXTERNALLY VALIDATED WITH NOTES
@@ -166,7 +172,7 @@ Batch 03.6 initial final-live Gate F completed without recoverable terminal evid
 
 Batch 04.1 completed read-only repository and Contentful preflight, confirmed the exact frozen recovery contract and zero material drift, inventoried the editorial authoring surface, and established the externally approved Phase 04 architecture. Its live evidence was 23 GETs, 0 retries, and 0 writes; Final Approval Reconciliation did not rerun those checks and made zero Contentful calls. Commit `33e01ae068769631b3bd997b28711535f7c7b340` activates Phase 04 and checkpoints Batch 04.1.
 
-Batch 04.2 External Validation and External Final Validation returned PASS WITH NOTES, Final Approval Reconciliation is complete, and checkpoint `a85ebb37ef0f182b98d914221e70454cebb1351f` is established. Its corrective and fixture lifecycle evidence remains historical and preserved. The complete pre-write feasibility investigation accepted CLASS A and produced the corrected 111 Entry-update ceiling, checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. A later one-time authorized Batch 04.3 process started and consumed its authorization with the TA-01 Asset upload. It created all 19 temporary Entries and 3 temporary Assets, then stopped fail-closed at R88 after response instrumentation recorded HTTP 422. Last-known evidence leaves `qa04-person-profile` at version 9, unpublished, with prohibited `heading-1` in `longBio`; this was not freshly revalidated during the repository-only deferral reconciliation. Scenario accounting is 28 PASS, 20 PASS WITH NOTE, and 54 NOT EXECUTED DUE STOP. Batch 04.3 is incomplete, its partial state is preserved, and post-stop branch-sensitive forensics are deferred. The 111 ceiling is parked from reuse. Additional authoring, continuation, retry, repair, cleanup, model or Editor Interface correction, Batch 04.4 advancement, and seed are not authorized. See `docs/system/EDITORIAL-QA-AND-TEMPORARY-AUTHORING-CONTRACT.md` and `content-model/reports/PHASE-04-BATCH-04.3-PARTIAL-AUTHORING-INCIDENT-AND-DEFERRAL.md`.
+Batch 04.2 External Validation and External Final Validation returned PASS WITH NOTES, Final Approval Reconciliation is complete, and checkpoint `a85ebb37ef0f182b98d914221e70454cebb1351f` is established. Its corrective and fixture lifecycle evidence remains historical and preserved. The complete pre-write feasibility investigation accepted CLASS A and produced the historical corrected 111 Entry-update ceiling, checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. A later one-time authorized Batch 04.3 process consumed its authorization with the TA-01 Asset upload, created all 19 temporary Entries and 3 temporary Assets, and stopped fail-closed at R88 after HTTP 422. The parking reconciliation preserved then-last-known TE-09 version 9 with prohibited `heading-1`; its 28 PASS / 20 PASS WITH NOTE / 54 NOT EXECUTED DUE STOP scenario accounting remains historical. The subsequent 14-GET-equivalent forensic gate freshly confirmed the same TE-09 state, exact zero-drift `dev`, all 19 unpublished Entries, all 3 processed/published Assets, and no unexpected `qa04-` artifacts. Forensics are complete and externally validated with notes. R88 was atomically rejected and classified as a transformed-error guard defect without establishing a schema defect. The 111 ceiling is proven insufficient; 201 / 216 and continuation 173 / 186 are planning bounds only. Option B is preferred for planning, cleanup remains unauthorized, and Batch 04.3 remains incomplete. See `docs/system/EDITORIAL-QA-AND-TEMPORARY-AUTHORING-CONTRACT.md` and `content-model/reports/PHASE-04-BATCH-04.3-POST-STOP-FORENSICS-AND-RECOVERY-DECISION.md`.
 
 The content-strategy foundation is approved with open decisions intentionally carried forward to later Phase 01 batches.
 
@@ -226,7 +232,7 @@ Gate B authorization: CONSUMED.
 
 Additional bootstrap execution: NOT AUTHORIZED.
 
-Latest approved pre-authoring `dev` model validation: 10 approved content types / 99 approved fields / 18 authored references / 0 material mismatches. The later controlled execution's last-known content state is 19 temporary Entries and 3 temporary Assets; it was not freshly revalidated during deferral reconciliation.
+Latest forensic `dev` validation: ready / 10 approved content types / 99 fields / 18 authored references / 102 validations / 10 display fields / 8 regex validations / 6 Rich Text fields / 2 editor overrides / 0 localized fields / 0 material drift. Current QA content is exactly 19 unpublished Entries and 3 processed/published Assets.
 
 Latest approved `master` evidence: 0 content types / 0 entries / 0 assets / en-US; untouched / blank baseline.
 
@@ -432,4 +438,4 @@ Phase 00 is complete. Batch 00.1, Batch 00.2, Batch 00.3, Batch 00.4, and Batch 
 
 Phase 01 is complete / frozen. Batch 01.1 is approved. Batch 01.2 is approved after external validation. Batch 01.3 is approved after external validation. Batch 01.4 is approved after external validation. Batch 01.5 is approved after external validation. Phase 02 is complete / frozen, Batch 02.1 through Batch 02.4 are approved, Batch 02.5 is re-approved after compatibility corrections, Batch 02.6 is approved after successful bootstrap execution in `dev`, and Batch 02.7 is approved after external validation.
 
-Phase 03 — Model Export + Serial Clean-Room Verification — is COMPLETE / FROZEN. Batches 03.1 through 03.6 are APPROVED / CHECKPOINTED. Phase 04 is ACTIVE; Batch 04.1 is APPROVED / CHECKPOINTED and Batch 04.2 is historically APPROVED / CHECKPOINTED. Batch 04.3 started and stopped after mutation at R88 with partial state preserved; it remains incomplete and post-stop branch-sensitive forensics are deferred. The latest one-time authoring authorization is consumed, while the previous superseded authorization remains not reusable. Batch 04.4 may not advance while 04.3 is unresolved. The approved recovered model had zero material drift at 04.1 entry validation; last-known controlled-execution evidence records 19 temporary Entries and 3 processed/published temporary Assets in `dev`, not freshly revalidated during this reconciliation. `master` remains the protected blank baseline. The model version is not yet frozen. Additional authoring, continuation, retry, repair, cleanup, model or Editor Interface correction, export, snapshot creation, import, migration, bootstrap, environment operations, seed, frontend, and other lifecycle execution remain unauthorized.
+Phase 03 — Model Export + Serial Clean-Room Verification — is COMPLETE / FROZEN. Batches 03.1 through 03.6 are APPROVED / CHECKPOINTED. Phase 04 is ACTIVE; Batch 04.1 is APPROVED / CHECKPOINTED and Batch 04.2 is historically APPROVED / CHECKPOINTED. Batch 04.3 started and stopped after mutation at R88; it remains incomplete, but its post-stop branch-sensitive forensics are complete and externally validated with notes. Fresh evidence confirms blank protected `master`, exact zero-drift `dev`, 19 unpublished temporary Entries, 3 processed/published Assets, and TE-09 version 9 with prohibited `heading-1`. The historical 111 ceiling is insufficient; 201 / 216 are planning bounds only. Option B is preferred for planning, while cleanup remains unauthorized. Batch 04.4 may not advance until cleanup, guard/evidence-contract correction, and successful 04.3 completion. The model is not yet frozen and seed is not started.

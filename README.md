@@ -32,14 +32,17 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Current project state | Phase 04 - Active by the commit containing this README |
 | Latest completed phase | Phase 03 - Model Export + Serial Clean-Room Verification |
 | Latest approved/checkpointed batch | Batch 04.2 - historically approved/checkpointed; narrow Authoring-Envelope Correction reconciled |
-| Current Batch 04.3 state | Started / controlled authoring stopped after mutation at R88 / partial state preserved / forensics deferred |
+| Current Batch 04.3 state | Started / stopped after mutation at R88 / partial state freshly confirmed / post-stop forensics complete / recovery Option B preferred for planning / not complete |
 | Partial-authoring deferral reconciliation | Implementation complete / External Validation PASS WITH NOTES / Final Approval Reconciliation complete |
-| Partial-authoring deferral checkpoint condition | External Final Validation is required before commit; only a commit containing that exact validated state may establish the checkpoint |
-| Authoring-envelope correction | Checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`; corrected 111 Entry-update ceiling remains canonical but is parked from reuse |
+| Partial-authoring incident checkpoint | Established at `93e4ff6dd995831af5d05475db02b1a60f027715` |
+| Post-stop forensic gate | Complete / External Validation PASS WITH NOTES / 14 GET-equivalent requests / 0 writes / 0 retries or replays |
+| Forensic/recovery reconciliation | Implementation complete / External Validation PASS WITH NOTES / Final Approval Reconciliation complete; External Final Validation is required before its containing commit may establish the checkpoint |
+| Authoring-envelope finding | Historical 111 ceiling is proven insufficient for execution; 201 / 216 are unapproved forensic planning bounds only |
 | Batch 04.2 corrective checkpoint | Established at `46ba9c0ee0a0cf0a09736aa867eb76619f44d702` |
 | QA fixture checkpoint | Established at `2c590bf674759159061dcdc8700993adb96d321d`; external checkpoint validation: Git mechanics PASS / canonical truth consistency NEEDS REVISION |
 | First truth corrective checkpoint | Established at `591725c3abdb0e829700cdbbb77a023628525781`; external checkpoint validation: Git mechanics PASS / canonical truth consistency NEEDS REVISION |
-| Required resume gate | Phase 04 / Batch 04.3 - Post-Stop Partial-State + Branch-Sensitive Forensics |
+| Selected recovery route | Option B - Cleanup + Full Restart preferred for planning; cleanup remains unauthorized |
+| Future operational gate | Partial QA Cleanup Read-Only Pre-Execution Gate, only after the reconciliation checkpoint receives External Checkpoint Validation PASS |
 | Previous 04.3 authoring authorization | Historically granted / unconsumed; superseded for actionability and must not be reused |
 | Latest 04.3 authoring authorization | Granted once / consumed by the TA-01 Asset upload / no continuation, retry, repair, or cleanup authorized |
 | Batch 04.1 external validation | PASS WITH NOTES |
@@ -48,7 +51,7 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Migration implementation | Approved RE2-corrected V1 |
 | Migration execution | Successful in `dev` |
 | Approved checksum | `4a2319e069245d94a62e253acc9d4d67ad57f5e3450a143c71607f8c10360e24` |
-| Last-known `dev` | Controlled-execution evidence only; not freshly revalidated here / approved 10-type model / 19 temporary Entries / 3 processed and published Assets / partial QA state preserved |
+| Fresh forensic `dev` | Ready / exact 10-type model and 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2 contract / 0 material drift / 19 unpublished temporary Entries / 3 processed and published Assets / no unexpected `qa04-` artifacts |
 | Pre-rotation model validation | Approved - zero material drift; preserved in recovery snapshot |
 | `master` | Ready / protected blank / 0 types / 0 entries / 0 assets / 0 tags / en-US |
 | Gate B authorization | Consumed |
@@ -63,7 +66,7 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Import | Executed exactly once / authorization consumed / operational exit 1 after HTTP 429; second import not authorized |
 | Semantic recovery | PASS / clean-room comparison PASS / zero material drift |
 | Phase 03 technical exit criteria | 22 / 22 PASS |
-| Phase 04 | Active; Batch 04.3 started, stopped after mutation at R88, remains incomplete, and has deferred required forensics; Batch 04.4 must not advance |
+| Phase 04 | Active; Batch 04.3 remains incomplete after R88, post-stop forensics are complete, Option B is preferred for planning, cleanup is unauthorized, and Batch 04.4 must not advance |
 | Seed content | Not started |
 
 > For canonical current state, see [docs/PROJECT-STATE.md](docs/PROJECT-STATE.md) and [TASKS.md](TASKS.md).
@@ -100,11 +103,11 @@ The implementation sequence keeps CMS decisions upstream of templates and keeps 
 | Environment | Responsibility | Current posture |
 | --- | --- | --- |
 | `master` | Permanent protected baseline and future release target | Ready / protected blank; 0 types / 0 entries / 0 assets / 0 tags / en-US |
-| `dev` | Single rotating sandbox for migration development, model review, and editorial QA | Last known from controlled execution evidence, not freshly revalidated here: approved 10-type model plus 19 temporary Entries and 3 published temporary Assets; partial QA state preserved |
+| `dev` | Single rotating sandbox for migration development, model review, and editorial QA | Fresh forensic evidence: ready, exact zero-drift 10-type model, 19 unpublished temporary Entries, 3 processed/published temporary Assets, and no unexpected `qa04-` artifacts |
 
 Verification is a workflow state, not a third Contentful environment.
 
-Phase 03 Batches 03.1 through 03.6 are approved / checkpointed and Phase 03 is complete / frozen. Commit `33e01ae068769631b3bd997b28711535f7c7b340` activates Phase 04 and checkpoints Batch 04.1. Batch 04.2 remains historically approved / checkpointed, and the corrected 111 Entry-update envelope is checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. A later one-time authorized Batch 04.3 process started and consumed its authorization with the TA-01 Asset upload. It created all 19 temporary Entries and all 3 temporary Assets, then stopped fail-closed at R88 after response instrumentation recorded HTTP 422. Last-known evidence leaves `qa04-person-profile` at version 9 with a prohibited `heading-1` in `longBio`; this state was not freshly revalidated during the repository-only deferral reconciliation. Batch 04.3 is incomplete, its partial state is preserved, and forensics are deferred. The 111 ceiling may not authorize or execute another run or continuation until the required Post-Stop Partial-State + Branch-Sensitive Forensics gate completes. Additional authoring, continuation, retry, repair, cleanup, and Batch 04.4 advancement are not authorized.
+Phase 03 Batches 03.1 through 03.6 are approved / checkpointed and Phase 03 is complete / frozen. Commit `33e01ae068769631b3bd997b28711535f7c7b340` activates Phase 04 and checkpoints Batch 04.1. Batch 04.2 remains historically approved / checkpointed, and its historical 111 Entry-update envelope is checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. A later one-time authorized Batch 04.3 process consumed its authorization with the TA-01 Asset upload, created all 19 temporary Entries and 3 temporary Assets, and stopped fail-closed at R88 after HTTP 422. The completed 14-GET forensic gate freshly confirmed the exact zero-drift model and partial inventory, TE-09 version 9 with prohibited `heading-1`, and atomic rejection of R88. It also proved 111 insufficient, established 201 / 216 as non-controlling planning bounds, found the four-publication evidence plan insufficient, and selected Option B for planning. Batch 04.3 remains incomplete. Cleanup, authoring, continuation, retry, repair, guard/contract implementation, and Batch 04.4 advancement are not authorized.
 
 ## Repository Operating System
 
@@ -198,7 +201,7 @@ Do not run authentication, migration, export, import, or environment commands un
 | 01 | Content Strategy + Route Contract - complete / frozen |
 | 02 | Content Model Contract + Bootstrap Migration - complete / frozen |
 | 03 | Model Export + Serial Clean-Room Verification - complete / frozen; Batch 03.6 approved / checkpointed |
-| 04 | Editorial QA + Model Freeze - active; Batch 04.3 started, stopped after mutation at R88, and remains incomplete with partial state preserved and required forensics deferred; Batch 04.4 must not advance |
+| 04 | Editorial QA + Model Freeze - active; Batch 04.3 remains incomplete after R88, post-stop forensics are complete, Option B is preferred for planning, cleanup is unauthorized, and Batch 04.4 must not advance |
 | 05 | Representative Seed Content |
 | 06 | Frontend Contracts + Adapter Boundary |
 | 07 | Delivery Integration |

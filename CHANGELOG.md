@@ -18,6 +18,7 @@ All meaningful project changes should be recorded here.
 - Phase 00 runtime and tooling table
 - Phase 04 / Batch 04.3 pre-write contract and execution-envelope feasibility report
 - Phase 04 / Batch 04.3 partial-authoring incident and deferral report
+- Phase 04 / Batch 04.3 post-stop forensics and recovery decision report
 
 ### Decisions
 
@@ -29,6 +30,13 @@ All meaningful project changes should be recorded here.
 
 ### Changed
 
+- Implemented the repository-only Batch 04.3 Post-Stop Forensic Findings + Recovery Decision Reconciliation after the GET-only forensic gate received External Validation PASS WITH NOTES.
+- Completed Final Approval Reconciliation for the Batch 04.3 Post-Stop Forensic Findings + Recovery Decision after External Validation returned PASS WITH NOTES; External Final Validation remains the required pre-commit gate for its containing checkpoint.
+- Recorded fresh blank protected `master`, zero-drift `dev`, exact 19 Entry / 3 Asset QA inventory, TE-09 version 9, the R88 transformed-error guard defect, and confirmed atomic rejection without claiming a schema defect.
+- Proved the historical 111 Entry-update ceiling insufficient for execution; recorded 201 / 216 and continuation 173 / 186 as forensic planning bounds only.
+- Recorded hard-validation evidence totals `10 / 15 / 2 / 29`, zero proven publication blockers, and the need to redesign the four-attempt publication/validation evidence contract.
+- Selected Option B — Cleanup + Full Restart preferred for planning and recorded a 25-mutation cleanup planning envelope without authorizing cleanup.
+- Preserved the incident history and all mutation boundaries; this reconciliation made 0 Contentful requests and changed no model, migration, fixture, tooling, package, or environment artifact.
 - Completed Final Approval Reconciliation for the implemented Batch 04.3 Partial Authoring Incident + Deferral Reconciliation after External Validation returned PASS WITH NOTES. External Final Validation is a required pre-commit gate; only after it passes for this exact reconciled state may the containing commit establish the Partial Authoring Incident + Deferral checkpoint.
 - Parked Batch 04.3 after its one-time authorized controlled authoring execution stopped after mutation at R88; the authorization is consumed, partial live state is preserved, and post-stop branch-sensitive forensics are deferred.
 - Recorded last-known controlled-execution evidence of 19 temporary Entries, 3 processed/published temporary Assets, 39 Entry update attempts, 0 Entry publication attempts, and no cleanup, retry, repair, or authoring unpublish.

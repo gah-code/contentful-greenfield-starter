@@ -10,10 +10,11 @@
 | Batch 04.2 — Post-Checkpoint Truth-Surface Correction | IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE |
 | Correction External Final Validation | COMPLETE / CHECKPOINT PREREQUISITE SATISFIED |
 | Corrective checkpoint | ESTABLISHED AT `46ba9c0ee0a0cf0a09736aa867eb76619f44d702` |
-| Batch 04.2 — Authoring-Envelope Correction | CHECKPOINTED AT `0e2057d26031d3ba7264810d00173713d83c11ef`; 111 ENTRY-UPDATE CEILING PARKED FROM REUSE PENDING POST-STOP FORENSICS |
-| Batch 04.3 — Controlled Temporary Editorial QA Execution | STARTED / STOPPED AFTER MUTATION AT R88 / PARTIAL STATE PRESERVED / NOT COMPLETE / FORENSICS DEFERRED |
+| Batch 04.2 — Authoring-Envelope Correction | CHECKPOINTED AT `0e2057d26031d3ba7264810d00173713d83c11ef`; HISTORICAL 111 ENTRY-UPDATE CEILING PROVEN INSUFFICIENT / NOT REUSABLE FOR EXECUTION |
+| Batch 04.3 — Controlled Temporary Editorial QA Execution | STARTED / STOPPED AFTER MUTATION AT R88 / PARTIAL STATE FRESHLY FORENSICALLY CONFIRMED / NOT COMPLETE / POST-STOP FORENSICS COMPLETE / OPTION B PREFERRED FOR PLANNING / CLEANUP NOT AUTHORIZED |
 | Batch 04.3 — Partial Authoring Incident + Deferral Reconciliation | IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE |
-| Partial Authoring Incident + Deferral checkpoint condition | EXTERNAL FINAL VALIDATION REQUIRED PRE-COMMIT; ONLY AFTER IT PASSES FOR THIS EXACT RECONCILED STATE MAY THE CONTAINING COMMIT ESTABLISH THE CHECKPOINT |
+| Batch 04.3 — Post-Stop Forensic Findings + Recovery Decision Reconciliation | IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE / EXTERNAL FINAL VALIDATION REQUIRED BEFORE THE CONTAINING COMMIT MAY ESTABLISH THE CHECKPOINT |
+| Partial Authoring Incident + Deferral checkpoint | ESTABLISHED AT `93e4ff6dd995831af5d05475db02b1a60f027715` |
 | Batch 04.3 — Local Asset Fixture Prerequisite | PDF CLASSIFICATION EXTERNAL FINAL VALIDATION PASS WITH NOTES / CHECKPOINT ESTABLISHED AT `2c590bf674759159061dcdc8700993adb96d321d` |
 | Batch 04.3 — Fixture Post-Checkpoint Truth-Surface Correction | IMPLEMENTED / EXTERNAL VALIDATION PASS / FINAL APPROVAL RECONCILIATION COMPLETE / EXTERNAL FINAL VALIDATION PASS WITH NOTES / COMPLETE / CHECKPOINT `591725c3abdb0e829700cdbbb77a023628525781` ESTABLISHED |
 | Batch 04.3 — First Truth Corrective Checkpoint Validation | GIT MECHANICS PASS / CANONICAL TRUTH CONSISTENCY NEEDS REVISION |
@@ -22,7 +23,7 @@
 | Batch 04.5 — Editorial Workflow + Field Guidance | LATER |
 | Batch 04.6 — Model Freeze Validation + Phase 04 Closeout | LATER |
 
-The Phase 04 transition and Batch 04.1 checkpoint are established at `33e01ae068769631b3bd997b28711535f7c7b340`. Batch 04.2 remains historically approved / checkpointed, and its Authoring-Envelope Correction is checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. A later separately authorized Batch 04.3 process started and consumed its one-time authorization with the TA-01 Asset upload. It created all 19 temporary Entries and 3 temporary Assets, then stopped fail-closed at R88 after response instrumentation recorded HTTP 422. Partial state is preserved, Batch 04.3 is not complete, and required post-stop branch-sensitive forensics are deferred. The canonical 111 Entry-update ceiling is parked from reuse until those forensics complete.
+The Phase 04 transition and Batch 04.1 checkpoint are established at `33e01ae068769631b3bd997b28711535f7c7b340`. Batch 04.2 remains historically approved / checkpointed, and its Authoring-Envelope Correction is checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. A later separately authorized Batch 04.3 process started and consumed its one-time authorization with the TA-01 Asset upload. It created all 19 temporary Entries and 3 temporary Assets, then stopped fail-closed at R88 after response instrumentation recorded HTTP 422. The completed 14-GET-equivalent forensic gate freshly confirmed the partial state and zero model drift; External Validation returned PASS WITH NOTES. Batch 04.3 remains incomplete. The historical 111 ceiling is proven insufficient and must not be reused. Option B — Cleanup + Full Restart is preferred for planning, while cleanup remains unauthorized.
 
 ## Purpose
 
@@ -77,7 +78,7 @@ Live state, **last freshly validated during Batch 04.1 preflight**:
 
 This evidence was not rerun during Final Approval Reconciliation. The reconciliation made zero Contentful calls.
 
-That historical blank-`dev` evidence was superseded for current-state purposes by the later controlled Batch 04.3 execution. Last-known execution evidence, not freshly revalidated during the repository-only deferral reconciliation, records 19 temporary Entries and 3 processed/published temporary Assets in `dev`.
+That historical blank-`dev` evidence was superseded for current-state purposes by the later controlled Batch 04.3 execution. The repository-only deferral reconciliation initially preserved only last-known evidence. The subsequent GET-only forensic gate freshly confirmed ready `dev`, the exact zero-drift 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2 model, all 19 planned unpublished Entries, all 3 planned processed/published Assets, and no unexpected `qa04-` artifacts.
 
 ## Phase 04 Batch Architecture
 
@@ -121,7 +122,7 @@ Purpose: execute only externally approved temporary QA scenarios.
 
 Operation class: CONTENTFUL MUTATION / SEPARATELY GATED.
 
-Status: STARTED / CONTROLLED AUTHORING STOPPED AFTER MUTATION / PARTIAL STATE PRESERVED / NOT COMPLETE / FORENSICS DEFERRED.
+Status: STARTED / CONTROLLED AUTHORING STOPPED AFTER MUTATION / PARTIAL STATE FRESHLY FORENSICALLY CONFIRMED / NOT COMPLETE / POST-STOP FORENSICS COMPLETE / OPTION B PREFERRED FOR PLANNING / CLEANUP NOT AUTHORIZED.
 
 Preserved execution result:
 
@@ -133,12 +134,18 @@ one guarded process
 -> R88 response instrumentation: HTTP 422
 -> fail-closed STOP
 -> partial state preserved
--> forensics deferred
+-> post-stop forensics complete / External Validation PASS WITH NOTES
+-> 14 GET-equivalent requests / 0 writes / 0 retry or replay
+-> exact model and 19 Entry / 3 Asset inventory freshly confirmed
+-> historical 111 execution ceiling proven insufficient
+-> Option B preferred for planning / cleanup not authorized
 ```
 
 The previous 04.3 authorization remains historically GRANTED / UNCONSUMED but superseded and not reusable. The later authorization is CONSUMED. Additional authoring, continuation, retry, repair, and cleanup are not authorized.
 
-Required resume gate: **Phase 04 / Batch 04.3 — Post-Stop Partial-State + Branch-Sensitive Forensics**. It must complete before TE-09 restoration, authoring continuation, another authoring authorization, cleanup authorization, an execution-envelope change, a continuation-versus-cleanup decision, Batch 04.4, model freeze, or Phase 05 seed.
+The required **Phase 04 / Batch 04.3 — Post-Stop Partial-State + Branch-Sensitive Forensics** gate is complete and externally validated with PASS WITH NOTES. It does not authorize TE-09 restoration, authoring continuation, another authoring execution, cleanup, guard/contract implementation, Batch 04.4, model freeze, or Phase 05 seed.
+
+After the forensic/recovery reconciliation completes External Validation, Final Approval Reconciliation, External Final Validation, and its containing checkpoint, External Checkpoint Validation PASS is required before the **Phase 04 / Batch 04.3 — Partial QA Cleanup Read-Only Pre-Execution Gate**. That future gate is GET-only. Cleanup still requires its own external validation and explicit human authorization.
 
 Cleanup is not automatic. After QA evidence receives external validation, cleanup requires a separate gate, an exact temporary artifact inventory, separate explicit cleanup authorization, cleanup of only approved temporary entries/assets, read-only zero-content proof, and external validation.
 
@@ -244,7 +251,7 @@ Status: External Validation PASS WITH NOTES / Final Approval Reconciliation COMP
 - Frozen Contentful validation-object count: 102. Equality with the QA scenario count is coincidental; no one-to-one or coupled invariant exists.
 - Primary-owner partition: 56 Contentful hard validation / 36 editorial guidance / 2 application or future frontend / 8 governance.
 - Planned temporary inventory: 19 Entries / 3 Assets, all reserved under `qa04-` deterministic IDs.
-- Corrected historical authoring envelope: 19 Entry creates / 3 Asset creates / 111 Entry update absolute safety ceiling / maximum 3 Asset metadata updates / 3 planned ingestion operations / 3 Asset processing invocations / conditional readiness ceiling 15 / 4 Entry publish attempts / 2 successful Entry publishes / 3 Asset publishes / 0 unpublishes / 0 automatic mutation retries. The 111 ceiling is parked from reuse pending post-stop branch-sensitive forensics.
+- Corrected historical authoring envelope: 19 Entry creates / 3 Asset creates / 111 Entry update absolute safety ceiling / maximum 3 Asset metadata updates / 3 planned ingestion operations / 3 Asset processing invocations / conditional readiness ceiling 15 / 4 Entry publish attempts / 2 successful Entry publishes / 3 Asset publishes / 0 unpublishes / 0 automatic mutation retries. Completed post-stop forensics proved 111 insufficient for branch-sensitive execution; it is historical and prohibited from reuse.
 - Separate future cleanup envelope: 2 Entry unpublishes / 19 Entry deletes / 3 Asset unpublishes / 3 Asset deletes.
 - Contentful calls during 04.2: 0.
 - Contentful mutations during 04.2: 0.
@@ -297,13 +304,27 @@ Evidence: `content-model/reports/PHASE-04-BATCH-04.3-PRE-WRITE-CONTRACT-ENVELOPE
 
 ### Batch 04.3 Partial Authoring Incident + Deferral
 
-Implementation is COMPLETE, External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is COMPLETE. External Final Validation is a REQUIRED PRE-COMMIT GATE. Only after it passes for this exact reconciled state may the containing commit establish the Partial Authoring Incident + Deferral checkpoint.
+The Partial Authoring Incident + Deferral lifecycle is complete and its checkpoint is established at `93e4ff6dd995831af5d05475db02b1a60f027715`.
 
 The later one-time authorized controlled execution started and consumed its authorization with the TA-01 Asset upload. One guarded process invocation created all 19 temporary Entries and all 3 temporary Assets. The Assets were processed and published. After 39 Entry update attempts and before any Entry publication attempt, R88 occurred in the mapped Rich Text negative-validation sequence. Response instrumentation recorded HTTP 422, while the guard's catch-path status extractor could not safely attribute that status and therefore stopped fail-closed.
 
-Last-known controlled-execution evidence records `qa04-person-profile` at version 9, unpublished, with prohibited `heading-1` remaining in `longBio`; the intended restoration did not persist. Exact field-level R88 attribution is not yet forensically reconciled. This is not a claim of schema defect or confirmed guard correction. The repository-only deferral reconciliation made no Contentful request, so all live state here is explicitly last known and not freshly revalidated.
+The incident parking record captured `qa04-person-profile` at version 9, unpublished, with prohibited `heading-1` remaining in `longBio`; the intended restoration did not persist. At that historical reconciliation point, exact field-level R88 attribution and live state were not freshly revalidated. This remains historical evidence and is not a claim of schema defect or confirmed guard correction.
 
 Scenario accounting is 28 PASS, 20 PASS WITH NOTE, and 54 NOT EXECUTED DUE STOP. No Entry was published, no authoring unpublish or delete occurred, and cleanup was not run. Evidence: `content-model/reports/PHASE-04-BATCH-04.3-PARTIAL-AUTHORING-INCIDENT-AND-DEFERRAL.md`.
+
+### Batch 04.3 Post-Stop Forensic Findings + Recovery Decision
+
+The repository-only reconciliation implementation is COMPLETE, External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is COMPLETE. External Final Validation is the required pre-commit gate; only after it passes for this exact reconciled state may the containing commit establish the forensic/recovery decision checkpoint.
+
+The required read-only forensic gate is COMPLETE and External Validation returned PASS WITH NOTES. Fourteen GET-equivalent requests made 0 writes and 0 retry/replay. They freshly confirmed protected blank `master`; ready `dev`; the exact 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2 model with 0 localized fields, 0 tags, and 0 material drift; all 19 planned unpublished Entries; all 3 planned processed/published Assets; and no missing or unexpected `qa04-` artifacts.
+
+TE-09 remains version 9 and unpublished. Its `longBio` contains prohibited `heading-1`; `learningHighlights` is a valid paragraph document; `publicEmail` is valid; `resume` links TA-03; and `socialLinks` link the primary and ambiguous records. This fresh state does not differ from the parked evidence. Restoration is not authorized.
+
+R88 returned HTTP 422. Raw Axios evidence exposed status at `error.response.status` and details at `error.response.data.details`; the installed SDK transformed the rejection to a plain `Error` whose JSON message exposed status and details. The exact body is unrecoverable and field attribution remains unresolved. R88 atomically rejected the complete update: neither `longBio` restoration nor the next `learningHighlights` state persisted. Classification is a guard status-extraction defect; no schema defect is established.
+
+The historical 111 update ceiling is proven insufficient and cannot authorize continuation or a new run. Full-run values 201 minimum branch-safe and 216 conservative no-sharing, plus continuation totals 173 / 186 after 39 attempts and 134 additional branch-safe updates, are planning bounds only. The current four-publication plan is insufficient for broad publication-blocker claims. Hard-validation evidence is 10 fully proven, 15 accepted-invalid/restored partial, 2 rejected-without-attribution partial, and 29 unexecuted, with 0 publication blockers proven. Guard behavior and the publication/validation evidence contract require redesign before any future authoring.
+
+Option B — Cleanup + Full Restart is preferred for planning. Fresh cleanup planning is 19 unpublished Entry deletes plus 3 Asset unpublishes and 3 Asset deletes, for 25 top-level mutations. This is not authorization. The future **Partial QA Cleanup Read-Only Pre-Execution Gate** must freeze versions, dependencies, safe order, maxima, zero-retry behavior, and secret-safe evidence before external validation and explicit human cleanup authorization. Evidence: `content-model/reports/PHASE-04-BATCH-04.3-POST-STOP-FORENSICS-AND-RECOVERY-DECISION.md`.
 
 ### Batch 04.2 Post-Checkpoint Truth-Surface Correction
 
