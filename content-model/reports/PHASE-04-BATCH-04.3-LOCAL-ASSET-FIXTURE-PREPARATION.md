@@ -1,6 +1,6 @@
 # Phase 04 / Batch 04.3 — Local Asset Fixture Preparation
 
-Status: FIXTURE LOCATION CORRECTION EXTERNAL FINAL VALIDATION PASS WITH NOTES / PDF BINARY CLASSIFICATION CORRECTION IMPLEMENTED / EXTERNAL VALIDATION PASS / FINAL APPROVAL RECONCILIATION COMPLETE / EXTERNAL FINAL VALIDATION NEXT / CHECKPOINT NOT YET ESTABLISHED
+Status: QA FIXTURE CHECKPOINT ESTABLISHED AT `2c590bf674759159061dcdc8700993adb96d321d` / EXTERNAL CHECKPOINT VALIDATION GIT MECHANICS PASS + CANONICAL TRUTH CONSISTENCY NEEDS REVISION / POST-CHECKPOINT TRUTH-SURFACE CORRECTION IMPLEMENTED / EXTERNAL VALIDATION PASS / FINAL APPROVAL RECONCILIATION COMPLETE / EXTERNAL FINAL VALIDATION NEXT / CORRECTIVE CHECKPOINT NOT YET ESTABLISHED
 
 Operation class: REPOSITORY-ONLY
 
@@ -18,8 +18,22 @@ Operation class: REPOSITORY-ONLY
 10. The PDF binary-classification correction added a path-specific `.gitattributes` rule. PDF bytes remained unchanged and `git diff --cached --check` now passes.
 11. PDF classification External Validation returned PASS.
 12. PDF classification Final Approval Reconciliation is COMPLETE.
-13. PDF classification External Final Validation is NEXT.
-14. The fixture Git checkpoint is NOT YET ESTABLISHED.
+13. PDF classification External Final Validation returned PASS WITH NOTES and is COMPLETE.
+14. The corrected QA fixture Git checkpoint was established at `2c590bf674759159061dcdc8700993adb96d321d`.
+15. External checkpoint validation returned GIT MECHANICS PASS and CANONICAL TRUTH CONSISTENCY NEEDS REVISION because committed truth surfaces retained stale pre-checkpoint wording.
+16. The post-checkpoint truth-surface correction is IMPLEMENTED, with no Contentful access and no fixture byte changes.
+17. Post-checkpoint truth-surface correction External Validation returned PASS.
+18. Post-checkpoint truth-surface correction Final Approval Reconciliation is COMPLETE.
+19. Post-checkpoint truth-surface correction External Final Validation is NEXT.
+20. The corrective Git checkpoint is NOT YET ESTABLISHED.
+
+## Post-Checkpoint Truth Reconciliation
+
+Commit `2c590bf674759159061dcdc8700993adb96d321d` is a valid 13-file QA fixture checkpoint. It is not corrupt and has not been amended or rewritten.
+
+External checkpoint validation found only a canonical-state consistency defect: committed truth surfaces still described PDF classification External Final Validation as next and the fixture checkpoint as not established after both events had completed.
+
+This repository-only correction updates those state pointers. External Validation returned PASS, and Final Approval Reconciliation is complete. External Final Validation, the corrective checkpoint, push, clean synchronized `0 0`, and external corrective checkpoint validation remain pending. The full 04.3 read-only pre-execution gate remains BLOCKED / NOT STARTED.
 
 ## PDF Git Classification
 
@@ -75,4 +89,4 @@ The manifest records the exact three filenames, byte sizes, and SHA-256 values a
 
 ## Next Gate
 
-PDF classification External Final Validation is required before the fixture checkpoint. The full Phase 04 / Batch 04.3 read-only pre-execution gate must be rerun from the beginning only after this prerequisite is checkpointed, pushed, and verified clean `0 0`.
+External Final Validation of this post-checkpoint truth-surface correction is next. The full Phase 04 / Batch 04.3 read-only pre-execution gate remains blocked until the correction completes external final validation, corrective checkpoint, push, clean synchronized `0 0`, and external corrective checkpoint validation.
