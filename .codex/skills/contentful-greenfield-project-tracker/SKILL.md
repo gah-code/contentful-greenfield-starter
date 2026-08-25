@@ -98,9 +98,17 @@ Documentation is part of the build.
 - 04.2 checkpoint — ESTABLISHED AT `a85ebb37ef0f182b98d914221e70454cebb1351f`.
 - 04.2 external checkpoint validation — GIT MECHANICS PASS / CANONICAL TRUTH CONSISTENCY NEEDS REVISION.
 - 04.2 Post-Checkpoint Truth-Surface Correction — IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE.
-- 04.2 correction External Final Validation — REQUIRED PRE-COMMIT GATE.
-- 04.2 corrective checkpoint — ESTABLISHED BY THE COMMIT CONTAINING THIS SKILL AFTER CORRECTION EXTERNAL FINAL VALIDATION.
-- 04.3 — CONTROLLED TEMPORARY EDITORIAL QA EXECUTION — BEFORE THE CORRECTIVE CONTAINING COMMIT: BLOCKED / AFTER SUCCESSFUL CORRECTIVE CHECKPOINT VERIFICATION: NEXT / NOT STARTED / FIRST ACTION READ-ONLY PRE-EXECUTION / MUTATION NOT AUTHORIZED.
+- 04.2 correction External Final Validation — COMPLETE / CHECKPOINT PREREQUISITE SATISFIED.
+- 04.2 corrective checkpoint — ESTABLISHED AT `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`.
+- 04.3 — CONTROLLED TEMPORARY EDITORIAL QA EXECUTION — NEXT / NOT STARTED / FULL READ-ONLY PRE-EXECUTION REQUIRED AFTER FIXTURE PREREQUISITE CHECKPOINT / MUTATION NOT AUTHORIZED.
+- 04.3 initial read-only pre-execution attempt — BLOCKED / MISSING APPROVED LOCAL ASSET SOURCES / 0 CONTENTFUL REQUESTS.
+- 04.3 fixture generation — COMPLETE EXTERNALLY.
+- 04.3 wrong-path fixture identity investigation — PASS / CLASS A.
+- 04.3 fixture location correction — IMPLEMENTED / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE / EXTERNAL FINAL VALIDATION PASS WITH NOTES / EXACT FILES AT `content-model/fixtures/phase-04/`.
+- 04.3 first fixture Git checkpoint attempt — BLOCKED BEFORE COMMIT / EXACT 12-FILE STAGED UNIVERSE / PDF INHERITED TEXT AUTO-DETECTION / NO COMMIT / NO PUSH.
+- 04.3 PDF binary-classification correction — IMPLEMENTED / EXACT PATH-SPECIFIC RULE / FIXTURE BYTES UNCHANGED / EXTERNAL VALIDATION PASS / FINAL APPROVAL RECONCILIATION COMPLETE / EXTERNAL FINAL VALIDATION NEXT.
+- 04.3 fixture checkpoint — NOT YET ESTABLISHED.
+- 04.3 full read-only pre-execution rerun — NOT STARTED.
 - 04.4 — EDITORIAL QA FINDINGS RECONCILIATION + CONDITIONAL MODEL / EDITOR-INTERFACE CORRECTIONS — LATER.
 - 04.5 — EDITORIAL WORKFLOW + FIELD GUIDANCE — LATER.
 - 04.6 — MODEL FREEZE VALIDATION + PHASE 04 CLOSEOUT — LATER.
@@ -167,7 +175,7 @@ Batch 03.6 preserves its initial final-live process as an unresolved evidence-ca
 
 Batch 04.1 completed an externally validated PASS WITH NOTES preflight with 23 GETs, 0 retries, and 0 writes. It confirmed the frozen recovered model at 10 types / 99 fields / 18 references / 102 validations / 10 display fields / 8 regex / 6 Rich Text / 2 editor overrides and established the canonical 04.1–04.6 architecture. Commit `33e01ae068769631b3bd997b28711535f7c7b340` activates Phase 04 and checkpoints Batch 04.1.
 
-Batch 04.2 External Validation and External Final Validation returned PASS WITH NOTES, Final Approval Reconciliation is complete, and checkpoint `a85ebb37ef0f182b98d914221e70454cebb1351f` is established. External checkpoint validation passed Git mechanics but returned NEEDS REVISION for canonical truth consistency because stale pre-checkpoint status remained. The Post-Checkpoint Truth-Surface Correction implementation is complete, its External Validation returned PASS WITH NOTES, and its Final Approval Reconciliation is complete. Correction External Final Validation is a required pre-commit gate; the corrective checkpoint is established by the commit containing this skill only after that validation. Before the corrective containing commit exists, Batch 04.3 remains blocked; after successful corrective checkpoint verification it becomes next / not started. Its canonical contract defines 102 scenarios with one primary owner each, 19 planned temporary Entries, 3 planned Assets, and separately bounded authoring and cleanup. EF-05 Option B is accepted: duplicate tag values are editorial-guidance-owned, the schema is correct as implemented, and no model correction or live drift exists. The 102 QA scenarios and 102 validation objects are independent counts whose equality is coincidental. Future Asset ingestion, creation, metadata update, processing, readiness, and publication are separate; the exact path and readiness limit must be frozen in 04.3 read-only pre-execution. Batch 04.2 made zero Contentful requests and mutations. Migration 0001 remains frozen; model version is not yet frozen; Batch 04.3 mutation, cleanup, correction, export, import, migration, bootstrap, environment operations, and seed remain unauthorized.
+Batch 04.2 External Validation and External Final Validation returned PASS WITH NOTES, Final Approval Reconciliation is complete, and checkpoint `a85ebb37ef0f182b98d914221e70454cebb1351f` is established. External checkpoint validation passed Git mechanics but returned NEEDS REVISION for canonical truth consistency because stale pre-checkpoint status remained. The Post-Checkpoint Truth-Surface Correction completed its required validation and is checkpointed at `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`. Batch 04.3 is next / not started. Its initial read-only pre-execution attempt blocked on missing approved local Asset sources with 0 Contentful requests. Fixture generation later completed externally; the wrong-path identity investigation passed as CLASS A, and the exact approved files were moved without transformation to `content-model/fixtures/phase-04/`. Fixture-location External Final Validation returned PASS WITH NOTES. The first fixture Git checkpoint attempt then blocked before commit because the exact PDF inherited text auto-detection; no commit or push occurred. The exact path-specific PDF binary-classification correction is implemented with unchanged fixture bytes, External Validation passed, and Final Approval Reconciliation is complete. Classification External Final Validation is next, the fixture checkpoint is not established, and the full 04.3 read-only gate rerun has not started. The canonical contract defines 102 scenarios with one primary owner each, 19 planned temporary Entries, 3 planned Assets, and separately bounded authoring and cleanup. EF-05 Option B is accepted: duplicate tag values are editorial-guidance-owned, the schema is correct as implemented, and no model correction or live drift exists. The 102 QA scenarios and 102 validation objects are independent counts whose equality is coincidental. Future Asset ingestion, creation, metadata update, processing, readiness, and publication are separate; the exact path and readiness limit must be frozen in 04.3 read-only pre-execution. Migration 0001 remains frozen; model version is not yet frozen; Batch 04.3 mutation, cleanup, correction, export, import, migration, bootstrap, environment operations, and seed remain unauthorized.
 
 Approved Batch 02.2 standalone type IDs:
 
@@ -384,13 +392,25 @@ Batch 04.2
 ✓ POST-CHECKPOINT TRUTH-SURFACE CORRECTION IMPLEMENTATION COMPLETE
 ✓ CORRECTION EXTERNAL VALIDATION PASS WITH NOTES
 ✓ CORRECTION FINAL APPROVAL RECONCILIATION COMPLETE
--> CORRECTION EXTERNAL FINAL VALIDATION REQUIRED PRE-COMMIT GATE
--> CORRECTIVE CHECKPOINT ESTABLISHED BY COMMIT CONTAINING THIS SKILL AFTER EXTERNAL FINAL VALIDATION
+✓ CORRECTION EXTERNAL FINAL VALIDATION COMPLETE
+✓ CORRECTIVE CHECKPOINT ESTABLISHED AT `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`
 
 Batch 04.3
--> BEFORE CORRECTIVE CONTAINING COMMIT: BLOCKED
--> AFTER SUCCESSFUL CORRECTIVE CHECKPOINT: NEXT / NOT STARTED
--> FIRST ACTION READ-ONLY PRE-EXECUTION / MUTATION NOT AUTHORIZED
+-> NEXT / NOT STARTED
+! INITIAL READ-ONLY PRE-EXECUTION BLOCKED ON MISSING APPROVED LOCAL ASSET SOURCES
+✓ FIXTURE GENERATION COMPLETE EXTERNALLY
+✓ WRONG-PATH IDENTITY INVESTIGATION PASS / CLASS A
+✓ FIXTURE LOCATION CORRECTION IMPLEMENTED
+✓ FIXTURE CORRECTION EXTERNAL VALIDATION PASS WITH NOTES
+✓ FIXTURE CORRECTION FINAL APPROVAL RECONCILIATION COMPLETE
+✓ FIXTURE LOCATION CORRECTION EXTERNAL FINAL VALIDATION PASS WITH NOTES
+! FIRST FIXTURE GIT CHECKPOINT ATTEMPT BLOCKED BEFORE COMMIT / PDF TEXT AUTO-DETECTION / NO COMMIT / NO PUSH
+✓ PDF BINARY-CLASSIFICATION CORRECTION IMPLEMENTED / FIXTURE BYTES UNCHANGED
+✓ PDF CLASSIFICATION EXTERNAL VALIDATION PASS
+✓ PDF CLASSIFICATION FINAL APPROVAL RECONCILIATION COMPLETE
+-> PDF CLASSIFICATION EXTERNAL FINAL VALIDATION NEXT
+-> FIXTURE CHECKPOINT NOT YET ESTABLISHED
+-> FULL READ-ONLY PRE-EXECUTION RERUN NOT STARTED / MUTATION NOT AUTHORIZED
 
 Batches 04.4 through 04.6
 -> LATER

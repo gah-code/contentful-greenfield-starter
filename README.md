@@ -32,9 +32,9 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Current project state | Phase 04 - Active by the commit containing this README |
 | Latest completed phase | Phase 03 - Model Export + Serial Clean-Room Verification |
 | Latest approved/checkpointed batch | Batch 04.2 - Editorial QA Scenario + Temporary Authoring Contract - checkpoint `a85ebb37ef0f182b98d914221e70454cebb1351f` |
-| Current corrective lifecycle | Post-checkpoint truth correction - External Validation PASS WITH NOTES / Final Approval Reconciliation COMPLETE |
-| Corrective checkpoint rule | Requires External Final Validation of this exact reconciliation before its containing commit |
-| Future next work | Batch 04.3 - blocked before the corrective containing commit; then read-only pre-execution first after checkpoint verification |
+| Current corrective lifecycle | Batch 04.3 fixture location correction externally final-validated; first fixture checkpoint attempt BLOCKED BEFORE COMMIT; PDF classification correction implemented / External Validation PASS / Final Approval Reconciliation COMPLETE / External Final Validation NEXT / checkpoint not established |
+| Corrective checkpoint | Batch 04.2 correction established at `46ba9c0ee0a0cf0a09736aa867eb76619f44d702` |
+| Next work | Batch 04.3 - next / not started; full read-only pre-execution rerun after fixture prerequisite checkpoint |
 | Batch 04.1 external validation | PASS WITH NOTES |
 | Pre-export tooling | Approved |
 | Content model | Approved V1 model contract |
@@ -56,7 +56,7 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Import | Executed exactly once / authorization consumed / operational exit 1 after HTTP 429; second import not authorized |
 | Semantic recovery | PASS / clean-room comparison PASS / zero material drift |
 | Phase 03 technical exit criteria | 22 / 22 PASS |
-| Phase 04 | Active; Batch 04.2 approved/checkpointed; correction checkpoint uses containing-commit semantics; Batch 04.3 blocked before that commit and mutation not authorized |
+| Phase 04 | Active; Batch 04.2 approved/checkpointed; Batch 04.3 next/not started; PDF classification correction reconciled with External Final Validation next and fixture checkpoint not established; mutation not authorized |
 | Seed content | Not started |
 
 > For canonical current state, see [docs/PROJECT-STATE.md](docs/PROJECT-STATE.md) and [TASKS.md](TASKS.md).
@@ -97,7 +97,7 @@ The implementation sequence keeps CMS decisions upstream of templates and keeps 
 
 Verification is a workflow state, not a third Contentful environment.
 
-Phase 03 Batches 03.1 and 03.2 are approved; Batches 03.3 through 03.6 are approved / checkpointed by their containing commits. Batch 03.5 consumed one explicit import authorization. The import command exited 1 after an HTTP 429, while independent forensics proved semantic recovery PASS with zero material drift. Batch 03.6 preserved the initial unresolved evidence-capture incident, completed one externally accepted corrective validation with 23 GETs and 0 writes, and passed all 22 Phase 03 technical exit criteria. External Batch 03.6 validation and External Final Validation returned PASS WITH NOTES. Phase 03 is complete / frozen. Commit `33e01ae068769631b3bd997b28711535f7c7b340` activates Phase 04 and checkpoints Batch 04.1. Batch 04.2 External Validation and External Final Validation returned PASS WITH NOTES, Final Approval Reconciliation is complete, and checkpoint `a85ebb37ef0f182b98d914221e70454cebb1351f` is established. Its post-checkpoint truth correction implementation is complete, External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. Correction External Final Validation is required before the commit containing the corrective checkpoint. Before that commit, Batch 04.3 remains blocked; after successful checkpoint verification its first action is a read-only pre-execution gate. No Phase 04 Contentful mutation is authorized.
+Phase 03 Batches 03.1 and 03.2 are approved; Batches 03.3 through 03.6 are approved / checkpointed by their containing commits. Batch 03.5 consumed one explicit import authorization. The import command exited 1 after an HTTP 429, while independent forensics proved semantic recovery PASS with zero material drift. Batch 03.6 preserved the initial unresolved evidence-capture incident, completed one externally accepted corrective validation with 23 GETs and 0 writes, and passed all 22 Phase 03 technical exit criteria. External Batch 03.6 validation and External Final Validation returned PASS WITH NOTES. Phase 03 is complete / frozen. Commit `33e01ae068769631b3bd997b28711535f7c7b340` activates Phase 04 and checkpoints Batch 04.1. Batch 04.2 is approved / checkpointed, and its corrective checkpoint is established at `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`. Batch 04.3 is next / not started. Its fixture location correction passed External Final Validation with notes. The subsequent path-specific PDF binary-classification correction is implemented, External Validation passed, and Final Approval Reconciliation is complete; External Final Validation is next and the fixture checkpoint is not established. The full read-only pre-execution rerun has not started. No Phase 04 Contentful mutation is authorized.
 
 ## Repository Operating System
 
@@ -191,7 +191,7 @@ Do not run authentication, migration, export, import, or environment commands un
 | 01 | Content Strategy + Route Contract - complete / frozen |
 | 02 | Content Model Contract + Bootstrap Migration - complete / frozen |
 | 03 | Model Export + Serial Clean-Room Verification - complete / frozen; Batch 03.6 approved / checkpointed |
-| 04 | Editorial QA + Model Freeze - active; Batch 04.2 checkpoint established; correction Final Approval complete; Batch 04.3 blocked before corrective containing commit |
+| 04 | Editorial QA + Model Freeze - active; Batch 04.2 checkpoint established; Batch 04.3 next/not started; PDF classification correction reconciled; External Final Validation next; fixture checkpoint not established |
 | 05 | Representative Seed Content |
 | 06 | Frontend Contracts + Adapter Boundary |
 | 07 | Delivery Integration |

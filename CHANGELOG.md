@@ -27,6 +27,14 @@ All meaningful project changes should be recorded here.
 
 ### Changed
 
+- Moved the exact approved Phase 04 JPEG, PNG, PDF, and manifest fixtures without transformation from the wrong `docs/content-model/fixtures/phase-04/` path to `content-model/fixtures/phase-04/`.
+- Added repository-only Batch 04.3 fixture preparation evidence, preserving exact bytes, hashes, media properties, synthetic/public-safe classification, and 0 Contentful requests or mutations.
+- Recorded the initial Batch 04.3 read-only gate as blocked on missing local Asset sources, external fixture generation as complete, the wrong-path investigation as PASS / CLASS A, and the location correction as implemented.
+- Recorded fixture-correction External Validation as PASS WITH NOTES and its Final Approval Reconciliation as complete.
+- Recorded fixture location correction External Final Validation as PASS WITH NOTES.
+- Preserved the first fixture Git checkpoint attempt as blocked before commit because Git text auto-detection treated the exact deterministic PDF fixture as text; no commit or push occurred.
+- Added a path-specific binary classification for the deterministic Phase 04 QA PDF without changing fixture bytes; classification External Validation passed, Final Approval Reconciliation is complete, External Final Validation is next, and the fixture checkpoint remains not established.
+- Kept Batch 04.3 next / not started, the full read-only pre-execution rerun not started, mutation unauthorized, and seed not started.
 - Completed Final Approval Reconciliation for the Batch 04.2 post-checkpoint truth-surface correction after its External Validation returned PASS WITH NOTES.
 - Encoded correction External Final Validation as a required pre-commit gate and the corrective checkpoint through containing-commit semantics.
 - Preserved original checkpoint `a85ebb37ef0f182b98d914221e70454cebb1351f`; Batch 04.3 remains blocked before the corrective containing commit and mutation remains unauthorized.

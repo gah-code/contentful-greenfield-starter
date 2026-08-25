@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Phase 03 complete / frozen; Phase 04 active; Batch 04.2 approved / checkpointed at `a85ebb37ef0f182b98d914221e70454cebb1351f`; correction implementation, External Validation, and Final Approval Reconciliation complete; corrective checkpoint by containing commit after External Final Validation; Batch 04.3 blocked before that commit, then next / not started with read-only pre-execution first after verification
+Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Phase 03 complete / frozen; Phase 04 active; Batch 04.2 approved / checkpointed with corrective checkpoint `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`; Batch 04.3 next / not started; fixture-location External Final Validation PASS WITH NOTES; PDF binary-classification correction implemented / External Validation PASS / Final Approval Reconciliation complete / External Final Validation next / fixture checkpoint not established; full read-only pre-execution rerun not started
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -57,10 +57,9 @@ Batch 03.6 — APPROVED / CHECKPOINTED
 Phase 04 — ACTIVE BY THE COMMIT CONTAINING THIS ROADMAP
 Batch 04.1 — APPROVED / CHECKPOINTED
 Batch 04.2 — APPROVED / CHECKPOINTED AT `a85ebb37ef0f182b98d914221e70454cebb1351f`
-Batch 04.2 Post-Checkpoint Truth-Surface Correction — IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE
-Correction External Final Validation — REQUIRED PRE-COMMIT GATE
-Corrective checkpoint — ESTABLISHED BY COMMIT CONTAINING THIS ROADMAP AFTER EXTERNAL FINAL VALIDATION
-Batch 04.3 — BEFORE CORRECTIVE CONTAINING COMMIT BLOCKED / AFTER SUCCESSFUL CHECKPOINT VERIFICATION NEXT / NOT STARTED / READ-ONLY PRE-EXECUTION FIRST / MUTATION NOT AUTHORIZED
+Batch 04.2 Post-Checkpoint Truth-Surface Correction — COMPLETE / CHECKPOINTED AT `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`
+Batch 04.3 — NEXT / NOT STARTED / FULL READ-ONLY PRE-EXECUTION REQUIRED AFTER FIXTURE PREREQUISITE CHECKPOINT / MUTATION NOT AUTHORIZED
+Batch 04.3 Local Asset Fixture Prerequisite — LOCATION CORRECTION EXTERNAL FINAL VALIDATION PASS WITH NOTES / PDF BINARY CLASSIFICATION CORRECTION IMPLEMENTED / EXTERNAL VALIDATION PASS / FINAL APPROVAL RECONCILIATION COMPLETE / EXTERNAL FINAL VALIDATION NEXT / CHECKPOINT NOT YET ESTABLISHED
 Batch 04.4 — LATER
 Batch 04.5 — LATER
 Batch 04.6 — LATER
@@ -95,7 +94,7 @@ Create a safe operating surface before any content type is created.
 
 ## Phase 01 — Content Strategy + Route Contract
 
-Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 and Phase 03 are COMPLETE / FROZEN. Phase 04 is ACTIVE; Batch 04.2 is approved / checkpointed at `a85ebb37ef0f182b98d914221e70454cebb1351f`, correction implementation/validation/Final Approval Reconciliation are complete, and its checkpoint is established by the containing commit after External Final Validation. Batch 04.3 remains blocked before that commit and becomes next/not started with read-only pre-execution first after successful checkpoint verification.
+Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 and Phase 03 are COMPLETE / FROZEN. Phase 04 is ACTIVE; Batch 04.2 is approved / checkpointed with corrective checkpoint `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`. Batch 04.3 is next/not started; fixture-location External Final Validation returned PASS WITH NOTES. Its path-specific PDF binary-classification correction is implemented, External Validation passed, and Final Approval Reconciliation is complete. Classification External Final Validation is next, the fixture checkpoint is not established, and the full read-only pre-execution rerun has not started.
 
 ### Goal
 
@@ -302,7 +301,7 @@ Evidence: `content-model/reports/PHASE-02-BATCH-02.7-LIVE-SCHEMA-VALIDATION.md`.
 
 Result: 10 / 10 types, 99 / 99 stored fields, 18 / 18 authored references, 102 / 102 validation objects, 10 / 10 display fields, 2 / 2 explicit editor controls, and 0 material mismatches.
 
-Phase 02 and Phase 03 are COMPLETE / FROZEN. Batches 03.1 and 03.2 are APPROVED, and Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED. Phase 04 is ACTIVE; Batch 04.2 is approved / checkpointed at `a85ebb37ef0f182b98d914221e70454cebb1351f`, correction implementation/validation/Final Approval Reconciliation are complete, and its checkpoint is established by the containing commit after External Final Validation. Batch 04.3 remains blocked before that commit and becomes next/not started with read-only pre-execution first after successful checkpoint verification.
+Phase 02 and Phase 03 are COMPLETE / FROZEN. Batches 03.1 and 03.2 are APPROVED, and Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED. Phase 04 is ACTIVE; Batch 04.2 is approved / checkpointed with corrective checkpoint `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`. Batch 04.3 is next/not started; fixture-location External Final Validation returned PASS WITH NOTES. Its path-specific PDF binary-classification correction is implemented, External Validation passed, and Final Approval Reconciliation is complete. Classification External Final Validation is next, the fixture checkpoint is not established, and the full read-only pre-execution rerun has not started.
 
 ### Exit criteria
 
@@ -384,7 +383,7 @@ Batch 03.6 preserves the initial final-live validator as an unresolved evidence-
 
 ## Phase 04 — Editorial QA + Model Freeze
 
-Current state: ACTIVE. Batch 04.1 is approved / checkpointed. Batch 04.2 External Validation and External Final Validation returned PASS WITH NOTES, Final Approval Reconciliation is complete, and checkpoint `a85ebb37ef0f182b98d914221e70454cebb1351f` is established. External checkpoint validation passed Git mechanics but returned NEEDS REVISION for truth consistency. The post-checkpoint correction implementation is complete, its External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. Correction External Final Validation is required before the containing corrective checkpoint; Batch 04.3 remains blocked before that commit.
+Current state: ACTIVE. Batch 04.1 is approved / checkpointed. Batch 04.2 is approved / checkpointed, and its corrective checkpoint is established at `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`. Batch 04.3 is next / not started. Its initial read-only pre-execution attempt blocked on missing approved local Asset sources. Fixture generation completed externally; the wrong-path identity investigation passed as CLASS A; and the exact approved files were moved without transformation to `content-model/fixtures/phase-04/`. Fixture-location External Final Validation returned PASS WITH NOTES. The first fixture Git checkpoint attempt then blocked before commit because the exact PDF inherited text auto-detection; no commit or push occurred. The path-specific PDF binary-classification correction is implemented, External Validation passed, and Final Approval Reconciliation is complete. Classification External Final Validation is next, the fixture checkpoint is not established, and the full read-only pre-execution rerun has not started.
 
 ### Goal
 
@@ -395,8 +394,8 @@ Produce an editor-tested, migration-governed v1 model freeze candidate. The mode
 | Batch | Name | Operation class | Status after containing commit |
 | --- | --- | --- | --- |
 | 04.1 | Read-Only Planning + Editorial-Quality Preflight | GET-only / repository reads | APPROVED / CHECKPOINTED |
-| 04.2 | Editorial QA Scenario + Temporary Authoring Contract | REPOSITORY-ONLY | APPROVED / CHECKPOINTED AT `a85ebb37ef0f182b98d914221e70454cebb1351f`; CORRECTION IMPLEMENTATION / EXTERNAL VALIDATION / FINAL APPROVAL COMPLETE; CORRECTIVE CHECKPOINT BY CONTAINING COMMIT AFTER EXTERNAL FINAL VALIDATION |
-| 04.3 | Controlled Temporary Editorial QA Execution | READ-ONLY PRE-EXECUTION FIRST; MUTATION SEPARATELY GATED | BEFORE CORRECTIVE CONTAINING COMMIT BLOCKED; AFTER SUCCESSFUL CHECKPOINT VERIFICATION NEXT / NOT STARTED |
+| 04.2 | Editorial QA Scenario + Temporary Authoring Contract | REPOSITORY-ONLY | APPROVED / CHECKPOINTED; CORRECTIVE CHECKPOINT `46ba9c0ee0a0cf0a09736aa867eb76619f44d702` |
+| 04.3 | Controlled Temporary Editorial QA Execution | READ-ONLY PRE-EXECUTION FIRST; MUTATION SEPARATELY GATED | NEXT / NOT STARTED; PDF CLASSIFICATION CORRECTION RECONCILED; EXTERNAL FINAL VALIDATION NEXT; FIXTURE CHECKPOINT NOT ESTABLISHED |
 | 04.4 | Editorial QA Findings Reconciliation + Conditional Model / Editor-Interface Corrections | Reconciliation / conditional mutation | LATER |
 | 04.5 | Editorial Workflow + Field Guidance | REPOSITORY-ONLY | LATER |
 | 04.6 | Model Freeze Validation + Phase 04 Closeout | READ-ONLY + REPOSITORY RECONCILIATION | LATER |
@@ -406,6 +405,7 @@ Produce an editor-tested, migration-governed v1 model freeze candidate. The mode
 - Batch 04.2 defines 102 scenarios with one primary owner each, plans 19 temporary Entries and 3 Assets, and externally validates EF-05 Option B editorial-guidance ownership with no model correction or live drift.
 - The 102 QA scenarios and 102 Contentful validation objects are independent counts whose equality is coincidental, not a coupled invariant.
 - Future Asset ingestion, creation, metadata update, processing, readiness checks, and publication are separately bounded; exact mechanics are a 04.3 read-only pre-execution prerequisite.
+- Repository-owned JPEG, PNG, and PDF QA inputs are present at `content-model/fixtures/phase-04/`; they are not Contentful Assets or Phase 05 seed content and grant no mutation authority.
 - Temporary authoring in Batch 04.3 is not Phase 05 representative seed content.
 - Batch 04.3 requires a fresh read-only gate, external validation, and explicit human authorization.
 - Temporary QA cleanup is not automatic and requires separate evidence review, inventory, gate, authorization, zero-content proof, and external validation.

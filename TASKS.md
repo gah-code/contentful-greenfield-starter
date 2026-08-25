@@ -697,15 +697,31 @@ Status: APPROVED / CHECKPOINTED AT `a85ebb37ef0f182b98d914221e70454cebb1351f`
 - [x] External Validation of post-checkpoint correction — PASS WITH NOTES
 - [x] Post-checkpoint correction Final Approval Reconciliation — COMPLETE
 
-Correction External Final Validation: REQUIRED PRE-COMMIT GATE.
+Correction External Final Validation: COMPLETE / CHECKPOINT PREREQUISITE SATISFIED.
 
-Corrective Git checkpoint: ESTABLISHED BY THE COMMIT CONTAINING THIS TRACKER ONLY AFTER CORRECTION EXTERNAL FINAL VALIDATION PASSES.
+Corrective Git checkpoint: ESTABLISHED AT `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`.
 
 ### Batch 04.3 — Controlled Temporary Editorial QA Execution
 
-Status before the corrective containing commit: BLOCKED
+Status: NEXT / NOT STARTED. First action: READ-ONLY PRE-EXECUTION GATE. No 04.3 execution task is complete and Contentful mutation remains NOT AUTHORIZED.
 
-Status after successful corrective checkpoint verification: NEXT / NOT STARTED. First action: READ-ONLY PRE-EXECUTION GATE. No 04.3 execution task is complete and Contentful mutation remains NOT AUTHORIZED.
+Repository-only local Asset fixture prerequisite: LOCATION CORRECTION EXTERNAL FINAL VALIDATION PASS WITH NOTES / PDF BINARY CLASSIFICATION CORRECTION IMPLEMENTED / EXTERNAL VALIDATION PASS / FINAL APPROVAL RECONCILIATION COMPLETE / EXTERNAL FINAL VALIDATION NEXT / CHECKPOINT NOT YET ESTABLISHED.
+
+- [x] Preserve initial 04.3 read-only attempt as BLOCKED on missing approved local Asset sources
+- [x] Record external fixture generation as complete
+- [x] Complete wrong-path fixture identity investigation — PASS / CLASS A
+- [x] Move the exact four approved files to `content-model/fixtures/phase-04/` without transformation
+- [x] Record local fixture preparation evidence with 0 Contentful requests and mutations
+- [x] External validation of fixture location correction — PASS WITH NOTES
+- [x] Fixture location correction Final Approval Reconciliation — COMPLETE
+- [x] Fixture location correction External Final Validation — PASS WITH NOTES
+- [x] Preserve first fixture Git checkpoint attempt as BLOCKED BEFORE COMMIT on PDF text auto-detection; no commit / no push
+- [x] Add exact path-specific PDF binary classification without changing fixture bytes
+- [x] External validation of PDF binary classification correction — PASS
+- [x] PDF classification Final Approval Reconciliation — COMPLETE
+- [ ] PDF classification External Final Validation
+- [ ] Fixture Git checkpoint
+- [ ] Rerun the full 04.3 read-only pre-execution gate from the beginning
 
 ### Batch 04.4 — Editorial QA Findings Reconciliation + Conditional Model / Editor-Interface Corrections
 
@@ -794,7 +810,7 @@ Recorded Phase 00 evidence:
 - EF-05 Option B is accepted: duplicate tag values are owned by editorial guidance, the schema is correct as implemented, no model correction is required, and there is no live drift.
 - Batch 04.2 defines 102 QA scenarios and the model has 102 validation objects; equality is coincidental and not a coupled invariant.
 - The plan preserves 19 temporary Entries and 3 Assets. Future Asset ingestion, creation, metadata update, processing, readiness, and publication are separate bounded operations; 51 Entry updates is an absolute ceiling. Cleanup remains separately gated.
-- Correction External Final Validation is a required pre-commit gate, and the corrective checkpoint is established only by the commit containing this tracker after that validation. Before the corrective containing commit exists, Batch 04.3 remains blocked. After successful corrective checkpoint verification it becomes next/not started with a read-only pre-execution gate first. Contentful mutation remains unauthorized.
+- Correction External Final Validation completed and the corrective checkpoint is established at `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`. Batch 04.3 is next/not started. Its initial read-only pre-execution attempt blocked on missing approved local Asset sources; external fixture generation and the CLASS A location correction are complete, and fixture-location External Final Validation returned PASS WITH NOTES. The first fixture checkpoint attempt blocked before commit on PDF text auto-detection. The path-specific PDF binary-classification correction passed External Validation and Final Approval Reconciliation is complete; classification External Final Validation is next, the fixture checkpoint is not established, and the full gate rerun has not started. Contentful mutation remains unauthorized.
 - Phase 04 model version is not yet frozen. No Contentful mutation, temporary QA authoring, cleanup, model correction, export, import, migration, bootstrap, environment operation, or seed is authorized.
 - Seed content remains not started.
 - This incident/recovery reconciliation is repository-only and authorizes no Contentful read, write, environment mutation, export, import, bootstrap, or seed operation.
