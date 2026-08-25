@@ -6,6 +6,8 @@ Phase 04 / Batch 04.2: APPROVED / CHECKPOINTED AT `a85ebb37ef0f182b98d914221e704
 
 External Validation: PASS WITH NOTES. Final Approval Reconciliation: COMPLETE. External Final Validation: PASS WITH NOTES / APPROVED FOR GIT CHECKPOINT. External checkpoint validation passed Git mechanics but returned NEEDS REVISION because stale pre-checkpoint status remained on canonical surfaces. The Post-Checkpoint Truth-Surface Correction implementation is COMPLETE, its External Validation is PASS WITH NOTES, and its Final Approval Reconciliation is COMPLETE. Correction External Final Validation is a REQUIRED PRE-COMMIT GATE. The corrective checkpoint is established by the commit containing this contract only after that validation. This document is a repository-only plan and authorizes no Contentful request or mutation. Before the corrective containing commit, Batch 04.3 remains blocked.
 
+Narrow Authoring-Envelope Correction: IMPLEMENTED / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE. External Final Validation is a required pre-commit gate. Only after it passes for this exact reconciled state may the commit containing this state establish its checkpoint. A fresh full Batch 04.3 read-only pre-execution gate requires External Checkpoint Validation PASS for that containing commit. This correction does not authorize Contentful access or authoring.
+
 ## Purpose
 
 Define the exact, countable editorial-QA scenarios and minimum disposable artifact set needed to test the approved v1 model in a future Batch 04.3. The contract separates Contentful validation, editorial guidance, future application behavior, and governance; bounds every planned mutation; and defines cleanup before any authoring begins.
@@ -269,27 +271,29 @@ Local `contentful-management` 12.10.0 types expose `createEntryWithId(contentTyp
 
 | Ref | Deterministic ID | Type | Display value | Dependencies | Scenario purpose | Lifecycle | Max updates | Cleanup |
 | --- | --- | --- | --- | --- | --- | --- | ---: | --- |
-| TE-01 | `qa04-navigation-home` | navigationItem | QA04 Home | none | valid/invalid route and label; ordering | draft | 2 | delete |
-| TE-02 | `qa04-navigation-projects` | navigationItem | QA04 Projects | none | order and picker contrast | draft | 1 | delete |
-| TE-03 | `qa04-social-primary` | socialLink | QA04 Primary Link | none | URL, platform, label, sort order | draft | 3 | delete |
-| TE-04 | `qa04-social-ambiguous` | socialLink | QA04 Primary Link Similar | none | picker and ordering ambiguity | draft | 1 | delete |
-| TE-05 | `qa04-skill-content-modeling` | skill | QA04 Content Modeling | none | valid Skill and reuse | draft | 2 | delete |
-| TE-06 | `qa04-skill-content-modeling-near` | skill | QA04 Content Model Design | none | near-duplicate picker test | draft | 1 | delete |
-| TE-07 | `qa04-tool-contentful` | tool | QA04 Contentful | TE-05/06, TA-01 | Tool validation and Skill links | draft | 3 | delete |
-| TE-08 | `qa04-tool-contentful-near` | tool | QA04 Contentful Platform | none | near-duplicate picker test | draft | 1 | delete |
-| TE-09 | `qa04-person-profile` | personProfile | QA04 Primary Profile | TA-01/03, TE-03/04 | singleton, Rich Text, media, author target | draft | 5 | delete |
+| TE-01 | `qa04-navigation-home` | navigationItem | QA04 Home | none | valid/invalid route and label; ordering | draft | 6 | delete |
+| TE-02 | `qa04-navigation-projects` | navigationItem | QA04 Projects | none | order and picker contrast | draft | 0 | delete |
+| TE-03 | `qa04-social-primary` | socialLink | QA04 Primary Link | none | URL, platform, label, sort order | draft | 11 | delete |
+| TE-04 | `qa04-social-ambiguous` | socialLink | QA04 Primary Link Similar | none | picker and ordering ambiguity | draft | 0 | delete |
+| TE-05 | `qa04-skill-content-modeling` | skill | QA04 Content Modeling | none | valid Skill and reuse | draft | 5 | delete |
+| TE-06 | `qa04-skill-content-modeling-near` | skill | QA04 Content Model Design | none | near-duplicate picker test | draft | 0 | delete |
+| TE-07 | `qa04-tool-contentful` | tool | QA04 Contentful | TE-05/06, TA-01 | Tool validation and Skill links | draft | 8 | delete |
+| TE-08 | `qa04-tool-contentful-near` | tool | QA04 Contentful Platform | none | near-duplicate picker test | draft | 0 | delete |
+| TE-09 | `qa04-person-profile` | personProfile | QA04 Primary Profile | TA-01/03, TE-03/04 | singleton, Rich Text, media, author target | draft | 11 | delete |
 | TE-10 | `qa04-person-profile-duplicate` | personProfile | QA04 Primary Profile Duplicate | TA-01 | singleton diagnostic/picker ambiguity | draft | 0 | delete |
-| TE-11 | `qa04-skill-group` | skillGroup | QA04 Core Capabilities | TE-05/06 | required/ordered Skill membership | draft | 3 | delete |
-| TE-12 | `qa04-site-settings` | siteSettings | QA04 Site Settings | TE-01/02/03/04 | singleton and global arrays | draft | 3 | delete |
+| TE-11 | `qa04-skill-group` | skillGroup | QA04 Core Capabilities | TE-05/06 | required/ordered Skill membership | draft | 4 | delete |
+| TE-12 | `qa04-site-settings` | siteSettings | QA04 Site Settings | TE-01/02/03/04 | singleton and global arrays | draft | 5 | delete |
 | TE-13 | `qa04-site-settings-duplicate` | siteSettings | QA04 Site Settings Duplicate | TE-01 | singleton diagnostic | draft | 0 | delete |
-| TE-14 | `qa04-experience-primary` | experienceItem | QA04 Content Architect | TE-05/07/18, TA-01 | dates, Rich Text, URLs, refs | draft | 5 | delete |
+| TE-14 | `qa04-experience-primary` | experienceItem | QA04 Content Architect | TE-05/07/18, TA-01 | dates, Rich Text, URLs, refs | draft | 14 | delete |
 | TE-15 | `qa04-experience-similar-role` | experienceItem | QA04 Content Architect Similar | none | role-picker ambiguity | draft | 0 | delete |
-| TE-16 | `qa04-project-primary` | project | QA04 Clean-Room Project | TE-05/07/14/17, TA-01/02 | complete Project QA | draft then one successful publish | 10 | unpublish then delete |
-| TE-17 | `qa04-project-duplicate-slug` | project | QA04 Clean-Room Project Duplicate | TA-01 | same-type slug blocker/self picker | draft; one blocked publish attempt | 1 | delete |
-| TE-18 | `qa04-article-primary` | article | QA04 Clean-Room Article | TE-09/16/19/05/07, TA-01/02 | complete Article QA | draft then one successful publish | 9 | unpublish then delete |
-| TE-19 | `qa04-article-duplicate-slug` | article | QA04 Clean-Room Article Duplicate | TE-09 | same-type slug blocker/self picker | draft; one blocked publish attempt | 1 | delete |
+| TE-16 | `qa04-project-primary` | project | QA04 Clean-Room Project | TE-05/07/14/17, TA-01/02 | complete Project QA | draft then one successful publish | 26 | unpublish then delete |
+| TE-17 | `qa04-project-duplicate-slug` | project | QA04 Clean-Room Project Duplicate | TA-01 | same-type slug blocker/self picker | draft; one blocked publish attempt | 0 | delete |
+| TE-18 | `qa04-article-primary` | article | QA04 Clean-Room Article | TE-09/16/19/05/07, TA-01/02 | complete Article QA | draft then one successful publish | 21 | unpublish then delete |
+| TE-19 | `qa04-article-duplicate-slug` | article | QA04 Clean-Room Article Duplicate | TE-09 | same-type slug blocker/self picker | draft; one blocked publish attempt | 0 | delete |
 
-Exact temporary Entry count: **19**. The per-entry update maxima sum to **51**. All values are synthetic QA markers, not portfolio seed content.
+Exact temporary Entry count: **19**. The corrected per-entry update maxima sum to **111**. This is an absolute safety ceiling, not an expected, required, or target count. All values are synthetic QA markers, not portfolio seed content.
+
+TE-02, TE-04, TE-06, TE-08, TE-17, and TE-19 require no post-create Entry updates. Their evidence comes from creation-time diagnostic or picker contrast, or from separately counted publication behavior where applicable. A zero update maximum does not remove an Entry from the 19-Entry inventory.
 
 ## Temporary Asset Inventory
 
@@ -346,7 +350,7 @@ Assets must exist before required media links. Skills have no dependencies and f
 ## Draft / Publish / Update Test Contract
 
 - All 19 entries begin as drafts; invalid states are exercised through bounded updates and restored before later dependent checks.
-- Entry updates are capped at 51 according to the inventory. Each update must cite its scenario ID in the evidence ledger.
+- Entry updates are capped at 111 according to the corrected inventory. Each update must cite its scenario ID in the pre-write evidence ledger and remain within its Entry-specific maximum.
 - Publish TE-16 once to prove a valid Project with required references/media and approved Rich Text can complete core lifecycle.
 - Publish TE-18 once to prove a valid Article with required author/body/date and approved Rich Text can complete core lifecycle.
 - Attempt to publish TE-17 once and TE-19 once to prove same-type slug uniqueness blocks publication.
@@ -379,13 +383,13 @@ PLANNING ONLY — NOT AUTHORIZATION.
 
 Counts are maximum top-level operation attempts. Expected validation failures still consume their planned attempt; no failed operation may be retried automatically.
 
-The 51 Entry updates are an absolute ceiling, not an expected count, required count, or field-change count. Every future Entry update must map to one or more approved `QA04-*` scenario IDs; the ceiling is not permission to improvise scenarios.
+The 111 Entry updates are an absolute safety ceiling, not an expected count, required count, target count, or field-change count. Every future Entry update must map to one or more approved `QA04-*` scenario IDs, remain within its Entry-specific maximum, appear in the pre-write execution ledger, and follow the zero-retry rule. The ceiling is not permission to improvise scenarios.
 
 | Operation | Maximum planned count |
 | --- | ---: |
 | Entry creates | 19 |
 | Asset creates | 3 |
-| Entry updates | 51 |
+| Entry updates | 111 |
 | Asset metadata updates | 3 |
 | Asset ingestion/upload operations | 3 planned maximum; exact operation type required in 04.3 pre-execution |
 | Asset processing invocations | 3 |
@@ -395,7 +399,7 @@ The 51 Entry updates are an absolute ceiling, not an expected count, required co
 | Asset publishes | 3 |
 | Unpublish operations | 0 |
 
-Any required count increase needs a new contract and external review.
+Any required count increase beyond 111 needs a new contract and external review.
 
 ## Read-Only Evidence Requirements
 
@@ -489,8 +493,12 @@ The following are not provable in this CMS-only batch: singleton `limit=2` diagn
 
 Entry and Asset creation/update/publish/unpublish/delete, schema and Editor Interface mutation, migration/bootstrap, export/import, environment lifecycle, cleanup, and seed are NOT AUTHORIZED. Batch 04.2 made zero Contentful requests and zero Contentful mutations.
 
+The previous Batch 04.3 human authoring authorization was historically GRANTED / UNCONSUMED. The blocked process never started, its first mutation was not invoked, and it made zero Contentful requests and zero writes. The contract correction supersedes that authorization for actionability: it MUST NOT be reused. A future authoring execution requires a new explicit one-time human authorization after every correction and fresh-gate prerequisite completes.
+
 ## Batch 04.3 Entry Preconditions
 
-Before the corrective containing commit exists, Batch 04.3 remains BLOCKED. The corrective checkpoint is established only by the commit containing this contract after correction External Final Validation. After clean synchronized checkpoint verification, Batch 04.3 becomes NEXT / NOT STARTED. Its first action is a READ-ONLY PRE-EXECUTION GATE, not mutation.
+Batch 04.3 remains NEXT / NOT STARTED, and authoring remains BLOCKED while the corrected contract completes its gates. Its first action remains a READ-ONLY PRE-EXECUTION GATE, not mutation.
 
-That gate must reverify clean Git state and the exact 04.2 checkpoint; Phase 04/04.2/04.3 state; migration checksum; protected blank `master`; expected recovered `dev`; zero existing reserved QA Entries/Assets; all 19 Entry and 3 Asset identities; the exact Asset ingestion method and file sources; processing path and readiness limit; retry semantics; complete authoring envelope; cleanup unauthorized; and seed not started. A successful read-only pre-execution gate still does not authorize mutation. The execution mechanism and evidence capture must then receive external review and explicit one-time human authorization. Cleanup remains excluded.
+Authoring-Envelope Correction gate: implementation is COMPLETE, External Validation is PASS WITH NOTES, and Final Approval Reconciliation is COMPLETE. External Final Validation is required before the commit containing this exact reconciled state may establish the correction checkpoint. A fresh full Batch 04.3 read-only pre-execution gate requires External Checkpoint Validation PASS for that containing commit.
+
+That gate must reverify clean Git state and the correction checkpoint; Phase 04/04.2/04.3 state; migration checksum; protected blank `master`; expected recovered `dev`; zero existing reserved QA Entries/Assets; all 19 Entry and 3 Asset identities; the exact Asset ingestion method and file sources; processing path and readiness limit; retry semantics; corrected authoring envelope; cleanup unauthorized; and seed not started. A successful read-only pre-execution gate still does not authorize mutation. The execution mechanism and evidence capture must then receive external review and a NEW explicit one-time human authorization. Cleanup remains excluded.

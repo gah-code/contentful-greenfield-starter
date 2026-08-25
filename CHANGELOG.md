@@ -16,6 +16,7 @@ All meaningful project changes should be recorded here.
 - Canonical content-model ledgers for content types, field IDs, and references
 - Node major pin through `.nvmrc`
 - Phase 00 runtime and tooling table
+- Phase 04 / Batch 04.3 pre-write contract and execution-envelope feasibility report
 
 ### Decisions
 
@@ -27,6 +28,12 @@ All meaningful project changes should be recorded here.
 
 ### Changed
 
+- Completed Final Approval Reconciliation for the implemented Batch 04.2 Authoring-Envelope Correction after External Validation returned PASS WITH NOTES. External Final Validation remains a required pre-commit gate; only after it passes for this exact reconciled state may the containing commit establish the correction checkpoint.
+- Implemented the externally validated CLASS A Batch 04.2 Authoring-Envelope Correction, replacing the 51 Entry-update ceiling with the exact 111-update absolute safety ceiling and preserving all 102 scenario IDs, the `56 / 36 / 2 / 8` owner partition, 19 Entry IDs, 3 Asset IDs, and every other operation maximum.
+- Preserved the controlled 04.3 authoring attempt as BLOCKED PRE-WRITE with the guarded process not started, first mutation not invoked, 0 Contentful requests, and 0 writes.
+- Recorded the previous 04.3 human authorization as historically GRANTED / UNCONSUMED but superseded for actionability and prohibited from reuse after the contract correction.
+- Kept Batch 04.3 next / not started and authoring blocked until correction approval, containing-commit checkpoint, External Checkpoint Validation, fresh full read-only validation, and new explicit authorization gates complete.
+- Made no model, migration, fixture, tooling, package, Contentful, cleanup, or seed change during the repository-only correction.
 - Moved the exact approved Phase 04 JPEG, PNG, PDF, and manifest fixtures without transformation from the wrong `docs/content-model/fixtures/phase-04/` path to `content-model/fixtures/phase-04/`.
 - Added repository-only Batch 04.3 fixture preparation evidence, preserving exact bytes, hashes, media properties, synthetic/public-safe classification, and 0 Contentful requests or mutations.
 - Recorded the initial Batch 04.3 read-only gate as blocked on missing local Asset sources, external fixture generation as complete, the wrong-path investigation as PASS / CLASS A, and the location correction as implemented.

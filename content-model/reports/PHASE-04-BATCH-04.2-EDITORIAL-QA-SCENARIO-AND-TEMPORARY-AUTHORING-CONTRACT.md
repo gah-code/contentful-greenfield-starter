@@ -15,8 +15,10 @@
 | Correction Final Approval Reconciliation | COMPLETE |
 | Correction External Final Validation | REQUIRED PRE-COMMIT GATE |
 | Corrective checkpoint | ESTABLISHED BY THE COMMIT CONTAINING THIS CORRECTIVE STATE AFTER EXTERNAL FINAL VALIDATION |
+| Authoring-Envelope Correction | IMPLEMENTED / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE |
+| Authoring-Envelope Correction approval rule | EXTERNAL FINAL VALIDATION REQUIRED BEFORE THE COMMIT CONTAINING THIS EXACT RECONCILED STATE MAY ESTABLISH THE CORRECTION CHECKPOINT |
 
-This report preserves the completed Batch 04.2 lifecycle and the repository-only truth-surface correction through Final Approval Reconciliation. Before the corrective containing commit exists, its checkpoint is not established and Batch 04.3 remains blocked. This evidence authorizes neither Batch 04.3 nor any Contentful request or mutation.
+This report preserves the completed Batch 04.2 lifecycle and records the implemented narrow Authoring-Envelope Correction. The correction checkpoint may be established only by the commit containing its externally final-validated reconciliation, and a fresh full 04.3 read-only gate requires External Checkpoint Validation PASS for that commit. This evidence authorizes neither Batch 04.3 nor any Contentful request or mutation.
 
 ## Starting Git Evidence
 
@@ -134,7 +136,7 @@ Coverage includes all six Rich Text fields, all 18 authored references, high-ris
 - Every approved type has representative coverage.
 - Additional marked entries exist only for singleton diagnostics, same-type slug duplicates, and picker ambiguity.
 - IDs use the reserved `qa04-` marker and deterministic CMA creation methods supported by installed local management types.
-- Planned Entry updates: absolute maximum 51, not an expected or required count; every update must map to approved QA04 scenario IDs.
+- Corrected planned Entry updates: absolute maximum 111, not an expected, required, or target count; every update must map to approved QA04 scenario IDs and remain within its Entry-specific maximum.
 - Planned Entry publish attempts: 4; successful publishes: 2.
 
 ## Temporary Asset Inventory Summary
@@ -157,7 +159,7 @@ Counts are top-level operation-attempt maxima, including expected validation fai
 | --- | ---: |
 | Entry creates | 19 |
 | Asset creates | 3 |
-| Entry updates | 51 |
+| Entry updates | 111 |
 | Asset metadata updates | 3 |
 | Asset ingestion/upload operations | 3 planned maximum; exact type required in 04.3 pre-execution |
 | Asset processing invocations | 3 |
@@ -168,6 +170,8 @@ Counts are top-level operation-attempt maxima, including expected validation fai
 | Authoring unpublishes | 0 |
 
 Asset ingestion, creation, metadata update, processing, readiness checks, and publication are separate operations. Processing is not classified as a generic Asset update. Unbounded polling and automatic retries are prohibited.
+
+The originally approved maximum was 51 Entry updates. The complete pre-write operation-ledger feasibility investigation proved that literal scenario semantics require a conservative maximum of 111, a delta of +60. External validation returned PASS WITH NOTES and accepted CLASS A: envelope values were too low while scenario semantics remained sound. No scenario, owner, Entry, Asset, model, migration, fixture, publication count, or other operation maximum changed.
 
 ## Cleanup Boundary
 
@@ -203,6 +207,10 @@ Created the canonical Batch 04.2 contract and this evidence report. Final Approv
 - Correction External Final Validation: REQUIRED PRE-COMMIT GATE.
 - Corrective checkpoint: ESTABLISHED BY THE COMMIT CONTAINING THIS CORRECTIVE STATE ONLY AFTER EXTERNAL FINAL VALIDATION.
 - Batch 04.3: before the corrective containing commit, BLOCKED; after successful corrective checkpoint verification, NEXT / NOT STARTED.
+- The later controlled authoring attempt stopped PRE-WRITE before its first Contentful request or mutation because `QA04-PP-002` exceeded the old TE-09 maximum. Its human authorization remained GRANTED / UNCONSUMED but is superseded for actionability by the contract correction and MUST NOT be reused.
+- The pre-write feasibility investigation is complete; External Validation returned PASS WITH NOTES and accepted CLASS A with a corrected 111 Entry-update absolute ceiling.
+- The Authoring-Envelope Correction is IMPLEMENTED, External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is COMPLETE. External Final Validation is required before the commit containing this exact reconciled state may establish its correction checkpoint.
+- A fresh full 04.3 read-only pre-execution gate requires External Checkpoint Validation PASS for that containing commit and must precede a NEW explicit human one-time authoring authorization.
 
 ## Protected Artifact Verification
 
@@ -223,8 +231,8 @@ Created the canonical Batch 04.2 contract and this evidence report. Final Approv
 
 ## Blockers
 
-Before the corrective containing commit, Batch 04.3 remains blocked. After successful checkpoint verification it becomes next / not started. Mutation remains not authorized.
+Batch 04.3 remains next / not started and authoring remains blocked until the Authoring-Envelope Correction completes its approval, containing-commit checkpoint, external checkpoint validation, and fresh full read-only pre-execution gates. Mutation remains not authorized.
 
 ## Recommended External Validation Gate
 
-External Final Validation — Phase 04 / Batch 04.2 Post-Checkpoint Truth-Surface Correction Final Approval Reconciliation
+External Final Validation — Phase 04 / Batch 04.2 Authoring-Envelope Correction Final Approval Reconciliation

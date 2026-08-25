@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Phase 03 complete / frozen; Phase 04 active; Batch 04.2 approved / checkpointed with corrective checkpoint `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`; Batch 04.3 next / not started; fixture checkpoint `2c590bf674759159061dcdc8700993adb96d321d` and first truth corrective checkpoint `591725c3abdb0e829700cdbbb77a023628525781` established; both external checkpoint validations passed Git mechanics but returned canonical truth consistency NEEDS REVISION; Closure-Semantics Correction implemented / External Validation PASS WITH NOTES / Final Approval Reconciliation complete / External Final Validation required pre-commit gate; full 04.3 rerun requires External Checkpoint Validation PASS for its containing commit
+Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Phase 03 complete / frozen; Phase 04 active; Batch 04.2 historically approved / checkpointed with narrow Authoring-Envelope Correction implemented, externally validated PASS WITH NOTES, and Final Approval Reconciliation complete; Batch 04.3 next / not started and authoring blocked; Closure-Semantics Correction checkpoint `503f1a6faee27062d0f3f3667b298fe37d62ffb2` historical; fresh full 04.3 rerun requires External Checkpoint Validation PASS for the Authoring-Envelope Correction containing commit
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -58,8 +58,9 @@ Phase 04 — ACTIVE BY THE COMMIT CONTAINING THIS ROADMAP
 Batch 04.1 — APPROVED / CHECKPOINTED
 Batch 04.2 — APPROVED / CHECKPOINTED AT `a85ebb37ef0f182b98d914221e70454cebb1351f`
 Batch 04.2 Post-Checkpoint Truth-Surface Correction — COMPLETE / CHECKPOINTED AT `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`
-Batch 04.3 — NEXT / NOT STARTED / FULL READ-ONLY PRE-EXECUTION REQUIRES EXTERNAL CHECKPOINT VALIDATION PASS FOR THE CLOSURE-SEMANTICS CONTAINING COMMIT / MUTATION NOT AUTHORIZED
-Batch 04.3 Local Asset Fixture Prerequisite — PDF CLASSIFICATION EXTERNAL FINAL VALIDATION PASS WITH NOTES / FIXTURE CHECKPOINT ESTABLISHED AT `2c590bf674759159061dcdc8700993adb96d321d` / FIXTURE CHECKPOINT VALIDATION GIT MECHANICS PASS + CANONICAL TRUTH CONSISTENCY NEEDS REVISION / POST-CHECKPOINT TRUTH CORRECTION EXTERNAL FINAL VALIDATION PASS WITH NOTES / FIRST TRUTH CORRECTIVE CHECKPOINT ESTABLISHED AT `591725c3abdb0e829700cdbbb77a023628525781` / FIRST TRUTH CORRECTIVE CHECKPOINT VALIDATION GIT MECHANICS PASS + CANONICAL TRUTH CONSISTENCY NEEDS REVISION / CLOSURE-SEMANTICS CORRECTION IMPLEMENTED + EXTERNAL VALIDATION PASS WITH NOTES + FINAL APPROVAL RECONCILIATION COMPLETE / EXTERNAL FINAL VALIDATION REQUIRED PRE-COMMIT GATE
+Batch 04.2 Authoring-Envelope Correction — IMPLEMENTED / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE / EXTERNAL FINAL VALIDATION REQUIRED PRE-COMMIT
+Batch 04.3 — NEXT / NOT STARTED / FULL READ-ONLY PRE-EXECUTION REQUIRES EXTERNAL CHECKPOINT VALIDATION PASS FOR THE AUTHORING-ENVELOPE CORRECTION CONTAINING COMMIT / MUTATION NOT AUTHORIZED
+Batch 04.3 Local Asset Fixture Prerequisite — COMPLETE / FIXTURE CHECKPOINT ESTABLISHED AT `2c590bf674759159061dcdc8700993adb96d321d` / FIRST TRUTH CORRECTIVE CHECKPOINT ESTABLISHED AT `591725c3abdb0e829700cdbbb77a023628525781` / CLOSURE-SEMANTICS CORRECTION CHECKPOINTED AT `503f1a6faee27062d0f3f3667b298fe37d62ffb2` / HISTORICAL PREREQUISITES SATISFIED BEFORE THE BLOCKED AUTHORING ATTEMPT
 Batch 04.4 — LATER
 Batch 04.5 — LATER
 Batch 04.6 — LATER
@@ -94,7 +95,7 @@ Create a safe operating surface before any content type is created.
 
 ## Phase 01 — Content Strategy + Route Contract
 
-Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 and Phase 03 are COMPLETE / FROZEN. Phase 04 is ACTIVE; Batch 04.2 is approved / checkpointed with corrective checkpoint `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`. Batch 04.3 is next/not started. The fixture checkpoint is established at `2c590bf674759159061dcdc8700993adb96d321d`, and the first truth corrective checkpoint is established at `591725c3abdb0e829700cdbbb77a023628525781`; external validation of each passed Git mechanics but returned NEEDS REVISION for canonical truth consistency. The Closure-Semantics Correction is implemented, External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. External Final Validation is a required pre-commit gate; only after it passes for this exact reconciliation may the containing commit establish the corrective checkpoint. The full read-only gate requires External Checkpoint Validation PASS for that containing commit.
+Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 and Phase 03 are COMPLETE / FROZEN. Phase 04 is ACTIVE; Batch 04.2 is historically approved / checkpointed and its narrow Authoring-Envelope Correction is implemented with a corrected 111 Entry-update absolute safety ceiling. Batch 04.3 is next / not started and authoring remains blocked. Its Closure-Semantics Correction is historically checkpointed at `503f1a6faee27062d0f3f3667b298fe37d62ffb2`; any fresh full read-only gate requires External Checkpoint Validation PASS for the Authoring-Envelope Correction containing commit and must precede new explicit authorization.
 
 ### Goal
 
@@ -301,7 +302,7 @@ Evidence: `content-model/reports/PHASE-02-BATCH-02.7-LIVE-SCHEMA-VALIDATION.md`.
 
 Result: 10 / 10 types, 99 / 99 stored fields, 18 / 18 authored references, 102 / 102 validation objects, 10 / 10 display fields, 2 / 2 explicit editor controls, and 0 material mismatches.
 
-Phase 02 and Phase 03 are COMPLETE / FROZEN. Batches 03.1 and 03.2 are APPROVED, and Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED. Phase 04 is ACTIVE; Batch 04.2 is approved / checkpointed with corrective checkpoint `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`. Batch 04.3 is next/not started. The fixture checkpoint is established at `2c590bf674759159061dcdc8700993adb96d321d`, and the first truth corrective checkpoint is established at `591725c3abdb0e829700cdbbb77a023628525781`; external validation of each passed Git mechanics but returned NEEDS REVISION for canonical truth consistency. The Closure-Semantics Correction is implemented, External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. External Final Validation is a required pre-commit gate; only after it passes for this exact reconciliation may the containing commit establish the corrective checkpoint. The full read-only gate requires External Checkpoint Validation PASS for that containing commit.
+Phase 02 and Phase 03 are COMPLETE / FROZEN. Batches 03.1 and 03.2 are APPROVED, and Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED. Phase 04 is ACTIVE; Batch 04.2 is historically approved / checkpointed and its narrow Authoring-Envelope Correction is implemented with a corrected 111 Entry-update absolute safety ceiling. Batch 04.3 is next / not started and authoring remains blocked. Its Closure-Semantics Correction is historically checkpointed at `503f1a6faee27062d0f3f3667b298fe37d62ffb2`; any fresh full read-only gate requires External Checkpoint Validation PASS for the Authoring-Envelope Correction containing commit and must precede new explicit authorization.
 
 ### Exit criteria
 
@@ -383,7 +384,7 @@ Batch 03.6 preserves the initial final-live validator as an unresolved evidence-
 
 ## Phase 04 — Editorial QA + Model Freeze
 
-Current state: ACTIVE. Batch 04.1 is approved / checkpointed. Batch 04.2 is approved / checkpointed, and its corrective checkpoint is established at `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`. Batch 04.3 is next / not started. Its initial read-only pre-execution attempt blocked on missing approved local Asset sources. Fixture generation completed externally; the wrong-path identity investigation passed as CLASS A; and the exact approved files were moved without transformation to `content-model/fixtures/phase-04/`. Fixture-location External Final Validation returned PASS WITH NOTES. The first fixture Git checkpoint attempt then blocked before commit because the exact PDF inherited text auto-detection; no commit or push occurred. The path-specific PDF correction preserved fixture bytes, and classification External Final Validation returned PASS WITH NOTES. The valid 13-file fixture checkpoint is established at `2c590bf674759159061dcdc8700993adb96d321d`; external checkpoint validation passed Git mechanics but returned NEEDS REVISION for canonical truth consistency. The repository-only post-checkpoint truth-surface correction completed External Final Validation, and its first truth corrective checkpoint is established at `591725c3abdb0e829700cdbbb77a023628525781`; external validation passed Git mechanics but returned NEEDS REVISION because its lifecycle wording became stale. The Closure-Semantics Correction is implemented, External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. External Final Validation is a required pre-commit gate, and the full gate requires External Checkpoint Validation PASS for the containing commit.
+Current state: ACTIVE. Batch 04.1 is approved / checkpointed. Batch 04.2 is historically approved / checkpointed, and its narrow Authoring-Envelope Correction is implemented with External Validation PASS WITH NOTES and Final Approval Reconciliation complete. The corrected Entry-update absolute safety ceiling is 111. External Final Validation remains a required pre-commit gate; only after it passes for this exact reconciled state may the containing commit establish the correction checkpoint. Batch 04.3 is next / not started and authoring remains blocked. The prior authoring authorization was granted/unconsumed but is superseded for actionability and must not be reused. A fresh full 04.3 read-only gate requires External Checkpoint Validation PASS for the correction containing commit and must precede a new explicit authorization.
 
 ### Goal
 
@@ -394,8 +395,8 @@ Produce an editor-tested, migration-governed v1 model freeze candidate. The mode
 | Batch | Name | Operation class | Status after containing commit |
 | --- | --- | --- | --- |
 | 04.1 | Read-Only Planning + Editorial-Quality Preflight | GET-only / repository reads | APPROVED / CHECKPOINTED |
-| 04.2 | Editorial QA Scenario + Temporary Authoring Contract | REPOSITORY-ONLY | APPROVED / CHECKPOINTED; CORRECTIVE CHECKPOINT `46ba9c0ee0a0cf0a09736aa867eb76619f44d702` |
-| 04.3 | Controlled Temporary Editorial QA Execution | READ-ONLY PRE-EXECUTION FIRST; MUTATION SEPARATELY GATED | NEXT / NOT STARTED; FIXTURE CHECKPOINT `2c590bf` AND FIRST TRUTH CORRECTIVE CHECKPOINT `591725c` ESTABLISHED; CLOSURE-SEMANTICS CORRECTION IMPLEMENTED / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE; EXTERNAL FINAL VALIDATION REQUIRED PRE-COMMIT; FULL GATE REQUIRES EXTERNAL CHECKPOINT VALIDATION PASS FOR ITS CONTAINING COMMIT |
+| 04.2 | Editorial QA Scenario + Temporary Authoring Contract | REPOSITORY-ONLY | HISTORICALLY APPROVED / CHECKPOINTED; AUTHORING-ENVELOPE CORRECTION IMPLEMENTED / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE; 111 ENTRY-UPDATE SAFETY CEILING |
+| 04.3 | Controlled Temporary Editorial QA Execution | READ-ONLY PRE-EXECUTION FIRST; MUTATION SEPARATELY GATED | NEXT / NOT STARTED; BLOCKED UNTIL CORRECTED CONTRACT APPROVAL, CONTAINING-COMMIT CHECKPOINT, EXTERNAL CHECKPOINT VALIDATION, FRESH FULL READ-ONLY VALIDATION, AND NEW AUTHORIZATION |
 | 04.4 | Editorial QA Findings Reconciliation + Conditional Model / Editor-Interface Corrections | Reconciliation / conditional mutation | LATER |
 | 04.5 | Editorial Workflow + Field Guidance | REPOSITORY-ONLY | LATER |
 | 04.6 | Model Freeze Validation + Phase 04 Closeout | READ-ONLY + REPOSITORY RECONCILIATION | LATER |
@@ -404,10 +405,12 @@ Produce an editor-tested, migration-governed v1 model freeze candidate. The mode
 
 - Batch 04.2 defines 102 scenarios with one primary owner each, plans 19 temporary Entries and 3 Assets, and externally validates EF-05 Option B editorial-guidance ownership with no model correction or live drift.
 - The 102 QA scenarios and 102 Contentful validation objects are independent counts whose equality is coincidental, not a coupled invariant.
+- The complete pre-write feasibility investigation received External Validation PASS WITH NOTES and accepted CLASS A. The corrected maximum is 111 Entry updates, an absolute safety ceiling rather than an expected, required, or target count.
 - Future Asset ingestion, creation, metadata update, processing, readiness checks, and publication are separately bounded; exact mechanics are a 04.3 read-only pre-execution prerequisite.
 - Repository-owned JPEG, PNG, and PDF QA inputs are present at `content-model/fixtures/phase-04/`; they are not Contentful Assets or Phase 05 seed content and grant no mutation authority.
 - Temporary authoring in Batch 04.3 is not Phase 05 representative seed content.
-- Batch 04.3 requires a fresh read-only gate, external validation, and explicit human authorization.
+- The blocked authoring process never started, invoked no first mutation, and made zero Contentful requests or writes. Its historically granted/unconsumed authorization is superseded and must not be reused.
+- Batch 04.3 requires the corrected contract gates, a fresh full read-only gate, external validation, and a new explicit human authorization.
 - Temporary QA cleanup is not automatic and requires separate evidence review, inventory, gate, authorization, zero-content proof, and external validation.
 - Unexpected authoring failure stops execution and preserves evidence without automatic cleanup.
 - Batch 04.4 always reconciles findings and may conclude `NO MODEL CORRECTION REQUIRED`.
