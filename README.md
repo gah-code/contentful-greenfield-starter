@@ -32,19 +32,23 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Current project state | Phase 04 - Active by the commit containing this README |
 | Latest completed phase | Phase 03 - Model Export + Serial Clean-Room Verification |
 | Latest approved/checkpointed batch | Batch 04.2 - historically approved/checkpointed; narrow Authoring-Envelope Correction reconciled |
-| Current corrective lifecycle | Authoring-Envelope Correction - implemented / External Validation PASS WITH NOTES / Final Approval Reconciliation complete / CLASS A / corrected 111 Entry-update safety ceiling |
+| Current Batch 04.3 state | Started / controlled authoring stopped after mutation at R88 / partial state preserved / forensics deferred |
+| Partial-authoring deferral reconciliation | Implementation complete / External Validation PASS WITH NOTES / Final Approval Reconciliation complete |
+| Partial-authoring deferral checkpoint condition | External Final Validation is required before commit; only a commit containing that exact validated state may establish the checkpoint |
+| Authoring-envelope correction | Checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`; corrected 111 Entry-update ceiling remains canonical but is parked from reuse |
 | Batch 04.2 corrective checkpoint | Established at `46ba9c0ee0a0cf0a09736aa867eb76619f44d702` |
 | QA fixture checkpoint | Established at `2c590bf674759159061dcdc8700993adb96d321d`; external checkpoint validation: Git mechanics PASS / canonical truth consistency NEEDS REVISION |
 | First truth corrective checkpoint | Established at `591725c3abdb0e829700cdbbb77a023628525781`; external checkpoint validation: Git mechanics PASS / canonical truth consistency NEEDS REVISION |
-| Full 04.3 rerun prerequisite | Authoring-Envelope Correction approval and containing checkpoint, clean `0 0`, External Checkpoint Validation PASS, then a fresh full read-only gate |
+| Required resume gate | Phase 04 / Batch 04.3 - Post-Stop Partial-State + Branch-Sensitive Forensics |
 | Previous 04.3 authoring authorization | Historically granted / unconsumed; superseded for actionability and must not be reused |
+| Latest 04.3 authoring authorization | Granted once / consumed by the TA-01 Asset upload / no continuation, retry, repair, or cleanup authorized |
 | Batch 04.1 external validation | PASS WITH NOTES |
 | Pre-export tooling | Approved |
 | Content model | Approved V1 model contract |
 | Migration implementation | Approved RE2-corrected V1 |
 | Migration execution | Successful in `dev` |
 | Approved checksum | `4a2319e069245d94a62e253acc9d4d67ad57f5e3450a143c71607f8c10360e24` |
-| Live `dev` | Ready / approved recovered v1 model / 10 types / 0 entries / 0 assets / 0 tags / en-US / zero material drift |
+| Last-known `dev` | Controlled-execution evidence only; not freshly revalidated here / approved 10-type model / 19 temporary Entries / 3 processed and published Assets / partial QA state preserved |
 | Pre-rotation model validation | Approved - zero material drift; preserved in recovery snapshot |
 | `master` | Ready / protected blank / 0 types / 0 entries / 0 assets / 0 tags / en-US |
 | Gate B authorization | Consumed |
@@ -59,7 +63,7 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Import | Executed exactly once / authorization consumed / operational exit 1 after HTTP 429; second import not authorized |
 | Semantic recovery | PASS / clean-room comparison PASS / zero material drift |
 | Phase 03 technical exit criteria | 22 / 22 PASS |
-| Phase 04 | Active; Batch 04.2 historically approved/checkpointed with Authoring-Envelope Correction reconciled; Batch 04.3 next/not started and authoring blocked; mutation not authorized |
+| Phase 04 | Active; Batch 04.3 started, stopped after mutation at R88, remains incomplete, and has deferred required forensics; Batch 04.4 must not advance |
 | Seed content | Not started |
 
 > For canonical current state, see [docs/PROJECT-STATE.md](docs/PROJECT-STATE.md) and [TASKS.md](TASKS.md).
@@ -96,11 +100,11 @@ The implementation sequence keeps CMS decisions upstream of templates and keeps 
 | Environment | Responsibility | Current posture |
 | --- | --- | --- |
 | `master` | Permanent protected baseline and future release target | Ready / protected blank; 0 types / 0 entries / 0 assets / 0 tags / en-US |
-| `dev` | Single rotating sandbox for migration development, model review, and editorial QA | Ready / approved recovered v1 model; 10 types / 0 entries / 0 assets / 0 tags / en-US; zero material drift |
+| `dev` | Single rotating sandbox for migration development, model review, and editorial QA | Last known from controlled execution evidence, not freshly revalidated here: approved 10-type model plus 19 temporary Entries and 3 published temporary Assets; partial QA state preserved |
 
 Verification is a workflow state, not a third Contentful environment.
 
-Phase 03 Batches 03.1 through 03.6 are approved / checkpointed and Phase 03 is complete / frozen. Commit `33e01ae068769631b3bd997b28711535f7c7b340` activates Phase 04 and checkpoints Batch 04.1. Batch 04.2 remains historically approved / checkpointed. A separately authorized 04.3 authoring process later stopped PRE-WRITE with no Contentful request or mutation because the old 51-update envelope could not execute literal scenario semantics. The complete feasibility investigation received External Validation PASS WITH NOTES and accepted CLASS A. The narrow correction replaces 51 with an exact 111 Entry-update absolute safety ceiling while preserving all 102 scenarios, 19 Entries, 3 Assets, model, migration, fixtures, and other operation maxima. Its implementation and Final Approval Reconciliation are complete. External Final Validation remains a required pre-commit gate; only after it passes for this exact reconciled state may the containing commit establish the correction checkpoint. Batch 04.3 remains next / not started and authoring remains blocked. The prior granted/unconsumed authorization is superseded and must not be reused. External Checkpoint Validation PASS for that containing commit and a fresh full read-only pre-execution gate are required before a new explicit authorization. No Phase 04 Contentful mutation is authorized.
+Phase 03 Batches 03.1 through 03.6 are approved / checkpointed and Phase 03 is complete / frozen. Commit `33e01ae068769631b3bd997b28711535f7c7b340` activates Phase 04 and checkpoints Batch 04.1. Batch 04.2 remains historically approved / checkpointed, and the corrected 111 Entry-update envelope is checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. A later one-time authorized Batch 04.3 process started and consumed its authorization with the TA-01 Asset upload. It created all 19 temporary Entries and all 3 temporary Assets, then stopped fail-closed at R88 after response instrumentation recorded HTTP 422. Last-known evidence leaves `qa04-person-profile` at version 9 with a prohibited `heading-1` in `longBio`; this state was not freshly revalidated during the repository-only deferral reconciliation. Batch 04.3 is incomplete, its partial state is preserved, and forensics are deferred. The 111 ceiling may not authorize or execute another run or continuation until the required Post-Stop Partial-State + Branch-Sensitive Forensics gate completes. Additional authoring, continuation, retry, repair, cleanup, and Batch 04.4 advancement are not authorized.
 
 ## Repository Operating System
 
@@ -194,7 +198,7 @@ Do not run authentication, migration, export, import, or environment commands un
 | 01 | Content Strategy + Route Contract - complete / frozen |
 | 02 | Content Model Contract + Bootstrap Migration - complete / frozen |
 | 03 | Model Export + Serial Clean-Room Verification - complete / frozen; Batch 03.6 approved / checkpointed |
-| 04 | Editorial QA + Model Freeze - active; Batch 04.2 historically checkpointed with Authoring-Envelope Correction reconciled; Batch 04.3 next/not started and authoring blocked; Closure-Semantics checkpoint `503f1a6` historical; fresh rerun requires the current correction gates |
+| 04 | Editorial QA + Model Freeze - active; Batch 04.3 started, stopped after mutation at R88, and remains incomplete with partial state preserved and required forensics deferred; Batch 04.4 must not advance |
 | 05 | Representative Seed Content |
 | 06 | Frontend Contracts + Adapter Boundary |
 | 07 | Delivery Integration |

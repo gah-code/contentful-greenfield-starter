@@ -17,6 +17,7 @@ All meaningful project changes should be recorded here.
 - Node major pin through `.nvmrc`
 - Phase 00 runtime and tooling table
 - Phase 04 / Batch 04.3 pre-write contract and execution-envelope feasibility report
+- Phase 04 / Batch 04.3 partial-authoring incident and deferral report
 
 ### Decisions
 
@@ -28,11 +29,17 @@ All meaningful project changes should be recorded here.
 
 ### Changed
 
+- Completed Final Approval Reconciliation for the implemented Batch 04.3 Partial Authoring Incident + Deferral Reconciliation after External Validation returned PASS WITH NOTES. External Final Validation is a required pre-commit gate; only after it passes for this exact reconciled state may the containing commit establish the Partial Authoring Incident + Deferral checkpoint.
+- Parked Batch 04.3 after its one-time authorized controlled authoring execution stopped after mutation at R88; the authorization is consumed, partial live state is preserved, and post-stop branch-sensitive forensics are deferred.
+- Recorded last-known controlled-execution evidence of 19 temporary Entries, 3 processed/published temporary Assets, 39 Entry update attempts, 0 Entry publication attempts, and no cleanup, retry, repair, or authoring unpublish.
+- Recorded response-instrumentation HTTP 422 evidence and the guard catch-path classification limitation without attributing a schema defect or claiming a guard fix.
+- Parked the corrected 111 Entry-update ceiling from reuse until the required Post-Stop Partial-State + Branch-Sensitive Forensics gate completes; Batch 04.4 remains later and may not advance while 04.3 is unresolved.
+- Made no Contentful request, model/migration/tooling/fixture/package change, repair, cleanup, environment operation, or seed operation during this repository-only reconciliation.
 - Completed Final Approval Reconciliation for the implemented Batch 04.2 Authoring-Envelope Correction after External Validation returned PASS WITH NOTES. External Final Validation remains a required pre-commit gate; only after it passes for this exact reconciled state may the containing commit establish the correction checkpoint.
 - Implemented the externally validated CLASS A Batch 04.2 Authoring-Envelope Correction, replacing the 51 Entry-update ceiling with the exact 111-update absolute safety ceiling and preserving all 102 scenario IDs, the `56 / 36 / 2 / 8` owner partition, 19 Entry IDs, 3 Asset IDs, and every other operation maximum.
 - Preserved the controlled 04.3 authoring attempt as BLOCKED PRE-WRITE with the guarded process not started, first mutation not invoked, 0 Contentful requests, and 0 writes.
 - Recorded the previous 04.3 human authorization as historically GRANTED / UNCONSUMED but superseded for actionability and prohibited from reuse after the contract correction.
-- Kept Batch 04.3 next / not started and authoring blocked until correction approval, containing-commit checkpoint, External Checkpoint Validation, fresh full read-only validation, and new explicit authorization gates complete.
+- At that historical Authoring-Envelope Correction stage, kept Batch 04.3 next / not started and authoring blocked until correction approval, containing-commit checkpoint, External Checkpoint Validation, fresh full read-only validation, and new explicit authorization gates completed.
 - Made no model, migration, fixture, tooling, package, Contentful, cleanup, or seed change during the repository-only correction.
 - Moved the exact approved Phase 04 JPEG, PNG, PDF, and manifest fixtures without transformation from the wrong `docs/content-model/fixtures/phase-04/` path to `content-model/fixtures/phase-04/`.
 - Added repository-only Batch 04.3 fixture preparation evidence, preserving exact bytes, hashes, media properties, synthetic/public-safe classification, and 0 Contentful requests or mutations.
@@ -46,7 +53,7 @@ All meaningful project changes should be recorded here.
 - Recorded External Final Validation of the repository-only Batch 04.3 fixture post-checkpoint truth-surface correction as PASS WITH NOTES / complete and its first truth corrective checkpoint as established at `591725c3abdb0e829700cdbbb77a023628525781`; no Contentful access occurred and fixture bytes remain unchanged.
 - Recorded external validation of checkpoint `591725c3abdb0e829700cdbbb77a023628525781` as Git mechanics PASS with canonical truth consistency NEEDS REVISION because the commit retained self-invalidating pre-checkpoint wording.
 - Completed Final Approval Reconciliation for the implemented Batch 04.3 Closure-Semantics Correction after External Validation returned PASS WITH NOTES. External Final Validation remains a required pre-commit gate; only after it passes for this exact reconciliation may the containing commit establish the Closure-Semantics Corrective Checkpoint, and the full read-only rerun requires External Checkpoint Validation PASS for that containing commit.
-- Kept Batch 04.3 next / not started, mutation unauthorized, and seed not started.
+- At that historical Closure-Semantics Correction stage, kept Batch 04.3 next / not started, mutation unauthorized, and seed not started.
 - Completed Final Approval Reconciliation for the Batch 04.2 post-checkpoint truth-surface correction after its External Validation returned PASS WITH NOTES.
 - Encoded correction External Final Validation as a required pre-commit gate and the corrective checkpoint through containing-commit semantics.
 - Preserved original checkpoint `a85ebb37ef0f182b98d914221e70454cebb1351f`; Batch 04.3 remains blocked before the corrective containing commit and mutation remains unauthorized.
