@@ -10,14 +10,16 @@
 | Batch 04.2 — Post-Checkpoint Truth-Surface Correction | IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE |
 | Correction External Final Validation | COMPLETE / CHECKPOINT PREREQUISITE SATISFIED |
 | Corrective checkpoint | ESTABLISHED AT `46ba9c0ee0a0cf0a09736aa867eb76619f44d702` |
-| Batch 04.3 — Controlled Temporary Editorial QA Execution | NEXT / NOT STARTED; FULL READ-ONLY PRE-EXECUTION BLOCKED PENDING FIXTURE TRUTH-CORRECTION CLOSEOUT |
+| Batch 04.3 — Controlled Temporary Editorial QA Execution | NEXT / NOT STARTED; FULL READ-ONLY PRE-EXECUTION REQUIRES EXTERNAL CHECKPOINT VALIDATION PASS FOR THE CLOSURE-SEMANTICS CONTAINING COMMIT |
 | Batch 04.3 — Local Asset Fixture Prerequisite | PDF CLASSIFICATION EXTERNAL FINAL VALIDATION PASS WITH NOTES / CHECKPOINT ESTABLISHED AT `2c590bf674759159061dcdc8700993adb96d321d` |
-| Batch 04.3 — Fixture Post-Checkpoint Truth-Surface Correction | IMPLEMENTED / EXTERNAL VALIDATION PASS / FINAL APPROVAL RECONCILIATION COMPLETE / EXTERNAL FINAL VALIDATION NEXT / CORRECTIVE CHECKPOINT NOT YET ESTABLISHED / NO CONTENTFUL ACCESS / NO FIXTURE BYTE CHANGES |
+| Batch 04.3 — Fixture Post-Checkpoint Truth-Surface Correction | IMPLEMENTED / EXTERNAL VALIDATION PASS / FINAL APPROVAL RECONCILIATION COMPLETE / EXTERNAL FINAL VALIDATION PASS WITH NOTES / COMPLETE / CHECKPOINT `591725c3abdb0e829700cdbbb77a023628525781` ESTABLISHED |
+| Batch 04.3 — First Truth Corrective Checkpoint Validation | GIT MECHANICS PASS / CANONICAL TRUTH CONSISTENCY NEEDS REVISION |
+| Batch 04.3 — Closure-Semantics Correction | IMPLEMENTED / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE / EXTERNAL FINAL VALIDATION REQUIRED PRE-COMMIT GATE |
 | Batch 04.4 — Editorial QA Findings Reconciliation + Conditional Model / Editor-Interface Corrections | LATER |
 | Batch 04.5 — Editorial Workflow + Field Guidance | LATER |
 | Batch 04.6 — Model Freeze Validation + Phase 04 Closeout | LATER |
 
-The Phase 04 transition and Batch 04.1 checkpoint are established at `33e01ae068769631b3bd997b28711535f7c7b340`. Batch 04.2 External Validation and External Final Validation returned PASS WITH NOTES, and its checkpoint is established at `a85ebb37ef0f182b98d914221e70454cebb1351f`. External checkpoint validation passed Git mechanics but returned NEEDS REVISION because stale pre-checkpoint status remained on canonical surfaces. The Batch 04.2 Post-Checkpoint Truth-Surface Correction completed its required validation and is checkpointed at `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`. Batch 04.3 is next / not started. Fixture-location and PDF-classification External Final Validation each returned PASS WITH NOTES. The first fixture Git checkpoint attempt remains historically blocked before commit with no commit or push. The corrected 13-file QA fixture checkpoint is established at `2c590bf674759159061dcdc8700993adb96d321d`; external checkpoint validation passed Git mechanics but returned NEEDS REVISION for canonical truth consistency. The fixture post-checkpoint truth-surface correction is implemented, External Validation passed, and Final Approval Reconciliation is complete. External Final Validation is next, the corrective checkpoint is not yet established, and the full 04.3 read-only gate remains blocked/not started.
+The Phase 04 transition and Batch 04.1 checkpoint are established at `33e01ae068769631b3bd997b28711535f7c7b340`. Batch 04.2 External Validation and External Final Validation returned PASS WITH NOTES, and its checkpoint is established at `a85ebb37ef0f182b98d914221e70454cebb1351f`. External checkpoint validation passed Git mechanics but returned NEEDS REVISION because stale pre-checkpoint status remained on canonical surfaces. The Batch 04.2 Post-Checkpoint Truth-Surface Correction completed its required validation and is checkpointed at `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`. Batch 04.3 is next / not started. Fixture-location and PDF-classification External Final Validation each returned PASS WITH NOTES. The first fixture Git checkpoint attempt remains historically blocked before commit with no commit or push. The corrected 13-file QA fixture checkpoint is established at `2c590bf674759159061dcdc8700993adb96d321d`; external checkpoint validation passed Git mechanics but returned NEEDS REVISION for canonical truth consistency. The fixture post-checkpoint truth-surface correction completed External Validation, Final Approval Reconciliation, and External Final Validation, and its first truth corrective checkpoint is established at `591725c3abdb0e829700cdbbb77a023628525781`. External validation of that checkpoint passed Git mechanics but returned NEEDS REVISION because its lifecycle wording became stale. The Closure-Semantics Correction is implemented, External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. External Final Validation is a required pre-commit gate; only after it passes for this exact reconciliation may the containing commit establish the corrective checkpoint.
 
 ## Purpose
 
@@ -114,7 +116,7 @@ Purpose: execute only externally approved temporary QA scenarios.
 
 Operation class: CONTENTFUL MUTATION / SEPARATELY GATED.
 
-Status: NEXT / NOT STARTED. The full READ-ONLY PRE-EXECUTION GATE remains BLOCKED until the fixture post-checkpoint truth-surface correction completes its validation and checkpoint lifecycle. Mutation remains NOT AUTHORIZED.
+Status: NEXT / NOT STARTED. The full READ-ONLY PRE-EXECUTION GATE requires External Checkpoint Validation PASS for the Closure-Semantics Corrective containing commit. Mutation remains NOT AUTHORIZED.
 
 Required authoring workflow:
 
@@ -253,15 +255,25 @@ Repository-only fixture prerequisite:
 - Corrected QA fixture checkpoint: ESTABLISHED AT `2c590bf674759159061dcdc8700993adb96d321d`.
 - External checkpoint validation: GIT MECHANICS PASS / CANONICAL TRUTH CONSISTENCY NEEDS REVISION.
 - External checkpoint validation reason: committed truth surfaces retained stale pre-checkpoint wording after the valid checkpoint existed.
-- Fixture post-checkpoint truth-surface correction: IMPLEMENTED / EXTERNAL VALIDATION PASS / FINAL APPROVAL RECONCILIATION COMPLETE / EXTERNAL FINAL VALIDATION NEXT / CORRECTIVE CHECKPOINT NOT YET ESTABLISHED / NO CONTENTFUL ACCESS / NO FIXTURE BYTE CHANGES.
+- Fixture post-checkpoint truth-surface correction: IMPLEMENTED / EXTERNAL VALIDATION PASS / FINAL APPROVAL RECONCILIATION COMPLETE / EXTERNAL FINAL VALIDATION PASS WITH NOTES / COMPLETE / NO CONTENTFUL ACCESS / NO FIXTURE BYTE CHANGES.
+- First truth corrective checkpoint: ESTABLISHED AT `591725c3abdb0e829700cdbbb77a023628525781`.
+- First truth corrective external checkpoint validation: GIT MECHANICS PASS / CANONICAL TRUTH CONSISTENCY NEEDS REVISION.
+- First truth corrective external checkpoint validation reason: self-invalidating pre-checkpoint wording for its own completed validation and checkpoint state.
+- Closure-Semantics Correction: IMPLEMENTED / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE.
+- Closure-Semantics Correction External Final Validation: REQUIRED PRE-COMMIT GATE.
+- Closure-Semantics Correction checkpoint rule: only after External Final Validation passes for this exact reconciliation may the containing commit establish its corrective checkpoint.
 - Evidence: `content-model/reports/PHASE-04-BATCH-04.3-LOCAL-ASSET-FIXTURE-PREPARATION.md`.
-- Full 04.3 read-only pre-execution rerun: BLOCKED / NOT STARTED pending correction closeout.
+- Full 04.3 read-only pre-execution rerun prerequisite: External Checkpoint Validation PASS for the Closure-Semantics Corrective containing commit.
 - Contentful requests and mutations during fixture preparation: 0.
 - Mutation remains NOT AUTHORIZED; seed remains NOT STARTED.
 
 ### Batch 04.3 QA Fixture Post-Checkpoint Truth-Surface Correction
 
-Commit `2c590bf674759159061dcdc8700993adb96d321d` is valid and unchanged. External checkpoint validation returned Git mechanics PASS and canonical truth consistency NEEDS REVISION because committed surfaces retained stale pre-checkpoint wording. This repository-only correction is implemented, External Validation passed, and Final Approval Reconciliation is complete; it made no Contentful request and changed no fixture byte. External Final Validation, a corrective checkpoint and push, clean synchronized `0 0`, and external corrective checkpoint validation remain required before the full 04.3 read-only gate may begin.
+Commit `2c590bf674759159061dcdc8700993adb96d321d` is valid and unchanged. External checkpoint validation returned Git mechanics PASS and canonical truth consistency NEEDS REVISION because committed surfaces retained stale pre-checkpoint wording. The repository-only correction completed External Validation, Final Approval Reconciliation, and External Final Validation without Contentful access or fixture-byte changes. Its first truth corrective checkpoint is established at `591725c3abdb0e829700cdbbb77a023628525781`; external validation passed Git mechanics but returned canonical truth consistency NEEDS REVISION because the commit retained self-invalidating pre-checkpoint wording.
+
+### Batch 04.3 Closure-Semantics Correction
+
+The Closure-Semantics Correction is implemented, External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. External Final Validation is a required pre-commit gate. Only after it passes for this exact reconciliation may the commit containing the reconciled state establish the Closure-Semantics Corrective Checkpoint. The full 04.3 read-only pre-execution gate requires External Checkpoint Validation PASS for that containing commit.
 
 ### Batch 04.2 Post-Checkpoint Truth-Surface Correction
 
