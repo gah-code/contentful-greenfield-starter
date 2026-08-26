@@ -810,20 +810,45 @@ Status: FINDINGS RECONCILED / CLASS 0 / NO MODEL OR EDITOR INTERFACE TECHNICAL C
 - [x] Implement CLASS 0 findings truth across the authorized repository surfaces
 - [x] CLASS 0 Findings Reconciliation External Validation — PASS WITH NOTES
 - [x] CLASS 0 Findings Final Approval Reconciliation — COMPLETE
+- [x] CLASS 0 Findings External Final Validation — PASS WITH NOTES
+- [x] Establish the Batch 04.4 findings checkpoint at `8ec8c08b02f10a13c19a59a92f9dc70c1f669911`
+- [x] Confirm Batch 04.4 External Checkpoint Validation — PASS
 
-The CLASS 0 Findings Reconciliation is IMPLEMENTED, its External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is COMPLETE. External Final Validation is the required pre-commit condition; only after it passes for this exact reconciled state may the containing commit establish the Batch 04.4 findings checkpoint. Batch 04.5 may begin only after External Checkpoint Validation PASS for that commit.
+The CLASS 0 Findings Reconciliation lifecycle is complete. Checkpoint `8ec8c08b02f10a13c19a59a92f9dc70c1f669911` contains the approved findings state, and External Checkpoint Validation passed before Batch 04.5 entry.
 
 Evidence boundary: this is not a claim of complete 102 / 102 live execution, exhaustive publication-blocker proof, complete editorial QA, or implemented guard/harness correction. Contentful access, model or Editor Interface mutation, model freeze, and seed are not authorized.
 
 ### Batch 04.5 — Editorial Workflow + Field Guidance
 
-Status: NEXT AFTER THE BATCH 04.4 CHECKPOINT PASSES EXTERNAL CHECKPOINT VALIDATION / REPOSITORY-ONLY / NOT STARTED
+Status: IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE / EXACT 44-SCENARIO HANDOFF MAPPED
 
 Handoff: exact 44 Class B scenarios frozen by the Batch 04.4 findings reconciliation.
 
+- [x] Map exactly 44 Class B scenarios with 44 unique, 0 missing, and 0 extra
+- [x] Document the choose / draft / relate / review / publication-readiness / maintenance workflow
+- [x] Document field and content-type guidance for all ten approved types
+- [x] Document singleton lifecycle and duplicate-draft handling
+- [x] Document duplicate and near-duplicate prevention
+- [x] Document authoritative relationship direction and intentional ordering
+- [x] Document the Project and Article slug workflow
+- [x] Document date and chronology review
+- [x] Document EF-05 and duplicate-tag editorial ownership
+- [x] Document the public-safety editorial review
+- [x] Create the 15-step editor quick-start and publication checklist
+- [x] Document escalation and model-gap rules
+- [x] Preserve the model and Editor Interfaces unchanged
+- [x] Make 0 Contentful requests
+- [x] Preserve Deferred QA Harness Hardening as visible unresolved debt
+- [x] Create `docs/system/EDITORIAL-WORKFLOW-AND-FIELD-GUIDANCE.md`
+- [x] Create `content-model/reports/PHASE-04-BATCH-04.5-EDITORIAL-WORKFLOW-AND-FIELD-GUIDANCE.md`
+- [x] Batch 04.5 External Validation — PASS WITH NOTES
+- [x] Batch 04.5 Final Approval Reconciliation — COMPLETE
+
+Batch 04.5 implementation satisfies 15 / 15 exit criteria, External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. External Final Validation remains the required pre-commit condition; only a containing commit made after that pass may establish the Batch 04.5 checkpoint. Batch 04.6 entry requires External Checkpoint Validation PASS for that commit. No Contentful access, model or Editor Interface change, harness implementation, model freeze, or seed occurred.
+
 ### Batch 04.6 — Model Freeze Validation + Phase 04 Closeout
 
-Status: LATER / READ-ONLY + REPOSITORY RECONCILIATION
+Status: NEXT ONLY AFTER THE BATCH 04.5 CHECKPOINT PASSES EXTERNAL CHECKPOINT VALIDATION / NOT STARTED / READ-ONLY + REPOSITORY RECONCILIATION
 
 Closeout must explicitly choose either (A) complete the deferred exhaustive QA harness and live rerun or (B) accept the harness as documented post-freeze engineering debt with a visible limitation statement. This gate does not choose either option. The deferred work does not block Batch 04.4 or Batch 04.5.
 
@@ -915,7 +940,9 @@ Recorded Phase 00 evidence:
 - The historical 111 Entry-update ceiling is proven insufficient and must not authorize continuation or another run. Planning bounds 201 / 216 require later guard and evidence-contract redesign before any envelope can be frozen.
 - Option B cleanup completed with exactly 19 Entry deletes, 3 Asset unpublishes, and 3 Asset deletes. The later complete plan preserved all 102 scenarios and calculated 220 Entry updates, 2–92 publication attempts, and a 494-request maximum. That harness is unimplemented post-findings engineering debt and must complete its governed workflow before another exhaustive authoring run.
 - Batch 04.4 read-only findings gate and its External Validation completed with PASS WITH NOTES. The corrected 102-row ledger is `10 / 44 / 2 / 15 / 2 / 0 / 0 / 29`; `QA04-PP-007` is Class H and `QA04-PR-011` is Class A. Findings are reconciled as CLASS 0 with no model or Editor Interface technical correction.
-- Batch 04.5 is next after the Batch 04.4 findings checkpoint passes External Checkpoint Validation. Its exact 44 Class B scenario handoff is frozen; Batch 04.5 has not started.
+- Batch 04.4 is checkpointed at `8ec8c08b02f10a13c19a59a92f9dc70c1f669911`, and External Checkpoint Validation passed.
+- Batch 04.5 implementation is complete: all 44 Class B scenarios are mapped to canonical editor workflow and field guidance, 15 / 15 exit criteria pass, External Validation returned PASS WITH NOTES, Final Approval Reconciliation is complete, and the evidence limitations remain visible.
+- Batch 04.6 is not started and may enter only after the Batch 04.5 validation, containing-commit, and External Checkpoint Validation lifecycle passes.
 - Phase 04 model version is not yet frozen.
 - Seed content remains not started.
 - This incident/recovery reconciliation is repository-only and authorizes no Contentful read, write, environment mutation, export, import, bootstrap, or seed operation.

@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Phase 03 complete / frozen; Phase 04 active; Batch 04.3 conditionally exited for findings handoff; Batch 04.4 findings reconciled as CLASS 0 with no model or Editor Interface technical correction; Batch 04.5 next after the Batch 04.4 checkpoint passes External Checkpoint Validation
+Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Phase 03 complete / frozen; Phase 04 active; Batch 04.3 conditionally exited for findings handoff; Batch 04.4 CLASS 0 checkpoint externally validated; Batch 04.5 implementation complete / External Validation PASS WITH NOTES / Final Approval Reconciliation complete; Batch 04.6 gated on Batch 04.5 External Checkpoint Validation
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -67,9 +67,9 @@ Batch 04.3 Partial QA Cleanup Result + Zero-Content Baseline checkpoint — ESTA
 Batch 04.3 Guard + Branch-Safe Authoring / Evidence-Contract Correction Planning — COMPLETE / PASS WITH NOTES / DEFERRED FROM IMMEDIATE IMPLEMENTATION / 220 UPDATES / 2–92 PUBLICATIONS / 494 MAXIMUM REQUESTS / 20 / 20 LOCAL GUARD PROTOTYPE TESTS PASS / NOT IMPLEMENTED / NOT APPROVED FUTURE LIVE MAXIMA
 Batch 04.3 Conditional Exit + 04.4 Advancement Decision checkpoint — ESTABLISHED AT `b9a61a328c6353881ea10dd5384b7a9c02d65e3d` / EXTERNAL CHECKPOINT VALIDATION PASSED
 Batch 04.3 Local Asset Fixture Prerequisite — COMPLETE / FIXTURE CHECKPOINT ESTABLISHED AT `2c590bf674759159061dcdc8700993adb96d321d` / FIRST TRUTH CORRECTIVE CHECKPOINT ESTABLISHED AT `591725c3abdb0e829700cdbbb77a023628525781` / CLOSURE-SEMANTICS CORRECTION CHECKPOINTED AT `503f1a6faee27062d0f3f3667b298fe37d62ffb2` / HISTORICAL PREREQUISITES SATISFIED BEFORE THE BLOCKED AUTHORING ATTEMPT
-Batch 04.4 — FINDINGS RECONCILED / CLASS 0 / CORRECTED 102-SCENARIO LEDGER `10 / 44 / 2 / 15 / 2 / 0 / 0 / 29` / NO MODEL OR EDITOR INTERFACE TECHNICAL CORRECTION / 04.5 HANDOFF FROZEN / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE
-Batch 04.5 — NEXT AFTER THE BATCH 04.4 CHECKPOINT PASSES EXTERNAL CHECKPOINT VALIDATION / NOT STARTED
-Batch 04.6 — LATER / MUST ADDRESS DEFERRED QA HARNESS HARDENING AT CLOSEOUT
+Batch 04.4 — FINDINGS RECONCILED / CLASS 0 / CHECKPOINTED AT `8ec8c08b02f10a13c19a59a92f9dc70c1f669911` / EXTERNAL CHECKPOINT VALIDATION PASS
+Batch 04.5 — IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE / 44 OF 44 CLASS B SCENARIOS MAPPED
+Batch 04.6 — NEXT ONLY AFTER THE BATCH 04.5 CHECKPOINT PASSES EXTERNAL CHECKPOINT VALIDATION / NOT STARTED / MUST ADDRESS DEFERRED QA HARNESS HARDENING AT CLOSEOUT
 Pre-export tooling — APPROVED
 ```
 
@@ -101,7 +101,7 @@ Create a safe operating surface before any content type is created.
 
 ## Phase 01 — Content Strategy + Route Contract
 
-Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 and Phase 03 are COMPLETE / FROZEN. Phase 04 is ACTIVE; Batch 04.2 is historically approved / checkpointed. Batch 04.3 is conditionally exited for findings handoff with its incident, forensics, cleanup, and zero-content `dev` baseline complete, while exhaustive live QA remains a documented limitation. Batch 04.4 findings are reconciled as CLASS 0, and Batch 04.5 is next after the 04.4 checkpoint passes External Checkpoint Validation.
+Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 and Phase 03 are COMPLETE / FROZEN. Phase 04 is ACTIVE; Batch 04.3 is conditionally exited with exhaustive live QA preserved as a documented limitation, Batch 04.4 is CLASS 0 and externally checkpoint-validated, Batch 04.5 guidance implementation is complete, and Batch 04.6 remains gated.
 
 ### Goal
 
@@ -308,7 +308,7 @@ Evidence: `content-model/reports/PHASE-02-BATCH-02.7-LIVE-SCHEMA-VALIDATION.md`.
 
 Result: 10 / 10 types, 99 / 99 stored fields, 18 / 18 authored references, 102 / 102 validation objects, 10 / 10 display fields, 2 / 2 explicit editor controls, and 0 material mismatches.
 
-Phase 02 and Phase 03 are COMPLETE / FROZEN. Batches 03.1 and 03.2 are APPROVED, and Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED. Phase 04 is ACTIVE; Batch 04.2 is historically approved / checkpointed. Batch 04.3 is conditionally exited for findings handoff with exhaustive live QA deferred and the evidence limitation preserved. Batch 04.4 findings are reconciled as CLASS 0, and Batch 04.5 is next after the 04.4 checkpoint passes External Checkpoint Validation.
+Phase 02 and Phase 03 are COMPLETE / FROZEN. Batches 03.1 and 03.2 are APPROVED, and Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED. Phase 04 is ACTIVE; Batch 04.3 is conditionally exited with exhaustive live QA deferred, Batch 04.4 is CLASS 0 and externally checkpoint-validated, Batch 04.5 guidance implementation is complete, and Batch 04.6 remains gated on the Batch 04.5 checkpoint lifecycle.
 
 ### Exit criteria
 
@@ -390,7 +390,7 @@ Batch 03.6 preserves the initial final-live validator as an unresolved evidence-
 
 ## Phase 04 — Editorial QA + Model Freeze
 
-Current state: ACTIVE. Batch 04.1 is approved / checkpointed. Batch 04.2 is historically approved / checkpointed, and its Authoring-Envelope Correction is checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. Batch 04.3 consumed its one-time authoring authorization, stopped at R88 after 39 Entry updates and no Entry publications, completed forensics, and completed a separately authorized 25-mutation cleanup that restored zero-content, zero-drift `dev`. Its exhaustive correction plan preserved 102 scenarios and calculated 220 Entry updates, 2–92 publication attempts, and 494 maximum requests, but was not implemented and does not establish approved future live maxima. Batch 04.3 is conditionally exited for findings handoff without a 102 / 102 live QA claim, and its decision checkpoint is established at `b9a61a328c6353881ea10dd5384b7a9c02d65e3d`. Batch 04.4 completed its read-only gate and External Validation with PASS WITH NOTES. Its corrected ledger reconciles as CLASS 0 with no model or Editor Interface technical correction and freezes the exact 44 Class B scenarios for Batch 04.5. Batch 04.5 is next only after the Batch 04.4 findings checkpoint passes External Checkpoint Validation.
+Current state: ACTIVE. Batch 04.1 is approved / checkpointed. Batch 04.2 is historically approved / checkpointed, and its Authoring-Envelope Correction is checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. Batch 04.3 consumed its one-time authoring authorization, stopped at R88 after 39 Entry updates and no Entry publications, completed forensics, and completed a separately authorized 25-mutation cleanup that restored zero-content, zero-drift `dev`. Its exhaustive correction plan preserved 102 scenarios and calculated 220 Entry updates, 2–92 publication attempts, and 494 maximum requests, but was not implemented and does not establish approved future live maxima. Batch 04.3 is conditionally exited for findings handoff without a 102 / 102 live QA claim, and its decision checkpoint is established at `b9a61a328c6353881ea10dd5384b7a9c02d65e3d`. Batch 04.4 reconciled the corrected ledger as CLASS 0 with no model or Editor Interface technical correction; checkpoint `8ec8c08b02f10a13c19a59a92f9dc70c1f669911` is externally validated. Batch 04.5 maps all 44 Class B scenarios into canonical editor guidance, received External Validation PASS WITH NOTES, and completed Final Approval Reconciliation. External Final Validation remains the pre-commit condition, and Batch 04.6 remains gated on External Checkpoint Validation for the resulting containing commit.
 
 ### Goal
 
@@ -403,9 +403,9 @@ Produce an editor-tested, migration-governed v1 model freeze candidate. The mode
 | 04.1 | Read-Only Planning + Editorial-Quality Preflight | GET-only / repository reads | APPROVED / CHECKPOINTED |
 | 04.2 | Editorial QA Scenario + Temporary Authoring Contract | REPOSITORY-ONLY | HISTORICALLY APPROVED / CHECKPOINTED; AUTHORING-ENVELOPE CORRECTION CHECKPOINTED; HISTORICAL 111 CEILING PROVEN INSUFFICIENT |
 | 04.3 | Controlled Temporary Editorial QA Execution | HISTORICAL AUTHORIZED AUTHORING AND CLEANUP; NO CURRENT CONTENTFUL AUTHORITY | CONDITIONALLY EXITED FOR FINDINGS HANDOFF / EXHAUSTIVE LIVE QA DEFERRED / KNOWN LIMITATION PRESERVED |
-| 04.4 | Editorial QA Findings Reconciliation + Conditional Model / Editor-Interface Corrections | REPOSITORY-ONLY / READ-ONLY EVIDENCE RECONCILIATION | FINDINGS RECONCILED / CLASS 0 / NO MODEL OR EDITOR INTERFACE TECHNICAL CORRECTION / 04.5 HANDOFF FROZEN |
-| 04.5 | Editorial Workflow + Field Guidance | REPOSITORY-ONLY | NEXT AFTER THE 04.4 CHECKPOINT PASSES EXTERNAL CHECKPOINT VALIDATION / NOT STARTED |
-| 04.6 | Model Freeze Validation + Phase 04 Closeout | READ-ONLY + REPOSITORY RECONCILIATION | LATER / MUST ADDRESS DEFERRED QA DEBT |
+| 04.4 | Editorial QA Findings Reconciliation + Conditional Model / Editor-Interface Corrections | REPOSITORY-ONLY / READ-ONLY EVIDENCE RECONCILIATION | FINDINGS RECONCILED / CLASS 0 / CHECKPOINT EXTERNALLY VALIDATED |
+| 04.5 | Editorial Workflow + Field Guidance | REPOSITORY-ONLY | IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE / 44 OF 44 SCENARIOS MAPPED |
+| 04.6 | Model Freeze Validation + Phase 04 Closeout | READ-ONLY + REPOSITORY RECONCILIATION | NEXT ONLY AFTER THE 04.5 CHECKPOINT PASSES EXTERNAL CHECKPOINT VALIDATION / NOT STARTED |
 
 ### Operating Boundaries
 
@@ -426,10 +426,10 @@ Produce an editor-tested, migration-governed v1 model freeze candidate. The mode
 - Batch 04.3 is conditionally exited for findings handoff. Incident, forensic, cleanup, and zero-baseline evidence are sufficient for 04.4 reconciliation, while exhaustive live coverage is deferred and no 102 / 102 live QA pass is claimed.
 - Unexpected authoring failure stops execution and preserves evidence without automatic cleanup.
 - Batch 04.4 reconciled all 102 scenarios as `A=10 / B=44 / C=2 / D=15 / E=2 / F=0 / G=0 / H=29`, including the externally corrected `QA04-PP-007` Class H and `QA04-PR-011` Class A assignments. The result is CLASS 0: no model correction, no Editor Interface technical correction, execution-tooling ownership for the guard/envelope issue, QA-process/test-design ownership for the evidence gap, and downstream frontend ownership for `QA04-PR-018` / `QA04-AR-015`.
-- The exact 44 Class B scenarios are frozen as the Batch 04.5 editorial workflow and field-guidance handoff.
+- The exact 44 Class B scenarios are mapped into `docs/system/EDITORIAL-WORKFLOW-AND-FIELD-GUIDANCE.md`; the Batch 04.5 evidence report records 44 unique mappings with 0 missing and 0 extra.
 - Any model or Editor Interface correction requires separate planning, external validation, explicit authorization, and migration-first governance; migration 0001 remains frozen.
 - Batch 04.6 must choose either to complete the deferred exhaustive harness and live rerun or to accept it as documented post-freeze engineering debt with a visible limitation statement. This roadmap does not choose either option.
-- The Batch 04.4 CLASS 0 implementation is complete, External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. External Final Validation remains the required pre-commit condition; only after it passes for this exact reconciled state may the containing commit establish the findings checkpoint. Batch 04.5 may begin only after External Checkpoint Validation PASS for that commit.
+- Batch 04.4 checkpoint `8ec8c08b02f10a13c19a59a92f9dc70c1f669911` is externally validated. Batch 04.5 implementation satisfies 15 / 15 exit criteria without Contentful access or technical contract changes; External Validation returned PASS WITH NOTES and Final Approval Reconciliation is complete. External Final Validation remains the required pre-commit condition, and Batch 04.6 entry requires External Checkpoint Validation PASS for the resulting containing commit.
 - A new export or snapshot is not implicit in Phase 04 and remains separately gated.
 - Seed remains NOT STARTED.
 

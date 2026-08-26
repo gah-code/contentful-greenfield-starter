@@ -22,11 +22,11 @@
 | Batch 04.3 — Fixture Post-Checkpoint Truth-Surface Correction | IMPLEMENTED / EXTERNAL VALIDATION PASS / FINAL APPROVAL RECONCILIATION COMPLETE / EXTERNAL FINAL VALIDATION PASS WITH NOTES / COMPLETE / CHECKPOINT `591725c3abdb0e829700cdbbb77a023628525781` ESTABLISHED |
 | Batch 04.3 — First Truth Corrective Checkpoint Validation | GIT MECHANICS PASS / CANONICAL TRUTH CONSISTENCY NEEDS REVISION |
 | Batch 04.3 — Closure-Semantics Correction | IMPLEMENTED / VALIDATED / CHECKPOINTED AT `503f1a6faee27062d0f3f3667b298fe37d62ffb2` / HISTORICAL |
-| Batch 04.4 — Editorial QA Findings Reconciliation + Conditional Model / Editor-Interface Corrections | FINDINGS RECONCILED / CLASS 0 / NO MODEL OR EDITOR INTERFACE TECHNICAL CORRECTION / 04.5 HANDOFF FROZEN / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE |
-| Batch 04.5 — Editorial Workflow + Field Guidance | NEXT AFTER THE BATCH 04.4 CHECKPOINT PASSES EXTERNAL CHECKPOINT VALIDATION / NOT STARTED |
-| Batch 04.6 — Model Freeze Validation + Phase 04 Closeout | LATER / MUST ADDRESS DEFERRED QA HARNESS HARDENING |
+| Batch 04.4 — Editorial QA Findings Reconciliation + Conditional Model / Editor-Interface Corrections | FINDINGS RECONCILED / CLASS 0 / CHECKPOINTED AT `8ec8c08b02f10a13c19a59a92f9dc70c1f669911` / EXTERNAL CHECKPOINT VALIDATION PASS |
+| Batch 04.5 — Editorial Workflow + Field Guidance | IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE / EXACT 44-SCENARIO HANDOFF MAPPED |
+| Batch 04.6 — Model Freeze Validation + Phase 04 Closeout | NEXT ONLY AFTER THE BATCH 04.5 CHECKPOINT PASSES EXTERNAL CHECKPOINT VALIDATION / MUST ADDRESS DEFERRED QA HARNESS HARDENING |
 
-The Phase 04 transition and Batch 04.1 checkpoint are established at `33e01ae068769631b3bd997b28711535f7c7b340`. Batch 04.2 remains historically approved / checkpointed, and its Authoring-Envelope Correction is checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. A later separately authorized Batch 04.3 process consumed its one-time authorization, created all 19 temporary Entries and 3 temporary Assets, made 39 Entry update attempts and 0 Entry publication attempts, then stopped fail-closed at R88 after HTTP 422. Forensics confirmed atomic rejection, a transformed-error guard defect, unresolved exact field attribution, and zero model drift without establishing a model or Editor Interface defect. Option B cleanup completed exactly 25 mutations and restored zero-content, zero-drift `dev`. The later exhaustive correction plan preserved 102 scenarios and calculated 220 Entry updates, 2–92 publication attempts, and 494 maximum requests, but was not implemented and does not establish approved future live maxima. Batch 04.3 is conditionally exited for findings handoff without claiming a 102 / 102 live QA pass, and its decision checkpoint is established at `b9a61a328c6353881ea10dd5384b7a9c02d65e3d`. Batch 04.4 completed its read-only gate and External Validation with PASS WITH NOTES. The corrected 102-row findings ledger reconciles as CLASS 0 with no model or Editor Interface technical correction and freezes the exact 44 Class B scenarios for Batch 04.5. Batch 04.5 is next only after the Batch 04.4 checkpoint passes External Checkpoint Validation.
+The Phase 04 transition and Batch 04.1 checkpoint are established at `33e01ae068769631b3bd997b28711535f7c7b340`. Batch 04.2 remains historically approved / checkpointed, and its Authoring-Envelope Correction is checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. A later separately authorized Batch 04.3 process consumed its one-time authorization, created all 19 temporary Entries and 3 temporary Assets, made 39 Entry update attempts and 0 Entry publication attempts, then stopped fail-closed at R88 after HTTP 422. Forensics confirmed atomic rejection, a transformed-error guard defect, unresolved exact field attribution, and zero model drift without establishing a model or Editor Interface defect. Option B cleanup completed exactly 25 mutations and restored zero-content, zero-drift `dev`. The later exhaustive correction plan preserved 102 scenarios and calculated 220 Entry updates, 2–92 publication attempts, and 494 maximum requests, but was not implemented and does not establish approved future live maxima. Batch 04.3 is conditionally exited for findings handoff without claiming a 102 / 102 live QA pass, and its decision checkpoint is established at `b9a61a328c6353881ea10dd5384b7a9c02d65e3d`. Batch 04.4 reconciled the corrected 102-row ledger as CLASS 0 with no model or Editor Interface technical correction; its checkpoint is established at `8ec8c08b02f10a13c19a59a92f9dc70c1f669911`, and External Checkpoint Validation passed. Batch 04.5 maps the exact 44 Class B scenarios into canonical editorial workflow and field guidance, received External Validation PASS WITH NOTES, and completed Final Approval Reconciliation. External Final Validation is the required pre-commit condition; Batch 04.6 remains gated on External Checkpoint Validation for the resulting containing commit.
 
 ## Purpose
 
@@ -178,7 +178,7 @@ The externally corrected ledger is `A=10 / B=44 / C=2 / D=15 / E=2 / F=0 / G=0 /
 
 The exact 44 Class B scenarios are frozen for Batch 04.5. The canonical reconciliation is `content-model/reports/PHASE-04-BATCH-04.4-EDITORIAL-QA-FINDINGS-RECONCILIATION.md`.
 
-The CLASS 0 implementation is complete, External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. External Final Validation remains the required pre-commit condition; only after it passes for this exact reconciled state may the containing commit establish the findings checkpoint. Batch 04.5 may begin only after External Checkpoint Validation PASS for that commit. Contentful access and model or Editor Interface mutation are not authorized.
+The CLASS 0 implementation, External Validation, Final Approval Reconciliation, External Final Validation, containing commit, and External Checkpoint Validation are complete. Checkpoint `8ec8c08b02f10a13c19a59a92f9dc70c1f669911` established the findings state and satisfied the Batch 04.5 entry gate. Contentful access and model or Editor Interface mutation remain unauthorized.
 
 ### 04.5 — Editorial Workflow + Field Guidance
 
@@ -190,7 +190,25 @@ Purpose:
 
 Operation class: REPOSITORY-ONLY. Contentful mutation remains prohibited unless a separately approved correction gate explicitly requires it.
 
-State: NEXT AFTER THE BATCH 04.4 CHECKPOINT PASSES EXTERNAL CHECKPOINT VALIDATION / exact 44 Class B scenario handoff frozen / NOT STARTED.
+State: IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE / EXACT 44 CLASS B SCENARIOS MAPPED.
+
+Canonical guidance: `docs/system/EDITORIAL-WORKFLOW-AND-FIELD-GUIDANCE.md`.
+
+Implementation evidence: `content-model/reports/PHASE-04-BATCH-04.5-EDITORIAL-WORKFLOW-AND-FIELD-GUIDANCE.md`.
+
+Implemented scope:
+
+- editorial operating principles and the choose / draft / relate / review / publication-readiness / maintenance workflow;
+- content-type and durable field-authoring guidance for all ten approved types;
+- singleton, duplicate, picker, reuse, relationship, and ordering rules;
+- slug, chronology, EF-05 tag, public-safety, and media review;
+- publication-readiness checklist, 15-step editor quick-start, and escalation rules;
+- exact mapping of all 44 Class B scenarios with 0 missing and 0 extra;
+- explicit preservation of the incomplete 102 / 102 live-QA evidence boundary and Deferred QA Harness Hardening.
+
+The model, migration, Editor Interfaces, field IDs, references, and validations remain unchanged. Contentful requests are 0. The guard and harness remain deferred and unimplemented. This implementation does not start Batch 04.6, freeze the model, or start seed content.
+
+Durable lifecycle: implementation is complete, External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. External Final Validation must pass before the containing commit may establish the Batch 04.5 checkpoint; Batch 04.6 entry requires External Checkpoint Validation PASS for that commit.
 
 ### 04.6 — Model Freeze Validation + Phase 04 Closeout
 
@@ -203,6 +221,8 @@ Purpose:
 - close Phase 04 only when all exit criteria pass.
 
 Operation class: READ-ONLY + REPOSITORY RECONCILIATION. A new export or snapshot remains separately gated and is not implicitly authorized.
+
+State: NEXT ONLY AFTER THE BATCH 04.5 CHECKPOINT PASSES EXTERNAL CHECKPOINT VALIDATION / NOT STARTED.
 
 Closeout must explicitly choose either (A) complete the deferred exhaustive QA harness and live rerun or (B) accept the deferred harness as documented post-freeze engineering debt. Option B requires a visible limitation statement that exhaustive 102 / 102 live QA was not completed and that freeze relies on approved model-contract evidence, zero drift, partial authoring evidence, incident forensics, governed cleanup, and subsequent findings reconciliation, with no model or Editor Interface defect established by available evidence. This gate does not choose either option.
 

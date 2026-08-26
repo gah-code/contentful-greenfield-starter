@@ -22,6 +22,8 @@ All meaningful project changes should be recorded here.
 - Phase 04 / Batch 04.3 partial QA cleanup execution report
 - Phase 04 / Batch 04.3 conditional-exit and Batch 04.4 advancement decision report
 - Phase 04 / Batch 04.4 Editorial QA Findings Reconciliation report with the exact corrected 102-scenario disposition ledger
+- Canonical Phase 04 / Batch 04.5 Editorial Workflow and Field Guidance for all ten approved content types
+- Phase 04 / Batch 04.5 implementation report with the exact 44-scenario guidance mapping and 15 exit criteria
 
 ### Decisions
 
@@ -33,14 +35,19 @@ All meaningful project changes should be recorded here.
 
 ### Changed
 
+- Implemented Batch 04.5 as repository-only editorial workflow and field guidance, mapping all 44 Class B scenarios with 44 unique, 0 missing, and 0 extra.
+- Documented choose, draft, relate, review, publication-readiness, and post-publication workflow; singleton, duplicate, reference, ordering, slug, chronology, EF-05, and public-safety rules; and a 15-step editor quick-start.
+- Preserved incomplete 102 / 102 live-QA evidence and Deferred QA Harness Hardening as visible debt without creating a model or Editor Interface correction finding.
+- Kept the approved model, migration, field IDs, references, validations, Editor Interfaces, packages, and Contentful state unchanged; Batch 04.5 made 0 Contentful requests.
+- Recorded Batch 04.5 External Validation as PASS WITH NOTES and completed Final Approval Reconciliation; External Final Validation remains the required pre-commit condition.
 - Implemented the repository-only Batch 04.4 CLASS 0 Findings Reconciliation after its read-only gate and read-only gate External Validation returned PASS WITH NOTES.
 - Recorded CLASS 0 Findings Reconciliation External Validation as PASS WITH NOTES and completed its Final Approval Reconciliation.
 - Corrected the scenario ledger by moving `QA04-PP-007` from A to H and `QA04-PR-011` from H to A while preserving totals `10 / 44 / 2 / 15 / 2 / 0 / 0 / 29` across all 102 scenarios.
 - Established that available evidence requires no model correction and no Editor Interface technical correction; preserved the two built-in Project/Article `slugEditor` overrides and incomplete slug-usability evidence.
 - Preserved EF-05 as editorial duplicate-tag guidance, classified `QA04-PP-004` / `QA04-PP-005` and the R88 guard/envelope issues as execution-tooling debt, and classified the attributable-evidence gap as QA process/test design.
 - Assigned `QA04-PR-018` and `QA04-AR-015` to downstream frontend contract verification and froze the exact 44 Class B scenarios for Batch 04.5.
-- Advanced Batch 04.5 to next after the Batch 04.4 findings checkpoint passes External Checkpoint Validation; Batch 04.5 remains not started, the model remains not yet frozen, and seed remains not started.
-- Defined the durable Batch 04.4 lifecycle: implementation complete / External Validation PASS WITH NOTES / Final Approval Reconciliation complete / External Final Validation required before the containing commit may establish the findings checkpoint; External Checkpoint Validation PASS remains required before Batch 04.5 entry.
+- Established the Batch 04.4 CLASS 0 findings checkpoint at `8ec8c08b02f10a13c19a59a92f9dc70c1f669911` and recorded External Checkpoint Validation PASS before Batch 04.5 entry.
+- Preserved the durable Batch 04.5 lifecycle: implementation complete / External Validation PASS WITH NOTES / Final Approval Reconciliation complete / External Final Validation required before the containing commit / External Checkpoint Validation required before Batch 04.6 entry.
 - Made no Contentful request and changed no model, migration, fixture, Editor Interface, execution-tooling, package, environment, or seed artifact during the CLASS 0 reconciliation.
 - Implemented the repository-only Batch 04.3 Conditional Exit + 04.4 Advancement Decision without Contentful access, model changes, Editor Interface changes, fixture changes, or execution-tooling changes.
 - Conditionally exited Batch 04.3 for findings handoff while preserving the R88 incident, completed forensics and cleanup, zero-content / zero-drift `dev`, and the explicit limitation that 102 / 102 scenarios did not pass live QA.
