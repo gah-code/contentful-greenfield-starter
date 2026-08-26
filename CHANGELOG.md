@@ -21,6 +21,7 @@ All meaningful project changes should be recorded here.
 - Phase 04 / Batch 04.3 post-stop forensics and recovery decision report
 - Phase 04 / Batch 04.3 partial QA cleanup execution report
 - Phase 04 / Batch 04.3 conditional-exit and Batch 04.4 advancement decision report
+- Phase 04 / Batch 04.4 Editorial QA Findings Reconciliation report with the exact corrected 102-scenario disposition ledger
 
 ### Decisions
 
@@ -32,6 +33,15 @@ All meaningful project changes should be recorded here.
 
 ### Changed
 
+- Implemented the repository-only Batch 04.4 CLASS 0 Findings Reconciliation after its read-only gate and read-only gate External Validation returned PASS WITH NOTES.
+- Recorded CLASS 0 Findings Reconciliation External Validation as PASS WITH NOTES and completed its Final Approval Reconciliation.
+- Corrected the scenario ledger by moving `QA04-PP-007` from A to H and `QA04-PR-011` from H to A while preserving totals `10 / 44 / 2 / 15 / 2 / 0 / 0 / 29` across all 102 scenarios.
+- Established that available evidence requires no model correction and no Editor Interface technical correction; preserved the two built-in Project/Article `slugEditor` overrides and incomplete slug-usability evidence.
+- Preserved EF-05 as editorial duplicate-tag guidance, classified `QA04-PP-004` / `QA04-PP-005` and the R88 guard/envelope issues as execution-tooling debt, and classified the attributable-evidence gap as QA process/test design.
+- Assigned `QA04-PR-018` and `QA04-AR-015` to downstream frontend contract verification and froze the exact 44 Class B scenarios for Batch 04.5.
+- Advanced Batch 04.5 to next after the Batch 04.4 findings checkpoint passes External Checkpoint Validation; Batch 04.5 remains not started, the model remains not yet frozen, and seed remains not started.
+- Defined the durable Batch 04.4 lifecycle: implementation complete / External Validation PASS WITH NOTES / Final Approval Reconciliation complete / External Final Validation required before the containing commit may establish the findings checkpoint; External Checkpoint Validation PASS remains required before Batch 04.5 entry.
+- Made no Contentful request and changed no model, migration, fixture, Editor Interface, execution-tooling, package, environment, or seed artifact during the CLASS 0 reconciliation.
 - Implemented the repository-only Batch 04.3 Conditional Exit + 04.4 Advancement Decision without Contentful access, model changes, Editor Interface changes, fixture changes, or execution-tooling changes.
 - Conditionally exited Batch 04.3 for findings handoff while preserving the R88 incident, completed forensics and cleanup, zero-content / zero-drift `dev`, and the explicit limitation that 102 / 102 scenarios did not pass live QA.
 - Recorded the complete Guard + Branch-Safe Authoring / Evidence-Contract Correction Planning result as PASS WITH NOTES and deferred from immediate implementation: 220 Entry updates, 2–92 publication attempts, 90 maximum failed publications, 151 maximum GET-equivalent requests, and 494 maximum total requests.

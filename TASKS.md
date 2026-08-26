@@ -790,13 +790,36 @@ Deferred QA Harness Hardening remains required before another exhaustive QA auth
 
 ### Batch 04.4 — Editorial QA Findings Reconciliation + Conditional Model / Editor-Interface Corrections
 
-Status: NEXT / ELIGIBLE AFTER THE CONDITIONAL-EXIT DECISION CHECKPOINT PASSES EXTERNAL CHECKPOINT VALIDATION / REPOSITORY-ONLY READ-ONLY EVIDENCE RECONCILIATION FIRST
+Status: FINDINGS RECONCILED / CLASS 0 / NO MODEL OR EDITOR INTERFACE TECHNICAL CORRECTION / BATCH 04.5 HANDOFF FROZEN
 
-Entry boundary: use the 102-scenario contract, partial authoring evidence, R88 incident and forensics, cleanup proof, zero model drift, EF-05, and the deferred harness plan. Do not claim complete 102 / 102 live execution, full publication-blocker proof, complete editorial QA, or corrected guard/harness implementation. Contentful access and model or Editor Interface mutation are not authorized.
+- [x] Confirm conditional-exit decision checkpoint `b9a61a328c6353881ea10dd5384b7a9c02d65e3d` and External Checkpoint Validation PASS
+- [x] Complete the repository-only read-only findings gate
+- [x] Record findings-gate External Validation — PASS WITH NOTES
+- [x] Apply the corrected ledger swap: `QA04-PP-007` A -> H and `QA04-PR-011` H -> A
+- [x] Reconcile all 102 scenarios to `10 / 44 / 2 / 15 / 2 / 0 / 0 / 29`
+- [x] Classify the overall correction as CLASS 0
+- [x] Record model correction — NO
+- [x] Record Editor Interface technical correction — NO; preserve the two built-in `slugEditor` overrides
+- [x] Preserve EF-05 as an editorial duplicate-tag rule with no model correction
+- [x] Classify `QA04-PP-004` and `QA04-PP-005` as execution-tooling limitations tied to the R88 stop
+- [x] Assign transformed-error guard and request-envelope correction to Deferred QA Harness Hardening
+- [x] Assign the attributable-evidence gap to QA process/test design
+- [x] Assign `QA04-PR-018` and `QA04-AR-015` to downstream frontend contract verification
+- [x] Freeze the exact 44 Class B scenarios for Batch 04.5
+- [x] Create the canonical findings reconciliation report
+- [x] Implement CLASS 0 findings truth across the authorized repository surfaces
+- [x] CLASS 0 Findings Reconciliation External Validation — PASS WITH NOTES
+- [x] CLASS 0 Findings Final Approval Reconciliation — COMPLETE
+
+The CLASS 0 Findings Reconciliation is IMPLEMENTED, its External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is COMPLETE. External Final Validation is the required pre-commit condition; only after it passes for this exact reconciled state may the containing commit establish the Batch 04.4 findings checkpoint. Batch 04.5 may begin only after External Checkpoint Validation PASS for that commit.
+
+Evidence boundary: this is not a claim of complete 102 / 102 live execution, exhaustive publication-blocker proof, complete editorial QA, or implemented guard/harness correction. Contentful access, model or Editor Interface mutation, model freeze, and seed are not authorized.
 
 ### Batch 04.5 — Editorial Workflow + Field Guidance
 
-Status: LATER / REPOSITORY-ONLY
+Status: NEXT AFTER THE BATCH 04.4 CHECKPOINT PASSES EXTERNAL CHECKPOINT VALIDATION / REPOSITORY-ONLY / NOT STARTED
+
+Handoff: exact 44 Class B scenarios frozen by the Batch 04.4 findings reconciliation.
 
 ### Batch 04.6 — Model Freeze Validation + Phase 04 Closeout
 
@@ -891,7 +914,8 @@ Recorded Phase 00 evidence:
 - The later one-time authoring authorization was GRANTED / CONSUMED. The separate renewed cleanup authorization was GRANTED / CONSUMED exactly once / CLOSED and was not a reuse of the first blocked cleanup authorization. Additional authoring, cleanup, continuation, retry, repair, schema or Editor Interface correction, export, import, migration, bootstrap, environment operation, or seed is not authorized.
 - The historical 111 Entry-update ceiling is proven insufficient and must not authorize continuation or another run. Planning bounds 201 / 216 require later guard and evidence-contract redesign before any envelope can be frozen.
 - Option B cleanup completed with exactly 19 Entry deletes, 3 Asset unpublishes, and 3 Asset deletes. The later complete plan preserved all 102 scenarios and calculated 220 Entry updates, 2–92 publication attempts, and a 494-request maximum. That harness is unimplemented post-findings engineering debt and must complete its governed workflow before another exhaustive authoring run.
-- Batch 04.4 is next / eligible for repository-only, read-only findings reconciliation after the conditional-exit decision checkpoint receives External Checkpoint Validation PASS. The evidence-supported candidates are model correction not currently required by available evidence, Editor Interface correction not currently established, an execution-tooling guard defect, and a QA-process/test-design evidence-contract defect; Batch 04.4 must reconcile them independently before approving conclusions.
+- Batch 04.4 read-only findings gate and its External Validation completed with PASS WITH NOTES. The corrected 102-row ledger is `10 / 44 / 2 / 15 / 2 / 0 / 0 / 29`; `QA04-PP-007` is Class H and `QA04-PR-011` is Class A. Findings are reconciled as CLASS 0 with no model or Editor Interface technical correction.
+- Batch 04.5 is next after the Batch 04.4 findings checkpoint passes External Checkpoint Validation. Its exact 44 Class B scenario handoff is frozen; Batch 04.5 has not started.
 - Phase 04 model version is not yet frozen.
 - Seed content remains not started.
 - This incident/recovery reconciliation is repository-only and authorizes no Contentful read, write, environment mutation, export, import, bootstrap, or seed operation.
