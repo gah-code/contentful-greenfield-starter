@@ -2,7 +2,11 @@
 
 Status: Phase 01 / Batch 01.1 — APPROVED / FROZEN FOR PHASE 02 INPUT
 Owner: Phase 01 — Content Strategy + Route Contract
-Current downstream consumer: Phase 04 — Editorial QA + Model Freeze — ACTIVE BY THE COMMIT CONTAINING THIS DOCUMENT; Current Batch: 04.2 — NEXT / NOT STARTED AFTER SUCCESSFUL 04.1 CHECKPOINT VERIFICATION
+Current downstream consumer: Phase 04 — Editorial QA + Model Freeze
+Closeout state: Batch 04.6 pointer correction, Resume External Validation with PASS WITH NOTES, and Final Approval Reconciliation are complete; the future externally final-validated commit containing the reconciliation establishes Phase 04 as COMPLETE / FROZEN and the semantic model as `v1.0.0`.
+Next downstream consumer: Phase 05 — Representative Seed Content
+Phase 05 state: NOT STARTED
+Phase 05 entry: requires External Checkpoint Validation PASS for the Phase 04 closeout containing commit.
 
 ## Purpose
 

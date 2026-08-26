@@ -94,7 +94,9 @@ Batch 00.3 verifies credential handling and variable separation without reading 
 
 Batch 00.4 recorded direct account, space, environment inventory, default locale, `master`, and `dev` evidence. Batch 00.5 external validation approved Phase 00.
 
-Phase 01, Phase 02, and Phase 03 are complete / frozen. Batch 03.6 is approved / checkpointed by the commit containing this document. Phase 04 is next / not started, and no Phase 04 Contentful mutation is authorized. Batches 03.1 and 03.2 are APPROVED. Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED.
+Phase 01, Phase 02, and Phase 03 are complete / frozen. Batch 03.6 is approved / checkpointed by the commit containing this document. Phase 04 closeout pointer correction, Resume External Validation with PASS WITH NOTES, and Final Approval Reconciliation are complete under containing-commit semantics: the future externally final-validated containing commit establishes Phase 04 COMPLETE / FROZEN and semantic model `v1.0.0`. Phase 05 and seed are NOT STARTED. Batches 03.1 and 03.2 are APPROVED. Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED.
+
+The Batch 04.6 final GET authorization was granted, consumed exactly once immediately before GET #1, and closed. One validator process completed exactly 23 GET requests with 0 writes, 0 retries, 0 replay, and no credential exposure. Additional GET access, a second validator, Contentful mutation, environment lifecycle operations, export, import, and migration are not authorized. This closeout reconciliation is repository-only and does not authorize Phase 05 or seed.
 
 Batch 03.5 used one explicit import authorization. The sole top-level import invocation exited 1 after an HTTP 429 during Editor Interface processing, with 0 effective automatic request replays. The authorization is consumed. GET-only forensics independently proved complete semantic recovery with zero material drift. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. Incident/recovery truth reconciliation and Final Approval Reconciliation are complete; the commit containing this document establishes the Batch 03.5 checkpoint.
 
@@ -102,6 +104,11 @@ One governed export from `dev` completed under explicit authorization. That one-
 
 Current authorization boundary:
 
+- Batch 04.6 final GET authorization: CONSUMED / CLOSED.
+- Additional GET: NOT AUTHORIZED.
+- Second validator: NOT AUTHORIZED.
+- Contentful mutation and authoring: NOT AUTHORIZED.
+- Environment lifecycle operations: NOT AUTHORIZED.
 - Second export: NOT AUTHORIZED.
 - Completed destructive `dev` rotation: exactly one deletion and one recreation from protected `master`.
 - Destructive authorization: CONSUMED.
@@ -112,6 +119,8 @@ Current authorization boundary:
 - Second import: NOT AUTHORIZED.
 - Manual repair/reset: NOT AUTHORIZED.
 - Additional bootstrap: NOT AUTHORIZED.
+- Migration execution: NOT AUTHORIZED.
+- Phase 05: NOT STARTED.
 - Seed: NOT STARTED.
 
 The approved export/import helpers use explicit programmatic environment-token binding. The successful Gate B and destructive recovery authorizations are consumed. Credentials stay in ignored local environment state, never appear in CLI arguments or logs, and `contentful config list` remains prohibited.

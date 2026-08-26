@@ -1,6 +1,6 @@
 # Environment Strategy
 
-Status: Phase 00 complete; Phase 02 complete / frozen; Phase 03 complete / frozen by the containing commit; Batch 03.6 approved / checkpointed; Phase 04 next / not started
+Status: Phase 00 complete; Phase 02 complete / frozen; Phase 03 complete / frozen; Phase 04 closeout pointer correction, Resume External Validation with PASS WITH NOTES, and Final Approval Reconciliation complete under containing-commit semantics; the future externally final-validated containing commit establishes Phase 04 COMPLETE / FROZEN and semantic model `v1.0.0`; Phase 05 NOT STARTED
 Owner: Phase 00 — Baseline + Two-Environment Setup
 Canonical environment topology: `master` + `dev`
 
@@ -12,6 +12,8 @@ Canonical environment topology: `master` + `dev`
 | `dev` | Only non-master rotating sandbox | Recreated once from protected `master`; one authorized import invocation is complete and no second import or repair is authorized | Ready / approved recovered v1 model; 10 types / 0 entries / 0 assets / 0 tags / `en-US`; default true / fallback null; zero material drift |
 
 Verification is a workflow state, not an environment ID. This project does not maintain a separate physical environment for verification.
+
+Batch 04.6 final GET-only model validation returned PASS WITH NOTES after exactly 23 GET requests and 0 writes. It reconfirmed ready blank `master` and ready `dev` with the exact approved semantic model, zero Entries, zero Assets, zero tags, and zero material drift. The final GET authorization is consumed / closed. Additional Contentful access and environment lifecycle operations are not authorized. Phase 05 remains NOT STARTED and requires External Checkpoint Validation PASS for the Phase 04 closeout containing commit.
 
 ## `master`
 
@@ -63,7 +65,7 @@ Batch 03.4 destructive authorization is CONSUMED. Delete count is 1, recreation 
 
 Batch 03.5 passed its corrected pre-execution and retry-semantics gates, then consumed one explicit import authorization. The sole top-level import command exited 1 after an HTTP 429 during Editor Interface import. Effective automatic request replays were 0; no second import, repair, reset, bootstrap, additional export, or seed followed. Twenty-three GET-only forensic requests independently confirmed protected blank `master` and current `dev` with all 10 approved types published, all 10 Editor Interfaces present, 0 entries / 0 assets / 0 tags, and `en-US`. The semantic verifier passed the exact 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2 contract with zero material drift. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. Truth-surface and Final Approval Reconciliation are complete; the commit containing this document establishes the Batch 03.5 checkpoint.
 
-Batch 03.6 records the initial final-live validator as an unresolved evidence-capture incident with 0 writes and no retry. The separately authorized corrective final-live validation used 23 GETs and 0 writes and passed exact `dev` + `master` topology, `master` protection, the recovered `dev` model, all 10 published types, all 10 Editor Interfaces, locale compatibility, and zero material drift. All 22 Phase 03 technical exit criteria pass, and external Batch 03.6 validation and External Final Validation returned PASS WITH NOTES. The commit containing this document establishes the Phase 03 closeout and Batch 03.6 checkpoint. Phase 03 is complete / frozen; Phase 04 is next / not started. Additional environment lifecycle operations remain not authorized.
+Batch 03.6 records the initial final-live validator as an unresolved evidence-capture incident with 0 writes and no retry. The separately authorized corrective final-live validation used 23 GETs and 0 writes and passed exact `dev` + `master` topology, `master` protection, the recovered `dev` model, all 10 published types, all 10 Editor Interfaces, locale compatibility, and zero material drift. All 22 Phase 03 technical exit criteria pass, and external Batch 03.6 validation and External Final Validation returned PASS WITH NOTES. The commit containing this document establishes the Phase 03 closeout and Batch 03.6 checkpoint. Phase 03 is complete / frozen. Phase 04 closeout is implemented under containing-commit semantics, and Phase 05 is NOT STARTED. Additional environment lifecycle operations remain not authorized.
 
 Seed content remains NOT STARTED.
 
@@ -201,8 +203,8 @@ Batch 03.6 / Phase 03 closeout checkpoint
 Phase 03
 ✓ COMPLETE / FROZEN
 
-Phase 04
--> NEXT / NOT STARTED AFTER SUCCESSFUL CHECKPOINT VERIFICATION
+Phase 04 entry
+✓ HISTORICALLY COMPLETED / LATER CLOSEOUT RECONCILIATION IMPLEMENTED
 ```
 
 The environment ID remains `dev` before and after the clean-room recreation.
