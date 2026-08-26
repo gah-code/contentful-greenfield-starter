@@ -703,9 +703,9 @@ Corrective Git checkpoint: ESTABLISHED AT `46ba9c0ee0a0cf0a09736aa867eb76619f44d
 
 ### Batch 04.3 — Controlled Temporary Editorial QA Execution
 
-Status: STARTED / CONTROLLED AUTHORING STOPPED AFTER MUTATION / PARTIAL STATE FRESHLY FORENSICALLY CONFIRMED / NOT COMPLETE / POST-STOP FORENSICS COMPLETE / OPTION B PREFERRED FOR PLANNING / CLEANUP NOT AUTHORIZED.
+Status: STARTED / CONTROLLED AUTHORING STOPPED AFTER MUTATION / NOT COMPLETE / POST-STOP FORENSICS COMPLETE / OPTION B SELECTED / GOVERNED PARTIAL QA CLEANUP COMPLETE / ZERO-CONTENT DEV BASELINE RESTORED.
 
-Latest one-time authoring authorization: GRANTED / CONSUMED by the first mutation, TA-01 Asset upload. Additional authoring, continuation, retry, repair, and cleanup are NOT AUTHORIZED.
+Latest one-time authoring authorization: GRANTED / CONSUMED by the first mutation, TA-01 Asset upload. The separate renewed cleanup authorization is also CONSUMED / CLOSED. Additional authoring, cleanup, continuation, retry, and repair are NOT AUTHORIZED.
 
 Repository-only local Asset fixture prerequisite: PDF CLASSIFICATION EXTERNAL FINAL VALIDATION PASS WITH NOTES / FIXTURE CHECKPOINT ESTABLISHED AT `2c590bf674759159061dcdc8700993adb96d321d` / FIXTURE CHECKPOINT VALIDATION GIT MECHANICS PASS + CANONICAL TRUTH CONSISTENCY NEEDS REVISION / POST-CHECKPOINT TRUTH-SURFACE CORRECTION EXTERNAL FINAL VALIDATION PASS WITH NOTES / FIRST TRUTH CORRECTIVE CHECKPOINT ESTABLISHED AT `591725c3abdb0e829700cdbbb77a023628525781` / FIRST TRUTH CORRECTIVE CHECKPOINT VALIDATION GIT MECHANICS PASS + CANONICAL TRUTH CONSISTENCY NEEDS REVISION / CLOSURE-SEMANTICS CORRECTION IMPLEMENTED + EXTERNAL VALIDATION PASS WITH NOTES + FINAL APPROVAL RECONCILIATION COMPLETE.
 
@@ -759,7 +759,25 @@ The Partial Authoring Incident + Deferral checkpoint is established at `93e4ff6d
 - [x] Implement the repository-only Post-Stop Forensic Findings + Recovery Decision Reconciliation
 - [x] Complete Post-Stop Forensic Findings + Recovery Decision Final Approval Reconciliation
 
-Approval rule: External Final Validation is a required pre-commit gate. Only after it passes for this exact reconciled state may the containing commit establish the forensic/recovery decision checkpoint. The future Partial QA Cleanup Read-Only Pre-Execution Gate additionally requires External Checkpoint Validation PASS for that commit. Cleanup remains separately gated and unauthorized.
+The forensic/recovery decision checkpoint is established at `7f36c66e30b8a9297f3ee3a1a72baf76eef7d2a1`.
+
+- [x] Complete the Partial QA Cleanup Read-Only Pre-Execution Gate and external validation
+- [x] Preserve the first cleanup execution as BLOCKED PRE-CLEANUP on the invalid default ESM import / 0 Contentful requests / 0 mutations / authorization unconsumed
+- [x] Complete the local ESM named-import correction preflight / External Validation PASS WITH NOTES / 0 Contentful requests
+- [x] Consume the renewed cleanup authorization exactly once with the first `qa04-article-primary` delete
+- [x] Delete all 19 unpublished QA Entries in the frozen dependent-first order
+- [x] Prove the intermediate 0-Entry / exact 3-Asset / zero-drift state
+- [x] Unpublish and delete all 3 QA Assets in the frozen order
+- [x] Complete exactly 25 cleanup mutations with 29 GET-equivalent requests, 0 retries, and 0 replay
+- [x] Prove protected blank `master` and zero-content, zero-drift `dev`
+- [x] Record renewed cleanup execution External Validation — PASS WITH NOTES
+- [x] Implement Partial QA Cleanup Result + Zero-Content Baseline Reconciliation and create the cleanup execution report
+- [x] Partial QA Cleanup Result + Zero-Content Baseline Reconciliation External Validation — PASS WITH NOTES
+- [x] Partial QA Cleanup Result + Zero-Content Baseline Final Approval Reconciliation — COMPLETE
+
+Cleanup-result approval rule: External Final Validation is the required pre-commit gate. Only after it passes for this exact reconciled state may the containing commit establish the cleanup-result checkpoint. The next Guard + Branch-Safe Authoring / Evidence-Contract Correction Planning gate requires External Checkpoint Validation PASS for that containing commit.
+
+Next planning gate: **Phase 04 / Batch 04.3 — Guard + Branch-Safe Authoring / Evidence-Contract Correction Planning**. It is repository/local-only and grants no Contentful authority.
 
 ### Batch 04.4 — Editorial QA Findings Reconciliation + Conditional Model / Editor-Interface Corrections
 
@@ -837,7 +855,7 @@ Recorded Phase 00 evidence:
 - Pre-export tooling is approved; Batch 03.3 — Governed Model Export + Snapshot Validation — is approved / checkpointed after external final validation returned PASS WITH NOTES.
 - The one-export authorization is consumed after exactly one successful top-level export invocation. The governed snapshot is locally validated and approved for recovery use; a second export remains unauthorized.
 - Batch 03.4 — Destructive Dev Rotation + Blank-State Validation — is approved / checkpointed by the commit containing this file after external final validation returned PASS WITH NOTES.
-- The completed forensic gate freshly confirmed ready / blank / protected `master` and ready `dev` with the exact zero-drift 10-type model, 19 unpublished temporary Entries, 3 processed/published temporary Assets, and no unexpected `qa04-` artifacts.
+- At the completed forensic gate, ready / blank / protected `master` and ready `dev` had the exact zero-drift 10-type model, 19 unpublished temporary Entries, 3 processed/published temporary Assets, and no unexpected `qa04-` artifacts.
 - The destructive authorization is consumed. A second rotation and additional bootstrap are not authorized.
 - Batch 03.5 used its one explicit import authorization. The only top-level import invocation exited 1 after an HTTP 429, with 0 automatic request replays; the authorization is consumed and no second import or repair is authorized.
 - Batch 03.5 post-failure GET-only forensics and semantic comparison passed. Truth-surface and Final Approval Reconciliation are complete; external reconciliation and final validation returned PASS WITH NOTES. The commit containing this file establishes the Batch 03.5 checkpoint.
@@ -847,19 +865,19 @@ Recorded Phase 00 evidence:
 - External checkpoint validation passed Git mechanics but returned NEEDS REVISION for truth consistency. The post-checkpoint truth-surface correction implementation is complete, External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete.
 - EF-05 Option B is accepted: duplicate tag values are owned by editorial guidance, the schema is correct as implemented, no model correction is required, and there is no live drift.
 - Batch 04.2 defines 102 QA scenarios and the model has 102 validation objects; equality is coincidental and not a coupled invariant.
-- The plan preserves 19 temporary Entries and 3 Assets. The historical 111 Entry-update ceiling remains part of the consumed contract but is proven insufficient and prohibited from execution reuse. Forensic planning bounds are 201 minimum branch-safe and 216 conservative no-sharing; neither is a controlling envelope or authorization.
+- The historical authoring plan created 19 temporary Entries and 3 Assets. The historical 111 Entry-update ceiling remains part of the consumed contract but is proven insufficient and prohibited from execution reuse. Forensic planning bounds are 201 minimum branch-safe and 216 conservative no-sharing; neither is a controlling envelope or authorization.
 - [x] Preserve the earlier controlled authoring attempt as historical BLOCKED PRE-WRITE evidence with the guarded process not started, first mutation not invoked, and 0 Contentful requests / writes.
 - [x] Complete the 102-scenario feasibility investigation and record the exact `51 -> 111` proof.
 - [x] Implement the narrow Batch 04.2 Authoring-Envelope Correction without changing scenario wording, model, migration, fixtures, tooling, packages, or Contentful state.
 - [x] Authoring-Envelope Correction External Validation — PASS WITH NOTES.
 - [x] Authoring-Envelope Correction Final Approval Reconciliation — COMPLETE.
 - Authoring-Envelope Correction checkpoint `0e2057d26031d3ba7264810d00173713d83c11ef` was established before the later separately authorized controlled authoring execution.
-- Batch 04.3 started and stopped after mutation at R88. Its partial state is preserved and freshly confirmed, it is not complete, and post-stop branch-sensitive forensics are complete with External Validation PASS WITH NOTES.
+- Batch 04.3 started and stopped after mutation at R88. Its incident and forensic evidence remain preserved, governed cleanup is complete, `dev` is restored to 0 Entries / 0 Assets / 0 tags with zero model drift, and the batch is not complete.
 - The Partial Authoring Incident + Deferral Reconciliation lifecycle is complete and its checkpoint is established at `93e4ff6dd995831af5d05475db02b1a60f027715`.
 - The previous 04.3 authoring authorization was GRANTED / UNCONSUMED. It is superseded and MUST NOT be reused. Any future execution decision requires the Post-Stop Partial-State + Branch-Sensitive Forensics gate first; no new authorization is currently available.
-- The later one-time authoring authorization was GRANTED / CONSUMED. Additional authoring, continuation, retry, repair, cleanup, schema or Editor Interface correction, export, import, migration, bootstrap, environment operation, or seed is not authorized.
+- The later one-time authoring authorization was GRANTED / CONSUMED. The separate renewed cleanup authorization was GRANTED / CONSUMED exactly once / CLOSED and was not a reuse of the first blocked cleanup authorization. Additional authoring, cleanup, continuation, retry, repair, schema or Editor Interface correction, export, import, migration, bootstrap, environment operation, or seed is not authorized.
 - The historical 111 Entry-update ceiling is proven insufficient and must not authorize continuation or another run. Planning bounds 201 / 216 require later guard and evidence-contract redesign before any envelope can be frozen.
-- Option B — Cleanup + Full Restart is preferred for planning. The 25-mutation cleanup count is planning evidence only; cleanup remains unauthorized and requires its own read-only gate, external validation, and explicit human authorization.
+- Option B cleanup completed with exactly 19 Entry deletes, 3 Asset unpublishes, and 3 Asset deletes. Any future full restart remains unplanned and unauthorized until guard, branch-safe envelope, and evidence-contract corrections complete their own governed workflow.
 - Phase 04 model version is not yet frozen.
 - Seed content remains not started.
 - This incident/recovery reconciliation is repository-only and authorizes no Contentful read, write, environment mutation, export, import, bootstrap, or seed operation.

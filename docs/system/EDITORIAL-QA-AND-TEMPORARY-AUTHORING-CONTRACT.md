@@ -8,11 +8,13 @@ External Validation: PASS WITH NOTES. Final Approval Reconciliation: COMPLETE. E
 
 Narrow Authoring-Envelope Correction: COMPLETE / CHECKPOINTED AT `0e2057d26031d3ba7264810d00173713d83c11ef`. Its read-only pre-execution and authorization gates were later satisfied for the consumed controlled execution.
 
-Current operational state: the correction is checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. A later one-time authorized Batch 04.3 execution STARTED, consumed its authorization with the TA-01 Asset upload, and STOPPED AFTER MUTATION at R88. Partial state is preserved and freshly forensically confirmed, Batch 04.3 is not complete, and the required Post-Stop Partial-State + Branch-Sensitive Forensics are complete with External Validation PASS WITH NOTES. Option B — Cleanup + Full Restart is preferred for planning; cleanup remains unauthorized. This repository-only reconciliation made no Contentful request.
+Current operational state: the correction is checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. A later one-time authorized Batch 04.3 execution STARTED, consumed its authorization with the TA-01 Asset upload, and STOPPED AFTER MUTATION at R88. The required Post-Stop Partial-State + Branch-Sensitive Forensics are complete and checkpointed at `7f36c66e30b8a9297f3ee3a1a72baf76eef7d2a1`. Option B was selected. A separately authorized corrected cleanup completed exactly 25 mutations with 0 retries or replay and restored the zero-content, zero-drift `dev` baseline. Batch 04.3 is not complete. This repository-only reconciliation made no Contentful request.
 
 Partial Authoring Incident + Deferral Reconciliation: COMPLETE / CHECKPOINT ESTABLISHED AT `93e4ff6dd995831af5d05475db02b1a60f027715`.
 
-Post-Stop Forensic Findings + Recovery Decision Reconciliation: IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE. External Final Validation is the required pre-commit gate; only after it passes for this exact reconciled state may the containing commit establish the forensic/recovery decision checkpoint.
+Post-Stop Forensic Findings + Recovery Decision checkpoint: ESTABLISHED AT `7f36c66e30b8a9297f3ee3a1a72baf76eef7d2a1`.
+
+Partial QA Cleanup Result + Zero-Content Baseline Reconciliation: IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE. External Final Validation is the required pre-commit gate; only after it passes for this exact reconciled state may the containing commit establish the cleanup-result checkpoint. The next Guard + Branch-Safe Authoring / Evidence-Contract Correction Planning gate requires External Checkpoint Validation PASS for that containing commit.
 
 ## Purpose
 
@@ -421,7 +423,7 @@ Before the consumed controlled execution, a separately approved gate was require
 - all 19 planned Entry identities and all 3 planned Asset identities match this contract exactly;
 - Contentful credential presence is verified without printing secrets;
 - the exact installed Asset ingestion and processing API path, exact JPEG/PNG/PDF sources, deterministic ID behavior, upload/create/process/publication counts, readiness-check limit, retry behavior, request capture, stop behavior, and complete mutation envelope are externally reviewed;
-- cleanup remains not authorized and seed remains not started;
+- cleanup remained not authorized at that historical pre-authoring gate and seed remained not started;
 - human authorization is explicit and limited to the authoring envelope.
 
 The controlled execution was required to record timestamp, target, scenario ID, artifact ID, operation, expected result, observed result, status/version, non-secret request/response summary, cumulative count, and stop decision.
@@ -463,11 +465,11 @@ unpublish published Articles and Projects
 -> delete Assets
 ```
 
-## Separate Cleanup Gate
+## Historical Separate Cleanup Gate
 
-PLANNING ONLY — NOT AUTHORIZATION.
+The following was planning-only evidence before the separately authorized cleanup execution. It did not itself grant authorization.
 
-The table below is the historical pre-run cleanup envelope. The completed forensic gate supersedes it for current planning because all 19 Entries are unpublished and all 3 Assets are published.
+The table below is the historical pre-run cleanup envelope. The completed forensic gate superseded it before execution because all 19 Entries were unpublished and all 3 Assets were published.
 
 | Operation | Maximum planned count |
 | --- | ---: |
@@ -476,7 +478,7 @@ The table below is the historical pre-run cleanup envelope. The completed forens
 | Asset unpublishes | 3 |
 | Asset deletes | 3 |
 
-Fresh current-state cleanup planning:
+Forensic-stage cleanup planning:
 
 | Operation | Current planning count |
 | --- | ---: |
@@ -485,7 +487,7 @@ Fresh current-state cleanup planning:
 | Asset deletes | 3 |
 | Total top-level cleanup mutations | 25 |
 
-Required future flow:
+Governed cleanup flow that was subsequently completed:
 
 ```text
 04.3 authoring
@@ -500,7 +502,7 @@ Required future flow:
 -> external validation
 ```
 
-The Post-Stop Partial-State + Branch-Sensitive Forensics gate is complete, but cleanup remains unauthorized. After the forensic/recovery reconciliation completes External Validation, Final Approval Reconciliation, External Final Validation, and its containing checkpoint, External Checkpoint Validation PASS is required before the **Phase 04 / Batch 04.3 — Partial QA Cleanup Read-Only Pre-Execution Gate**. That GET-only gate must freeze exact versions, publication state, dependency-safe order, request maxima, zero-retry behavior, secret safety, and fail-closed evidence. Cleanup still requires external validation and explicit human authorization.
+The Post-Stop Partial-State + Branch-Sensitive Forensics gate and its checkpoint completed. The later read-only cleanup gate, external validation, renewed explicit authorization, exact cleanup, zero-content proof, and cleanup execution external validation also completed. The renewed authorization is consumed and closed; this completed flow grants no additional cleanup authority.
 
 ## Phase 04 QA vs Phase 05 Seed Boundary
 
@@ -524,7 +526,7 @@ Incident evidence: `content-model/reports/PHASE-04-BATCH-04.3-PARTIAL-AUTHORING-
 
 The required forensic gate is COMPLETE and externally validated with PASS WITH NOTES. Its 14 GET-equivalent requests made 0 writes and 0 automatic retry, application retry, or request replay. It freshly confirmed protected blank `master`; ready `dev`; the exact 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2 model with 0 localized fields, 0 tags, and 0 material drift; all 19 planned unpublished Entries; all 3 planned processed/published Assets; and no missing or unexpected `qa04-` artifact.
 
-TE-09 is freshly confirmed at version 9 and unpublished. `longBio` contains prohibited `heading-1`; `learningHighlights` is a valid paragraph document; `publicEmail` is valid; `resume` links `qa04-resume-pdf`; and `socialLinks` link `qa04-social-primary` and `qa04-social-ambiguous`. Restoration is not authorized.
+At the forensic stage, TE-09 was confirmed at version 9 and unpublished. `longBio` contained prohibited `heading-1`; `learningHighlights` was a valid paragraph document; `publicEmail` was valid; `resume` linked `qa04-resume-pdf`; and `socialLinks` linked `qa04-social-primary` and `qa04-social-ambiguous`. That QA content was later governedly removed; no separate restoration occurred.
 
 R88 was an HTTP 422 Axios rejection. Raw status and details were available at `error.response.status` and `error.response.data.details`; `contentful-sdk-core` passed a transformed plain `Error` to the guard, with status and details in parsed JSON `error.message`. The exact validation body is unrecoverable and exact field attribution remains unresolved. R88 atomically rejected the entire transition: neither `longBio` restoration nor the next `learningHighlights` state persisted. Classification is a guard status-extraction defect; a model/schema defect is not established.
 
@@ -532,7 +534,15 @@ The future guard must extract status in this order: `error.status`, `error.respo
 
 Hard-validation evidence is 10 fully proven, 15 accepted-invalid/restored partial, 2 rejected-without-field-attribution partial, and 29 unexecuted, with 0 publication blockers proven. Invalid-draft acceptance and restoration are not full blocker evidence. The existing four-publication-attempt plan is insufficient for its broad claims; the publication/validation evidence contract requires later redesign without preselecting a mechanism or a count.
 
-Option B — Cleanup + Full Restart is preferred for planning over Option A continuation or Option C indefinite parking. It offers a deterministic blank baseline after governed cleanup and allows guard, branch-envelope, and evidence-contract corrections before a fresh run. This preference grants no cleanup or authoring authority. Full evidence: `content-model/reports/PHASE-04-BATCH-04.3-POST-STOP-FORENSICS-AND-RECOVERY-DECISION.md`.
+Option B — Cleanup + Full Restart was selected over Option A continuation or Option C indefinite parking. The separately authorized cleanup restored a deterministic blank content baseline. Any future full restart still requires guard, branch-envelope, and evidence-contract corrections before a fresh run. Full forensic decision evidence: `content-model/reports/PHASE-04-BATCH-04.3-POST-STOP-FORENSICS-AND-RECOVERY-DECISION.md`.
+
+## Batch 04.3 Partial QA Cleanup Result + Zero-Content Baseline
+
+The first cleanup execution blocked before client creation because ESM module instantiation requested a nonexistent default export from `contentful-management@12.10.0`. It made 0 Contentful requests and 0 mutations, consumed no cleanup authorization, and did not rerun automatically. A local import correction preflight verified `import { createClient } from 'contentful-management';` and received External Validation PASS WITH NOTES with no real credential, Contentful request, or repository change.
+
+A renewed cleanup authorization was granted and consumed exactly once at `2026-08-25T23:12:34.032Z` by the first `entry.delete()` request for `qa04-article-primary`. The corrected guarded cleanup process ran once. It deleted 19 Entries, unpublished 3 Assets, and deleted 3 Assets for exactly 25 mutations. Its request audit was 29 GET-equivalent / 0 POST / 0 PUT / 0 PATCH / 25 DELETE, with 0 HTTP 429, 0 HTTP 5xx, 0 network failures, 0 SDK automatic retry, 0 application retry, and 0 request replay.
+
+Final proof established ready protected blank `master` at 0 content types / 0 Entries / 0 Assets / 0 tags / `en-US`, default true, fallback null. It established ready `dev` at the exact 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2 model, 0 localized fields, 0 material drift, 0 Entries / 0 Assets / 0 tags, and no `qa04-` or unexpected artifacts. External Validation returned PASS WITH NOTES. Full evidence: `content-model/reports/PHASE-04-BATCH-04.3-PARTIAL-QA-CLEANUP-EXECUTION.md`.
 
 ## Authorization Boundary
 
@@ -540,10 +550,10 @@ Additional Entry and Asset creation/update/publish/unpublish/delete, schema and 
 
 The previous Batch 04.3 human authoring authorization was historically GRANTED / UNCONSUMED. The blocked process never started, its first mutation was not invoked, and it made zero Contentful requests and zero writes. The contract correction supersedes that authorization for actionability: it MUST NOT be reused. The completed forensic gate grants no new authorization.
 
-The later Batch 04.3 one-time authorization is GRANTED / CONSUMED. It authorized one guarded process only. Additional authoring, continuation, retry, repair, and cleanup are not authorized.
+The later Batch 04.3 one-time authoring authorization is GRANTED / CONSUMED. The separate renewed cleanup authorization is GRANTED / CONSUMED EXACTLY ONCE / CLOSED; the historical prior blocked cleanup authorization was not reused. Additional authoring, continuation, retry, repair, and cleanup are not authorized.
 
 ## Batch 04.3 Entry Preconditions
 
-Batch 04.3 is STARTED but NOT COMPLETE. Its partial state is freshly forensically confirmed and must remain preserved until a separately authorized cleanup or other approved recovery operation occurs.
+Batch 04.3 is STARTED but NOT COMPLETE. Its incident and forensic evidence remain preserved, governed partial QA cleanup is complete, and the zero-content `dev` baseline is restored.
 
-The exact next operational gate is **Phase 04 / Batch 04.3 — Partial QA Cleanup Read-Only Pre-Execution Gate**. It can occur only after the forensic/recovery reconciliation's full external approval/checkpoint workflow and External Checkpoint Validation PASS. It is GET-only and cannot itself authorize cleanup. TE-09 restoration, continuation, another authoring execution, cleanup, guard/contract implementation, a new envelope, Batch 04.4, model freeze, and Phase 05 seed remain unauthorized.
+Partial QA Cleanup Result + Zero-Content Baseline Reconciliation implementation is COMPLETE, External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is COMPLETE. External Final Validation is the required pre-commit gate; only after it passes for this exact reconciled state may its containing commit establish the cleanup-result checkpoint. The exact next planning gate is **Phase 04 / Batch 04.3 — Guard + Branch-Safe Authoring / Evidence-Contract Correction Planning**; it is repository/local-only and requires External Checkpoint Validation PASS for the cleanup-result containing commit. Additional authoring, cleanup, guard/contract implementation, a new envelope, Batch 04.4, model freeze, and Phase 05 seed remain unauthorized.

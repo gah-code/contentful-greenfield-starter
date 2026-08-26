@@ -19,6 +19,7 @@ All meaningful project changes should be recorded here.
 - Phase 04 / Batch 04.3 pre-write contract and execution-envelope feasibility report
 - Phase 04 / Batch 04.3 partial-authoring incident and deferral report
 - Phase 04 / Batch 04.3 post-stop forensics and recovery decision report
+- Phase 04 / Batch 04.3 partial QA cleanup execution report
 
 ### Decisions
 
@@ -30,6 +31,15 @@ All meaningful project changes should be recorded here.
 
 ### Changed
 
+- Implemented the repository-only Batch 04.3 Partial QA Cleanup Result + Zero-Content Baseline Reconciliation after the separately authorized cleanup execution received External Validation PASS WITH NOTES.
+- Recorded cleanup-result reconciliation External Validation as PASS WITH NOTES and completed its Final Approval Reconciliation.
+- Preserved the first cleanup execution as blocked before Contentful client creation on the invalid default ESM import, with 0 requests, 0 mutations, unconsumed authorization, and no automatic rerun; recorded the corrected named-import preflight as PASS WITH NOTES.
+- Recorded the renewed cleanup authorization as consumed exactly once by the first `qa04-article-primary` delete and closed, without reusing the historical blocked authorization.
+- Recorded 19 successful Entry deletes, 3 successful Asset unpublishes, and 3 successful Asset deletes for exactly 25 mutations and 29 GET-equivalent requests, with 0 retries or replay.
+- Recorded final protected blank `master` and zero-content, zero-drift `dev` proof: 0 Entries, 0 Assets, 0 tags, and no `qa04-` or unexpected artifacts.
+- Kept Batch 04.3 incomplete pending guard, branch-safe envelope, and evidence-contract correction plus a future governed complete editorial QA execution; Batch 04.4 remains later.
+- Required External Final Validation as the pre-commit gate; only after it passes for this exact reconciled state may the containing commit establish the cleanup-result checkpoint. The next repository/local-only correction-planning gate requires External Checkpoint Validation PASS for that commit.
+- Made 0 Contentful requests and changed no model, migration, fixture, tooling, package, environment, or seed artifact during this reconciliation.
 - Implemented the repository-only Batch 04.3 Post-Stop Forensic Findings + Recovery Decision Reconciliation after the GET-only forensic gate received External Validation PASS WITH NOTES.
 - Completed Final Approval Reconciliation for the Batch 04.3 Post-Stop Forensic Findings + Recovery Decision after External Validation returned PASS WITH NOTES; External Final Validation remains the required pre-commit gate for its containing checkpoint.
 - Recorded fresh blank protected `master`, zero-drift `dev`, exact 19 Entry / 3 Asset QA inventory, TE-09 version 9, the R88 transformed-error guard defect, and confirmed atomic rejection without claiming a schema defect.
