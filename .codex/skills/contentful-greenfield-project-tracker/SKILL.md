@@ -100,7 +100,7 @@ Documentation is part of the build.
 - 04.2 Post-Checkpoint Truth-Surface Correction — IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE.
 - 04.2 correction External Final Validation — COMPLETE / CHECKPOINT PREREQUISITE SATISFIED.
 - 04.2 corrective checkpoint — ESTABLISHED AT `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`.
-- 04.3 — CONTROLLED TEMPORARY EDITORIAL QA EXECUTION — STARTED / STOPPED AFTER MUTATION AT R88 / POST-STOP FORENSICS COMPLETE / OPTION B SELECTED / GOVERNED PARTIAL QA CLEANUP COMPLETE / ZERO-CONTENT DEV BASELINE RESTORED / NOT COMPLETE.
+- 04.3 — CONTROLLED TEMPORARY EDITORIAL QA EXECUTION — CONDITIONALLY EXITED FOR FINDINGS HANDOFF / INCIDENT, FORENSICS, AND GOVERNED CLEANUP COMPLETE / ZERO-CONTENT DEV BASELINE RESTORED / EXHAUSTIVE LIVE QA DEFERRED / KNOWN EVIDENCE LIMITATION PRESERVED / NOT A 102 / 102 LIVE QA PASS.
 - 04.3 initial read-only pre-execution attempt — BLOCKED / MISSING APPROVED LOCAL ASSET SOURCES / 0 CONTENTFUL REQUESTS.
 - 04.3 fixture generation — COMPLETE EXTERNALLY.
 - 04.3 wrong-path fixture identity investigation — PASS / CLASS A.
@@ -136,11 +136,14 @@ Documentation is part of the build.
 - 04.3 renewed cleanup authorization — GRANTED / CONSUMED EXACTLY ONCE AT `2026-08-25T23:12:34.032Z` BY FIRST `qa04-article-primary` ENTRY DELETE / CLOSED / HISTORICAL PRIOR AUTHORIZATION NOT REUSED.
 - 04.3 corrected cleanup execution — ONE GUARDED PROCESS / 19 ENTRY DELETES / 3 ASSET UNPUBLISHES / 3 ASSET DELETES / EXACT 25 MUTATIONS / 29 GET-EQUIVALENT / 0 RETRIES / 0 REPLAY / EXTERNAL VALIDATION PASS WITH NOTES.
 - 04.3 cleanup final proof — BLANK PROTECTED `master`; EXACT ZERO-DRIFT `dev` MODEL / 0 ENTRIES / 0 ASSETS / 0 TAGS / 0 `qa04-` OR UNEXPECTED ARTIFACTS.
-- 04.3 Partial QA Cleanup Result + Zero-Content Baseline Reconciliation — IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE / EXTERNAL FINAL VALIDATION REQUIRED AS THE PRE-COMMIT GATE BEFORE ITS CONTAINING COMMIT MAY ESTABLISH THE CLEANUP-RESULT CHECKPOINT.
-- 04.3 next planning gate — GUARD + BRANCH-SAFE AUTHORING / EVIDENCE-CONTRACT CORRECTION PLANNING / REPOSITORY-LOCAL ONLY / REQUIRES EXTERNAL CHECKPOINT VALIDATION PASS FOR THE CLEANUP-RESULT CONTAINING COMMIT.
-- 04.4 — EDITORIAL QA FINDINGS RECONCILIATION + CONDITIONAL MODEL / EDITOR-INTERFACE CORRECTIONS — LATER / DO NOT ADVANCE WHILE 04.3 IS UNRESOLVED.
+- 04.3 Partial QA Cleanup Result + Zero-Content Baseline checkpoint — ESTABLISHED AT `c9c33a0b32e449e639fe2e4d32f3fa9b6cdcc819` / CLEAN SYNCHRONIZED `0 0` EXTERNALLY VALIDATED.
+- 04.3 Guard + Branch-Safe Authoring / Evidence-Contract Correction Planning — COMPLETE / PASS WITH NOTES / DEFERRED FROM IMMEDIATE IMPLEMENTATION / 102 SCENARIOS / `56 / 36 / 2 / 8` OWNERS / 220 ENTRY UPDATES / 2–92 PUBLICATION ATTEMPTS / 90 MAXIMUM FAILED PUBLICATIONS / 151 MAXIMUM GET-EQUIVALENT / 494 MAXIMUM TOTAL REQUESTS / 20 / 20 LOCAL GUARD PROTOTYPE TESTS PASS / NO MODEL OR MIGRATION CHANGE / NOT IMPLEMENTED / NOT APPROVED FUTURE LIVE MAXIMA.
+- 04.3 Deferred QA Harness Hardening — POST-FINDINGS ENGINEERING DEBT / REQUIRED BEFORE ANOTHER EXHAUSTIVE AUTHORING RUN / AVAILABLE EVIDENCE ESTABLISHES 0 LIVE MODEL DRIFT BUT NO MODEL OR EDITOR INTERFACE DEFECT / NOT A 04.4 ENTRY BLOCKER.
+- 04.3 Conditional Exit + 04.4 Advancement Decision — IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE / EXTERNAL FINAL VALIDATION REQUIRED AS A PRE-COMMIT CONDITION BEFORE ITS CONTAINING COMMIT MAY ESTABLISH THE DECISION CHECKPOINT.
+- 04.4 — EDITORIAL QA FINDINGS RECONCILIATION + CONDITIONAL MODEL / EDITOR-INTERFACE CORRECTIONS — NEXT / ELIGIBLE AFTER THE CONDITIONAL-EXIT DECISION CHECKPOINT PASSES EXTERNAL CHECKPOINT VALIDATION / REPOSITORY-ONLY READ-ONLY FINDINGS RECONCILIATION FIRST.
+- 04.4 candidate findings — MODEL CORRECTION NOT CURRENTLY REQUIRED BY AVAILABLE EVIDENCE / EDITOR INTERFACE CORRECTION NOT CURRENTLY ESTABLISHED / GUARD DEFECT IS EXECUTION TOOLING / EVIDENCE-CONTRACT DEFECT IS QA PROCESS AND TEST DESIGN / NOT PRE-APPROVED CONCLUSIONS.
 - 04.5 — EDITORIAL WORKFLOW + FIELD GUIDANCE — LATER.
-- 04.6 — MODEL FREEZE VALIDATION + PHASE 04 CLOSEOUT — LATER.
+- 04.6 — MODEL FREEZE VALIDATION + PHASE 04 CLOSEOUT — LATER / MUST CHOOSE EXHAUSTIVE RERUN OR DOCUMENTED POST-FREEZE ENGINEERING DEBT WITH A VISIBLE LIMITATION STATEMENT.
 - EF-05 — OPTION B / OWNERSHIP CLARIFIED / DUPLICATE TAG VALUES OWNED BY EDITORIAL GUIDANCE / SCHEMA CORRECT AS IMPLEMENTED / NO MODEL CORRECTION / NOT LIVE DRIFT.
 - 04.2 QA contract — 102 SCENARIOS / 56 HARD VALIDATION / 36 EDITORIAL / 2 FUTURE FRONTEND / 8 GOVERNANCE.
 - 04.2 count boundary — 102 QA SCENARIOS AND 102 VALIDATION OBJECTS ARE COINCIDENTAL / NOT COUPLED.
@@ -204,7 +207,7 @@ Batch 03.6 preserves its initial final-live process as an unresolved evidence-ca
 
 Batch 04.1 completed an externally validated PASS WITH NOTES preflight with 23 GETs, 0 retries, and 0 writes. It confirmed the frozen recovered model at 10 types / 99 fields / 18 references / 102 validations / 10 display fields / 8 regex / 6 Rich Text / 2 editor overrides and established the canonical 04.1–04.6 architecture. Commit `33e01ae068769631b3bd997b28711535f7c7b340` activates Phase 04 and checkpoints Batch 04.1.
 
-Batch 04.2 External Validation and External Final Validation returned PASS WITH NOTES, Final Approval Reconciliation is complete, and checkpoint `a85ebb37ef0f182b98d914221e70454cebb1351f` is established. Its earlier corrective and fixture lifecycle evidence remains preserved. The narrow Authoring-Envelope Correction replaced the historical 51 ceiling with 111 and is checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. A later one-time authorized Batch 04.3 process consumed its authorization with the TA-01 Asset upload, created all 19 temporary Entries and all 3 temporary Assets, then stopped fail-closed at R88 after HTTP 422. The completed 14-GET-equivalent post-stop forensic gate confirmed blank protected `master`, the exact zero-drift `dev` model, 19 unpublished Entries, 3 processed/published Assets, and TE-09 version 9 with prohibited `heading-1`. R88 atomically rejected its complete transition; the finding is a transformed-error status-extraction guard defect, not an established schema defect. The historical 111 ceiling is proven insufficient. Values 201 / 216 and continuation 173 / 186 are planning bounds only. The four-publication evidence plan is insufficient, and guard plus evidence-contract redesign are required before future authoring. Option B was selected. A separately authorized corrected cleanup process then deleted all 19 Entries, unpublished and deleted all 3 Assets, completed exactly 25 mutations and 29 GET-equivalent requests with 0 retries or replay, and restored zero-content, zero-drift `dev`. Batch 04.3 remains incomplete. Additional authoring, continuation, retry, repair, cleanup, guard/contract implementation, model or Editor Interface correction, export, import, migration, bootstrap, environment operations, Batch 04.4 advancement, and seed remain unauthorized. Migration 0001 remains frozen and the model version is not yet frozen.
+Batch 04.2 External Validation and External Final Validation returned PASS WITH NOTES, Final Approval Reconciliation is complete, and checkpoint `a85ebb37ef0f182b98d914221e70454cebb1351f` is established. Its earlier corrective and fixture lifecycle evidence remains preserved. The narrow Authoring-Envelope Correction replaced the historical 51 ceiling with 111 and is checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. A later one-time authorized Batch 04.3 process consumed its authorization with the TA-01 Asset upload, created all 19 temporary Entries and all 3 temporary Assets, made 39 Entry update attempts and 0 Entry publication attempts, then stopped fail-closed at R88 after HTTP 422. Forensics confirmed atomic rejection, the transformed-error status-extraction defect, unresolved exact field attribution, and zero model drift without establishing a model or Editor Interface defect. The historical 111 ceiling is proven insufficient; values 201 / 216 and continuation 173 / 186 remain historical planning bounds. Option B cleanup then deleted all 19 Entries, unpublished and deleted all 3 Assets, completed exactly 25 mutations with no retry/replay, and restored zero-content, zero-drift `dev`. The later exhaustive correction plan preserved all 102 scenarios and `56 / 36 / 2 / 8` ownership, calculated 220 Entry updates, 2–92 publication attempts, and 494 maximum requests, and passed a 20 / 20 local guard prototype without implementing the guard or harness; the design values are not approved future live maxima. Batch 04.3 is conditionally exited for findings handoff, not approved as a 102 / 102 live QA pass. Its decision External Validation returned PASS WITH NOTES and Final Approval Reconciliation is complete; External Final Validation remains a required pre-commit condition. Deferred QA Harness Hardening is post-findings engineering debt required before another exhaustive authoring run. Available evidence establishes zero live drift but does not establish a model or Editor Interface defect, and the debt is not a Batch 04.4 entry blocker. Batch 04.4 is next and becomes eligible for repository-only, read-only findings reconciliation after the decision checkpoint passes External Checkpoint Validation. Additional Contentful access, authoring, cleanup, guard/contract/harness implementation, model or Editor Interface correction, export, import, migration, bootstrap, environment operations, and seed remain unauthorized. Migration 0001 remains frozen and the model version is not yet frozen.
 
 Approved Batch 02.2 standalone type IDs:
 
@@ -426,7 +429,8 @@ Batch 04.2
 ✓ AUTHORING-ENVELOPE CORRECTION CHECKPOINTED AT `0e2057d26031d3ba7264810d00173713d83c11ef` / CLASS A / HISTORICAL 111 ENTRY-UPDATE CEILING PROVEN INSUFFICIENT / NOT REUSABLE
 
 Batch 04.3
-! STARTED / STOPPED AFTER MUTATION AT R88 / POST-STOP FORENSICS COMPLETE / GOVERNED PARTIAL QA CLEANUP COMPLETE / ZERO-CONTENT DEV BASELINE RESTORED / NOT COMPLETE
+✓ CONDITIONALLY EXITED FOR FINDINGS HANDOFF / INCIDENT, FORENSICS, AND GOVERNED CLEANUP COMPLETE / ZERO-CONTENT DEV BASELINE RESTORED
+! EXHAUSTIVE LIVE QA DEFERRED / KNOWN EVIDENCE LIMITATION PRESERVED / NOT A 102 / 102 LIVE QA PASS
 ! INITIAL READ-ONLY PRE-EXECUTION BLOCKED ON MISSING APPROVED LOCAL ASSET SOURCES
 ✓ FIXTURE GENERATION COMPLETE EXTERNALLY
 ✓ WRONG-PATH IDENTITY INVESTIGATION PASS / CLASS A
@@ -467,12 +471,24 @@ Batch 04.3
 ✓ RENEWED CLEANUP AUTHORIZATION CONSUMED EXACTLY ONCE / CLOSED / PRIOR AUTHORIZATION NOT REUSED
 ✓ ONE CORRECTED GUARDED PROCESS / 19 ENTRY DELETES / 3 ASSET UNPUBLISHES / 3 ASSET DELETES / EXACT 25 MUTATIONS / 29 GET-EQUIVALENT / 0 RETRIES OR REPLAY
 ✓ FINAL PROOF: BLANK PROTECTED MASTER / ZERO-CONTENT ZERO-DRIFT DEV / NO QA04 OR UNEXPECTED ARTIFACTS
-✓ PARTIAL QA CLEANUP RESULT + ZERO-CONTENT BASELINE RECONCILIATION IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE
--> EXTERNAL FINAL VALIDATION IS THE REQUIRED PRE-COMMIT GATE BEFORE THE CONTAINING COMMIT MAY ESTABLISH THE CLEANUP-RESULT CHECKPOINT
--> AFTER THAT COMMIT RECEIVES EXTERNAL CHECKPOINT VALIDATION PASS: GUARD + BRANCH-SAFE AUTHORING / EVIDENCE-CONTRACT CORRECTION PLANNING / REPOSITORY-LOCAL ONLY
+✓ PARTIAL QA CLEANUP RESULT + ZERO-CONTENT BASELINE CHECKPOINT ESTABLISHED AT `c9c33a0b32e449e639fe2e4d32f3fa9b6cdcc819` / CLEAN SYNCHRONIZED `0 0` EXTERNALLY VALIDATED
+✓ GUARD + BRANCH-SAFE AUTHORING / EVIDENCE-CONTRACT CORRECTION PLANNING COMPLETE / PASS WITH NOTES / DEFERRED FROM IMMEDIATE IMPLEMENTATION
+! DEFERRED PLAN: 220 ENTRY UPDATES / 2–92 PUBLICATION ATTEMPTS / 90 MAXIMUM FAILED PUBLICATIONS / 151 MAXIMUM GET-EQUIVALENT / 494 MAXIMUM TOTAL REQUESTS / 20 / 20 LOCAL GUARD PROTOTYPE TESTS PASS / NOT IMPLEMENTED / NOT APPROVED FUTURE LIVE MAXIMA
+! DEFERRED QA HARNESS HARDENING IS POST-FINDINGS ENGINEERING DEBT / REQUIRED BEFORE ANOTHER EXHAUSTIVE AUTHORING RUN / AVAILABLE EVIDENCE ESTABLISHES 0 LIVE DRIFT BUT NO MODEL OR EDITOR INTERFACE DEFECT / NOT A 04.4 ENTRY BLOCKER
+✓ CONDITIONAL EXIT + 04.4 ADVANCEMENT DECISION IMPLEMENTATION COMPLETE
+✓ EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE
+-> EXTERNAL FINAL VALIDATION IS A REQUIRED PRE-COMMIT CONDITION BEFORE THE CONTAINING COMMIT MAY ESTABLISH THE DECISION CHECKPOINT
+-> BATCH 04.4 MAY BEGIN ONLY AFTER EXTERNAL CHECKPOINT VALIDATION PASS FOR THAT CONTAINING COMMIT
 
-Batches 04.4 through 04.6
+Batch 04.4
+-> NEXT / ELIGIBLE AFTER THE CONDITIONAL-EXIT DECISION CHECKPOINT PASSES EXTERNAL CHECKPOINT VALIDATION / REPOSITORY-ONLY READ-ONLY FINDINGS RECONCILIATION FIRST
+! CONTENTFUL, MODEL, AND EDITOR INTERFACE MUTATION NOT AUTHORIZED
+
+Batch 04.5
 -> LATER
+
+Batch 04.6
+-> LATER / MUST ADDRESS DEFERRED QA DEBT AT CLOSEOUT
 ```
 
 ## Documentation Ownership

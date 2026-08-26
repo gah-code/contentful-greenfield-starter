@@ -20,6 +20,7 @@ All meaningful project changes should be recorded here.
 - Phase 04 / Batch 04.3 partial-authoring incident and deferral report
 - Phase 04 / Batch 04.3 post-stop forensics and recovery decision report
 - Phase 04 / Batch 04.3 partial QA cleanup execution report
+- Phase 04 / Batch 04.3 conditional-exit and Batch 04.4 advancement decision report
 
 ### Decisions
 
@@ -31,13 +32,21 @@ All meaningful project changes should be recorded here.
 
 ### Changed
 
+- Implemented the repository-only Batch 04.3 Conditional Exit + 04.4 Advancement Decision without Contentful access, model changes, Editor Interface changes, fixture changes, or execution-tooling changes.
+- Conditionally exited Batch 04.3 for findings handoff while preserving the R88 incident, completed forensics and cleanup, zero-content / zero-drift `dev`, and the explicit limitation that 102 / 102 scenarios did not pass live QA.
+- Recorded the complete Guard + Branch-Safe Authoring / Evidence-Contract Correction Planning result as PASS WITH NOTES and deferred from immediate implementation: 220 Entry updates, 2–92 publication attempts, 90 maximum failed publications, 151 maximum GET-equivalent requests, and 494 maximum total requests.
+- Classified Deferred QA Harness Hardening as post-findings engineering debt required before another exhaustive authoring run, not a Batch 04.4 entry blocker; available evidence establishes zero live drift but does not establish a model or Editor Interface defect.
+- Advanced Batch 04.4 to next / eligible for repository-only, read-only evidence reconciliation first, with no Contentful, model, or Editor Interface mutation authorized.
+- Required Batch 04.6 to choose between completing the exhaustive harness/live rerun and accepting it as documented post-freeze engineering debt with a visible evidence-limitation statement.
+- Recorded Conditional Exit + 04.4 Advancement Decision External Validation as PASS WITH NOTES and Final Approval Reconciliation as complete.
+- Defined the durable decision lifecycle: External Final Validation is a required pre-commit condition, and only after it passes for this exact reconciled state may the containing commit establish the decision checkpoint; Batch 04.4 may begin only after External Checkpoint Validation PASS for that commit.
 - Implemented the repository-only Batch 04.3 Partial QA Cleanup Result + Zero-Content Baseline Reconciliation after the separately authorized cleanup execution received External Validation PASS WITH NOTES.
 - Recorded cleanup-result reconciliation External Validation as PASS WITH NOTES and completed its Final Approval Reconciliation.
 - Preserved the first cleanup execution as blocked before Contentful client creation on the invalid default ESM import, with 0 requests, 0 mutations, unconsumed authorization, and no automatic rerun; recorded the corrected named-import preflight as PASS WITH NOTES.
 - Recorded the renewed cleanup authorization as consumed exactly once by the first `qa04-article-primary` delete and closed, without reusing the historical blocked authorization.
 - Recorded 19 successful Entry deletes, 3 successful Asset unpublishes, and 3 successful Asset deletes for exactly 25 mutations and 29 GET-equivalent requests, with 0 retries or replay.
 - Recorded final protected blank `master` and zero-content, zero-drift `dev` proof: 0 Entries, 0 Assets, 0 tags, and no `qa04-` or unexpected artifacts.
-- Kept Batch 04.3 incomplete pending guard, branch-safe envelope, and evidence-contract correction plus a future governed complete editorial QA execution; Batch 04.4 remains later.
+- At the cleanup-result reconciliation stage, kept Batch 04.3 incomplete pending guard, branch-safe envelope, and evidence-contract correction plus a future governed complete editorial QA execution; Batch 04.4 remained later.
 - Required External Final Validation as the pre-commit gate; only after it passes for this exact reconciled state may the containing commit establish the cleanup-result checkpoint. The next repository/local-only correction-planning gate requires External Checkpoint Validation PASS for that commit.
 - Made 0 Contentful requests and changed no model, migration, fixture, tooling, package, environment, or seed artifact during this reconciliation.
 - Implemented the repository-only Batch 04.3 Post-Stop Forensic Findings + Recovery Decision Reconciliation after the GET-only forensic gate received External Validation PASS WITH NOTES.
@@ -51,7 +60,7 @@ All meaningful project changes should be recorded here.
 - Parked Batch 04.3 after its one-time authorized controlled authoring execution stopped after mutation at R88; the authorization is consumed, partial live state is preserved, and post-stop branch-sensitive forensics are deferred.
 - Recorded last-known controlled-execution evidence of 19 temporary Entries, 3 processed/published temporary Assets, 39 Entry update attempts, 0 Entry publication attempts, and no cleanup, retry, repair, or authoring unpublish.
 - Recorded response-instrumentation HTTP 422 evidence and the guard catch-path classification limitation without attributing a schema defect or claiming a guard fix.
-- Parked the corrected 111 Entry-update ceiling from reuse until the required Post-Stop Partial-State + Branch-Sensitive Forensics gate completes; Batch 04.4 remains later and may not advance while 04.3 is unresolved.
+- At the partial-authoring incident stage, parked the corrected 111 Entry-update ceiling from reuse until the required Post-Stop Partial-State + Branch-Sensitive Forensics gate completed; Batch 04.4 remained later and could not advance while 04.3 was unresolved.
 - Made no Contentful request, model/migration/tooling/fixture/package change, repair, cleanup, environment operation, or seed operation during this repository-only reconciliation.
 - Completed Final Approval Reconciliation for the implemented Batch 04.2 Authoring-Envelope Correction after External Validation returned PASS WITH NOTES. External Final Validation remains a required pre-commit gate; only after it passes for this exact reconciled state may the containing commit establish the correction checkpoint.
 - Implemented the externally validated CLASS A Batch 04.2 Authoring-Envelope Correction, replacing the 51 Entry-update ceiling with the exact 111-update absolute safety ceiling and preserving all 102 scenario IDs, the `56 / 36 / 2 / 8` owner partition, 19 Entry IDs, 3 Asset IDs, and every other operation maximum.
