@@ -6,6 +6,8 @@ All meaningful project changes should be recorded here.
 
 ### Added
 
+- Canonical Phase 05 Representative Seed Content phase plan, seed planning contract, and Batch 05.1 source-readiness evidence report; no seed dataset or harness implemented.
+
 - Greenfield Contentful starter structure
 - Phase-based roadmap
 - Project-state and decision tracking
@@ -35,6 +37,17 @@ All meaningful project changes should be recorded here.
 - Accept the initial mixed baseline/CMS commit as a recorded deviation instead of rewriting history.
 
 ### Changed
+
+- Canonized Batch 05.1 Source-Readiness Reconciliation after External Validation PASS WITH NOTES; Final Approval Reconciliation is implemented in exactly 12 documentation/state files (9 modified, 3 created).
+- Preserved the initial 05.1 BLOCKED result historically; recorded the later supplied resume/public-source material and explicit planning/local-development placeholder exception.
+- Approved the exact working inventory of 42 Entries and 8 Assets, existing-model mapping corrections, 41 omitted required-field slots, source conflicts, 114 concrete reference edges, and five unresolved optional Asset-link choices.
+- Required `placeholder_count = 0` at accepted final 05.2 dry run and live gates, plus independent field, shape, source, hash, reference, public-safety, and licensing checks.
+- Preserved 42 drafts / 0 Entry publications / 0 Asset publications as the planning baseline and 66 writes / 120-152 execution requests / 143-175 cross-stage requests as planning only, not live authorization.
+- Reconciled current Phase 04 pointers to established checkpoint `6fdb16f06c5338e11f08ae0a44180b6db4251611` and its External Checkpoint Validation PASS WITH NOTES; preserved frozen v1.0.0, Option B, R88, and deferred QA debt.
+- Defined durable Phase 05 ACTIVE and 05.1 APPROVED / CHECKPOINTED through the externally final-validated containing commit; 05.2 becomes NEXT / LOCAL ONLY only after External Checkpoint Validation PASS for that commit.
+- Kept 05.3 BLOCKED ON SOURCE COMPLETION, 05.4 NOT AUTHORIZED, 05.5 LATER, and seed NOT STARTED; made no Contentful request or implementation change.
+
+Historical Phase 04 closeout implementation records below describe the state before its completed containing checkpoint:
 
 - Implemented the repository-only Batch 04.6 closeout reconciliation after its final GET-only validation and external review returned PASS WITH NOTES.
 - Preserved the initial closeout reconciliation as BLOCKED on an out-of-scope current pointer, completed the externally approved three-pointer correction, recorded Resume External Validation as PASS WITH NOTES, and completed Final Approval Reconciliation.

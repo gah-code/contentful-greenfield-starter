@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phase 00 complete; Phase 01 complete / frozen; Phase 02 complete / frozen; Phase 03 complete / frozen; Phase 04 complete / frozen by the future closeout commit containing this roadmap after the required external validation lifecycle; Batch 04.3 conditionally exited with its limitation preserved; Batch 04.4 CLASS 0 checkpointed; Batch 04.5 checkpointed at `157f9dd5d1c471d5e5087c0046b28fa97fb86d91`; Batch 04.6 closeout implemented with Option B accepted and the `v1.0.0` freeze decision recorded; Phase 05 not started
+Status: Phase 00 complete; Phases 01-04 complete / frozen; model `v1.0.0` frozen at `6fdb16f06c5338e11f08ae0a44180b6db4251611`; Phase 05 ACTIVE by the externally final-validated Batch 05.1 containing commit; 05.2 gated on that commit's External Checkpoint Validation PASS / LOCAL ONLY
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -11,8 +11,8 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 | 01 | Content Strategy + Route Contract | Complete / frozen; requirements system approved for Phase 02 input | None |
 | 02 | Content Model Contract + Bootstrap Migration | Complete / frozen; approved live model has zero material drift | CMS only |
 | 03 | Model Export + Serial Clean-Room Verification | Complete / frozen; 22 of 22 exit criteria pass; zero-drift recovered model checkpointed | CMS only |
-| 04 | Editorial QA + Model Freeze | Complete / frozen by the future containing closeout commit; `v1.0.0` semantic model freeze with explicit evidence limitations | CMS only |
-| 05 | Representative Seed Content | Realistic draft entries after clean-room verification | CMS only |
+| 04 | Editorial QA + Model Freeze | Complete / frozen at the established Phase 04 closeout checkpoint; Option B and evidence limitations preserved | CMS only |
+| 05 | Representative Seed Content | 05.1 source-readiness reconciliation externally validated; 05.2 gated / LOCAL ONLY; seed NOT STARTED | No current CMS authority |
 | 06 | Frontend Contracts + Adapter Boundary | Stable CMS-agnostic data contracts | Code only |
 | 07 | Delivery Integration | Published content loaded route by route | Runtime |
 | 08 | Preview + Editorial Workflow | Safe draft preview | Runtime |
@@ -54,7 +54,7 @@ Batch 03.3 — APPROVED / CHECKPOINTED
 Batch 03.4 — APPROVED / CHECKPOINTED
 Batch 03.5 — APPROVED / CHECKPOINTED
 Batch 03.6 — APPROVED / CHECKPOINTED
-Phase 04 — COMPLETE / FROZEN BY THE FUTURE CLOSEOUT COMMIT CONTAINING THIS ROADMAP AFTER THE REQUIRED EXTERNAL VALIDATION LIFECYCLE
+Phase 04 — COMPLETE / FROZEN AT `6fdb16f06c5338e11f08ae0a44180b6db4251611` / EXTERNAL CHECKPOINT VALIDATION PASS WITH NOTES
 Batch 04.1 — APPROVED / CHECKPOINTED
 Batch 04.2 — APPROVED / CHECKPOINTED AT `a85ebb37ef0f182b98d914221e70454cebb1351f`
 Batch 04.2 Post-Checkpoint Truth-Surface Correction — COMPLETE / CHECKPOINTED AT `46ba9c0ee0a0cf0a09736aa867eb76619f44d702`
@@ -71,7 +71,14 @@ Batch 04.4 — FINDINGS RECONCILED / CLASS 0 / CHECKPOINTED AT `8ec8c08b02f10a13
 Batch 04.5 — COMPLETE / CHECKPOINTED AT `157f9dd5d1c471d5e5087c0046b28fa97fb86d91` / EXTERNAL CHECKPOINT VALIDATION PASS / 44 OF 44 CLASS B SCENARIOS MAPPED
 Batch 04.6 — IMPLEMENTATION COMPLETE / FINAL LIVE VALIDATION PASS WITH NOTES / OPTION B ACCEPTED / `v1.0.0` FREEZE DECISION / POINTER CORRECTION COMPLETE / RESUME EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE / 11 OF 11 EXIT CRITERIA SATISFIED
 Deferred QA Harness Hardening — DOCUMENTED POST-FREEZE ENGINEERING DEBT / REQUIRED BEFORE ANOTHER EXHAUSTIVE AUTHORING RUN / 220 / 2–92 / 494 REMAIN PLANNING VALUES ONLY
-Phase 05 — NOT STARTED / ENTRY REQUIRES EXTERNAL CHECKPOINT VALIDATION PASS FOR THE FUTURE PHASE 04 CLOSEOUT CONTAINING COMMIT
+Phase 05 — ACTIVE BY THE EXTERNALLY FINAL-VALIDATED BATCH 05.1 CONTAINING COMMIT
+Batch 05.1 initial gate — HISTORICAL BLOCKED / SOURCE READINESS INCOMPLETE
+Batch 05.1 reconciliation — PASS WITH NOTES / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION IMPLEMENTED / APPROVED-CHECKPOINTED BY THAT CONTAINING COMMIT
+Batch 05.2 — NEXT ONLY AFTER EXTERNAL CHECKPOINT VALIDATION PASS FOR THAT COMMIT / LOCAL ONLY
+Batch 05.3 — BLOCKED ON SOURCE COMPLETION / SEPARATE GET AUTHORIZATION REQUIRED
+Batch 05.4 — NOT AUTHORIZED
+Batch 05.5 — LATER
+Seed — NOT STARTED
 Pre-export tooling — APPROVED
 ```
 
@@ -103,7 +110,7 @@ Create a safe operating surface before any content type is created.
 
 ## Phase 01 — Content Strategy + Route Contract
 
-Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 and Phase 03 are COMPLETE / FROZEN. Phase 04 closeout is implemented with Option B accepted and the `v1.0.0` freeze decision recorded; the future containing closeout commit establishes Phase 04 COMPLETE / FROZEN after the required external validation lifecycle. Phase 05 is NOT STARTED.
+Current state: COMPLETE / FROZEN. Latest approved batch: 01.5 — Validation + Freeze — APPROVED. Phase 02 and Phase 03 are COMPLETE / FROZEN. Phase 04 is COMPLETE / FROZEN at `6fdb16f06c5338e11f08ae0a44180b6db4251611`, model `v1.0.0` is frozen, and Option B remains accepted. Phase 05 follows the 05.1 containing-commit rule and 05.2 local-only entry gate below.
 
 ### Goal
 
@@ -310,7 +317,7 @@ Evidence: `content-model/reports/PHASE-02-BATCH-02.7-LIVE-SCHEMA-VALIDATION.md`.
 
 Result: 10 / 10 types, 99 / 99 stored fields, 18 / 18 authored references, 102 / 102 validation objects, 10 / 10 display fields, 2 / 2 explicit editor controls, and 0 material mismatches.
 
-Phase 02 and Phase 03 are COMPLETE / FROZEN. Batches 03.1 and 03.2 are APPROVED, and Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED. Phase 04 closeout is implemented: Batch 04.3 remains conditionally exited with exhaustive live QA deferred, Batch 04.4 is CLASS 0 and checkpointed, Batch 04.5 is checkpointed, and Batch 04.6 records Option B plus the `v1.0.0` freeze decision. The future containing closeout commit establishes Phase 04 COMPLETE / FROZEN after the required external validation lifecycle; Phase 05 is NOT STARTED.
+Phase 02 and Phase 03 are COMPLETE / FROZEN. Batches 03.1 and 03.2 are APPROVED, and Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED. Phase 04 closeout is implemented: Batch 04.3 remains conditionally exited with exhaustive live QA deferred, Batch 04.4 is CLASS 0 and checkpointed, Batch 04.5 is checkpointed, and Batch 04.6 records Option B plus the `v1.0.0` freeze decision. The Phase 04 checkpoint `6fdb16f06c5338e11f08ae0a44180b6db4251611` established COMPLETE / FROZEN; Phase 05 follows the 05.1 containing-commit rule below.
 
 ### Exit criteria
 
@@ -321,7 +328,7 @@ Phase 02 and Phase 03 are COMPLETE / FROZEN. Batches 03.1 and 03.2 are APPROVED,
 
 ## Phase 03 — Model Export + Serial Clean-Room Verification
 
-Current state: COMPLETE / FROZEN. Batch 03.1 — Model Export + Serial Clean-Room Verification Preflight — APPROVED. Batch 03.2 — Export, Import + Snapshot Verification Tooling Hardening — APPROVED. Batch 03.3 — Governed Model Export + Snapshot Validation — APPROVED / CHECKPOINTED. Batch 03.4 — Destructive Dev Rotation + Blank-State Validation — APPROVED / CHECKPOINTED. Batch 03.5 — Snapshot Import + Clean-Room Comparison — APPROVED / CHECKPOINTED. Batch 03.6 — Phase 03 Validation + Closeout — APPROVED / CHECKPOINTED. Phase 04 closeout is implemented and becomes COMPLETE / FROZEN through its future containing closeout commit after the required external validation lifecycle.
+Current state: COMPLETE / FROZEN. Batch 03.1 — Model Export + Serial Clean-Room Verification Preflight — APPROVED. Batch 03.2 — Export, Import + Snapshot Verification Tooling Hardening — APPROVED. Batch 03.3 — Governed Model Export + Snapshot Validation — APPROVED / CHECKPOINTED. Batch 03.4 — Destructive Dev Rotation + Blank-State Validation — APPROVED / CHECKPOINTED. Batch 03.5 — Snapshot Import + Clean-Room Comparison — APPROVED / CHECKPOINTED. Batch 03.6 — Phase 03 Validation + Closeout — APPROVED / CHECKPOINTED. Phase 04 is COMPLETE / FROZEN at `6fdb16f06c5338e11f08ae0a44180b6db4251611`; its External Checkpoint Validation returned PASS WITH NOTES.
 
 Pre-export tooling: APPROVED. One governed export from `dev` completed under consumed one-time authorization, and the resulting snapshot remains externally approved for recovery use. Batch 03.4 completed exactly one authorized `dev` deletion and recreation from protected `master`. Batch 03.5 then consumed one import authorization; the sole top-level import command exited 1 after an HTTP 429 with 0 automatic request replays. At the Batch 03.5 forensic checkpoint, twenty-three GET-only requests independently proved that `dev` contained the complete approved recovery model at 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2, 0 entries / 0 assets / 0 tags / `en-US`, and zero material drift. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. The commit containing that state established the Batch 03.5 checkpoint, and no second import or repair is authorized.
 
@@ -392,11 +399,11 @@ Batch 03.6 preserves the initial final-live validator as an unresolved evidence-
 
 ## Phase 04 — Editorial QA + Model Freeze
 
-Current state: COMPLETE / FROZEN by the future Phase 04 closeout commit containing this roadmap after the required external validation lifecycle. Batch 04.1 is approved / checkpointed. Batch 04.2 is historically approved / checkpointed, and its Authoring-Envelope Correction is checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. Batch 04.3 consumed its one-time authoring authorization, stopped at R88 after 39 Entry updates and no Entry publications, completed forensics, and completed a separately authorized 25-mutation cleanup that restored zero-content, zero-drift `dev`. Its exhaustive correction plan preserved 102 scenarios and calculated 220 Entry updates, 2–92 publication attempts, and 494 maximum requests, but was not implemented and does not establish approved future live maxima. Batch 04.3 is conditionally exited for findings handoff without a 102 / 102 live QA claim. Batch 04.4 reconciled the corrected ledger as CLASS 0 with no model or Editor Interface technical correction. Batch 04.5 is checkpointed at `157f9dd5d1c471d5e5087c0046b28fa97fb86d91`, and External Checkpoint Validation passed. Batch 04.6 final validation and external review returned PASS WITH NOTES after exactly 23 GET requests and 0 writes, Option B is accepted, the `v1.0.0` freeze decision is recorded, and 11 / 11 Phase 04 exit criteria are satisfied with criteria 3–5 evidence-bounded. Its initial reconciliation remained BLOCKED; the three-pointer correction completed, Resume External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. External Final Validation is the remaining pre-commit condition; Phase 05 entry requires External Checkpoint Validation PASS for the resulting containing commit.
+Current state: COMPLETE / FROZEN at `6fdb16f06c5338e11f08ae0a44180b6db4251611` / External Checkpoint Validation PASS WITH NOTES. Batch 04.1 is approved / checkpointed. Batch 04.2 is historically approved / checkpointed, and its Authoring-Envelope Correction is checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. Batch 04.3 consumed its one-time authoring authorization, stopped at R88 after 39 Entry updates and no Entry publications, completed forensics, and completed a separately authorized 25-mutation cleanup that restored zero-content, zero-drift `dev`. Its exhaustive correction plan preserved 102 scenarios and calculated 220 Entry updates, 2–92 publication attempts, and 494 maximum requests, but was not implemented and does not establish approved future live maxima. Batch 04.3 is conditionally exited for findings handoff without a 102 / 102 live QA claim. Batch 04.4 reconciled the corrected ledger as CLASS 0 with no model or Editor Interface technical correction. Batch 04.5 is checkpointed at `157f9dd5d1c471d5e5087c0046b28fa97fb86d91`, and External Checkpoint Validation passed. Batch 04.6 final validation and external review returned PASS WITH NOTES after exactly 23 GET requests and 0 writes, Option B is accepted, the `v1.0.0` freeze decision is recorded, and 11 / 11 Phase 04 exit criteria are satisfied with criteria 3–5 evidence-bounded. Its initial reconciliation remained BLOCKED; the three-pointer correction completed, Resume External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. The Phase 04 checkpoint is established and externally validated. Phase 05 follows the distinct 05.1 containing-commit and 05.2 checkpoint-validation gates below.
 
 ### Goal
 
-Produce an editor-tested, migration-governed v1 model. Batch 04.6 records the semantic freeze decision as `v1.0.0`; the future containing closeout commit establishes that freeze after the required validation lifecycle.
+Produce an editor-tested, migration-governed v1 model. Batch 04.6 records the semantic freeze decision as `v1.0.0`; checkpoint `6fdb16f06c5338e11f08ae0a44180b6db4251611` established that freeze after the required validation lifecycle.
 
 ### Batch Decomposition
 
@@ -431,7 +438,7 @@ Produce an editor-tested, migration-governed v1 model. Batch 04.6 records the se
 - The exact 44 Class B scenarios are mapped into `docs/system/EDITORIAL-WORKFLOW-AND-FIELD-GUIDANCE.md`; the Batch 04.5 evidence report records 44 unique mappings with 0 missing and 0 extra.
 - Any model or Editor Interface correction requires separate planning, external validation, explicit authorization, and migration-first governance; migration 0001 remains frozen.
 - Batch 04.6 accepts Option B. Exhaustive 102 / 102 live QA was not completed; historical accounting remains 28 PASS / 20 PASS WITH NOTE / 54 not executed, hard-validation evidence remains 10 full / 15 partial accepted-restored / 2 R88 partial-unattributed / 29 unexecuted, and 0 publication blockers are proven. Deferred QA Harness Hardening remains post-freeze debt required before another exhaustive run.
-- Batch 04.5 checkpoint `157f9dd5d1c471d5e5087c0046b28fa97fb86d91` passed External Checkpoint Validation. Batch 04.6 final live validation and external review returned PASS WITH NOTES after one process completed exactly 23 GET requests and 0 writes, proving blank `master`, exact zero-drift `dev`, and no temporary QA content. The initial reconciliation remained BLOCKED; pointer correction, Resume External Validation, and Final Approval Reconciliation are complete. External Final Validation is required before the future containing closeout commit; Phase 05 entry requires its External Checkpoint Validation PASS.
+- Batch 04.5 checkpoint `157f9dd5d1c471d5e5087c0046b28fa97fb86d91` passed External Checkpoint Validation. Batch 04.6 final live validation and external review returned PASS WITH NOTES after one process completed exactly 23 GET requests and 0 writes, proving blank `master`, exact zero-drift `dev`, and no temporary QA content. The initial reconciliation remained BLOCKED; pointer correction, Resume External Validation, and Final Approval Reconciliation are complete. The closeout checkpoint `6fdb16f06c5338e11f08ae0a44180b6db4251611` is established; External Checkpoint Validation returned PASS WITH NOTES. Phase 05 follows its own gates below.
 - A new export or snapshot is not implicit in Phase 04 and remains separately gated.
 - Seed remains NOT STARTED.
 
@@ -455,7 +462,23 @@ Result: 11 / 11 SATISFIED, with criteria 3–5 visibly evidence-bounded.
 
 ## Phase 05 — Representative Seed Content
 
-Current state: NOT STARTED. Entry requires External Checkpoint Validation PASS for the future Phase 04 closeout containing commit.
+After External Final Validation PASS for this exact reconciliation, its containing commit establishes Phase 05 ACTIVE and Batch 05.1 APPROVED / CHECKPOINTED. Batch 05.2 is NEXT / LOCAL ONLY only after External Checkpoint Validation PASS for that containing commit.
+
+05.1 Source-Readiness Reconciliation and External Validation returned PASS WITH NOTES; Final Approval Reconciliation is implemented. The original source-readiness BLOCKED result remains historical. Seed is NOT STARTED.
+
+Canonical plan: [Phase 05](phases/PHASE-05-REPRESENTATIVE-SEED-CONTENT.md). Detailed requirements: [seed contract](system/REPRESENTATIVE-SEED-CONTENT-CONTRACT.md). Evidence: [05.1 report](../content-model/reports/PHASE-05-BATCH-05.1-SEED-PLANNING-AND-SOURCE-READINESS.md).
+
+| Batch | Title | State / Operation Class |
+| --- | --- | --- |
+| 05.1 | Representative Seed Planning + Source/Identity Contract | Externally validated; APPROVED / CHECKPOINTED by externally final-validated containing commit |
+| 05.2 | Seed Dataset, Asset Sources + Dry-Run Tooling | NEXT only after that commit's External Checkpoint Validation PASS / LOCAL ONLY |
+| 05.3 | Final Read-Only Pre-Execution Gate | BLOCKED ON SOURCE COMPLETION / separately authorized GET-only |
+| 05.4 | Controlled Representative Seed Execution | NOT AUTHORIZED / separate explicit mutation authorization |
+| 05.5 | Seed Validation, Publication-State Reconciliation + Phase 05 Closeout | LATER |
+
+Exact working inventory: 42 Entries (1 settings, 1 profile, 2 social, 6 navigation, 3 projects, 3 articles, 4 experience, 12 skills, 4 groups, 6 tools) and 8 Assets. This meets the minimum below without claiming final source completeness.
+
+Placeholders are allowed only in planning and local development. Accepted final dry run requires `placeholder_count = 0` plus complete required fields, shapes, sources, Asset hashes, references, rights, and public safety. 05.3 cannot begin earlier. No current Contentful authority exists.
 
 ### Goal
 

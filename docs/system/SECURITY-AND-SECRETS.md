@@ -94,9 +94,11 @@ Batch 00.3 verifies credential handling and variable separation without reading 
 
 Batch 00.4 recorded direct account, space, environment inventory, default locale, `master`, and `dev` evidence. Batch 00.5 external validation approved Phase 00.
 
-Phase 01, Phase 02, and Phase 03 are complete / frozen. Batch 03.6 is approved / checkpointed by the commit containing this document. Phase 04 closeout pointer correction, Resume External Validation with PASS WITH NOTES, and Final Approval Reconciliation are complete under containing-commit semantics: the future externally final-validated containing commit establishes Phase 04 COMPLETE / FROZEN and semantic model `v1.0.0`. Phase 05 and seed are NOT STARTED. Batches 03.1 and 03.2 are APPROVED. Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED.
+Phase 01 through Phase 04 are complete / frozen. Phase 04 closeout and semantic model `v1.0.0` freeze are established at `6fdb16f06c5338e11f08ae0a44180b6db4251611`, with External Checkpoint Validation PASS WITH NOTES. Batches 03.1 and 03.2 are APPROVED; Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED.
 
-The Batch 04.6 final GET authorization was granted, consumed exactly once immediately before GET #1, and closed. One validator process completed exactly 23 GET requests with 0 writes, 0 retries, 0 replay, and no credential exposure. Additional GET access, a second validator, Contentful mutation, environment lifecycle operations, export, import, and migration are not authorized. This closeout reconciliation is repository-only and does not authorize Phase 05 or seed.
+Batch 05.1 source reconciliation and External Validation returned PASS WITH NOTES; the initial source-readiness BLOCKED result remains historical. Final Approval Reconciliation is implemented. After External Final Validation PASS for this exact reconciliation, its containing commit establishes Phase 05 ACTIVE and Batch 05.1 APPROVED / CHECKPOINTED. Batch 05.2 is NEXT / LOCAL ONLY only after External Checkpoint Validation PASS for that containing commit. This is a planning/local-only boundary, not Contentful authorization. Seed remains NOT STARTED. See the [seed contract](REPRESENTATIVE-SEED-CONTENT-CONTRACT.md).
+
+The Batch 04.6 final GET authorization was granted, consumed exactly once immediately before GET #1, and closed. One validator process completed exactly 23 GET requests with 0 writes, 0 retries, 0 replay, and no credential exposure. Additional GET access, a second validator, Contentful mutation, environment lifecycle operations, export, import, and migration are not authorized. Batch 05.1 reconciliation is repository-only and authorizes no Contentful access, credential loading, or seed execution.
 
 Batch 03.5 used one explicit import authorization. The sole top-level import invocation exited 1 after an HTTP 429 during Editor Interface processing, with 0 effective automatic request replays. The authorization is consumed. GET-only forensics independently proved complete semantic recovery with zero material drift. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. Incident/recovery truth reconciliation and Final Approval Reconciliation are complete; the commit containing this document establishes the Batch 03.5 checkpoint.
 
@@ -120,7 +122,10 @@ Current authorization boundary:
 - Manual repair/reset: NOT AUTHORIZED.
 - Additional bootstrap: NOT AUTHORIZED.
 - Migration execution: NOT AUTHORIZED.
-- Phase 05: NOT STARTED.
+- Phase 05: ACTIVE only through the externally final-validated containing commit; 05.1 APPROVED / CHECKPOINTED by that commit.
+- Batch 05.2: NEXT / LOCAL ONLY only after External Checkpoint Validation PASS for that commit; no credentials or Contentful access.
+- Batch 05.3: BLOCKED ON SOURCE COMPLETION; separate explicit GET authorization required.
+- Batch 05.4: NOT AUTHORIZED; separate explicit mutation authorization required.
 - Seed: NOT STARTED.
 
 The approved export/import helpers use explicit programmatic environment-token binding. The successful Gate B and destructive recovery authorizations are consumed. Credentials stay in ignored local environment state, never appear in CLI arguments or logs, and `contentful config list` remains prohibited.

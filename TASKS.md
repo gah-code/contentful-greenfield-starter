@@ -2,6 +2,43 @@
 
 This tracker records current project truth. Do not mark future batches complete without direct repository, command, or Contentful evidence.
 
+## Phase 05 - Representative Seed Content
+
+After External Final Validation PASS for this exact reconciliation, its containing commit establishes Phase 05 ACTIVE and Batch 05.1 APPROVED / CHECKPOINTED. Batch 05.2 is NEXT / LOCAL ONLY only after External Checkpoint Validation PASS for that containing commit.
+
+Canonical contract: [Representative Seed Content Contract](docs/system/REPRESENTATIVE-SEED-CONTENT-CONTRACT.md). Phase plan: [Phase 05](docs/phases/PHASE-05-REPRESENTATIVE-SEED-CONTENT.md). Evidence: [Batch 05.1 report](content-model/reports/PHASE-05-BATCH-05.1-SEED-PLANNING-AND-SOURCE-READINESS.md).
+
+### Batch 05.1 - Representative Seed Planning + Source/Identity Contract
+
+Status: Source-Readiness Reconciliation PASS WITH NOTES / External Validation PASS WITH NOTES / Final Approval Reconciliation IMPLEMENTED; APPROVED / CHECKPOINTED by the externally final-validated containing commit.
+
+- [x] Preserve the initial gate as historical BLOCKED - source readiness incomplete
+- [x] Record supplied resume/public-source planning material and the explicit placeholder planning decision
+- [x] Canonize 42 working Entry IDs and 8 Asset IDs without claiming final source completeness
+- [x] Record model mappings, 41 required-field gaps, source conflicts, graph counts, and five optional Asset-link choices
+- [x] Require zero placeholders plus independent readiness checks at final dry-run acceptance and live gates
+- [x] Record the draft-only publication baseline and planning-only operation envelope
+- [x] Record External Validation PASS WITH NOTES and implement Final Approval Reconciliation
+- [x] Preserve frozen v1.0.0 and make no Contentful request or seed implementation
+
+### Batch 05.2 - Seed Dataset, Asset Sources + Dry-Run Tooling
+
+Status: NEXT only after External Checkpoint Validation PASS for the 05.1 containing commit / LOCAL ONLY. This reconciliation does not start implementation.
+
+- [ ] Build the separately scoped local dataset and guarded tooling
+- [ ] Resolve required fields, source conflicts, rights, exact Asset files/hashes, and optional image decisions
+- [ ] Pass the final credential-free dry run with `placeholder_count = 0` and independent completeness checks
+
+### Later Batches
+
+| Batch | Title | State |
+| --- | --- | --- |
+| 05.3 | Final Read-Only Pre-Execution Gate | BLOCKED ON SOURCE COMPLETION; separate GET authorization required |
+| 05.4 | Controlled Representative Seed Execution | NOT AUTHORIZED; explicit mutation authorization required |
+| 05.5 | Seed Validation, Publication-State Reconciliation + Phase 05 Closeout | LATER |
+
+Seed remains NOT STARTED. No Contentful access, Phase 06, staging, commit, or push is authorized by this reconciliation.
+
 ## Completed
 
 ### Phase 02 — Content Model Contract + Bootstrap Migration
@@ -639,7 +676,7 @@ Status: APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS FILE
 
 ## Phase 04 — Editorial QA + Model Freeze
 
-Status: COMPLETE / FROZEN BY THE FUTURE PHASE 04 CLOSEOUT COMMIT AFTER THE REQUIRED EXTERNAL VALIDATION LIFECYCLE
+Status: COMPLETE / FROZEN AT `6fdb16f06c5338e11f08ae0a44180b6db4251611` / EXTERNAL CHECKPOINT VALIDATION PASS WITH NOTES
 
 The Phase 04 transition and Batch 04.1 checkpoint are established at `33e01ae068769631b3bd997b28711535f7c7b340`.
 
@@ -869,9 +906,9 @@ Status: IMPLEMENTATION COMPLETE / FINAL LIVE VALIDATION PASS WITH NOTES / OPTION
 - [x] Resume External Validation — PASS WITH NOTES
 - [x] Complete Final Approval Reconciliation
 - [x] Make 0 Contentful requests during this reconciliation
-- [x] Keep Phase 05 and seed NOT STARTED
+- [x] Keep Phase 05 and seed NOT STARTED during the historical Phase 04 closeout pass
 
-Durable lifecycle: implementation, the three-pointer correction, Resume External Validation with PASS WITH NOTES, and Final Approval Reconciliation are complete. External Final Validation is the remaining pre-commit condition. Only a future containing closeout commit after that PASS may establish the Batch 04.6 checkpoint, freeze the model at `v1.0.0`, and establish Phase 04 as COMPLETE / FROZEN. Phase 05 entry requires External Checkpoint Validation PASS for that commit.
+Durable lifecycle: the Phase 04 closeout commit `6fdb16f06c5338e11f08ae0a44180b6db4251611` established Batch 04.6, froze model `v1.0.0`, and established Phase 04 COMPLETE / FROZEN after External Final Validation. External Checkpoint Validation returned PASS WITH NOTES. Phase 05 follows its own containing-commit and checkpoint-validation gates above.
 
 ## Completed Evidence
 
@@ -943,7 +980,7 @@ Recorded Phase 00 evidence:
 - Batch 03.5 post-failure GET-only forensics and semantic comparison passed. Truth-surface and Final Approval Reconciliation are complete; external reconciliation and final validation returned PASS WITH NOTES. The commit containing this file establishes the Batch 03.5 checkpoint.
 - Batch 03.6 records the original final-live process as an unresolved evidence-capture incident with 0 writes and no retry. One externally authorized corrective GET-only validator invocation then passed with 23 GETs and 0 writes.
 - All 22 Phase 03 technical exit criteria pass, Batch 03.6 closeout truth reconciliation and the Content Strategy pointer correction are complete, and external Batch 03.6 validation and External Final Validation returned PASS WITH NOTES. The Phase 03 containing commit established Batch 03.6 as approved / checkpointed and Phase 03 as complete / frozen.
-- Phase 04 is COMPLETE / FROZEN by the future closeout commit containing this file after the required external validation lifecycle. Batch 04.1 is approved / checkpointed at `33e01ae068769631b3bd997b28711535f7c7b340`. Batch 04.2 External Validation and External Final Validation returned PASS WITH NOTES, Final Approval Reconciliation is complete, and checkpoint `a85ebb37ef0f182b98d914221e70454cebb1351f` is established.
+- Phase 04 is COMPLETE / FROZEN at `6fdb16f06c5338e11f08ae0a44180b6db4251611`; External Checkpoint Validation returned PASS WITH NOTES. Batch 04.1 is approved / checkpointed at `33e01ae068769631b3bd997b28711535f7c7b340`. Batch 04.2 External Validation and External Final Validation returned PASS WITH NOTES, Final Approval Reconciliation is complete, and checkpoint `a85ebb37ef0f182b98d914221e70454cebb1351f` is established.
 - External checkpoint validation passed Git mechanics but returned NEEDS REVISION for truth consistency. The post-checkpoint truth-surface correction implementation is complete, External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete.
 - EF-05 Option B is accepted: duplicate tag values are owned by editorial guidance, the schema is correct as implemented, no model correction is required, and there is no live drift.
 - Batch 04.2 defines 102 QA scenarios and the model has 102 validation objects; equality is coincidental and not a coupled invariant.
@@ -964,7 +1001,7 @@ Recorded Phase 00 evidence:
 - Batch 04.4 is checkpointed at `8ec8c08b02f10a13c19a59a92f9dc70c1f669911`, and External Checkpoint Validation passed.
 - Batch 04.5 is checkpointed at `157f9dd5d1c471d5e5087c0046b28fa97fb86d91`; External Checkpoint Validation passed before Batch 04.6 entry.
 - Batch 04.6 implementation is complete: final live validation and external review passed with notes, Option B is accepted, the model freeze decision is `v1.0.0`, and 11 / 11 Phase 04 exit criteria are satisfied with criteria 3–5 evidence-bounded. The initial reconciliation remained BLOCKED, the current-pointer correction is complete, Resume External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete.
-- External Final Validation is the remaining pre-commit condition. The future containing closeout commit after that PASS establishes the Batch 04.6 checkpoint and freezes the model at `v1.0.0`.
-- Phase 05 is not started and may enter only after External Checkpoint Validation passes for the Phase 04 closeout containing commit.
+- The established Phase 04 closeout checkpoint completes Batch 04.6 and freezes model `v1.0.0`; the historical pre-commit validation condition was satisfied.
+- Phase 05 ACTIVE / Batch 05.1 APPROVED-CHECKPOINTED are established by the externally final-validated 05.1 containing commit; 05.2 is NEXT / LOCAL ONLY only after its External Checkpoint Validation PASS.
 - Seed content remains not started.
 - This incident/recovery reconciliation is repository-only and authorizes no Contentful read, write, environment mutation, export, import, bootstrap, or seed operation.

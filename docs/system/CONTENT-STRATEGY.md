@@ -2,11 +2,11 @@
 
 Status: Phase 01 / Batch 01.1 — APPROVED / FROZEN FOR PHASE 02 INPUT
 Owner: Phase 01 — Content Strategy + Route Contract
-Current downstream consumer: Phase 04 — Editorial QA + Model Freeze
-Closeout state: Batch 04.6 pointer correction, Resume External Validation with PASS WITH NOTES, and Final Approval Reconciliation are complete; the future externally final-validated commit containing the reconciliation establishes Phase 04 as COMPLETE / FROZEN and the semantic model as `v1.0.0`.
-Next downstream consumer: Phase 05 — Representative Seed Content
-Phase 05 state: NOT STARTED
-Phase 05 entry: requires External Checkpoint Validation PASS for the Phase 04 closeout containing commit.
+Current downstream consumer: Phase 05 — Representative Seed Content, on establishment of its containing-commit entry state below.
+Upstream closeout: Phase 04 COMPLETE / FROZEN and semantic model `v1.0.0` frozen at `6fdb16f06c5338e11f08ae0a44180b6db4251611`; External Checkpoint Validation PASS WITH NOTES.
+Current reconciliation: Batch 05.1 Source-Readiness Reconciliation and External Validation PASS WITH NOTES; Final Approval Reconciliation implemented. The initial 05.1 BLOCKED source-readiness result remains historical.
+Phase 05 entry: After External Final Validation PASS for this exact reconciliation, its containing commit establishes Phase 05 ACTIVE and Batch 05.1 APPROVED / CHECKPOINTED. Batch 05.2 is NEXT / LOCAL ONLY only after External Checkpoint Validation PASS for that containing commit.
+Current planning contract: [Representative Seed Content](REPRESENTATIVE-SEED-CONTENT-CONTRACT.md). Batch 05.3 remains BLOCKED ON SOURCE COMPLETION; 05.4 is NOT AUTHORIZED; seed is NOT STARTED. Frozen Phase 01 strategy remains unchanged.
 
 ## Purpose
 
@@ -822,4 +822,6 @@ Batch 01.1 prepares controlled strategy input for:
 - Batch 01.4 — Content Requirements Matrix, approved in `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`
 - Batch 01.5 — Phase 01 Validation + Freeze, approved
 - Phase 02 — Content Model Contract + Bootstrap Migration, complete / frozen after approved Batch 02.7 zero-drift live validation
-- Phase 03 — Model Export + Serial Clean-Room Verification, next / not started
+- Phase 03 — Model Export + Serial Clean-Room Verification, complete / frozen
+- Phase 04 — Editorial QA + Model Freeze, complete / frozen at its established checkpoint
+- Phase 05 — Representative Seed Content, current downstream consumer under the containing-commit and local-only entry gates above
