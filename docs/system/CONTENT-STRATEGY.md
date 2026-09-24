@@ -2,11 +2,12 @@
 
 Status: Phase 01 / Batch 01.1 — APPROVED / FROZEN FOR PHASE 02 INPUT
 Owner: Phase 01 — Content Strategy + Route Contract
-Current downstream consumer: Phase 05 — Representative Seed Content, on establishment of its containing-commit entry state below.
+Current downstream consumer: Phase 05 — Representative Seed Content; Batch 05.2 reconciliation and 05.3 entry follow the distinct gates below.
 Upstream closeout: Phase 04 COMPLETE / FROZEN and semantic model `v1.0.0` frozen at `6fdb16f06c5338e11f08ae0a44180b6db4251611`; External Checkpoint Validation PASS WITH NOTES.
-Current reconciliation: Batch 05.1 Source-Readiness Reconciliation and External Validation PASS WITH NOTES; Final Approval Reconciliation implemented. The initial 05.1 BLOCKED source-readiness result remains historical.
-Phase 05 entry: After External Final Validation PASS for this exact reconciliation, its containing commit establishes Phase 05 ACTIVE and Batch 05.1 APPROVED / CHECKPOINTED. Batch 05.2 is NEXT / LOCAL ONLY only after External Checkpoint Validation PASS for that containing commit.
-Current planning contract: [Representative Seed Content](REPRESENTATIVE-SEED-CONTENT-CONTRACT.md). Batch 05.3 remains BLOCKED ON SOURCE COMPLETION; 05.4 is NOT AUTHORIZED; seed is NOT STARTED. Frozen Phase 01 strategy remains unchanged.
+Current reconciliation: Batch 05.2 implementation EXTERNALLY ACCEPTED / PASS WITH NOTES; Final Approval Reconciliation IMPLEMENTED / READY FOR EXTERNAL FINAL VALIDATION. The initial 05.1 BLOCKED source-readiness result and later 05.1 approval remain historical.
+Current approval and entry gates: Batch 05.2 implementation is EXTERNALLY ACCEPTED — PASS WITH NOTES. Final Approval Reconciliation is IMPLEMENTED / READY FOR EXTERNAL FINAL VALIDATION. External Final Validation is a required pre-commit gate, established by a separate external response for the exact reconciled state. Only after that PASS and separate owner Git authorization may the containing commit establish Batch 05.2 APPROVED / CHECKPOINTED. Batch 05.3 remains BLOCKED until that containing commit is committed and pushed, master is clean and synchronized, and External Checkpoint Validation passes; it then becomes NEXT / NOT STARTED, with separate explicit GET authorization still required. Batch 05.4 is NOT AUTHORIZED; 05.5 is LATER; seed and Phase 06 are NOT STARTED.
+Historical Phase 05 / 05.1 entry: its externally final-validated containing commit established Phase 05 ACTIVE and Batch 05.1 APPROVED / CHECKPOINTED; External Checkpoint Validation was the prerequisite for local-only 05.2 entry.
+Current planning contract: [Representative Seed Content](REPRESENTATIVE-SEED-CONTENT-CONTRACT.md). Batch 05.3 remains BLOCKED on the current checkpoint gates above and requires separate GET authorization; 05.4 is NOT AUTHORIZED; seed is NOT STARTED. Frozen Phase 01 strategy remains unchanged.
 
 ## Purpose
 
@@ -824,4 +825,4 @@ Batch 01.1 prepares controlled strategy input for:
 - Phase 02 — Content Model Contract + Bootstrap Migration, complete / frozen after approved Batch 02.7 zero-drift live validation
 - Phase 03 — Model Export + Serial Clean-Room Verification, complete / frozen
 - Phase 04 — Editorial QA + Model Freeze, complete / frozen at its established checkpoint
-- Phase 05 — Representative Seed Content, current downstream consumer under the containing-commit and local-only entry gates above
+- Phase 05 — Representative Seed Content, current downstream consumer under the 05.2 reconciliation and 05.3 checkpoint-entry gates above

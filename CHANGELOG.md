@@ -6,6 +6,8 @@ All meaningful project changes should be recorded here.
 
 ### Added
 
+Historical Batch 05.1 additions below describe that planning stage, before the later 05.2 dataset and harness implementation:
+
 - Canonical Phase 05 Representative Seed Content phase plan, seed planning contract, and Batch 05.1 source-readiness evidence report; no seed dataset or harness implemented.
 
 - Greenfield Contentful starter structure
@@ -37,6 +39,14 @@ All meaningful project changes should be recorded here.
 - Accept the initial mixed baseline/CMS commit as a recorded deviation instead of rewriting history.
 
 ### Changed
+
+- Recorded Batch 05.2 implementation External Validation PASS WITH NOTES and implemented its bounded documentation-only Final Approval Reconciliation; the exact implementation, Assets, and prior evidence remain unchanged.
+- Preserved the external review's independently completed artifact, syntax, and bounded checks separately from its supplied workstation evidence. The external review did not execute the full suites, working-tree validator, or plan.
+- Recorded fresh local verification under the renewed reconciliation authorization: both syntax checks passed, validator self-tests 43 / 43, harness self-tests 24 / 24, validator READY, and plan READY FOR SEPARATE AUTHORIZATION; all Contentful-request, real-client, credential, and environment-load counters remained zero.
+- Required a separate External Final Validation PASS for the exact reconciled state and separate owner Git authorization before the containing commit can establish Batch 05.2 APPROVED / CHECKPOINTED. Batch 05.3 remains BLOCKED until that commit is committed and pushed on clean synchronized master and passes External Checkpoint Validation; only then is it NEXT / NOT STARTED, still requiring separate explicit GET authorization.
+- Kept 05.4 NOT AUTHORIZED, 05.5 LATER, seed and Phase 06 NOT STARTED; performed no Contentful request, implementation change, stage, commit, or push during this reconciliation.
+
+Historical Batch 05.1 reconciliation records below describe its earlier planning and entry gates:
 
 - Canonized Batch 05.1 Source-Readiness Reconciliation after External Validation PASS WITH NOTES; Final Approval Reconciliation is implemented in exactly 12 documentation/state files (9 modified, 3 created).
 - Preserved the initial 05.1 BLOCKED result historically; recorded the later supplied resume/public-source material and explicit planning/local-development placeholder exception.

@@ -96,9 +96,11 @@ Batch 00.4 recorded direct account, space, environment inventory, default locale
 
 Phase 01 through Phase 04 are complete / frozen. Phase 04 closeout and semantic model `v1.0.0` freeze are established at `6fdb16f06c5338e11f08ae0a44180b6db4251611`, with External Checkpoint Validation PASS WITH NOTES. Batches 03.1 and 03.2 are APPROVED; Batches 03.3 through 03.6 are APPROVED / CHECKPOINTED.
 
-Batch 05.1 source reconciliation and External Validation returned PASS WITH NOTES; the initial source-readiness BLOCKED result remains historical. Final Approval Reconciliation is implemented. After External Final Validation PASS for this exact reconciliation, its containing commit establishes Phase 05 ACTIVE and Batch 05.1 APPROVED / CHECKPOINTED. Batch 05.2 is NEXT / LOCAL ONLY only after External Checkpoint Validation PASS for that containing commit. This is a planning/local-only boundary, not Contentful authorization. Seed remains NOT STARTED. See the [seed contract](REPRESENTATIVE-SEED-CONTENT-CONTRACT.md).
+Historical Batch 05.1 source reconciliation and External Validation returned PASS WITH NOTES; the initial source-readiness BLOCKED result remains historical. Historical 05.1 entry: its externally final-validated containing commit established Phase 05 ACTIVE and Batch 05.1 APPROVED / CHECKPOINTED; External Checkpoint Validation was the prerequisite for local-only 05.2 entry.
 
-The Batch 04.6 final GET authorization was granted, consumed exactly once immediately before GET #1, and closed. One validator process completed exactly 23 GET requests with 0 writes, 0 retries, 0 replay, and no credential exposure. Additional GET access, a second validator, Contentful mutation, environment lifecycle operations, export, import, and migration are not authorized. Batch 05.1 reconciliation is repository-only and authorizes no Contentful access, credential loading, or seed execution.
+Batch 05.2 implementation is EXTERNALLY ACCEPTED — PASS WITH NOTES. Final Approval Reconciliation is IMPLEMENTED / READY FOR EXTERNAL FINAL VALIDATION. External Final Validation is a required pre-commit gate, established by a separate external response for the exact reconciled state. Only after that PASS and separate owner Git authorization may the containing commit establish Batch 05.2 APPROVED / CHECKPOINTED. Batch 05.3 remains BLOCKED until that containing commit is committed and pushed, master is clean and synchronized, and External Checkpoint Validation passes; it then becomes NEXT / NOT STARTED, with separate explicit GET authorization still required. Batch 05.4 is NOT AUTHORIZED; 05.5 is LATER; seed and Phase 06 are NOT STARTED. No Contentful requests, credential or environment loading, real client, or UI access are authorized by this reconciliation. See the [seed contract](REPRESENTATIVE-SEED-CONTENT-CONTRACT.md).
+
+The Batch 04.6 final GET authorization was granted, consumed exactly once immediately before GET #1, and closed. One validator process completed exactly 23 GET requests with 0 writes, 0 retries, 0 replay, and no credential exposure. Additional GET access, a second validator, Contentful mutation, environment lifecycle operations, export, import, and migration are not authorized. This Batch 05.2 reconciliation is documentation-only with credential-free local verification and authorizes no Contentful access, credential or environment loading, real client, UI access, or seed execution.
 
 Batch 03.5 used one explicit import authorization. The sole top-level import invocation exited 1 after an HTTP 429 during Editor Interface processing, with 0 effective automatic request replays. The authorization is consumed. GET-only forensics independently proved complete semantic recovery with zero material drift. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. Incident/recovery truth reconciliation and Final Approval Reconciliation are complete; the commit containing this document establishes the Batch 03.5 checkpoint.
 
@@ -122,11 +124,13 @@ Current authorization boundary:
 - Manual repair/reset: NOT AUTHORIZED.
 - Additional bootstrap: NOT AUTHORIZED.
 - Migration execution: NOT AUTHORIZED.
-- Phase 05: ACTIVE only through the externally final-validated containing commit; 05.1 APPROVED / CHECKPOINTED by that commit.
-- Batch 05.2: NEXT / LOCAL ONLY only after External Checkpoint Validation PASS for that commit; no credentials or Contentful access.
-- Batch 05.3: BLOCKED ON SOURCE COMPLETION; separate explicit GET authorization required.
+- Phase 05: ACTIVE from the externally final-validated 05.1 containing commit; 05.1 APPROVED / CHECKPOINTED by that commit.
+- Batch 05.2: implementation EXTERNALLY ACCEPTED / PASS WITH NOTES; Final Approval Reconciliation IMPLEMENTED / READY FOR EXTERNAL FINAL VALIDATION; no credentials or Contentful access.
+- Batch 05.2 checkpoint: required separate External Final Validation PASS for the exact reconciled state plus separate owner Git authorization before the containing commit.
+- Batch 05.3: BLOCKED until that commit is committed and pushed on clean synchronized master and passes External Checkpoint Validation; then NEXT / NOT STARTED; separate explicit GET authorization required.
 - Batch 05.4: NOT AUTHORIZED; separate explicit mutation authorization required.
-- Seed: NOT STARTED.
+- Batch 05.5: LATER.
+- Seed and Phase 06: NOT STARTED.
 
 The approved export/import helpers use explicit programmatic environment-token binding. The successful Gate B and destructive recovery authorizations are consumed. Credentials stay in ignored local environment state, never appear in CLI arguments or logs, and `contentful config list` remains prohibited.
 

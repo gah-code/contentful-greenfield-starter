@@ -1,22 +1,22 @@
 # Representative Seed Content Contract
 
-Status: Batch 05.1 Source-Readiness Reconciliation APPROVED AFTER EXTERNAL VALIDATION / PASS WITH NOTES
-Final Approval Reconciliation: IMPLEMENTED
-Scope: planning and local-only development; not an executable seed dataset
+Status: Batch 05.2 local implementation EXTERNALLY ACCEPTED — PASS WITH NOTES
+Final Approval Reconciliation: IMPLEMENTED / READY FOR EXTERNAL FINAL VALIDATION
+Scope: accepted local dataset and guarded tooling contract; no live execution authority
 Owner: Phase 05 - Representative Seed Content
 
 ## Governance and Lifecycle
 
 Phase 04 and semantic model `v1.0.0` are COMPLETE / FROZEN at checkpoint `6fdb16f06c5338e11f08ae0a44180b6db4251611`; its External Checkpoint Validation returned PASS WITH NOTES.
 
-The initial Batch 05.1 planning/source-readiness gate remains historical **BLOCKED - representative seed contract could not yet be safely implemented; source readiness incomplete**. The user later supplied additional resume/public-source planning material and explicitly approved a planning-only placeholder strategy. Source-Readiness Reconciliation and its External Validation both returned PASS WITH NOTES. This Final Approval Reconciliation canonizes that later decision; it does not rewrite the initial result.
+The initial Batch 05.1 planning/source-readiness gate remains historical **BLOCKED - representative seed contract could not yet be safely implemented; source readiness incomplete**. The user later supplied additional resume/public-source planning material and explicitly approved a planning-only placeholder strategy. Source-Readiness Reconciliation and its External Validation both returned PASS WITH NOTES. Its Final Approval Reconciliation and externally validated checkpoint `bb5143c4b14d16a59ceb1c7b9d31d5ba226a1fad` established Phase 05 ACTIVE and permitted local 05.2 work; the initial result remains unchanged history.
 
-After External Final Validation PASS for this exact reconciliation, the containing commit establishes Phase 05 ACTIVE and Batch 05.1 APPROVED / CHECKPOINTED. Batch 05.2 becomes NEXT / LOCAL ONLY only after External Checkpoint Validation PASS for that containing commit. This document does not claim that either later validation or commit has already occurred.
+External Final Validation is a REQUIRED PRE-COMMIT GATE for this exact 05.2 reconciliation, established by a separate external review response. The commit containing this reconciled state establishes the 05.2 checkpoint only after that validation passes and the owner separately authorizes the Git checkpoint. The 05.1 SHA is not the 05.2 checkpoint.
 
-Batch 05.3 is BLOCKED ON SOURCE COMPLETION and requires separate GET authorization. Batch 05.4 mutation is NOT AUTHORIZED. Batch 05.5 is LATER. Seed remains NOT STARTED. No Contentful access is authorized by Batch 05.1.
+Before successful containing-checkpoint verification, Batch 05.3 is BLOCKED. After commit/push, clean synchronized `master`, and External Checkpoint Validation PASS, it becomes NEXT / NOT STARTED; its bounded GET operation still requires separate authorization. Batch 05.4 mutation is NOT AUTHORIZED. Batch 05.5 is LATER. Seed and Phase 06 remain NOT STARTED. No Contentful access is authorized by this reconciliation.
 
 Phase plan: [Phase 05](../phases/PHASE-05-REPRESENTATIVE-SEED-CONTENT.md).
-Lifecycle evidence: [Batch 05.1 report](../../content-model/reports/PHASE-05-BATCH-05.1-SEED-PLANNING-AND-SOURCE-READINESS.md).
+Lifecycle evidence: [historical Batch 05.1 report](../../content-model/reports/PHASE-05-BATCH-05.1-SEED-PLANNING-AND-SOURCE-READINESS.md) and [Batch 05.2 Final Approval Reconciliation](../../content-model/reports/PHASE-05-BATCH-05.2-SEED-DATASET-ASSET-SOURCES-AND-DRY-RUN-TOOLING.md#final-approval-reconciliation).
 
 ## Frozen Upstream Truth
 
@@ -28,7 +28,7 @@ Migration `0001-bootstrap-portfolio-model.js` is unchanged, SHA-256 `4a2319e0692
 
 ## Exact Working Inventory
 
-This is the exact 05.2 development inventory, not a declaration of final prose or source-file completeness.
+This is the exact externally accepted local 05.2 inventory. Acceptance retains each source/public-safety limitation and does not establish a live inventory or public Delivery API readiness.
 
 | Type | Entries |
 | --- | ---: |
@@ -123,7 +123,7 @@ The source pack omitted **41 required-field slots**:
 | Tool | `category`, `usageContext` | 6 | 12 |
 | Total | Existing required fields only | | 41 |
 
-All three Article author links must target `seed05-person-profile-gilberto-haro`. The reconciled graph includes these three required links; the original omission count remains historical evidence. The other 38 slots require content/classification work. Requiredness is not relaxed. Optional fields remain optional and may be omitted only by an explicit recorded decision.
+All three Article author links must target `seed05-person-profile-gilberto-haro`. The reconciled graph includes these three required links; the original omission count remains historical evidence. At 05.1 the other 38 slots required content/classification work; current 05.2 continuation and the later Required Content Approval now supply all 41 original slots without relaxing requiredness or changing fields. Asset-source readiness is separately reconciled; unpublished-Asset reference mechanics are now resolved for the draft-only local contract, not live-tested. Optional fields remain optional and may be omitted only by an explicit recorded decision.
 
 ## Placeholder Contract
 
@@ -162,36 +162,38 @@ Classes may overlap by field. Draft planning approval is not public-use clearanc
 
 | Source Debt | Preserved Disposition |
 | --- | --- |
-| Hogarth start date | Resume April 2025; website-derived planning source March 2025. Unresolved; neither source silently overrides the other. |
-| WHOI location | Resume San Jose; planning source Remote. Unresolved. |
-| DigitalNEST role wording | Resume and planning wording differ. Unresolved; no silent title replacement. |
+| Hogarth start date | Historical resume April 2025 / website-derived March 2025 conflict retained. Owner explicitly approves April 2025; active month-only encoding is 2025-04-01. |
+| WHOI location | Historical resume San Jose / planning Remote conflict retained. Owner approves exact public value San Jose, CA. |
+| DigitalNEST role wording | Historical sources differ. Owner approves exact Web Developer Specialist; existing deterministic ID is unchanged. |
 | Primary professional title | Governing title remains **Web Content & Marketing Technologist**. **Web Engineer & Content Systems** is an alternative for later review, not an approved replacement. |
-| Canonical LinkedIn URL | Unresolved; URL syntax alone does not establish the intended public profile. |
-| Resume phone/email | Explicit public-use decision and sanitized public document required; no contact values copied here. |
-| Enterprise migration metrics | Source provenance established for the 30,000+ item and six-month claims; confidentiality/public-use clearance still required. |
-| Articles | Complete approved bodies and publication dates required; source-pack titles/excerpts are not complete Articles. |
-| Profile and positioning | Final bio, public contact and work-preference decisions remain source debt; no unrelated open decision is silently resolved. |
+| Canonical LinkedIn URL | Owner approves https://www.linkedin.com/in/gilbertoharo/; no redirect inference or network verification. |
+| Resume phone/email | Owner explicitly approves omission of both; original PDF public use prohibited. Later separately authorized derivative created and checked locally; only that exact resume Asset has approved rights/public safety. |
+| Enterprise migration metrics | Owner approves only 30,000+ content items and the six-month migration timeline improvement. Contribution attribution retained; other metrics, screenshots, documents, private URLs, launch details, and internal procedures are not approved. |
+| Articles | Historical body/date gap resolved by the later seven-part owner approval: exact assistant-drafted NEW canonical Phase 05 bodies and owner-selected 2026-09-22 new-CMS dates. Historical title/excerpt provenance and prior BLOCKED result remain preserved; no recovered historical body/date or actual publication is claimed. |
+| Profile and positioning | Work preference is owner-approved exactly: Open to remote and hybrid opportunities in frontend engineering, CMS/content systems, and web operations. Public email is intentionally omitted. Broader editorial review and unrelated positioning decisions are not silently resolved. |
 | SEO and optional images | Explicit override or omission/fallback decisions required. |
-| Media | All final exact local paths, rights, hashes, and accessibility metadata remain unresolved. |
+| Media | All eight Assets READY LOCALLY with exact path/MIME/bytes/hash and scoped rights/safety/accessibility evidence. Six generated conceptual PNGs retain C2PA caBX byte-for-byte; unchanged resume/portrait and all Entry reviews retain their separate scope. Unpublished-Asset reference mechanics are locally resolved; public Delivery readiness remains deferred. |
 
 Apply the frozen public-safety guidance before live authoring even when every Entry remains a draft. Exclude secrets, private URLs/contact data, unapproved client details or metrics, and unlicensed/proprietary media.
 
 ## Eight-Asset Contract
 
-MIME values below are planning targets; final files must be inspected, not trusted by extension.
+All eight MIME values below are verified from exact local files. The six generated PNGs are RGB, 1731 x 909, copied byte-identically with retained C2PA caBX provenance; hashes, CRCs, decoding and visual review pass. No conventional PNG text/EXIF chunks were detected; these are not metadata-free files.
 
-| Approved Working Asset ID | Role | Proposed MIME | Final Local Source Path |
+| Approved Working Asset ID | Role | Verified MIME | Final Local Source Path |
 | --- | --- | --- | --- |
-| `seed05-asset-profile-portrait` | Profile portrait | image/jpeg | UNRESOLVED |
-| `seed05-asset-resume-public` | Sanitized public resume | application/pdf | UNRESOLVED |
-| `seed05-asset-project-enterprise-cms-migration` | Enterprise CMS migration hero | image/png | UNRESOLVED |
-| `seed05-asset-project-contentful-greenfield-starter` | Contentful Greenfield Starter hero | image/png | UNRESOLVED |
-| `seed05-asset-project-ui-gallery-system` | UI Gallery System hero | image/png | UNRESOLVED |
-| `seed05-asset-project-system-diagram` | Project architecture/system diagram | image/png | UNRESOLVED |
-| `seed05-asset-article-learning-journey` | Learning-journey Article hero | image/png | UNRESOLVED |
-| `seed05-asset-site-social-default` | Default social image | image/png | UNRESOLVED |
+| `seed05-asset-profile-portrait` | Profile portrait | image/jpeg (verified) | `content-model/seed/phase-05/assets/gilberto-haro-profile-portrait.jpg` - READY LOCALLY |
+| `seed05-asset-resume-public` | Sanitized public resume | application/pdf (verified) | `content-model/seed/phase-05/assets/gilberto-haro-resume.pdf` - READY LOCALLY |
+| `seed05-asset-project-enterprise-cms-migration` | Enterprise CMS migration hero | image/png (verified) | `content-model/seed/phase-05/assets/enterprise-cms-migration.png` - READY LOCALLY |
+| `seed05-asset-project-contentful-greenfield-starter` | Contentful Greenfield Starter hero | image/png (verified) | `content-model/seed/phase-05/assets/contentful-greenfield-starter.png` - READY LOCALLY |
+| `seed05-asset-project-ui-gallery-system` | UI Gallery System hero | image/png (verified) | `content-model/seed/phase-05/assets/ui-gallery-system.png` - READY LOCALLY |
+| `seed05-asset-project-system-diagram` | Project architecture/system diagram | image/png (verified) | `content-model/seed/phase-05/assets/content-migration-workflow.png` - READY LOCALLY |
+| `seed05-asset-article-learning-journey` | Learning-journey Article hero | image/png (verified) | `content-model/seed/phase-05/assets/web-development-learning-journey.png` - READY LOCALLY |
+| `seed05-asset-site-social-default` | Default social image | image/png (verified) | `content-model/seed/phase-05/assets/default-social-image.png` - READY LOCALLY |
 
-Portrait requires approved likeness/media rights. The resume requires a sanitized public copy, not automatic upload of the supplied factual source. The other visuals may use approved owned captures or clearly labeled synthetic illustrations. All final exact source paths remain unresolved.
+The owner-selected atmospheric portrait is approved for this exact image and public-portfolio use through owner-attested ownership or permission, not independent legal verification. Face visibility is not required for the settled selection. The exact reviewed 2000 x 2000 progressive RGB JPEG is copied byte-identically, with no EXIF detected and ordinary JFIF metadata retained; no image edits or CMS authority follow. The resume requires the sanitized public copy, not the supplied factual source. The six exact generated files are now approved for bounded portfolio use by the owner and reviewed as conceptual illustrations, not product/client screenshots or independent evidence of metrics, credentials, production, or exhaustive QA. No exclusive copyright, legal clearance, employer/client approval or platform endorsement is inferred from C2PA. The initial metadata gate remains historical BLOCKED; external correction and the resumed checks established expected caBX provenance without altering bytes. Signature-chain cryptographic certification is not claimed.
+
+Owner decisions prohibit public use of the original resume and require phone/email removal from a sanitized derivative. The original specification-only pass created no file; a later explicit one-file expansion authorized `content-model/seed/phase-05/assets/gilberto-haro-resume.pdf` as the ninth working file. That two-page derivative is now READY LOCALLY after MIME/size/hash, text, public-link, metadata, redaction, and visual checks. Rights/public safety are approved for this exact owned/user-provided derivative only. Asset governance remains under `provenance.sanitizedDerivative`; verified bytes and evidence are recorded in the manifest and existing 05.2 report. No Contentful upload or publication is authorized.
 
 Per-Asset final acceptance requires: exact local path, MIME, byte size, SHA-256, ownership/licensing, public-safety classification, title, description, and accessibility treatment. Meaningful media needs contextual alternative text; decorative treatment must be intentional and retain the associated text label.
 
@@ -215,7 +217,7 @@ Counts describe the reconciled concrete planning graph, not the model's 18 refer
 
 The source pack's 111 concrete intended links become 114 through the explicit Project field mappings and three required Article author links. No authored reverse relationship is added.
 
-Five optional Asset-link choices are still unresolved: `socialImage` on all three Projects, and `heroImage` on the State Management in React and About Me Articles. These are not counted as resolved edges. Do not freeze them until 05.2 records an explicit Asset or intentional omission/fallback; recalculate the final graph afterward.
+At 05.1, five optional Asset-link choices remained unresolved: `socialImage` on all three Projects, and `heroImage` on the State Management in React and About Me Articles. Batch 05.2 now records intentional omission/fallback for each in the local manifest. No link was added or removed from the concrete graph: recalculation remains 114 / 104 / 10 / 110 / 46. These choices are included in the externally accepted local implementation; changing any choice requires another graph/ledger calculation.
 
 Create dependencies before consumers: Assets; Skills/Social/Navigation; dependent Tools/Groups/Profile/Settings; dependent Experience/Projects/Articles. Derive the exact order from the final dataset, not type names alone. Current concrete graph needs no second-pass update. Preserve primary/footer navigation, social, group-skill, and gallery ordering. Skill/Tool relationship arrays do not invent editorial ranking. Related-content reverse views remain derived under the reference map.
 
@@ -225,21 +227,23 @@ All nine routes have structural planning coverage: `/`, `/about`, `/work`, `/pro
 
 Planning baseline: 42 draft Entries / 0 Entry publications; 8 Asset uploads, creates, and processing calls / 0 Asset publications. Phase 05 representative completeness is not public Delivery API readiness.
 
-Unpublished-Asset reference behavior remains a 05.2/05.3 verification item. Installed SDK create methods do not automatically publish, but that does not prove all intended API/reference behavior. Any technically required Asset publication needs explicit contract and envelope reconciliation before execution, not automatic escalation.
+Unpublished-Asset reference mechanics: RESOLVED AS A LOCAL CONTRACT DECISION. Processed but unpublished Assets are valid targets for draft-only representative seed Entries. Asset Links contain ordinary sys.type Link / sys.linkType Asset / deterministic sys.id, without publication state. The owner-supplied externally reviewed official semantics distinguish Management/Preview draft content from published Delivery API content; local contentful-management 12.10.0 inspection reveals no contradictory client requirement. Creation, processing and publication are separate operations. The harness creates/processes/readiness-confirms all eight Assets before sending any Entry fields. CDA/public delivery and any later publication remain deferred. This is not a live server or write test, nor a guarantee of public Delivery, CDN access control or production readiness. Any future publication-policy change requires explicit contract/envelope reconciliation.
+
+Manifest representation: publicationPolicy.unpublishedAssetReferences.status is VERIFIED, the existing value accepted by verify-seed.mjs and the harness's separate 05.3 guard. VERIFIED denotes bounded local contract verification here; it is not a new enum or live-tested claim. Its evidence states the scope and retains the prior UNRESOLVED state/history. Publication intent remains draft Entries, unpublished Assets and zero publications; neither script changes.
 
 Editorial SEO remains limited to the approved title, description, and social-image overrides. Canonical URLs, robots, sitemap, structured data, breadcrumbs, preview exclusion, and metadata fallback behavior remain code/state-owned.
 
 ## Authoring Mechanism and Safety
 
-Approved design for later 05.2 implementation: repository-owned seed manifest + guarded SDK harness + credential-free local dry run. No manifest, harness, seed content, or Asset is implemented by 05.1.
+The approved design is now implemented locally in 05.2: repository-owned seed manifest + guarded SDK harness + credential-free local dry run. The historical 05.1 planning pass implemented no manifest, harness, seed content, or Asset. Local implementation acceptance does not certify the unexecuted live SDK branch.
 
 Require deterministic IDs; serialized operations; dev-only enforcement; no automatic upsert or overwrite; collision stop; source, placeholder, and Asset-hash validation; explicit operation ledger; explicit retry disablement on management and upload paths; zero application retry/replay; fail-closed behavior.
 
 Stop on existing IDs, semantic duplicates, version mismatch, partial seed state, unexpected non-seed content, or frozen-model mismatch. Do not repair, clean up, delete/recreate, or automatically rerun. Seed is persistent representative content, not temporary QA.
 
-SDK processing helpers can perform readiness GETs internally; the harness must bound/count every request and prohibit hidden retries. These safeguards are requirements, not claims of implemented tooling.
+SDK processing helpers can perform readiness GETs internally; the implemented local harness contract bounds/counts requests and prohibits hidden retries through explicit processing and bounded polling. The safeguards remain mandatory; live SDK dispatch and server behavior have not been tested.
 
-Future local dry run makes 0 requests and uses no credentials. A later separately authorized GET-only gate must verify the exact approved Git checkpoint, clean synchronized state, protected blank master, ready dev with the frozen model, expected blank content baseline, approved locale, and no collisions. Historical Phase 04 live evidence does not replace fresh authorization/evidence.
+The local dry run makes 0 requests and uses no credentials. A later separately authorized GET-only gate must verify the exact approved Git checkpoint, clean synchronized state, protected blank master, ready dev with the frozen model, expected blank content baseline, approved locale, and no collisions. Historical Phase 04 live evidence does not replace fresh authorization/evidence.
 
 Future mutation authorization must be explicit. Local dry run and authorized GET-only preflight do not consume mutation authority. The first authorized mutation, planned as the first Asset upload, consumes it; any unexpected stop leaves it consumed, preserves partial state, and requires external incident review.
 
@@ -277,3 +281,19 @@ Any change to publication, updates, Assets, graph assumptions, or request behavi
 ## Protected Boundaries
 
 Keep model ledgers, migration 0001, snapshots, Phase 04 fixtures/reports, package files, and Contentful scripts unchanged in this reconciliation. No migration 0002, credentials, Contentful requests, authoring, export/import, environment lifecycle, staging, commit, push, or Phase 06 work is authorized. Deferred QA Harness Hardening remains post-freeze debt required before another exhaustive QA run, not a requirement to implement that harness during seed planning.
+
+## Batch 05.2 Local Implementation + Source Continuation
+
+The separately authorized 05.2 local-only pass adds the [manifest](../../content-model/seed/phase-05/seed-manifest.json), [local usage contract](../../content-model/seed/phase-05/README.md), credential-free `verify-seed.mjs`, and future `seed-content.mjs` harness without modifying any existing Contentful script or package. The 05.1 checkpoint is `bb5143c4b14d16a59ceb1c7b9d31d5ba226a1fad`, externally checkpoint-validated PASS.
+
+The final local implementation snapshot is EXTERNALLY ACCEPTED — PASS WITH NOTES. Final Approval Reconciliation is IMPLEMENTED / READY FOR EXTERNAL FINAL VALIDATION; checkpoint and later live gates follow the prerequisites above. All 42 Entry IDs and 8 Asset IDs are unchanged. CMS fields use exact locale/Link/Rich Text shapes; local governance is separate and never serialized into fields. Seven original month-only conversions remain unchanged; owner-approved Hogarth April 2025 start adds an eighth with explicit day-as-encoding metadata.
+
+Historical source continuation reduced placeholders from 185 to 97: 75 grounded draft resolutions and 13 intentional optional omissions. Owner field decisions reduced 97 to 92; sanitized-resume preparation reduced 92 to 86; resumed portrait preparation reduced 86 to 80. The earlier source-unavailable BLOCKED portrait attempt remains historical. The subsequent Entry safety review reduced 80 to 49; independent provenance review then cleared 31 of 36 outstanding source records without changing tokens. Required Source Content Completion initially remained BLOCKED with eight E-class gaps. Later explicit owner approval supplies three whole new Article bodies, three 2026-09-22 dates, and two qualitative achievements; review of those five Entries removes eight E and five Entry safety tokens, yielding 36. All 41 original missing slots have concrete values. Project/Tool enums, SEO fallbacks, contact omissions and all unrelated fields are unchanged.
+
+The final local validator returns READY / exit 0 with 0 placeholders (C 0 / D 0 / E 0 / F 0), 0 structural errors and no readiness diagnostics. All 42 Entry source and safety statuses and limitations remain unchanged; all eight Assets remain READY LOCALLY. The plan exits 0 with executable = READY FOR SEPARATE AUTHORIZATION and final_readiness = READY. Both scripts are byte-for-byte unchanged; 43 / 43 validator and 24 / 24 harness tests pass. Prior source/body/date/Asset approvals and BLOCKED results remain historical. The only manifest change in this gate is unpublished-Asset reference evidence/disposition; no data, Asset content, source/safety review, reference or order changes.
+
+The root Asset-source debt is RESOLVED only after all eight exact local files and scoped approvals are verified; its former unresolved/blocking state is preserved in manifest history. The six visual records remove 24 file/accessibility tokens and 12 rights/safety tokens: 36 -> 0. The unchanged resume and portrait plus six exact generated PNGs are 8 / 8 READY LOCALLY. Owner-approved meaningful accessibility text and bounded conceptual-use rights/safety are recorded per file. The later mechanics gate resolves the former UNPUBLISHED_ASSET_REFERENCES_UNPROVEN blocker at publicationPolicy through bounded contract evidence; no publication-intent change or signature-chain/legal/factual verification is implied. All Entries remain draft and all Assets unpublished. Zero tokens alone never passes; all independent local checks now pass, while external acceptance and live execution remain separately gated.
+
+Planning remains 66 writes / 120-152 execution requests / 143-175 cross-stage requests, never authority. The future harness has explicit no-retry guards, a one-use external receipt, a separately approved 05.3 evidence requirement, fresh bounded JIT checks, and explicit single processing requests with at most five readiness GETs per Asset. No live execution path was invoked.
+
+See the [05.2 implementation and continuation report](../../content-model/reports/PHASE-05-BATCH-05.2-SEED-DATASET-ASSET-SOURCES-AND-DRY-RUN-TOOLING.md#final-approval-reconciliation), including the preserved occurrence classifications and per-ID reduction audits. External review independently verified archive/index and implementation identities, bounded content/Asset evidence, graph arithmetic, and syntax. It did not rerun either self-test suite, the working validator, or plan because supporting runtime artifacts were outside the archive; those results remained supplied workstation evidence. Fresh Node v22.12.0 checks in this reconciliation are new local evidence, not retroactive external test execution. No independent employer, career, legal, PDF/UA, or C2PA signature-chain certification is added. 05.3 remains blocked on the containing-checkpoint lifecycle and separate GET authorization, 05.4 unauthorized, 05.5 later, and seed/Phase 06 not started.

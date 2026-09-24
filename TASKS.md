@@ -4,7 +4,9 @@ This tracker records current project truth. Do not mark future batches complete 
 
 ## Phase 05 - Representative Seed Content
 
-After External Final Validation PASS for this exact reconciliation, its containing commit establishes Phase 05 ACTIVE and Batch 05.1 APPROVED / CHECKPOINTED. Batch 05.2 is NEXT / LOCAL ONLY only after External Checkpoint Validation PASS for that containing commit.
+Phase 05 is ACTIVE. Batch 05.1 is APPROVED / CHECKPOINTED at `bb5143c4b14d16a59ceb1c7b9d31d5ba226a1fad`, with External Checkpoint Validation PASS. Batch 05.2 implementation is EXTERNALLY ACCEPTED — PASS WITH NOTES; Final Approval Reconciliation is IMPLEMENTED / READY FOR EXTERNAL FINAL VALIDATION.
+
+External Final Validation is a REQUIRED PRE-COMMIT GATE for this exact 05.2 reconciliation, established by the separate external review response. The commit containing this reconciled state establishes the 05.2 checkpoint only after that validation passes and the owner separately authorizes the Git checkpoint. Before successful containing-checkpoint verification, 05.3 is BLOCKED. After commit/push, clean synchronized `master`, and External Checkpoint Validation PASS, 05.3 becomes NEXT / NOT STARTED; its bounded GET-only operation still requires separate authorization.
 
 Canonical contract: [Representative Seed Content Contract](docs/system/REPRESENTATIVE-SEED-CONTENT-CONTRACT.md). Phase plan: [Phase 05](docs/phases/PHASE-05-REPRESENTATIVE-SEED-CONTENT.md). Evidence: [Batch 05.1 report](content-model/reports/PHASE-05-BATCH-05.1-SEED-PLANNING-AND-SOURCE-READINESS.md).
 
@@ -23,17 +25,61 @@ Status: Source-Readiness Reconciliation PASS WITH NOTES / External Validation PA
 
 ### Batch 05.2 - Seed Dataset, Asset Sources + Dry-Run Tooling
 
-Status: NEXT only after External Checkpoint Validation PASS for the 05.1 containing commit / LOCAL ONLY. This reconciliation does not start implementation.
+Status: LOCAL IMPLEMENTATION EXTERNALLY ACCEPTED — PASS WITH NOTES / FINAL APPROVAL RECONCILIATION IMPLEMENTED / READY FOR EXTERNAL FINAL VALIDATION. Fresh workstation checks pass. External Final Validation and the separately authorized checkpoint lifecycle remain required under the containing-commit rule above; this pass establishes neither a checkpoint nor live authority.
 
-- [ ] Build the separately scoped local dataset and guarded tooling
-- [ ] Resolve required fields, source conflicts, rights, exact Asset files/hashes, and optional image decisions
-- [ ] Pass the final credential-free dry run with `placeholder_count = 0` and independent completeness checks
+- [x] Build the 42-Entry / 8-Asset local manifest, credential-free validator, and guarded future harness
+- [x] Pass 43 validator self-tests and 24 harness guard/polling tests with no network or credentials
+- [x] Record five intentional optional-image omissions/fallbacks and recompute the unchanged 114-link graph
+- [x] Preserve historical source conflicts, month precision, and draft-only publication intent
+- [x] Preserve the historical working dry run NOT READY / exit 1 and planning NOT EXECUTABLE / exit 1
+- [x] Classify all 185 baseline placeholders before source edits; resolve 75 supported drafts and 13 optional omissions
+- [x] Prepare role-based metadata for eight Assets without claiming files, rights, or accessibility review complete
+- [x] Apply all eleven explicit owner decisions; resolve five human field values and scope the two metric approvals
+- [x] Specify the sanitized public resume with phone/email omitted; original specification pass created no ninth file
+- [x] Complete the separately authorized one-file expansion: sanitized resume PDF verified locally; original public use prohibited
+- [x] Resume the historically blocked portrait preparation after exact JPEG/source and nine-file gates; copy the owner-selected image unchanged as the tenth working file
+- [x] Review all 36 outstanding Entry safety records; approve 31 current-field scopes (three Projects with media/QA limitations) and retain five incomplete Entries; leave source status and all Assets unchanged
+- [x] Independently audit 36 Entry source reviews; resolve 31 (25 approved / 6 with documented provenance limitations), map 153 active fields, and retain five incomplete Entries without changing placeholders or safety
+- [x] Preserve the Required Source Content gate as historical BLOCKED; apply the later seven-part owner approval to exactly eight fields and complete bounded source/safety review of the five Entries
+- [x] Verify exact new Article copy (5 / 6 / 6 paragraphs), owner-selected 2026-09-22 dates, exact qualitative achievements, and the 49 -> 36 placeholder reduction; no live authority
+- [x] Preserve the initial six-Asset metadata gate as BLOCKED; reconcile the externally reviewed C2PA finding and copy six exact PNGs with caBX unchanged
+- [x] Verify eight local Asset identities and scoped rights/safety/accessibility; reduce 36 -> 0 placeholders without changing any Entry
+- [x] Resolve draft-only unpublished-Asset reference mechanics as a local contract decision using existing VERIFIED status; no script or publication-policy change
+- [x] Pass the final credential-free local dry run: READY / exit 0, zero placeholders and no remaining diagnostics; plan READY FOR SEPARATE AUTHORIZATION / exit 0
+- [x] Record External Implementation Validation PASS WITH NOTES and complete bounded Final Approval Reconciliation
+- [ ] Obtain External Final Validation for this exact reconciliation before the separately authorized checkpoint lifecycle
+
+Current diagnostics: 0 placeholders (C 0 / D 0 / E 0 / F 0), 0 structural errors and no remaining source/readiness diagnostics. All 42 Entry source and safety approvals and all eight locally ready Assets remain unchanged with their limitations. Unpublished-Asset mechanics are RESOLVED AS A LOCAL CONTRACT DECISION, represented by the existing VERIFIED value, based on the owner-supplied externally reviewed official semantics, frozen contracts and installed SDK inspection. Processed unpublished Assets precede dependent draft Entries; CDA/public delivery and publication remain deferred, not live-tested. Both scripts are unchanged; fresh workstation checks on Node v22.12.0 pass 43 validator and 24 harness tests. Validator READY / exit 0; plan executable field is READY FOR SEPARATE AUTHORIZATION / exit 0, never mutation authority. Graph remains 114 links and planning envelope 66 writes / 120-152 execution / 143-175 cross-stage requests. This reconciliation edits thirteen documents and adds eight tracked paths to the prior working scope: 24 accumulated files (11 tracked modified / 13 untracked), with no new repository file. Historical BLOCKED/unresolved results remain preserved. Evidence: [05.2 Final Approval Reconciliation](content-model/reports/PHASE-05-BATCH-05.2-SEED-DATASET-ASSET-SOURCES-AND-DRY-RUN-TOOLING.md#final-approval-reconciliation).
+
+External review independently checked archive/index identities, bounded content/Asset evidence, graph arithmetic, and syntax. It did not rerun either self-test suite, working validation, or planning because supporting runtime artifacts were outside its archive. Those earlier passes remain supplied workstation evidence; the fresh local checks do not retroactively change the external review's scope. Recorded approvals add no independent employer, career, legal, PDF/UA, or C2PA signature-chain certification.
+
+### CMS Acceptance Resume - Earlier Deferral Preserved
+
+- [ ] Resume Phase 05 CMS acceptance and live-seed workflow after the initial UI visual prototype - local implementation externally accepted and reconciliation implemented; external final validation, checkpoint, and live-seed gates remain incomplete.
+
+Historical deferral: remaining CMS work was paused at the owner's request while visual UI development was prioritized in the separate `ui-gallery-system` repository. That independent prototype did not start Greenfield Phase 06. Local 05.2 readiness passed, but approval and checkpointing remained outstanding. The interrupted mechanics gate remains historical BLOCKED on a shell-quoting scope incident; the narrow repair removed only the verified empty root files `0` and `111`, restored the exact sixteen-file scope, and recorded the missing evidence in the existing [05.2 report](content-model/reports/PHASE-05-BATCH-05.2-SEED-DATASET-ASSET-SOURCES-AND-DRY-RUN-TOOLING.md#unpublished-asset-reference-mechanics-resolution--final-local-readiness).
+
+Owner-directed return: handoff `BUILDING-UP-2026-09-23T224950Z` at `2026-09-23T22:49:50Z`. The owner reports UI work paused and its external snapshot complete; the desktop header text-enlargement issue remains for the UI return. No UI repository access or independent snapshot re-verification occurs here. The first acceptance-resume attempt passed all six repository checks, then stopped at the supplementary audit's incorrect `e.source.review.status` lookup without repository edits or a bundle. This remains historical BLOCKED, not a manifest/script defect.
+
+Historical continuation began `2026-09-23T23:40:37.610Z`. The schema-aligned audit checked every Entry at `source.status` and `publicSafety.status`: 42/42 APPROVED each, with limitations unchanged. Checks at `2026-09-23T23:43:05.769Z` through `2026-09-23T23:43:12.139Z` passed: syntax, 43/43 validator tests, 24/24 harness tests, READY / exit 0 validation, and READY FOR SEPARATE AUTHORIZATION / exit 0 planning. Its result was **READY FOR EXTERNAL IMPLEMENTATION VALIDATION AND SCOPE REVIEW**; review of the actual ZIP/sidecar and proposed thirteen-path scope was then required. That continuation changed only this tracker and the existing [05.2 evidence report](content-model/reports/PHASE-05-BATCH-05.2-SEED-DATASET-ASSET-SOURCES-AND-DRY-RUN-TOOLING.md#acceptance-resume-continuation--schema-aligned-audit--review-bundle), leaving sixteen accumulated files. The later external review returned PASS WITH NOTES and accepted the bounded scope with inspect-before-write conditions. Both subsequent missing-report reconciliation stops remain BLOCKED PRE-WRITE in the later reconciliation evidence; this renewed pass does not retroactively pass their unperformed gates.
+
+Return checklist; later gates remain incomplete and separately authorized:
+
+- [x] Review the completed 05.2 evidence and current implementation; record external implementation validation PASS WITH NOTES
+- [x] Perform the separately authorized thirteen-document Final Approval Reconciliation
+- [ ] Obtain external final validation
+- [ ] Perform a separately authorized Git checkpoint and checkpoint validation
+- [ ] Authorize 05.3 GET-only preflight separately
+- [ ] Authorize 05.4 mutation separately, only after its prerequisites pass
+- [ ] Complete 05.5 validation and closeout
+
+This owner-directed local acceptance resumption implies no historical or future live authorization, consumes no execution receipt, and grants no Contentful access. Do not start another CMS batch automatically; seed and Greenfield Phase 06 remain NOT STARTED.
 
 ### Later Batches
 
 | Batch | Title | State |
 | --- | --- | --- |
-| 05.3 | Final Read-Only Pre-Execution Gate | BLOCKED ON SOURCE COMPLETION; separate GET authorization required |
+| 05.3 | Final Read-Only Pre-Execution Gate | BLOCKED until the 05.2 containing-checkpoint lifecycle passes; then NEXT / NOT STARTED; separate GET authorization required |
 | 05.4 | Controlled Representative Seed Execution | NOT AUTHORIZED; explicit mutation authorization required |
 | 05.5 | Seed Validation, Publication-State Reconciliation + Phase 05 Closeout | LATER |
 
@@ -1002,6 +1048,6 @@ Recorded Phase 00 evidence:
 - Batch 04.5 is checkpointed at `157f9dd5d1c471d5e5087c0046b28fa97fb86d91`; External Checkpoint Validation passed before Batch 04.6 entry.
 - Batch 04.6 implementation is complete: final live validation and external review passed with notes, Option B is accepted, the model freeze decision is `v1.0.0`, and 11 / 11 Phase 04 exit criteria are satisfied with criteria 3–5 evidence-bounded. The initial reconciliation remained BLOCKED, the current-pointer correction is complete, Resume External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete.
 - The established Phase 04 closeout checkpoint completes Batch 04.6 and freezes model `v1.0.0`; the historical pre-commit validation condition was satisfied.
-- Phase 05 ACTIVE / Batch 05.1 APPROVED-CHECKPOINTED are established by the externally final-validated 05.1 containing commit; 05.2 is NEXT / LOCAL ONLY only after its External Checkpoint Validation PASS.
+- Phase 05 is ACTIVE; the established 05.1 checkpoint remains historical. Batch 05.2 local implementation is EXTERNALLY ACCEPTED — PASS WITH NOTES and Final Approval Reconciliation is IMPLEMENTED. External Final Validation is the required pre-commit gate for this exact state; only its PASS plus separate owner Git authorization permits the containing checkpoint. 05.3 remains BLOCKED until commit/push, clean synchronized `master`, and External Checkpoint Validation PASS; then NEXT / NOT STARTED with separate GET authorization still required. 05.4 remains NOT AUTHORIZED; 05.5 LATER; Phase 06 NOT STARTED.
 - Seed content remains not started.
 - This incident/recovery reconciliation is repository-only and authorizes no Contentful read, write, environment mutation, export, import, bootstrap, or seed operation.
