@@ -4,9 +4,9 @@ This tracker records current project truth. Do not mark future batches complete 
 
 ## Phase 05 - Representative Seed Content
 
-Phase 05 is ACTIVE. Batch 05.1 is APPROVED / CHECKPOINTED at `bb5143c4b14d16a59ceb1c7b9d31d5ba226a1fad`, with External Checkpoint Validation PASS. Batch 05.2 implementation is EXTERNALLY ACCEPTED — PASS WITH NOTES; Final Approval Reconciliation is IMPLEMENTED / READY FOR EXTERNAL FINAL VALIDATION.
+Phase 05 is ACTIVE. Batch 05.2 is APPROVED / CHECKPOINTED at `7742e5f7fb251cec3db8b3c21947d61ae29a4f5b`. Batch 05.3 is EXTERNALLY VALIDATED — PASS WITH NOTES; its historical freshness has expired. Batch 05.4 STOPPED AFTER MUTATION; incident forensics are EXTERNALLY VALIDATED — PASS WITH NOTES. Recovery tooling received EXTERNAL IMPLEMENTATION VALIDATION — PASS WITH NOTES; its Final Approval Reconciliation is COMPLETE. The recovery-tooling containing commit establishes the checkpoint only after External Final Validation passes for the exact reconciled state before commit and the owner separately authorizes the Git checkpoint. The previous mutation authorization is CONSUMED / CLOSED and must never be reused. Recovery mutation is NOT AUTHORIZED. Batch 05.5 is BLOCKED; seed is PARTIAL LIVE STATE PRESERVED; Phase 06 is NOT STARTED.
 
-External Final Validation is a REQUIRED PRE-COMMIT GATE for this exact 05.2 reconciliation, established by the separate external review response. The commit containing this reconciled state establishes the 05.2 checkpoint only after that validation passes and the owner separately authorizes the Git checkpoint. Before successful containing-checkpoint verification, 05.3 is BLOCKED. After commit/push, clean synchronized `master`, and External Checkpoint Validation PASS, 05.3 becomes NEXT / NOT STARTED; its bounded GET-only operation still requires separate authorization.
+Current lifecycle owner: [Project State](docs/PROJECT-STATE.md). Incident and verification evidence: [Batch 05.4 report](content-model/reports/PHASE-05-BATCH-05.4-SEED-EXECUTION-INCIDENT-AND-RECOVERY.md).
 
 Canonical contract: [Representative Seed Content Contract](docs/system/REPRESENTATIVE-SEED-CONTENT-CONTRACT.md). Phase plan: [Phase 05](docs/phases/PHASE-05-REPRESENTATIVE-SEED-CONTENT.md). Evidence: [Batch 05.1 report](content-model/reports/PHASE-05-BATCH-05.1-SEED-PLANNING-AND-SOURCE-READINESS.md).
 
@@ -25,7 +25,7 @@ Status: Source-Readiness Reconciliation PASS WITH NOTES / External Validation PA
 
 ### Batch 05.2 - Seed Dataset, Asset Sources + Dry-Run Tooling
 
-Status: LOCAL IMPLEMENTATION EXTERNALLY ACCEPTED — PASS WITH NOTES / FINAL APPROVAL RECONCILIATION IMPLEMENTED / READY FOR EXTERNAL FINAL VALIDATION. Fresh workstation checks pass. External Final Validation and the separately authorized checkpoint lifecycle remain required under the containing-commit rule above; this pass establishes neither a checkpoint nor live authority.
+Status: APPROVED / CHECKPOINTED at `7742e5f7fb251cec3db8b3c21947d61ae29a4f5b`. The following records preserve the completed 05.2 implementation and reconciliation history.
 
 - [x] Build the 42-Entry / 8-Asset local manifest, credential-free validator, and guarded future harness
 - [x] Pass 43 validator self-tests and 24 harness guard/polling tests with no network or credentials
@@ -47,15 +47,15 @@ Status: LOCAL IMPLEMENTATION EXTERNALLY ACCEPTED — PASS WITH NOTES / FINAL APP
 - [x] Resolve draft-only unpublished-Asset reference mechanics as a local contract decision using existing VERIFIED status; no script or publication-policy change
 - [x] Pass the final credential-free local dry run: READY / exit 0, zero placeholders and no remaining diagnostics; plan READY FOR SEPARATE AUTHORIZATION / exit 0
 - [x] Record External Implementation Validation PASS WITH NOTES and complete bounded Final Approval Reconciliation
-- [ ] Obtain External Final Validation for this exact reconciliation before the separately authorized checkpoint lifecycle
+- [x] Obtain External Final Validation and complete the separately authorized checkpoint lifecycle
 
-Current diagnostics: 0 placeholders (C 0 / D 0 / E 0 / F 0), 0 structural errors and no remaining source/readiness diagnostics. All 42 Entry source and safety approvals and all eight locally ready Assets remain unchanged with their limitations. Unpublished-Asset mechanics are RESOLVED AS A LOCAL CONTRACT DECISION, represented by the existing VERIFIED value, based on the owner-supplied externally reviewed official semantics, frozen contracts and installed SDK inspection. Processed unpublished Assets precede dependent draft Entries; CDA/public delivery and publication remain deferred, not live-tested. Both scripts are unchanged; fresh workstation checks on Node v22.12.0 pass 43 validator and 24 harness tests. Validator READY / exit 0; plan executable field is READY FOR SEPARATE AUTHORIZATION / exit 0, never mutation authority. Graph remains 114 links and planning envelope 66 writes / 120-152 execution / 143-175 cross-stage requests. This reconciliation edits thirteen documents and adds eight tracked paths to the prior working scope: 24 accumulated files (11 tracked modified / 13 untracked), with no new repository file. Historical BLOCKED/unresolved results remain preserved. Evidence: [05.2 Final Approval Reconciliation](content-model/reports/PHASE-05-BATCH-05.2-SEED-DATASET-ASSET-SOURCES-AND-DRY-RUN-TOOLING.md#final-approval-reconciliation).
+Historical 05.2 final diagnostics: 0 placeholders (C 0 / D 0 / E 0 / F 0), 0 structural errors and no remaining source/readiness diagnostics. All 42 Entry source and safety approvals and all eight locally ready Assets remain unchanged with their limitations. Unpublished-Asset mechanics are RESOLVED AS A LOCAL CONTRACT DECISION, represented by the existing VERIFIED value, based on the owner-supplied externally reviewed official semantics, frozen contracts and installed SDK inspection. Processed unpublished Assets precede dependent draft Entries; CDA/public delivery and publication remain deferred, not live-tested. Both scripts are unchanged; fresh workstation checks on Node v22.12.0 pass 43 validator and 24 harness tests. Validator READY / exit 0; plan executable field is READY FOR SEPARATE AUTHORIZATION / exit 0, never mutation authority. Graph remains 114 links and planning envelope 66 writes / 120-152 execution / 143-175 cross-stage requests. That 05.2 reconciliation edited thirteen documents and added eight tracked paths to its prior working scope: 24 accumulated files (11 tracked modified / 13 untracked), with no new repository file. Historical BLOCKED/unresolved results remain preserved. Evidence: [05.2 Final Approval Reconciliation](content-model/reports/PHASE-05-BATCH-05.2-SEED-DATASET-ASSET-SOURCES-AND-DRY-RUN-TOOLING.md#final-approval-reconciliation).
 
 External review independently checked archive/index identities, bounded content/Asset evidence, graph arithmetic, and syntax. It did not rerun either self-test suite, working validation, or planning because supporting runtime artifacts were outside its archive. Those earlier passes remain supplied workstation evidence; the fresh local checks do not retroactively change the external review's scope. Recorded approvals add no independent employer, career, legal, PDF/UA, or C2PA signature-chain certification.
 
 ### CMS Acceptance Resume - Earlier Deferral Preserved
 
-- [ ] Resume Phase 05 CMS acceptance and live-seed workflow after the initial UI visual prototype - local implementation externally accepted and reconciliation implemented; external final validation, checkpoint, and live-seed gates remain incomplete.
+- [x] Resume Phase 05 CMS acceptance after the initial UI visual prototype; 05.2 checkpoint and 05.3 validation completed before the later 05.4 incident.
 
 Historical deferral: remaining CMS work was paused at the owner's request while visual UI development was prioritized in the separate `ui-gallery-system` repository. That independent prototype did not start Greenfield Phase 06. Local 05.2 readiness passed, but approval and checkpointing remained outstanding. The interrupted mechanics gate remains historical BLOCKED on a shell-quoting scope incident; the narrow repair removed only the verified empty root files `0` and `111`, restored the exact sixteen-file scope, and recorded the missing evidence in the existing [05.2 report](content-model/reports/PHASE-05-BATCH-05.2-SEED-DATASET-ASSET-SOURCES-AND-DRY-RUN-TOOLING.md#unpublished-asset-reference-mechanics-resolution--final-local-readiness).
 
@@ -63,27 +63,43 @@ Owner-directed return: handoff `BUILDING-UP-2026-09-23T224950Z` at `2026-09-23T2
 
 Historical continuation began `2026-09-23T23:40:37.610Z`. The schema-aligned audit checked every Entry at `source.status` and `publicSafety.status`: 42/42 APPROVED each, with limitations unchanged. Checks at `2026-09-23T23:43:05.769Z` through `2026-09-23T23:43:12.139Z` passed: syntax, 43/43 validator tests, 24/24 harness tests, READY / exit 0 validation, and READY FOR SEPARATE AUTHORIZATION / exit 0 planning. Its result was **READY FOR EXTERNAL IMPLEMENTATION VALIDATION AND SCOPE REVIEW**; review of the actual ZIP/sidecar and proposed thirteen-path scope was then required. That continuation changed only this tracker and the existing [05.2 evidence report](content-model/reports/PHASE-05-BATCH-05.2-SEED-DATASET-ASSET-SOURCES-AND-DRY-RUN-TOOLING.md#acceptance-resume-continuation--schema-aligned-audit--review-bundle), leaving sixteen accumulated files. The later external review returned PASS WITH NOTES and accepted the bounded scope with inspect-before-write conditions. Both subsequent missing-report reconciliation stops remain BLOCKED PRE-WRITE in the later reconciliation evidence; this renewed pass does not retroactively pass their unperformed gates.
 
-Return checklist; later gates remain incomplete and separately authorized:
+Return checklist; completed gates remain historical, and future recovery is separately authorized:
 
 - [x] Review the completed 05.2 evidence and current implementation; record external implementation validation PASS WITH NOTES
 - [x] Perform the separately authorized thirteen-document Final Approval Reconciliation
-- [ ] Obtain external final validation
-- [ ] Perform a separately authorized Git checkpoint and checkpoint validation
-- [ ] Authorize 05.3 GET-only preflight separately
-- [ ] Authorize 05.4 mutation separately, only after its prerequisites pass
+- [x] Obtain external final validation
+- [x] Perform a separately authorized Git checkpoint and checkpoint validation
+- [x] Complete separately authorized 05.3 GET-only validation; historical freshness expired
+- [x] Execute one separately authorized 05.4 process; STOPPED AFTER MUTATION; authorization CONSUMED / CLOSED
 - [ ] Complete 05.5 validation and closeout
 
-This owner-directed local acceptance resumption implies no historical or future live authorization, consumes no execution receipt, and grants no Contentful access. Do not start another CMS batch automatically; seed and Greenfield Phase 06 remain NOT STARTED.
+That historical local acceptance resumption granted no live authorization and consumed no execution receipt. The later separately authorized 05.4 incident is recorded below; Greenfield Phase 06 remains NOT STARTED.
 
-### Later Batches
+### Batch 05.4 - Incident Reconciliation + Recovery Tooling Correction
+
+Status: STOPPED AFTER MUTATION / INCIDENT FORENSICS EXTERNALLY VALIDATED — PASS WITH NOTES / RECOVERY TOOLING EXTERNAL IMPLEMENTATION VALIDATION — PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE. Recovery tooling checkpoint: containing-commit rule applies; exact-state External Final Validation PASS before commit and separate owner Git authorization are required.
+
+- [x] Preserve the execution failure and accepted forensic partial state in the canonical incident report
+- [x] Reconcile stale current-status pointers without rewriting historical pre-execution evidence
+- [x] Complete the narrow optional-empty-Array comparison and distinct recovery mode
+- [x] Pass network-blocked local syntax, regression, comparison, and recovery-plan checks
+- [x] Record External Implementation Validation — PASS WITH NOTES for the exact corrected local tooling
+- [x] Complete documentation-only Final Approval Reconciliation; preserve the external review qualification separately from fresh local verification in the canonical report
+- [x] Correct active checkpoint semantics and preserve the blocked External Final Validation attempt with technical/package PASS
+- [ ] Obtain a NEW distinct recovery authorization after separately governed prerequisites
+- [ ] Complete 05.5 validation and Phase 05 closeout
+
+The [Project State containing-commit rule](docs/PROJECT-STATE.md#recovery-tooling-checkpoint-lifecycle) requires External Final Validation PASS for the exact reconciled state before commit and separate owner Git authorization. The next live operation is a separately authorized fresh recovery read-only pre-execution gate, only after checkpoint, push, clean synchronized `master`, and External Checkpoint Validation PASS. External validation of that read-only gate and separate one-time recovery mutation authorization must precede recovery. The containing commit grants no Contentful authority. The [correction record](content-model/reports/PHASE-05-BATCH-05.4-SEED-EXECUTION-INCIDENT-AND-RECOVERY.md#checkpoint-semantics-correction) preserves the blocked attempt and requires a new External Final Validation for the corrected exact state.
+
+Recovery mutation is NOT AUTHORIZED. Preserve all 29 existing objects. The consumed `phase05-seed-20260929-0254z` authority must never be reused. Canonical policy is in the [seed contract](docs/system/REPRESENTATIVE-SEED-CONTENT-CONTRACT.md); detailed history, proof, and local verification belong to the [incident/recovery report](content-model/reports/PHASE-05-BATCH-05.4-SEED-EXECUTION-INCIDENT-AND-RECOVERY.md).
 
 | Batch | Title | State |
 | --- | --- | --- |
-| 05.3 | Final Read-Only Pre-Execution Gate | BLOCKED until the 05.2 containing-checkpoint lifecycle passes; then NEXT / NOT STARTED; separate GET authorization required |
-| 05.4 | Controlled Representative Seed Execution | NOT AUTHORIZED; explicit mutation authorization required |
-| 05.5 | Seed Validation, Publication-State Reconciliation + Phase 05 Closeout | LATER |
+| 05.3 | Final Read-Only Pre-Execution Gate | EXTERNALLY VALIDATED — PASS WITH NOTES / historical freshness expired |
+| 05.4 | Controlled Representative Seed Execution | STOPPED AFTER MUTATION / incident forensics externally validated / recovery tooling External Implementation Validation PASS WITH NOTES / Final Approval Reconciliation COMPLETE / checkpoint governed by containing-commit rule: exact-state External Final Validation PASS before commit + separate owner Git authorization |
+| 05.5 | Seed Validation, Publication-State Reconciliation + Phase 05 Closeout | BLOCKED |
 
-Seed remains NOT STARTED. No Contentful access, Phase 06, staging, commit, or push is authorized by this reconciliation.
+Seed: PARTIAL LIVE STATE PRESERVED. No Contentful access, environment loading, credentials, recovery execution, Phase 06, staging, commit, or push is authorized by this reconciliation.
 
 ## Completed
 
@@ -352,7 +368,7 @@ Destructive dev recovery: COMPLETE / EXTERNALLY APPROVED
 
 Additional dev reset: NOT AUTHORIZED
 
-Seed content: NOT STARTED
+Historical phase-closeout seed content: NOT STARTED
 
 #### Batch 02.7 — Phase 02 Validation + Closeout
 
@@ -649,7 +665,7 @@ Semantic recovery: PASS / `COMPLETE_APPROVED_SEMANTIC_STATE_PRESENT` / ZERO MATE
 
 Second import: NOT AUTHORIZED
 
-Seed content: NOT STARTED
+Historical phase-closeout seed content: NOT STARTED
 
 - [x] Batch 03.4 checkpoint confirmed
 - [x] Initial 03.5 read-only pre-execution attempt
@@ -1037,7 +1053,7 @@ Recorded Phase 00 evidence:
 - [x] Authoring-Envelope Correction External Validation — PASS WITH NOTES.
 - [x] Authoring-Envelope Correction Final Approval Reconciliation — COMPLETE.
 - Authoring-Envelope Correction checkpoint `0e2057d26031d3ba7264810d00173713d83c11ef` was established before the later separately authorized controlled authoring execution.
-- Batch 04.3 started and stopped after mutation at R88. Its incident and forensic evidence remain preserved, governed cleanup is complete, and `dev` is restored to 0 Entries / 0 Assets / 0 tags with zero model drift. It is conditionally exited for findings handoff with exhaustive live QA deferred and no claim of a 102 / 102 live QA pass.
+- Batch 04.3 started and stopped after mutation at R88. Its incident and forensic evidence remain preserved, governed cleanup completed and restored `dev` to 0 Entries / 0 Assets / 0 tags with zero model drift at that historical checkpoint. It is conditionally exited for findings handoff with exhaustive live QA deferred and no claim of a 102 / 102 live QA pass.
 - The Partial Authoring Incident + Deferral Reconciliation lifecycle is complete and its checkpoint is established at `93e4ff6dd995831af5d05475db02b1a60f027715`.
 - The previous 04.3 authoring authorization was GRANTED / UNCONSUMED. It is superseded and MUST NOT be reused. Any future execution decision requires the Post-Stop Partial-State + Branch-Sensitive Forensics gate first; no new authorization is currently available.
 - The later one-time authoring authorization was GRANTED / CONSUMED. The separate renewed cleanup authorization was GRANTED / CONSUMED exactly once / CLOSED and was not a reuse of the first blocked cleanup authorization. Additional authoring, cleanup, continuation, retry, repair, schema or Editor Interface correction, export, import, migration, bootstrap, environment operation, or seed is not authorized.
@@ -1048,6 +1064,6 @@ Recorded Phase 00 evidence:
 - Batch 04.5 is checkpointed at `157f9dd5d1c471d5e5087c0046b28fa97fb86d91`; External Checkpoint Validation passed before Batch 04.6 entry.
 - Batch 04.6 implementation is complete: final live validation and external review passed with notes, Option B is accepted, the model freeze decision is `v1.0.0`, and 11 / 11 Phase 04 exit criteria are satisfied with criteria 3–5 evidence-bounded. The initial reconciliation remained BLOCKED, the current-pointer correction is complete, Resume External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete.
 - The established Phase 04 closeout checkpoint completes Batch 04.6 and freezes model `v1.0.0`; the historical pre-commit validation condition was satisfied.
-- Phase 05 is ACTIVE; the established 05.1 checkpoint remains historical. Batch 05.2 local implementation is EXTERNALLY ACCEPTED — PASS WITH NOTES and Final Approval Reconciliation is IMPLEMENTED. External Final Validation is the required pre-commit gate for this exact state; only its PASS plus separate owner Git authorization permits the containing checkpoint. 05.3 remains BLOCKED until commit/push, clean synchronized `master`, and External Checkpoint Validation PASS; then NEXT / NOT STARTED with separate GET authorization still required. 05.4 remains NOT AUTHORIZED; 05.5 LATER; Phase 06 NOT STARTED.
-- Seed content remains not started.
+- Phase 05 is ACTIVE. Batch 05.2 is APPROVED / CHECKPOINTED at `7742e5f7fb251cec3db8b3c21947d61ae29a4f5b`. Batch 05.3 is EXTERNALLY VALIDATED — PASS WITH NOTES; its historical freshness has expired. Batch 05.4 STOPPED AFTER MUTATION; incident forensics are EXTERNALLY VALIDATED — PASS WITH NOTES. Recovery tooling received EXTERNAL IMPLEMENTATION VALIDATION — PASS WITH NOTES; its Final Approval Reconciliation is COMPLETE. The recovery-tooling containing commit establishes the checkpoint only after External Final Validation passes for the exact reconciled state before commit and the owner separately authorizes the Git checkpoint. The previous mutation authorization is CONSUMED / CLOSED and must never be reused. Recovery mutation is NOT AUTHORIZED. Batch 05.5 is BLOCKED; seed is PARTIAL LIVE STATE PRESERVED; Phase 06 is NOT STARTED.
+- Seed content: PARTIAL LIVE STATE PRESERVED.
 - This incident/recovery reconciliation is repository-only and authorizes no Contentful read, write, environment mutation, export, import, bootstrap, or seed operation.

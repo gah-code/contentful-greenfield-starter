@@ -1,8 +1,10 @@
 # Representative Seed Content Contract
 
-Status: Batch 05.2 local implementation EXTERNALLY ACCEPTED — PASS WITH NOTES
-Final Approval Reconciliation: IMPLEMENTED / READY FOR EXTERNAL FINAL VALIDATION
-Scope: accepted local dataset and guarded tooling contract; no live execution authority
+Status: Batch 05.4 incident forensics EXTERNALLY VALIDATED — PASS WITH NOTES
+Recovery tooling: EXTERNAL IMPLEMENTATION VALIDATION — PASS WITH NOTES
+Final Approval Reconciliation: COMPLETE
+Recovery tooling checkpoint: containing-commit rule requires exact-state External Final Validation PASS before commit and separate owner Git authorization
+Scope: unchanged accepted manifest, bounded Entry comparison, distinct recovery tooling; no Contentful or recovery execution authority
 Owner: Phase 05 - Representative Seed Content
 
 ## Governance and Lifecycle
@@ -11,9 +13,9 @@ Phase 04 and semantic model `v1.0.0` are COMPLETE / FROZEN at checkpoint `6fdb16
 
 The initial Batch 05.1 planning/source-readiness gate remains historical **BLOCKED - representative seed contract could not yet be safely implemented; source readiness incomplete**. The user later supplied additional resume/public-source planning material and explicitly approved a planning-only placeholder strategy. Source-Readiness Reconciliation and its External Validation both returned PASS WITH NOTES. Its Final Approval Reconciliation and externally validated checkpoint `bb5143c4b14d16a59ceb1c7b9d31d5ba226a1fad` established Phase 05 ACTIVE and permitted local 05.2 work; the initial result remains unchanged history.
 
-External Final Validation is a REQUIRED PRE-COMMIT GATE for this exact 05.2 reconciliation, established by a separate external review response. The commit containing this reconciled state establishes the 05.2 checkpoint only after that validation passes and the owner separately authorizes the Git checkpoint. The 05.1 SHA is not the 05.2 checkpoint.
+Batch 05.2 is APPROVED / CHECKPOINTED at `7742e5f7fb251cec3db8b3c21947d61ae29a4f5b`. Its former pre-commit and checkpoint gates were satisfied before the later operations. Current lifecycle is owned by [Project State](../PROJECT-STATE.md): 05.3 is externally validated with expired historical freshness; 05.4 stopped after mutation and its incident forensics are externally validated. The accepted partial live state is preserved. Recovery mutation is NOT AUTHORIZED, 05.5 is BLOCKED, and Phase 06 is NOT STARTED.
 
-Before successful containing-checkpoint verification, Batch 05.3 is BLOCKED. After commit/push, clean synchronized `master`, and External Checkpoint Validation PASS, it becomes NEXT / NOT STARTED; its bounded GET operation still requires separate authorization. Batch 05.4 mutation is NOT AUTHORIZED. Batch 05.5 is LATER. Seed and Phase 06 remain NOT STARTED. No Contentful access is authorized by this reconciliation.
+The original `phase05-seed-20260929-0254z` mutation authorization is CONSUMED / CLOSED / NEVER REUSE. This documentation-only checkpoint-semantics correction and the containing commit grant no Contentful access. The [Project State lifecycle](../PROJECT-STATE.md#recovery-tooling-checkpoint-lifecycle) requires the containing-commit checkpoint, push, clean synchronized `master`, and External Checkpoint Validation PASS before a separately authorized fresh recovery read-only pre-execution gate; external validation of that gate and separate one-time mutation authorization must precede recovery. The [05.4 incident/recovery report](../../content-model/reports/PHASE-05-BATCH-05.4-SEED-EXECUTION-INCIDENT-AND-RECOVERY.md) owns the preserved execution and forensic evidence, external implementation review qualification, and separately recorded local verification results. Its [checkpoint-semantics correction record](../../content-model/reports/PHASE-05-BATCH-05.4-SEED-EXECUTION-INCIDENT-AND-RECOVERY.md#checkpoint-semantics-correction) preserves the blocked External Final Validation attempt and technical/package PASS; the corrected exact state requires a new External Final Validation before commit.
 
 Phase plan: [Phase 05](../phases/PHASE-05-REPRESENTATIVE-SEED-CONTENT.md).
 Lifecycle evidence: [historical Batch 05.1 report](../../content-model/reports/PHASE-05-BATCH-05.1-SEED-PLANNING-AND-SOURCE-READINESS.md) and [Batch 05.2 Final Approval Reconciliation](../../content-model/reports/PHASE-05-BATCH-05.2-SEED-DATASET-ASSET-SOURCES-AND-DRY-RUN-TOOLING.md#final-approval-reconciliation).
@@ -52,7 +54,7 @@ Experience: Hogarth/WWP at Apple - Content Manager; Woods Hole Oceanographic Ins
 
 Use `seed05-<type>-<semantic-key>` and `seed05-asset-<semantic-key>`. The type segment is the approved readable namespace below, not a new Contentful field. IDs are persistent semantic identities, not temporary QA IDs.
 
-Reconciliation verified 42 Entry IDs and 8 Asset IDs, all unique; maximum length 62 characters. No random, environment-specific, private-contact-derived, or `qa04-` IDs are permitted. Live collisions have not been checked.
+Reconciliation verified 42 Entry IDs and 8 Asset IDs, all unique; maximum length 62 characters. No random, environment-specific, private-contact-derived, or `qa04-` IDs are permitted. Historical 05.2 planning did not check live collisions. The later accepted forensic state and the future exact partial-state JIT gate are documented below.
 
 | Frozen Type | Approved Working Entry ID |
 | --- | --- |
@@ -229,25 +231,25 @@ Planning baseline: 42 draft Entries / 0 Entry publications; 8 Asset uploads, cre
 
 Unpublished-Asset reference mechanics: RESOLVED AS A LOCAL CONTRACT DECISION. Processed but unpublished Assets are valid targets for draft-only representative seed Entries. Asset Links contain ordinary sys.type Link / sys.linkType Asset / deterministic sys.id, without publication state. The owner-supplied externally reviewed official semantics distinguish Management/Preview draft content from published Delivery API content; local contentful-management 12.10.0 inspection reveals no contradictory client requirement. Creation, processing and publication are separate operations. The harness creates/processes/readiness-confirms all eight Assets before sending any Entry fields. CDA/public delivery and any later publication remain deferred. This is not a live server or write test, nor a guarantee of public Delivery, CDN access control or production readiness. Any future publication-policy change requires explicit contract/envelope reconciliation.
 
-Manifest representation: publicationPolicy.unpublishedAssetReferences.status is VERIFIED, the existing value accepted by verify-seed.mjs and the harness's separate 05.3 guard. VERIFIED denotes bounded local contract verification here; it is not a new enum or live-tested claim. Its evidence states the scope and retains the prior UNRESOLVED state/history. Publication intent remains draft Entries, unpublished Assets and zero publications; neither script changes.
+Manifest representation: publicationPolicy.unpublishedAssetReferences.status is VERIFIED, the existing value accepted by verify-seed.mjs and the harness's separate 05.3 guard. VERIFIED denotes bounded local contract verification here; it is not a new enum or live-tested claim. Its evidence states the scope and retains the prior UNRESOLVED state/history. Publication intent remains draft Entries, unpublished Assets and zero publications. The later comparison correction does not alter that intent.
 
 Editorial SEO remains limited to the approved title, description, and social-image overrides. Canonical URLs, robots, sitemap, structured data, breadcrumbs, preview exclusion, and metadata fallback behavior remain code/state-owned.
 
 ## Authoring Mechanism and Safety
 
-The approved design is now implemented locally in 05.2: repository-owned seed manifest + guarded SDK harness + credential-free local dry run. The historical 05.1 planning pass implemented no manifest, harness, seed content, or Asset. Local implementation acceptance does not certify the unexecuted live SDK branch.
+The approved blank-state design was implemented locally in 05.2: repository-owned seed manifest + guarded SDK harness + credential-free local dry run. The historical 05.1 planning pass implemented no manifest, harness, seed content, or Asset. Its later one-time live execution stopped after mutation; that incident does not establish a complete seed.
 
 Require deterministic IDs; serialized operations; dev-only enforcement; no automatic upsert or overwrite; collision stop; source, placeholder, and Asset-hash validation; explicit operation ledger; explicit retry disablement on management and upload paths; zero application retry/replay; fail-closed behavior.
 
-Stop on existing IDs, semantic duplicates, version mismatch, partial seed state, unexpected non-seed content, or frozen-model mismatch. Do not repair, clean up, delete/recreate, or automatically rerun. Seed is persistent representative content, not temporary QA.
+Ordinary blank-state execution stops on existing IDs, semantic duplicates, version mismatch, partial seed state, unexpected non-seed content, or frozen-model mismatch. The distinct recovery mode below accepts only the exact governed partial state and must never make ordinary `--execute` automatically resumable. Do not repair, clean up, delete/recreate, or automatically rerun. Seed is persistent representative content, not temporary QA.
 
-SDK processing helpers can perform readiness GETs internally; the implemented local harness contract bounds/counts requests and prohibits hidden retries through explicit processing and bounded polling. The safeguards remain mandatory; live SDK dispatch and server behavior have not been tested.
+SDK processing helpers can perform readiness GETs internally; the implemented local harness contract bounds/counts requests and prohibits hidden retries through explicit processing and bounded polling. The safeguards remain mandatory. The historical partial live execution and its limits are recorded in the incident report; no new live behavior is tested by this correction.
 
 The local dry run makes 0 requests and uses no credentials. A later separately authorized GET-only gate must verify the exact approved Git checkpoint, clean synchronized state, protected blank master, ready dev with the frozen model, expected blank content baseline, approved locale, and no collisions. Historical Phase 04 live evidence does not replace fresh authorization/evidence.
 
-Future mutation authorization must be explicit. Local dry run and authorized GET-only preflight do not consume mutation authority. The first authorized mutation, planned as the first Asset upload, consumes it; any unexpected stop leaves it consumed, preserves partial state, and requires external incident review.
+Future mutation authorization must be explicit and new. Local dry run and GET-only evidence grant no mutation authority. Invocation of an authorized execution command closes its human authority for reuse even if it stops before mutation; the receipt separately records consumption at the first mutation. Any unexpected stop preserves partial state and requires external incident review. No authorization from the original seed run may be reused.
 
-## Operation Envelope - Planning Only
+## Ordinary Blank-State Operation Envelope - Planning Only
 
 These values are NOT authorized live maxima.
 
@@ -280,9 +282,9 @@ Any change to publication, updates, Assets, graph assumptions, or request behavi
 
 ## Protected Boundaries
 
-Keep model ledgers, migration 0001, snapshots, Phase 04 fixtures/reports, package files, and Contentful scripts unchanged in this reconciliation. No migration 0002, credentials, Contentful requests, authoring, export/import, environment lifecycle, staging, commit, push, or Phase 06 work is authorized. Deferred QA Harness Hardening remains post-freeze debt required before another exhaustive QA run, not a requirement to implement that harness during seed planning.
+Keep model ledgers, migration 0001, the seed manifest, all eight Asset source files, snapshots, Phase 04 fixtures/reports, package files, and other Contentful scripts unchanged. The externally accepted `scripts/contentful/seed-content.mjs` is protected from edit during this checkpoint-semantics correction. Only the seven eligible active truth/evidence files may be corrected where required; historical CHANGELOG entries remain unchanged, and the accumulated implementation remains exactly nine paths. No migration 0002, credentials, Contentful requests, authoring, export/import, environment lifecycle, staging, commit, push, or Phase 06 work is authorized. Deferred QA Harness Hardening remains post-freeze debt required before another exhaustive QA run, not a requirement to implement that harness during seed planning.
 
-## Batch 05.2 Local Implementation + Source Continuation
+## Historical Batch 05.2 Local Implementation + Source Continuation
 
 The separately authorized 05.2 local-only pass adds the [manifest](../../content-model/seed/phase-05/seed-manifest.json), [local usage contract](../../content-model/seed/phase-05/README.md), credential-free `verify-seed.mjs`, and future `seed-content.mjs` harness without modifying any existing Contentful script or package. The 05.1 checkpoint is `bb5143c4b14d16a59ceb1c7b9d31d5ba226a1fad`, externally checkpoint-validated PASS.
 
@@ -294,6 +296,44 @@ The final local validator returns READY / exit 0 with 0 placeholders (C 0 / D 0 
 
 The root Asset-source debt is RESOLVED only after all eight exact local files and scoped approvals are verified; its former unresolved/blocking state is preserved in manifest history. The six visual records remove 24 file/accessibility tokens and 12 rights/safety tokens: 36 -> 0. The unchanged resume and portrait plus six exact generated PNGs are 8 / 8 READY LOCALLY. Owner-approved meaningful accessibility text and bounded conceptual-use rights/safety are recorded per file. The later mechanics gate resolves the former UNPUBLISHED_ASSET_REFERENCES_UNPROVEN blocker at publicationPolicy through bounded contract evidence; no publication-intent change or signature-chain/legal/factual verification is implied. All Entries remain draft and all Assets unpublished. Zero tokens alone never passes; all independent local checks now pass, while external acceptance and live execution remain separately gated.
 
-Planning remains 66 writes / 120-152 execution requests / 143-175 cross-stage requests, never authority. The future harness has explicit no-retry guards, a one-use external receipt, a separately approved 05.3 evidence requirement, fresh bounded JIT checks, and explicit single processing requests with at most five readiness GETs per Asset. No live execution path was invoked.
+Historical blank-state planning was 66 writes / 120-152 execution requests / 143-175 cross-stage requests, never authority. The future harness has explicit no-retry guards, a one-use external receipt, a separately approved 05.3 evidence requirement, fresh bounded JIT checks, and explicit single processing requests with at most five readiness GETs per Asset. At that historical 05.2 stage, no live execution path was invoked.
 
-See the [05.2 implementation and continuation report](../../content-model/reports/PHASE-05-BATCH-05.2-SEED-DATASET-ASSET-SOURCES-AND-DRY-RUN-TOOLING.md#final-approval-reconciliation), including the preserved occurrence classifications and per-ID reduction audits. External review independently verified archive/index and implementation identities, bounded content/Asset evidence, graph arithmetic, and syntax. It did not rerun either self-test suite, the working validator, or plan because supporting runtime artifacts were outside the archive; those results remained supplied workstation evidence. Fresh Node v22.12.0 checks in this reconciliation are new local evidence, not retroactive external test execution. No independent employer, career, legal, PDF/UA, or C2PA signature-chain certification is added. 05.3 remains blocked on the containing-checkpoint lifecycle and separate GET authorization, 05.4 unauthorized, 05.5 later, and seed/Phase 06 not started.
+See the [05.2 implementation and continuation report](../../content-model/reports/PHASE-05-BATCH-05.2-SEED-DATASET-ASSET-SOURCES-AND-DRY-RUN-TOOLING.md#final-approval-reconciliation), including the preserved occurrence classifications and per-ID reduction audits. External review independently verified archive/index and implementation identities, bounded content/Asset evidence, graph arithmetic, and syntax. It did not rerun either self-test suite, the working validator, or plan because supporting runtime artifacts were outside the archive; those results remained supplied workstation evidence. Fresh Node v22.12.0 checks in that 05.2 reconciliation were local evidence, not retroactive external test execution. No independent employer, career, legal, PDF/UA, or C2PA signature-chain certification is added. At that historical stage, 05.3 remained blocked on checkpoint gates and separate GET authorization, 05.4 unauthorized, 05.5 later, and seed/Phase 06 not started. Current lifecycle is owned by Project State above.
+
+
+## Optional Empty Array Representation Contract
+
+Entry comparison may treat an expected field value exactly equal to `{"en-US":[]}` as equivalent to an absent actual field only when that field is known in the frozen expected Content Type and has `type = Array` and `required = false`. The frozen model determines eligibility; an arbitrary received model or field name does not. Comparison does not modify the manifest, payload, response, or Content Type.
+
+The same bounded comparison applies immediately after Entry creation and during final Entry validation. Exact optional empty Arrays remain equal. Every other comparison remains strict: required Arrays, non-empty Arrays, `null`, empty objects or strings, absent required or non-Array fields, wrong locales, changed reference IDs/order, scalars, Rich Text, Dates, Booleans, Content Type identity, and publication/archival metadata must not be normalized. Assets retain all existing checks.
+
+The manifest-wide field/locale audit must inspect all 42 Entries before accepting the recovery plan. Its sole allowed localized empty Array is `seed05-experience-whoi-frontend-developer.fields.tools.en-US`. Additional localized empty Arrays stop recovery planning; they do not silently broaden this incident contract. Nested Rich Text `marks`/`content` arrays are not localized top-level Contentful field Arrays.
+
+## Distinct Partial-State Recovery Contract
+
+Ordinary `--execute` remains a blank-state create-only operation. Explicit `--recover-partial` selects a separate contract. A future execution requires a NEW external authorization with operation `phase05-seed-recovery`, bound to the corrected accepted checkpoint, unchanged manifest and migration, intended space/environment, exact partial-state evidence, expiry, and exact request envelope. It must reject the consumed `phase05-seed-20260929-0254z` and earlier seed authorizations. This contract is tooling policy, not an authorization file or approval for live use.
+
+Before any future recovery mutation, the same serialized 23-GET ledger must prove ready blank `master`, ready `dev`, the exact frozen model and Editor Interfaces, `en-US`, zero tags and zero material drift. Content inventory must be exactly the accepted partial state: 21 expected Entries and all eight expected Assets, no unexpected IDs, all 29 unpublished and unarchived, and all remaining 21 manifest Entries absent. Twenty existing Entries require strict manifest equality. WHOI may differ only through the optional-empty-Array rule above. Existing Assets must pass every accepted metadata, MIME/size, processed-file URL, and state predicate. Any divergence stops before mutation.
+
+Recovery preserves all 29 existing objects and creates only the 21 absent Entries in the unchanged graph's dependency order. The first absent Entry must be `seed05-person-profile-gilberto-haro`; a different order stops the plan. Existing-object writes, Asset uploads/creates/processes/updates, Entry updates, deletes, unpublishes, and publications are all zero. No overwrite, upsert, repair, retry, request replay, or automatic cleanup is permitted.
+
+| Recovery operation | Planned | Maximum |
+| --- | ---: | ---: |
+| JIT baseline GETs | 23 | 23 |
+| Remaining Entry creates | 21 | 21 |
+| Final validation GETs | 23 | 23 |
+| Total writes | 21 | 21 |
+| Total requests | 67 | 67 |
+| Existing-object writes / publications / retries | 0 | 0 |
+
+These totals must be derived from the implementation's baseline ledger and dependency-ordered absent set. They are not mutation authority. Final validation must prove blank `master` and exact `dev`: 10 published frozen Content Types, 10 Editor Interfaces, 42 expected draft/unarchived Entries, eight processed/unpublished/unarchived Assets, zero tags, `en-US`, and zero material drift. Entry equality uses the same bounded representation rule. No Delivery API readiness claim follows.
+
+## Credential-Free Recovery Plan
+
+```sh
+node scripts/contentful/seed-content.mjs --recover-partial --plan \
+  --evidence /absolute/external/path/POST-STOP-FORENSIC-EVIDENCE.json \
+  --manifest content-model/seed/phase-05/seed-manifest.json
+```
+
+The external forensic input is read-only evidence, never executable instructions or mutation authority. The plan must validate its supplied actual partial-state data against the manifest and frozen model. Invalid, incomplete, or divergent evidence cannot produce a false PASS. Successful local output reports 21 existing Entries, eight existing Assets, 21 remaining creates, zero existing-object writes, 21 total writes, 67 planned / maximum requests, and zero publications. Planning loads no environment file or credentials, creates no real client, and makes zero Contentful requests. Live recovery remains NOT AUTHORIZED.

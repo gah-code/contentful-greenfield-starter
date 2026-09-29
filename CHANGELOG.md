@@ -6,6 +6,8 @@ All meaningful project changes should be recorded here.
 
 ### Added
 
+- Phase 05 / Batch 05.4 incident and recovery report preserving the consumed execution, externally accepted forensics, and local correction evidence.
+
 Historical Batch 05.1 additions below describe that planning stage, before the later 05.2 dataset and harness implementation:
 
 - Canonical Phase 05 Representative Seed Content phase plan, seed planning contract, and Batch 05.1 source-readiness evidence report; no seed dataset or harness implemented.
@@ -39,6 +41,17 @@ Historical Batch 05.1 additions below describe that planning stage, before the l
 - Accept the initial mixed baseline/CMS commit as a recorded deviation instead of rewriting history.
 
 ### Changed
+
+- Recorded recovery tooling External Implementation Validation — PASS WITH NOTES and implemented documentation-only Final Approval Reconciliation, ready for External Final Validation. The recovery tooling checkpoint is NOT YET ESTABLISHED. The accepted harness and frozen inputs remain unchanged.
+- Preserved the external review qualification: packaged source, diff, hashes, captured outputs, fail-closed logic, and independent syntax checks were reviewed; the complete suites were not rerun under the exact installed Node v22.12.0 environment. Fresh local verification is recorded separately in the [incident/recovery report](content-model/reports/PHASE-05-BATCH-05.4-SEED-EXECUTION-INCIDENT-AND-RECOVERY.md#final-approval-reconciliation).
+
+Historical 05.4 incident reconciliation and implementation records:
+
+- Reconciled Phase 05 current truth: 05.2 checkpointed, 05.3 externally validated with expired historical freshness, and 05.4 stopped after mutation with externally validated forensics and preserved partial live state.
+- Implemented the local 05.4 recovery tooling correction: optional empty Array omission equivalence bounded by the frozen model, with a distinct recovery mode preserving all existing objects. Network-blocked checks passed 43 validator and 118 harness self-tests, working validation, ordinary planning and evidence-backed recovery planning; verification details belong to the incident report.
+- Preserved the original execution failure and closed authorization; recovery mutation remains NOT AUTHORIZED, 05.5 BLOCKED, and Phase 06 NOT STARTED. This correction permits no Contentful access, credentials, environment loading, staging, commit, or push.
+
+Historical Batch 05.2 reconciliation records below describe its pre-checkpoint stage; those gates were later satisfied:
 
 - Recorded Batch 05.2 implementation External Validation PASS WITH NOTES and implemented its bounded documentation-only Final Approval Reconciliation; the exact implementation, Assets, and prior evidence remain unchanged.
 - Preserved the external review's independently completed artifact, syntax, and bounded checks separately from its supplied workstation evidence. The external review did not execute the full suites, working-tree validator, or plan.
