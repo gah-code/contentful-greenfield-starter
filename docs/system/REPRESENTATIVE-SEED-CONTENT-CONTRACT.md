@@ -1,10 +1,10 @@
 # Representative Seed Content Contract
 
-Status: Batch 05.4 incident forensics EXTERNALLY VALIDATED — PASS WITH NOTES
-Recovery tooling: EXTERNAL IMPLEMENTATION VALIDATION — PASS WITH NOTES
-Final Approval Reconciliation: COMPLETE
-Recovery tooling checkpoint: containing-commit rule requires exact-state External Final Validation PASS before commit and separate owner Git authorization
-Scope: unchanged accepted manifest, bounded Entry comparison, distinct recovery tooling; no Contentful or recovery execution authority
+Status: Batch 05.4 controlled recovery COMPLETE / EXTERNALLY VALIDATED — PASS WITH NOTES
+Recovery tooling: APPROVED / CHECKPOINTED at `ff130d55ed2cfd212c33d6fa65798fc81001cbe2`; External Checkpoint Validation PASS WITH NOTES
+Recovery Execution Final Approval Reconciliation: COMPLETE
+Seed: 42 draft/unarchived Entries / 8 processed unpublished/unarchived Assets / NOT PHASE-CLOSED / publications 0
+Scope: documentation reconciliation only; unchanged manifest, comparison contract and recovery tooling; no new Contentful authority
 Owner: Phase 05 - Representative Seed Content
 
 ## Governance and Lifecycle
@@ -13,9 +13,11 @@ Phase 04 and semantic model `v1.0.0` are COMPLETE / FROZEN at checkpoint `6fdb16
 
 The initial Batch 05.1 planning/source-readiness gate remains historical **BLOCKED - representative seed contract could not yet be safely implemented; source readiness incomplete**. The user later supplied additional resume/public-source planning material and explicitly approved a planning-only placeholder strategy. Source-Readiness Reconciliation and its External Validation both returned PASS WITH NOTES. Its Final Approval Reconciliation and externally validated checkpoint `bb5143c4b14d16a59ceb1c7b9d31d5ba226a1fad` established Phase 05 ACTIVE and permitted local 05.2 work; the initial result remains unchanged history.
 
-Batch 05.2 is APPROVED / CHECKPOINTED at `7742e5f7fb251cec3db8b3c21947d61ae29a4f5b`. Its former pre-commit and checkpoint gates were satisfied before the later operations. Current lifecycle is owned by [Project State](../PROJECT-STATE.md): 05.3 is externally validated with expired historical freshness; 05.4 stopped after mutation and its incident forensics are externally validated. The accepted partial live state is preserved. Recovery mutation is NOT AUTHORIZED, 05.5 is BLOCKED, and Phase 06 is NOT STARTED.
+Batch 05.2 is APPROVED / CHECKPOINTED at `7742e5f7fb251cec3db8b3c21947d61ae29a4f5b`. Current lifecycle is owned by [Project State](../PROJECT-STATE.md): 05.3 is externally validated with expired historical freshness. The original 05.4 STOPPED AFTER MUTATION result and externally validated incident forensics remain historical. Recovery tooling was approved and checkpointed, the fresh recovery pre-execution gate was externally validated PASS WITH NOTES, and one controlled recovery completed and received External Recovery Execution Validation PASS WITH NOTES. The accepted seed is now 42 draft/unarchived Entries and eight processed/unpublished/unarchived Assets, with zero publications; Phase 05 is ACTIVE, 05.5 is BLOCKED, and Phase 06 is NOT STARTED.
 
-The original `phase05-seed-20260929-0254z` mutation authorization is CONSUMED / CLOSED / NEVER REUSE. This documentation-only checkpoint-semantics correction and the containing commit grant no Contentful access. The [Project State lifecycle](../PROJECT-STATE.md#recovery-tooling-checkpoint-lifecycle) requires the containing-commit checkpoint, push, clean synchronized `master`, and External Checkpoint Validation PASS before a separately authorized fresh recovery read-only pre-execution gate; external validation of that gate and separate one-time mutation authorization must precede recovery. The [05.4 incident/recovery report](../../content-model/reports/PHASE-05-BATCH-05.4-SEED-EXECUTION-INCIDENT-AND-RECOVERY.md) owns the preserved execution and forensic evidence, external implementation review qualification, and separately recorded local verification results. Its [checkpoint-semantics correction record](../../content-model/reports/PHASE-05-BATCH-05.4-SEED-EXECUTION-INCIDENT-AND-RECOVERY.md#checkpoint-semantics-correction) preserves the blocked External Final Validation attempt and technical/package PASS; the corrected exact state requires a new External Final Validation before commit.
+The original `phase05-seed-20260929-0254z` mutation authorization remains CONSUMED / CLOSED / NEVER REUSE. Recovery authorization `phase05-seed-recovery-20260929-0714z` is CONSUMED / CLOSED / NO REUSE. This documentation reconciliation grants no Contentful access. Under the [Project State lifecycle](../PROJECT-STATE.md#recovery-execution-reconciliation-checkpoint-lifecycle), External Final Validation must pass for this exact reconciliation before commit and the owner must separately authorize the Git checkpoint; the containing commit then establishes the recovery-execution reconciliation checkpoint. Push, clean synchronized `master` and External Checkpoint Validation PASS must follow before the separately authorized 05.5 read-only validation / publication-state reconciliation gate begins. The containing commit grants no publication or 05.5 authority.
+
+The [05.4 incident/recovery report](../../content-model/reports/PHASE-05-BATCH-05.4-SEED-EXECUTION-INCIDENT-AND-RECOVERY.md#recovery-execution-final-approval-reconciliation) owns the full incident-to-recovery sequence, artifact identities, and evidence qualifications. Recovery acceptance relies on exact receipt sequencing, 67/67 SUCCESS, committed harness control flow, and terminal COMPLETE, which requires final validation and `validateExistingPreserved(initial, final)`. The receipt does not retain complete raw JIT/final baseline response bodies or separate baseline/preservation PASS rows. No post-harness Contentful probe occurred, and this reconciliation adds no live observation.
 
 Phase plan: [Phase 05](../phases/PHASE-05-REPRESENTATIVE-SEED-CONTENT.md).
 Lifecycle evidence: [historical Batch 05.1 report](../../content-model/reports/PHASE-05-BATCH-05.1-SEED-PLANNING-AND-SOURCE-READINESS.md) and [Batch 05.2 Final Approval Reconciliation](../../content-model/reports/PHASE-05-BATCH-05.2-SEED-DATASET-ASSET-SOURCES-AND-DRY-RUN-TOOLING.md#final-approval-reconciliation).
@@ -54,7 +56,7 @@ Experience: Hogarth/WWP at Apple - Content Manager; Woods Hole Oceanographic Ins
 
 Use `seed05-<type>-<semantic-key>` and `seed05-asset-<semantic-key>`. The type segment is the approved readable namespace below, not a new Contentful field. IDs are persistent semantic identities, not temporary QA IDs.
 
-Reconciliation verified 42 Entry IDs and 8 Asset IDs, all unique; maximum length 62 characters. No random, environment-specific, private-contact-derived, or `qa04-` IDs are permitted. Historical 05.2 planning did not check live collisions. The later accepted forensic state and the future exact partial-state JIT gate are documented below.
+Reconciliation verified 42 Entry IDs and 8 Asset IDs, all unique; maximum length 62 characters. No random, environment-specific, private-contact-derived, or `qa04-` IDs are permitted. Historical 05.2 planning did not check live collisions. The later forensic partial state and the exact JIT contract used by the completed one-time recovery are documented below.
 
 | Frozen Type | Approved Working Entry ID |
 | --- | --- |
@@ -245,7 +247,7 @@ Ordinary blank-state execution stops on existing IDs, semantic duplicates, versi
 
 SDK processing helpers can perform readiness GETs internally; the implemented local harness contract bounds/counts requests and prohibits hidden retries through explicit processing and bounded polling. The safeguards remain mandatory. The historical partial live execution and its limits are recorded in the incident report; no new live behavior is tested by this correction.
 
-The local dry run makes 0 requests and uses no credentials. A later separately authorized GET-only gate must verify the exact approved Git checkpoint, clean synchronized state, protected blank master, ready dev with the frozen model, expected blank content baseline, approved locale, and no collisions. Historical Phase 04 live evidence does not replace fresh authorization/evidence.
+The local dry run makes 0 requests and uses no credentials. The ordinary blank-state execution contract requires a separately authorized GET-only gate to verify the exact approved Git checkpoint, clean synchronized state, protected blank master, ready dev with the frozen model, expected blank content baseline, approved locale, and no collisions. That blank baseline is not the current accepted seed state, and ordinary execution must not be rerun against it. Historical Phase 04 live evidence does not replace fresh authorization/evidence.
 
 Future mutation authorization must be explicit and new. Local dry run and GET-only evidence grant no mutation authority. Invocation of an authorized execution command closes its human authority for reuse even if it stops before mutation; the receipt separately records consumption at the first mutation. Any unexpected stop preserves partial state and requires external incident review. No authorization from the original seed run may be reused.
 
@@ -282,7 +284,7 @@ Any change to publication, updates, Assets, graph assumptions, or request behavi
 
 ## Protected Boundaries
 
-Keep model ledgers, migration 0001, the seed manifest, all eight Asset source files, snapshots, Phase 04 fixtures/reports, package files, and other Contentful scripts unchanged. The externally accepted `scripts/contentful/seed-content.mjs` is protected from edit during this checkpoint-semantics correction. Only the seven eligible active truth/evidence files may be corrected where required; historical CHANGELOG entries remain unchanged, and the accumulated implementation remains exactly nine paths. No migration 0002, credentials, Contentful requests, authoring, export/import, environment lifecycle, staging, commit, push, or Phase 06 work is authorized. Deferred QA Harness Hardening remains post-freeze debt required before another exhaustive QA run, not a requirement to implement that harness during seed planning.
+Keep model ledgers, migration 0001, the seed manifest, all eight Asset source files, snapshots, Phase 04 fixtures/reports, package files, and Contentful scripts unchanged. The externally accepted `scripts/contentful/seed-content.mjs` and `verify-seed.mjs` are protected from edit during this recovery-execution reconciliation. Changes are confined to the eight approved documentation paths where required; historical evidence remains preserved. No migration 0002, credentials, environment loading, Contentful requests, authoring, export/import, environment lifecycle, staging, commit, push, 05.5, or Phase 06 work is authorized. Deferred QA Harness Hardening remains post-freeze debt required before another exhaustive QA run, not a requirement to implement that harness during seed reconciliation.
 
 ## Historical Batch 05.2 Local Implementation + Source Continuation
 
@@ -311,9 +313,11 @@ The manifest-wide field/locale audit must inspect all 42 Entries before acceptin
 
 ## Distinct Partial-State Recovery Contract
 
-Ordinary `--execute` remains a blank-state create-only operation. Explicit `--recover-partial` selects a separate contract. A future execution requires a NEW external authorization with operation `phase05-seed-recovery`, bound to the corrected accepted checkpoint, unchanged manifest and migration, intended space/environment, exact partial-state evidence, expiry, and exact request envelope. It must reject the consumed `phase05-seed-20260929-0254z` and earlier seed authorizations. This contract is tooling policy, not an authorization file or approval for live use.
+This is the preserved tooling contract used by the completed one-time recovery, not a current partial-state inventory or a continuation instruction. The 21 formerly absent Entries are now present; the accepted 42-Entry state must fail this recovery mode's partial-state gate. Recovery authorization `phase05-seed-recovery-20260929-0714z` is consumed and closed with no reuse.
 
-Before any future recovery mutation, the same serialized 23-GET ledger must prove ready blank `master`, ready `dev`, the exact frozen model and Editor Interfaces, `en-US`, zero tags and zero material drift. Content inventory must be exactly the accepted partial state: 21 expected Entries and all eight expected Assets, no unexpected IDs, all 29 unpublished and unarchived, and all remaining 21 manifest Entries absent. Twenty existing Entries require strict manifest equality. WHOI may differ only through the optional-empty-Array rule above. Existing Assets must pass every accepted metadata, MIME/size, processed-file URL, and state predicate. Any divergence stops before mutation.
+Ordinary `--execute` remains a blank-state create-only operation. Explicit `--recover-partial` selects a separate contract requiring a new external authorization with operation `phase05-seed-recovery`, bound to the corrected accepted checkpoint, unchanged manifest and migration, intended space/environment, exact partial-state evidence, expiry, and exact request envelope. It must reject the consumed `phase05-seed-20260929-0254z` and earlier seed authorizations. This contract is preserved tooling policy, not an authorization file or approval for another live invocation.
+
+The recovery JIT contract requires the serialized 23-GET ledger to prove ready blank `master`, ready `dev`, the exact frozen model and Editor Interfaces, `en-US`, zero tags and zero material drift. Content inventory must be exactly the historical accepted partial state: 21 expected Entries and all eight expected Assets, no unexpected IDs, all 29 unpublished and unarchived, and all remaining 21 manifest Entries absent. Twenty existing Entries require strict manifest equality. WHOI may differ only through the optional-empty-Array rule above. Existing Assets must pass every accepted metadata, MIME/size, processed-file URL, and state predicate. Any divergence stops before mutation.
 
 Recovery preserves all 29 existing objects and creates only the 21 absent Entries in the unchanged graph's dependency order. The first absent Entry must be `seed05-person-profile-gilberto-haro`; a different order stops the plan. Existing-object writes, Asset uploads/creates/processes/updates, Entry updates, deletes, unpublishes, and publications are all zero. No overwrite, upsert, repair, retry, request replay, or automatic cleanup is permitted.
 
@@ -328,7 +332,9 @@ Recovery preserves all 29 existing objects and creates only the 21 absent Entrie
 
 These totals must be derived from the implementation's baseline ledger and dependency-ordered absent set. They are not mutation authority. Final validation must prove blank `master` and exact `dev`: 10 published frozen Content Types, 10 Editor Interfaces, 42 expected draft/unarchived Entries, eight processed/unpublished/unarchived Assets, zero tags, `en-US`, and zero material drift. Entry equality uses the same bounded representation rule. No Delivery API readiness claim follows.
 
-## Credential-Free Recovery Plan
+## Historical Credential-Free Recovery Plan
+
+The following local plan reproduces the historical partial-state contract from preserved forensic evidence. Its 21-Entry baseline is not the accepted post-recovery live state, and its output cannot authorize another execution.
 
 ```sh
 node scripts/contentful/seed-content.mjs --recover-partial --plan \
@@ -336,4 +342,4 @@ node scripts/contentful/seed-content.mjs --recover-partial --plan \
   --manifest content-model/seed/phase-05/seed-manifest.json
 ```
 
-The external forensic input is read-only evidence, never executable instructions or mutation authority. The plan must validate its supplied actual partial-state data against the manifest and frozen model. Invalid, incomplete, or divergent evidence cannot produce a false PASS. Successful local output reports 21 existing Entries, eight existing Assets, 21 remaining creates, zero existing-object writes, 21 total writes, 67 planned / maximum requests, and zero publications. Planning loads no environment file or credentials, creates no real client, and makes zero Contentful requests. Live recovery remains NOT AUTHORIZED.
+The external forensic input is read-only evidence, never executable instructions or mutation authority. The plan must validate its supplied actual partial-state data against the manifest and frozen model. Invalid, incomplete, or divergent evidence cannot produce a false PASS. Successful output for the historical evidence reports 21 existing Entries, eight existing Assets, 21 remaining creates, zero existing-object writes, 21 total writes, 67 planned / maximum requests, and zero publications. Planning loads no environment file or credentials, creates no real client, and makes zero Contentful requests. The one-time recovery is COMPLETE and externally validated PASS WITH NOTES; its authority is CONSUMED / CLOSED / NO REUSE. No additional live operation follows from this plan.

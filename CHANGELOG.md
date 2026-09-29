@@ -42,6 +42,11 @@ Historical Batch 05.1 additions below describe that planning stage, before the l
 
 ### Changed
 
+- Recorded Batch 05.4 controlled recovery COMPLETE / External Recovery Execution Validation PASS WITH NOTES: one invocation, 67/67 successful requests (46 GET / 21 Entry-create PUT), 42 draft Entries and eight processed unpublished Assets, original 29 objects preserved, and zero existing-object writes/publications/cleanup. Recovery authorization `phase05-seed-recovery-20260929-0714z` is CONSUMED / CLOSED / NO REUSE; the original stopped execution and Class B forensics remain historical evidence.
+- Completed documentation-only Recovery Execution Final Approval Reconciliation, preserving the receipt/control-flow qualification and narrow GitGuardian false-positive disposition. The exact-state containing-commit rule and blocked 05.5 entry chain are owned by [Project State](docs/PROJECT-STATE.md#recovery-execution-reconciliation-checkpoint-lifecycle); Phase 05 remains ACTIVE and the seed is NOT PHASE-CLOSED.
+
+Earlier entries below describe their respective historical stages, including superseded pre-execution status:
+
 - Recorded recovery tooling External Implementation Validation — PASS WITH NOTES and implemented documentation-only Final Approval Reconciliation, ready for External Final Validation. The recovery tooling checkpoint is NOT YET ESTABLISHED. The accepted harness and frozen inputs remain unchanged.
 - Preserved the external review qualification: packaged source, diff, hashes, captured outputs, fail-closed logic, and independent syntax checks were reviewed; the complete suites were not rerun under the exact installed Node v22.12.0 environment. Fresh local verification is recorded separately in the [incident/recovery report](content-model/reports/PHASE-05-BATCH-05.4-SEED-EXECUTION-INCIDENT-AND-RECOVERY.md#final-approval-reconciliation).
 

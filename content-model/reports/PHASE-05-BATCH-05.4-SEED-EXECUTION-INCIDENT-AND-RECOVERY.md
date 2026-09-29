@@ -1,11 +1,17 @@
 # Phase 05 / Batch 05.4 - Seed Execution Incident and Recovery
 
-Status: INCIDENT PRESERVED / FORENSICS EXTERNALLY VALIDATED — PASS WITH NOTES / RECOVERY TOOLING EXTERNAL IMPLEMENTATION VALIDATION — PASS WITH NOTES
-Final Approval Reconciliation: COMPLETE
-External Final Validation: REQUIRED PRE-COMMIT GATE FOR THE EXACT RECONCILED STATE
-Recovery tooling checkpoint: the commit containing this exact state establishes the checkpoint only if External Final Validation passed for that exact state before commit and the owner separately authorized the Git checkpoint
-Recovery mutation: NOT AUTHORIZED
-Scope: documentation-only checkpoint semantics, local preservation checks, and external review packaging; technical files protected
+Status: ORIGINAL INCIDENT PRESERVED / CONTROLLED RECOVERY COMPLETE / EXTERNAL RECOVERY EXECUTION VALIDATION — PASS WITH NOTES
+Recovery tooling: APPROVED / CHECKPOINTED at `ff130d55ed2cfd212c33d6fa65798fc81001cbe2`; External Checkpoint Validation PASS WITH NOTES
+Recovery Execution Final Approval Reconciliation: COMPLETE
+External Final Validation: REQUIRED PRE-COMMIT GATE FOR THE EXACT RECOVERY-EXECUTION RECONCILIATION STATE
+Recovery-execution checkpoint: governed by the exact-state containing-commit rule in [Project State](../../docs/PROJECT-STATE.md#recovery-execution-reconciliation-checkpoint-lifecycle)
+Recovery authorization: `phase05-seed-recovery-20260929-0714z` — CONSUMED / CLOSED / NO REUSE
+Seed: 42 DRAFT ENTRIES / 8 PROCESSED UNPUBLISHED ASSETS / NOT PHASE-CLOSED
+Publication: 0
+05.5: BLOCKED pending the reconciliation checkpoint lifecycle and separate read authorization
+Scope: documentation/state reconciliation and local preservation only; technical files protected; zero Contentful access
+
+**Historical record boundary:** the sections from Ownership and Accepted Inputs through Checkpoint-Semantics Correction record the earlier incident, forensic investigation and recovery-tooling work. Their then-current partial state, future recovery plan and authorization restrictions remain historical evidence. The later completed recovery, external acceptance and current reconciliation are recorded under [Recovery Execution Final Approval Reconciliation](#recovery-execution-final-approval-reconciliation). Current lifecycle is owned by Project State.
 
 ## Ownership and Accepted Inputs
 
@@ -171,7 +177,7 @@ All eight Asset sources, frozen model/field/validation/Editor Interface contract
 
 This correction's Contentful method totals are GET/POST/PUT/PATCH/DELETE = **0/0/0/0/0**. Historical execution and forensic requests above belong to their separate consumed authorizations.
 
-The current state remains partial and evidence-bounded. The 102 validation objects are not 102 completed live QA scenarios. Phase 04 exhaustive QA remains incomplete with Option B/R88 history preserved. Accepted Asset source rights, public-safety and C2PA limitations remain unchanged. External implementation validation has passed with notes; the containing-commit and next-live-gate rules below govern further advancement. Batch 05.5 stays BLOCKED, Phase 05 ACTIVE, seed PARTIAL LIVE STATE PRESERVED, and Phase 06 NOT STARTED.
+At that historical tooling-correction stage, the state remained partial and evidence-bounded. The 102 validation objects are not 102 completed live QA scenarios. Phase 04 exhaustive QA remains incomplete with Option B/R88 history preserved. Accepted Asset source rights, public-safety and C2PA limitations remain unchanged. External implementation validation has passed with notes; the containing-commit and next-live-gate rules below govern further advancement. Batch 05.5 stays BLOCKED, Phase 05 ACTIVE, seed PARTIAL LIVE STATE PRESERVED, and Phase 06 NOT STARTED.
 
 ## Final Approval Reconciliation
 
@@ -228,6 +234,8 @@ Recovery mutation is NOT AUTHORIZED; the earlier authority is CONSUMED / CLOSED 
 
 ## Checkpoint-Semantics Correction
 
+This section preserves the earlier blocked review and documentation correction. A separate resumed External Final Validation later passed, followed by tooling checkpoint `ff130d55ed2cfd212c33d6fa65798fc81001cbe2` and External Checkpoint Validation PASS WITH NOTES. The historical BLOCKED attempt remains unchanged; the completed recovery is recorded below.
+
 The owner supplied the controlling External Final Validation result: **BLOCKED — CHECKPOINT-SEMANTICS CORRECTION REQUIRED**. Technical/package validation otherwise returned **PASS**. The sole blocker was active checkpoint wording that would become false when the externally validated containing commit was created. It was not a recovery-tooling, model, manifest, live-state, or request-envelope defect. This blocked attempt remains BLOCKED; it is not rewritten as PASS. The corrected exact state requires a new External Final Validation PASS before commit.
 
 The exact starting final-reconciliation package was verified and preserved at `/Users/gilbertharo/Downloads/building-up-handoff/2026-09-23T224950Z/cms/recovery-tooling-final-05-4-2026-09-29T043928530084Z/`:
@@ -248,7 +256,7 @@ This rule is true before the future commit, after its creation and after push; i
 
 ### Next Live Gate
 
-Current lifecycle: **BATCH 05.4 — RECOVERY TOOLING CHECKPOINT LIFECYCLE / LIVE RECOVERY BLOCKED**. The next live work is the **fresh read-only recovery pre-execution gate**, only after the containing-commit checkpoint, push, clean synchronized `master` and External Checkpoint Validation PASS. The full prerequisite chain is:
+At that historical correction, the lifecycle was **BATCH 05.4 — RECOVERY TOOLING CHECKPOINT LIFECYCLE / LIVE RECOVERY BLOCKED**. The then-next live work was the **fresh read-only recovery pre-execution gate**, only after the containing-commit checkpoint, push, clean synchronized `master` and External Checkpoint Validation PASS. The full prerequisite chain is:
 
 ```text
 Recovery tooling containing-commit checkpoint
@@ -273,3 +281,68 @@ This documentation-only gate uses whitespace, exact-scope, byte-identity and sta
 Local preservation checks passed: `git diff --check`, exact accumulated nine-path scope, empty staging, unchanged HEAD/tree/local `origin/master`, and 0 ahead / 0 behind. Exactly seven eligible documentation files changed in this correction; all 79 other recorded files, including CHANGELOG and the harness, retain their starting bytes and modes. The three starting final-review artifacts also remain byte-identical. No repository file was added, renamed or deleted in this correction.
 
 The active wording review found no self-invalidating readiness, pending/next validation, or unestablished-checkpoint assertion. Remaining transient phrases belong only to the explicitly historical final-reconciliation endpoint, unchanged historical 05.2 contract evidence, or older Phase 03 history. The containing-commit rule and separately authorized next-live-gate chain apply before commit, after commit and after push without another truth-only commit.
+
+## Recovery Execution Final Approval Reconciliation
+
+The controlling **External Recovery Execution Validation: PASS WITH NOTES** accepts the completed partial recovery. This documentation-only reconciliation is **COMPLETE**. It records the accepted execution endpoint without performing another live observation or modifying the harness, validator, manifest, migration, Assets or frozen model. [Project State](../../docs/PROJECT-STATE.md#recovery-execution-reconciliation-checkpoint-lifecycle) owns current lifecycle and the durable checkpoint rule; this section owns execution provenance, evidence qualifications and the narrow security disposition.
+
+### Accepted Recovery Artifacts
+
+The authorization, receipt, execution evidence and external validation Markdown were freshly verified at their actual existing paths against these exact identities. The Markdown was read in full. The independent-results JSON was not present at its checked literal default Downloads path; its identity below is the owner's supplied reference, not a claim of an independently read local file. The supplied decision and verified Markdown establish the controlling acceptance; no substitute report or extra repository file is created.
+
+| Artifact | Bytes | SHA-256 | Identity provenance in this reconciliation |
+| --- | ---: | --- | --- |
+| `PHASE-05-BATCH-05.4-RECOVERY-AUTHORIZATION.json` | 2,905 | `55207e667b60a8d065bf0ac3e61ff3fd833cff002ee861b914176aaaaacd709a` | Actual local file verified; preserved unchanged |
+| `seed05-phase05-seed-recovery-20260929-0714z.receipt.jsonl` | 23,034 | `18b2ca10a5d4aa1ea548cd3902215adf53c0e306a11f9c02a3ffd7126313e11f` | Actual local file verified; preserved unchanged |
+| `RECOVERY-EXECUTION-EVIDENCE.json` | 111,679 | `7fbb1d1d22e042363d03b362bfe956de366539062e35c5c16149e071dd372d46` | Actual local file verified; preserved unchanged |
+| `PHASE-05-BATCH-05.4-EXTERNAL-RECOVERY-EXECUTION-VALIDATION.md` | 3,690 | `abf43f5c89a474309d2737f07090cb8810d19a372de0f87d4e30190040f764fb` | Actual local file verified and read in full |
+| `INDEPENDENT-05.4-RECOVERY-EXECUTION-VALIDATION-RESULTS.json` | 9,388 | `6236a5442282e0205d47f67277ef3d67ffd353b763f34da70931d3cdc1536c1d` | Owner-supplied reference only; unavailable at checked default path |
+
+The authorization, receipt and validation Markdown were verified under `/Users/gilbertharo/Downloads/`; the independent-results reference was checked there and was unavailable. The execution evidence was verified at `/Users/gilbertharo/Downloads/building-up-handoff/2026-09-23T224950Z/cms/recovery-execution-05-4-2026-09-29T072333972785Z/RECOVERY-EXECUTION-EVIDENCE.json`. These external inputs remain outside Git. Review packaging contains provenance references and hashes, not credentials, environment files or a reusable authorization payload.
+
+### Preserved Sequence and Completed Recovery
+
+The original execution remains **STOPPED AFTER MUTATION**. Its Class B strong forensic inference, WHOI optional empty `tools` Array omission and unavailable original create-response body remain preserved above. Recovery tooling implemented the bounded representation comparison, passed external review, and was checkpointed at `ff130d55ed2cfd212c33d6fa65798fc81001cbe2`, tree `45ab8949163f1869aced7496e601ce681e1b1d7e`. External Checkpoint Validation returned PASS WITH NOTES.
+
+The separately authorized fresh recovery read-only pre-execution gate completed 23 GETs, validated the exact 21-Entry/eight-Asset partial state at `2026-09-29T06:54:38.039Z`, and received External Pre-Execution Validation PASS WITH NOTES. That completed gate, not historical 05.3 evidence, supported the new recovery authorization. The recovery harness independently performed its own 23-GET JIT baseline before the first mutation.
+
+Authorization `phase05-seed-recovery-20260929-0714z`, issued `2026-09-29T07:14:21.000Z` and expiring `2026-09-29T07:45:00.000Z`, governed exactly one invocation. It launched at `2026-09-29T07:24:22.456082Z`, before the conservative `07:35:00Z` deadline, and exited 0 at `2026-09-29T07:24:53.957443Z`. The enclosing execution operation ran from `2026-09-29T07:19:03.964027Z` to `2026-09-29T07:28:19.215494Z`. Human authority closed for reuse at invocation. The receipt separately recorded first-mutation consumption at `2026-09-29T07:24:36.902Z`, immediately before request 24: `entryCreate` for `seed05-person-profile-gilberto-haro`. This authority is **CONSUMED / CLOSED / NO REUSE**. The older `phase05-seed-20260929-0254z` authority also remains CONSUMED / CLOSED / NEVER REUSE.
+
+The 158-record receipt contains one `STARTED_UNCONSUMED`, 67 `ATTEMPT`, 67 `SUCCESS`, one `AUTHORIZATION_CONSUMED`, 21 `ENTRY_COMPARISON` and one terminal `COMPLETE`; no `FAILED_STOP` or `STOPPED` row occurs. A fresh local reconstruction in this reconciliation confirms the same sequence and identities; it is local evidence review, not a new Contentful observation or a new external validation.
+
+| Request range | Completed operation | Count |
+| --- | --- | ---: |
+| 1–23 | JIT baseline GET | 23 |
+| 24–44 | Missing Entry-create PUT | 21 |
+| 45–67 | Final baseline GET | 23 |
+| Total | 46 GET / 21 PUT / 0 POST / 0 PATCH / 0 DELETE | 67 / 67 SUCCESS |
+
+All 21 IDs in the historical Remaining Entry Dependency Order above were created in that exact order. Every create response matched its deterministic ID at version 1. All 21 post-create field comparisons were exact, with zero normalized paths. There were no existing-object writes, Asset uploads/creates/processes/metadata updates, Entry updates, publications, deletes, unpublishes, retries, replay or cleanup. The only writes were the 21 authorized Entry creates. No post-harness Contentful request occurred.
+
+The terminal `COMPLETE` row at `2026-09-29T07:24:53.846Z` reports 67 requests, 42 Entries, eight Assets, 21 Entry creates, zero existing-object writes and zero publications. The accepted final harness endpoint is ready blank `master`; ready `dev` with 10 exact published Content Types, 10 expected Editor Interfaces, 42 exact draft/unarchived Entries, eight exact processed/unpublished/unarchived Assets, zero tags, `en-US` and zero material model drift. The original 21 Entries and eight Assets are preserved unchanged between the JIT and final baselines. WHOI remains subject only to the bounded optional-empty-Array representation equivalence; no other field normalization is introduced.
+
+### External Acceptance Qualification
+
+The recovery receipt does not retain complete raw JIT/final baseline response bodies or separately emit baseline/preservation PASS rows. Individual numeric HTTP status codes are also not retained. External acceptance therefore relies on exact receipt sequencing, **67/67 SUCCESS**, the exact externally reviewed committed recovery harness control flow and terminal **COMPLETE**. Final `validateBaseline(..., true)`, the exact 67-request completeness guard and `validateExistingPreserved(initial, final)` for all 29 pre-existing objects are mandatory before `COMPLETE` can be emitted. The first mutation is reachable only after the JIT partial-state validation passes.
+
+No post-harness Contentful probe occurred. This is not independent retention of raw final response bodies, a new live read, a 102/102 live editorial QA claim or Delivery API readiness. External acceptance, the execution workstation receipt/output and this reconciliation's fresh local preservation/receipt checks remain separate evidence classes.
+
+### Narrow Security Disposition
+
+The owner-inspected GitGuardian occurrence detected `phase05-seed-20260929-0254z` in `scripts/contentful/seed-content.mjs` as `CLOSED_AUTHORIZATION`. Its disposition is **IGNORED / FALSE POSITIVE**, classified as a **NON-SECRET HISTORICAL LIFECYCLE IDENTIFIER**. No Contentful credential was identified by that occurrence. Credential rotation is NOT REQUIRED BY THAT INCIDENT; history rewrite is NOT REQUIRED. This disposition is limited to that exact occurrence and value, not a blanket secret-scanning exemption. No credential inspection, rotation or history rewrite is performed by this reconciliation.
+
+### Current Reconciliation and 05.5 Boundary
+
+Phase 05 remains **ACTIVE**. Recovery tooling is APPROVED / CHECKPOINTED, recovery pre-execution is EXTERNALLY VALIDATED — PASS WITH NOTES, and controlled recovery is **COMPLETE / EXTERNALLY VALIDATED — PASS WITH NOTES**. The seed is **42 DRAFT ENTRIES / 8 PROCESSED UNPUBLISHED ASSETS / NOT PHASE-CLOSED**, with publications **0**. Both the original failure and later successful recovery remain project history. Phase 06 is **NOT STARTED**.
+
+External Final Validation is a required pre-commit gate for this exact recovery-execution reconciliation state. Under the [canonical containing-commit rule](../../docs/PROJECT-STATE.md#recovery-execution-reconciliation-checkpoint-lifecycle), the exact externally final-validated containing commit establishes the recovery-execution checkpoint only after the owner separately authorizes that Git checkpoint. Push, clean synchronized `master` and External Checkpoint Validation PASS must precede separately authorized 05.5 read-only validation / publication-state reconciliation. **05.5 remains BLOCKED** by that chain; the containing commit grants no publication or 05.5 authority.
+
+The reconciliation began on clean `master` at HEAD and local `origin/master` `ff130d55ed2cfd212c33d6fa65798fc81001cbe2`, tree `45ab8949163f1869aced7496e601ce681e1b1d7e`, 0 ahead / 0 behind, empty staging and no non-ignored untracked files. Only the eight approved documentation/state paths are eligible for edits. The existing report is extended; no repository file is added. The harness remains 53,265 bytes / SHA-256 `39d234049382ad5ef770eb69e3e040e9ff69732efc2662760867b0956067d6a3`; validator, manifest, migration and eight Asset source identities are protected, and migration 0002 remains absent. No technical suite or plan is rerun for this documentation-only reconciliation.
+
+This reconciliation's Contentful GET/POST/PUT/PATCH/DELETE totals are **0/0/0/0/0**. Environment-file loading, credential access, real clients, seed/recovery execution, publication, cleanup, UI access, staging, commit and push are zero. Historical execution requests above belong only to the closed recovery authorization.
+
+### Local Documentation and Preservation Verification
+
+The local check at `2026-09-29T07:58:37.654301Z`–`2026-09-29T07:58:38.720670Z` passed `git diff --check`, exact eight-document modified scope, unchanged file modes, empty staging and no non-ignored untracked files. Branch, HEAD, tree and local `origin/master` remain the starting values above, with 0 ahead / 0 behind. The working tree intentionally contains these eight unstaged documentation changes; no checkpoint is performed by this reconciliation.
+
+All 12 protected identities passed byte-count, SHA-256 and mode comparison: the harness, validator, manifest, migration 0001 and eight Asset sources. Migration 0002 and repository-root artifacts `0` and `111` remain absent. The four existing accepted external inputs remain byte-identical. The new canonical lifecycle and report anchors resolve. The final review package repeats preservation and scope checks after this verification record is added and binds the packaged documentation bytes to its identity index. No technical program, self-test, validator, plan or live check is rerun.
