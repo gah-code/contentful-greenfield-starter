@@ -1,10 +1,14 @@
 # Phase 04 — Editorial QA + Model Freeze
 
+Current lifecycle: Phase 04 is COMPLETE / FROZEN at `6fdb16f06c5338e11f08ae0a44180b6db4251611`. Phase 05 is ACTIVE until the [Project State](../PROJECT-STATE.md#phase-05-closeout-containing-commit-rule) closeout containing-commit rule is satisfied; 05.5 read-only validation is COMPLETE / EXTERNALLY VALIDATED — PASS WITH NOTES. Phase 06 is NOT STARTED.
+
+Accepted 05.5 evidence from `2026-09-29T08:54:11.057Z` establishes 42 draft Entries and eight processed unpublished Assets, all unarchived, with zero publications. No October live refresh is claimed. Phase 04 gate results, authorization ledgers and zero-content baselines below preserve their historical stages.
+
 ## Status
 
 | Scope | State |
 | --- | --- |
-| Phase 04 | COMPLETE / FROZEN BY THE FUTURE CLOSEOUT COMMIT CONTAINING THIS DOCUMENT AFTER THE REQUIRED EXTERNAL VALIDATION LIFECYCLE |
+| Phase 04 | COMPLETE / FROZEN AT `6fdb16f06c5338e11f08ae0a44180b6db4251611` / EXTERNAL CHECKPOINT VALIDATION PASS WITH NOTES |
 | Batch 04.1 — Read-Only Planning + Editorial-Quality Preflight | APPROVED / CHECKPOINTED BY THE COMMIT CONTAINING THIS DOCUMENT |
 | Batch 04.2 — Editorial QA Scenario + Temporary Authoring Contract | HISTORICALLY APPROVED / CHECKPOINTED AT `a85ebb37ef0f182b98d914221e70454cebb1351f`; NARROW AUTHORING-ENVELOPE CORRECTION RECONCILED |
 | Batch 04.2 — Post-Checkpoint Truth-Surface Correction | IMPLEMENTATION COMPLETE / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE |
@@ -26,7 +30,7 @@
 | Batch 04.5 — Editorial Workflow + Field Guidance | COMPLETE / CHECKPOINTED AT `157f9dd5d1c471d5e5087c0046b28fa97fb86d91` / EXTERNAL CHECKPOINT VALIDATION PASS / EXACT 44-SCENARIO HANDOFF MAPPED |
 | Batch 04.6 — Model Freeze Validation + Phase 04 Closeout | IMPLEMENTATION COMPLETE / FINAL LIVE VALIDATION PASS WITH NOTES / OPTION B ACCEPTED / `v1.0.0` FREEZE DECISION / POINTER CORRECTION COMPLETE / RESUME EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION COMPLETE / 11 OF 11 EXIT CRITERIA SATISFIED |
 
-The Phase 04 transition and Batch 04.1 checkpoint are established at `33e01ae068769631b3bd997b28711535f7c7b340`. Batch 04.2 remains historically approved / checkpointed, and its Authoring-Envelope Correction is checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. A later separately authorized Batch 04.3 process consumed its one-time authorization, created all 19 temporary Entries and 3 temporary Assets, made 39 Entry update attempts and 0 Entry publication attempts, then stopped fail-closed at R88 after HTTP 422. Forensics confirmed atomic rejection, a transformed-error guard defect, unresolved exact field attribution, and zero model drift without establishing a model or Editor Interface defect. Governed cleanup completed exactly 25 mutations and restored zero-content, zero-drift `dev`. The later exhaustive correction plan preserved 102 scenarios and calculated 220 Entry updates, 2–92 publication attempts, and 494 maximum requests, but was not implemented and does not establish approved future live maxima. Batch 04.3 is conditionally exited for findings handoff without claiming a 102 / 102 live QA pass. Batch 04.4 reconciled the corrected 102-row ledger as CLASS 0 with no model or Editor Interface technical correction. Batch 04.5 is checkpointed at `157f9dd5d1c471d5e5087c0046b28fa97fb86d91`, and External Checkpoint Validation passed. Batch 04.6 final live validation and external review returned PASS WITH NOTES after one process completed exactly 23 GET requests and 0 writes. Option B is accepted with the incomplete-live-QA limitation visible, the model freeze decision is `v1.0.0`, and all 11 Phase 04 exit criteria are satisfied with criteria 3–5 evidence-bounded. The initial reconciliation remained BLOCKED; the three-pointer correction completed, Resume External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. External Final Validation remains required before the future containing closeout commit; only that commit may establish Batch 04.6 and close/freeze Phase 04. Phase 05 entry requires External Checkpoint Validation PASS for that commit.
+The Phase 04 transition and Batch 04.1 checkpoint are established at `33e01ae068769631b3bd997b28711535f7c7b340`. Batch 04.2 remains historically approved / checkpointed, and its Authoring-Envelope Correction is checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. A later separately authorized Batch 04.3 process consumed its one-time authorization, created all 19 temporary Entries and 3 temporary Assets, made 39 Entry update attempts and 0 Entry publication attempts, then stopped fail-closed at R88 after HTTP 422. Forensics confirmed atomic rejection, a transformed-error guard defect, unresolved exact field attribution, and zero model drift without establishing a model or Editor Interface defect. Governed cleanup completed exactly 25 mutations and restored zero-content, zero-drift `dev`. The later exhaustive correction plan preserved 102 scenarios and calculated 220 Entry updates, 2–92 publication attempts, and 494 maximum requests, but was not implemented and does not establish approved future live maxima. Batch 04.3 is conditionally exited for findings handoff without claiming a 102 / 102 live QA pass. Batch 04.4 reconciled the corrected 102-row ledger as CLASS 0 with no model or Editor Interface technical correction. Batch 04.5 is checkpointed at `157f9dd5d1c471d5e5087c0046b28fa97fb86d91`, and External Checkpoint Validation passed. Batch 04.6 final live validation and external review returned PASS WITH NOTES after one process completed exactly 23 GET requests and 0 writes. Option B is accepted with the incomplete-live-QA limitation visible, the model freeze decision is `v1.0.0`, and all 11 Phase 04 exit criteria are satisfied with criteria 3–5 evidence-bounded. The initial reconciliation remained BLOCKED; the three-pointer correction completed, Resume External Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. Those pre-commit conditions were subsequently satisfied: closeout checkpoint `6fdb16f06c5338e11f08ae0a44180b6db4251611` established Batch 04.6 and Phase 04 COMPLETE / FROZEN, and External Checkpoint Validation returned PASS WITH NOTES before Phase 05 entry.
 
 ## Purpose
 
@@ -81,7 +85,7 @@ Final live state, freshly validated during Batch 04.6:
 
 The one-time final GET authorization was consumed and closed at `2026-08-26T03:31:56.610Z` immediately before GET #1. This repository closeout reconciliation did not rerun that validator and made zero Contentful calls.
 
-The historical Batch 04.1 blank-`dev` evidence was superseded by controlled Batch 04.3 execution, its forensic evidence, and governed cleanup. The Batch 04.6 23-GET proof now controls current live state: `master` is ready and blank, while `dev` is ready with the exact zero-drift model and 0 Entries / 0 Assets / 0 tags / no `qa04-` or unexpected artifacts.
+The historical Batch 04.1 blank-`dev` evidence was superseded by controlled Batch 04.3 execution, its forensic evidence, and governed cleanup. The Batch 04.6 23-GET proof is historical Phase 04 closeout evidence: `master` was ready and blank, while `dev` was ready with the exact zero-drift model and 0 Entries / 0 Assets / 0 tags / no `qa04-` or unexpected artifacts. It does not describe the later accepted Phase 05 seed inventory.
 
 ## Phase 04 Batch Architecture
 
@@ -236,7 +240,7 @@ Final validation evidence:
 
 Option B is accepted. Exhaustive 102 / 102 live QA was not completed. Scenario accounting remains 28 PASS / 20 PASS WITH NOTE / 54 NOT EXECUTED DUE STOP. Hard-validation evidence remains 10 fully proven / 15 partial accepted-restored / 2 R88 partial-unattributed / 29 unexecuted, with 0 publication blockers proven. R88 remains preserved. Deferred QA Harness Hardening is documented post-freeze debt required before another exhaustive authoring run; it is not implemented or silently resolved. The 220 Entry updates, 2–92 publication attempts, and 494 maximum requests remain planning values only and grant no authorization.
 
-The governed semantic freeze decision is `v1.0.0`. It creates no Git tag, package-version change, snapshot rename or creation, migration `0002`, or model change. Resume External Validation returned PASS WITH NOTES and Final Approval Reconciliation is complete. The future containing closeout commit establishes the freeze only after External Final Validation passes. Phase 05 entry requires External Checkpoint Validation PASS for that commit.
+The governed semantic freeze decision is `v1.0.0`. It creates no Git tag, package-version change, snapshot rename or creation, migration `0002`, or model change. Resume External Validation returned PASS WITH NOTES and Final Approval Reconciliation is complete. The closeout checkpoint `6fdb16f06c5338e11f08ae0a44180b6db4251611` established the freeze after External Final Validation passed; its External Checkpoint Validation PASS WITH NOTES preceded Phase 05 entry.
 
 Closeout evidence: `content-model/reports/PHASE-04-BATCH-04.6-MODEL-FREEZE-VALIDATION-AND-PHASE-04-CLOSEOUT.md`.
 
@@ -438,14 +442,16 @@ A likely next number is 0002, but no migration name or scope is approved and no 
 ## Model-Version Boundary
 
 - Model freeze decision: `v1.0.0`.
-- Freeze establishment: the future Phase 04 closeout containing commit after the required external validation lifecycle.
+- Freeze establishment: Phase 04 closeout checkpoint `6fdb16f06c5338e11f08ae0a44180b6db4251611` after the required external validation lifecycle; External Checkpoint Validation PASS WITH NOTES.
 - Semantic scope: approved 10 / 99 / 18 / 102 / 10 / 8 / 6 / 2 model with 0 localized fields and 0 material drift.
 
 This decision does not tag the repository, change package versions, rename or create a snapshot, create migration `0002`, or alter migration `0001` or the approved model.
 
-## Authorization Rules
+## Historical Phase 04 Closeout Authorization
 
-| Operation | Current authorization |
+The following ledger records authorization at Phase 04 closeout. Current authority is governed by Project State; no historical one-time authorization can be reused.
+
+| Operation | Authorization at Phase 04 closeout |
 | --- | --- |
 | Contentful access, including GET | NOT AUTHORIZED |
 | Editorial QA entry create/update/publish/unpublish/delete | NOT AUTHORIZED |
@@ -479,4 +485,4 @@ The latest Batch 04.3 authoring authorization is CONSUMED. The separate renewed 
 | 10 | Model version/freeze decision recorded | PASS — `v1.0.0` |
 | 11 | Truth surfaces align | PASS through this bounded closeout reconciliation |
 
-Result: **11 / 11 SATISFIED**, with criteria 3–5 visibly evidence-bounded. Phase 04 becomes COMPLETE / FROZEN only through the future containing closeout commit after the required external validation lifecycle. Phase 05 and seed remain NOT STARTED.
+Result: **11 / 11 SATISFIED**, with criteria 3–5 visibly evidence-bounded. The externally validated closeout checkpoint `6fdb16f06c5338e11f08ae0a44180b6db4251611` established Phase 04 COMPLETE / FROZEN. At that historical closeout, Phase 05 and seed had not started; the later accepted seed evidence and current lifecycle are identified above.

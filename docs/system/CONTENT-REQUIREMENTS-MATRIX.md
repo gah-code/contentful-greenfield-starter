@@ -6,6 +6,8 @@ Source strategy: `docs/system/CONTENT-STRATEGY.md`
 Source route contract: `docs/system/ROUTE-CONTRACT.md`
 Source SEO contract: `docs/system/SEO-AND-METADATA-CONTRACT.md`
 
+Current project lifecycle is owned by [Project State](../PROJECT-STATE.md#phase-05-closeout-containing-commit-rule). Its closeout reconciliation uses accepted 05.5 evidence from `2026-09-29T08:54:11.057Z`; no October live refresh is claimed. That accepted seed state is 42 draft Entries and eight processed unpublished Assets, all unarchived, with zero publications; it establishes no public Delivery API or production publication readiness.
+
 ## Purpose
 
 This is the canonical Phase 01 / Batch 01.4 surface for implementation-facing content requirements.
@@ -16,7 +18,7 @@ This document does not define Contentful field IDs, content types, migrations, f
 
 ## Approved Inputs
 
-Approved current state:
+Historical approved state at Phase 02 closeout:
 
 ```text
 Phase 01 — COMPLETE / FROZEN
@@ -651,7 +653,7 @@ Batch 01.4 is approved after external validation:
 - Batch 01.3 is APPROVED.
 - Batch 01.4 is APPROVED.
 - At Batch 01.4 closeout, Batch 01.5 advanced to NEXT. Batch 01.5 is now APPROVED, and Phase 01 is complete / frozen.
-- At Batch 01.4 closeout, Phase 02 was DEFERRED. Phase 02 is now COMPLETE / FROZEN; Batch 02.1 through Batch 02.4 are APPROVED, Batch 02.5 is RE-APPROVED AFTER COMPATIBILITY CORRECTIONS, Batch 02.6 is APPROVED after successful bootstrap execution in `dev`, and Batch 02.7 is APPROVED after external validation confirmed zero material live-contract drift. Phase 03 is NEXT / NOT STARTED.
+- At Batch 01.4 closeout, Phase 02 was DEFERRED. Phase 02 is now COMPLETE / FROZEN; Batch 02.1 through Batch 02.4 are APPROVED, Batch 02.5 is RE-APPROVED AFTER COMPATIBILITY CORRECTIONS, Batch 02.6 is APPROVED after successful bootstrap execution in `dev`, and Batch 02.7 is APPROVED after external validation confirmed zero material live-contract drift. At that Phase 02 closeout handoff, Phase 03 was NEXT / NOT STARTED.
 - all nine approved routes have content requirements.
 - required, optional, conditional, deferred, and not-applicable requirements are classified.
 - editorial/code/derived/mixed ownership is classified.
@@ -663,6 +665,6 @@ Batch 01.4 is approved after external validation:
 - unrelated open decisions remain visible.
 - no Contentful schema, migration, seed, fixture, or frontend implementation occurred.
 - at Batch 01.4 closeout, the bootstrap migration remained BLOCKED / NOT RUN; Batch 02.6 later executed the approved migration successfully in `dev`.
-- seed content remains NOT STARTED.
+- at that Phase 02 closeout handoff, seed content was NOT STARTED.
 - no files are staged.
 - no commit or push occurs in this implementation pass.

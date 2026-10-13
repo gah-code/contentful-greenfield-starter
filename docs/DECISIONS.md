@@ -224,7 +224,7 @@ The v1 editorial SEO contract excludes:
 
 Status: RESOLVED / APPROVED
 
-Recorded during Phase 01 / Batch 01.4 final approval reconciliation. Phase 01 and Phase 02 are complete / frozen. Batch 02.1 through Batch 02.4 are approved, Batch 02.5 is re-approved after compatibility corrections, Batch 02.6 is approved after successful bootstrap execution in `dev`, and Batch 02.7 is approved after external validation confirmed zero material live-contract drift. Phase 03 is next / not started.
+Recorded during Phase 01 / Batch 01.4 final approval reconciliation. Phase 01 and Phase 02 are complete / frozen. Batch 02.1 through Batch 02.4 are approved, Batch 02.5 is re-approved after compatibility corrections, Batch 02.6 is approved after successful bootstrap execution in `dev`, and Batch 02.7 is approved after external validation confirmed zero material live-contract drift. At that Phase 02 completion handoff, Phase 03 was next / not started. Current project lifecycle is owned by [Project State](PROJECT-STATE.md#phase-05-closeout-containing-commit-rule), using accepted 05.5 evidence from `2026-09-29T08:54:11.057Z`; no October live refresh is claimed.
 
 Batch 01.5 open-decision triage is recorded in `docs/phases/PHASE-01-CONTENT-STRATEGY-AND-ROUTE-CONTRACT.md`. No unrelated open decision is resolved by that validation pass.
 

@@ -1,5 +1,7 @@
 # Field + Field-ID Ledger
 
+Current project lifecycle is owned by [Project State](../PROJECT-STATE.md#phase-05-closeout-containing-commit-rule). Its closeout reconciliation uses accepted 05.5 evidence from `2026-09-29T08:54:11.057Z`; no October live refresh is claimed.
+
 Status: Phase 02 / Batch 02.3 — APPROVED V1 FIELD + FIELD-ID CONTRACT
 Owner: Phase 02 - Content Model Contract + Bootstrap Migration
 
@@ -11,7 +13,7 @@ Field contract status: APPROVED V1 FIELD + FIELD-ID CONTRACT.
 
 This ledger records approved V1 Contentful fields, field IDs, primitive shapes, required-state intent, v1 localization state, semantic purpose, relationship semantic intent, and downstream follow-up questions for the approved 10-type v1 inventory. External Batch 02.3 validation returned PASS WITH NOTES.
 
-Do not run the bootstrap migration from this ledger. Batch 02.5 records the approved RE2-corrected migration against the approved field, reference, validation, and editorial-interface contracts. Batch 02.6 records successful execution in `dev`; Batch 02.7 externally validates the live field contract with zero material drift and closes Phase 02 as complete / frozen. Phase 03 serial clean-room verification is next.
+Do not run the bootstrap migration from this ledger. Batch 02.5 records the approved RE2-corrected migration against the approved field, reference, validation, and editorial-interface contracts. Batch 02.6 records successful execution in `dev`; Batch 02.7 externally validates the live field contract with zero material drift and closes Phase 02 as complete / frozen. At the Phase 02 closeout handoff, Phase 03 serial clean-room verification was next.
 
 Batch 02.4 approves reference cardinality, target restrictions, validation rules, display fields, and editor guidance in `docs/content-model/REFERENCE-MAP.md` and `docs/content-model/VALIDATION-AND-EDITORIAL-CONTRACT.md`. Those documents do not rename approved field IDs or approve migration execution.
 

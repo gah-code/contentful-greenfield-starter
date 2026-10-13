@@ -1,5 +1,7 @@
 # Validation + Editorial Contract
 
+Current project lifecycle is owned by [Project State](../PROJECT-STATE.md#phase-05-closeout-containing-commit-rule). Its closeout reconciliation uses accepted 05.5 evidence from `2026-09-29T08:54:11.057Z`; no October live refresh is claimed.
+
 ## Approval Status
 
 Phase:
@@ -434,7 +436,7 @@ OD-01, OD-02, OD-03, OD-04, OD-05, OD-09, OD-10, and OD-14 remain open content-a
 
 - No Contentful command was run and no live CMS state was read while approving this Batch 02.4 contract.
 - The RE2-corrected migration was approved after Batch 02.5 and executed successfully in `dev` during Batch 02.6.
-- Batch 02.7 externally validates the live validation and explicit editor-interface contracts with zero material drift. Phase 02 is complete / frozen, and Phase 03 serial clean-room verification is next.
+- Batch 02.7 externally validates the live validation and explicit editor-interface contracts with zero material drift. Phase 02 is complete / frozen. At its closeout handoff, Phase 03 serial clean-room verification was next.
 - No fixtures, frontend adapters, or route implementations were created.
 - Cross-field validations may require application/editorial enforcement if Contentful schema validation cannot express them directly.
 

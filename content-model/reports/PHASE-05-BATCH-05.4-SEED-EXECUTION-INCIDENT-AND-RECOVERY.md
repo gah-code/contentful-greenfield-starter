@@ -3,15 +3,18 @@
 Status: ORIGINAL INCIDENT PRESERVED / CONTROLLED RECOVERY COMPLETE / EXTERNAL RECOVERY EXECUTION VALIDATION — PASS WITH NOTES
 Recovery tooling: APPROVED / CHECKPOINTED at `ff130d55ed2cfd212c33d6fa65798fc81001cbe2`; External Checkpoint Validation PASS WITH NOTES
 Recovery Execution Final Approval Reconciliation: COMPLETE
-External Final Validation: REQUIRED PRE-COMMIT GATE FOR THE EXACT RECOVERY-EXECUTION RECONCILIATION STATE
-Recovery-execution checkpoint: governed by the exact-state containing-commit rule in [Project State](../../docs/PROJECT-STATE.md#recovery-execution-reconciliation-checkpoint-lifecycle)
+Recovery-execution reconciliation checkpoint: APPROVED / CHECKPOINTED at `abf599ce02812920685f855a69bf52d5c539d2af`; External Checkpoint Validation PASS WITH NOTES
+Current closeout lifecycle: [Project State containing-commit rule](../../docs/PROJECT-STATE.md#phase-05-closeout-containing-commit-rule)
 Recovery authorization: `phase05-seed-recovery-20260929-0714z` — CONSUMED / CLOSED / NO REUSE
-Seed: 42 DRAFT ENTRIES / 8 PROCESSED UNPUBLISHED ASSETS / NOT PHASE-CLOSED
+Seed: 42 DRAFT ENTRIES / 8 PROCESSED UNPUBLISHED ASSETS / ALL UNARCHIVED
 Publication: 0
-05.5: BLOCKED pending the reconciliation checkpoint lifecycle and separate read authorization
+05.5: READ-ONLY VALIDATION COMPLETE / EXTERNALLY VALIDATED — PASS WITH NOTES; read authority CONSUMED / CLOSED / NO REUSE
+Phase 05 Closeout Final Approval Reconciliation: COMPLETE; Phase 05 ACTIVE until its containing-commit rule is satisfied
+Accepted live evidence: `2026-09-29T08:54:11.057Z`; no October live refresh
+Phase 06: NOT STARTED
 Scope: documentation/state reconciliation and local preservation only; technical files protected; zero Contentful access
 
-**Historical record boundary:** the sections from Ownership and Accepted Inputs through Checkpoint-Semantics Correction record the earlier incident, forensic investigation and recovery-tooling work. Their then-current partial state, future recovery plan and authorization restrictions remain historical evidence. The later completed recovery, external acceptance and current reconciliation are recorded under [Recovery Execution Final Approval Reconciliation](#recovery-execution-final-approval-reconciliation). Current lifecycle is owned by Project State.
+**Historical record boundary:** the sections from Ownership and Accepted Inputs through Local Documentation and Preservation Verification record the earlier incident, forensic investigation, recovery-tooling work and completed recovery-execution reconciliation. Their then-current partial state, future recovery plan, 05.5 blockers and authorization restrictions remain historical evidence. The completed recovery and its original evidence qualifications remain under [Recovery Execution Final Approval Reconciliation](#recovery-execution-final-approval-reconciliation). The later accepted 05.5 result is recorded in the [05.5 closeout report](PHASE-05-BATCH-05.5-SEED-VALIDATION-PUBLICATION-STATE-AND-PHASE-05-CLOSEOUT.md); current lifecycle is owned by Project State.
 
 ## Ownership and Accepted Inputs
 
@@ -331,7 +334,7 @@ No post-harness Contentful probe occurred. This is not independent retention of 
 
 The owner-inspected GitGuardian occurrence detected `phase05-seed-20260929-0254z` in `scripts/contentful/seed-content.mjs` as `CLOSED_AUTHORIZATION`. Its disposition is **IGNORED / FALSE POSITIVE**, classified as a **NON-SECRET HISTORICAL LIFECYCLE IDENTIFIER**. No Contentful credential was identified by that occurrence. Credential rotation is NOT REQUIRED BY THAT INCIDENT; history rewrite is NOT REQUIRED. This disposition is limited to that exact occurrence and value, not a blanket secret-scanning exemption. No credential inspection, rotation or history rewrite is performed by this reconciliation.
 
-### Current Reconciliation and 05.5 Boundary
+### Historical Recovery-Execution Reconciliation and 05.5 Boundary
 
 Phase 05 remains **ACTIVE**. Recovery tooling is APPROVED / CHECKPOINTED, recovery pre-execution is EXTERNALLY VALIDATED — PASS WITH NOTES, and controlled recovery is **COMPLETE / EXTERNALLY VALIDATED — PASS WITH NOTES**. The seed is **42 DRAFT ENTRIES / 8 PROCESSED UNPUBLISHED ASSETS / NOT PHASE-CLOSED**, with publications **0**. Both the original failure and later successful recovery remain project history. Phase 06 is **NOT STARTED**.
 
@@ -346,3 +349,11 @@ This reconciliation's Contentful GET/POST/PUT/PATCH/DELETE totals are **0/0/0/0/
 The local check at `2026-09-29T07:58:37.654301Z`–`2026-09-29T07:58:38.720670Z` passed `git diff --check`, exact eight-document modified scope, unchanged file modes, empty staging and no non-ignored untracked files. Branch, HEAD, tree and local `origin/master` remain the starting values above, with 0 ahead / 0 behind. The working tree intentionally contains these eight unstaged documentation changes; no checkpoint is performed by this reconciliation.
 
 All 12 protected identities passed byte-count, SHA-256 and mode comparison: the harness, validator, manifest, migration 0001 and eight Asset sources. Migration 0002 and repository-root artifacts `0` and `111` remain absent. The four existing accepted external inputs remain byte-identical. The new canonical lifecycle and report anchors resolve. The final review package repeats preservation and scope checks after this verification record is added and binds the packaged documentation bytes to its identity index. No technical program, self-test, validator, plan or live check is rerun.
+
+## Accepted 05.5 Validation and Current Closeout Pointer
+
+The recovery-execution reconciliation checkpoint is APPROVED / CHECKPOINTED at `abf599ce02812920685f855a69bf52d5c539d2af`, with External Checkpoint Validation PASS WITH NOTES. The subsequently separately authorized 05.5 read-only validation is COMPLETE / EXTERNALLY VALIDATED — PASS WITH NOTES; its read authority is CONSUMED / CLOSED / NO REUSE. Accepted `validatedAt` is `2026-09-29T08:54:11.057Z`. No October live refresh occurred in this documentation reconciliation.
+
+The accepted seed is 42 draft Entries and eight processed unpublished Assets, all unarchived, with zero publications and zero material model drift; `master` remains blank in that evidence. WHOI retains only the bounded optional-empty-Array representation equivalence. The [05.5 closeout report](PHASE-05-BATCH-05.5-SEED-VALIDATION-PUBLICATION-STATE-AND-PHASE-05-CLOSEOUT.md) owns the later inventory, graph, read evidence and exit-criteria reconciliation. The incident, 81-request/45-mutation execution stop, Class B strong inference, 21/8 forensic state and successful recovery above remain unchanged history.
+
+Phase 05 Closeout Final Approval Reconciliation is COMPLETE. Phase 05 remains ACTIVE until the [canonical closeout containing-commit rule](../../docs/PROJECT-STATE.md#phase-05-closeout-containing-commit-rule) is satisfied: External Final Validation must pass for the exact closeout bytes before the separately owner-authorized containing commit establishes Phase 05 COMPLETE / FROZEN and 05.5 APPROVED / CHECKPOINTED. After push, clean synchronized `master` and External Checkpoint Validation PASS are required before Phase 06 eligibility. Phase 06 is NOT STARTED; no execution, mutation, publication or deployment authority is granted. Public Delivery API readiness and production publication readiness are not established; exhaustive Phase 04 102/102 live QA was not completed.

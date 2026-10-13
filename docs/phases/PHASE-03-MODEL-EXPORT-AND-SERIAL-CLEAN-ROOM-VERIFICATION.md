@@ -1,8 +1,10 @@
 # Phase 03 — Model Export + Serial Clean-Room Verification
 
-Status: COMPLETE / FROZEN BY THE COMMIT CONTAINING THIS DOCUMENT
+Status: COMPLETE / FROZEN BY THE ESTABLISHED PHASE 03 CLOSEOUT CHECKPOINT
 
-Current / next: Phase 04 — Editorial QA + Model Freeze — NEXT / NOT STARTED AFTER SUCCESSFUL PHASE 03 CLOSEOUT CHECKPOINT VERIFICATION
+Current lifecycle: Phases 03 and 04 are COMPLETE / FROZEN. Phase 05 is ACTIVE until the [Project State](../PROJECT-STATE.md#phase-05-closeout-containing-commit-rule) containing-commit rule is satisfied; 05.5 read-only validation is COMPLETE / EXTERNALLY VALIDATED — PASS WITH NOTES. Phase 06 is NOT STARTED.
+
+Accepted 05.5 evidence from `2026-09-29T08:54:11.057Z` establishes 42 draft Entries and eight processed unpublished Assets, all unarchived, with zero publications. No October live refresh is claimed. The historical Phase 03 zero-content baselines below remain unchanged.
 
 Owner: repository maintainer
 
@@ -12,7 +14,9 @@ Prove that the validated Phase 02 model can be exported as a governed model-only
 
 Phase 03 uses the existing two-environment topology. `master` is the permanent protected blank baseline; `dev` is the single rotating sandbox. Verification is a serial workflow state, not a third environment.
 
-## Current State
+## Historical Phase 03 Closeout State
+
+The table and named Phase 03 gate/result records below preserve their original stages. Their then-current inventories, authorization boundaries and next-gate statements are historical evidence, not the accepted Phase 05 live inventory or current project lifecycle.
 
 | Item | State |
 |---|---|
@@ -89,7 +93,7 @@ Next: Batch 03.3 — Governed Model Export + Snapshot Validation.
 
 Batch 03.3 requires its own explicit export authorization and does not authorize destructive `dev` rotation.
 
-## Serial Gate Structure
+## Historical Phase 03 Serial Gate Structure
 
 ```text
 pre-export gate
@@ -303,7 +307,7 @@ Checkpoint: ESTABLISHED BY THE COMMIT CONTAINING THIS DOCUMENT
 
 Evidence: `content-model/reports/PHASE-03-BATCH-03.3-GOVERNED-MODEL-EXPORT-AND-SNAPSHOT-VALIDATION.md`
 
-Current raw CMA environment evidence represented readiness through `sys.status.sys.id = ready`; `sys.state` was absent in the observed payload. Historical temporary checks that expected `sys.state` remain preserved as diagnostic evidence.
+The Batch 03.3 raw CMA environment evidence represented readiness through `sys.status.sys.id = ready`; `sys.state` was absent in the observed payload. Historical temporary checks that expected `sys.state` remain preserved as diagnostic evidence.
 
 Exactly one governed model export from `dev` produced `contentful-model.dev.v1.20260819T210704Z.json` with SHA-256 `0e731940722a86e9c70a9bc71a84a101f740a4efbed553bb998f12a840c9b64a`. The SDK internally retried three rate-limited GET requests inside that single top-level invocation; no second export operation occurred.
 
@@ -359,7 +363,7 @@ Independent post-recreation validation:
 - blank-state validation: PASS;
 - external validation: PASS WITH NOTES.
 
-The approved snapshot remains local, Git-ignored, unchanged, and approved for recovery use. It represents the 10-type recovery model; it does not describe current live `dev`, which is intentionally blank.
+The approved snapshot remains local, Git-ignored, unchanged, and approved for recovery use. It represents the 10-type recovery model; at that Batch 03.4 post-rotation stage, live `dev` was intentionally blank.
 
 Historical Batch 03.4 checkpoint state: post-rotation reconciliation was complete, external reconciliation validation returned PASS WITH NOTES, final approval reconciliation was complete, and external final validation approved the Git checkpoint. At that checkpoint, Batch 03.5 was next / not started; only its read-only pre-execution gate was next, and import was not authorized or run.
 
@@ -395,7 +399,7 @@ Post-failure evidence:
 - forensic writes, retries, and mutating requests: 0;
 - topology: exactly `dev` + `master`;
 - protected `master`: ready / blank / 0 types / 0 entries / 0 assets / 0 tags / `en-US`;
-- current `dev`: ready / 10 types / 0 entries / 0 assets / 0 tags / `en-US`;
+- `dev` at the Batch 03.5 validation: ready / 10 types / 0 entries / 0 assets / 0 tags / `en-US`;
 - all 10 approved type IDs are present and published;
 - all 10 expected Editor Interfaces are present;
 - missing or unexpected types and missing Editor Interfaces: none.
@@ -457,7 +461,7 @@ External Final Validation: PASS WITH NOTES / APPROVED FOR PHASE 03 CLOSEOUT GIT 
 
 Phase 03 closeout checkpoint: ESTABLISHED BY THE COMMIT CONTAINING THIS DOCUMENT.
 
-All 22 Phase 03 technical exit criteria pass. Closeout truth reconciliation and the Content Strategy pointer correction are complete. External Batch 03.6 validation and External Final Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. The commit containing this document establishes Batch 03.6 as approved / checkpointed and Phase 03 as complete / frozen. Phase 04 is next / not started after successful checkpoint verification.
+All 22 Phase 03 technical exit criteria pass. Closeout truth reconciliation and the Content Strategy pointer correction are complete. External Batch 03.6 validation and External Final Validation returned PASS WITH NOTES, and Final Approval Reconciliation is complete. The commit containing this document establishes Batch 03.6 as approved / checkpointed and Phase 03 as complete / frozen. At Phase 03 closeout, Phase 04 was next / not started after successful checkpoint verification.
 
 ## Clean-Room Success Contract
 
@@ -484,6 +488,6 @@ Batch 03.1 external approval established this Phase 03 sequence:
 
 Batch 03.3 final approval reconciliation and external final validation are complete. The commit containing this document establishes the checkpoint. The one-export authorization is consumed; no second export is authorized.
 
-## Current Boundary
+## Historical Phase 03 Closeout Boundary
 
-Phase 03 is complete / frozen by the commit containing this document after all 22 technical exit criteria passed and External Final Validation returned PASS WITH NOTES. Batch 03.5 remains approved / checkpointed with the operational exit 1 / HTTP 429 incident explicitly distinct from semantic recovery PASS and zero material drift. Batch 03.6 is approved / checkpointed by the containing commit. Phase 04 is next / not started after successful checkpoint verification. A second export, second import, second rotation, `dev` deletion/recreation, manual repair, bootstrap, and seed remain unauthorized. Package files, tooling, Phase 02 artifacts, and the ignored raw snapshot remain unchanged.
+Phase 03 is complete / frozen by the commit containing this document after all 22 technical exit criteria passed and External Final Validation returned PASS WITH NOTES. Batch 03.5 remains approved / checkpointed with the operational exit 1 / HTTP 429 incident explicitly distinct from semantic recovery PASS and zero material drift. Batch 03.6 is approved / checkpointed by the containing commit. At Phase 03 closeout, Phase 04 was next / not started after successful checkpoint verification. A second export, second import, second rotation, `dev` deletion/recreation, manual repair, bootstrap, and seed remain unauthorized. Package files, tooling, Phase 02 artifacts, and the ignored raw snapshot remain unchanged.

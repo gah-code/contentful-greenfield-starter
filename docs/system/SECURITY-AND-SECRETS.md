@@ -98,9 +98,9 @@ Phase 01 through Phase 04 are complete / frozen. Phase 04 closeout and semantic 
 
 Historical Batch 05.1 source reconciliation and External Validation returned PASS WITH NOTES; the initial source-readiness BLOCKED result remains historical. Historical 05.1 entry: its externally final-validated containing commit established Phase 05 ACTIVE and Batch 05.1 APPROVED / CHECKPOINTED; External Checkpoint Validation was the prerequisite for local-only 05.2 entry.
 
-Batch 05.2 implementation is EXTERNALLY ACCEPTED — PASS WITH NOTES. Final Approval Reconciliation is IMPLEMENTED / READY FOR EXTERNAL FINAL VALIDATION. External Final Validation is a required pre-commit gate, established by a separate external response for the exact reconciled state. Only after that PASS and separate owner Git authorization may the containing commit establish Batch 05.2 APPROVED / CHECKPOINTED. Batch 05.3 remains BLOCKED until that containing commit is committed and pushed, master is clean and synchronized, and External Checkpoint Validation passes; it then becomes NEXT / NOT STARTED, with separate explicit GET authorization still required. Batch 05.4 is NOT AUTHORIZED; 05.5 is LATER; seed and Phase 06 are NOT STARTED. No Contentful requests, credential or environment loading, real client, or UI access are authorized by this reconciliation. See the [seed contract](REPRESENTATIVE-SEED-CONTENT-CONTRACT.md).
+Batch 05.2 is APPROVED / CHECKPOINTED. Batch 05.3 is EXTERNALLY VALIDATED — PASS WITH NOTES with historical freshness expired. The original 05.4 incident is preserved; controlled recovery is COMPLETE / EXTERNALLY VALIDATED — PASS WITH NOTES. Its recovery-execution reconciliation checkpoint is APPROVED / CHECKPOINTED at `abf599ce02812920685f855a69bf52d5c539d2af`, with External Checkpoint Validation PASS WITH NOTES. Batch 05.5 read-only validation is COMPLETE / EXTERNALLY VALIDATED — PASS WITH NOTES; its read authority is CONSUMED / CLOSED / NO REUSE. The accepted `2026-09-29T08:54:11.057Z` evidence establishes 42 draft Entries and eight processed unpublished Assets, all unarchived, with zero publications. No October live refresh occurred in this reconciliation. Phase 05 closeout reconciliation is COMPLETE; Phase 05 stays ACTIVE until the [canonical containing-commit rule](../PROJECT-STATE.md#phase-05-closeout-containing-commit-rule) is satisfied. Original and recovery 05.4 mutation authorities are CONSUMED / CLOSED / NO REUSE. Additional Contentful access and publication remain NOT AUTHORIZED. Phase 06 is NOT STARTED / NO AUTHORITY. No Contentful requests, credential or environment loading, real client, or UI access are authorized by this reconciliation. See the [seed contract](REPRESENTATIVE-SEED-CONTENT-CONTRACT.md).
 
-The Batch 04.6 final GET authorization was granted, consumed exactly once immediately before GET #1, and closed. One validator process completed exactly 23 GET requests with 0 writes, 0 retries, 0 replay, and no credential exposure. Additional GET access, a second validator, Contentful mutation, environment lifecycle operations, export, import, and migration are not authorized. This Batch 05.2 reconciliation is documentation-only with credential-free local verification and authorizes no Contentful access, credential or environment loading, real client, UI access, or seed execution.
+The Batch 04.6 final GET authorization was granted, consumed exactly once immediately before GET #1, and closed. One validator process completed exactly 23 GET requests with 0 writes, 0 retries, 0 replay, and no credential exposure. Additional GET access, a second validator, Contentful mutation, environment lifecycle operations, export, import, and migration are not authorized. This Phase 05 closeout reconciliation is documentation-only and authorizes no Contentful access, credential or environment loading, real client, UI access, or seed execution.
 
 Batch 03.5 used one explicit import authorization. The sole top-level import invocation exited 1 after an HTTP 429 during Editor Interface processing, with 0 effective automatic request replays. The authorization is consumed. GET-only forensics independently proved complete semantic recovery with zero material drift. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. Incident/recovery truth reconciliation and Final Approval Reconciliation are complete; the commit containing this document establishes the Batch 03.5 checkpoint.
 
@@ -124,13 +124,17 @@ Current authorization boundary:
 - Manual repair/reset: NOT AUTHORIZED.
 - Additional bootstrap: NOT AUTHORIZED.
 - Migration execution: NOT AUTHORIZED.
-- Phase 05: ACTIVE from the externally final-validated 05.1 containing commit; 05.1 APPROVED / CHECKPOINTED by that commit.
-- Batch 05.2: implementation EXTERNALLY ACCEPTED / PASS WITH NOTES; Final Approval Reconciliation IMPLEMENTED / READY FOR EXTERNAL FINAL VALIDATION; no credentials or Contentful access.
-- Batch 05.2 checkpoint: required separate External Final Validation PASS for the exact reconciled state plus separate owner Git authorization before the containing commit.
-- Batch 05.3: BLOCKED until that commit is committed and pushed on clean synchronized master and passes External Checkpoint Validation; then NEXT / NOT STARTED; separate explicit GET authorization required.
-- Batch 05.4: NOT AUTHORIZED; separate explicit mutation authorization required.
-- Batch 05.5: LATER.
-- Seed and Phase 06: NOT STARTED.
+- Phase 05: ACTIVE until the Project State closeout containing-commit rule is satisfied; Final Approval Reconciliation COMPLETE.
+- Batches 05.1 and 05.2: APPROVED / CHECKPOINTED.
+- Batch 05.3: EXTERNALLY VALIDATED — PASS WITH NOTES / HISTORICAL FRESHNESS EXPIRED.
+- Batch 05.4: original stopped execution preserved; controlled recovery COMPLETE / EXTERNALLY VALIDATED — PASS WITH NOTES; recovery-execution reconciliation checkpoint APPROVED / CHECKPOINTED at `abf599ce02812920685f855a69bf52d5c539d2af`.
+- Original and recovery 05.4 mutation authorities: CONSUMED / CLOSED / NO REUSE.
+- Batch 05.5 read-only validation: COMPLETE / EXTERNALLY VALIDATED — PASS WITH NOTES.
+- Batch 05.5 read authority: CONSUMED / CLOSED / NO REUSE.
+- Seed: accepted September 29 evidence — 42 draft Entries / 8 processed unpublished Assets / all unarchived / publications 0.
+- Additional Contentful mutation and publication: NOT AUTHORIZED.
+- Phase 06: NOT STARTED / NO AUTHORITY.
+- The containing commit grants no Contentful mutation, publication, Phase 06 execution or deployment authority.
 
 The approved export/import helpers use explicit programmatic environment-token binding. The successful Gate B and destructive recovery authorizations are consumed. Credentials stay in ignored local environment state, never appear in CLI arguments or logs, and `contentful config list` remains prohibited.
 
@@ -233,6 +237,6 @@ Batch 03.4 Attempt 1: BLOCKED before Contentful access at the current-truth cons
 
 This Batch 03.4 section records historical pre-import state. Its post-rotation reconciliation was documentation-only and performed no Contentful access. At that checkpoint, `dev` was ready / freshly recreated / blank and the approved recovery snapshot awaited separately authorized import.
 
-External post-rotation reconciliation validation and external final validation returned PASS WITH NOTES, and final approval reconciliation is COMPLETE. The Batch 03.4 checkpoint remains established. Subsequent Batch 03.5 evidence is authoritative for current `dev` and import state.
+External post-rotation reconciliation validation and external final validation returned PASS WITH NOTES, and final approval reconciliation is COMPLETE. The Batch 03.4 checkpoint remains established. At that historical post-import stage, subsequent Batch 03.5 evidence controlled `dev` and import state; current accepted evidence and lifecycle are owned by [Project State](../PROJECT-STATE.md).
 
 Snapshot recoverability approval did not itself authorize import or a second lifecycle operation. The later one-time Batch 03.5 import authorization is now consumed. This reconciliation records completed evidence only and grants no Contentful authorization.

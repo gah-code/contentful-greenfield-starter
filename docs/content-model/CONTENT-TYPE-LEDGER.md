@@ -1,11 +1,13 @@
 # Content Type Ledger
 
+Current project lifecycle is owned by [Project State](../PROJECT-STATE.md#phase-05-closeout-containing-commit-rule). Its closeout reconciliation uses accepted 05.5 evidence from `2026-09-29T08:54:11.057Z`; no October live refresh is claimed.
+
 Status: Phase 02 / Batch 02.2 — APPROVED V1 CONTENT TYPE INVENTORY
 Owner: Phase 02 - Content Model Contract + Bootstrap Migration
 
 This is the approved v1 semantic content type contract after external Batch 02.2 validation. It approves standalone Contentful content types and stable type IDs only.
 
-Approval of this Batch 02.2 ledger did not approve fields, field IDs, required states, references, validations, editor interfaces, display fields, or migration implementation. Batch 02.3 later approves the field and field-ID contract. Batch 02.4 approves references, validations, editor guidance, singleton behavior, and display fields. Batch 02.5 records the approved RE2-corrected migration; Batch 02.6 records its successful execution in `dev`. Batch 02.7 externally validates the live model with zero material drift and closes Phase 02 as complete / frozen. Phase 03 serial clean-room verification is next.
+Approval of this Batch 02.2 ledger did not approve fields, field IDs, required states, references, validations, editor interfaces, display fields, or migration implementation. Batch 02.3 later approves the field and field-ID contract. Batch 02.4 approves references, validations, editor guidance, singleton behavior, and display fields. Batch 02.5 records the approved RE2-corrected migration; Batch 02.6 records its successful execution in `dev`. Batch 02.7 externally validates the live model with zero material drift and closes Phase 02 as complete / frozen. At the Phase 02 closeout handoff, Phase 03 serial clean-room verification was next.
 
 ## Batch 02.2 Approval
 

@@ -1,6 +1,10 @@
 # Editorial QA + Temporary Authoring Contract
 
-## Status
+Current project lifecycle is owned by [Project State](../PROJECT-STATE.md#phase-05-closeout-containing-commit-rule). Phase 04 is COMPLETE / FROZEN; Phase 05 follows its closeout reconciliation lifecycle, with 05.5 read-only validation COMPLETE / EXTERNALLY VALIDATED — PASS WITH NOTES and Phase 06 NOT STARTED. Accepted evidence from `2026-09-29T08:54:11.057Z` establishes 42 draft Entries and eight processed unpublished Assets, all unarchived, with zero publications. No October live refresh or additional Contentful authority is claimed.
+
+## Historical Phase 04 Status
+
+The named contract, incident, forensic, cleanup and findings-reconciliation stages below preserve their original evidence and authorization boundaries. Their former next-gate statements do not control the current project lifecycle; the frozen QA scenarios and evidence limitations remain unchanged.
 
 Phase 04 / Batch 04.2: APPROVED / CHECKPOINTED AT `a85ebb37ef0f182b98d914221e70454cebb1351f`.
 
@@ -8,7 +12,7 @@ External Validation: PASS WITH NOTES. Final Approval Reconciliation: COMPLETE. E
 
 Narrow Authoring-Envelope Correction: COMPLETE / CHECKPOINTED AT `0e2057d26031d3ba7264810d00173713d83c11ef`. Its read-only pre-execution and authorization gates were later satisfied for the consumed controlled execution.
 
-Current operational state: the correction is checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. A later one-time authorized Batch 04.3 execution STARTED, consumed its authorization with the TA-01 Asset upload, and STOPPED AFTER MUTATION at R88. The required Post-Stop Partial-State + Branch-Sensitive Forensics are complete and checkpointed at `7f36c66e30b8a9297f3ee3a1a72baf76eef7d2a1`. Option B was selected. A separately authorized corrected cleanup completed exactly 25 mutations with 0 retries or replay and restored the zero-content, zero-drift `dev` baseline. Batch 04.3 is CONDITIONALLY EXITED FOR FINDINGS HANDOFF with exhaustive live QA deferred and no claim that 102 / 102 scenarios passed live QA; its decision checkpoint is established at `b9a61a328c6353881ea10dd5384b7a9c02d65e3d`. Batch 04.4 completed its repository-only read-only gate and External Validation with PASS WITH NOTES. Findings are reconciled as CLASS 0 with no model or Editor Interface technical correction, and the exact 44 Class B scenarios are frozen for Batch 04.5. This repository-only reconciliation made no Contentful request.
+At the Phase 04 findings-reconciliation stage: the correction is checkpointed at `0e2057d26031d3ba7264810d00173713d83c11ef`. A later one-time authorized Batch 04.3 execution STARTED, consumed its authorization with the TA-01 Asset upload, and STOPPED AFTER MUTATION at R88. The required Post-Stop Partial-State + Branch-Sensitive Forensics are complete and checkpointed at `7f36c66e30b8a9297f3ee3a1a72baf76eef7d2a1`. Option B was selected. A separately authorized corrected cleanup completed exactly 25 mutations with 0 retries or replay and restored the zero-content, zero-drift `dev` baseline. Batch 04.3 is CONDITIONALLY EXITED FOR FINDINGS HANDOFF with exhaustive live QA deferred and no claim that 102 / 102 scenarios passed live QA; its decision checkpoint is established at `b9a61a328c6353881ea10dd5384b7a9c02d65e3d`. Batch 04.4 completed its repository-only read-only gate and External Validation with PASS WITH NOTES. Findings are reconciled as CLASS 0 with no model or Editor Interface technical correction, and the exact 44 Class B scenarios are frozen for Batch 04.5. This repository-only reconciliation made no Contentful request.
 
 Partial Authoring Incident + Deferral Reconciliation: COMPLETE / CHECKPOINT ESTABLISHED AT `93e4ff6dd995831af5d05475db02b1a60f027715`.
 
@@ -508,7 +512,7 @@ The Post-Stop Partial-State + Branch-Sensitive Forensics gate and its checkpoint
 
 ## Phase 04 QA vs Phase 05 Seed Boundary
 
-Phase 04 QA artifacts are disposable, scenario-driven, minimal, visibly marked, non-public portfolio content, and fully accounted for before freeze. Phase 05 seed will be representative, public-safe, strategy-driven, portfolio-relevant, and intentionally drafted/published. No QA artifact may silently become seed. Phase 05 remains NOT STARTED.
+Phase 04 QA artifacts are disposable, scenario-driven, minimal, visibly marked, non-public portfolio content, and fully accounted for before freeze. At that historical planning stage, Phase 05 seed was intended to be representative, public-safe, strategy-driven, portfolio-relevant, and intentionally drafted/published. No QA artifact may silently become seed. Phase 05 had not started at that stage; the later accepted draft-only seed state is identified above.
 
 ## Explicitly Deferred Application Behavior
 
@@ -574,7 +578,7 @@ The previous Batch 04.3 human authoring authorization was historically GRANTED /
 
 The later Batch 04.3 one-time authoring authorization is GRANTED / CONSUMED. The separate renewed cleanup authorization is GRANTED / CONSUMED EXACTLY ONCE / CLOSED; the historical prior blocked cleanup authorization was not reused. Additional authoring, continuation, retry, repair, and cleanup are not authorized.
 
-## Decision Lifecycle and Batch 04.5 Entry
+## Historical Decision Lifecycle and Batch 04.5 Entry
 
 Conditional Exit + 04.4 Advancement Decision checkpoint: ESTABLISHED AT `b9a61a328c6353881ea10dd5384b7a9c02d65e3d` / External Checkpoint Validation PASS.
 

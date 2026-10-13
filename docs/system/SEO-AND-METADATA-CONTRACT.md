@@ -5,6 +5,8 @@ Owner: Phase 01 — Content Strategy + Route Contract
 Source strategy: `docs/system/CONTENT-STRATEGY.md`
 Source route contract: `docs/system/ROUTE-CONTRACT.md`
 
+Current project lifecycle is owned by [Project State](../PROJECT-STATE.md#phase-05-closeout-containing-commit-rule). Its closeout reconciliation uses accepted 05.5 evidence from `2026-09-29T08:54:11.057Z`; no October live refresh is claimed. That accepted seed state is 42 draft Entries and eight processed unpublished Assets, all unarchived, with zero publications; it establishes no public Delivery API or production publication readiness.
+
 ## Purpose
 
 This is the canonical Phase 01 / Batch 01.3 surface for SEO and metadata behavior before Contentful fields, frontend metadata APIs, static fixtures, adapters, or live CMS integration are implemented.
@@ -702,7 +704,7 @@ Batch 01.3 is approved after external validation:
 - Batch 01.3 is APPROVED.
 - At Batch 01.3 closeout, Batch 01.4 advanced to NEXT. This is historical, not the current Batch 01.4 state.
 - At Batch 01.3 closeout, Batch 01.5 was LATER. This is historical, not the current Batch 01.5 state.
-- At Batch 01.3 closeout, Phase 02 was DEFERRED. Phase 02 is now COMPLETE / FROZEN; Batch 02.1 through Batch 02.4 are APPROVED, Batch 02.5 is RE-APPROVED AFTER COMPATIBILITY CORRECTIONS, Batch 02.6 is APPROVED after successful bootstrap execution in `dev`, and Batch 02.7 is APPROVED after external validation confirmed zero material live-contract drift. Phase 03 is NEXT / NOT STARTED.
+- At Batch 01.3 closeout, Phase 02 was DEFERRED. Phase 02 is now COMPLETE / FROZEN; Batch 02.1 through Batch 02.4 are APPROVED, Batch 02.5 is RE-APPROVED AFTER COMPATIBILITY CORRECTIONS, Batch 02.6 is APPROVED after successful bootstrap execution in `dev`, and Batch 02.7 is APPROVED after external validation confirmed zero material live-contract drift. At that Phase 02 closeout handoff, Phase 03 was NEXT / NOT STARTED.
 - Option 2 hybrid SEO ownership is documented.
 - OD-15 is RESOLVED / APPROVED.
 - OD-07 remains RESOLVED / APPROVED.
@@ -714,6 +716,6 @@ Batch 01.3 is approved after external validation:
 - legacy broad `seoMetadata` assumptions are absorbed into owning content at the Batch 02.2 type level; exact Project/Article override field IDs are approved by Batch 02.3, and migration reconciliation completed in Batch 02.5.
 - no Contentful schema, migration, seed, fixture, or frontend implementation occurred.
 - at Batch 01.3 closeout, the bootstrap migration remained BLOCKED / NOT RUN; Batch 02.6 later executed the approved migration successfully in `dev`.
-- seed content remains NOT STARTED.
+- at that Phase 02 closeout handoff, seed content was NOT STARTED.
 - no files are staged.
 - no commit or push occurs in this implementation pass.

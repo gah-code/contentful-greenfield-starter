@@ -1,5 +1,7 @@
 # Reference Map
 
+Current project lifecycle is owned by [Project State](../PROJECT-STATE.md#phase-05-closeout-containing-commit-rule). Its closeout reconciliation uses accepted 05.5 evidence from `2026-09-29T08:54:11.057Z`; no October live refresh is claimed.
+
 ## Approval Status
 
 Phase:
@@ -182,4 +184,4 @@ Batch 02.5 records the approved RE2-corrected bootstrap migration against this a
 
 Migration implementation changed in Batch 02.5: yes, re-approved after RE2 compatibility correction following corrected Gate B retry evidence.
 
-Contentful command run during Batch 02.4 contract approval: no. Batch 02.6 later executed the approved migration successfully; Batch 02.7 externally validates the live reference contract with zero material drift. Phase 02 is complete / frozen, and Phase 03 serial clean-room verification is next.
+Contentful command run during Batch 02.4 contract approval: no. Batch 02.6 later executed the approved migration successfully; Batch 02.7 externally validates the live reference contract with zero material drift. Phase 02 is complete / frozen. At its closeout handoff, Phase 03 serial clean-room verification was next.
