@@ -29,7 +29,7 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 
 | Area | Current state |
 | --- | --- |
-| Current project state | Phase 05 — ACTIVE until the [closeout containing-commit rule](docs/PROJECT-STATE.md#phase-05-closeout-containing-commit-rule) is satisfied; 05.5 read-only validation externally accepted PASS WITH NOTES |
+| Current project state | Phase 05 COMPLETE / FROZEN at `35e70f991b8b1da2587526b278210f34b24f5402`; Phase 06 entry governed by its [containing-commit rule](docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#durable-containing-commit-rule) |
 | Frozen upstream phase | Phase 04 - COMPLETE / FROZEN at `6fdb16f06c5338e11f08ae0a44180b6db4251611`; model `v1.0.0` frozen |
 | Phase 04 closeout checkpoint | Batch 04.6 / `6fdb16f06c5338e11f08ae0a44180b6db4251611` / External Checkpoint Validation PASS WITH NOTES |
 | Historical Batch 04.3 disposition | Conditionally exited for findings handoff / incident, forensics, and cleanup complete / zero-content `dev` baseline restored / exhaustive live QA deferred / known evidence limitation preserved |
@@ -58,7 +58,7 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Batch 04.6 reconciliation lifecycle | Complete / checkpoint established at `6fdb16f06c5338e11f08ae0a44180b6db4251611` / External Checkpoint Validation PASS WITH NOTES |
 | Model freeze decision | `v1.0.0` FROZEN by the established Phase 04 closeout checkpoint |
 | Phase 04 exit | 11 of 11 criteria satisfied; criteria 3-5 remain visibly evidence-bounded |
-| Current reconciliation batch | 05.5 Phase 05 Closeout Final Approval Reconciliation — COMPLETE; checkpoint governed by Project State |
+| Current reconciliation batch | 06.1 — Cross-Repository Architecture Decision, Canonical Phase Plan + Contract Ownership; CMS documentation only |
 | Previous 04.3 authoring authorization | Historically granted / unconsumed; superseded for actionability and must not be reused |
 | Latest 04.3 authoring authorization | Granted once / consumed by the TA-01 Asset upload / no continuation, retry, repair, or cleanup authorized |
 | Batch 04.1 external validation | PASS WITH NOTES |
@@ -84,9 +84,9 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Phase 03 technical exit criteria | 22 / 22 PASS |
 | Phase 04 | COMPLETE / FROZEN; Option B, R88, and incomplete exhaustive-QA limitation preserved |
 | Seed content | 42 draft Entries / 8 processed unpublished Assets / all unarchived / publications 0 |
-| Phase 06 | NOT STARTED / no execution authority |
+| Phase 06 | 06.1 preflights externally accepted PASS WITH NOTES; lifecycle follows the [Phase 06 rule](docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#durable-containing-commit-rule); implementation not authorized |
 
-**Phase 05 closeout:** 05.5 read-only validation is COMPLETE / EXTERNALLY VALIDATED — PASS WITH NOTES. The accepted `2026-09-29T08:54:11.057Z` evidence establishes 42 draft Entries and eight processed unpublished Assets, all unarchived, with zero publications. No October live refresh occurred in this reconciliation. The [Project State containing-commit rule](docs/PROJECT-STATE.md#phase-05-closeout-containing-commit-rule) owns closeout and Phase 06 eligibility: exact-byte External Final Validation and separate owner Git authority must precede the containing commit; after push, clean synchronized `master` and External Checkpoint Validation are required. No Phase 06, mutation, publication or deployment authority follows. Public Delivery API and production publication readiness are not established.
+**Phase 05 closeout:** COMPLETE / FROZEN at `35e70f991b8b1da2587526b278210f34b24f5402`; 05.5 APPROVED / CHECKPOINTED. Accepted September 29 evidence (`2026-09-29T08:54:11.057Z`) establishes 42 draft Entries and eight processed unpublished Assets, all unarchived, with zero publications. No October live refresh is claimed. Public Delivery API, production publication and exhaustive Phase 04 102/102 live QA readiness remain not established.
 
 Historical 05.1 entry: its externally final-validated containing commit established Phase 05 ACTIVE and Batch 05.1 APPROVED / CHECKPOINTED; External Checkpoint Validation was the prerequisite for local-only 05.2 entry.
 
@@ -95,6 +95,11 @@ Original 05.1 source-readiness result: historical BLOCKED. Its planning inventor
 See [Phase 05](docs/phases/PHASE-05-REPRESENTATIVE-SEED-CONTENT.md), [seed contract](docs/system/REPRESENTATIVE-SEED-CONTENT-CONTRACT.md), [05.1 history](content-model/reports/PHASE-05-BATCH-05.1-SEED-PLANNING-AND-SOURCE-READINESS.md), [05.2 reconciliation evidence](content-model/reports/PHASE-05-BATCH-05.2-SEED-DATASET-ASSET-SOURCES-AND-DRY-RUN-TOOLING.md), and the [05.5 closeout report](content-model/reports/PHASE-05-BATCH-05.5-SEED-VALIDATION-PUBLICATION-STATE-AND-PHASE-05-CLOSEOUT.md).
 
 > For canonical current state, see [docs/PROJECT-STATE.md](docs/PROJECT-STATE.md) and [TASKS.md](TASKS.md).
+
+**Phase 06 ownership:** `gah-code/ui-gallery-system` is the selected frontend repository, preserved at `a29b9997bedab501bf4432bb4c9e812359773df4` for this CMS-only reconciliation. Storybook is the implemented component/gallery surface; the Vite app currently renders the gallery. All nine portfolio pathname routes are absent as production routes. 06.2 must decide rendering, direct navigation, metadata and deployment strategy before runtime implementation; Vite is a candidate, not the final approved production architecture.
+
+The [Phase 06 plan](docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md) owns the six-batch sequence and durable entry rule. The CMS-owned [mapping/version ledger](docs/system/FRONTEND-CONTRACT-MAPPING.md) records source/runtime ownership; frontend code, normalized fixtures and tests require later separate authorization. Frontend Phase 9 remains independent. No shared package, live Contentful access, credential loading or token testing is authorized. Phase 07 is NOT STARTED.
+
 
 ## What This Repository Demonstrates
 

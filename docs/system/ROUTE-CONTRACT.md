@@ -4,7 +4,9 @@ Status: Phase 01 / Batch 01.2 — APPROVED / FROZEN FOR PHASE 02 INPUT
 Owner: Phase 01 — Content Strategy + Route Contract
 Source strategy: `docs/system/CONTENT-STRATEGY.md`
 
-Current project lifecycle is owned by [Project State](../PROJECT-STATE.md#phase-05-closeout-containing-commit-rule). Its closeout reconciliation uses accepted 05.5 evidence from `2026-09-29T08:54:11.057Z`; no October live refresh is claimed.
+Current project lifecycle is owned by [Project State](../PROJECT-STATE.md). Phase 05 is COMPLETE / FROZEN at `35e70f991b8b1da2587526b278210f34b24f5402`; Phase 06 activation and 06.2 entry follow the [durable containing-commit rule](../phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#durable-containing-commit-rule). Accepted seed evidence remains September 29 evidence, with no October live refresh.
+
+Phase 06 route handoff: the nine pathname routes below remain the intended portfolio contract. Externally accepted 06.1 inventory found all nine absent as production portfolio routes in the selected `gah-code/ui-gallery-system` repository; seven have presentation overlap in the Storybook prototype only, while `/projects/[slug]` and `/writing/[slug]` are absent. Fragment anchors are not pathname routes. Storybook remains the implemented gallery/design-system surface; the Vite runtime renders the gallery root. Vite is a leading portfolio-runtime candidate, not an approved final production architecture. Batch 06.2 must compare the candidate runtimes and resolve deep links, host fallback, rendering, metadata and state behavior against the full [phase-plan criteria](../phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md). The [CMS mapping/version ledger](FRONTEND-CONTRACT-MAPPING.md) records source/runtime ownership. This handoff creates no route, router, package, fixture or implementation authority and changes none of the frozen route responsibilities.
 
 ## Purpose
 
@@ -1639,6 +1641,8 @@ Contact form, phone number, residential address, private contact information, un
 These route-contract implications are now carried into the approved `docs/system/CONTENT-REQUIREMENTS-MATRIX.md`. Batch 01.5 — Phase 01 Validation + Freeze — is approved. Phase 02 is complete / frozen after approving the content type, field-ID, reference, validation, editorial, migration, execution, and zero-drift live-validation layers. At the Phase 02 closeout handoff, Phase 03 serial clean-room verification was next / not started.
 
 ## Deferred Behavior
+
+Historical scope boundary at the Phase 01 route-contract freeze: the items below were excluded from that batch. Later accepted model and metadata contracts remain authoritative; current frontend implementation and phase entry are governed by the Phase 06 handoff above.
 
 - detailed SEO metadata contract
 - canonical implementation

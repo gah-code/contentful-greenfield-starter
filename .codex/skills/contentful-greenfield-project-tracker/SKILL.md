@@ -173,7 +173,7 @@ Documentation is part of the build.
 - Second import — NOT AUTHORIZED.
 - Repair/reset — NOT AUTHORIZED.
 - Seed content — 42 DRAFT ENTRIES / 8 PROCESSED UNPUBLISHED ASSETS / ALL UNARCHIVED / PUBLICATIONS 0; accepted `2026-09-29T08:54:11.057Z` evidence, no October live refresh; current lifecycle is owned by `docs/PROJECT-STATE.md`.
-- Phase 05 — ACTIVE until the qualifying closeout containing commit; COMPLETE / FROZEN once the canonical closeout rule is satisfied.
+- Phase 05 — COMPLETE / FROZEN at `35e70f991b8b1da2587526b278210f34b24f5402`; 05.5 APPROVED / CHECKPOINTED. The canonical closeout rule in `docs/PROJECT-STATE.md#phase-05-closeout-containing-commit-rule` is satisfied.
 - 05.1 initial planning/source-readiness gate — HISTORICAL BLOCKED / REPRESENTATIVE SEED CONTRACT COULD NOT YET BE SAFELY IMPLEMENTED / SOURCE READINESS INCOMPLETE.
 - 05.1 Source-Readiness Reconciliation — PASS WITH NOTES / EXTERNAL VALIDATION PASS WITH NOTES / FINAL APPROVAL RECONCILIATION IMPLEMENTED.
 - 05.1 checkpoint — APPROVED / CHECKPOINTED BY ITS CONTAINING COMMIT ONLY AFTER EXTERNAL FINAL VALIDATION PASS FOR THE EXACT RECONCILED STATE.
@@ -185,8 +185,8 @@ Documentation is part of the build.
 - 05.4 controlled recovery — COMPLETE / EXTERNALLY VALIDATED / PASS WITH NOTES.
 - 05.4 Recovery Execution Final Approval Reconciliation — COMPLETE.
 - Recovery-execution reconciliation checkpoint — APPROVED / CHECKPOINTED at `abf599ce02812920685f855a69bf52d5c539d2af`; External Checkpoint Validation PASS WITH NOTES.
-- Phase 05 Closeout Final Approval Reconciliation — COMPLETE. Exact-byte External Final Validation PASS and separate owner Git authorization are required before the containing commit establishes Phase 05 COMPLETE / FROZEN and 05.5 APPROVED / CHECKPOINTED; see `docs/PROJECT-STATE.md#phase-05-closeout-containing-commit-rule`.
-- Phase 06 eligibility — only after push, clean synchronized `master` and External Checkpoint Validation PASS; no Phase 06 execution, Contentful mutation, publication or deployment authority follows from the containing commit.
+- Phase 05 Closeout Final Approval Reconciliation — COMPLETE; established checkpoint `35e70f991b8b1da2587526b278210f34b24f5402` preserves the accepted September 29 seed evidence.
+- Phase 06 governance — CMS entry preflight and 06.1 frontend inventory separately EXTERNALLY VALIDATED — PASS WITH NOTES; selected frontend `gah-code/ui-gallery-system` at `a29b9997bedab501bf4432bb4c9e812359773df4`; frontend is read-only during CMS reconciliation.
 - Original mutation authorization — `phase05-seed-20260929-0254z` / CONSUMED / CLOSED / NEVER REUSE.
 - Recovery mutation authorization — `phase05-seed-recovery-20260929-0714z` / CONSUMED / CLOSED / NO REUSE.
 - Historical forensic state — 21 Entries / 8 Assets / all 29 unpublished and unarchived; WHOI optional empty `tools` Array absent, Classification B strong forensic inference; later recovery preserves that incident history.
@@ -201,9 +201,10 @@ Documentation is part of the build.
 - 05.2 local readiness — SAME 42 ENTRIES / 8 ASSETS; FINAL LOCAL VALIDATOR READY / placeholder_count = 0 / NO LIVE CMS VALIDATION.
 - 05.1 placeholder exception — ONLY `[[PLACEHOLDER:<requirement>]]` / PLANNING AND LOCAL DEVELOPMENT ONLY / ACCEPTED FINAL DRY RUN REQUIRES `placeholder_count = 0` PLUS INDEPENDENT READINESS CHECKS.
 - 05.1 contract — `docs/system/REPRESENTATIVE-SEED-CONTENT-CONTRACT.md`; phase plan — `docs/phases/PHASE-05-REPRESENTATIVE-SEED-CONTENT.md`; evidence — `content-model/reports/PHASE-05-BATCH-05.1-SEED-PLANNING-AND-SOURCE-READINESS.md`.
-- Additional Contentful GET/mutation — NOT AUTHORIZED BY THIS 05.5 CLOSEOUT RECONCILIATION; no historical consumed authorization may be reused.
+- Additional Contentful GET/mutation — NOT AUTHORIZED BY THIS 06.1 GOVERNANCE RECONCILIATION; no consumed authorization may be reused. Replacement CMA token LOCAL / IGNORED / NOT TESTED; no credential or environment loading.
 - 05.2 evidence — `content-model/reports/PHASE-05-BATCH-05.2-SEED-DATASET-ASSET-SOURCES-AND-DRY-RUN-TOOLING.md`; external artifact/syntax/bounded checks, supplied workstation evidence, and fresh local reconciliation checks remain distinct.
-- Phase 06 — NOT STARTED.
+- Phase 06 — lifecycle owned by `docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#durable-containing-commit-rule`: NOT STARTED before the qualifying externally final-validated, separately owner-authorized CMS containing commit; ACTIVE / 06.1 APPROVED / CHECKPOINTED only through that rule. After push, clean synchronized CMS master and External Checkpoint Validation precede 06.2; no implementation authority follows.
+- Phase 07 — NOT STARTED / NOT AUTHORIZED.
 
 ## Historical Phase and Batch Record
 
@@ -565,7 +566,17 @@ Phase 05
 -> QUALIFYING CONTAINING COMMIT REQUIRES EXACT-BYTE EXTERNAL FINAL VALIDATION PASS + SEPARATE OWNER GIT AUTHORIZATION
 -> THAT COMMIT ESTABLISHES PHASE 05 COMPLETE / FROZEN AND 05.5 APPROVED / CHECKPOINTED; BEFORE IT PHASE 05 IS ACTIVE
 -> PUSH + CLEAN SYNCHRONIZED MASTER + EXTERNAL CHECKPOINT VALIDATION PASS BEFORE PHASE 06 ELIGIBILITY
--> NO PHASE 06 EXECUTION, CONTENTFUL MUTATION, PUBLICATION OR DEPLOYMENT AUTHORITY / PHASE 06 NOT STARTED
+-> PHASE 05 CLOSEOUT CHAIN SATISFIED AT 35e70f991b8b1da2587526b278210f34b24f5402 / COMPLETE FROZEN
+-> NO PHASE 06 IMPLEMENTATION, CONTENTFUL MUTATION, PUBLICATION OR DEPLOYMENT AUTHORITY FOLLOWS
+
+Phase 06
+-> CMS ENTRY PREFLIGHT + 06.1 FRONTEND INVENTORY SEPARATELY EXTERNALLY VALIDATED PASS WITH NOTES
+-> 06.1 CMS GOVERNANCE RECONCILIATION RECORDS OWNER DECISIONS; FRONTEND REMAINS READ-ONLY
+-> EXACT-BYTE EXTERNAL FINAL VALIDATION + SEPARATE OWNER CMS GIT AUTHORIZATION BEFORE QUALIFYING CONTAINING COMMIT
+-> THAT COMMIT ESTABLISHES PHASE 06 ACTIVE / 06.1 APPROVED CHECKPOINTED; BEFORE IT PHASE 06 NOT STARTED
+-> PUSH + CLEAN SYNCHRONIZED CMS MASTER + EXTERNAL CHECKPOINT VALIDATION BEFORE SEPARATELY AUTHORIZED 06.2
+-> CANONICAL RULE: docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#durable-containing-commit-rule
+-> NO IMPLEMENTATION, FRONTEND EDIT, DEPENDENCY, CONTENTFUL, TOKEN-TEST, PUBLICATION OR PHASE 07 AUTHORITY FOLLOWS
 ```
 
 ## Documentation Ownership
@@ -599,6 +610,10 @@ Maintain consistency across:
 - 09 Quality Gates + Release
 
 ## Architecture Boundaries
+
+Phase 06 decisions: `gah-code/ui-gallery-system` is the selected frontend repository, but the final production rendering architecture is deferred to 06.2. Preserve Storybook/gallery behavior; do not replace the gallery root or install routing from a planning decision. The canonical six-batch plan is `docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md`. Greenfield Phase 06 and frontend Phase 9 remain separate lifecycles.
+
+CMS owns frozen source constraints, approved route intent and `docs/system/FRONTEND-CONTRACT-MAPPING.md`, the single mapping/version ledger. Frontend owns normalized domain/page contracts, fixtures, adapter interfaces/implementations, references, URLs, Rich Text, assemblers, metadata and tests after separate authorization. Normalized contract version stays UNASSIGNED UNTIL 06.2 APPROVAL; mapping stays PLANNING / NOT IMPLEMENTED. No shared package exists or is authorized. No live Contentful access is needed for offline 06.2–06.5 work.
 
 - semantic CMS model
 - migration-first schema governance

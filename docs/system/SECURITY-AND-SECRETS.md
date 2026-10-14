@@ -98,9 +98,13 @@ Phase 01 through Phase 04 are complete / frozen. Phase 04 closeout and semantic 
 
 Historical Batch 05.1 source reconciliation and External Validation returned PASS WITH NOTES; the initial source-readiness BLOCKED result remains historical. Historical 05.1 entry: its externally final-validated containing commit established Phase 05 ACTIVE and Batch 05.1 APPROVED / CHECKPOINTED; External Checkpoint Validation was the prerequisite for local-only 05.2 entry.
 
-Batch 05.2 is APPROVED / CHECKPOINTED. Batch 05.3 is EXTERNALLY VALIDATED — PASS WITH NOTES with historical freshness expired. The original 05.4 incident is preserved; controlled recovery is COMPLETE / EXTERNALLY VALIDATED — PASS WITH NOTES. Its recovery-execution reconciliation checkpoint is APPROVED / CHECKPOINTED at `abf599ce02812920685f855a69bf52d5c539d2af`, with External Checkpoint Validation PASS WITH NOTES. Batch 05.5 read-only validation is COMPLETE / EXTERNALLY VALIDATED — PASS WITH NOTES; its read authority is CONSUMED / CLOSED / NO REUSE. The accepted `2026-09-29T08:54:11.057Z` evidence establishes 42 draft Entries and eight processed unpublished Assets, all unarchived, with zero publications. No October live refresh occurred in this reconciliation. Phase 05 closeout reconciliation is COMPLETE; Phase 05 stays ACTIVE until the [canonical containing-commit rule](../PROJECT-STATE.md#phase-05-closeout-containing-commit-rule) is satisfied. Original and recovery 05.4 mutation authorities are CONSUMED / CLOSED / NO REUSE. Additional Contentful access and publication remain NOT AUTHORIZED. Phase 06 is NOT STARTED / NO AUTHORITY. No Contentful requests, credential or environment loading, real client, or UI access are authorized by this reconciliation. See the [seed contract](REPRESENTATIVE-SEED-CONTENT-CONTRACT.md).
+Phase 05 is COMPLETE / FROZEN and Batch 05.5 is APPROVED / CHECKPOINTED at `35e70f991b8b1da2587526b278210f34b24f5402`. The original 05.4 incident, controlled recovery and expired historical 05.3 freshness remain preserved. Original and recovery mutation authorities and the 05.5 read authority are CONSUMED / CLOSED / NO REUSE. Accepted seed evidence remains `2026-09-29T08:54:11.057Z`: 42 draft Entries and eight processed unpublished Assets, all unarchived, with zero publications. No October live refresh occurred. See the [seed contract](REPRESENTATIVE-SEED-CONTENT-CONTRACT.md) and [Project State](../PROJECT-STATE.md).
 
-The Batch 04.6 final GET authorization was granted, consumed exactly once immediately before GET #1, and closed. One validator process completed exactly 23 GET requests with 0 writes, 0 retries, 0 replay, and no credential exposure. Additional GET access, a second validator, Contentful mutation, environment lifecycle operations, export, import, and migration are not authorized. This Phase 05 closeout reconciliation is documentation-only and authorizes no Contentful access, credential or environment loading, real client, UI access, or seed execution.
+Phase 06 CMS entry preflight and 06.1 frontend inventory are EXTERNALLY VALIDATED — PASS WITH NOTES. This Batch 06.1 reconciliation permits only allowlisted CMS documentation edits and read-only frontend evidence. Phase 06 remains NOT STARTED until a qualifying CMS containing commit exists under the [durable containing-commit rule](../phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#durable-containing-commit-rule); exact-byte External Final Validation PASS and separate owner Git authorization must precede that commit. It may establish Phase 06 ACTIVE and 06.1 APPROVED / CHECKPOINTED. After push, clean synchronized CMS `master` and External Checkpoint Validation PASS are required before 06.2 may begin. No implementation authority follows automatically.
+
+The replacement CMA token remains LOCAL / IGNORED / NOT TESTED. During this reconciliation, CMS `.env.local` permits Git ignored/tracked metadata checks only: never read, hash, load, print, copy or test it. No frontend `.env*` file may be inspected. No Contentful access is needed for 06.2–06.5 offline work, and Phase 06 adds no live transport. The [CMS mapping/version ledger](FRONTEND-CONTRACT-MAPPING.md) owns the governance boundary; the selected frontend repository remains read-only for this gate. Credentials, environment loading, clients, tests/builds/lint/typecheck/Storybook, dependency changes, frontend edits, publication, deployment, staging, commit and push are not authorized. Phase 07 remains NOT STARTED.
+
+The historical Batch 04.6 final GET authorization was granted, consumed exactly once immediately before GET #1, and closed. One validator process completed exactly 23 GET requests with 0 writes, 0 retries, 0 replay, and no credential exposure. Additional GET access, a second validator, Contentful mutation, environment lifecycle operations, export, import, and migration are not authorized by that consumed authority or by this documentation reconciliation.
 
 Batch 03.5 used one explicit import authorization. The sole top-level import invocation exited 1 after an HTTP 429 during Editor Interface processing, with 0 effective automatic request replays. The authorization is consumed. GET-only forensics independently proved complete semantic recovery with zero material drift. External semantic recovery, reconciliation, and final validation returned PASS WITH NOTES. Incident/recovery truth reconciliation and Final Approval Reconciliation are complete; the commit containing this document establishes the Batch 03.5 checkpoint.
 
@@ -124,17 +128,20 @@ Current authorization boundary:
 - Manual repair/reset: NOT AUTHORIZED.
 - Additional bootstrap: NOT AUTHORIZED.
 - Migration execution: NOT AUTHORIZED.
-- Phase 05: ACTIVE until the Project State closeout containing-commit rule is satisfied; Final Approval Reconciliation COMPLETE.
+- Phase 05: COMPLETE / FROZEN at `35e70f991b8b1da2587526b278210f34b24f5402`.
 - Batches 05.1 and 05.2: APPROVED / CHECKPOINTED.
 - Batch 05.3: EXTERNALLY VALIDATED — PASS WITH NOTES / HISTORICAL FRESHNESS EXPIRED.
 - Batch 05.4: original stopped execution preserved; controlled recovery COMPLETE / EXTERNALLY VALIDATED — PASS WITH NOTES; recovery-execution reconciliation checkpoint APPROVED / CHECKPOINTED at `abf599ce02812920685f855a69bf52d5c539d2af`.
 - Original and recovery 05.4 mutation authorities: CONSUMED / CLOSED / NO REUSE.
-- Batch 05.5 read-only validation: COMPLETE / EXTERNALLY VALIDATED — PASS WITH NOTES.
+- Batch 05.5 read-only validation: COMPLETE / EXTERNALLY VALIDATED — PASS WITH NOTES; closeout APPROVED / CHECKPOINTED at `35e70f991b8b1da2587526b278210f34b24f5402`.
 - Batch 05.5 read authority: CONSUMED / CLOSED / NO REUSE.
 - Seed: accepted September 29 evidence — 42 draft Entries / 8 processed unpublished Assets / all unarchived / publications 0.
 - Additional Contentful mutation and publication: NOT AUTHORIZED.
-- Phase 06: NOT STARTED / NO AUTHORITY.
-- The containing commit grants no Contentful mutation, publication, Phase 06 execution or deployment authority.
+- Phase 06: NOT STARTED until its qualifying containing commit exists; that commit may establish ACTIVE and 06.1 APPROVED / CHECKPOINTED under the rule above.
+- Batch 06.2: NEXT only after 06.1 push, clean synchronized CMS `master` and External Checkpoint Validation PASS; implementation NOT AUTHORIZED.
+- Replacement CMA token: LOCAL / IGNORED / NOT TESTED; credential access and environment loading NOT AUTHORIZED.
+- The containing commit grants no 06.2 implementation, frontend edit, dependency, Contentful, token-test, publication, deployment or Phase 07 authority.
+- Phase 07: NOT STARTED.
 
 The approved export/import helpers use explicit programmatic environment-token binding. The successful Gate B and destructive recovery authorizations are consumed. Credentials stay in ignored local environment state, never appear in CLI arguments or logs, and `contentful config list` remains prohibited.
 

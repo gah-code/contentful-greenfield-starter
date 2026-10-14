@@ -6,7 +6,9 @@ Source strategy: `docs/system/CONTENT-STRATEGY.md`
 Source route contract: `docs/system/ROUTE-CONTRACT.md`
 Source SEO contract: `docs/system/SEO-AND-METADATA-CONTRACT.md`
 
-Current project lifecycle is owned by [Project State](../PROJECT-STATE.md#phase-05-closeout-containing-commit-rule). Its closeout reconciliation uses accepted 05.5 evidence from `2026-09-29T08:54:11.057Z`; no October live refresh is claimed. That accepted seed state is 42 draft Entries and eight processed unpublished Assets, all unarchived, with zero publications; it establishes no public Delivery API or production publication readiness.
+Current project lifecycle is owned by [Project State](../PROJECT-STATE.md). Phase 05 is COMPLETE / FROZEN at `35e70f991b8b1da2587526b278210f34b24f5402`; Phase 06 activation and 06.2 entry follow the [durable containing-commit rule](../phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#durable-containing-commit-rule). Accepted seed evidence remains `2026-09-29T08:54:11.057Z`: 42 draft Entries and eight processed unpublished Assets, all unarchived, with zero publications. No October live refresh or public Delivery API/production publication readiness is established.
+
+Phase 06 consumer handoff: this frozen matrix supplies route intent and semantic requirements to the [canonical CMS mapping/version ledger](FRONTEND-CONTRACT-MAPPING.md). The selected frontend repository `gah-code/ui-gallery-system` owns normalized TypeScript domain/page contracts, normalized fixtures, adapters and runtime consumers. Its existing component props and gallery metadata are UI-native presentation contracts; normalized portfolio contracts and fixture modules have not been implemented. Proposed shape names remain proposals until 06.2 approval; final production rendering is also deferred to 06.2. No shared package exists or is authorized. Preserve the frozen model and field/reference constraints when mapping conceptual requirements; code-owned curation or reverse relationships do not imply new stored Contentful fields. This handoff does not implement or approve code, fixtures, routes or live transport.
 
 ## Purpose
 
@@ -633,6 +635,8 @@ Requirement-related narrowing:
 - OD-14: proof metrics are CONDITIONAL and public-safe only; final metrics remain open.
 
 ## Evidence Limitations
+
+The following records the historical Batch 01.4 evidence boundary. Subsequent accepted Phase 02 model contracts and the Phase 06 handoff above remain authoritative for their respective scopes.
 
 - External Batch 01.4 validation passed.
 - No Contentful command was run.

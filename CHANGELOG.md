@@ -6,6 +6,8 @@ All meaningful project changes should be recorded here.
 
 ### Added
 
+- Phase 06 / Batch 06.1 CMS governance reconciliation (2026-10-14 UTC): [canonical phase plan](docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md), [mapping/version ledger](docs/system/FRONTEND-CONTRACT-MAPPING.md) and [inventory/architecture decision report](content-model/reports/PHASE-06-BATCH-06.1-FRONTEND-INVENTORY-AND-ARCHITECTURE-DECISION.md). Accepted CMS entry preflight and frontend inventory each received External Validation PASS WITH NOTES.
+
 - Batch 05.5 seed-validation and Phase 05 closeout report, preserving the externally accepted September 29 inventory, graph, publication state, evidence limitations, and three zero-mutation pre-write scope blocks.
 
 - Phase 05 / Batch 05.4 incident and recovery report preserving the consumed execution, externally accepted forensics, and local correction evidence.
@@ -36,6 +38,8 @@ Historical Batch 05.1 additions below describe that planning stage, before the l
 
 ### Decisions
 
+- ADR-010 selects `gah-code/ui-gallery-system`, defers final production rendering to 06.2, preserves nine pathname-route intentions and separate frontend Phase 9 governance, assigns the canonical mapping ledger to CMS and runtime contracts/adapters/fixtures to frontend. No shared package or implementation authority is created.
+
 - Start from a new Contentful space or blank environment.
 - Build the first model through a migration.
 - Export the approved model and verify it through a clean model-only import.
@@ -43,6 +47,8 @@ Historical Batch 05.1 additions below describe that planning stage, before the l
 - Accept the initial mixed baseline/CMS commit as a recorded deviation instead of rewriting history.
 
 ### Changed
+
+- Reconciled active Phase 05 pointers to COMPLETE / FROZEN at `35e70f991b8b1da2587526b278210f34b24f5402` and recorded the durable Phase 06 entry rule: exact-byte External Final Validation plus separate owner CMS Git authorization before the containing commit establishes ACTIVE / 06.1 APPROVED / CHECKPOINTED; post-push clean synchronization and External Checkpoint Validation precede 06.2. Frontend bytes remain unchanged; no live Contentful access, credential/token use, code/dependency changes, tests/builds or Git checkpoint occurs in this reconciliation. Earlier entries below preserve their original stage and authority boundaries.
 
 - Completed documentation-only Phase 05 Closeout Final Approval Reconciliation using 05.5 External Validation PASS WITH NOTES and `validatedAt = 2026-09-29T08:54:11.057Z`: 42 draft/unarchived Entries, eight processed/unpublished/unarchived Assets, zero publications, and graph `114 / 104 / 10 / 110 / 46` with zero errors. No October live refresh occurred.
 - Reconciled current pointers within the exact twenty-five-path maximum authorization. Preserved Phase 03/04 zero-content evidence as historical and retained frozen technical contracts, original 05.4 failure/forensics/recovery, and Phase 04 exhaustive-QA limitations. The preceding 55-document sweep found 25 active occurrences in ten additional files; all three prior scope blocks remain zero-mutation history.
