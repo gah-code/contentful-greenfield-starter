@@ -1,10 +1,10 @@
 # Phase 06 — Frontend Contracts + Adapter Boundary
 
-Status: entry governance reconciled; implementation is not authorized. The [containing-commit rule](#durable-containing-commit-rule) determines Phase 06 and Batch 06.1 lifecycle. Phase 05 is COMPLETE / FROZEN. Phase 07 is NOT STARTED.
+Status: Phase 06 ACTIVE; 06.1 APPROVED / CHECKPOINTED at `9738cb34127b36cbb118de2438fc4db656b5dc0d`. 06.2 implementation EXTERNALLY ACCEPTED — PASS WITH NOTES; documentation reconciliation candidate COMPLETE; External Final Validation PENDING. Formal 06.2 approval/checkpoint/freeze follows the [proposed qualifying rule](#batch-062-qualifying-checkpoint-rule) and is not established by this pass. Phase 05 remains COMPLETE / FROZEN; Phase 07 NOT STARTED.
 
 This document owns the canonical Greenfield Phase 06 batch plan and entry rule. [Project State](../PROJECT-STATE.md) owns current project lifecycle. The [mapping/version ledger](../system/FRONTEND-CONTRACT-MAPPING.md) owns cross-repository mapping and version provenance. The [06.1 report](../../content-model/reports/PHASE-06-BATCH-06.1-FRONTEND-INVENTORY-AND-ARCHITECTURE-DECISION.md) owns inspection chronology and external evidence identities.
 
-## Controlling baselines and accepted evidence
+## Historical 06.1 baselines and accepted evidence
 
 | Repository | Identity and role | Accepted checkpoint | Tree |
 | --- | --- | --- | --- |
@@ -15,13 +15,13 @@ The exact local roots are `/Users/gilbertharo/Documents/GitHub/contentful-greenf
 
 Accepted seed observations remain September 29 evidence (`2026-09-29T08:54:11.057Z`): 42 draft/unarchived Entries, eight processed/unpublished/unarchived Assets, zero publications, protected blank `master` and zero material model drift. No October live refresh is claimed.
 
-## Accepted frontend architecture
+## Historical 06.1 frontend inventory
 
 The frontend is a client-rendered React 19 / Vite 8 / TypeScript 6 application. Storybook is the implemented component/gallery/design-system surface. The Vite application renders the gallery root through `src/main.tsx` → `src/App.tsx` → `GallerySurfaceLayout`. It has no production portfolio router, SSR or SSG implementation. `src/stories/portfolio/HomePreview.stories.tsx` is a portfolio composition in Storybook only.
 
 Existing component props and gallery metadata remain UI-native presentation contracts. Their names and behavior are preserved unless a later authorized change is approved. No Contentful SDK/client/transport, normalized CMS adapter, reference resolver, portfolio URL builder, Rich Text normalizer or page assembler exists. Raw Contentful `fields`, `sys`, Links and response `includes` have not leaked into components. No normalized portfolio fixture module exists. Configured Storybook/Vitest/Playwright tooling is not evidence of executed frontend tests; no standalone adapter, production-route or CMS fixture-parity tests were found. No third-repository dependency was found.
 
-## Nine-route comparison
+## Historical 06.1 nine-route comparison
 
 The [approved v1 route contract](../system/ROUTE-CONTRACT.md) remains the intended portfolio pathname contract. All nine portfolio production routes are absent at the accepted frontend baseline. PARTIAL MATCH means presentation overlap only, not a route implementation or contract freeze. Fragment anchors do not implement pathname routes.
 
@@ -39,7 +39,7 @@ The [approved v1 route contract](../system/ROUTE-CONTRACT.md) remains the intend
 
 Route-level loading, empty, missing/not-found, error, draft/preview and SEO/metadata contracts require future design. Component loading or empty props and Storybook metadata do not establish those route contracts.
 
-## Ten-domain comparison
+## Historical 06.1 ten-domain comparison
 
 | Frozen CMS type | Accepted comparison | Outstanding semantic contract |
 | --- | --- | --- |
@@ -54,7 +54,7 @@ Route-level loading, empty, missing/not-found, error, draft/preview and SEO/meta
 | `tool` | PARTIAL MATCH | Category, context, skills and derived proof |
 | `skill` | ABSENT | Semantic Skill records and summaries |
 
-The [mapping ledger](../system/FRONTEND-CONTRACT-MAPPING.md) records proposed shapes and source constraints. Proposed names are not existing or approved TypeScript declarations.
+The comparisons above preserve the 06.1 inventory at frontend HEAD, before the accepted dirty 06.2 implementation. Six type modules and normalized/source fixtures now exist; the [mapping ledger](../system/FRONTEND-CONTRACT-MAPPING.md) records implemented contracts and accepted file provenance. Production routes, adapters and live transport remain NOT IMPLEMENTED.
 
 ## Owner architecture decisions
 
@@ -64,19 +64,13 @@ The [mapping ledger](../system/FRONTEND-CONTRACT-MAPPING.md) records proposed sh
 
 `gah-code/ui-gallery-system` is the selected implementation repository for Greenfield Phase 06. No third application repository is created or inferred.
 
-### B — Production rendering decision deferred
+### B — Production rendering selection recorded
 
-Storybook remains the implemented component/gallery/design-system surface. The existing Vite application is the leading candidate for the future portfolio runtime, but it is not approved as the final production rendering architecture.
+The 06.1 decision deferred production rendering for the subsequent comparison. That comparison and owner selection are now recorded: **Option B**, a separate portfolio entry in the existing frontend npm package; **Cloudflare Pages** intended static host; native document navigation, pre-resolved normalized data, React `renderToString` and matching hydration. Gallery and Storybook remain preserved. No router/framework/package migration is selected.
 
-Batch 06.2 compares, without implementation:
+Accepted R1 uses full canonical ASCII-path hexadecimal encoding in chunked `d-` directories and `page.html`, exact 200 canonical-to-internal proxies, 308 aliases and only a generic root 404. Capacity is `41 + 6N` rules, at most 2,000 and 1,000 characters per line; N=326 gives 1,997, N=327 fails. Provider extensionless lookup/single-pass proxy and complete HTTP/browser/rendering proof remain later obligations. R2 correlates route/state/payload/audience and metadata; accepted N1/N2 dispositions and source/date/optional/ordering policies remain unchanged.
 
-1. The existing Vite application with pathname routing and explicit direct-navigation, host-rewrite and prerender/metadata strategy.
-2. A separate portfolio application entry or package inside the same repository, preserving Storybook and the gallery.
-3. Another runtime approach only if evidence demonstrates that route, metadata, deployment, preview or static-output requirements cannot safely be met in the existing structure.
-
-The comparison must cover all nine routes; direct deep links; dynamic project/article slug pages; route-level metadata and crawlability; static/prerendered output; deployment-host fallback behavior; loading, empty, not-found and error states; Storybook/gallery preservation; static fixture operation; and future Contentful adapter isolation. It must document a selected deployment and direct-navigation strategy. Preview requirements are design inputs, not preview-token or client authority.
-
-This gate selects a repository and ownership boundary. It does not replace the gallery root, install a router, create routes or application packages, or change framework dependencies.
+This is accepted architecture design, not executed hosting or rendering. The [06.2 evidence report](../../content-model/reports/PHASE-06-BATCH-06.2-RENDERING-CONTRACT-AND-FIXTURE-FREEZE.md) owns chronology and qualifications; frontend `docs/system/PORTFOLIO-ARCHITECTURE.md` retains the technical design. Production origin/account, real publication eligibility and preview authentication are deferred. No route, renderer, hydration entry or host probe was implemented in 06.2.
 
 ### C — Route intent preserved
 
@@ -88,7 +82,7 @@ CMS documentation owns the frozen model and semantic source constraints, field/r
 
 ### E — Separate governance lifecycles
 
-Greenfield Phase 06 and frontend Phase 9 remain separate. They may coordinate deliverables and checkpoint references; neither automatically starts, approves or closes the other. Existing gallery/component contracts remain protected unless a change is separately approved. No frontend documentation or code change is made by this CMS reconciliation.
+Greenfield Phase 06 and frontend Phase 9 remain separate. They may coordinate deliverables and checkpoint references; neither automatically starts, approves or closes the other. Existing gallery/component contracts remain protected unless a change is separately approved. The 06.2 implementation and this documentation reconciliation are separately authorized work; neither advances frontend Phase 9 or closes its UI debt.
 
 ## Canonical batch plan
 
@@ -96,9 +90,9 @@ This is the owner-adopted planning structure. Its use for subsequent work is gov
 
 | Batch | Title | Scope and authority boundary |
 | --- | --- | --- |
-| 06.1 | Inventory, Baseline, Ownership + Architecture Decision | CMS entry preflight, exact frontend identity/baseline, architecture inventory, route/domain gaps, ownership, architecture decisions and canonical plan. APPROVED / CHECKPOINTED only through the containing-commit rule. |
-| 06.2 | Rendering/Route Architecture Decision + Normalized Contract and Fixture Freeze | NEXT after 06.1 checkpoint, clean synchronized CMS `master` and External Checkpoint Validation PASS; requires separate scope authorization. Preserve existing gallery/component contracts, evaluate and freeze Decision B, record deployment/deep-link strategy, freeze normalized domain/page and representative-fixture contracts, route-result/media/Rich Text/metadata contracts, and negative/optional cases. Coordinate with frontend Phase 9 without merging it. Planning and contract freeze do not authorize route/router/package/framework/runtime implementation. |
-| 06.3 | Pure Adapters, Resolution, URLs + Focused Offline Tests | LATER / NOT AUTHORIZED. Raw-source-to-normalized mapping, forward references, derived reverse relationships, internal/external/Asset URL builders, Rich Text normalization and focused mapping/boundary tests. No raw `fields`, `sys`, Link or `includes` in UI outputs. |
+| 06.1 | Inventory, Baseline, Ownership + Architecture Decision | CMS entry preflight, exact frontend identity/baseline, architecture inventory, route/domain gaps, ownership, architecture decisions and canonical plan. APPROVED / CHECKPOINTED at `9738cb34127b36cbb118de2438fc4db656b5dc0d` under the preserved containing-commit rule. |
+| 06.2 | Rendering/Route Architecture Decision + Normalized Contract and Fixture Freeze | Implementation EXTERNALLY ACCEPTED — PASS WITH NOTES; reconciliation candidate COMPLETE; External Final Validation PENDING. Contracts/fixtures and offline checks implemented; formal approval/checkpoint/freeze pending the proposed qualifying rule. No route/runtime or later-batch authority. |
+| 06.3 | Pure Adapters, Resolution, URLs + Focused Offline Tests | NEXT ONLY AFTER THE REQUIRED CHECKPOINT CHAIN / NOT AUTHORIZED. Raw-source-to-normalized mapping, forward references, derived reverse relationships, internal/external/Asset URL builders, Rich Text normalization and focused mapping/boundary tests. No raw `fields`, `sys`, Link or `includes` in UI outputs. |
 | 06.4 | Fixture Consumer Parity + Approved Route/Runtime Integration | LATER / NOT AUTHORIZED. Retain gallery/Storybook consumers, connect normalized fixtures to approved portfolio consumers, create only separately approved route/runtime surfaces and preserve static fixture operation. No Contentful transport. |
 | 06.5 | Consolidated Frontend Validation | LATER / NOT AUTHORIZED. Consolidate contract/adapter tests, route/state and SEO/metadata checks, accessibility/responsive evidence, fixture parity, raw-CMS-boundary proof and accepted limitations. Focused tests belong with implementation, not only at closeout. |
 | 06.6 | Cross-Repository Final Validation + Phase 06 Closeout | LATER / NOT AUTHORIZED. Exact CMS/frontend checkpoint pairing, ledger, exit criteria, static-fixture preservation and adapter evidence. No automatic Phase 07 authority. |
@@ -123,6 +117,8 @@ Accepted seed evidence is draft CMS evidence, not public Delivery API readiness,
 
 ## Durable Containing-Commit Rule
 
+The following 06.1 rule is preserved. Its qualifying containing commit is `9738cb34127b36cbb118de2438fc4db656b5dc0d`; the accepted continuation establishes Phase 06 ACTIVE / 06.1 APPROVED / CHECKPOINTED. The rule does not govern the new paired 06.2 candidate.
+
 External Final Validation must pass for the exact reconciliation bytes before commit. The CMS commit containing those exact bytes establishes **Phase 06 ACTIVE** and **Batch 06.1 APPROVED / CHECKPOINTED** only if both conditions hold:
 
 1. External Final Validation passed for those exact bytes before commit.
@@ -131,3 +127,18 @@ External Final Validation must pass for the exact reconciliation bytes before co
 Until the qualifying containing commit exists, Phase 06 is NOT STARTED. After push, clean synchronized CMS `master` and External Checkpoint Validation PASS are required before 06.2 may begin under separate owner authorization. The frontend remains at its accepted read-only baseline and receives no 06.1 commit.
 
 The containing commit grants no 06.2 implementation, frontend edit, dependency, Contentful, token-test, publication or Phase 07 authority. Phase 07 remains NOT STARTED. This prerequisite-based rule remains valid in the containing commit; it does not require rewriting these bytes to insert their own commit SHA.
+
+## Batch 06.2 Qualifying Checkpoint Rule
+
+**PROPOSED documentation rule for External Final Validation**, selected by the current owner authorization; it is not already externally approved. Incoming baselines are CMS `9738cb34127b36cbb118de2438fc4db656b5dc0d` / tree `5ce1358cf196672ff46365a0c342c5a68aa74d94` and frontend `a29b9997bedab501bf4432bb4c9e812359773df4` / tree `3fb1892570cca995dbdd0c829e403222f7c73564`. They do not contain this uncommitted candidate.
+
+1. External Implementation Validation PASS WITH NOTES binds the original 26-path accepted implementation candidate.
+2. This documentation-only reconciliation creates a final candidate across both repositories. It is not its own External Final Validation and creates no checkpoint.
+3. External Final Validation must PASS for the exact reconciled file sets and preserved implementation identities **before checkpoint creation**.
+4. The owner must separately authorize Git checkpoint operations.
+5. Both repositories must then have qualifying commits containing their exact final-validated file sets. Only when that **paired containing-commit condition** is satisfied do 06.2 APPROVED / CHECKPOINTED and contract freeze/version become effective. A single unpaired commit does not satisfy this rule.
+6. Push, clean local synchronization of both repositories and External Checkpoint Validation of the actual pair are required before 06.3 eligibility. Starting 06.3 still requires separate authorization.
+
+Pre-checkpoint reconciliation state: candidate COMPLETE; External Final Validation PENDING; Git checkpoint NOT AUTHORIZED / NOT RUN; effective normalized contract version UNASSIGNED UNTIL 06.2 APPROVAL. Candidate ledger revision is `06.2-reconciliation-1`; reserved initial normalized-contract label is `portfolio-contract-v1.0.0`. The label identifies the six exact reviewed type modules and fixture compatibility from the accepted manifest, not the CMS model, npm version, runtime declaration or Git tag.
+
+The [canonical ledger](../system/FRONTEND-CONTRACT-MAPPING.md) records the pending pair and artifact provenance. Later checkpoint evidence must resolve both actual commit/tree identities and membership in the exact external final-validation manifest. No hypothetical SHA, mutually embedded future SHA or self-hash is required; a later concrete pointer edit, if needed, requires separate authorization and review. 06.4–06.6 remain NOT AUTHORIZED and Phase 07 NOT STARTED. The 06.1 rule and Phase 05 closeout prerequisites are unchanged.

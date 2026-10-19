@@ -364,16 +364,24 @@ Do not treat this queue as approval of migration execution. Formal decision reco
 
 ## ADR-010 — Phase 06 Frontend Repository and Contract Ownership
 
-Status: owner decisions recorded for 06.1 governance reconciliation; validation/checkpoint lifecycle follows the [Phase 06 containing-commit rule](phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#durable-containing-commit-rule). No implementation authority.
+Status: 06.1 APPROVED / CHECKPOINTED; 06.2 owner architecture decisions and implementation EXTERNALLY ACCEPTED — PASS WITH NOTES. Documentation reconciliation candidate COMPLETE; External Final Validation PENDING. The proposed [06.2 qualifying rule](phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-062-qualifying-checkpoint-rule) governs later approval/version/freeze; no Git or later implementation authority follows.
 
 ### Decision
 
 - **A — repository:** select `gah-code/ui-gallery-system` at the owner-confirmed local root; no third application repository is inferred or created.
-- **B — runtime deferred:** Storybook remains the implemented component/gallery surface. The existing Vite app is the leading portfolio-runtime candidate, not the approved final production architecture. 06.2 must compare pathname routing in that app with explicit deep-link/host-rewrite/prerender/metadata strategy, a separate entry or package in the same repository, and another runtime only if evidence shows the existing structure cannot meet route, metadata, deployment, preview or static-output needs safely. The exact comparison criteria are owned by the [Phase 06 plan](phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md); no gallery-root replacement, router, route, package or dependency change follows.
+- **B — historical 06.1 runtime deferral:** Storybook remains the implemented component/gallery surface. The existing Vite app is the leading portfolio-runtime candidate, not the approved final production architecture. 06.2 must compare pathname routing in that app with explicit deep-link/host-rewrite/prerender/metadata strategy, a separate entry or package in the same repository, and another runtime only if evidence shows the existing structure cannot meet route, metadata, deployment, preview or static-output needs safely. The exact comparison criteria are owned by the [Phase 06 plan](phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md); no gallery-root replacement, router, route, package or dependency change follows.
 - **C — routes:** retain the nine [Formal V1 pathname routes](system/ROUTE-CONTRACT.md#formal-v1-route-inventory). Prototype fragment anchors do not implement them.
 - **D — ownership:** CMS owns frozen semantics, field/reference/validation policy, route intent, Greenfield governance and the canonical [mapping/version ledger](system/FRONTEND-CONTRACT-MAPPING.md). Frontend owns normalized TypeScript/domain/page contracts, fixtures, adapters, resolution, URLs, Rich Text, assemblers, SEO, tests and consumers after separate authorization. No shared package exists or is authorized.
 - **E — phase independence:** Greenfield Phase 06 and frontend Phase 9 coordinate deliverables and checkpoint references without automatically starting, approving or closing each other.
 
-### Consequences
+### Historical 06.1 consequences
 
 The existing generic component APIs and gallery metadata remain UI-native. No implemented portfolio contracts, routes, adapters or test passes are inferred from the accepted inventory. 06.2 freezes the architecture/contracts/fixture specification; that freeze itself grants no route, router, package, framework or runtime implementation authority. Live Contentful access is not needed for offline 06.2–06.5 work. The first later approved frontend implementation records the canonical CMS ledger version and checkpoint as a reciprocal pointer rather than duplicating its mapping authority.
+
+### 06.2 owner amendment and reconciliation
+
+The completed comparison records owner-selected **Option B**, a separate portfolio entry in the existing npm package, **Cloudflare Pages** as intended host and native document navigation. Preserve gallery/Storybook; no router/framework/package migration. R1/R2 and N1/N2 dispositions remain accepted; provider/runtime, real publication eligibility and preview authentication proof are deferred. The exact Node 22.23.3 / bundled npm 10.9.9 amendment was frontend-only, with unchanged dependency graph and isolated official distribution.
+
+Six type modules, source/normalized fixtures and offline checks now exist and are externally accepted. The preceding inventory consequences describe 06.1 and do not negate this implementation. The [06.2 report](../content-model/reports/PHASE-06-BATCH-06.2-RENDERING-CONTRACT-AND-FIXTURE-FREEZE.md) records the chronology, immutable evidence and limitations. Current reconciliation changes documentation only.
+
+This owner authorization selects candidate ledger revision `06.2-reconciliation-1` and reserved contract label `portfolio-contract-v1.0.0`; these were not chosen by the earlier review. No conflicting approved naming convention was found in the current canonical plan, ledger, ADR or tracker. The [proposed qualifying rule](phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-062-qualifying-checkpoint-rule) awaits External Final Validation and requires both qualifying containing commits before approval/version/freeze takes effect. Effective version remains UNASSIGNED UNTIL 06.2 APPROVAL. It is not a package version, model version, runtime constant or tag.

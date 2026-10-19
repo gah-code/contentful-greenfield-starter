@@ -6,6 +6,8 @@ All meaningful project changes should be recorded here.
 
 ### Added
 
+- Phase 06 / Batch 06.2 documentation-only Final Approval Reconciliation (2026-10-15 UTC): [canonical evidence report](content-model/reports/PHASE-06-BATCH-06.2-RENDERING-CONTRACT-AND-FIXTURE-FREEZE.md), accepted 26-path implementation PASS WITH NOTES, inherited final 21-test/typecheck/lint evidence and preserved runtime/setup history. Reconciliation candidate COMPLETE; External Final Validation PENDING; formal approval/checkpoint/freeze not established by this pass.
+
 - Phase 06 / Batch 06.1 CMS governance reconciliation (2026-10-14 UTC): [canonical phase plan](docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md), [mapping/version ledger](docs/system/FRONTEND-CONTRACT-MAPPING.md) and [inventory/architecture decision report](content-model/reports/PHASE-06-BATCH-06.1-FRONTEND-INVENTORY-AND-ARCHITECTURE-DECISION.md). Accepted CMS entry preflight and frontend inventory each received External Validation PASS WITH NOTES.
 
 - Batch 05.5 seed-validation and Phase 05 closeout report, preserving the externally accepted September 29 inventory, graph, publication state, evidence limitations, and three zero-mutation pre-write scope blocks.
@@ -38,7 +40,9 @@ Historical Batch 05.1 additions below describe that planning stage, before the l
 
 ### Decisions
 
-- ADR-010 selects `gah-code/ui-gallery-system`, defers final production rendering to 06.2, preserves nine pathname-route intentions and separate frontend Phase 9 governance, assigns the canonical mapping ledger to CMS and runtime contracts/adapters/fixtures to frontend. No shared package or implementation authority is created.
+- 06.2 amendment records owner-selected separate-entry Option B / Cloudflare Pages / native document navigation, candidate ledger `06.2-reconciliation-1` and reserved `portfolio-contract-v1.0.0`. Effective version remains UNASSIGNED UNTIL 06.2 APPROVAL under the proposed paired-checkpoint rule; Git and 06.3 remain separately gated.
+
+- Historical 06.1 decision: ADR-010 selects `gah-code/ui-gallery-system`, defers final production rendering to 06.2, preserves nine pathname-route intentions and separate frontend Phase 9 governance, assigns the canonical mapping ledger to CMS and runtime contracts/adapters/fixtures to frontend. No shared package or implementation authority is created.
 
 - Start from a new Contentful space or blank environment.
 - Build the first model through a migration.

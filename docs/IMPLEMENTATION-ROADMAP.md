@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phases 00–05 complete / frozen; model `v1.0.0` unchanged; Phase 05 checkpoint `35e70f991b8b1da2587526b278210f34b24f5402`; 06.1 preflights externally accepted PASS WITH NOTES; Phase 06 entry governed by its [containing-commit rule](phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#durable-containing-commit-rule); no implementation authority; Phase 07 NOT STARTED
+Status: Phases 00–05 complete / frozen; model `v1.0.0` unchanged; Phase 06 ACTIVE; 06.1 APPROVED / CHECKPOINTED at `9738cb34127b36cbb118de2438fc4db656b5dc0d`; 06.2 implementation EXTERNALLY ACCEPTED — PASS WITH NOTES; reconciliation candidate COMPLETE; External Final Validation PENDING; Phase 07 NOT STARTED
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -13,7 +13,7 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 | 03 | Model Export + Serial Clean-Room Verification | Complete / frozen; 22 of 22 exit criteria pass; zero-drift recovered model checkpointed | CMS only |
 | 04 | Editorial QA + Model Freeze | Complete / frozen at the established Phase 04 closeout checkpoint; Option B and evidence limitations preserved | CMS only |
 | 05 | Representative Seed Content | COMPLETE / FROZEN at `35e70f991b8b1da2587526b278210f34b24f5402`; 42 drafts / 8 processed unpublished Assets / publications 0 from accepted September 29 evidence | No current CMS authority |
-| 06 | Frontend Contracts + Adapter Boundary | Selected frontend repository, deferred rendering decision, CMS-owned mapping ledger and frontend-owned normalized contracts/adapters; canonical plan below | Governance now; implementation requires separate authority |
+| 06 | Frontend Contracts + Adapter Boundary | Owner-selected separate entry / Cloudflare Pages design, accepted frontend contracts/fixtures and CMS-owned candidate mapping ledger; canonical plan below | Documentation reconciliation only; later implementation separately authorized |
 | 07 | Delivery Integration | Published content loaded route by route | Runtime |
 | 08 | Preview + Editorial Workflow | Safe draft preview | Runtime |
 | 09 | Quality Gates + Release | Contract, content, SEO, and deployment confidence | Production |
@@ -90,10 +90,11 @@ Phase 05 Closeout Final Approval Reconciliation — COMPLETE
 Phase 05 closeout rule — SATISFIED at the accepted checkpoint; historical prerequisites preserved in Project State
 Seed — 42 DRAFT ENTRIES / 8 PROCESSED UNPUBLISHED ASSETS / ALL UNARCHIVED
 Publications — 0
-Phase 06 — ENTRY GOVERNED BY ITS CONTAINING-COMMIT RULE; NO IMPLEMENTATION AUTHORITY
-Batch 06.1 — PREFLIGHTS EXTERNALLY ACCEPTED; GOVERNANCE DECISIONS RECORDED
-Batch 06.2 — NEXT AFTER 06.1 CHECKPOINT + EXTERNAL CHECKPOINT VALIDATION; NOT AUTHORIZED
-Batches 06.3–06.6 — LATER / NOT AUTHORIZED
+Phase 06 — ACTIVE
+Batch 06.1 — APPROVED / CHECKPOINTED
+Batch 06.2 — IMPLEMENTATION EXTERNALLY ACCEPTED PASS WITH NOTES; RECONCILIATION CANDIDATE COMPLETE; EXTERNAL FINAL VALIDATION PENDING
+Batch 06.3 — NEXT ONLY AFTER THE REQUIRED CHECKPOINT CHAIN / NOT AUTHORIZED
+Batches 06.4–06.6 — NOT AUTHORIZED
 Phase 07 — NOT STARTED
 Pre-export tooling — APPROVED
 ```
@@ -523,18 +524,18 @@ These conclusions use accepted 05.5 evidence validatedAt `2026-09-29T08:54:11.05
 
 ## Phase 06 — Frontend Contracts + Adapter Boundary
 
-Canonical owner: [Phase 06 plan and durable containing-commit rule](phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md). The owner selects `gah-code/ui-gallery-system`; production rendering remains a 06.2 decision. CMS owns the [mapping/version ledger](system/FRONTEND-CONTRACT-MAPPING.md); frontend owns normalized code, fixtures, adapters and consumers. Frontend Phase 9 is a separate lifecycle. No shared package or live transport is authorized.
+Canonical owner: [Phase 06 plan and proposed 06.2 qualifying rule](phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-062-qualifying-checkpoint-rule). CMS owns the [mapping/version ledger](system/FRONTEND-CONTRACT-MAPPING.md), candidate `06.2-reconciliation-1`; effective version UNASSIGNED UNTIL 06.2 APPROVAL; reserved `portfolio-contract-v1.0.0`. Frontend owns accepted contracts/fixtures and future adapters/consumers. The [06.2 report](../content-model/reports/PHASE-06-BATCH-06.2-RENDERING-CONTRACT-AND-FIXTURE-FREEZE.md) owns inherited checks and limitations. Frontend Phase 9 remains independent; no shared package or live transport is authorized.
 
 | Batch | Canonical scope summary | Entry boundary |
 | --- | --- | --- |
-| 06.1 | Inventory, Baseline, Ownership + Architecture Decision | Governance reconciliation; approved/checkpointed only through the canonical rule |
-| 06.2 | Rendering/Route Architecture Decision + Normalized Contract and Fixture Freeze | NEXT after 06.1 checkpoint and External Checkpoint Validation; NOT AUTHORIZED |
-| 06.3 | Pure Adapters, Resolution, URLs + Focused Offline Tests | LATER / NOT AUTHORIZED |
+| 06.1 | Inventory, Baseline, Ownership + Architecture Decision | APPROVED / CHECKPOINTED at `9738cb34127b36cbb118de2438fc4db656b5dc0d` |
+| 06.2 | Rendering/Route Architecture Decision + Normalized Contract and Fixture Freeze | Implementation externally accepted; reconciliation candidate complete; final validation / paired checkpoint pending |
+| 06.3 | Pure Adapters, Resolution, URLs + Focused Offline Tests | NEXT ONLY AFTER THE REQUIRED CHECKPOINT CHAIN / NOT AUTHORIZED |
 | 06.4 | Fixture Consumer Parity + Approved Route/Runtime Integration | LATER / NOT AUTHORIZED; only separately approved runtime surfaces |
 | 06.5 | Consolidated Frontend Validation | LATER / NOT AUTHORIZED |
 | 06.6 | Cross-Repository Final Validation + Phase 06 Closeout | LATER / NOT AUTHORIZED |
 
-06.2 compares the existing Vite app, a separate application entry/package in the same repository, and another runtime only if route, metadata, deployment, preview or static-output evidence requires it. Its canonical criteria cover all nine routes, deep links, slug pages, metadata/crawlability, prerender/static output, host fallback, route states, gallery/Storybook preservation, static fixtures and adapter isolation. Planning/freezing does not authorize creating routes, a router, an application package, dependencies or a runtime.
+The completed 06.2 comparison selected a separate portfolio entry in the existing npm package, Cloudflare Pages and native document navigation. R1/R2/N1/N2 policies remain accepted design; runtime, provider, rendering/hydration and accessibility proof remain deferred. Documentation reconciliation does not establish formal approval/freeze, run project checks or authorize later implementation.
 
 ### Rules
 

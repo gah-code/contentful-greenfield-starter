@@ -1,31 +1,32 @@
 # Frontend Contract Mapping + Version Ledger
 
-Ledger revision: `06.1-planning-1` — governance revision only, not a runtime or normalized-contract version.
-Mapping status: **PLANNING / NOT IMPLEMENTED**.
+Ledger candidate revision: `06.2-reconciliation-1` — documentation revision selected by this owner authorization; External Final Validation PENDING. Incoming revision `06.1-planning-1` remains bound to CMS checkpoint `9738cb34127b36cbb118de2438fc4db656b5dc0d`.
+Mapping status: **CONTRACTS / FIXTURES IMPLEMENTED; EXTERNALLY ACCEPTED — PASS WITH NOTES; CHECKPOINT / FREEZE PENDING**.
 Normalized frontend contract version: **UNASSIGNED UNTIL 06.2 APPROVAL**.
+Reserved normalized-contract label: `portfolio-contract-v1.0.0`, pending the [proposed 06.2 qualifying rule](../phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-062-qualifying-checkpoint-rule).
 Canonical owner: CMS repository documentation at this path.
 
-This ledger owns cross-repository source-to-runtime responsibilities, baseline/version provenance and future paired-checkpoint evidence. The [Phase 06 document](../phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md) owns the canonical batch plan, architecture decision criteria and containing-commit rule; the [06.1 report](../../content-model/reports/PHASE-06-BATCH-06.1-FRONTEND-INVENTORY-AND-ARCHITECTURE-DECISION.md) owns evidence chronology. This document creates no TypeScript declarations, generated schemas, fixture modules, runtime routes or shared package.
+This ledger owns cross-repository source-to-runtime responsibilities, baseline/version provenance and future paired-checkpoint evidence. The [Phase 06 document](../phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md) owns the canonical batch plan, architecture decision criteria and containing-commit rule; the [06.1 report](../../content-model/reports/PHASE-06-BATCH-06.1-FRONTEND-INVENTORY-AND-ARCHITECTURE-DECISION.md) preserves entry history and the [06.2 report](../../content-model/reports/PHASE-06-BATCH-06.2-RENDERING-CONTRACT-AND-FIXTURE-FREEZE.md) owns implementation/reconciliation evidence chronology. This document creates no TypeScript declarations, generated schemas, fixture modules, runtime routes or shared package.
 
 ## Version and baseline ledger
 
 | Item | Controlling value |
 | --- | --- |
 | CMS identity | `gah-code/contentful-greenfield-starter` |
-| CMS incoming checkpoint | `35e70f991b8b1da2587526b278210f34b24f5402` |
-| CMS incoming tree | `3382e235debf42cf21c83cdbb3ab5b707d87ff13` |
+| CMS incoming baseline / 06.1 checkpoint | `9738cb34127b36cbb118de2438fc4db656b5dc0d` |
+| CMS incoming tree | `5ce1358cf196672ff46365a0c342c5a68aa74d94` |
 | Frontend identity | `gah-code/ui-gallery-system` |
-| Frontend read-only baseline | `a29b9997bedab501bf4432bb4c9e812359773df4` |
+| Frontend incoming baseline (accepted candidate is dirty) | `a29b9997bedab501bf4432bb4c9e812359773df4` |
 | Frontend baseline tree | `3fb1892570cca995dbdd0c829e403222f7c73564` |
 | Frozen Contentful model | `v1.0.0` |
 | Route-contract version source | Approved v1 inventory in [ROUTE-CONTRACT.md](ROUTE-CONTRACT.md), Phase 01 / Batch 01.2; detailed SEO contract approved by Batch 01.3 |
 | Normalized frontend contract version | UNASSIGNED UNTIL 06.2 APPROVAL |
-| Mapping status | PLANNING / NOT IMPLEMENTED |
-| Production rendering architecture | DEFERRED to 06.2 decision; existing Vite app is leading candidate, not selected final implementation |
+| Mapping status | Contracts / fixtures implemented and externally accepted; adapters / runtime / live transport NOT IMPLEMENTED |
+| Production rendering architecture | Owner-selected Option B, separate entry in existing npm package; Cloudflare Pages intended host; native document navigation; execution/provider proof deferred |
 | Live transport | None in Phase 06 |
 | Shared package | None exists or is authorized |
 
-The incoming CMS checkpoint freezes the accepted model/source baseline; the later externally validated containing commit versions this governance revision without embedding its own SHA. Neither this revision name nor the model version asserts that normalized frontend contracts exist.
+The incoming CMS baseline contains `06.1-planning-1`; Phase 05 closeout remains `35e70f991b8b1da2587526b278210f34b24f5402`. The candidate revision identifies these documentation changes. The reserved contract label binds `values.ts`, `media.ts`, `rich-text.ts`, `domain.ts`, `pages.ts` and `boundary.ts` under frontend `src/content/portfolio/contracts/`; their accepted byte identities and fixture compatibility are recorded in the [06.2 report](../../content-model/reports/PHASE-06-BATCH-06.2-RENDERING-CONTRACT-AND-FIXTURE-FREEZE.md) and immutable implementation manifest. No package version, CMS model version, tag or runtime constant changes. Effective version stays UNASSIGNED UNTIL 06.2 APPROVAL.
 
 ## Canonical responsibility boundary
 
@@ -48,21 +49,21 @@ The frontend's existing generic presentation props and gallery metadata remain t
 
 ## Approved route mapping intent
 
-All nine portfolio production routes are absent at the accepted frontend baseline. Seven have Storybook presentation overlap; both detail routes are absent. Proposed names below are design inputs only, not canonical or implemented declarations. Batch 06.2 may retain equivalent frontend names after contract review.
+All nine production portfolio routes remain absent as runtime routes. The externally accepted 06.2 candidate implements the following type-level payloads in `src/content/portfolio/contracts/pages.ts` and independent normalized fixture expectations. Contract and fixture existence is not an assembler or renderer implementation.
 
-| Route | Frozen source responsibility | Proposed normalized result, not implemented |
+| Route | Frozen source responsibility | Implemented payload contract; runtime deferred |
 | --- | --- | --- |
 | `/` | Profile, site/navigation/social, selected canonical project/article/experience/skill/tool summaries | `HomePageData`, composed with `SiteChrome` |
 | `/about` | Canonical profile biography/learning and selected supporting experience/skills/tools | `AboutPageData` |
 | `/work` | Experience dates, summary, duties, achievements and authored/derived proof | `WorkPageData` |
-| `/projects` | Canonical project previews with approved code-owned selection/order | `ProjectPreview` collection / page data |
-| `/projects/[slug]` | Canonical project case study and resolved/derived relationships | `ProjectDetail` / detail page data |
-| `/writing` | Canonical article previews | `ArticlePreview` collection / page data |
-| `/writing/[slug]` | Article body, author and related content | `ArticleDetail` / detail page data |
-| `/tools` | Tool category/context, skills and derived proof | `ToolView` collection / page data |
+| `/projects` | Canonical project previews with approved code-owned selection/order | `ProjectsPageData` / `ProjectPreview` |
+| `/projects/[slug]` | Canonical project case study and resolved/derived relationships | `ProjectPageData` / `ProjectDetail` |
+| `/writing` | Canonical article previews | `WritingPageData` / `ArticlePreview` |
+| `/writing/[slug]` | Article body, author and related content | `ArticlePageData` / `ArticleDetail` |
+| `/tools` | Tool category/context, skills and derived proof | `ToolsPageData` / `ToolView` |
 | `/contact` | Profile-approved contact/social channels and supporting résumé | `ContactPageData` |
 
-Additional proposals are `SkillSummary`, `SkillGroupView`, normalized media/document links, normalized Rich Text, page metadata and route-result states. Existing presentation overlap does not freeze any of these names. The [route contract](ROUTE-CONTRACT.md) distinguishes READY, EMPTY, MISSING, DRAFT / PREVIEW and ERROR by route; 06.2 must define loading and negative/optional cases without making public/draft eligibility implicit.
+`SkillSummary`, `SkillGroupView`, media/document links, field-specific Rich Text and correlated route-result metadata types are implemented. `PublicResultByRoute` and `TrustedPreviewResultByRoute` correlate route, state, payload and audience: READY collections are nonempty, EMPTY belongs only to Work/Projects/Writing/Tools, and MISSING/DRAFT_PREVIEW are detail-only. Loading is future runtime behavior; nominal types do not prove publication eligibility or authenticate preview. The six modules preserve ten source-domain projections; adapters and route assemblers remain type-only interfaces.
 
 ## Ten frozen source types
 
@@ -87,7 +88,7 @@ The [field ledger](../content-model/FIELD-ID-LEDGER.md), [reference map](../cont
 - Resolve references by identity and approved Entry/Asset link kind, target Content Type and cardinality. Preserve authored order where required; optional absence is not permission to fabricate an object. Wrong kind/type, unresolved targets and cycles need explicit negative cases.
 - The six frozen Rich Text fields are profile `longBio` / `learningHighlights`, project `caseStudyBody`, article `body`, and experience `responsibilities` / `achievements`. Project `problem`, `approach` and `outcome` are Text, not Rich Text. Preserve field-specific node, mark and embedded-Asset constraints; do not invent embedded Entry support.
 - WHOI `seed05-experience-whoi-frontend-developer` `/fields/tools` is the sole observed representation exception: expected `{"en-US":[]}` versus absent field, bounded by the frozen optional Array contract. No broad null/missing normalization, required-Array omission, wrong locale, reordered references, scalar changes or publication normalization is authorized.
-- Accepted seed date precision uses day `01` to encode month/year where the source only establishes that precision. Do not present the encoded day as a factual employment day; freeze display precision and date sorting in 06.2.
+- Accepted seed date precision uses day `01` to encode month/year where the source only establishes that precision. Do not present the encoded day as a factual employment day; the accepted fixtures expose eight employment dates as year/month with explicit month precision and preserve the approved sorting policy.
 - Optional public email/phone are absent from accepted seed content. Preserve approved channel availability rather than inventing contact values or requiring email when approved social contact satisfies intent.
 - Stable normalized IDs may be opaque identity values; retaining an ID does not authorize exposing raw `sys` objects.
 
@@ -107,7 +108,7 @@ Frozen authored relationships remain canonical. A derived reverse join must not 
 
 ## Fixtures, media, Rich Text and metadata
 
-Normalized static portfolio fixtures belong in the frontend repository after separate authorization and 06.2 approval. No fixture module path is assigned by this ledger. Story-local arrays and CMS seed manifests are source evidence, not existing normalized fixture parity. Preserve existing gallery/Storybook consumers while designing representative, optional, empty, missing, wrong-reference, ordering and draft/public-state cases.
+Accepted frontend fixtures exist at `src/data/portfolio/source-fixtures.ts`, `normalized-fixtures.ts`, `scenarios.ts` and `media.ts`, with `fixtures.test.ts` and three approved PNGs under `assets/`. Source snapshots cover 42 Entries / 8 Assets; independent normalized expectations import neither the source fixture nor an adapter. Optional contact omissions, exact WHOI exception, authored ordering and six Rich Text policies remain preserved. The scenario registry holds 50 families and 94 symbolic requests, not executed adapter/HTTP tests. Existing gallery/Storybook consumers remain unchanged; no fixture consumer parity or runtime proof is claimed.
 
 Frontend adapters own resolved media shape, HTTPS Asset URL handling, MIME/dimension/title/description projection, meaningful alternative text/decorative decisions and unavailable-media behavior. Frontend normalization owns allowed Rich Text shapes and resolved embedded media; hand-authored JSX/ReactNode is not a normalized Rich Text document contract.
 
@@ -121,8 +122,12 @@ Offline fixtures must explicitly distinguish representative draft-source data, p
 
 ## Reciprocal references and future paired-checkpoint evidence
 
-When the frontend first implements an approved Phase 06 contract, its documentation must record this canonical CMS ledger revision and the corresponding exact CMS checkpoint. That reciprocal reference is a checkpoint pointer, not a duplicate mapping ledger. This CMS reconciliation makes no frontend write.
+Frontend documentation reciprocally points to this CMS-owned candidate revision and separately pins the incoming `06.1-planning-1` ledger at `9738cb34127b36cbb118de2438fc4db656b5dc0d`. That old commit does not contain `06.2-reconciliation-1`. No second mapping/version registry is created.
 
-Each future approved mapping update must identify the exact CMS and frontend repository identities, branches, SHAs and trees; model and route-contract sources; ledger revision; approved frontend contract version; implemented artifact paths and byte/hash identities; fixture and adapter compatibility evidence; authorized validation commands/results and limitations; external decisions; and separately authorized checkpoint/push plus External Checkpoint Validation evidence. Do not populate implemented paths without actual implementation evidence. The normalized frontend contract version remains UNASSIGNED UNTIL 06.2 APPROVAL.
+Pair status: **PENDING / NO NEW CHECKPOINTS**. CMS and frontend remain at their incoming SHAs/trees, with the accepted 26 frontend paths plus actual CMS documentation changes pending. The external final-review index binds the exact final repository/path sets, byte counts and hashes; the [06.2 report](../../content-model/reports/PHASE-06-BATCH-06.2-RENDERING-CONTRACT-AND-FIXTURE-FREEZE.md) binds accepted input and protected implementation identities without self-hashes.
+
+The [proposed canonical qualifying rule](../phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-062-qualifying-checkpoint-rule) requires exact-byte External Final Validation PASS, separate owner Git authority and both containing commits before approval/version/freeze takes effect. Future checkpoint evidence must resolve both actual commit/tree identities and final-validation manifest membership; no future SHA or mutual embedded SHA is required. Push, clean synchronization and External Checkpoint Validation of that pair precede eligibility for separately authorized 06.3. A later concrete pointer update remains separately authorized/reviewed. Current reconciliation does not self-approve or checkpoint.
+
+Accepted workstation checks are TypeScript 6.0.3 portfolio PASS, Vitest 4.1.5 final 21 PASS / 0 failed and ESLint 10.2.1 PASS, under Node 22.23.3 / npm 10.9.9. These are inherited, not rerun here; the reviewer's separate Node 22.16.0 / TypeScript 5.8.3 six-module compilation is not the exact workstation suite. Fixture compatibility does not establish adapter correctness, runtime, rendering, accessibility, release readiness or preview authentication.
 
 Greenfield Phase 06 and frontend Phase 9 coordinate through deliverables and checkpoint references but remain separate lifecycles. Neither phase starts, approves or closes the other. Shared-package creation requires separate planning and authorization; none is proposed as implemented here.

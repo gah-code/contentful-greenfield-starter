@@ -4,20 +4,25 @@ This tracker records current project truth. Do not mark future batches complete 
 
 ## Phase 06 — Frontend Contracts + Adapter Boundary
 
-06.1 CMS entry preflight and frontend inventory are COMPLETE / separately EXTERNALLY VALIDATED — PASS WITH NOTES. Owner repository, ownership and architecture decisions are recorded in CMS documentation only. The selected frontend remains read-only at `a29b9997bedab501bf4432bb4c9e812359773df4`; its final production rendering architecture is deferred to 06.2.
+Phase 06 ACTIVE; 06.1 APPROVED / CHECKPOINTED at `9738cb34127b36cbb118de2438fc4db656b5dc0d`. The owner-selected separate portfolio entry (Option B), Cloudflare Pages design and accepted contracts/fixtures are recorded in the [06.2 report](content-model/reports/PHASE-06-BATCH-06.2-RENDERING-CONTRACT-AND-FIXTURE-FREEZE.md). Implementation is EXTERNALLY ACCEPTED — PASS WITH NOTES; documentation reconciliation candidate COMPLETE; External Final Validation PENDING.
 
-Canonical plan and lifecycle: [Phase 06](docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#durable-containing-commit-rule). Canonical cross-repository version owner: [Frontend Contract Mapping](docs/system/FRONTEND-CONTRACT-MAPPING.md). Before the qualifying containing commit Phase 06 is NOT STARTED; exact-byte External Final Validation plus separate owner CMS Git authorization are required for that commit to establish ACTIVE / 06.1 APPROVED / CHECKPOINTED. After push, clean synchronized CMS `master` and External Checkpoint Validation PASS precede 06.2. No implementation authority follows.
+Canonical lifecycle: [proposed 06.2 paired-checkpoint rule](docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-062-qualifying-checkpoint-rule). Canonical version owner: [mapping ledger](docs/system/FRONTEND-CONTRACT-MAPPING.md), candidate `06.2-reconciliation-1`; effective version UNASSIGNED UNTIL 06.2 APPROVAL; reserved `portfolio-contract-v1.0.0`. This pass establishes no formal 06.2 approval/checkpoint/freeze.
 
-| Batch | Planned boundary |
+| Batch | Current boundary |
 | --- | --- |
-| 06.1 | Inventory, baseline, ownership and architecture decisions; checkpoint governed by the canonical rule |
-| 06.2 | NEXT after 06.1 checkpoint and External Checkpoint Validation; rendering/route decision plus normalized contract/fixture freeze; NOT AUTHORIZED |
-| 06.3 | Pure adapters, resolution, URLs and focused offline tests; LATER / NOT AUTHORIZED |
-| 06.4 | Fixture consumer parity and separately approved route/runtime integration; LATER / NOT AUTHORIZED |
-| 06.5 | Consolidated frontend validation; LATER / NOT AUTHORIZED |
-| 06.6 | Cross-repository final validation and closeout; LATER / NOT AUTHORIZED |
+| 06.1 | APPROVED / CHECKPOINTED; preserved entry rule satisfied |
+| 06.2 | Implementation accepted; reconciliation candidate complete; External Final Validation PENDING; Git checkpoint NOT AUTHORIZED / NOT RUN |
+| 06.3 | NEXT ONLY AFTER THE REQUIRED CHECKPOINT CHAIN / NOT AUTHORIZED |
+| 06.4 | Fixture consumer parity and separately approved route/runtime integration; NOT AUTHORIZED |
+| 06.5 | Consolidated frontend validation; NOT AUTHORIZED |
+| 06.6 | Cross-repository final validation and closeout; NOT AUTHORIZED |
 
-No frontend edits, code generation, dependencies, test/build execution, Git checkpoint, Contentful access, environment loading, token testing, publication or Phase 07 work are authorized by this reconciliation. Replacement CMA token: LOCAL / IGNORED / NOT TESTED. Frontend Phase 9 is coordinated separately; no lifecycle automatically advances the other.
+- [x] Record external implementation acceptance and runtime amendment without rerunning checks.
+- [x] Prepare documentation-only reconciliation and reciprocal ledger pointers.
+- [ ] External Final Validation of the exact reconciled candidate.
+- [ ] Separate owner Git authority, both qualifying containing commits, push/clean synchronization and External Checkpoint Validation of the actual pair.
+
+This authorization covers documentation and external packaging only. No code/config/media/dependency/runtime change, project check, Contentful request, credential/environment loading, token test, publication or Git checkpoint is authorized. Replacement CMA token: LOCAL / IGNORED / NOT TESTED. Frontend Phase 9 remains independent with UI debt open; Phase 07 NOT STARTED.
 
 ## Phase 05 - Representative Seed Content
 
