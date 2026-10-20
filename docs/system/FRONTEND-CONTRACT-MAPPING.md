@@ -1,32 +1,31 @@
 # Frontend Contract Mapping + Version Ledger
 
-Ledger candidate revision: `06.2-reconciliation-1` — documentation revision selected by this owner authorization; External Final Validation PENDING. Incoming revision `06.1-planning-1` remains bound to CMS checkpoint `9738cb34127b36cbb118de2438fc4db656b5dc0d`.
-Mapping status: **CONTRACTS / FIXTURES IMPLEMENTED; EXTERNALLY ACCEPTED — PASS WITH NOTES; CHECKPOINT / FREEZE PENDING**.
-Normalized frontend contract version: **UNASSIGNED UNTIL 06.2 APPROVAL**.
-Reserved normalized-contract label: `portfolio-contract-v1.0.0`, pending the [proposed 06.2 qualifying rule](../phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-062-qualifying-checkpoint-rule).
-Canonical owner: CMS repository documentation at this path.
+Ledger candidate revision: `06.3-reconciliation-1` — documentation proposal selected by the owner; External Final Validation PENDING. Incoming checkpointed revision: `06.2-reconciliation-1` at CMS `c639e781af499ca51c2da8d837ca9d48098d42a2`.
+Mapping status: **FROZEN CONTRACTS / FIXTURES AND PURE ADAPTERS / ASSEMBLY IMPLEMENTED; CORRECTED 06.3 IMPLEMENTATION EXTERNALLY ACCEPTED — PASS WITH NOTES**.
+Normalized frontend contract: **`portfolio-contract-v1.0.0` — EFFECTIVE / FROZEN / UNCHANGED**.
+Canonical owner: CMS repository documentation at this path; frontend documents provide reciprocal pointers, not a second ledger.
 
-This ledger owns cross-repository source-to-runtime responsibilities, baseline/version provenance and future paired-checkpoint evidence. The [Phase 06 document](../phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md) owns the canonical batch plan, architecture decision criteria and containing-commit rule; the [06.1 report](../../content-model/reports/PHASE-06-BATCH-06.1-FRONTEND-INVENTORY-AND-ARCHITECTURE-DECISION.md) preserves entry history and the [06.2 report](../../content-model/reports/PHASE-06-BATCH-06.2-RENDERING-CONTRACT-AND-FIXTURE-FREEZE.md) owns implementation/reconciliation evidence chronology. This document creates no TypeScript declarations, generated schemas, fixture modules, runtime routes or shared package.
+The [Phase 06 plan](../phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md) owns the explicitly proposed 06.3 rule. The [06.3 evidence report](../../content-model/reports/PHASE-06-BATCH-06.3-PURE-ADAPTERS-RESOLUTION-URLS-AND-FOCUSED-OFFLINE-TESTS.md) owns exact accepted identities, original NEEDS REVISION history, correction, revalidation and inherited results. This documentation reconciliation creates no code, source semantics, runtime, shared package or live transport.
 
 ## Version and baseline ledger
 
 | Item | Controlling value |
 | --- | --- |
 | CMS identity | `gah-code/contentful-greenfield-starter` |
-| CMS incoming baseline / 06.1 checkpoint | `9738cb34127b36cbb118de2438fc4db656b5dc0d` |
-| CMS incoming tree | `5ce1358cf196672ff46365a0c342c5a68aa74d94` |
+| CMS incoming baseline / established 06.2 checkpoint | `c639e781af499ca51c2da8d837ca9d48098d42a2` |
+| CMS incoming tree | `7159c5853420fa77e0319a7b197852f045c7eea0` |
 | Frontend identity | `gah-code/ui-gallery-system` |
-| Frontend incoming baseline (accepted candidate is dirty) | `a29b9997bedab501bf4432bb4c9e812359773df4` |
-| Frontend baseline tree | `3fb1892570cca995dbdd0c829e403222f7c73564` |
+| Frontend incoming baseline / established 06.2 checkpoint | `4630aaaa2ed8808f9e9e7228d811fad6d5485ec0` |
+| Frontend baseline tree | `edc14db3f645d843aeaa6d6b76c08ccb098ef9c4` |
 | Frozen Contentful model | `v1.0.0` |
 | Route-contract version source | Approved v1 inventory in [ROUTE-CONTRACT.md](ROUTE-CONTRACT.md), Phase 01 / Batch 01.2; detailed SEO contract approved by Batch 01.3 |
-| Normalized frontend contract version | UNASSIGNED UNTIL 06.2 APPROVAL |
-| Mapping status | Contracts / fixtures implemented and externally accepted; adapters / runtime / live transport NOT IMPLEMENTED |
+| Normalized frontend contract version | `portfolio-contract-v1.0.0` EFFECTIVE / FROZEN / UNCHANGED |
+| Mapping status | Contracts / fixtures frozen; corrected pure adapters / route / metadata / assembly implementation accepted; consumers / rendering / live transport NOT IMPLEMENTED |
 | Production rendering architecture | Owner-selected Option B, separate entry in existing npm package; Cloudflare Pages intended host; native document navigation; execution/provider proof deferred |
 | Live transport | None in Phase 06 |
 | Shared package | None exists or is authorized |
 
-The incoming CMS baseline contains `06.1-planning-1`; Phase 05 closeout remains `35e70f991b8b1da2587526b278210f34b24f5402`. The candidate revision identifies these documentation changes. The reserved contract label binds `values.ts`, `media.ts`, `rich-text.ts`, `domain.ts`, `pages.ts` and `boundary.ts` under frontend `src/content/portfolio/contracts/`; their accepted byte identities and fixture compatibility are recorded in the [06.2 report](../../content-model/reports/PHASE-06-BATCH-06.2-RENDERING-CONTRACT-AND-FIXTURE-FREEZE.md) and immutable implementation manifest. No package version, CMS model version, tag or runtime constant changes. Effective version stays UNASSIGNED UNTIL 06.2 APPROVAL.
+The incoming CMS checkpoint contains `06.2-reconciliation-1`; historical `06.1-planning-1` belongs to `9738cb34127b36cbb118de2438fc4db656b5dc0d`. Candidate `06.3-reconciliation-1` is not in either pinned commit. Phase 05 closeout remains `35e70f991b8b1da2587526b278210f34b24f5402`. The effective version binds the unchanged six modules `values.ts`, `media.ts`, `rich-text.ts`, `domain.ts`, `pages.ts` and `boundary.ts` under frontend `src/content/portfolio/contracts/`. No package/model/runtime version or tag changes; no contract re-freeze occurs.
 
 ## Canonical responsibility boundary
 
@@ -49,9 +48,9 @@ The frontend's existing generic presentation props and gallery metadata remain t
 
 ## Approved route mapping intent
 
-All nine production portfolio routes remain absent as runtime routes. The externally accepted 06.2 candidate implements the following type-level payloads in `src/content/portfolio/contracts/pages.ts` and independent normalized fixture expectations. Contract and fixture existence is not an assembler or renderer implementation.
+All nine portfolio route shapes below have implemented pure parsing/lookup and correlated page assembly in the accepted 06.3 candidate. Browser routing, rendered consumers, generated HTML and hosting remain absent. The frozen payload declarations and independent normalized fixture expectations are unchanged.
 
-| Route | Frozen source responsibility | Implemented payload contract; runtime deferred |
+| Route | Frozen source responsibility | Frozen payload with pure assembly; rendering deferred |
 | --- | --- | --- |
 | `/` | Profile, site/navigation/social, selected canonical project/article/experience/skill/tool summaries | `HomePageData`, composed with `SiteChrome` |
 | `/about` | Canonical profile biography/learning and selected supporting experience/skills/tools | `AboutPageData` |
@@ -63,7 +62,7 @@ All nine production portfolio routes remain absent as runtime routes. The extern
 | `/tools` | Tool category/context, skills and derived proof | `ToolsPageData` / `ToolView` |
 | `/contact` | Profile-approved contact/social channels and supporting résumé | `ContactPageData` |
 
-`SkillSummary`, `SkillGroupView`, media/document links, field-specific Rich Text and correlated route-result metadata types are implemented. `PublicResultByRoute` and `TrustedPreviewResultByRoute` correlate route, state, payload and audience: READY collections are nonempty, EMPTY belongs only to Work/Projects/Writing/Tools, and MISSING/DRAFT_PREVIEW are detail-only. Loading is future runtime behavior; nominal types do not prove publication eligibility or authenticate preview. The six modules preserve ten source-domain projections; adapters and route assemblers remain type-only interfaces.
+`SkillSummary`, `SkillGroupView`, media/document links, field-specific Rich Text and correlated route-result metadata types are implemented. `PublicResultByRoute` and `TrustedPreviewResultByRoute` correlate route, state, payload and audience: READY collections are nonempty, EMPTY belongs only to Work/Projects/Writing/Tools, and MISSING/DRAFT_PREVIEW are detail-only. Loading is future runtime behavior; nominal types do not prove publication eligibility or authenticate preview. The six frozen modules preserve ten source-domain projections; their `NormalizeSource` and `AssembleRoute` interfaces now have pure implementations. No renderer or live transport is inferred.
 
 ## Ten frozen source types
 
@@ -101,14 +100,14 @@ The [field ledger](../content-model/FIELD-ID-LEDGER.md), [reference map](../cont
 | Tool proof across projects, experience and writing | Reverse joins of the corresponding authored `tools` references | No invented stored Tool proof arrays |
 | Internal detail URLs | Approved route prefix plus canonical project/article slug | No new skill/tool/experience detail route |
 | Home selections and display order without stored fields | Explicit approved code/fixture policy | No invented `project.featured`, `article.featured`, `featuredProjects` or `project.order` |
-| Canonical URLs, breadcrumbs and metadata fallbacks | Approved route/SEO contract plus normalized data | Runtime implementation and deployment base decision remain future work |
+| Canonical URLs, breadcrumbs and metadata fallbacks | Approved route/SEO contract plus normalized data | Pure helpers implemented; visible breadcrumb UI, real production origin and deployment remain deferred |
 | Reading time/TOC, where adopted | Approved deterministic derivation from article content | Not new authored fields or an automatic feature requirement |
 
 Frozen authored relationships remain canonical. A derived reverse join must not become a new CMS field or write back to Contentful.
 
 ## Fixtures, media, Rich Text and metadata
 
-Accepted frontend fixtures exist at `src/data/portfolio/source-fixtures.ts`, `normalized-fixtures.ts`, `scenarios.ts` and `media.ts`, with `fixtures.test.ts` and three approved PNGs under `assets/`. Source snapshots cover 42 Entries / 8 Assets; independent normalized expectations import neither the source fixture nor an adapter. Optional contact omissions, exact WHOI exception, authored ordering and six Rich Text policies remain preserved. The scenario registry holds 50 families and 94 symbolic requests, not executed adapter/HTTP tests. Existing gallery/Storybook consumers remain unchanged; no fixture consumer parity or runtime proof is claimed.
+Accepted frontend fixtures exist at `src/data/portfolio/source-fixtures.ts`, `normalized-fixtures.ts`, `scenarios.ts` and `media.ts`, with `fixtures.test.ts` and three approved PNGs under `assets/`. Source snapshots cover 42 Entries / 8 Assets; independent normalized expectations import neither the source fixture nor an adapter. Optional contact omissions, exact WHOI exception, authored ordering and six Rich Text policies remain preserved. The scenario registry holds 50 families and 94 symbolic requests. Accepted tests exercise bounded pure behavior, including 94 R1 intent assertions; those rows are not 50/94 additional tests or served HTTP responses. Existing gallery/Storybook consumers remain unchanged; no fixture consumer parity or runtime proof is claimed.
 
 Frontend adapters own resolved media shape, HTTPS Asset URL handling, MIME/dimension/title/description projection, meaningful alternative text/decorative decisions and unavailable-media behavior. Frontend normalization owns allowed Rich Text shapes and resolved embedded media; hand-authored JSX/ReactNode is not a normalized Rich Text document contract.
 
@@ -120,14 +119,29 @@ Accepted live evidence remains `2026-09-29T08:54:11.057Z`: 42 draft/unarchived E
 
 Offline fixtures must explicitly distinguish representative draft-source data, public-eligible test cases and preview/missing results. Preserve strict publication metadata checks; the WHOI representation rule changes none of them. Exhaustive Phase 04 102/102 live QA remains unestablished. No October live refresh, live client, Contentful transport, credential loading or token testing is part of Phase 06. No live access is needed for 06.2–06.5 offline work.
 
+## Implemented pure boundary and accepted evidence
+
+| Module under frontend `src/content/portfolio/` | Actual entry points and responsibility |
+| --- | --- |
+| `source.ts` | `normalizeSource`, `validatePreviewAccess`: source envelope/policy/revision validation before normalized graph projection; preview shape guard depends on a trusted caller, not authentication. |
+| `resolve.ts` | `indexRecords`, `validateFields`, `referenceIds`, `relatedCycles`, `revisionFact` and scalar/record helpers: strict locale, stored field/reference rules, cycle and eligibility checks. |
+| `normalize.ts` | `normalizeAssets`, `projectRecords`, `calendarDate`, `yearMonth`, summary/preview and ordering helpers: media/domain projections, approved reverse joins and date precision. |
+| `rich-text.ts` | `normalizeRichText`: field-specific typed Rich Text with resolved permitted media. |
+| `urls.ts` | `slug`, `projectPath`, `articlePath`, `externalUrl`, `assetUrl`, `siteOrigin`, `canonicalUrl`, `email`, `mailto`, `artifactIdentity`, `decodeArtifact`: pure validated URL/path/R1 identity helpers, no I/O. |
+| `routes.ts` | `parseRoute`, `lookupDetail`, `eligibleRoutes`, `artifactManifest`: pure routing/lookup/enumeration and bounded R1 intentions; no browser router or deployment file. |
+| `metadata.ts` | `validatePagePolicy`, `readyMetadata`, `emptyMetadata`, `failureMetadata`, `previewMetadata`, `detailBreadcrumbs`: release/nonpublic metadata and validated allowlisted default image; visible breadcrumb UI deferred. |
+| `assemble.ts` | `assembleRoute`, `safeDiagnostics`: route/state/audience-correlated normalized results and closed public diagnostics. |
+
+`adapters.test.ts` and `assembly.test.ts` exercise the actual pure APIs. The two unchanged configuration amendments only include the portfolio implementation modules and both test files. All twelve accepted bytes/modes are recorded in the [06.3 report](../../content-model/reports/PHASE-06-BATCH-06.3-PURE-ADAPTERS-RESOLUTION-URLS-AND-FOCUSED-OFFLINE-TESTS.md#accepted-twelve-member-manifest). I-063-01 is CLOSED for that exact corrected candidate: fresh allowlisted image/accessibility, validated known members and returned HTTPS URL, no caller mutation, override → hero → default precedence unchanged. The original NEEDS REVISION verdict remains attached to the original bytes.
+
+Inherited Node 22.23.3/npm 10.9.9 workstation evidence: TypeScript 6.0.3 PASS; Vitest 4.1.5, 183 passed/0 failed (21 fixture + 67 adapter + 95 assembly); ESLint 10.2.1 PASS. All original 133 cases plus 50 regressions remain. The reviewer separately used Node 22.16.0/TypeScript 5.8.3 and 64 probe rows, including 54 malformed rows; these are not extra Vitest cases or an exact-toolchain rerun. This documentation pass reruns zero project checks or runtime probes.
+
+N-063-01 remains NONBLOCKING / DEFERRED TO SEPARATELY AUTHORIZED 06.4 EMITTER: exact 308 aliases first, then exact 200 proxies, source-path sorted within each group, with emitted-artifact tests. No provider/HTTP/cache, rendering/hydration, browser/accessibility, real production origin, public clearance or preview authentication proof follows.
+
 ## Reciprocal references and future paired-checkpoint evidence
 
-Frontend documentation reciprocally points to this CMS-owned candidate revision and separately pins the incoming `06.1-planning-1` ledger at `9738cb34127b36cbb118de2438fc4db656b5dc0d`. That old commit does not contain `06.2-reconciliation-1`. No second mapping/version registry is created.
+Established 06.2 pair: CMS `c639e781af499ca51c2da8d837ca9d48098d42a2` / tree `7159c5853420fa77e0319a7b197852f045c7eea0`; frontend `4630aaaa2ed8808f9e9e7228d811fad6d5485ec0` / tree `edc14db3f645d843aeaa6d6b76c08ccb098ef9c4`. External Checkpoint Validation PASS WITH NOTES. The pinned CMS commit contains `06.2-reconciliation-1`; sibling-checkout candidate links refer to uncommitted `06.3-reconciliation-1` and must be labeled accordingly.
 
-Pair status: **PENDING / NO NEW CHECKPOINTS**. CMS and frontend remain at their incoming SHAs/trees, with the accepted 26 frontend paths plus actual CMS documentation changes pending. The external final-review index binds the exact final repository/path sets, byte counts and hashes; the [06.2 report](../../content-model/reports/PHASE-06-BATCH-06.2-RENDERING-CONTRACT-AND-FIXTURE-FREEZE.md) binds accepted input and protected implementation identities without self-hashes.
-
-The [proposed canonical qualifying rule](../phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-062-qualifying-checkpoint-rule) requires exact-byte External Final Validation PASS, separate owner Git authority and both containing commits before approval/version/freeze takes effect. Future checkpoint evidence must resolve both actual commit/tree identities and final-validation manifest membership; no future SHA or mutual embedded SHA is required. Push, clean synchronization and External Checkpoint Validation of that pair precede eligibility for separately authorized 06.3. A later concrete pointer update remains separately authorized/reviewed. Current reconciliation does not self-approve or checkpoint.
-
-Accepted workstation checks are TypeScript 6.0.3 portfolio PASS, Vitest 4.1.5 final 21 PASS / 0 failed and ESLint 10.2.1 PASS, under Node 22.23.3 / npm 10.9.9. These are inherited, not rerun here; the reviewer's separate Node 22.16.0 / TypeScript 5.8.3 six-module compilation is not the exact workstation suite. Fixture compatibility does not establish adapter correctness, runtime, rendering, accessibility, release readiness or preview authentication.
+Future 06.3 pair: **PENDING / NO NEW CHECKPOINTS**. Corrected implementation acceptance is established; documentation reconciliation COMPLETE / READY FOR EXTERNAL FINAL VALIDATION. Formal 06.3 approval/checkpoint is NOT ESTABLISHED. The [proposed canonical 06.3 rule](../phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-063-qualifying-checkpoint-rule) is PROPOSED FOR EXTERNAL FINAL VALIDATION and requires exact-byte final validation, separate Git authority and both qualifying containing commits. Both pushes, clean synchronization and External Checkpoint Validation precede 06.4 eligibility; 06.4 still requires separate authorization. No hypothetical SHA, version bump or mutual future-commit dependency is introduced.
 
 Greenfield Phase 06 and frontend Phase 9 coordinate through deliverables and checkpoint references but remain separate lifecycles. Neither phase starts, approves or closes the other. Shared-package creation requires separate planning and authorization; none is proposed as implemented here.

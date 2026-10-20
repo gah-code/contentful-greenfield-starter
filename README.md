@@ -29,7 +29,7 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 
 | Area | Current state |
 | --- | --- |
-| Current project state | Phase 05 COMPLETE / FROZEN; Phase 06 ACTIVE; 06.1 APPROVED / CHECKPOINTED at `9738cb34127b36cbb118de2438fc4db656b5dc0d` |
+| Current project state | Phase 05 COMPLETE / FROZEN; Phase 06 ACTIVE; 06.2 APPROVED / CHECKPOINTED; corrected 06.3 implementation EXTERNALLY ACCEPTED — PASS WITH NOTES |
 | Frozen upstream phase | Phase 04 - COMPLETE / FROZEN at `6fdb16f06c5338e11f08ae0a44180b6db4251611`; model `v1.0.0` frozen |
 | Phase 04 closeout checkpoint | Batch 04.6 / `6fdb16f06c5338e11f08ae0a44180b6db4251611` / External Checkpoint Validation PASS WITH NOTES |
 | Historical Batch 04.3 disposition | Conditionally exited for findings handoff / incident, forensics, and cleanup complete / zero-content `dev` baseline restored / exhaustive live QA deferred / known evidence limitation preserved |
@@ -58,7 +58,7 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Batch 04.6 reconciliation lifecycle | Complete / checkpoint established at `6fdb16f06c5338e11f08ae0a44180b6db4251611` / External Checkpoint Validation PASS WITH NOTES |
 | Model freeze decision | `v1.0.0` FROZEN by the established Phase 04 closeout checkpoint |
 | Phase 04 exit | 11 of 11 criteria satisfied; criteria 3-5 remain visibly evidence-bounded |
-| Current reconciliation batch | 06.2 — documentation-only Final Approval Reconciliation candidate COMPLETE; External Final Validation PENDING |
+| Current reconciliation batch | 06.3 — documentation-only Final Approval Reconciliation COMPLETE / READY FOR EXTERNAL FINAL VALIDATION; formal 06.3 approval/checkpoint NOT ESTABLISHED |
 | Previous 04.3 authoring authorization | Historically granted / unconsumed; superseded for actionability and must not be reused |
 | Latest 04.3 authoring authorization | Granted once / consumed by the TA-01 Asset upload / no continuation, retry, repair, or cleanup authorized |
 | Batch 04.1 external validation | PASS WITH NOTES |
@@ -84,7 +84,7 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Phase 03 technical exit criteria | 22 / 22 PASS |
 | Phase 04 | COMPLETE / FROZEN; Option B, R88, and incomplete exhaustive-QA limitation preserved |
 | Seed content | 42 draft Entries / 8 processed unpublished Assets / all unarchived / publications 0 |
-| Phase 06 | 06.2 implementation EXTERNALLY ACCEPTED — PASS WITH NOTES; formal approval/checkpoint/freeze pending the [proposed paired-checkpoint rule](docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-062-qualifying-checkpoint-rule) |
+| Phase 06 | 06.2 checkpoint established; 06.3 pure boundary accepted, documentation final validation PENDING; [proposed 06.3 rule](docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-063-qualifying-checkpoint-rule) |
 
 **Phase 05 closeout:** COMPLETE / FROZEN at `35e70f991b8b1da2587526b278210f34b24f5402`; 05.5 APPROVED / CHECKPOINTED. Accepted September 29 evidence (`2026-09-29T08:54:11.057Z`) establishes 42 draft Entries and eight processed unpublished Assets, all unarchived, with zero publications. No October live refresh is claimed. Public Delivery API, production publication and exhaustive Phase 04 102/102 live QA readiness remain not established.
 
@@ -96,9 +96,9 @@ See [Phase 05](docs/phases/PHASE-05-REPRESENTATIVE-SEED-CONTENT.md), [seed contr
 
 > For canonical current state, see [docs/PROJECT-STATE.md](docs/PROJECT-STATE.md) and [TASKS.md](TASKS.md).
 
-**Phase 06 ownership:** `gah-code/ui-gallery-system` owns the accepted offline contracts/fixtures. The owner selected Option B, a separate portfolio entry in its existing npm package, Cloudflare Pages as intended host and native document navigation. Gallery/Storybook remain preserved; production routes, adapters and live transport are not implemented. The [06.2 report](content-model/reports/PHASE-06-BATCH-06.2-RENDERING-CONTRACT-AND-FIXTURE-FREEZE.md) records evidence and limitations.
+**Phase 06 ownership:** `gah-code/ui-gallery-system` owns frozen contracts/fixtures and the externally accepted pure source validation, resolution, URL/Rich Text normalization, route/metadata helpers and page assembly. The owner-selected separate portfolio entry (Option B), Cloudflare Pages intended host and native document navigation are unchanged. Consumers, rendering/hydration and live transport remain unimplemented; gallery/Storybook are preserved.
 
-The [Phase 06 plan](docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md) owns the batch sequence and proposed approval rule. The CMS-owned [mapping/version ledger](docs/system/FRONTEND-CONTRACT-MAPPING.md) records candidate `06.2-reconciliation-1`; effective contract version UNASSIGNED UNTIL 06.2 APPROVAL; reserved `portfolio-contract-v1.0.0`. External Final Validation and the separately authorized paired checkpoint chain remain pending; 06.3 is NOT AUTHORIZED. Frontend Phase 9 remains independent; Phase 07 NOT STARTED. No live access, credentials, token tests or release authority follows.
+06.2 is APPROVED / CHECKPOINTED; `portfolio-contract-v1.0.0` is EFFECTIVE / FROZEN and unchanged. The corrected twelve-path 06.3 implementation is EXTERNALLY ACCEPTED — PASS WITH NOTES; I-063-01 is CLOSED for the accepted bytes. Documentation reconciliation is COMPLETE / READY FOR EXTERNAL FINAL VALIDATION; that validation remains PENDING. Formal 06.3 approval/checkpoint is NOT ESTABLISHED. The [candidate mapping ledger](docs/system/FRONTEND-CONTRACT-MAPPING.md) proposes documentation revision `06.3-reconciliation-1`; the [proposed 06.3 qualifying-checkpoint rule](docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-063-qualifying-checkpoint-rule) is PROPOSED FOR EXTERNAL FINAL VALIDATION. The [06.3 evidence report](content-model/reports/PHASE-06-BATCH-06.3-PURE-ADAPTERS-RESOLUTION-URLS-AND-FOCUSED-OFFLINE-TESTS.md) owns the original NEEDS REVISION history, corrected acceptance and inherited 183-test result (21 fixture + 67 adapter + 95 assembly), with no project checks rerun here. N-063-01 remains NONBLOCKING / deferred to the separately authorized 06.4 emitter. 06.4 is NOT AUTHORIZED; Phase 07 is NOT STARTED. Frontend Phase 9 remains independent. No live access, credentials, token tests or release authority follows.
 
 
 ## What This Repository Demonstrates

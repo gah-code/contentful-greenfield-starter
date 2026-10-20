@@ -364,7 +364,7 @@ Do not treat this queue as approval of migration execution. Formal decision reco
 
 ## ADR-010 — Phase 06 Frontend Repository and Contract Ownership
 
-Status: 06.1 APPROVED / CHECKPOINTED; 06.2 owner architecture decisions and implementation EXTERNALLY ACCEPTED — PASS WITH NOTES. Documentation reconciliation candidate COMPLETE; External Final Validation PENDING. The proposed [06.2 qualifying rule](phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-062-qualifying-checkpoint-rule) governs later approval/version/freeze; no Git or later implementation authority follows.
+Status: 06.1 and 06.2 APPROVED / CHECKPOINTED; accepted rendering/hosting/ownership decisions unchanged. Corrected 06.3 implementation EXTERNALLY ACCEPTED — PASS WITH NOTES; documentation reconciliation COMPLETE; External Final Validation PENDING. The [proposed 06.3 qualifying rule](phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-063-qualifying-checkpoint-rule) governs the pending approval/checkpoint proposal; no Git or later implementation authority follows.
 
 ### Decision
 
@@ -378,10 +378,14 @@ Status: 06.1 APPROVED / CHECKPOINTED; 06.2 owner architecture decisions and impl
 
 The existing generic component APIs and gallery metadata remain UI-native. No implemented portfolio contracts, routes, adapters or test passes are inferred from the accepted inventory. 06.2 freezes the architecture/contracts/fixture specification; that freeze itself grants no route, router, package, framework or runtime implementation authority. Live Contentful access is not needed for offline 06.2–06.5 work. The first later approved frontend implementation records the canonical CMS ledger version and checkpoint as a reciprocal pointer rather than duplicating its mapping authority.
 
-### 06.2 owner amendment and reconciliation
+### Historical 06.2 owner amendment and reconciliation
 
 The completed comparison records owner-selected **Option B**, a separate portfolio entry in the existing npm package, **Cloudflare Pages** as intended host and native document navigation. Preserve gallery/Storybook; no router/framework/package migration. R1/R2 and N1/N2 dispositions remain accepted; provider/runtime, real publication eligibility and preview authentication proof are deferred. The exact Node 22.23.3 / bundled npm 10.9.9 amendment was frontend-only, with unchanged dependency graph and isolated official distribution.
 
 Six type modules, source/normalized fixtures and offline checks now exist and are externally accepted. The preceding inventory consequences describe 06.1 and do not negate this implementation. The [06.2 report](../content-model/reports/PHASE-06-BATCH-06.2-RENDERING-CONTRACT-AND-FIXTURE-FREEZE.md) records the chronology, immutable evidence and limitations. Current reconciliation changes documentation only.
 
 This owner authorization selects candidate ledger revision `06.2-reconciliation-1` and reserved contract label `portfolio-contract-v1.0.0`; these were not chosen by the earlier review. No conflicting approved naming convention was found in the current canonical plan, ledger, ADR or tracker. The [proposed qualifying rule](phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-062-qualifying-checkpoint-rule) awaits External Final Validation and requires both qualifying containing commits before approval/version/freeze takes effect. Effective version remains UNASSIGNED UNTIL 06.2 APPROVAL. It is not a package version, model version, runtime constant or tag.
+
+### 06.3 lifecycle and evidence continuation
+
+The preceding 06.2 reconciliation wording is preserved as history; its containing-commit rule is now satisfied by the established pair recorded in the [ledger](system/FRONTEND-CONTRACT-MAPPING.md). `portfolio-contract-v1.0.0` remains EFFECTIVE / FROZEN and unchanged. The owner selects candidate documentation revision `06.3-reconciliation-1` and an explicitly proposed 06.3 qualifying rule for External Final Validation. Formal 06.3 approval/checkpoint is NOT ESTABLISHED. The [06.3 report](../content-model/reports/PHASE-06-BATCH-06.3-PURE-ADAPTERS-RESOLUTION-URLS-AND-FOCUSED-OFFLINE-TESTS.md) records I-063-01 CLOSED, inherited 183-test PASS without rerun, retained N-063-01, and the original NEEDS REVISION history. This is a lifecycle/evidence continuation, with no new architecture decision or change to frontend Phase 9.

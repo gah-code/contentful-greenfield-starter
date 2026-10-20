@@ -4,23 +4,23 @@ This tracker records current project truth. Do not mark future batches complete 
 
 ## Phase 06 — Frontend Contracts + Adapter Boundary
 
-Phase 06 ACTIVE; 06.1 APPROVED / CHECKPOINTED at `9738cb34127b36cbb118de2438fc4db656b5dc0d`. The owner-selected separate portfolio entry (Option B), Cloudflare Pages design and accepted contracts/fixtures are recorded in the [06.2 report](content-model/reports/PHASE-06-BATCH-06.2-RENDERING-CONTRACT-AND-FIXTURE-FREEZE.md). Implementation is EXTERNALLY ACCEPTED — PASS WITH NOTES; documentation reconciliation candidate COMPLETE; External Final Validation PENDING.
-
-Canonical lifecycle: [proposed 06.2 paired-checkpoint rule](docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-062-qualifying-checkpoint-rule). Canonical version owner: [mapping ledger](docs/system/FRONTEND-CONTRACT-MAPPING.md), candidate `06.2-reconciliation-1`; effective version UNASSIGNED UNTIL 06.2 APPROVAL; reserved `portfolio-contract-v1.0.0`. This pass establishes no formal 06.2 approval/checkpoint/freeze.
+Phase 06 ACTIVE; Phase 05 COMPLETE / FROZEN. 06.2 is APPROVED / CHECKPOINTED; `portfolio-contract-v1.0.0` is EFFECTIVE / FROZEN and unchanged. The corrected twelve-path 06.3 implementation is EXTERNALLY ACCEPTED — PASS WITH NOTES; I-063-01 is CLOSED for the accepted bytes. Documentation reconciliation is COMPLETE / READY FOR EXTERNAL FINAL VALIDATION; that validation remains PENDING. Formal 06.3 approval/checkpoint is NOT ESTABLISHED. The [candidate mapping ledger](docs/system/FRONTEND-CONTRACT-MAPPING.md) proposes documentation revision `06.3-reconciliation-1`; the [proposed 06.3 qualifying-checkpoint rule](docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-063-qualifying-checkpoint-rule) is PROPOSED FOR EXTERNAL FINAL VALIDATION. The [06.3 evidence report](content-model/reports/PHASE-06-BATCH-06.3-PURE-ADAPTERS-RESOLUTION-URLS-AND-FOCUSED-OFFLINE-TESTS.md) owns the original NEEDS REVISION history, corrected acceptance and inherited 183-test result (21 fixture + 67 adapter + 95 assembly), with no project checks rerun here. N-063-01 remains NONBLOCKING / deferred to the separately authorized 06.4 emitter. 06.4 is NOT AUTHORIZED; Phase 07 is NOT STARTED.
 
 | Batch | Current boundary |
 | --- | --- |
 | 06.1 | APPROVED / CHECKPOINTED; preserved entry rule satisfied |
-| 06.2 | Implementation accepted; reconciliation candidate complete; External Final Validation PENDING; Git checkpoint NOT AUTHORIZED / NOT RUN |
-| 06.3 | NEXT ONLY AFTER THE REQUIRED CHECKPOINT CHAIN / NOT AUTHORIZED |
-| 06.4 | Fixture consumer parity and separately approved route/runtime integration; NOT AUTHORIZED |
+| 06.2 | APPROVED / CHECKPOINTED at the established CMS/frontend pair; contract freeze unchanged |
+| 06.3 | Corrected implementation EXTERNALLY ACCEPTED — PASS WITH NOTES; documentation reconciliation COMPLETE; External Final Validation PENDING; formal approval/checkpoint NOT ESTABLISHED |
+| 06.4 | Fixture consumer parity and separately approved route/runtime integration; NOT AUTHORIZED; N-063-01 emitter obligation retained |
 | 06.5 | Consolidated frontend validation; NOT AUTHORIZED |
 | 06.6 | Cross-repository final validation and closeout; NOT AUTHORIZED |
 
-- [x] Record external implementation acceptance and runtime amendment without rerunning checks.
-- [x] Prepare documentation-only reconciliation and reciprocal ledger pointers.
-- [ ] External Final Validation of the exact reconciled candidate.
-- [ ] Separate owner Git authority, both qualifying containing commits, push/clean synchronization and External Checkpoint Validation of the actual pair.
+- [x] Implement the pure boundary and focused offline tests; retain the original 133-case and NEEDS REVISION history.
+- [x] Correct I-063-01 in the two authorized files; retain all original cases plus 50 regressions; external revalidation PASS WITH NOTES.
+- [x] Prepare bounded documentation reconciliation, candidate ledger and explicitly proposed 06.3 rule; preserve all twelve accepted files.
+- [ ] External Final Validation of the exact final two-repository candidate.
+- [ ] Separate owner Git authority, both qualifying containing commits, both pushes, clean synchronization and External Checkpoint Validation.
+- [ ] Separate bounded 06.4 authorization after its prerequisites pass.
 
 This authorization covers documentation and external packaging only. No code/config/media/dependency/runtime change, project check, Contentful request, credential/environment loading, token test, publication or Git checkpoint is authorized. Replacement CMA token: LOCAL / IGNORED / NOT TESTED. Frontend Phase 9 remains independent with UI debt open; Phase 07 NOT STARTED.
 
