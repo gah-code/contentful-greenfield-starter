@@ -364,7 +364,7 @@ Do not treat this queue as approval of migration execution. Formal decision reco
 
 ## ADR-010 — Phase 06 Frontend Repository and Contract Ownership
 
-Status: 06.1 and 06.2 APPROVED / CHECKPOINTED; accepted rendering/hosting/ownership decisions unchanged. Corrected 06.3 implementation EXTERNALLY ACCEPTED — PASS WITH NOTES; documentation reconciliation COMPLETE; External Final Validation PENDING. The [proposed 06.3 qualifying rule](phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-063-qualifying-checkpoint-rule) governs the pending approval/checkpoint proposal; no Git or later implementation authority follows.
+Status: 06.1/06.2/06.3 APPROVED / CHECKPOINTED; accepted rendering/hosting/ownership decisions unchanged. 06.4 conditional non-release reconciliation is governed by [D-064-01](#d-064-01) and the [proposed conditional rule](phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-064-conditional-qualifying-checkpoint-rule); exact-byte External Final Validation remains PENDING.
 
 ### Decision
 
@@ -386,6 +386,29 @@ Six type modules, source/normalized fixtures and offline checks now exist and ar
 
 This owner authorization selects candidate ledger revision `06.2-reconciliation-1` and reserved contract label `portfolio-contract-v1.0.0`; these were not chosen by the earlier review. No conflicting approved naming convention was found in the current canonical plan, ledger, ADR or tracker. The [proposed qualifying rule](phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-062-qualifying-checkpoint-rule) awaits External Final Validation and requires both qualifying containing commits before approval/version/freeze takes effect. Effective version remains UNASSIGNED UNTIL 06.2 APPROVAL. It is not a package version, model version, runtime constant or tag.
 
-### 06.3 lifecycle and evidence continuation
+### Historical 06.3 lifecycle and evidence continuation
 
 The preceding 06.2 reconciliation wording is preserved as history; its containing-commit rule is now satisfied by the established pair recorded in the [ledger](system/FRONTEND-CONTRACT-MAPPING.md). `portfolio-contract-v1.0.0` remains EFFECTIVE / FROZEN and unchanged. The owner selects candidate documentation revision `06.3-reconciliation-1` and an explicitly proposed 06.3 qualifying rule for External Final Validation. Formal 06.3 approval/checkpoint is NOT ESTABLISHED. The [06.3 report](../content-model/reports/PHASE-06-BATCH-06.3-PURE-ADAPTERS-RESOLUTION-URLS-AND-FOCUSED-OFFLINE-TESTS.md) records I-063-01 CLOSED, inherited 183-test PASS without rerun, retained N-063-01, and the original NEEDS REVISION history. This is a lifecycle/evidence continuation, with no new architecture decision or change to frontend Phase 9.
+
+The preceding 06.3 proposal was subsequently resolved by the established pair: CMS `dac8d6b97244dbf8e5e6f34aab250902d023e282` / tree `5499f187173a58435822cd40fdd8aae4f622f0dc`; frontend `f1a281c58848f94d2b420f4130fe1dad3233e3fc` / tree `25b49f2dadeea2594148147871b8d6325ad4bba8`. External Checkpoint Validation PASS WITH NOTES established `06.3-reconciliation-1`; historical PENDING/PROPOSED text above remains event-time evidence.
+
+<a id="d-064-01"></a>
+## D-064-01 — Conditional non-release browser-verification deferral
+
+Status: EXTERNALLY ACCEPTED WITH CONDITIONS / OWNER ADOPTED; candidate documentation revision `06.4-reconciliation-1` PENDING External Final Validation and a qualifying future pair. Risk owner: **Gilberto Haro**. Adoption was explicitly submitted in the current IDE user request and recorded at 2026-10-21T22:31:47.863156+00:00; the exact message-send timestamp was not supplied. It is not backdated to the manual package seal.
+
+The original pinned Playwright/Chromium method could not run on the recorded host. Ordinary Firefox method `06.4-manual-browser-1` was then selected, but manual observations remained incomplete. Accepted source/non-browser evidence plus limited visual evidence supports only bounded non-release scheduling progression; it does not prove browser behavior.
+
+The decision binds the eighteen exact corrected members: correction `ARTIFACT-INDEX.json` SHA-256 `94ff91658d27ffb1af7e566990ba09f36141916385aa260fc83e1632373358d6`, correction ZIP `7b9d19fd697f9b112cc67c030deb8a43e23a9d2bff7798dfd621e529c1205f4e`. `portfolio-contract-v1.0.0` is EFFECTIVE / FROZEN / UNCHANGED; I-063-01 remains closed at its preserved metadata bytes.
+
+- All MB-001–MB-246 remain **NOT RUN**. VISUAL-001–VISUAL-006 remain **PARTIAL**. Twenty unique screenshots occur at two archive locations; forty physical members are not forty observations. Preserve all definitions, expected results, route/browser/viewport dimensions, JavaScript/text-enlargement requirements, null execution times/observers, and FAIL/BLOCKED history. The new adoption event is separate from execution status and from final-validation/checkpoint status.
+- The exact [deferred inventory](../content-model/reports/PHASE-06-BATCH-06.4-FIXTURE-CONSUMER-PARITY-AND-ROUTE-RUNTIME-INTEGRATION.md#deferred-case-inventory) points to the immutable complete case objects. No case is waived or promoted to PASS.
+- Due gate: **06.5 — Consolidated Frontend Validation, before its final acceptance**. No invented calendar date and no automatic extension. An equivalent later method requires explicit complete coverage mapping and review; an unqualified waiver cannot replace evidence.
+- Until required evidence is satisfied, 06.5 final acceptance, 06.6/Phase 06 closeout, browser-verified-readiness claims and all public preview/deployment/publication/release remain blocked. No public build or hosting authority follows. Local offline non-release progression is the only risk disposition.
+- I-064-01/I-064-02 stay closed for the accepted code defects. I-064-03 code/non-browser remedy is accepted but browser-dependent closure remains **OPEN**. V-064-01 retains Playwright **BLOCKED / NOT RUN**; the manual replacement remains incomplete. N-063-01 is accepted only for local emitted ordering/membership, not provider/cache/deployment proof.
+- Changed source/configuration/dependency/media identities require impact review and updated bindings. No silent rebinding, failure suppression or automatic deferral extension is allowed.
+- This exact combined candidate and the [proposed conditional paired-checkpoint rule](phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-064-conditional-qualifying-checkpoint-rule) require External Final Validation, separate bounded Git authorization, both qualifying commits/pushes, clean synchronization and External Checkpoint Validation before 06.5 eligibility. Separate 06.5 execution authorization remains mandatory.
+
+Residual risks are unverified hydration/node retention/error recovery, accessibility/responsive and text-zoom behavior, navigation/history/media/PDF interactions, original gallery and Storybook interactions, and actual provider behavior. The portfolio case study does not test the gallery application. Screenshot pixels do not establish HTTP status, refresh, Console cleanliness, exact viewport, JavaScript state or keyboard behavior. Frontend Phase 9 and Phase 07 remain independent and unchanged.
+
+Controlling external records (logical handoff paths, not repository files): `review/PHASE-06.4-EXTERNAL-MANUAL-EVIDENCE-AND-DEFERRAL-REVIEW.md` SHA-256 `93abfeebe68992f4ceb434fec11326d0e2a192177c49caf4e4319b5a9a38a389`; companion results SHA-256 `d1f6cd4a5256c456588c8b0376ae5ccaa4a8d7b1fd09f61a1d00c46a1ffde4ae`. The [06.4 report](../content-model/reports/PHASE-06-BATCH-06.4-FIXTURE-CONSUMER-PARITY-AND-ROUTE-RUNTIME-INTEGRATION.md) owns chronology, every input identity and evidence limitations. Sealed historical requested/not-approved dispositions remain unchanged; this review and owner adoption are later events.

@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Status: Phases 00–05 COMPLETE / FROZEN; model `v1.0.0` unchanged; Phase 06 ACTIVE; 06.2 APPROVED / CHECKPOINTED; corrected 06.3 implementation EXTERNALLY ACCEPTED — PASS WITH NOTES; reconciliation COMPLETE / READY FOR EXTERNAL FINAL VALIDATION; formal 06.3 approval/checkpoint NOT ESTABLISHED; Phase 07 NOT STARTED
+Status: Phases 00–05 COMPLETE / FROZEN; model `v1.0.0` unchanged; Phase 06 ACTIVE; 06.1/06.2/06.3 checkpointed; 06.4 conditional non-release reconciliation candidate under D-064-01; External Final Validation PENDING; 06.5/06.6 NOT AUTHORIZED; Phase 07 NOT STARTED
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
 ## Phase Overview
@@ -13,7 +13,7 @@ Architecture style: greenfield, docs-first, reversible, contract-driven
 | 03 | Model Export + Serial Clean-Room Verification | Complete / frozen; 22 of 22 exit criteria pass; zero-drift recovered model checkpointed | CMS only |
 | 04 | Editorial QA + Model Freeze | Complete / frozen at the established Phase 04 closeout checkpoint; Option B and evidence limitations preserved | CMS only |
 | 05 | Representative Seed Content | COMPLETE / FROZEN at `35e70f991b8b1da2587526b278210f34b24f5402`; 42 drafts / 8 processed unpublished Assets / publications 0 from accepted September 29 evidence | No current CMS authority |
-| 06 | Frontend Contracts + Adapter Boundary | Established contract freeze and accepted pure adapters/assembly; candidate CMS-owned ledger `06.3-reconciliation-1` | Documentation reconciliation only; consumers/rendering and live transport deferred |
+| 06 | Frontend Contracts + Adapter Boundary | Frozen contracts, checkpointed pure boundary and accepted offline 06.4 runtime; candidate CMS ledger `06.4-reconciliation-1` | Documentation-only conditional reconciliation; browser proof deferred to 06.5 by D-064-01; no live transport |
 | 07 | Delivery Integration | Published content loaded route by route | Runtime |
 | 08 | Preview + Editorial Workflow | Safe draft preview | Runtime |
 | 09 | Quality Gates + Release | Contract, content, SEO, and deployment confidence | Production |
@@ -93,8 +93,9 @@ Publications — 0
 Phase 06 — ACTIVE
 Batch 06.1 — APPROVED / CHECKPOINTED
 Batch 06.2 — APPROVED / CHECKPOINTED; portfolio-contract-v1.0.0 EFFECTIVE / FROZEN, unchanged
-Batch 06.3 — IMPLEMENTATION EXTERNALLY ACCEPTED PASS WITH NOTES; DOCUMENTATION RECONCILIATION COMPLETE; EXTERNAL FINAL VALIDATION PENDING; FORMAL APPROVAL / CHECKPOINT NOT ESTABLISHED
-Batches 06.4–06.6 — NOT AUTHORIZED
+Batch 06.3 — APPROVED / CHECKPOINTED; EXTERNAL CHECKPOINT VALIDATION PASS WITH NOTES
+Batch 06.4 — CONDITIONAL NON-RELEASE RECONCILIATION CANDIDATE; FINAL VALIDATION PENDING; BROWSER DEFERRED D-064-01
+Batches 06.5–06.6 — NOT AUTHORIZED; 06.5 FINAL ACCEPTANCE BLOCKED UNTIL DEFERRED EVIDENCE IS SATISFIED
 Phase 07 — NOT STARTED
 Pre-export tooling — APPROVED
 ```
@@ -524,18 +525,22 @@ These conclusions use accepted 05.5 evidence validatedAt `2026-09-29T08:54:11.05
 
 ## Phase 06 — Frontend Contracts + Adapter Boundary
 
-06.2 is APPROVED / CHECKPOINTED; `portfolio-contract-v1.0.0` is EFFECTIVE / FROZEN and unchanged. The corrected twelve-path 06.3 implementation is EXTERNALLY ACCEPTED — PASS WITH NOTES; I-063-01 is CLOSED for the accepted bytes. Documentation reconciliation is COMPLETE / READY FOR EXTERNAL FINAL VALIDATION; that validation remains PENDING. Formal 06.3 approval/checkpoint is NOT ESTABLISHED. The [candidate mapping ledger](system/FRONTEND-CONTRACT-MAPPING.md) proposes documentation revision `06.3-reconciliation-1`; the [proposed 06.3 qualifying-checkpoint rule](phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-063-qualifying-checkpoint-rule) is PROPOSED FOR EXTERNAL FINAL VALIDATION. The [06.3 evidence report](../content-model/reports/PHASE-06-BATCH-06.3-PURE-ADAPTERS-RESOLUTION-URLS-AND-FOCUSED-OFFLINE-TESTS.md) owns the original NEEDS REVISION history, corrected acceptance and inherited 183-test result (21 fixture + 67 adapter + 95 assembly), with no project checks rerun here. N-063-01 remains NONBLOCKING / deferred to the separately authorized 06.4 emitter. 06.4 is NOT AUTHORIZED; Phase 07 is NOT STARTED. Frontend owns accepted pure adapters/assembly; consumers/rendering and live transport remain deferred. Frontend Phase 9 remains independent.
+06.1, 06.2 and 06.3 are APPROVED / CHECKPOINTED. The incoming 06.3 pair is established under its accepted containing-commit rule; older PENDING/PROPOSED wording is a historical reconciliation snapshot. The eighteen-file 06.4 runtime is implemented offline and accepted at source/non-browser scope. This documentation-only conditional non-release reconciliation prepares candidate ledger `06.4-reconciliation-1`; External Final Validation is PENDING and 06.4 is NOT CHECKPOINTED. `portfolio-contract-v1.0.0` remains EFFECTIVE / FROZEN / UNCHANGED.
+
+[D-064-01](DECISIONS.md#d-064-01) is EXTERNALLY ACCEPTED WITH CONDITIONS and OWNER ADOPTED by risk owner Gilberto Haro. All 246 MB cases remain NOT RUN and six VISUAL records remain PARTIAL; zero completed parameterized browser cases. Obligations are due during 06.5 Consolidated Frontend Validation, before its final acceptance, with no automatic extension. I-064-03 browser closure is OPEN; V-064-01 historical Playwright BLOCKED / NOT RUN remains. N-063-01 is accepted only for local emitted ordering/membership. Public preview/deployment/publication/release and 06.6/Phase 06 closeout remain blocked on required evidence.
+
+The CMS [candidate mapping ledger](system/FRONTEND-CONTRACT-MAPPING.md), [06.4 report and exact deferred inventory](../content-model/reports/PHASE-06-BATCH-06.4-FIXTURE-CONSUMER-PARITY-AND-ROUTE-RUNTIME-INTEGRATION.md#deferred-case-inventory) and [proposed conditional paired-checkpoint rule](phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-064-conditional-qualifying-checkpoint-rule) own these bindings. Exact-byte External Final Validation, separate Git authorization, both qualifying commits/pushes, clean synchronization and External Checkpoint Validation precede 06.5 eligibility; separate 06.5 execution authorization is still required. This pass reruns no tests, typecheck, lint, builds or browser checks. Phase 07 is NOT STARTED; frontend Phase 9 and its UI debt remain independent.
 
 | Batch | Canonical scope summary | Entry boundary |
 | --- | --- | --- |
-| 06.1 | Inventory, Baseline, Ownership + Architecture Decision | APPROVED / CHECKPOINTED at `9738cb34127b36cbb118de2438fc4db656b5dc0d` |
-| 06.2 | Rendering/Route Architecture Decision + Normalized Contract and Fixture Freeze | APPROVED / CHECKPOINTED; established CMS/frontend pair; contract unchanged |
-| 06.3 | Pure Adapters, Resolution, URLs + Focused Offline Tests | Corrected implementation EXTERNALLY ACCEPTED — PASS WITH NOTES; documentation COMPLETE; External Final Validation PENDING; formal approval/checkpoint NOT ESTABLISHED |
-| 06.4 | Fixture Consumer Parity + Approved Route/Runtime Integration | LATER / NOT AUTHORIZED; only separately approved runtime surfaces |
-| 06.5 | Consolidated Frontend Validation | LATER / NOT AUTHORIZED |
-| 06.6 | Cross-Repository Final Validation + Phase 06 Closeout | LATER / NOT AUTHORIZED |
+| 06.1 | Inventory, Baseline, Ownership + Architecture Decision | APPROVED / CHECKPOINTED |
+| 06.2 | Rendering/Route Architecture Decision + Normalized Contract and Fixture Freeze | APPROVED / CHECKPOINTED; contract unchanged |
+| 06.3 | Pure Adapters, Resolution, URLs + Focused Offline Tests | APPROVED / CHECKPOINTED at the incoming pair |
+| 06.4 | Fixture Consumer Parity + Approved Route/Runtime Integration | Implemented offline; non-browser accepted; conditional reconciliation candidate; final validation PENDING |
+| 06.5 | Consolidated Frontend Validation | NOT AUTHORIZED / NOT STARTED; all D-064-01 behavioral obligations due before its final acceptance |
+| 06.6 | Cross-Repository Final Validation + Phase 06 Closeout | NOT AUTHORIZED; unchanged exit criteria and evidence/release gates |
 
-The completed 06.2 comparison selected a separate portfolio entry in the existing npm package, Cloudflare Pages and native document navigation. R1/R2/N1/N2 design remains unchanged. The 06.3 pure routing/metadata/assembly functions are implemented; consumers, runtime, provider, rendering/hydration and accessibility proof remain deferred. N-063-01 requires exact 308 aliases before exact 200 proxies, source-path sorted within each group and tested as emitted artifacts in separately authorized 06.4. Documentation reconciliation runs no project checks and establishes no formal 06.3 approval/checkpoint.
+The scheduling exception moves outstanding browser verification to separately authorized 06.5, not out of Phase 06. Renderer, client, native navigation surface, build and serving/verifier helpers now exist. N-063-01 emitted artifacts have 64 exact 308 aliases before 13 exact 200 proxies, sorted by source within each group; acceptance does not extend to the provider. Accepted 183 tests and other non-browser results are inherited, NOT RERUN. No source changes or new runtime proof occurs in this documentation pass.
 
 ### Rules
 

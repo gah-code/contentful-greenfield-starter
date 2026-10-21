@@ -4,8 +4,8 @@ A production-minded Contentful project showcasing how I design scalable CMS arch
 
 The repository demonstrates how I approach content systems with the same structure, documentation, and validation practices used in professional web and CMS environments.
 
-![Status](https://img.shields.io/badge/status-05.5%20validated-2f855a)
-![Phase](https://img.shields.io/badge/phase-05%20closeout-2f855a)
+![Status](https://img.shields.io/badge/status-06.4%20conditional-2f855a)
+![Phase](https://img.shields.io/badge/phase-06%20active-2f855a)
 ![CMS](https://img.shields.io/badge/CMS-Contentful-2478CC)
 ![Node](https://img.shields.io/badge/node-%3E%3D22-339933)
 ![Model](https://img.shields.io/badge/model-design%20approved-2f855a)
@@ -29,7 +29,7 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 
 | Area | Current state |
 | --- | --- |
-| Current project state | Phase 05 COMPLETE / FROZEN; Phase 06 ACTIVE; 06.2 APPROVED / CHECKPOINTED; corrected 06.3 implementation EXTERNALLY ACCEPTED — PASS WITH NOTES |
+| Current project state | Phase 05 COMPLETE / FROZEN; Phase 06 ACTIVE; 06.1/06.2/06.3 checkpointed; 06.4 conditional non-release reconciliation candidate |
 | Frozen upstream phase | Phase 04 - COMPLETE / FROZEN at `6fdb16f06c5338e11f08ae0a44180b6db4251611`; model `v1.0.0` frozen |
 | Phase 04 closeout checkpoint | Batch 04.6 / `6fdb16f06c5338e11f08ae0a44180b6db4251611` / External Checkpoint Validation PASS WITH NOTES |
 | Historical Batch 04.3 disposition | Conditionally exited for findings handoff / incident, forensics, and cleanup complete / zero-content `dev` baseline restored / exhaustive live QA deferred / known evidence limitation preserved |
@@ -58,7 +58,7 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Batch 04.6 reconciliation lifecycle | Complete / checkpoint established at `6fdb16f06c5338e11f08ae0a44180b6db4251611` / External Checkpoint Validation PASS WITH NOTES |
 | Model freeze decision | `v1.0.0` FROZEN by the established Phase 04 closeout checkpoint |
 | Phase 04 exit | 11 of 11 criteria satisfied; criteria 3-5 remain visibly evidence-bounded |
-| Current reconciliation batch | 06.3 — documentation-only Final Approval Reconciliation COMPLETE / READY FOR EXTERNAL FINAL VALIDATION; formal 06.3 approval/checkpoint NOT ESTABLISHED |
+| Current reconciliation batch | 06.4 documentation-only conditional reconciliation; External Final Validation PENDING; browser NOT RUN; no 06.4 checkpoint |
 | Previous 04.3 authoring authorization | Historically granted / unconsumed; superseded for actionability and must not be reused |
 | Latest 04.3 authoring authorization | Granted once / consumed by the TA-01 Asset upload / no continuation, retry, repair, or cleanup authorized |
 | Batch 04.1 external validation | PASS WITH NOTES |
@@ -84,7 +84,7 @@ The project also shows how enterprise CMS practices scale down cleanly: field ID
 | Phase 03 technical exit criteria | 22 / 22 PASS |
 | Phase 04 | COMPLETE / FROZEN; Option B, R88, and incomplete exhaustive-QA limitation preserved |
 | Seed content | 42 draft Entries / 8 processed unpublished Assets / all unarchived / publications 0 |
-| Phase 06 | 06.2 checkpoint established; 06.3 pure boundary accepted, documentation final validation PENDING; [proposed 06.3 rule](docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-063-qualifying-checkpoint-rule) |
+| Phase 06 | 06.3 pair established; 06.4 implemented offline / non-browser accepted; D-064-01 owner-adopted; [proposed conditional rule](docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-064-conditional-qualifying-checkpoint-rule) |
 
 **Phase 05 closeout:** COMPLETE / FROZEN at `35e70f991b8b1da2587526b278210f34b24f5402`; 05.5 APPROVED / CHECKPOINTED. Accepted September 29 evidence (`2026-09-29T08:54:11.057Z`) establishes 42 draft Entries and eight processed unpublished Assets, all unarchived, with zero publications. No October live refresh is claimed. Public Delivery API, production publication and exhaustive Phase 04 102/102 live QA readiness remain not established.
 
@@ -96,9 +96,13 @@ See [Phase 05](docs/phases/PHASE-05-REPRESENTATIVE-SEED-CONTENT.md), [seed contr
 
 > For canonical current state, see [docs/PROJECT-STATE.md](docs/PROJECT-STATE.md) and [TASKS.md](TASKS.md).
 
-**Phase 06 ownership:** `gah-code/ui-gallery-system` owns frozen contracts/fixtures and the externally accepted pure source validation, resolution, URL/Rich Text normalization, route/metadata helpers and page assembly. The owner-selected separate portfolio entry (Option B), Cloudflare Pages intended host and native document navigation are unchanged. Consumers, rendering/hydration and live transport remain unimplemented; gallery/Storybook are preserved.
+**Phase 06 ownership:** `gah-code/ui-gallery-system` owns frozen contracts/fixtures, pure adapters/assembly and the implemented offline separate-entry portfolio renderer, client, build/serving helpers and verifiers. Option B, native document navigation and Cloudflare Pages intended host are unchanged. Browser/provider behavior remains unverified at the required scope; gallery/Storybook compile/discovery evidence is preserved; no live Contentful transport exists.
 
-06.2 is APPROVED / CHECKPOINTED; `portfolio-contract-v1.0.0` is EFFECTIVE / FROZEN and unchanged. The corrected twelve-path 06.3 implementation is EXTERNALLY ACCEPTED — PASS WITH NOTES; I-063-01 is CLOSED for the accepted bytes. Documentation reconciliation is COMPLETE / READY FOR EXTERNAL FINAL VALIDATION; that validation remains PENDING. Formal 06.3 approval/checkpoint is NOT ESTABLISHED. The [candidate mapping ledger](docs/system/FRONTEND-CONTRACT-MAPPING.md) proposes documentation revision `06.3-reconciliation-1`; the [proposed 06.3 qualifying-checkpoint rule](docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-063-qualifying-checkpoint-rule) is PROPOSED FOR EXTERNAL FINAL VALIDATION. The [06.3 evidence report](content-model/reports/PHASE-06-BATCH-06.3-PURE-ADAPTERS-RESOLUTION-URLS-AND-FOCUSED-OFFLINE-TESTS.md) owns the original NEEDS REVISION history, corrected acceptance and inherited 183-test result (21 fixture + 67 adapter + 95 assembly), with no project checks rerun here. N-063-01 remains NONBLOCKING / deferred to the separately authorized 06.4 emitter. 06.4 is NOT AUTHORIZED; Phase 07 is NOT STARTED. Frontend Phase 9 remains independent. No live access, credentials, token tests or release authority follows.
+06.1, 06.2 and 06.3 are APPROVED / CHECKPOINTED. The incoming 06.3 pair is established under its accepted containing-commit rule; older PENDING/PROPOSED wording is a historical reconciliation snapshot. The eighteen-file 06.4 runtime is implemented offline and accepted at source/non-browser scope. This documentation-only conditional non-release reconciliation prepares candidate ledger `06.4-reconciliation-1`; External Final Validation is PENDING and 06.4 is NOT CHECKPOINTED. `portfolio-contract-v1.0.0` remains EFFECTIVE / FROZEN / UNCHANGED.
+
+[D-064-01](docs/DECISIONS.md#d-064-01) is EXTERNALLY ACCEPTED WITH CONDITIONS and OWNER ADOPTED by risk owner Gilberto Haro. All 246 MB cases remain NOT RUN and six VISUAL records remain PARTIAL; zero completed parameterized browser cases. Obligations are due during 06.5 Consolidated Frontend Validation, before its final acceptance, with no automatic extension. I-064-03 browser closure is OPEN; V-064-01 historical Playwright BLOCKED / NOT RUN remains. N-063-01 is accepted only for local emitted ordering/membership. Public preview/deployment/publication/release and 06.6/Phase 06 closeout remain blocked on required evidence.
+
+The CMS [candidate mapping ledger](docs/system/FRONTEND-CONTRACT-MAPPING.md), [06.4 report and exact deferred inventory](content-model/reports/PHASE-06-BATCH-06.4-FIXTURE-CONSUMER-PARITY-AND-ROUTE-RUNTIME-INTEGRATION.md#deferred-case-inventory) and [proposed conditional paired-checkpoint rule](docs/phases/PHASE-06-FRONTEND-CONTRACTS-AND-ADAPTER-BOUNDARY.md#batch-064-conditional-qualifying-checkpoint-rule) own these bindings. Exact-byte External Final Validation, separate Git authorization, both qualifying commits/pushes, clean synchronization and External Checkpoint Validation precede 06.5 eligibility; separate 06.5 execution authorization is still required. This pass reruns no tests, typecheck, lint, builds or browser checks. Phase 07 is NOT STARTED; frontend Phase 9 and its UI debt remain independent.
 
 
 ## What This Repository Demonstrates
