@@ -1,5 +1,19 @@
 # Project State
 
+## Current mock integration supplement — 2026-10-22
+
+Canonical source admission is EXTERNALLY ACCEPTED — PASS WITH NOTES for the exact six mock-only paths; I-MOCK-01 is CLOSED. This is separately authorized supplemental work, not 06.5 approval or live Phase 07. The accepted conditional non-release 06.4 pair is frontend `a4af0f9b80cde77ce5a692f76d77e29e30d84238` / CMS `88d72538406e99e94b9c6ff79fb2cb4a5bf02590`; its trees and acceptance binding are in the [mock integration report](../content-model/reports/MOCK-DELIVERY-CANONICAL-INTEGRATION-AND-CHECKPOINT-SCOPE.md).
+
+Phase 05 stays COMPLETE / FROZEN, Phase 06 ACTIVE, 06.1–06.3 checkpointed and 06.4 conditionally checkpointed at non-release scope. Live Phase 07, 06.6/Phase 06 closeout and independent frontend Phase 9 advancement are not authorized. 06.5 remains PARTIAL / BROWSER VERIFICATION PAUSED at owner request: MB-001–MB-246 are NOT RUN; six historical visual surfaces remain separately PARTIAL; I-064-03 browser closure is OPEN. D-064-01 is unchanged, due during 06.5 before final acceptance with no extension or waiver.
+
+Candidate documentation supplement `mock-delivery-integration-reconciliation-1` and its explicitly PROPOSED paired-checkpoint rule await External Final Validation. The mock integration checkpoint is NOT AUTHORIZED / NOT ESTABLISHED; no future SHA or tree is assigned. This pending candidate comprises 10 frontend paths (six preserved sources and four documents) plus 10 CMS documents. Both HEADs remain the accepted pair; all changes remain unstaged. The established ledger stays `06.4-reconciliation-1`; `portfolio-contract-v1.0.0` and Contentful model `v1.0.0` remain EFFECTIVE / FROZEN / UNCHANGED.
+
+Strict portfolio, erasable-syntax and actual root-app compilers, canonical 352 tests (21 fixture + 67 adapter + 95 assembly + 169 delivery), lint and the isolated root-app preflight are INHERITED ACCEPTED / NOT RERUN. No tests are added by this documentation pass. SSR is INHERITED ACCEPTED / ISOLATED NODE_ENV=test ONLY. The canonical verifier retains its isolated-workspace guard; portable canonical/production SSR and live delivery are unproven. Synthetic revision/publication/policy facts are injected test inputs; `contentful_verified=false` and `public_delivery_verified=false`.
+
+Accepted output identities are unchanged. The admitted source/test graph and this later documentation delta require an explicit future QA rebinding; old clean-tree/config checks are historical, and QA remains paused. The original QA-BASELINE-IMPACT.json is preserved, with new document identities recorded separately outside both repositories. Netlify remains prospective only; Option B, existing Cloudflare/route/hosting decisions and release criteria are unchanged. No public preview, publication, deployment or release is authorized.
+
+Earlier 06.4 PENDING/PROPOSED/NOT STARTED wording below and in linked historical reconciliation records is an event-time snapshot. The accepted 06.4 checkpoint review and this current supplement resolve it without rewriting the preserved rules or claiming a new phase approval.
+
 Project: `contentful-greenfield-starter`
 Current project state: Phase 05 COMPLETE / FROZEN at `35e70f991b8b1da2587526b278210f34b24f5402`; Phase 06 ACTIVE; 06.1 APPROVED / CHECKPOINTED at `9738cb34127b36cbb118de2438fc4db656b5dc0d`.
 Current lifecycle: 06.1/06.2/06.3 APPROVED / CHECKPOINTED; 06.4 implemented offline / source and non-browser accepted / conditional non-release reconciliation candidate. D-064-01 owner-adopted; browser verification PARTIAL. External Final Validation PENDING; 06.4 checkpoint NOT ESTABLISHED; Git NOT AUTHORIZED / NOT RUN.

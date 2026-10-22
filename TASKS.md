@@ -1,5 +1,17 @@
 # Tasks
 
+## Current mock integration supplement — 2026-10-22
+
+Phase 05 stays COMPLETE / FROZEN, Phase 06 ACTIVE, 06.1–06.3 checkpointed and 06.4 conditionally checkpointed at non-release scope. Live Phase 07, 06.6/Phase 06 closeout and independent frontend Phase 9 advancement are not authorized. The accepted 06.4 pair is frontend `a4af0f9b80cde77ce5a692f76d77e29e30d84238` / CMS `88d72538406e99e94b9c6ff79fb2cb4a5bf02590`. 06.5 remains PARTIAL / BROWSER VERIFICATION PAUSED at owner request: MB-001–MB-246 are NOT RUN; six historical visual surfaces remain separately PARTIAL; I-064-03 browser closure is OPEN. D-064-01 is unchanged, due during 06.5 before final acceptance with no extension or waiver.
+
+- [x] Record externally accepted exact six-source mock-only canonical admission and I-MOCK-01 closure; no source bytes changed here.
+- [x] Carry forward canonical compiler/352-test/lint results and isolated test-mode SSR at their accepted scope; no reruns.
+- [ ] External Final Validation of the combined source/documentation candidate and proposed rule.
+- [ ] Separate owner Git authorization, qualifying paired commits/pushes, synchronization and External Checkpoint Validation.
+- [ ] Resume and satisfy the existing 06.5 browser obligations only under explicit owner resumption; D-064-01 is unchanged.
+
+Candidate documentation supplement `mock-delivery-integration-reconciliation-1` and its explicitly PROPOSED paired-checkpoint rule await External Final Validation. The mock integration checkpoint is NOT AUTHORIZED / NOT ESTABLISHED; no future SHA or tree is assigned. The [mock integration report](content-model/reports/MOCK-DELIVERY-CANONICAL-INTEGRATION-AND-CHECKPOINT-SCOPE.md) owns the exact pending scope and QA impact; historical clean-tree/config gates do not describe the admitted graph. Live transport and Phase 07 remain future work. Earlier 06.4 PENDING/PROPOSED/NOT STARTED wording below and in linked historical reconciliation records is an event-time snapshot. The accepted 06.4 checkpoint review and this current supplement resolve it without rewriting the preserved rules or claiming a new phase approval.
+
 This tracker records current project truth. Do not mark future batches complete without direct repository, command, or Contentful evidence.
 
 ## Phase 06 — Frontend Contracts + Adapter Boundary

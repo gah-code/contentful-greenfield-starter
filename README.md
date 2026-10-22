@@ -1,5 +1,13 @@
 # Contentful Greenfield Starter
 
+## Current mock integration supplement — 2026-10-22
+
+The six canonical mock-only source files are externally accepted PASS WITH NOTES; I-MOCK-01 is CLOSED. [mock integration report](content-model/reports/MOCK-DELIVERY-CANONICAL-INTEGRATION-AND-CHECKPOINT-SCOPE.md) owns the exact source/evidence scope and proposed checkpoint rule. The accepted conditional 06.4 pair is frontend `a4af0f9b80cde77ce5a692f76d77e29e30d84238` / CMS `88d72538406e99e94b9c6ff79fb2cb4a5bf02590`. Candidate documentation supplement `mock-delivery-integration-reconciliation-1` and its explicitly PROPOSED paired-checkpoint rule await External Final Validation. The mock integration checkpoint is NOT AUTHORIZED / NOT ESTABLISHED; no future SHA or tree is assigned.
+
+06.5 remains PARTIAL / BROWSER VERIFICATION PAUSED at owner request: MB-001–MB-246 are NOT RUN; six historical visual surfaces remain separately PARTIAL; I-064-03 browser closure is OPEN. D-064-01 is unchanged, due during 06.5 before final acceptance with no extension or waiver. Netlify remains prospective only; Option B, existing Cloudflare/route/hosting decisions and release criteria are unchanged. No public preview, publication, deployment or release is authorized.
+
+Earlier 06.4 PENDING/PROPOSED/NOT STARTED wording below and in linked historical reconciliation records is an event-time snapshot. The accepted 06.4 checkpoint review and this current supplement resolve it without rewriting the preserved rules or claiming a new phase approval.
+
 A production-minded Contentful project showcasing how I design scalable CMS architecture for a personal website using semantic content models, safe environment workflows, migration-driven schema management, and CMS-agnostic frontend contracts.
 
 The repository demonstrates how I approach content systems with the same structure, documentation, and validation practices used in professional web and CMS environments.

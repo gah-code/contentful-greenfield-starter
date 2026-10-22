@@ -1,5 +1,15 @@
 # Implementation Roadmap
 
+## Current mock integration supplement — 2026-10-22
+
+Phase 05 stays COMPLETE / FROZEN, Phase 06 ACTIVE, 06.1–06.3 checkpointed and 06.4 conditionally checkpointed at non-release scope. Live Phase 07, 06.6/Phase 06 closeout and independent frontend Phase 9 advancement are not authorized. The accepted 06.4 pair is frontend `a4af0f9b80cde77ce5a692f76d77e29e30d84238` / CMS `88d72538406e99e94b9c6ff79fb2cb4a5bf02590`. 06.5 remains PARTIAL / BROWSER VERIFICATION PAUSED at owner request: MB-001–MB-246 are NOT RUN; six historical visual surfaces remain separately PARTIAL; I-064-03 browser closure is OPEN. D-064-01 is unchanged, due during 06.5 before final acceptance with no extension or waiver.
+
+The owner-adopted `mock-delivery-isolation-1` and `mock-delivery-canonical-integration-1` exceptions allowed the synthetic, injected-only seam and exact-byte source admission described in the [mock integration report](../content-model/reports/MOCK-DELIVERY-CANONICAL-INTEGRATION-AND-CHECKPOINT-SCOPE.md). Source admission is PASS WITH NOTES and I-MOCK-01 CLOSED. These narrow exceptions do not start the live Phase 07 lifecycle or renumber any batch. Offline fixtures and current consumers remain available; the public route entry has not switched to live delivery.
+
+Candidate documentation supplement `mock-delivery-integration-reconciliation-1` and its explicitly PROPOSED paired-checkpoint rule await External Final Validation. The mock integration checkpoint is NOT AUTHORIZED / NOT ESTABLISHED; no future SHA or tree is assigned. Netlify remains prospective only; Option B, existing Cloudflare/route/hosting decisions and release criteria are unchanged. No public preview, publication, deployment or release is authorized.
+
+Earlier 06.4 PENDING/PROPOSED/NOT STARTED wording below and in linked historical reconciliation records is an event-time snapshot. The accepted 06.4 checkpoint review and this current supplement resolve it without rewriting the preserved rules or claiming a new phase approval.
+
 Status: Phases 00–05 COMPLETE / FROZEN; model `v1.0.0` unchanged; Phase 06 ACTIVE; 06.1/06.2/06.3 checkpointed; 06.4 conditional non-release reconciliation candidate under D-064-01; External Final Validation PENDING; 06.5/06.6 NOT AUTHORIZED; Phase 07 NOT STARTED
 Architecture style: greenfield, docs-first, reversible, contract-driven
 
@@ -557,6 +567,8 @@ The scheduling exception moves outstanding browser verification to separately au
 - Exact CMS/frontend checkpoint pairing and limitations independently validated; no automatic Phase 07 authority.
 
 ## Phase 07 — Delivery Integration
+
+Prospective integration annotation: the accepted mock-only seam is a separately authorized supplement, not completion of this phase's published-content work. See the [mock integration report](../content-model/reports/MOCK-DELIVERY-CANONICAL-INTEGRATION-AND-CHECKPOINT-SCOPE.md) for the synthetic acquisition limits and unresolved operational prerequisites. No Phase 07 execution is authorized by this documentation pass.
 
 Status: NOT STARTED / NOT AUTHORIZED. Phase 06 governance or closeout grants no automatic delivery, token-test, publication or deployment authority.
 

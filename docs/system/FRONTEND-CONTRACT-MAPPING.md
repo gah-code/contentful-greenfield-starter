@@ -1,5 +1,24 @@
 # Frontend Contract Mapping + Version Ledger
 
+## Current mock integration supplement — 2026-10-22
+
+This document remains the sole cross-repository mapping/version owner. Established revision `06.4-reconciliation-1` is preserved at the accepted conditional non-release pair, frontend `a4af0f9b80cde77ce5a692f76d77e29e30d84238` / CMS `88d72538406e99e94b9c6ff79fb2cb4a5bf02590`. The new identifier `mock-delivery-integration-reconciliation-1` is a **candidate documentation supplement**, not a replacement ledger, contract version, 06.5 revision or Phase 07 batch. Candidate documentation supplement `mock-delivery-integration-reconciliation-1` and its explicitly PROPOSED paired-checkpoint rule await External Final Validation. The mock integration checkpoint is NOT AUTHORIZED / NOT ESTABLISHED; no future SHA or tree is assigned.
+
+The exact source admission is PASS WITH NOTES; I-MOCK-01 is CLOSED. The [mock integration report](../../content-model/reports/MOCK-DELIVERY-CANONICAL-INTEGRATION-AND-CHECKPOINT-SCOPE.md) owns full identities and evidence qualifications. The new source seam consumes the existing normalized contracts/adapters; APIs, semantic policies, fixture fidelity and `portfolio-contract-v1.0.0` remain EFFECTIVE / FROZEN / UNCHANGED.
+
+| Accepted frontend path | Synthetic role | This pass / versus HEAD |
+| --- | --- | --- |
+| [scripts/verify-delivery-chrome.mjs](../../../ui-gallery-system/scripts/verify-delivery-chrome.mjs) | Isolated guarded neutral SSR verifier | PRESERVE / CREATE |
+| [src/content/portfolio/delivery-snapshot.ts](../../../ui-gallery-system/src/content/portfolio/delivery-snapshot.ts) | Complete synthetic snapshot, revision receipt and explicit MockFault fields | PRESERVE / CREATE |
+| [src/content/portfolio/delivery.server.ts](../../../ui-gallery-system/src/content/portfolio/delivery.server.ts) | Injected acquisition boundary; no global-fetch or token lookup | PRESERVE / CREATE |
+| [src/content/portfolio/delivery.test.ts](../../../ui-gallery-system/src/content/portfolio/delivery.test.ts) | Retained delivery acquisition/compatibility regressions | PRESERVE / CREATE |
+| [src/portfolio/entry-delivery-server.tsx](../../../ui-gallery-system/src/portfolio/entry-delivery-server.tsx) | Neutral non-release SSR document consuming SiteChrome | PRESERVE / CREATE |
+| [vitest.portfolio.config.ts](../../../ui-gallery-system/vitest.portfolio.config.ts) | Existing test discovery includes delivery tests | PRESERVE / MODIFY |
+
+Synthetic approved publication/revision facts are explicit test inputs, not actual Contentful readiness or preview capability. The public portfolio, gallery and Storybook entry graphs stay unchanged. Strict portfolio, erasable-syntax and actual root-app compilers, canonical 352 tests (21 fixture + 67 adapter + 95 assembly + 169 delivery), lint and the isolated root-app preflight are INHERITED ACCEPTED / NOT RERUN. No tests are added by this documentation pass. SSR is INHERITED ACCEPTED / ISOLATED NODE_ENV=test ONLY. The canonical verifier retains its isolated-workspace guard; portable canonical/production SSR and live delivery are unproven. Synthetic revision/publication/policy facts are injected test inputs; `contentful_verified=false` and `public_delivery_verified=false`.
+
+06.5 remains PARTIAL / BROWSER VERIFICATION PAUSED at owner request: MB-001–MB-246 are NOT RUN; six historical visual surfaces remain separately PARTIAL; I-064-03 browser closure is OPEN. D-064-01 is unchanged, due during 06.5 before final acceptance with no extension or waiver. Earlier 06.4 PENDING/PROPOSED/NOT STARTED wording below and in linked historical reconciliation records is an event-time snapshot. The accepted 06.4 checkpoint review and this current supplement resolve it without rewriting the preserved rules or claiming a new phase approval.
+
 Ledger candidate revision: `06.4-reconciliation-1` — documentation proposal selected by the owner; External Final Validation PENDING. Incoming checkpointed revision: `06.3-reconciliation-1` at CMS `dac8d6b97244dbf8e5e6f34aab250902d023e282`.
 Mapping status: **FROZEN CONTRACTS / FIXTURES, CHECKPOINTED PURE BOUNDARY AND OFFLINE 06.4 RUNTIME IMPLEMENTED; SOURCE/NON-BROWSER ACCEPTED; CONDITIONAL NON-RELEASE RECONCILIATION CANDIDATE**.
 Normalized frontend contract: **`portfolio-contract-v1.0.0` — EFFECTIVE / FROZEN / UNCHANGED**.
